@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+
+/* 表格 */
+body{
+    background-color: white;
+    color: black;
+    font-family: 楷体;
+}
+
+.tbgrid{
+    background:#e9faff;
+    }
+
+table{
+    border-collapse:collapse;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+td{
+    text-align:center;
+    padding: 15px;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+.param{
+    text-indent: 2em;
+}
+
+/* 页面样式 */
+.header {
+    font-family: 华文行楷;
+    color: #1c7887;
+    background-color: #a7dce0;
+    padding: 5px;
+    text-align: center;
+}
+
+
+/* 分页导航的样式 */
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* 导航栏的样式 */
+.navibar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f3f3f3;
+}
+
+.navibar li {
+    float: left;
+}
+
+.navibar li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navibar li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.navibar li a.active {
+    color: white;
+    background-color: #26bcd5;
+}
+/* 目录 */
+.catalog{
+    background-color: #f3f3f3;
+}
+
+
+
+/* 按钮 */
+.button {
+    background-color:aquamarine;
+    border: none;
+    color:#000000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button:hover {
+background-color:#aee0ff; /* Green */
+color: white;
+}
+
+.book{
+    background-color:aquamarine;
+    border: none;
+    color:#000000;
+    padding: 15px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    writing-mode: vertical-lr
+}
+
+.book:hover {
+    background-color:#aee0ff; /* Green */
+    color: white;
+    }
+
+/* 证明 */
+.prove{
+    background-color: orange;
+    color: #9d1dc4;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset = "utf-8">
+        <title>机器学习</title>
+        <style>
+            body{
+                background-color: white;
+                color: black;
+                font-family: 楷体;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>机器学习</h1>
+
+        <h2>目录</h2>
+        <a href="#chapter2">第二章 模型评估与选择</a>
+        
+
+        <h2 id="chapter2">第二章 模型评估与选择</h2>
+        <p><b>错误率（error rate）</b>：分类错误的样本数占样本总数的比例
+        <br><b>精度（accuracy）</b>：分类正确的样本数占样本总数的比例
+        <br><b>误差（error）</b>：学习器的实际预测输出与样本的真实输出之间的差异
+        <ul>
+            <li><b>训练误差（training error）/经验误差（empirical error）</b>：学习器在训练集上的误差</li>
+            <li><b>泛化误差（generalization error）</b>：学习器在新样本上的误差</li>
+        </ul>
+        <b>过拟合（overfitting）</b>：学习器的学习能力过于强大，把训练样本所包含的非一般特性当做了潜在样本具有的一般性质，导致泛化能力下降。
+        <br><b>欠拟合（underfitting）</b>：学习器的学习能力低下，对训练样本的一般性质尚未学好。
+        <br><b>测试集（testing set）</b>：用于测试学习器对新样本辨别能力的数据集。从样本真实分布中<b>独立同分布采样</b>得到，同时应尽可能与训练集互斥（即测试样本尽量不在训练集中出现）。
+        <br><b>测试误差（testing error）</b>：学习器在测试集上的误差，可作为泛化误差的近似。
+
+        <h3>测试集划分方法</h3>
+        <p><b>留出法（hold-out）</b>：直接将数据集划分为两个互斥的集合，其中一个集合作为训练集S，另一个作为测试集T。为了保证数据分布的一致性，常使用<b>分层采样</b>的采样方式。</p>
+    </p>
+
+    </body>
+</html>
