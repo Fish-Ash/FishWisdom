@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+    <meta charset="utf-8">
+    <title>模电</title>
+    <link rel="stylesheet" href="../../../CSS/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+    <div class="header"><h1>不惑</h1></div>
+    <ul class="navibar">
+        <li><a href="../Home.html">主页</a></li>
+        <li><a href="../Navigation.html">导航</a></li>
+    </ul>
+    <h1>模拟电路</h1>
+
+
+    <h2>目录</h2>
+    <a href="chapter2.html">第二章 运算放大器</a>
+    <br>
+    <a href="chapter3.html">第三章 二极管及其基本电路</a>
+    <br>
+    <a href="#chapter4">第四章 场效应三极管及其放大电路</a>
+    <br>
+    <a href="chapter5.html">第五章 双极结型三极管及其放大电路</a>
+    <br>
+    <a href="chapter8.html">第八章 反馈放大电路</a>
+
+    <h2 id="chapter4">第四章 场效应三极管及其放大电路</h2>
+    <p><b>场效应三极管（场效应管，field effect transistor，FET）</b>：
+    <ul>
+        <li><b>金属-氧化物-半导体场效应三极管（metal-oxide-semiconductor FET，MOSFET）</b></li>
+        <li><b>结型场效应管（junction FET，JFET）</b></li>
+    </ul></p>
+
+    <h3>金属-氧化物-半导体场效应三极管</h3>
+    <p>分类：
+        <ul>
+            <li>按导电载流子的带电极性：</li>
+            <ul>
+                <li>NMOS管：N沟道（电子型沟道）MOSFET</li>
+                <li>PMOS管：P沟道（空穴型沟道）MOSFET</li>
+            </ul>
+            <li>按导电沟道形成机理：</li>
+            <ul>
+                <li>增强型（enhancement-mode，E型）</li>
+                <li>耗尽型（depletion-mode，D型）</li>
+            </ul>
+        </ul>
+    </p>
+    <i>总的来说，MOS管分为：增强型NMOS管、耗尽型NMOS管、增强型PMOS管、耗尽型PMOS管</i>
+
+    <p><b>N沟道增强型MOSFET</b></p>
+    <p><b>结构</b>：</p>
+    <p>以一块掺杂浓度较低、电阻率较高的P型硅半导体薄片作为<b>衬底</b>，利用扩散的方法在P型硅中形成两个高掺杂的N<sup>+</sup>区。</p>
+    <p>在P型硅表面生长一层很薄的二氧化硅绝缘层，并在二氧化硅表面及N<sup>+</sup>区表面上分别安置三个铝电极——<b>栅极g（gate）</b>、<b>源极s（source）</b>、<b>漏极d（drain）</b>。</p>
+    <br><img src="./img/4.1_(1).jpg" width="350"><br>
+    <p><ul>
+        <li>L：沟道长度</li>
+        <li>W：沟道宽度</li>
+        <i>通常\(L < W \)且数量级均在纳米到微米间</i>
+        <li>\(t_{ox}\)：氧化物厚度</li>
+        <i>\(t_{ox}\)典型值在0.4×10<sup>-7</sup>m数量级以内</i>
+    </ul></p>
+
+    <p><b>工作原理</b>：</p>
+    <p>\(v_{GS}\geq V_{TH}\)时：</p>
+    <p><b>阈值电压（\(V_{TH}\)）</b>：能够使漏源之间开始导电的栅源电压</p>
+    <p>当\(v_{GS}>0\)时，相当于在栅极与衬底之间加了正向电压。因为栅极与衬底之间有二氧化硅绝缘层，故不会产生栅极电流\(i_G\)，但会产生由栅极指向衬底的垂直电场。
+    <br>由于绝缘层很薄，所以产生的电场强度很高。该电场力会排斥P型衬底中的空穴，使它们远离绝缘层，缺少了空穴的区域成为<b>耗尽层</b>。
+    <br>同时，该电场会吸引自由电子在绝缘层下方聚集，当\(v_{GS}\)达到一定数值时，绝缘层
+    </p>
+
+    <ul class="pagination">
+        <li><a href="#">«</a></li>
+        <li><a href="#">1</a></li>
+        <li><a class="active" href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">»</a></li>
+      </ul>
+    </body>
+</html>

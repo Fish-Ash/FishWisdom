@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>算法</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>一些概念</h1>
+
+        <p><b>残差</b>：数据真实值与预测值间的偏差</p>
+        <p><b>数据稀疏性</b>：数据集中大量数据缺失或为零的特性</p>
+        <p><b>独热编码（One-Hot Encoding）</b>：将文本数据转换为数值数据形成的一种二进制串</p>
+        
+        <p><b>海明距离（Hamming Distance）</b>：用于计算两个等长字符串的距离，其值为两个字符串对应位置不同字符的个数。</p>
+        <p><b>欧式距离（Euclidean Distance）</b>：两点之间的直线距离</p>
+    
+        <p><b>平均绝对误差（Mean Absolute Error, MAE）</b>：\(\frac1m \mathop{\sum}\limits_{i=1}^m|\hat y_i - y_i|\)</p>
+        <p><b>均方误差（Mean Squared Error, MSE）</b></p>
+        <p><b>均方根误差（Mean Root Squared Error, MRSE）</b></p>
+        <p><b>平均绝对百分比误差（Mean Absolute Percentage Error, MAPE）</b></p>
+
+
+
+        <p><ul>
+            <li><b>TP（True Positive）真正例</b>：实际为正例且被预测为正例的样本数</li>
+            <li><b>FN（False Negative）假反例</b>：实际为正例但被预测为反例的样本数</li>
+        </ul></p>
+        <p><b>准确率（Accuracy）</b>：正确预测的样本数占样本总数的比值。$$accuracy = \frac{TP+TN}{TP+FP+TN+FN}$$</p>
+        <p><b>召回率/查全率（Recall）</b>：正确预测的正例样本数占正例样本总数的比值。$$recall = \frac{TP}{TP + FN}$$</p>
+        <p><b>精确率/查准率（Precision）</b>：正确预测的正例样本数占预测为正例的样本总数的比值。$$precision = \frac{TP}{TP+FP}$$</p>
+        <p><b>F1-score</b>：\(\frac{2\cdot recall\cdot precision}{recall + precision}\)</p>
+    
+    
+        <p>核密度估计法、文本分析</p>
+        <p>分类方法：XGBoost、感知器、SVM支持向量机、LSTM、RNN</p>
+    </body>
+
+</html>

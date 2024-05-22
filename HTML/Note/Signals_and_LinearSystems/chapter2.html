@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>信号与线性系统分析</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">
+            <h1>不惑</h1>
+        </div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        
+        <h1>第二章 连续系统的时域分析</h1>
+        <h2>第一节 LTI连续系统的响应</h2>
+
+        <p><b>r重实根对应的齐次解</b>：\((C_{r-1}t^{r-1}+C_{r-2}t^{r-2}+\dots+C_1t+C_0)e^{\lambda t}\)</p>
+        
+
+        <h2>第二节 冲激响应和阶跃响应</h2>
+        <h3>一、冲激响应</h3>
+        <p><b>单位冲激响应（冲激响应）</b>：LTI系统中，激励为\(\delta(t)\)时的零状态响应。
+        $$ h(t) = T[{0}, \delta(t)] $$</p>
+
+        <p><b>卷积积分（卷积）</b>：定义在\((-\infty, +\infty)\)上的\(f_1(t)、f_2(t)\)，有：
+        $$f(t) = f_1(t)*f_2(t) = \int_{-\infty}^{+\infty}f_1(\tau)f_2(t-\tau)d\tau$$</p>
+        <p><b>图解法求卷积积分</b>：
+        <ol>
+            <li>换元，得到\(f_1(\tau)、f_2(\tau)\)</li>
+            <li>反转，将\(f_2(\tau)\)沿纵坐标反转，得到\(f_2(-\tau)\)</li>
+            <li>平移，将\(f_2(-\tau)\)向右平移\(t\)个单位长度，得到\(f_2(t-\tau)\)</li>
+            <li>将\(f_1(\tau)、f_2(t-\tau)\)相乘后求积分，得到\(f(t)\)</li>
+        </ol>
+        </p>
+    </body>
+
+</html>

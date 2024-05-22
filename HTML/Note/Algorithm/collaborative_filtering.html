@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>算法</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>协同过滤算法</h1>
+
+        <p>目前主流的协同过滤算法有<b>基于用户的协同过滤算法</b>以及<b>基于物品的协同过滤算法</b>。</p>
+        
+        <h2>基于用户的协同过滤算法</h2>
+
+        <p>流程：
+            <ol>
+                <li>构建用户-项目评分矩阵</li>
+                <li>计算用户之间的相似度</li>
+                <li>找出目标用户的最邻近邻居集合</li>
+                <li>对最邻近邻居集合进行加权，产生目标用户的推荐集</li>
+            </ol>
+        </p>
+        <p>缺点：
+            <ol>
+                <li>用户信息量非常有限，用户对项目的评分数据相对稀少，数据冷启动问题严重，难以找到相似用户集。</li>
+            </ol>
+        </p>
+
+        <h3>计算用户相似度</h3>
+        <p>
+            <ul>
+                <li><b>皮尔逊相关系数</b></li>
+                <li><b>调整的向量余弦法</b></li>
+                <li><b>约束的皮尔逊相关系数法</b></li>
+                <li><b>斯皮尔曼相关系数法</b></li>
+            </ul>
+        </p>
+    </body>
+
+</html>

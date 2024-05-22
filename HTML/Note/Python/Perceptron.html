@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" href="../../../CSS/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+<body>
+<div class="header"><h1>不惑</h1></div>
+<ul class="navibar">
+<li><a href="../Home.html">主页</a></li>
+<li><a href="../Navigation.html">导航</a></li>
+</ul>
+
+<h1>感知器</h1>
+<h2>介绍</h2>
+<p><b>公式</b>：\(y = w_1 x_1 + w_2 x_2 + \cdots+bias\)</p>
+<p>数据集：
+<table>
+<tr>
+    <td>样本</td>
+    <td>\(x_1\)</td>
+    <td>\(x_2\)</td>
+    <td>\(\cdots\)</td>
+    <td>\(y\)</td>
+</tr>
+<tr>
+    <td>\(sample_1\)</td>
+    <td>\(x_{11}\)</td>
+    <td>\(x_{12}\)</td>
+    <td>\(\cdots\)</td>
+    <td>\(y_1\)</td>
+</tr>
+<tr>
+    <td>\(sample_2\)</td>
+    <td>\(x_{21}\)</td>
+    <td>\(x_{22}\)</td>
+    <td>\(\cdots\)</td>
+    <td>\(y_2\)</td>
+</tr>
+<tr>
+    <td>\(\cdots\)</td>
+    <td>\(\cdots\)</td>
+    <td>\(\cdots\)</td>
+    <td>\(\cdots\)</td>
+    <td>\(\cdots\)</td>
+</tr>
+</table>
+</p>
+<p>其中，\(x\)为输入项，\(w、b\)分别为权重、偏置项，由训练获得</p>
+<p>更新：
+    <ul>
+        <li>\(w = w + \eta(\hat y - y)x\)</li>
+        <li>\(b = b + \eta(\hat y - y)\)</li>
+    </ul>
+</p>
+<p><b>感知器类的组成：
+<pre>
+class Perceptron():
+<i># 输入：输入个数、激活函数</i>
+<i># 初始化：激活函数（自定义）、权重与偏置项（初始为0）</i>
+def __init__(self, input_num, activator):
+    self.activator = activator
+    self.weights = [0.0]*input_num
+    self.bias = 0.0
+
+<i># infomation</i>
+def __str__(self):
+    return f'weights\t:{self.weights}\nbias\t:{self.bias:.6f}'
+
+<i># Prediction</i>
+def predict(self, sample):
+    return self.activator(
+        sum(list(map(lambda x,y:x*y, self.weights, sample))) + self.bais
+    )
+
+def updata_param(self, ):
+    delta = self.predict(sample, )
+    self.weight = [w + lr*(self.predict(in))]
+</pre>
+</b></p>
+</body>
+
+</html>

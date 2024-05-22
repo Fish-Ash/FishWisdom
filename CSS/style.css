@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-
 /* 表格 */
 body{
     background-color: white;
@@ -86,6 +85,10 @@ ul.pagination li a {
     color: white;
     background-color: #26bcd5;
 }
+
+.navibar li:last-child{
+    float:'right';
+}
 /* 目录 */
 .catalog{
     background-color: #f3f3f3;
@@ -134,4 +137,15 @@ color: white;
 .prove{
     background-color: orange;
     color: #9d1dc4;
+}
+
+/* 代码 */
+.code{
+    background-color: #f3f3f3;
+    color: #666;
+}
+
+i{
+    background-color: red;
+    color: white;
 }
