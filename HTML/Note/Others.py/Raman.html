@@ -1,0 +1,72 @@
+<!DOCTYPE>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset = "utf-8">
+        <title>拉曼光谱</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <h1>拉曼光谱</h1>
+        <h2>拉曼效应</h2>
+        <p>当样本暴露到可见单色光下时，样本会吸收光线，大部分光线会透过样本，有一小部分光会被样本散射到各个方向。从垂直于入射光的方向观察散射光，如果散射光的频率与入射光一样，这种散射称为瑞利散射；总散射光中大约有百分之一频率不同与入射光，这部分被称为拉曼散射。</p>
+        <p>拉曼散射可以看作双光子过程</p>
+
+        <h2>光谱性质</h2>
+        <p>拉曼光谱是一种无损的分析技术，是基于光和材料内化学键的相互作用而产生的，可以提供样品化学结构、相和状态、结晶度以及分子相互作用的详细信息。</p>
+        <p>拉曼散射是一种光散射技术。激光光源的高强度入射光被分子散射时，大多数散射光与入射激光具有相同的波长，不能提供有用的信息这种散射称为<b>瑞利散射</b>。还有极小一部分散射光波长与入射光不同，其波长的改变由测试样品（所谓散射物质）的化学结构所决定，这部分散射光被称为<b>拉曼散射</b>。</p>
+        <p><ul>
+            <li>Rayleigh散射：弹性碰撞，无能量交换，只改变方向</li>
+            <li>Raman散射：非弹性碰撞，能量交换且改变方向</li>
+        </ul></p>
+        <p>拉曼光谱属于<b>分子振动和旋转光谱</b>。</p>
+        <p>影响拉曼光谱质量的主要因素又有：<b>噪音、荧光背景、光谱仪杂散光</b>等。</p>
+        
+        
+        
+        <h3>基线</h3>
+        <p>拉曼光谱的背景基线主要由荧光和杂散光等构成</p>
+        <p><b>特点</b>：在一定波长范围内连续平滑</p>
+
+
+        <h2>数据处理</h2>
+        <h3>去噪</h3>
+        <h3>基线校正</h3>
+        <p>基线校正算法主要包括<b>函数拟合、小波变换、经验模态分解（EMD）、偏最小二乘法</b>等。</p>
+        <p><b>自适应迭代重加权最小二乘（airPLS）</b>：将最小二乘平滑与基线估计中的非平滑惩罚相结合，被认为是最广泛使用的基线校正算法。</p>
+        <h3>寻峰</h3>
+
+        <h2>光谱数据处理方法及多变量解析</h2>
+
+        <h2>思路</h2>
+        <p>1.4.1 光谱数据预处理
+            采用基线校正（Basline，BL）
+            高斯滤波（Gaussian Filter，GF）
+            归一化（Normalization，NL）
+            标准正态量变换（Standard Normal Variate，SNV）
+            卷积平滑（Savitzky-Golay Smthooing，SG）
+            去趋势化（Detrending，DFA）方法对拉曼光谱进行预处理。
+            <br>
+            1.4.2 拉曼光谱特征波数优选方法
+            回归系数法（Regression Coefficient，RC），又称PLS-β系数法，是应用较为广泛的一种特征波长提取方法[24]，来源于偏最小二乘法建模过程。
+            <br>
+            1.4.3 模型建立方法
+            主成分回归（Principal Components Regression，PCR），通过提取大量光谱信息中最主要的变量，降低信息维度，从而减少信息重叠[25]，并且能在一定程度上滤除噪声，可以较好地解决多元线性回归中的多重共线性问题。
+            <br>
+            偏最小二乘回归（Partial least squares regression，PLSR），一种多自变量X对单因变量或多因变量Y的回归建模方法，通过对数据矩阵进行降维处理，将原变量转换为相互正交的主因子，尽量提取自变量和因变量中的主成分，使二者相关性最大。PLSR融合了主成分分析和典型相关分析等的特点，可以简化光谱信息、解决变量的多重相关性问题[26]，建立鲁棒性较好的定量分析模型。本研究以光谱数据作为X变量，理化值数据作为Y变量。
+            <br>
+            1.4.4 模型评价指标
+            以校正集相关系数（Correlation coefficient of calibration set，Rc）、校正集均方根误差（Rootmean square error of calibration set，RMSEC）、预测集相关系数（Correlation coefficient of prediction set，Rp）、预测集均方根误差（Rootmean square error of prediction set，RMSEP）和剩余预测偏差（Residual predictive deviation，RPD）来评价模型建立的效果。</p>
+    </body>
+</html>

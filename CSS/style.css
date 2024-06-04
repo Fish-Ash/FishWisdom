@@ -1,4 +1,13 @@
 @charset "utf-8";
+/* 字体 */
+p:lang(zh) {
+    font-family: '楷体';
+  }
+  
+p:lang(en) {
+    font-family: 'Times New Roman';
+  }
+  
 
 /* 表格 */
 body{
@@ -148,4 +157,10 @@ color: white;
 i{
     background-color: red;
     color: white;
+}
+
+/* 页面内跳转 */
+.goto{
+    color: #000000;
+    text-decoration: none;
 }

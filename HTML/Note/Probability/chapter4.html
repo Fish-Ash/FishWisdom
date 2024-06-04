@@ -20,9 +20,19 @@
 <h1>第四章 随机变量的数字特征</h1>
 <h2>第一节 数学期望</h2>
 <h3>一、随机变量的数学期望</h3>
+<p>数学期望（\(\mu\)）</p>
 <p><b>离散型随机变量</b>：</p>
 <p>$$E(X) = \mathop{\sum}\limits_{k=1}^{\infty}x_kp_k$$</p>
+<p><b>泊松分布</b>：\(x\sim P(\lambda)\)
+$$P\{X = k\} = \frac{\lambda^ke^{-\lambda}}{k!}, k=0,1,\cdots$$
+$$\begin{align}
+E(X) &= \mathop{\sum}\limits_{k=0}^\infty k\cdot\frac{\lambda^ke^{-\lambda}}{k!}\\
+&= \lambda e^{-\lambda}\mathop{\sum}\limits_{k=1}^\infty\frac{\lambda^{k-1}}{(k-1)!}\\
+&= \lambda e^{-\lambda} e^{\lambda}\\
+&= \lambda
+\end{align}$$
 
+</p>
 
 <hr>
 <p><b>连续型随机变量</b>：</p>
@@ -51,8 +61,13 @@ E(X) &= \int_{-\infty}^{+\infty}xf(x)dx\\
 
 <h2>第二节 方差</h2>
 <h3>一、方差的概念</h3>
-<p>方差：
-<br>&nbsp;&nbsp;&nbsp;&nbsp;\(D(X) = E\{[X-E(X)]^2\}\)</p>
+<p>方差（\(\sigma^2\)）：
+$$\begin{align}
+D(X) &= E\{[X-E(X)]^2\}\\
+&= E[X^2-2XE(X)+E^2(X)]\\
+&= E(X^2) - 2E(X)E(X) + E^2(X)\\
+&= E(X^2) - E^2(X)
+\end{align}$$
 
 <p>标准差（均方差）：
 <br>&nbsp;&nbsp;&nbsp;&nbsp;\(\sigma(X) = \sqrt{D(X)}\)</p>
