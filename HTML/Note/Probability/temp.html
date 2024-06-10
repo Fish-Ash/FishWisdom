@@ -17,12 +17,76 @@
     </ul>
 
 <body>
+
+
 <h1>离散型随机变量</h1>
 <p><b>数学期望（\(\mu\)）</b>：
-    $$E(X) = \mathop{\sum}\limits_{k=1}^{\infty}x_kp_k$$</p>
+    $$E(X) = \sum\limits_{k=1}^{\infty}x_kp_k$$</p>
+
+<p><b>最大似然估计</b>：
+$$L(\theta) = \prod\limits_{i=1}^nP\{X=x_i\}$$</p>
+
+
+<hr>
+
+<h3>退化分布（单点分布）</h3>
+<p>$$ P\{X = C\} = 1 $$</p>
+<hr>
+
+<h3>二项分布</h3>
+<p><br>&nbsp;&nbsp;&nbsp;&nbsp;n重伯努利试验中，事件A发生的概率为\(p\)，\(X\)表示n重伯努利试验中事件A发生的次数，则称<b>\(X\)服从参数为\(n,p\)的二项分布</b>，记作\(X\sim b(n,p)\)
+    $$ P\{X = k\} = C_n^kp^k(1-p)^{n-k},k=0,1,2,\cdots,n $$</p>
+<hr>
+
+<h3>（0-1）分布（两点分布）</h3>
+<p><br>&nbsp;&nbsp;&nbsp;&nbsp;二项分布\(n = 1\)时的特殊情况，记作\(X\sim b(1,p)\)$$P\{X = k\} = p^k(1-p)^{(1-k)}, k=0,1$$</p>
+<hr>
+
+<h3>几何分布</h3>
+<p><br>&nbsp;&nbsp;&nbsp;&nbsp;若事件A发生的概率为\(p\)，\(X\)表示事件A首次发生时已进行的次数，则称<b>X服从参数为p的几何分布</b>，记作\(X\sim G(p)\)
+    $$ P\{X = k\} = p(1-p)^{k-1},~k=1,2,\cdots $$</p>
+<hr>
+
+<h3>泊松分布</h3>
+<p>
+    <b>定义</b>：
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;若<b>\(X\)服从参数为\(\lambda\)的泊松分布</b>，记作\(X\sim P(\lambda)\)
+    $$P\{X = k\} = \frac{\lambda^k e^{-\lambda}}{k!},~k = 0,1,2,\cdots,~\lambda>0 $$
+
+    <b>最大似然估计</b>：
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;设\(x_1, x_2,\cdots, x_n\)为样本\(X_1, X_2, \cdots,X_n\)的观测值。
+    $$\begin{align}
+    L(\lambda) &= \prod\limits_{i=1}^n\frac{\lambda^{x_i} e^{-\lambda}}{x_i!}\\
+    &= e^{-n\lambda}\frac{\lambda^{\sum\limits_{i=1}^nx_i}}{\prod\limits_{i=1}^nx_i!}\\
+    \therefore lnL(\lambda) &= -n\lambda + \sum\limits_{i=1}^nx_iln\lambda - \sum\limits_{i=1}^nln(x_i!)\\
+    令 \frac{dlnL(\lambda)}{d\lambda} &= -n + \frac 1\lambda\sum\limits_{i=1}^nx_i = 0\\
+    \therefore 最大似然估计值：\hat \lambda &= \frac1n\sum\limits_{i=1}^nx_i = \bar x\\
+    \therefore 最大似然估计量：\hat \lambda &= \bar X   
+     \end{align}$$
+</p>
+
+
+<hr>
 
 <h1>连续型随机变量</h1>
+<p>
+    <b>数学期望（\(\mu\)）</b>:
+        $$E(X) = \int_{-\infty}^{+\infty}xf(x)dx$$
+    
+    <b>最大似然估计</b>：
+    $$L(\theta) = \prod\limits_{i=1}^nf(x_i;\theta)$$</p>
 
+
+<h3>正态分布</h3>
+<p>
+    <b>定义</b>：
+    
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;若连续型随机变量\(X\)的概率密度为
+    $$ f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},~-\infty< x < +\infty $$
+    称<b>\(X\)服从参数为\(\mu,\lambda\)的正态分布</b>，<b>记作\(X\sim N(\mu, \sigma^2)\)
+</p>
+
+</b>
 </body>
 
 </html>
