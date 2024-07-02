@@ -18,13 +18,76 @@
 
 <body>
 
+<p>
+    <b>数学期望（\(\mu\)）</b>
+    <br>
+    <br>性质：
+    <ul>
+        <li>\(E(C) = C\)</li>
+        <li>\(E(CX) = CE(X)\)</li>
+        <li>\(E(X+Y) = E(X) + E(Y)\)</li>
+        <li>当\(X\)与\(Y\)为两相互独立的随机变量时：\(E(XY) = E(X)E(Y)\)</li>
+        <li>\(E[g(x)] = \int_{-\infty}^{+\infty}g(x)f(x)dx\)</li>
+        <li>\(E[g(x,y)] = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}g(x,y)f(x,y)dxdy\)</li>
+    </ul>
+</p>
+
+<p>
+    <b>方差（\(\sigma^2\)）</b>：
+    $$\begin{align}
+    D(X) &= E\{[X-E(X)]^2\}\\
+    &= E[X^2-2XE(X)+E^2(X)]\\
+    &= E(X^2) - 2E(X)E(X) + E^2(X)\\
+    &= E(X^2) - E^2(X)
+    \end{align}$$
+    性质：
+    <ul>
+        <li>\(D(C) = 0\)</li>
+        <li>\(D(aX+b) = a^2D(X)\)</li>
+        <li>\(D(X\pm Y) = D(X) + D(Y) \pm 2Cov(X,Y)\)
+            <br>若\(X\)与\(Y\)相互独立，则\(D(X\pm Y) = D(X) + D(Y)\)
+        </li>
+    </ul>
+</p>
+
+<p>
+    <b>标准差（均方差）(\(\sigma\))</b>：
+    $$\sigma(X) = \sqrt{D(X)}$$
+</p>
+
+<p>
+    <b>协方差</b>：
+    $$\begin{align}
+    Cov(X,Y) &= E\{[X-E(X)][Y-E(Y)]\}\\
+    &= E(XY) - E(X)E(Y)
+    \end{align}$$
+    性质：
+    <ul>
+        <li>\(Cov(X,X) = D(X)\)</li>
+        <li>\(Cov(X,Y) = Cov(Y,X)\)</li>
+        <li>\(Cov(C,X) = Cov(X,C) = 0\)</li>
+        <li>\(Cov(aX, bY) = abCov(X,Y)\)</li>
+        <li>\(Cov(X_1+X_2, Y) = Cov(X_1,Y) + Cov(X_2, Y)\)</li>
+        <li>若\(X\)与\(Y\)相互独立，则\(Cov(X,Y) = 0\)</li>
+    </ul>
+</p>
+
+<p>
+    <b>相关系数</b>：
+    $$\rho_{XY} = \frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(X)}}$$
+</p>
 
 <h1>离散型随机变量</h1>
-<p><b>数学期望（\(\mu\)）</b>：
-    $$E(X) = \sum\limits_{k=1}^{\infty}x_kp_k$$</p>
+<p>
+    <b>数学期望</b>：
+    $$E(X) = \sum\limits_{k=1}^{\infty}x_kp_k$$
 
-<p><b>最大似然估计</b>：
-$$L(\theta) = \prod\limits_{i=1}^nP\{X=x_i\}$$</p>
+    <b>方差</b>：
+    $$D(X) = \mathop{\sum}\limits_{k=1}^{\infty}[x_k - E(X)]^2p_k$$
+
+    <b>最大似然估计</b>：
+    $$L(\theta) = \prod\limits_{i=1}^nP\{X=x_i\}$$
+</p>
 
 
 <hr>
@@ -70,11 +133,15 @@ $$L(\theta) = \prod\limits_{i=1}^nP\{X=x_i\}$$</p>
 
 <h1>连续型随机变量</h1>
 <p>
-    <b>数学期望（\(\mu\)）</b>:
-        $$E(X) = \int_{-\infty}^{+\infty}xf(x)dx$$
-    
+    <b>数学期望</b>:
+    $$E(X) = \int_{-\infty}^{+\infty}xf(x)dx$$
+
+    <b>方差</b>：
+    $$D(X) = \int_{-\infty}^{+\infty}[x - E(X)]^2f(x)dx$$
+
     <b>最大似然估计</b>：
-    $$L(\theta) = \prod\limits_{i=1}^nf(x_i;\theta)$$</p>
+    $$L(\theta) = \prod\limits_{i=1}^nf(x_i;\theta)$$
+</p>
 
 
 <h3>正态分布</h3>

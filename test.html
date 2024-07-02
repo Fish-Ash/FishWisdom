@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jsMind</title>
+    <link type="text/css" rel="stylesheet" href="jsmind/style/jsmind.css" />
+    <style type="text/css">
+        #jsmind_container{
+            width:1000px;
+            height:500px;
+            border:solid 1px #ccc;
+            background:#f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div id="jsmind_container"></div>
+    <script type="text/javascript" src="jsmind/js/jsmind.js"></script>
+    <script type="text/javascript" src="jsmind/js/jsmind.draggable.js"></script>
+    <script type="text/javascript">
+        var mind = {
+            "meta": {
+                "name": "example",
+                "author": "hizzgdev@163.com",
+                "version": "0.2"
+            },
+            "format": "node_tree",
+            "data": {
+                "id": "root",
+                "topic": "jsMind",
+                "children": [
+                    {
+                        "id": "sub1",
+                        "topic": "sub1",
+                        "children": [
+                            {"id": "sub1-1", "topic": "sub1-1"},
+                            {"id": "sub1-2", "topic": "sub1-2"}
+                        ]
+                    },
+                    {
+                        "id": "sub2",
+                        "topic": "sub2",
+                        "children": [
+                            {"id": "sub2-1", "topic": "sub2-1"},
+                            {"id": "sub2-2", "topic": "sub2-2"}
+                        ]
+                    }
+                ]
+            }
+        };
+    
+        var options = {
+            container: 'jsmind_container', // 容器ID
+            editable: true, // 是否启用编辑
+            theme: 'primary' // 主题
+        };
+    
+        var jm = new jsMind(options);
+        jm.show(mind);
+    </script>
+    
+</body>
+</html>

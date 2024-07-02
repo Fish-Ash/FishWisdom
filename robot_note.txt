@@ -1,0 +1,23 @@
+        <h1>高等数学</h1>
+
+
+
+        <p>对数函数：
+            $$ lnx^a = alnx $$
+
+        </p>
+
+        <p>函数的奇偶性：
+            <ul>
+                <li>奇函数：
+                    $$ f(-x) = -f(x) $$</li>
+                <li>偶函数：
+                    $$ f(-x) = f(x) $$</li>
+            </ul>
+        </p>
+        <p>杂乱知识：
+            $$\begin{align}
+            &\sqrt{1+x^2}-x  \\
+            = &\frac{(\sqrt{1+x^2}-x)(\sqrt{1+x^2}+x)}{\sqrt{1+x^2}+x} \\
+            = &\frac{1}{\sqrt{1+x^2}+x}
+            \end{align}$$

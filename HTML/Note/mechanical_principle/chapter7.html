@@ -39,8 +39,24 @@
         <p>建立运动方程的方法：
             <ol>
                 <li>确定活动构件及其运动方式（转动、平动、转动+平动）</li>
-                <li>\(dE = dW = \sum(\frac{J\omega^2}{2})\) + \sum(\frac{}{})</li>
+                <li>\(dE = dW = \sum(\frac{J\omega^2}{2}) + \sum(\frac12mv^2)\)</li>
             </ol>
+        </p>
+
+        <p>由输出力矩图求飞轮转动惯量：
+            <ol>
+                <li>求等效阻力矩：\(W_r\times T = \sum W_{di}t_i\)</li>
+                <li>根据等效阻力矩求各个时间段内的功\(W = Ft = (W_d - W_r)t\)</li>
+                <li>由0开始累加力，找到\(E_{max}\)与\(E_{min}\)的点</li>
+                <li>求\(\Delta W_{max} = E_{max} - E_{min}\)</li>
+                <li>飞轮的转动惯量\(J_F = \frac{900\Delta W_{max}}{\pi^2n^2\delta}\)</li>
+            </ol>
+            速度波动系数：\(\delta = \frac{\Delta W_{max}}{(J_F + J_e)\omega_m^2} = \frac{}{}\)
+            <br>
+            平均转速：\(n_m = \frac{n_{max}+n_{min}}{2}\)
+            <br>
+            最大转速：\(n_{max} = n_m(\delta/2 + 1)\)
+            <br>最小转速：\(n_{min} = \)
         </p>
     </body>
 
