@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>模拟电路</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第八章 反馈放大电路</h1>
+        <h2>第一节 反馈的基本概念与分类</h2>
+        <p><b>反馈</b>：将电路输出电量（电压或电流）的一部分或全部通过反馈网络，用一定的方式送回到输入回路，以影响输入、输出电量的过程。</p>
+        <p><b>反馈放大电路</b>：引入反馈的放大电路
+            <br><img src="./img/8.1.1_1.jpg" width="450"><br>
+            <ul>
+                <li>\(x_I\)：输入信号</li>
+                <li>\(x_O\)：输出信号</li>
+                <li>\(x_F\)：反馈信号</li>
+                <li>\(x_{ID}\)：净输入信号</li>
+                <i>负反馈放大电路中\(x_{ID} = x_I - x_F\)</i>
+            </ul>
+            <ul>
+                <li><b>基本放大电路的增益</b>：\(A = \frac{x_O}{x_{ID}}\)</li>
+                <li><b>反馈系数（反向传输系数）</b>：\(F = \frac{x_F}{x_O}\)</li>
+            </ul>
+            <ul>
+                <li><b>闭环</b>：反馈网络存在，能形成反馈。</li>
+                <li><b>开环</b>：反馈网络不存在，不能形成反馈。</li>
+            </ul>
+        </p>
+        
+        <p>反馈的分类：
+            <ul>
+                <li><b>正反馈</b>：
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;反馈信号引回输入回路与原输入信号共同作用后，使净输入信号量比没有引入反馈时有所<b>增加</b>。</li>
+                <li><b>负反馈</b>：
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;反馈信号引回输入回路与原输入信号共同作用后，使净输入信号量比没有引入反馈时有所<b>减少</b>。</li>
+                <i>放大电路中一般引入负反馈。</i>
+                <br>
+                <br>判断方法：
+
+            </ul>
+            <br>
+            <ul>
+                <li><b>直流反馈</b>：存在于放大电路直流通路中的反馈。</li>
+                <li><b>交流反馈</b>：存在于放大电路交流通路中的反馈。</li>
+            </ul>
+            <br>
+            <ul>
+                <li><b>局部反馈</b></li>
+                <li><b>间反馈</b></li>
+            </ul>
+            <ul>
+                <li>电压并联负反馈：得到电流-电压转换电路</li>
+                <li>电压串联负反馈：减小输入电流，增大带负载能力</li>
+                <li>电流并联负反馈：增大输入电流、稳定输出电流（电流控制）</li>
+                <li>电流串联负反馈：增大输入电压，稳定电流。得到电压电流-负反馈</li>
+            </ul>
+        </p>
+    </body>
+
+</html>

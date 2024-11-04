@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CMake</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+        <script src="../../../../JavaScript/CodeHighlight.js"></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1 lang="en">CMake</h1>
+
+        <h2><span lang="en">CMake</span>配置</h2>
+        <b lang="en">VS Installer</b>：
+        <p>勾选：用于Windows的C++ CMake预设</p>
+        <b lang="en">VS</b>
+        <ul>
+            <li>工具-选项-CMake-始终使用CMake预设</li>
+            <!-- <li>扩展-管理扩展-下载：Force UTF-8(No BOM)</li> -->
+        </ul>
+
+        <h3 lang="en">VS Code</h3>
+        <b lang="en">Extensions</b>
+        <ul lang="en">
+            <li>C/C++</li>
+            <li>C/C++ Extension Pack</li>
+            <li>C/C++ Themes</li>
+            <li>CMake</li>
+            <li>CMake Tools</li>
+            <li>Output Colorizer</li>
+        </ul>
+
+        <b>使用</b>
+        <p lang="en">Ctrl + Shift + P ：CMake:Quick Start</p>
+        <b>OutPut乱码解决方案</b>
+        <ol>
+            <li>打开settings</li>
+            <li>搜索Output</li>
+            <li>在Extensions-C/C++-CMakeTools中，修改Output Log Encoding为UTF-8</li>
+        </ol>
+
+    <h2><span lang="en">CMake</span>编写</h2>
+        <b lang="en">CMakeLists.txt</b><br>
+        <p>主文件夹与每个子文件夹下都需要有一个<span lang="en">CMakeLists.txt</span>文件</p>
+        
+        <b>主文件</b>
+        <pre class="code"><code class="cpp">
+        cmake_minimum_required (VERSION 3.8) \\要求的最小版本
+        project(ProjectName)                 \\项目名称
+        add_subdirectory(path)               \\链接子文件所在目录
+        </code></pre>
+
+        <b>子文件</b>
+        <pre class="code"><code class="cpp">
+        add_executable(exeName file1.cpp...) \\编译代码为可执行文件，不需要写入.h文件
+        </code></pre>
+    </body>
+
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>仪器精度理论</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第一章</h1>
+
+        <h2>第一节 研究误差的意义</h2>
+        <h3>研究误差的重要性</h3>
+        <p>
+            <ul>
+                <li>正确认识误差的性质，分析误差产生的原因，以消除或减小误差。</li>
+                <li>正确处理测量和实验数据，合理计算所得结果，以便在一定条件下得到更接近于真值的数据。</li>
+                <li>正确组织实验过程，合理选用仪器和测量方法，以便在最经济的条件下，得到理想的结果。</li>
+            </ul>
+        </p>
+        <h3>误差理论的发展历程</h3>
+        <p>
+            <ul></ul>
+        </p>
+
+        <h2>第二节 误差的基本概念</h2>
+        <b>误差</b>
+        <p>
+            <br>定义：测量误差为测得值与真值之差
+            $$\Delta_i = x_i - x_0,~ i=1,2,3,\cdots,n$$
+            <br>
+            <b id="TruthValue">真值（理论值、定义值）：</b>
+            <ul>
+                <li><b>理论真值（绝对真值）</b></li>
+                <li><b>约定真值</b>：世界各国公认的一些几何量和物理量的最高基准值</li>
+                <li><b>相对真值</b></li>
+            </ul>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;一个特定的物理量在一定条件下具有的客观量值，理论真值一般只存在于纯理论中。
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;实际测量中常用算数平均值来代替真值展开计算。
+            <br>
+            <br>表示方式：
+            <table>
+                <tr>
+                    <td rowspan="6">误差表示方式</td>
+                    <td></td>
+                    <td class="tbtitle">公式</td>
+                    <td colspan = "2" class="tbtitle">参数说明</td>
+                    <td class="tbtitle">特点</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">绝对误差</td>
+                    <td rowspan="2">\(\Delta x = x - x_0\)</td>
+                    <td>\(x\)</td>
+                    <td>测得值</td>
+                    <td rowspan="2" class="tbtext">
+                        <li>绝对误差是一个具有确定大小、符号及单位的量，其单位与测得值相同</li><br>
+                        <li>绝对误差不能完全说明测量的准确度</li><br>
+                        <li>对于相同的被测量，常用绝对误差评定测量精度的高低。</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>\(x_0\)</td>
+                    <td>被测量的真值，常用约定真值代替</td>
+                </tr>
+
+                <tr>
+                    <td rowspan="2">相对误差</td>
+                    <td rowspan="2">\(r = \frac{\Delta x}{x_0}\)</td>
+                    <td>\(\Delta x\)</td>
+                    <td>绝对误差</td>
+                    <td rowspan="2" class="tbtext">
+                        <li>相对误差只有大小和符号，而无量纲，一般用百分数表示。</li>
+                        <li>相对误差常用来衡量测量的相对准确程度。</li>
+                        <li>对于不同的被测量，常相对误差评定测量精度的高低。</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>\(x_0\)</td>
+                    <td>被测量的真值，常用约定真值代替，也可近似用\(x\)测量值\(x_0\)代替</td>
+                </tr>
+            </table>
+
+            
+
+            <table>
+                <tr>
+                    <td class="tbtitle">引用误差（引用相对误差、满度误差）</td>
+                    <td colspan = "2" class="tbtitle">参数说明</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">$$r_m = \frac{\Delta x_m}{x_m}$$</td>
+                    <td>\(\Delta x_m\)</td>
+                    <td>仪器某标称范围（或量程）内的最大绝对误差。</td>
+                </tr>
+                <tr>
+                    <td>\(x_m\)</td>
+                    <td>该标称范围（或量程）上限</td>
+                </tr>
+                
+            </table>
+            特点：
+            <ul>
+                <li>引用误差是一种相对误差，而且该相对误差是引用了特定值，及标称范围（或量程）上限得到的。</li>
+                <li>对于有一定测量范围的仪器仪表，绝对误差和相对误差都会随测量点的改变而改变，因此采用引用误差评定测量精度的高低。</li>
+            </ul>
+        </p>
+
+        
+        <p>当一个仪表的等级\(s\)选定后，用此表测量某一被测量所产生的最大绝对误差和最大相对误差分别为：</p>
+        $$
+            \Delta x_m = x_m \times \pm s\%
+        $$
+
+
+
+
+        <h3>误差的分类</h3>
+        <p>
+            <ul>
+                <li>系统误差：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;在同一条件下，多次测量同一量值，绝对值和符号保持不变；
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;在条件改变时，按一定规律变化的误差。
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;例如标准量值误差、仪器刻度误差等。
+                    <br>
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;按对系统误差掌握的程度分：
+                    <ul>
+                        
+                        <li>已定系统误差：误差绝对值和符号确定</li>
+                        <li>未定系统误差：误差绝对值和符号未定</li>
+                    </ul>
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;按系统误差出现的规律分：
+                    <ul>
+                        <li>不变系统误差：误差绝对值和符号固定</li>
+                        <li>变化系统误差：误差绝对值和符按规律变化</li>
+                    </ul>
+                </li><br>
+                <li>随机误差：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;在同一测量条件下，多次测量同一量值，绝对值和符号以不可预定的方式变化的误差。
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;例如传动部件的间隙和摩擦、连接杆的弹性形变等。
+                </li>
+                <li>粗大误差：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;超出规定条件下预期的误差。
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;例如操作失误或仪器故障等。
+                </li>
+            </ul>
+        </p>
+
+        <h2>第三节 误差的来源与精度</h2>
+        <h3>误差来源</h3>
+        <p>
+            <ul>
+                <li>仪器误差
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;由于仪器的设计、制造和装配校正等方面欠缺所引起的测量误差。
+                    <ul>
+                        <li>标准器件误差</li>
+                        <li>装置误差</li>
+                        <li>附件误差</li>
+                    </ul>
+                </li>
+                <li>方法误差（理论误差）：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;使用测量方法不完善，或采用近似的计算公式等原因引起的误差。
+                </li>
+                <li>环境误差：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;由于测量过程中测量条件的变动所引起的测量误差
+                </li>
+                <li>人为误差：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;由于测量者造成的误差
+                </li>
+            </ul>
+        </p>
+        <h3>精度</h3>
+        <p>
+            <b>精度</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;反映测量结果与真值接近程度的量
+            <ul>
+                <li>正确度：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;反映测量结果中系统误差的影响程度
+                </li>
+                <li>精密度：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;反映测量结果中随机误差的影响程度
+                </li>
+                <li>准确度：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;反映测量结果中随机误差和系统无误综合的影响程度
+                </li>
+            </ul>
+            特点：
+            <ul>
+                <li>精密度与准确度无确定关系</li>
+                <li>正确度高则精密度与准确度都高</li>
+            </ul>
+        </p>
+
+        <h2>第四节 测量的基本问题</h2>
+        <h3>测量与测量过程</h3>
+        <p>
+            <b>测量</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;将被测量与标准量通过一定测量方法进行比较，并确定被测量值大小的实验过程。
+            $$L = ku$$
+            <ul>
+                <li>\(L\)：被测量</li>
+                <li>\(k\)：比值</li>
+                <li>\(u\)：计量单位</li>
+            </ul>
+            <b>测量过程</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;与实施该测量有关的一组互相关联的资源（测量设备、测量程序、操作者、资金、技术等）、活动和影响量
+        </p>
+
+        <h3>测量方法的分类</h3>
+        <p>
+            根据对测量结果获取方式的不同：
+            <ul>
+                <li>直接测量：被测量与该标准量直接进行比较的测量</li>
+                <li>间接测量：通过直接测量与被测参数有一直函数关系的其他量而得到该被测参数量值的测量</li>
+            </ul>
+            根据被测对象在测量过程中所处的状态：
+            <ul>
+                <li>静态测量：在测量过程中被测量是固定不变的测量方式</li>
+                <li>动态测量：被测量在测量期间随实践发生变化的测量方式</li>
+            </ul>
+            根据测量条件是否发生变化：
+            <ul>
+                <li>等权测量：测量过程中，测量仪器、测量方法、测量条件和操作人员都保持不变的测量</li>
+                <li>不等权测量：测量过程中，测量仪器、测量方法、测量条件和操作人员都发生变化的测量</li>
+            </ul>
+            根据被测对象的属性：
+            <ul>
+                <li>电量测量：电子学中有关量的测量</li>
+                <li>非电量测量</li>
+            </ul>
+            根据对测量结果的要求不同：
+            <ul>
+                <li>工作测量：测量误差要求不严的测量</li>
+                <li>精密测量：测量误差要求较高的测量</li>
+            </ul>
+        </p>
+        <h3>测量要素</h3>
+        <ul>
+            <li>测量对象与被测量</li>
+            <li>测量资源（测量设备与辅助设施、测量人员、测量方法等）</li>
+            <li>测量单位</li>
+            <li>测量环境</li>
+            <li>测量结果</li>
+        </ul>
+    </body>
+
+
+</html>

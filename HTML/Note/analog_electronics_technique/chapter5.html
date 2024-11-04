@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>模拟电路</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h2 id="chapter5">第五章 双极结型三极管及其放大电路</h2>
+        <h3>第一节 双极结型三极管（半导体三极管，BJT）</h3>
+    
+        <h4>一、BJT的结构</h4>
+        <p>
+            <br><img src="./img/5.1_BJTstructure.jpg" width="380"><br>
+            发射极的箭头表示发射结外加正偏电压时，发射极电流的实际方向
+            <ul>
+                <li><b>发射区</b>：掺杂浓度最高</li>
+                <li><b>基区</b>：宽度很薄，且掺杂浓度很低</li>
+                <li><b>集电区</b>：集电区掺杂浓度远低于发射区；集电结面积大于发射结面积</li>
+            </ul>
+            <i>可以看出集电区与发射区并不是对称的</i>
+        </p>
+    
+        <p><b>工作状态</b>：BJT内部含有两个背靠背的PN结。当这两个PN结的偏置条件（正偏或反偏）不同时，BJT将呈现不同的特性，共有四种可能的偏置组合：
+        <ul>
+            <li><b>放大</b>：发射结正偏、集电结反偏</li>
+            <li><b>饱和</b></li>
+            <li><b>截止</b></li>
+            <li><b>倒置</b></li>
+        </ul></p>
+        
+        <hr>
+
+        <h4>二、放大状态下BJT的工作原理</h4>
+        <p><b>BJT内部载流子的传输过程</b></p>
+        <p><b>基极无任何连接时</b>：
+            <br><img src="./img/5.1_(2).jpg" width="380"><br>
+            集电极和发射之间相当于两个背靠背的PN结二极管。此时无论c、e间接什么极性的电压，总有一个PN结是反偏的。c、e间都不能导通。</p>
+        <p><b>仅有集电结反偏电压时</b>：集电结少子漂移运动加强，产生<b>漂移电流（集电结反向饱和电流）I<sub>CBO</sub></b></p>
+        <p><b>发射结再加正偏电压时</b>：发射结多子扩散运动加强，高掺杂浓度的发射区向基区注入自由电子（同时极少部分空穴从基区流入发射结），形成发射极电流I<sub>E</sub>。注入基区的自由电子又在集电结电场力作用下漂移到集电区，形成电流I<sub>CN</sub>，I<sub>CN</sub>与I<sub>CBO</sub>共同构成集电极电流I<sub>C</sub>，即\(I_C=I_{CN}+I_{CBO}<\frac{V_{CC}}{R_C}\)</p>
+        <p>发射区注入基区的自由电子，除了被集电区收集外，还有一部分与基区的多子空穴复合，形成基区复合电流\(I_{BN}\)，其与\(I_{CBO}\)一起形成基极电流\(I_B = I_{BN} - I_{CBO}\)</p>
+        <p><b>发射极电流对集电极电流的控制作用</b>：由于集电极掺杂浓度很低，所以漂移电流I<sub>CBO</sub>很小，而I<sub>CN</sub>取决于I<sub>E</sub>的大小</p>
+        <p><b>BJT三个电极的电流关系</b>：\(I_E=I_B+I_C\)</p>
+        
+        <p><b>BJT放大状态下的控制关系</b></p>
+        <p><b>（1）I<sub>E</sub>对I<sub>C</sub>的控制：电流放大系数\(\bar \alpha \rightarrow 1^- \)</b>
+            $$ \begin{align}
+                \bar \alpha &= \frac{I_{CN}}{I_E} = \frac{I_C-I_{CBO}}{I_E}\\
+                I_C &= \bar \alpha I_E + I_{CBO}
+                \end{align}
+            $$
+            由于\(I_C \gg I_{CBO}\)：
+            $$ I_C \approx \bar \alpha I_E $$
+        </p>
+        <p><b>（2）I<sub>B</sub>对I<sub>C</sub>的控制：电流放大系数\(\bar \beta\)</b>
+            $$ \begin{align}
+            \bar \beta &= \frac{I_{CN}}{I_{BN}} = \frac{I_C-I_{CBO}}{I_B+I_{CBO}}\\
+            I_C &= \bar \beta I_B +(1+\bar \beta)I_{CBO}
+            \end{align}
+            $$
+        </p>
+
+        <p><b>BJT的三种组态</b>：
+        <ul>
+            <li>共基极组态</li>
+            <li>共射极组态</li>
+            <li>共集电极组态</li>
+        </ul>
+        <i>某极既在输出回路，又在输出回路，则称为共某极组态</i></p>
+        <i>特别注意：集电极始终不能做输入端子，基极始终不能做输出端子，这是由BJT内部载流子的控制关系决定的</i>
+
+        <hr>
+
+        <p><b>三、BJT的I-V特性曲线</b></p>
+        <p><b>共射极连接时的I-V特性曲线</b>：</p>
+        <img src="./img/5.2.3.1_IV.jpg" width="500">
+        <p>（1）输入特性：\(i_B = f(v_{BE})|_{v_{CE} = 常数}\)</p>
+        <p>特点：
+        <ul>
+            <li>\(v_{CE}\)增大，曲线会向右移动：\(v_{CE}\)增大时，\(I_{CBO}\)增大，要使\(i_b\)保持不变，只能使\(v_{BE}\)增大进而使\(I_{BN}\)增大</li>
+            <li>当\(v_{CE}\geq 1\)时，曲线基本不变：当\(v_{CE}\)足够大时，集电区对基区自由电子吸引能力已达峰值，无法再增加</li>
+        </ul></p>
+        <p>（2）输出特性：\(i_c=f(v_{CE})|_{i_B=常数}\)</p>
+        <p><ul>
+            <li>放大区：\(i_B=0\)上方特性曲线基本水平的区域就是放大区。此时发射结正偏电压大于开启电压，而集电结反偏，\(i_C\)主要受\(i_B\)控制，\(i_C = \bar\beta i_B\)。</li>
+            <li>饱和区：横轴左侧特性曲线快速上升的区域是饱和区。\(i_C\)与\(i_B\)不成比例，\(u_{CE}\)很小，集电结正偏。\(i_C = \frac{V_{CC}-u_{CE}}{R_C}\)，\(u_{CE}\)很小时\(i_C\)很难达到临界值。</li>
+            <li>截止区：该区域内发射结偏置电压小于PN结开启电压，BJT无法导通，\(i_B=0\)。此时对于小功率管\(i_C=I_{CEO}\approx 0\)</li>
+        </ul></p>
+
+        <h3>第二节 BJT放大电路</h3>
+        <h4>一、基本共射极放大电路</h4>
+        <p>
+            结构：
+            <br><img src=".\img\Common_emitter_amplifier_circuit.jpg" width="380"><br>
+            分析：
+            <br>
+            \(R_b\)是一个限流电阻，防止电流过大使BJT损坏
+            <br>
+            基本共射极放大电路中，交流量、直流量共存。分析时，先确定直流量，后分析交流性能。
+        </p>
+        <p><b>直流量分析</b>：令\(v_s=0\)，通过直流通路求得电路的静态工作点\(Q\)（\(I_{BQ}、I_{CQ}、V_{CEQ}、V_{BEQ}\)）
+            <br>
+            规定硅管的\(V_{BEQ}=0.7\)V，锗管\(V_{BEQ}=0.2\)V
+            <ol>
+                <li>由基极-发射极回路：
+                    $$ I_{BQ} = \frac{V_{BB}-V_{BEQ}}{R_b} $$</li>
+                <li>由BJT放大区的控制关系：
+                    $$ I_{CQ} = \beta I_{BQ} $$</li>
+                <li>由集电极-发射极回路：
+                    $$ V_{CEQ} = V_{CC}-I_{CQ}R_c $$</li>
+            </ol>
+        </p>
+        <p><b>交流性能分析</b>：\(v_s\neq0\)时，BJT各极电流电压都在Q点的基础上随输入信号作相应变化。
+            <ol>
+                <li>信号源：
+                    $$ v_{BB} = V_{BB}+v_s $$</li>
+                <li>电阻R<sub>b</sub>：
+                    $$ i_B = I_{BQ}+i_b $$</li>
+                <li>电阻R<sub>c</sub>：
+                    $$ i_c = \beta i_b $$</li>
+                    $$ i_C = I_{CQ}+i_c $$
+            </ol>
+        </p>
+        <h4>二、BJT放大电路的图解分析</h4>
+    
+        <h4>三、BJT的小信号模型</h4>
+        <p><b>（一）H参数小信号模型（混合参数模型）</b></p>
+        <p>由BJT的输入、输出曲线写出如下两个方程：
+            $$\begin{cases}\begin{align}
+            v_{BE} &= f_1(i_B,v_{CE})\\
+            i_C &= f_2(i_B,v_{CE})
+            \end{align}\end{cases}$$
+            小信号模型指BJT在交流低频小信号工作状态下的模型，这时考虑的是电压、电流间的微变关系。为此，对上两式取全微分：
+            $$\begin{cases}\begin{align}
+            dv_{BE} &= \frac{\partial v_{BE}}{\partial i_B}|_{V_{CEQ}}di_B+\frac{\partial v_{BE}}{\partial v_{CE}}|_{I_{BQ}}dv_{CE}\\
+            di_C &= \frac{\partial i_C}{\partial i_B}|_{V_{CEQ}}di_B+\frac{\partial i_C}{\partial v_{CE}}|_{I_{BQ}}dv_{CE}
+            \end{align}\end{cases}$$
+            $$\begin{cases}\begin{align}
+            v_{BE} &= h_{ie}i_b + h_{re}v_{ce}\\
+            i_C &= h_{fe}i_b + h_{oe}v_{ce}
+            \end{align}\end{cases}$$
+            式中，\(h_{ie}\)、\(h_{re}\)、\(h_{fe}\)、\(h_{oe}\)即为<b>H参数</b>。
+        </p>
+        <p>\(h_{ie}=\frac{\partial v_{BE}}{\partial i_B}|_{V_{CEQ}}=r_{be}(\Omega)\)：BJT输出端交流短路（即\(v_{ce}=0,v_{CE}=V_{CEQ}\)）时的输入电阻，即小信号作用下b-e极间的交流电阻</p>
+        <p>\(h_{re}=\frac{\partial v_{BE}}{\partial v_{CE}}|_{I_{BQ}}\)（无量纲）：BJT输入端交流开路（即\(i_b=0,i_B=I_{BQ}\)）时的反向电压传输比。反映了BJT输出回路电压\(v_{CE}\)对输入回路电压\(v_{BE}\)的影响程度</p>
+        <p>\(h_{fe}=\frac{\partial i_C}{\partial i_B}|_{V_{CEQ}}\)（无量纲）：BJT输出端交流短路时的正向电压传输比，或电流放大倍数，即β</p>
+        <p>\(h_{oe}=\frac{\partial i_C}{\partial v_{CE}}|_{I_{BQ}}=\frac{1}{r_{ce}}(S)\)：BJT输入端交流开路时的输出电导。是放大区输出特性曲线的斜率，反映了电压\(v_{CE}\)对电流\(i_C\)的影响程度。</p>
+        <i>由于四个H参数的量纲各不相同，故称为混合参数</i>
+        <br><img src=".\img\5.2.3.1_model.jpg" width="380"><br>
+        <p><b>（二）小信号模型的简化</b></p>    
+
+    </body>
+
+</html>

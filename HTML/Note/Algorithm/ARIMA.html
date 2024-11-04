@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>算法</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>时间序列模型</h1>
+
+        <h2>时间序列</h2>
+        <p>
+            <b>时间序列数据</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;按照时间顺序排列的一组数据。
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;对同一对象在不同时间连续观察所得到的数据，包含时间要素与数值要素。
+        <ul>
+            <li>时期时间序列：数值要素反映现象在一定时期内发展的结果
+                <br>例：我国历年的GDP数据
+            </li>
+            <li>时点时间序列：数值要素反映现象在一定时点上的瞬间水平
+                <br>例：每隔一小时测得的温度数据
+            </li>
+        </ul>
+        特点：时期时间序列可以累加、时点时间序列不可累加
+        </p>
+        <h2>自回归模型（AR Model，Auto-Regression Model）</h2>
+        <h3>介绍</h3>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;如果一个单变量时序数据\(y_t\)可以以此时序数据本身的多个时刻之前的点的值来进行回归，称这种情况为自回归，公式如下：
+            $$y_t = \alpha_1y_{t-1} + \alpha_2y_{t-2} + \cdots + \alpha_py_{t-p}+\omega$$
+            &nbsp;&nbsp;&nbsp;&nbsp;这里的\(p\)称为AR模型的阶数，记作AR(\(p\))，\(\alpha\)是系数项，\(\omega\)是白噪声
+        <h2>差分自回归移动平均模型（ARIMA Model）</h2>
+        <h3>介绍</h3>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;ARIMA模型是自回归模型（AR）、移动平均模型（MA）与差分法的结合体
+            <br>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;ARIMA（\(p,d,q\)）中，\(p\)是自回归项、\(q\)为移动平均项数、\(d\)为时间序列平稳时所做的差分次数
+
+            <br>
+            <br><b>平稳性</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;经由样本时间序列所得的你和曲线在未来一段时间仍能按现有形态延续下去的性质
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;要求序列的均值和方差不发生明显变化
+            <ul>
+                <li>严平稳：序列所有的统计性质都不随时间的推移而发生变化</li>
+                <li>宽平稳（弱平稳、二阶平稳、协方差平稳）：序列的期望与相关系数不变，也就是说t时刻的值依赖于过去的信息</li>
+            </ul>
+
+            <br>
+        </p>
+        <h3>流程</h3>
+        <ol>
+            <li>进行平稳性检验，对于非平稳时间序列进行d阶差分使其平稳</li>
+            <li>对平稳时间序列求自相关系数和偏自相关系数，进行分析得到最佳阶数p、q</li>
+            <li>由以上参数d、q、p构建ARIMA模型</li>
+        </ol>
+
+        <h3>平稳性检验</h3>
+        <ul>
+            <li>DF检验</li>
+            <li>ADF检验</li>
+        </ul>
+        <p><b></b></p>
+
+
+        <hr>
+        <p>回归模型
+            <ul>
+                <li>静态模型：解释变量与被解释变量是同期的
+                    <br>例如：\(Y_t = \alpha + \beta X_t + \epsilon_t~~~t = 1,\cdots,T\)
+                </li>
+                <li>动态模型：解释变量包含被解释变量的滞后项
+                    <br>例如：\(Y_t = \alpha + \beta X_t + \gamma Y_{t-1} + \epsilon_t~~~t=1,\cdots,T\)
+                </li>
+                <li>有限分布滞后模型：解释变量既包含同期，又包含有限的滞后期
+                    <br>例如：\(Y_t = \alpha + \beta_1 X_t + \beta_2 X_{t-1} + \epsilon_t~~~t=1,\cdots,T\)
+                </li>
+                <li>动态有限分布滞后模型：解释变量既包含同期，又包含有限的滞后期，还包含被解释变量的滞后项
+                    <br>例如：\(Y_t = \alpha + \beta_1 X_t + \beta_2 X_{t-1} + \gamma Y_{t-1} + \epsilon_t~~~t=1,\cdots,T\)
+                </li>
+            </ul>
+        </p>
+
+
+
+        <hr>
+        <p>
+            典型的非平稳序列：
+            <ul>
+                <li>随机游走过程</li>
+                <li>随机趋势过程</li>
+                <li>趋势非平稳过程</li>
+            </ul>
+        </p>
+
+        <p><b>随机游走过程</b>：
+        <br>定义：
+        $$\{Y_t\}:Y_t = Y_{t-1}+\epsilon_t$$
+        其中\(\epsilon_t\)为白噪声过程
+        $$\begin{align}
+        Y_t &= Y_{t-1} + \epsilon_t\\
+        &= Y_{t-2} + \epsilon_{t-1} + \epsilon_t\\
+        &= \cdots \\
+        &= Y_0 + \mathop{\sum}_{i=0}^{t-1}\epsilon_{t-i}
+        \end{align}$$
+        </p>
+
+        <p><b>随机趋势过程</b>：
+        <br>定义：
+        $$\{Y_t\}:Y_t = \alpha + Y_{t-1} + \epsilon_t(\alpha\neq 0)$$
+        随机趋势过程即为随机游走过程加一非零常数项
+        $$\begin{align}
+        Y_t &= \alpha + Y_{t-1} + \epsilon_t\\
+        &= \alpha + \alpha + Y_{t-2} + \epsilon_{t-1} + \epsilon_t\\
+        &= \cdots \\
+        &= t\alpha + Y_0 + \mathop{\sum}_{i=0}^{t-1}\epsilon_{t-i}
+        \end{align}$$
+        </p>
+        </p>
+    </body>
+
+</html>

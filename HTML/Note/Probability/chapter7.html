@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>概率论</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+    <div class="header"><h1>不惑</h1></div>
+    <ul class="navibar">
+        <li><a href="../../Home.html">主页</a></li>
+        <li><a href="../../Navigation.html">导航</a></li>
+    </ul>
+
+<body>
+<h1>第七章 参数估计</h1>
+<h2>第一节 点估计</h2>
+<h3>1、矩估计</h3>
+<p>$$\mu_k = E(x^k)\Rightarrow \begin{cases}
+    \hat{\mu} = \bar{X}\\
+    \hat{\sigma^2} = B_2
+    \end{cases}$$
+&nbsp;&nbsp;&nbsp;&nbsp;即样本均值等于总体均值；样本方差等于总体二阶中心矩
+<br>&nbsp;&nbsp;&nbsp;&nbsp;证明如下：
+$$\begin{cases}
+\mu_1 = E(X) = \mu\\
+\mu_2 = E(X^2) = D(X) + E^2(X) = \sigma^2 + \mu^2
+\end{cases}\\
+$$
+$$
+\therefore
+\begin{cases}
+\begin{align}
+\mu&= \frac1n \mathop{\sum}\limits_{i=1}^nX_i\\
+\sigma^2 + \mu^2&= \frac1n\mathop{\sum}\limits_{i=1}^nX_i^2, 
+\end{align}\end{cases}\\
+$$
+&nbsp;&nbsp;&nbsp;&nbsp;解得矩估计量为：
+$$
+\\
+
+\hat \mu =  \frac1n \mathop{\sum}\limits_{i=1}^nX_i = \bar X\\
+
+\begin{align}\hat \sigma^2 
+&= \frac1n\mathop{\sum}\limits_{i=1}^nX_i^2 - \mu\\
+&= \frac1n\mathop{\sum}\limits_{i=1}^nX_i^2 - \bar X^2\\
+&= \frac1n\mathop{\sum}\limits_{i=1}^nX_i^2 - 2\bar X^2 + \bar X^2\\
+&= \frac1n\mathop{\sum}\limits_{i=1}^nX_i^2 - \frac1n\mathop{\sum}\limits_{i=1}^n2\bar XX_i + \frac1n\mathop{\sum}\limits_{i=1}^n\bar X^2\\
+&= \frac1n\mathop{\sum}\limits_{i=1}^n(X_i - \bar X)^2\\
+&= B_2
+
+\end{align}
+$$
+</p>
+
+<hr>
+<p>\(X\sim U(a,b)\)：
+$$E(X) = \frac{a+b}{2} = \bar X\\
+D(X) = \frac{(b-a)^2}{12} = B_2\\
+\therefore \begin{cases}
+\hat a = \bar X - \sqrt{3B_2}\\
+\hat b = \bar X + \sqrt{3B_2}
+\end{cases}$$
+
+</p>
+<hr><hr>
+<h3>2、最大似然估计</h3>
+<p>离散型随机变量：
+
+
+    <h2>第二节 估计量的评价标准</h2>
+    <p>
+        <b>无偏性</b>：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;对\(\forall\theta\)，满足\(E(\hat \theta) = \theta\)，称\(\hat\theta\)为\(\theta\)的无偏估计。
+        <br>
+        <br><b>有效性</b>：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;若\(D(\hat\theta_1) < D(\hat\theta_2)\)，则称\(\hat\theta_1\)比\(\hat\theta_2\)更有效。
+    </p>
+</p>
+
+<h2>第三节 区间估计</h2>
+<p>
+<b>置信度为\(1-\alpha\)的置信区间</b>：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;满足\(P\{\hat{\theta_1}<\theta<\hat{\theta_2}\} = 1-\alpha\)的区间\((\hat{\theta_1}, \hat{\theta_2})\)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;表明置信区间\((\hat{\theta_1}, \hat{\theta_2})\)内包含\(\theta\)的概率为\(1-\alpha\)
+
+</p>
+
+<h2>第四节 正态总体均值的区间估计</h2>
+<p>
+    1、\(\sigma\)已知：
+    $$\bar X\sim N(\mu,\sigma/\sqrt n)$$
+    $$\frac{\bar X-\mu}{\sigma/\sqrt{n}}\sim N(0,1)$$
+    $$P\{|\frac{\bar X-\mu}{\sigma/\sqrt{n}}|\leq z_{\frac \alpha 2}\} = 1 - \alpha$$
+    置信区间：\([\bar X - \frac{\sigma}{\sqrt n}z_{\frac \alpha 2}, \bar X + \frac{\sigma}{\sqrt n}z_{\frac \alpha 2}]\)
+    <br>2、\(\sigma\)未知：
+    $$P\{|\frac{\bar X-\mu}{S/\sqrt{n}}|\leq t_{\frac \alpha 2}(n-1)\} = 1 - \alpha$$
+    置信区间：\([\bar X - \frac{S}{\sqrt n}t_{\frac \alpha 2}(n-1), \bar X + \frac{S}{\sqrt n}t_{\frac \alpha 2}(n-1)]\)
+</p>
+
+<h2>单侧置信区间</h2>
+<p>
+    \(\mu\)置信度为\(1-\alpha\)的单侧置信区间：
+    $$[\bar X - \frac{S}{\sqrt n}t_\alpha(n-1),+\infty)$$
+</p>
+</body>
+
+</html>

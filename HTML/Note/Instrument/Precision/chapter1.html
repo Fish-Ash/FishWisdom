@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>互换性</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第二章 尺寸精度与检测</h1>
+        <h2>第一节 基本属于及定义</h2>
+        <h3>尺寸</h3>
+        <table>
+            <tr>
+                <td></td>
+                <td>孔</td>
+                <td>轴</td>
+            </tr>
+            <tr>
+                <td>公称尺寸</td>
+                <td>\(D\)</td>
+                <td>\(d\)</td>
+            </tr>
+            <tr>
+                <td>上极限尺寸</td>
+                <td>\(D_{max}\)</td>
+                <td>\(d_{max}\)</td>
+            </tr>
+            <tr>
+                <td>下极限尺寸</td>
+                <td>\(D_{min}\)</td>
+                <td>\(d_{min}\)</td>
+            </tr>
+            <tr>
+                <td>实际尺寸</td>
+                <td>\(D_a\)</td>
+                <td>\(d_a\)</td>
+            </tr>
+            <tr>
+                <td>上偏差</td>
+                <td>\(ES\)</td>
+                <td>\(es\)</td>
+            </tr>
+            <tr>
+                <td>下偏差</td>
+                <td>\(EI\)</td>
+                <td>\(ei\)</td>
+            </tr>
+            <tr>
+                <td>公差</td>
+                <td>\(T_h\)</td>
+                <td>\(T_s\)</td>
+            </tr>
+        </table><br>
+
+        <table>
+            <tr>
+                <td class="tbtitle"><b>孔</b></td>
+                <td class="tbtext">圆柱工件的内尺寸要素，包括非圆柱形的内尺寸要素（如键槽的宽度表面）</td>
+            </tr>
+            <tr>
+                <td class="tbtitle"><b>轴</b></td>
+                <td class="tbtext">圆柱工件的外尺寸要素，包括非圆柱形的外尺寸要素（如平键的宽度表面）</td>
+            </tr>
+        </table><br>
+
+        <b>尺寸要素</b>
+        <p>用于表达理想要素参数方程的<b>线性尺寸</b>或<b>角度尺寸</b>。</p>
+
+        <table>
+            <tr>
+                <td class="tbtitle"><b>尺寸<br>（线性尺寸）</b></td>
+                <td class="tbtext" colspan="3">表示几何要素特征的尺寸要素，通过两点法测量得到的两点之间的距离。</td>
+            </tr>
+            <tr>
+                <td class="tbtitle" rowspan="2"><b>公称尺寸</b></td>
+                <td class="tbtext" colspan="3">由图样规范定义的理想形状要素的尺寸，设计时给定。</td>
+            </tr>
+            <tr>
+                <td class="tbtext" colspan="3">是根据零件的强度、刚度等的计算和结构的设计确定的，应依据<span lang="en">GB/T 2822-2005</span>《标准尺寸》化整为优先数。</td>
+            </tr>
+            <tr>
+                <td class="tbtitle" rowspan="2"><b>极限尺寸</b></td>
+                <td class="tbtext" rowspan="2">尺寸所允许的极限值，设计时给定</td>
+                <td class="tbtitle">上极限尺寸</td>
+                <td class="tbtext">尺寸所允许的最大值</td>
+            </tr>
+            <tr>
+                <td class="tbtitle">下极限尺寸</td>
+                <td class="tbtext">尺寸所允许的最小值</td>
+            </tr>
+            <tr>
+                <td class="tbtitle" rowspan="2"><b>实际尺寸</b></td>
+                <td class="tbtext" colspan="3">零件加工后的实际表面通过测量获得的尺寸，再通过拟合操作，从非理想表面模型或实际要素中建立理想尺寸要素</td>
+            </tr>
+            <tr>
+                <td class="tbtext" colspan="3">合格条件：\(\begin{cases}D_{min}\leq D_a\leq D_{max}\\d_{min}\leq d_a\leq d_{max}\end{cases}\)</td>
+            </tr>
+        </table><br>
+
+        
+        <table>
+            <tr>
+                <td>正偏差</td>
+                <td class="tbtitle" rowspan="3"><b>偏差（尺寸偏差）</b></td>
+                <td class="tbtext" rowspan="3">某尺寸减公称尺寸的代数差。</td>
+                <td class="tbtitle" rowspan="2"><b>极限偏差</b></td>
+                <td class="tbtitle"><b>上偏差<br>（上极限偏差）</b></td>
+                <td class="tbtext">上极限尺寸减去公称尺寸所得的代数差。$$\begin{cases}ES = D_{max} - D\\es = d_{max} - d\end{cases}$$</td>
+            </tr>
+            <tr>
+                <td>负偏差</td>
+                <td class="tbtitle"><b>下偏差<br>（下极限偏差）</b></td>
+                <td class="tbtext">下极限尺寸减去公称尺寸所得的代数差。$$\begin{cases}EI = D_{min} - D\\ei = d_{min} - d\end{cases}$$</td>
+            </tr>
+            <tr>
+                <td>零偏差</td>
+                <td class="tbtitle"><b>实际偏差</b></td>
+                <td class="tbtext" colspan="2">实际尺寸减去公称尺寸所得的代数差。</td>
+            </tr>
+        </table>
+        
+    </body>
+
+</html>

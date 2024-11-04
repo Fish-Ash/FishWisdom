@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+<meta charset="utf-8">
+<title>应用光学</title>
+<link rel="stylesheet" href="../../../CSS/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+<body>
+<div class="header"><h1>不惑</h1></div>
+
+
+<ul class="navibar">
+<li><a href="../../Home.html">主页</a></li>
+<li><a href="../../Navigation.html">导航</a></li>
+</ul>
+<h1>第六章 光线的光路计算及像差理论</h1>
+<h2>第一节 概述</h2>
+<p><b>像差</b>：实际像与理想像之间的差异。
+<ul>
+    <li>几何像差：
+        <ul>
+            <li>单色像差：单色光成像产生的像差。
+                <ul>
+                    <li>球差</li>
+                    <li>彗差（正弦差）</li>
+                    <li>像散</li>
+                    <li>场曲</li>
+                </ul>
+            </li>
+            <li>色差：不同色光的成像差异
+                <ul>
+                    <li>位置色差</li>
+                    <li>倍率色差</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>波像差（波差）：实际波面与理想球面的偏差</li>
+</ul>
+</p>
+
+<p><b>像差校正的谱线选择</b>：
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;谱线选择主要取决于光能接收器的光谱特性
+    <br>
+    <br>基本原则：
+    <ul>
+        <li>对光能接收器的最灵敏的谱线校正单色像差</li>
+        <li>对接收器所能接收的波段范围两边缘附近的谱线校正色差</li>
+        <li>接收器的光谱特性直接受光源和光学系统的材料限制，设计时应使三者的性能匹配好，尽可能使光源辐射的波段与最强谱线、光学系统透过的波段与最强谱线和接收器所能接收的波段与灵敏谱线三者对应一致。</li>
+    </ul>
+</p>
+
+<p>几种光学系统的像差校正：
+    <ul>
+        <li>目视光学系统：
+            <ul>
+                <li>接收器：人眼</li>
+                <li>最灵敏波长：\(\lambda=555nm\)</li>
+                <li>单色像差校正：靠近灵敏波长的D光（589.3nm）或e光（546.1nm）</li>
+                <li>校正色差：靠近可见区两端的F光（486.1nm）和C光（656.3m'm）</li>
+                <li>阿贝数：\(\nu_D = (n_D -1)/(n_F - n_C)\)</li>
+            </ul>
+        </li>
+        <li>普通照相系统</li>
+        <li>近红外和近紫外的光学系统</li>
+        <li>其他光学系统</li>
+    </ul>
+</p>
+
+<h2>第二节 光线的光路计算</h2>
+
+<h2>第三节 轴上点的球差</h2>
+<p><b>球差（轴向球差、\(\delta L'\)）</b>：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;轴上点发出的同心光束经光学系统后，不再是同心光束。不同入射高度\(h(U)\)的光线经过光学系统后交光轴于不同位置，相对理想像点有不同程度的偏离，称这种偏离为轴向球差。
+$$\delta L' = L' - l'$$
+&nbsp;&nbsp;&nbsp;&nbsp;其中\(L'\)为实际像距，\(l'\)为理想相距。
+<br>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;球差与孔径的位置无关，与孔径的大小有关，一般随孔径的增大而增大。
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;球差是轴上点成像存在的唯一一种单色像差
+
+<br>
+<br>球差的校正：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;通常对边缘光线校正球差
+<br>&nbsp;&nbsp;&nbsp;&nbsp;单正透镜产生负球差、单负透镜产生负球差
+<br>&nbsp;&nbsp;&nbsp;&nbsp;对于共轴球面系统，单透镜本身不能校正球差，正负透镜相结合有可能校正球差
+</p>
+
+
+
+<h2>正弦差</h2>
+<p>
+    <ul>
+        <li>大视场大孔径的光学系统：五种单色像差同时存在。</li>
+        <li>小视场光学系统：像散、场曲、畸变很小，只需考虑球差、彗差、位置色差。</li>
+        <li>小视场光学系统比较简单，一般用正弦差表示。</li>
+    </ul> 
+</p>
+
+<p><b>正弦条件</b>：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;轴上点及其垂轴平面内的邻近点成完善像的条件。
+$$\beta = \frac{n\sin U}{n' \sin U'}或f' = \frac{h}{\sin U'}$$
+&nbsp;&nbsp;&nbsp;&nbsp;满足正弦条件的成像被称为<b>不晕成像</b>。
+</p>
+
+<p><b>不晕点（齐明点）</b>：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;轴上点校正了球差并满足正弦条件的一对共轭点。
+<ul>
+<li>物点与球面顶点重合</li>
+<li>物点位于球面球心</li>
+<li>\(L = \frac{n+n'}{n}r, L' = \frac{n+n'}{n'}r\)</li>
+</ul>
+</p>
+
+<p><b>正弦条件的偏离程度</b>：
+$$\delta \beta = \frac{n\sin U}{n'\sin U'}或\delta f' = \frac{h}{\sin U} - f'$$
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>即使校正了球差，也会因存在彗差而不满足正弦条件。</i>
+</p>
+
+<p><b>赫歇尔条件</b>：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;轴上点及其沿光轴方向的邻近点成完善像的条件。
+$$n'y'\sin \frac12 U' = ny\sin \frac12U$$
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>正弦条件与赫歇尔条件无法满足，即<b>任何光学系统都不可能对空间物体成完善像</b>。</i>
+</p>
+
+
+<p><b>等晕条件</b>：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;轴外近轴点与轴上点具有相同的球差，且轴外光束不失对称性（即无彗差）。
+<br><b>等晕成像</b>：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;轴外点与轴上点具有相同成像缺陷的现象。
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>轴上点即使校正了球差，也还有剩余球差存在。</i>
+</p>
+
+<p><b>正弦差（相对弧矢彗差）</b>：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;若系统存在彗差，则不满足等晕条件，前后弧矢光线交点不交于主光线上。用
+$$SC' = \frac{K_S'}{A'B'}\approx \frac{K_S'}{y'}$$表示系统对等晕条件的偏离程度。
+<br>&nbsp;&nbsp;&nbsp;&nbsp;正弦差不是七种基本像差之一，通常用于表示小视场光学系统的彗差。
+
+$$SC' = \frac1\beta\frac{n\sin U}{n'\sin U'}- \frac{\delta L'}{L'-l_z'}-1 = \frac{h}{f'\sin U'}-\frac{\delta L'}{L'-l_z'}-1$$
+<table>
+    <tr>
+        <td colspan="2">\(SC' = 0\)</td>
+    </tr>
+    <tr>
+        <td>\(\delta L' \neq 0\)</td>
+        <td>\(\delta L' = 0\)</td>
+    </tr>
+    <tr>
+        <td>等晕条件</td>
+        <td>正弦条件</td>
+    </tr>
+</table>
+</p>
+
+
+<p><b>像散</b>
+<br>产生原因：
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;轴外点波面到达球面后，上下前后发生折射有时间差
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;像散与视场大小和光阑位置有关，光阑位于球心时，像散为0
+</p>
+
+<p><b>场曲</b>
+<br>产生原因:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;场曲是由球面本身的特性决定的，只要使用球面，就会存在场曲
+</p>
+
+<h2>第七节 色差</h2>
+<p>
+    定义：
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;各种色光之间成像位置和成像大小的差异
+    <br>
+    产生原因：
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;光学材料对不同波长的色光有不同的折射率
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;由于反射定律适用于所有波长的光，反射镜不产生色差。
+
+</p>
+
+
+<p><b>位置色差（轴向色差）(\(\Delta L_{FC}'\))</b>：
+<br>定义：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;轴上点两种色光成像的位置差异
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;轴上点白光成像，形成按色光波长由短到长，像点离透镜由近及远地排列在光轴上的现象。
+$$\phi = (n-1)(\rho_1 - \rho_2)$$
+<br>危害：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;轴上点成像为一种彩色弥散斑，影响成像清晰度。
+<br>校正：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;单透镜不能校正色差，单正透镜具有负色差，单负透镜具有正色差。
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<b>双胶合薄透镜组消色差条件：
+    $$h^2(\Phi_1/\nu_1 + \Phi_2/\nu_2)=0\\
+    \Phi_1 + \Phi_2 = \Phi$$
+</b>
+<table>
+    <tr>
+        <td colspan="3">\(\Delta l_{FC}'\)</td>
+    </tr>
+    <tr>
+        <td>\(< 0\)</td>
+        <td>\(= 0\)</td>
+        <td>\(> 0\)</td>
+    </tr>
+    <tr>
+        <td>校正不足</td>
+        <td>消色差</td>
+        <td>校正过度</td>
+    </tr>
+</table>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;校正了色差的系统被称为<b>消色差系统</b>。
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;通常，消色差系统只对0.707孔径光校正色差，带光消色差后，
+</p>
+
+
+
+<p><b>倍率色差</b>：
+    <br>定义：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;光学系统对不同色光的放大率差异
+<br>&nbsp;&nbsp;&nbsp;&nbsp;轴外点发出的两色光主光线在消单色光像差普贤的高斯像面上的交点高度之差，以长波长色光的交点高为基准，体现了光学系统对不同色光的放大率差异。
+</p>
+
+<h2>波像差</h2>
+<p>
+    小像差系统：望远物镜、显微物镜
+    <br>小像差系统的成像标准（瑞利判据）：当光学系统的最大波像差小于1/4波长时，成像质量好；小于1/10波长时，成完善像。
+</p>
+</body>
+
+</html>

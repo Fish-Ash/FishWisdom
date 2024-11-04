@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>应用光学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第二章 光学薄膜特性的理论计算</h1>
+
+        <h2>对电场矢量正方向的规定</h2>
+        <img src="./img/PDitectE.png" width="400">
+        <p>应用<span class="tip">边界条件<span class="tiptext">$$E_{1t} = E_{2t}\\H_{1t} = H_{2t}$$</span></span>，得：</p>
+        $$\mathbf{E_1} = \mathbf{E}_1^+ = \mathbf{E}_0^- + \mathbf{E}_0^-$$
+        $$\mathbf{H_1} = \mathbf{H}_1^+ = \mathbf{H}_0^- + \mathbf{H}_0^-$$
+        注：此处为矢量和。
+
+        <p>设\(\mathbf{E_{1t}}\)为在界面\(t\)上的\(\mathbf{E_1}\)。</p>
+        $$\begin{cases}
+        E_0 = E_0^+ + E_0^- = E_{11}^+ + E_{11}^-\\
+        H_0 = H_0^+ + H_0^- = \eta_1E_{11}^+ - \eta_1E_{11}^-
+        \end{cases}$$
+        $$\because\begin{cases}
+        E_{12}^+ = e^{-i\delta_1}E_{11}^+\\
+        E_{12}^- = e^{i\delta_1}E_{11}^-
+        \end{cases}$$
+        $$\therefore\begin{cases}
+        E_0 = e^{i\delta_1}E_{12}^+ + e^{-i\delta_1}E_{12}^-\\
+        H_0 = \eta_1e^{i\delta_1}E_{12}^+ + \eta_1e^{-i\delta_1}E_{12}^-  
+        \end{cases}$$
+        $$\begin{bmatrix}
+        E_0\\
+        H_0
+        \end{bmatrix}=
+        \begin{bmatrix}
+        e^{i\delta_1} & e^{-i\delta_1}\\
+        \eta_1e^{i\delta_1} & -\eta_1e^{-i\delta_1}
+        \end{bmatrix}
+        \begin{bmatrix}
+        E_{12}^+\\
+        E_{12}^-
+        \end{bmatrix}
+        $$
+
+
+        $$\begin{align}
+        \begin{bmatrix}E_0\\H_0\end{bmatrix}
+        &=\begin{bmatrix}
+        e^{i\delta_1} & e^{-i\delta_1}\\
+        \eta_1e^{i\delta_1} & -\eta_1e^{-i\delta_1}
+        \end{bmatrix} 
+        \begin{bmatrix}
+        \frac{1}{2} & \frac{1}{2\eta_1}\\
+        \frac{1}{2} & -\frac{1}{2\eta_1}
+        \end{bmatrix}
+        \begin{bmatrix}E_2\\H_2\end{bmatrix}\\
+        &=\begin{bmatrix}
+        \cos\delta_1 & \frac{i}{\eta_1}\sin\delta_1\\
+        i\eta_1\sin\delta_1 & \cos\delta_1
+        \end{bmatrix}
+        \begin{bmatrix}E_2\\H_2\end{bmatrix}
+        \end{align}$$
+
+        $$\because $$
+
+        <b>薄膜的特征矩阵</b>
+        $$\begin{bmatrix}
+        \cos\delta_1 & \frac{i}{\eta_1}\sin\delta_1\\
+        i\eta_1\sin\delta_1 & \cos\delta_1
+        \end{bmatrix}$$
+
+        <b>速写符号</b>
+        <table>
+            <tr>
+                <td lang="en">H</td>
+                <td>高折射率的\(1/4\)波长膜层</td>
+            </tr>
+            <tr>
+                <td lang="en">L</td>
+                <td>低折射率的\(1/4\)波长膜层</td>
+            </tr>
+            <tr>
+                <td lang="en">M</td>
+                <td>中间折射率的\(1/4\)波长膜层</td>
+            </tr>
+        </table>
+    </body>
+
+</html>

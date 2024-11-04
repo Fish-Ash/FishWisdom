@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>机械原理</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第七章 机械的运转及其速度波动的调节</h1>
+        <h2>第一节 概述</h2>
+        <h3>一、机械运转的三个阶段</h3>
+        <p><ul>
+            <li>起动阶段：\(W_d = W_r' + E\)</li>
+            <li>稳定运转阶段：\(W_d = W_r'\)</li>
+            <li>停车阶段：\(E = -W_r'\)</li>
+        </ul></p>
+        <h3>二、作用在机械上的驱动力和阻力</h3>
+        <p>当构件的重力以及运动副中的摩擦力等可以忽略不计时，作用在机械上的力只有原动机发出的驱动力以及执行构件上承受的工作阻力。它们随机械工况的不同以及所使用的原动机的不同而不同。</p>
+        <p><b>原动机的机械特性</b>：各种原动机的作用力（或力矩）与其运动参数（位移、速度）之间的关系</p>
+
+        <h2>第二节 机械的运动方程式</h2>
+        <h3>一、机械运动方程的一般表达式</h3>
+        <p><b>机械的运动方程</b>：作用在机械上的力、构件的质量、转动惯量和其运动参数之间的函数关系。</p>
+        <p><b>广义坐标</b>：能用来完全确定机械系统运动的某一组独立坐标。</p>
+        <p><b>系统的自由度数目</b>：完全确定系统运动所需的独立坐标数目。</p>
+        <p>建立运动方程的方法：
+            <ol>
+                <li>确定活动构件及其运动方式（转动、平动、转动+平动）</li>
+                <li>\(dE = dW = \sum(\frac{J\omega^2}{2}) + \sum(\frac12mv^2)\)</li>
+            </ol>
+        </p>
+
+        <p>由输出力矩图求飞轮转动惯量：
+            <ol>
+                <li>求等效阻力矩：\(W_r\times T = \sum W_{di}t_i\)</li>
+                <li>根据等效阻力矩求各个时间段内的功\(W = Ft = (W_d - W_r)t\)</li>
+                <li>由0开始累加力，找到\(E_{max}\)与\(E_{min}\)的点</li>
+                <li>求\(\Delta W_{max} = E_{max} - E_{min}\)</li>
+                <li>飞轮的转动惯量\(J_F = \frac{900\Delta W_{max}}{\pi^2n^2\delta}\)</li>
+            </ol>
+            速度波动系数：\(\delta = \frac{\omega_{max} - \omega_{min}}{\omega_m} = \frac{\Delta W_{max}}{(J_F + J_e)\omega_m^2}\)
+            <br>
+            平均转速：\(n_m = \frac{n_{max}+n_{min}}{2}\)
+            <br>
+            最大转速：\(n_{max} = n_m(\delta/2 + 1)\)
+            <br>最小转速：\(n_{min} = n_m(\delta/2 - 1)\)
+        </p>
+    </body>
+
+</html>

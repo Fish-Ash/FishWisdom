@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>信号与线性系统分析</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第一章 信号与系统</h1>
+        <h2>第一节 绪论</h2>
+        <p>
+            <b>激励</b>：输入信号
+            <br>
+            <b>响应</b>：输出信号
+        </p>
+        <h2>第二节 信号</h2>
+        <h3>一、离散信号与连续信号</h3>
+        <p>
+            <ul>
+                <li>离散信号（数字信号）：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;时间与数值均离散的信号
+                </li>
+                <li>连续信号（模拟信号）：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;时间与幅值均连续变化的信号。
+                </li>
+            </ul>
+        </p>
+        <h3>二、周期信号与非周期信号</h3>
+        <p><ul>
+            <li><b>周期信号</b>：
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;定义在\((-\infty,+\infty)\)区间内，每隔一段时间T（或整数N），按相同规律变化的信号。
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;最小正整数\(T\)或\(N\)称为信号的<b>周期（重复周期）</b>
+                <ul>
+                <li><b>连续周期信号</b>：\(f(t)=f(t+mT),m=0,\pm1,\pm2,\dots\)</li>
+                <li><b>离散周期信号</b>：\(f(k)=f(k+mN),m=0,\pm1,\pm2,\dots\)</li>
+                </ul></li>
+            <li><b>非周期信号</b>：不具有周期性的信号。</li>
+        </ul></p>
+        <hr>
+        <p>
+            连续正余弦信号：
+            $$\begin{align}
+            \sin(\omega t + \phi) &= \sin(\omega t + \phi + 2m\pi)\\
+                                  &= \sin[\omega(t + m\frac{2\pi}{\omega}) + \phi]\\
+                                  &= \sin[\omega(t + mT) + \phi]
+            \end{align}$$
+            $$\begin{align}
+            \cos(\omega t + \phi) &= \cos(\omega t + \phi + 2m\pi)\\
+                                  &= \cos[\omega(t+m\frac{2\pi}{\omega})+\phi]\\
+                                  &= \cos[\omega(t+mT)+\phi]
+            \end{align}$$
+            &nbsp;&nbsp;&nbsp;&nbsp;连续正余弦信号一定是周期信号，\(T = 2\pi/\omega\)
+        </p>
+        <p>对于正余弦序列：
+            $$\begin{align}
+            \sin(\omega k + \phi) &= \sin(\omega k + \phi + 2m\pi)\\
+                                  &= \sin[\omega(k+m\frac{2\pi}{\omega}) + \phi]\\
+                                  &= \sin[\omega(k + mN) + \phi]
+            \end{align}$$
+            $$\begin{align}
+            \cos(\omega k + \phi) &= \cos(\omega k + \phi + 2m\pi)\\
+                                  &= \cos[\omega(k+m\frac{2\pi}{\omega}) + \phi]\\
+                                  &= \cos[\omega(k + mN) + \phi]
+            \end{align}$$
+            &nbsp;&nbsp;&nbsp;&nbsp;正余弦序列不一定是周期信号
+            <ul>
+                <li>当\(\frac{2\pi}{\omega}\)为整数时，序列具有周期\(N = \frac{2\pi}{\omega}\)</li>
+                <li>当\(\frac{2\pi}{\omega}\)为有理数但非整数时，若\(\frac{2\pi}{\omega}=\frac NM\)，则序列有周期\(N = M\frac{2\pi}{\omega}\)</li>
+                <li>当\(\frac{2\pi}{\omega}\)为无理数时，序列不具有周期性</li>
+            </ul>
+    
+        </p>
+        <hr>
+        <p>对于两个正余弦信号之和：
+            $$ f(t) = x(t) + y(t) $$
+            求得\(x(t)、y(t)\)的周期分别为\(T_1、T_2\)
+            <ul>
+                <li>当\(\frac{T_1}{T_2}\)为有理数时，信号周期\(T\)为\(T_1、T_2\)最小公倍数</li>
+                <li>当\(\frac{T_1}{T_2}\)为无理数时，信号不具有周期性</li>
+            </ul>
+            结论：
+            <ul>
+                <li>连续周期信号之和不一定是周期信号</li>
+                <li>周期序列之和一定是周期信号</li>
+            </ul>
+        </p>
+        
+        <h2>第三节 信号的基本运算</h2>
+        <p>\(f(\cdot)\)：既可以是\(f(t)\)，也可以是\(f(k)\)</p>
+        <h3>一、加法与乘法</h3>
+        <p><ul>
+            <li>\(f(\cdot) = f_1(\cdot) + f_2(\cdot)\)：同一瞬时两信号对应值相加</li>
+            <li>\(f(\cdot) = f_1(\cdot)f_2(\cdot)\)：同一瞬时两信号对应值相乘</li>
+        </ul></p>
+        <h3>二、时间变换</h3>
+        <p><ul>
+            <li>反转：将信号\(f(\cdot)\)以纵坐标为轴反转，\(f(t)\rightarrow f(-t)\)或\(f(k)\rightarrow f(-k)\)</li>
+            <li>平移：将信号\(f(\cdot)\)向右平移\(t_0\)或\(k_0\)个单位长度，\(f(t)\rightarrow f(t-t_0)\)或\(f(k)\rightarrow f(k-k_0)\)</li>
+        </ul></p>
+        <h3>三、尺度变换</h3>
+        <p>展缩运算：\(f(t)\rightarrow f(at)\)
+            <ul>
+                <li>若\(a>1\)：波形沿横轴压缩至原来的\(\frac1a\)</li>
+                <li>若\(0< a < 1\)：波形沿横轴展宽至原来的\(\frac1a\)</li>
+            </ul>
+            <i>对于离散信号，由于\(f(ak)\)仅在\(ak\)为整数时才有定义，而当\(a>1\)或\(a < 1\)且\(a\neq \frac1m,m\in Z\)时，常丢失原信号的部分信息。故离散信号一般不做展缩运算。</i>
+        </p>
+
+        <h2>第四节 阶跃函数和冲激函数</h2>
+        <h3>一、阶跃函数</h3>
+        <p><b>单位阶跃函数\(\epsilon(t)\)</b>
+            $$
+            \gamma_n(t) = 
+            \begin{align}
+            \begin{cases}
+            0,&~t<-\frac1n\\
+            \frac12+\frac n2t,&~-\frac1n< t< \frac1n\\
+            1,&~t>\frac1n
+            \end{cases}
+            \end{align}
+            $$
+
+            $$\epsilon(t) \mathop{=}^{def}\mathop{lim}_{n\rightarrow \infty}\gamma_n(t) = \begin{cases}
+            0,~t< 0\\
+            1,~t > 0
+            \end{cases}$$
+            $$$$
+        </p>
+        <h3>二、冲激函数</h3>
+        <p>
+            <b>单位冲激函数</b>
+            $$
+                p_n(t) = \gamma_n'(t) = 
+                \begin{align}
+                \begin{cases}
+                0, &~t<-\frac1n\\
+                \frac n2, &~-\frac1n< t<\frac1n\\
+                0, &~t>\frac1n
+                \end{cases}
+                \end{align}
+            $$
+            $$
+            \delta(t) \mathop{=}^{def}\mathop{lim}_{n\rightarrow \infty}p_n(t)
+            $$
+            <b>性质</b>
+            <ul>
+                <li>\(\epsilon'(t) = \delta(t)\)</li>
+                <li>\(f(t)\delta(t) = f(0)\delta(t)\)</li>
+                <li>\(f(t)\delta'(t) = f(0)\delta'(t) - f'(0)\delta(t)\)</li>
+                <li>\(\int_{0_-}^{0_+}\epsilon(t)dt = 0\)</li>
+                <li>\(\int_{0_-}^{0_+}\delta(t)dt = 1\)</li>
+            </ul>
+        </p>
+        <h2>第五节 系统的描述</h2>
+        <h2>第六节 系统的特性和分析方法</h2>
+        <h3>一、线性</h3>
+        <p>系统的激励\(f(\cdot)\)与响应\(y(\cdot)\)之间的关系可简记为：\(y(\cdot) = T[f(\cdot)]\)，其中\(T\)为算子。</p>
+        <p>线性性质包含两个内容
+            <ul>
+                <li><b>齐次性（均匀性）</b>：\(T[\alpha f(\cdot)] = \alpha T[f(\cdot)]\)</li>
+                <li>可加性：\(T[f_1(\cdot)+f_2(\cdot)] = T[f_1(\cdot)] + T[f_2(\cdot)]\)</li>
+            </ul>
+        </p>
+        <p>
+            <ul>
+                <li><b>零输入响应</b>：输入信号全为零时，仅由初始状态\(\{x(0)\}\)引起的响应。
+                    $$ y_{zi}(\cdot) = T[\{x(0)\}, \{0\}] $$</li>
+                <li><b>零状态响应</b>：初始状态全为零时，仅由输入信号\(\{f(\cdot)\}\)引起的响应。
+                    $$ y_{zs}(\cdot) = T[\{0\}, \{f(\cdot)\}] $$</li>
+                <li><b>完全响应</b>：零输入响应和零状态响应的叠加响应
+                    $$ y(\cdot) = y_{zi}(\cdot) + y_{zs}(\cdot) $$</li>
+                </ul>
+        </p>
+        <h3>二、时不变性</h3>
+        <h3>三、因果性</h3>
+        <h3>四、稳定性</h3>
+    </body>
+
+</html>

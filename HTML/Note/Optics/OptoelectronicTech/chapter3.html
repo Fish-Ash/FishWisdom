@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>光电子技术</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第三章 光源</h1>
+        <h2>第一节 光源的基本特性参数</h2>
+        <h3>一、光源的分类</h3>
+        <h3>二、辐射效率和发光效率</h3>
+        <p><b>光源在规定光谱范围内的辐射效率\(\eta\)</b>：给定\(\lambda_1\sim\lambda_2\) 波长范围内，某一光源发出的辐射通量与产生这些辐射通量所需的电功率之比。
+        $$ \eta = \frac{\Phi}{P} = \frac{\int_{\lambda_1}^{\lambda_2}\Phi(\lambda)d\lambda}{P} $$</p>
+        <p><b>光源在可见光范围内的发光效率\(\eta_v\)</b>：可见光波长范围内，某一光源发出的光通量与这些产生这些通量所需要的电功率之比。
+        $$ \eta_v = \frac{\Phi_V}{P} = K_m\frac{\int_{380}^{780}\Phi_V(\lambda)V(\lambda)d\lambda}{P} $$
+        其中，\(V(\lambda)\)为明视觉光谱光视效率，\(K_m\)为明视觉最大光谱光视效能。
+        </p>
+        <h3>三、光谱功率分布</h3>
+        <p>光源光谱功率分布：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;描述不同光源在不同光谱上辐射出的不同光谱功率
+            <br>
+            <br>光源相对光谱功率分布：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;归一化处理后的光谱功率分布
+            <ul>
+                <li><b>线状光谱</b>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;由若干条明显分隔的细线组成
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;例：低压汞灯
+                <br><img src="./img/3.3.1.png" width="250"></li>
+                <li><b>带状光谱</b>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;由若干条分开的谱带组成，每一谱带中又包含许多条细谱线
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;例：高压汞灯、高压钠灯
+                <br><img src="./img/3.3.2.png" width="250"></li>
+                <li><b>连续光谱</b>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;例：所有热辐射光源
+                <br><img src="./img/3.3.3.png" width="250"></li>
+                <li><b>混合光谱</b>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;由连续光谱与线、带谱混合而成
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;例：一般荧光灯
+                <br><img src="./img/3.3.4.png" width="250"></li>
+            </ul>
+        </p>
+
+        <h2>第五节 常用非相干光源</h2>
+        <p><b>发光二极管</b>：
+            <ul>
+                <li>基本结构：PN结</li>
+                <li>发光原理：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;当导带中的电子与价带中的空穴复合时，电子由高能态跃迁到低能态，电子将多余的能量以发射光子的形式释放出来，产生电致发光现象。</li>
+                <li>量子效率：
+                    <ul>
+                        <li>内量子效率：
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;产生的光子数与注入的电子空穴对数之比
+                            $$n_{qi} = \frac{N_r}{G}$$
+                        </li>
+                        <li>外量子效率：
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;射出的光子数与注入的电子空穴对数之比
+                            $$n_{qe} = \frac{N_T}{G}$$
+                        </li>
+                    </ul>
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;由于半导体材料折射率很高，临界角很小，大部分光在材料表面都被全反射回去，因而发光二极管内量子效率很高而外料子效率很低。
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;解决方案是将PN结封装在圆球形透明高折射率塑料球心处。
+                </li>
+            </ul>
+        </p>
+    </body>
+
+</html>

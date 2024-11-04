@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>算法</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>启发式算法</h1>
+        <p>
+            特点：不能保证找到最优解，但能加快求解速度
+            <br>
+            <br>思想：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;对于\(f(x)\)
+            <ul>
+                <li>若\(f(x_2)>f(x_1)\)，接受\(x_2\)</li>
+                <li>若\(f(x_2)\leq f(x_1)\)
+                    <ul>
+                        <li>直接拒绝\(x_2\rightarrow\)容易陷入局部最优</li>
+                        <li>直接接受\(x_2\rightarrow\)耗时过长</li>
+                        <li>启发式算法</li>
+                    </ul>
+                </li>
+            </ul>
+            <br>分类：
+            <ul>
+                <li>模拟退火算法</li>
+                <li>粒子群算法</li>
+                <li>遗传算法</li>
+                <li>蚁群算法</li>
+            </ul>
+        </p>
+
+        <hr>
+        <h2>模拟退火算法</h2>
+        <p>
+            核心思想：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;设定接受\(x_2\)的概率\(p\in [0, 1]\)，随着迭代次数的增加\(p\)逐渐减小
+            <br>
+            <br>方案1：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;接受次数越多，\(p\)越小
+            <br>
+            <br>方案2：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;新解与旧解函数值越接近，越愿意接受
+            $$\begin{cases}
+            p\in [0, 1]\\
+            p\propto\frac {1}{|f(x_2) - f(x_1)|}\\
+            p\propto \frac 1 t
+            \end{cases}
+            \Rightarrow
+            p = e^{-|f(x_2) - f(x_1)|C_t}(C_t\in[0,1]andC_t\propto t)$$
+            过程
+            <ol>
+                <li>解空间</li>
+                <li>目标函数</li>
+            </ol>
+
+        </p>
+    </body>
+
+</html>

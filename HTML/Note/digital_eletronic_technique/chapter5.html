@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>应用光学</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第五章 锁存器和触发器</h1>
+
+        <h2>第一节 基本双稳态电路</h2>
+        <p>
+            <b>双稳态电路（双稳态存储电路）</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;一旦进入0、1某种逻辑状态就能长期保持不变的单元电路。
+            <ul>
+                <li>锁存器</li>
+                <li>触发器</li>
+            </ul>
+
+        </p>
+        <h2>第二节 锁存器</h2>
+        <p>
+            <b>锁存器</b>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;对脉冲电平敏感的双稳态电路
+            <br><b>SR锁存器</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;是一种具有最简单控制功能的双稳态电路
+            <ul>
+                <li>\(S=R=0\)：保持</li>
+                <li>\(S=0、R=1\)：置0</li>
+                <li>\(S=1、R=0\)：置1</li>
+                <li>\(S=R=1\)：处于既非0又非1的未定义状态</li>
+            </ul>
+            &nbsp;&nbsp;&nbsp;&nbsp;为使锁存器始终工作于定义状态，输入信号应遵守\(SR=0\)的约束条件。
+        </p>
+        <p>
+            <b>触发</b>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;对时钟脉冲边沿敏感的状态更新
+            <br><b>触发器</b>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;具有触发工作特性的存储单元
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;\(CP\)表示以上升沿触发的时钟信号
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;\(\overline{CP}\)表示以下降沿触发的时钟信号
+            <table>
+                <tr>
+                    <td>触发器</td>
+                    <td>特性方程</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>JK触发器</td>
+                    <td>\(Q^{n+1} = J\overline{Q^n} + \overline KQ^n\)</td>
+                    <td>计数（翻转）、保持、置0、置1</td>
+                </tr>
+                <tr>
+                    <td>D触发器</td>
+                    <td>\(Q^{n+1} = D\)</td>
+                    <td>置0、置1</td>
+                </tr>
+                <tr>
+                    <td>SR触发器</td>
+                    <td>\(\begin{cases}Q^{n+1} = S+\overline RQ^n\\SR=0（约束条件）\end{cases}\)</td>
+                    <td>保持、置0、置1</td>
+                </tr>
+                <tr>
+                    <td>T触发器</td>
+                    <td>\(Q^{n+1} = T\overline{Q^n} + \overline TQ^n\)</td>
+                    <td>计数（翻转）、保持</td>
+                </tr>
+                <tr>
+                    <td>T'触发器</td>
+                    <td>\(Q^{n+1} = \overline{Q^n}\)</td>
+                    <td>计数（翻转）</td>
+                </tr>
+            </table>
+        </p>
+        <p><b>JK触发器</b>
+            <ul>
+                <li>当\(J=K=0\)时，JK触发器保持不变（\(Q^{n+1} = Q^n\)）</li>
+                <li>当\(J=0,K=1\)时，JK触发器的下一状态将被置0（\(Q^{n+1} = 0\)）</li>
+                <li>当\(J=1,K=0\)时，JK触发器的下一状态将被置1（\(Q^{n+1} = 1\)）</li>
+                <li>当\(J=K=1\)时，JK触发器的下一状态将被翻转（\(Q^{n+1} = \bar{Q^n}\)）</li>
+            </ul>
+        </p>
+        <p><b>D触发器</b>
+            <ul>
+                <li>构成JK触发器：\(D = J\overline{Q^n}+\overline{K}Q^n\)</li>
+                <li>构成T触发器：\(D = T\oplus Q^n\)</li>
+                <li>构成T'触发器：\(D = \overline{Q^n}\)</li>
+            </ul>
+            
+        </p>
+    </body>
+
+</html>

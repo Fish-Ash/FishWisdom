@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>概率论</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+    <div class="header"><h1>不惑</h1></div>
+    <ul class="navibar">
+        <li><a href="../../Home.html">主页</a></li>
+        <li><a href="../../Navigation.html">导航</a></li>
+    </ul>
+
+<body>
+    <h1>第八章 假设检验</h1>
+    <h2>第二节 单个正态总体参数的假设检验</h2>
+    <h3>Z检验法</h3>
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;当\(\mu_0\)已知，\(\sigma_0\)已知时，选用Z检验法，步骤如下：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;检验统计量：
+        $$Z = \frac{\bar X - \mu_0}{\sigma_0/\sqrt{n}}$$
+        <ul>
+            <li>检验假设：
+                $$H_0: \mu = \mu_0, H_1:\mu\neq \mu_0$$
+                拒绝域为：
+                $$W = \{|Z| > z_{\alpha/2}\}$$</li>
+            <li>检验假设：
+                $$H_0: \mu = \mu_0, H_1:\mu > \mu_0$$
+                拒绝域为：
+                $$W = \{Z > z_{\alpha}\}$$</li>
+            <li>检验假设：
+                $$H_0: \mu = \mu_0, H_1:\mu < \mu_0$$
+                拒绝域为：
+                $$W = \{Z < z_{\alpha}\}$$</li>
+        </ul>
+        &nbsp;&nbsp;&nbsp;&nbsp;若满足拒绝域，则假设\(H_0\)不成立；若不满足拒绝域，则假设\(H_0\)成立。
+    </p>
+    <hr>
+    <h3>t检验法</h3>
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;当\(\mu_0\)已知，\(\sigma_0\)未知时，选用t检验法，步骤如下：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;检验统计量：
+        $$T = \frac{\bar X - \mu_0}{S/\sqrt{n}}$$
+        <ul>
+            <li>检验假设：
+                $$H_0: \mu = \mu_0, H_1:\mu\neq \mu_0$$
+                拒绝域为：
+                $$W = \{|T| > t_{\frac{\alpha}{2}}(n-1)\}$$</li>
+            <li>检验假设：
+                $$H_0: \mu = \mu_0, H_1:\mu > \mu_0$$
+                拒绝域为：
+                $$W = \{T > t_\alpha(n-1)\}$$</li>
+            <li>检验假设：
+                $$H_0: \mu = \mu_0, H_1:\mu < \mu_0$$
+                拒绝域为：
+                $$W = \{T < t_\alpha(n-1)\}$$</li>
+        </ul>
+        &nbsp;&nbsp;&nbsp;&nbsp;若满足拒绝域，则假设\(H_0\)不成立；若不满足拒绝域，则假设\(H_0\)成立。
+    </p>
+</body>
+
+</html>

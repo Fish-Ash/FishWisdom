@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+        <style>
+            p{
+                text-indent: 2em;
+            }
+            .note{
+                color: rgb(66, 162, 246);
+            }
+            body{
+                font-family: 'Times New Roman', Times, serif;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <b>高光谱图像</b>：
+        <p>
+            基于电磁反射或辐射的真实场景组成的三维空间光谱数据立方体，每个光谱图像对应一个波长。
+        </p>
+        <p>
+            与RGB图像和灰度图像相比，高光谱图像具有光谱维度信息优势
+        </p>
+
+        <b>CASSI系统</b>
+        <ul>
+            <li>空间编码：
+                <p>
+                    在空间维度对场景信息进行调制。
+                </p>
+            </li>
+            <li>色散</li>
+        </ul>
+        分类
+        <ul>
+            <li>单色散（SD-CASSI，Single-Disperser-CASSI）</li>
+            <li>双色散（DD-CASSI，Dual-Disperser-CASSI）</li>
+        </ul>
+
+        参数：
+        <ul>
+            <li>场景的三维数据立方体：\(\mathbf{X}\in \mathbb{R}^{H\times W\times C}\)</li>
+            <li>编码孔径（编码掩膜）：\(\mathbf{M}\in \mathbb{R}^{H\times W}\)
+                <br>编码孔径是二进制的二维数据，0表示透明区域，1表示不透明区域
+            </li>
+        </ul>
+
+        SD-CASSI流程：
+        <ol>
+            <li>空间调制：\(\mathbf{X}'(\lambda) = \mathbf{X}(\lambda)\odot \mathbf{M}\)
+                <br>\(\mathbf{X}(\lambda)\)为\(\mathbf{X}\)中波长为\(\lambda\)的单色图像
+            </li>
+        </ol>
+
+        <hr>
+        <h3>以下是GPT内容</h3>
+        <b>CASSI系统全流程</b>：
+        数据采集
+        <p>CASSI系统通过编码孔径对进入系统的光进行编码，经过色散元件将光谱信息展并投射到传感器上</p>
+        数据处理
+        <p>去除噪声和背景，接着利用压缩感知算法对编码图像进行解码</p>
+        <p>色散过程：将不同波长的光分离开来</p>
+    </body>
+
+</html>

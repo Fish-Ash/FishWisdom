@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>STM32</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../../Home.html">主页</a></li>
+            <li><a href="../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1 lang="en">STM32</h1>
+        <b>单片机（<span lang="en">Single-Chip Microcomputer</span>，单片微型计算机）</b>
+        <p>是一种集成电路芯片。</p>
+        <b>组成</b>
+        <ul>
+            <li lang="en">CPU</li>
+            <li lang="en">SRAM</li>
+            <li lang="en">FLASH</li>
+            <li>外设</li>
+        </ul>
+
+        <b lang="en">RAM</b>
+        <ul>
+            <li><b lang="en">SRAM</b>：静态随机存储器</li>
+            <li><b lang="en">DRAM</b>：动态随机存储器，电脑内存一般为<span lang="en">DRAM</span></li>
+        </ul>
+
+
+        <h2>搭建开发环境</h2>
+
+        <ul>
+            <li lang="en"><b>IDE</b>：MDK</li>
+            <li><b>仿真器</b>：<span lang="en">DAP、STLink</span></li>
+            <li><b>串口调试助手</b>：<span lang="en">XCOM</span></li>
+        </ul>
+
+
+        <h2>外设</h2>
+        <h3 lang="en">GPIO</h3>
+        <b>定义</b>
+        <p><span lang="en">General Purpose Input Output</span>，通用输入输出端口。</p>
+        <b>作用</b>
+        <p>采集外部器件的信息（输入）或控制外部器件工作（输出）。</p>
+        <b>举例</b>
+        <p>按钮：按下前输入为1，按下后输入为0。</p>
+        <p>小灯：输出为1时有电压差，小灯亮起；输出为0时无电压差，小灯熄灭。</p>
+        <b>特点</b>
+        <p>不同型号的单片机<span lang="en">IO</span>口的数量不一样，可以通过选型手册快速查询。</p>
+        <p>每次翻转最快只需要两个时钟周期（<span lang="en">F1</span>最高速度可以达到50MHz）</p>
+        <p>每个<span lang="en">IO</span>口都可以做中断。</p>
+        <p>支持8种工作模式。</p>
+
+
+        <b><span lang="en">GPIO</span>基本结构</b>
+        <ul>
+            <li>保护二极管</li>
+            <li>上下拉电阻</li>
+            <li>施密特触发器</li>
+        </ul>
+
+        <b><span lang="en">GPIO</span>的八种工作模式</b>
+        <table>
+            <tr>
+                <td>输入浮空</td>
+                <td>输入用，完全浮空，状态不定</td>
+            </tr>
+            <tr>
+                <td>输入上拉</td>
+                <td>输入用，内部上拉，默认高电平</td>
+            </tr>
+            <tr>
+                <td>输入下拉</td>
+                <td>输入用，内部下拉，默认低电平</td>
+            </tr>
+            <tr>
+                <td>模拟功能</td>
+                <td lang="en">ADC、DAC</td>
+            </tr>
+            <tr>
+                <td>开漏输出</td>
+                <td>软件<span lang="en">IIC</span>的<span lang="en">SDA、SCL</span>等</td>
+            </tr>
+            <tr>
+                <td>推挽输出</td>
+                <td>驱动能力强，25<span lang="en">mA(max)</span>，通用输出</td>
+            </tr>
+            <tr>
+                <td>开漏式复用功能</td>
+                <td>片上外设功能（硬件<span lang="en">IIC</span>的<span lang="en">SDA、SCL</span>等）</td>
+            </tr>
+            <tr>
+                <td>推挽式复用功能</td>
+                <td>片上外设功能（<span lang="en">SPI</span>的<span lang="en">SCK、MISO、MOSI</span>引脚等）</td>
+            </tr>
+        </table>
+
+        <b><span lang="en">STM32</span>中断优先级</b>
+        <table>
+            <tr>
+                <td>抢占优先级</td>
+                <td class="tbtext">高抢占优先级可打断第抢占优先级的中断。</td>
+            </tr>
+            <tr>
+                <td>响应优先级</td>
+                <td class="tbtext">抢占优先级相同时，响应优先级高的先执行，但不能互相打断。</td>
+            </tr>
+            <tr>
+                <td>自然优先级</td>
+                <td class="tbtext">中断向量表的优先级，抢占优先级和响应优先级都相同是，自然优先级高的先执行。</td>
+            </tr>
+        </table>
+        <p>数值越小，优先级越高。</p>
+        <b>中断优先级分组</b>
+        <table>
+            
+        </table>
+
+
+
+    
+    </body>
+
+</html>

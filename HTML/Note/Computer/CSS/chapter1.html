@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CSS</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    
+        <style>
+            .tip{
+                cursor: pointer;
+                position: relative;
+                border-bottom: 1px dashed gray
+            }
+
+            .tip .tiptext{
+                visibility:hidden;
+                width: 120px;
+                text-indent: 0%;
+                background-color: #555;
+                color:#fff;
+                position: absolute;
+                top: 125%;
+                left:50%;
+                margin-left: -60px;
+                text-align: center;
+                padding: 5px;
+                border-radius: 5px;
+            }
+
+            .tip .tiptext::after {
+            content: "";
+            position: absolute;
+            bottom: 100%; /* 箭头在工具提示框的底部 */
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent #555 transparent;
+        }
+        .tip:hover .tiptext{
+            visibility: visible;
+        }
+
+        </style>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+        
+        <h1 lang="en">CSS</h1>
+
+        
+        <h2>测试</h2>
+
+        <p><span class="test">AAAAAAAAAAAAAAAAA</span></p>
+        <p>AAAAAAA<span class="tip">BBBB<span class="tiptext">CCCCCCCCCCCCCC</span></span>AAAAAA</p>
+        <p>当鼠标悬停在这个 <span class="tooltip">词<span class="tooltiptext">这Aasdfef是词的解释。</span></span> 上时，会显示解释。</p>
+        
+        
+        
+        
+        <h2>懂</h2>
+        <table>
+            <tr>
+                <td lang="en">text-indent</td>
+                <td lang="en">0%</td>
+                <td>无缩进</td>
+            </tr>
+            <tr>
+                <td lang="en">cursor</td>
+                <td lang="en" style="cursor: pointer;">pointer</td>
+                <td>鼠标悬停时，变为“手指”类型</td>
+            </tr>
+            <tr>
+                <td lang="en" rowspan="2">visibility</td>
+                <td lang="en">hidden</td>
+                <td>默认隐藏</td>
+            </tr>
+            <tr>
+                <td lang="en">visible</td>
+                <td>默认显示</td>
+            </tr>
+            <tr>
+                <td lang="en">color</td>
+                <td></td>
+                <td>设置字体颜色</td>
+            </tr>
+            <tr>
+                <td lang="en">background-color</td>
+                <td></td>
+                <td>设置背景颜色</td>
+            </tr>
+            <tr>
+                <td lang="en">border-radius</td>
+                <td lang="en">n(px)</td>
+                <td>设置背景圆角</td>
+            </tr>
+            <tr>
+                <td lang="en" rowspan="2">position</td>
+                <td lang="en">relative</td>
+                <td>相对定位。元素仍按正常文本流排列，可作为祖先元素。</td>
+            </tr>
+            <tr>
+                <td lang="en">absolute</td>
+                <td>绝对定位。元素相对于最近的祖先元素进行定位。</td>
+            </tr>
+            <tr>
+                <td lang="en">bottom</td>
+                <td lang="en">100%</td>
+                <td>向上浮动一行</td>
+            </tr>
+            <tr>
+                <td lang="en">top</td>
+                <td lang="en">100%</td>
+                <td>向下浮动一行</td>
+            </tr>
+        </table>
+
+
+        <h2>不懂</h2>
+        <table>
+            <tr>
+                <td lang="en">position</td>
+                <td lang="en">relative</td>
+                <td>设置相对定位</td>
+            </tr>
+            <tr>
+                <td lang="en">display</td>
+                <td lang="en">inline-block</td>
+                <td>使该元素成为一个行内块级元素</td>
+            </tr>
+        </table>
+
+    
+    </body>
+
+</html>

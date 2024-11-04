@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../Home.html">主页</a></li>
+            <li><a href="../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>基础</h1>
+        <p><b>扇形弧长公式</b>：\(l = \theta r\)
+        </p>
+
+        <h2>常见函数的图像</h2>
+        <table>
+            <tr>
+                <td>\(a^x(a \gt 1)\)</td>
+                <td><img src="./img/functions/pic1.png" width="300"></td>
+            </tr>
+            <tr>
+                <td>\(a^x(a \lt 1)\)</td>
+                <td><img src="./img/functions/pic2.png" width="300"></td>
+            </tr>
+        </table>
+
+        <h2>一些集合的表示方式</h2>
+        <table>
+            <tr>
+                <td>正整数集</td>
+                <td>\(\mathbb{N}_+\)或\(\mathbb{N}^*\)</td>
+            </tr>
+        </table>
+
+        <h2>微积分</h2>
+        <b>微分</b>：
+        <p>
+            描述函数的变化速率
+        </p>
+        <b>积分</b>：
+        <p>
+            描述函数的累计结果
+        </p>
+
+        <b>平面角</b>：
+        <p>
+            以角的顶点为圆心作单位圆，平面角截单位圆的长度即为其弧度值。
+        </p>
+        <p class="note">这也是为什么平面角取值为\([0, 2\pi]\)</p>
+    
+        <b>立体角</b>：
+        <p>
+            以角的顶点为球心作单位球，立体角截单位球的面积即为其大小。
+        </p>
+        <p class="note">因此立体角取值为\([0, 4\pi]\)</p>
+    
+        <b>笛卡尔坐标系</b>
+        <ul>
+            <li>二维笛卡尔坐标系：平面直角坐标系</li>
+            <li>三维笛卡尔坐标系：空间直角坐标系</li>
+        </ul>
+
+        <h2>矩阵</h2>
+        <b>哈达玛积</b>
+        <p>表示两个同纬度的矩阵对应元素相乘，\(A\odot B\) <span lang="en">or</span> \(A\circ B\)</p>
+    
+        <h3>进制</h3>
+        <b>对于一个<span lang="en">n</span>位二进制数而言，其对应的十进制数的大小\(x \leq 2^n - 1\)。</b>
+        <p>即：\(\sum\limits_{i=0}^{n-1}2^i = 2^n-1\)</p>
+        <p>证明如下：</p>
+        $$
+        \begin{align}
+        2^n &= 2\times 2^{n-1}\\
+        &= 2^{n-1} + 2^{n-1}\\
+        &= 2^{n-1} + 2^{n-2} + 2^{n-2}\\
+        &= 2^{n-1} + 2^{n-2} + 2^{n-3} +\cdots + 2^1 + 2^0 + 2^0\\
+        &= \sum\limits_{i=0}^n2^i + 1
+        \end{align}$$
+
+        <b>对于任意一个非负整数\(n\)，集合\(\{2^i\}\)共有\(n+1\)个子集的和小于\(n\)</b>
+        <p>证明如下：</p>
+        <p>当\(n = 0\)时，有：</p>
+        <ul>
+            <li>\(0: \{\}\)</li>
+        </ul>
+        <p>结论适用；</p>
+        <p>当\(2^0\leq n&lt;2^1\)时，有：</p>
+        <ul>
+            <li>\(1: \{1\}, \{\}\)</li>
+        </ul>
+        <p>结论适用；</p>
+        <p>当\(2^1\leq n&lt;2^2\)时，有：</p>
+        <ul>
+            <li>\(2: \{1\}, \{2\}, \{\}\)</li>
+            <li>\(3: \{1\}, \{2\}, \{1, 2\}, \{\}\)</li>
+        </ul>
+        <p>结论适用；</p>
+        <p>当\(2^2\leq n&lt;2^3\)时，由于\(\sum\limits_{i=0}^{n-1}2^i\leq 2^n -1\)，故\(\{2^0, 2^1\}\)的全部\(2^2\)个子集均满足条件，仅需考虑带\(\{2^2\}\)的子集。</p>
+        <p>已知带\(\{2^2\}\)的条件下，只需考虑\(\{2^0, 2^1\}\)对于\(n - 2^2\)满足条件的子集数量。</p>
+        <p>由于\(0\leq n - 2^2&lt;2^2\)，故此时共有\(n - 2^2 + 1\)个子集满足条件。</p>
+        <p>综上，当\(2^1\leq n&lt;2^2\)时，满足条件的子集数有\(n - 2^2 + 1 + 2^2 = n-1\)个。</p>
+        <p>以此类推，结论适用于全体非负整数。</p>
+
+        <h3>集合</h3>
+
+        <b>一个长度为<span lang="en">n</span>的集合，共有\(2^n\)个子集</b>
+        <p>证明如下：</p>
+        <p>考虑一个长度为<span lang="en">n</span>的子集</p>
+        $$\{x_1, x_2, \cdots, x_n\}$$
+        <ul>
+            <li>含\(x_n\)的子集：\(\{x_1, x_2, \cdots, x_{n-1}\}\)的子集加上\(x_n\)</li>
+            <li>不含\(x_n\)的子集：\(\{x_1, x_2, \cdots, x_{n-1}\}\)的子集</li>
+        </ul>
+        <p>即为\(2^1\times\{x_1, x_2, \cdots, x_{n-1}\}\)的子集数量</p>
+        <p>以此类推，为\(2^{n-1}\times\{x_1\}\)的子集数量</p>
+        <p>对于\(\{x_1\}\)的子集，有：</p>
+        <ul>
+            <li>含\(x_1\)的子集：\(\{x_1\}\)</li>
+            <li>不含\(x_1\)的子集：\(\{\}\)</li>
+        </ul>
+        <p>故一个长度为<span lang="en">n</span>的集合，共有\(2^n\)个子集，得证。</p>
+    
+        <h3>逻辑学</h3>
+        <b>原子变元</b>
+        <p>一个不可再分的、没有内部逻辑结构的命题或变元。只有<span lang="en">True</span>或<span lang="en">False</span>两种值。</p>
+        <b>联结词</b>
+        <p>\(p\rightarrow q\)：如果\(p\)为真时，\(q\)一定为真。</p>
+        <p>\(p\rightleftarrows q\)：\(p\)和\(q\)的值相同时为真</p>
+
+        <table lang="en">
+            <tr>
+                <td class="tbtitle">\(p\)</td>
+                <td class="tbtitle">\(q\)</td>
+                <td class="tbtitle">\(p\rightarrow q\)</td>
+                <td class="tbtitle">\(p\rightleftarrows q\)</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+        </table>
+    
+    </body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>误差理论</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第七章 测量结果的不确定度评定</h1>
+
+
+        <h2>第二节 不确定度的基本概念</h2>
+        <b>测量不确定度</b>
+        <p>测量结果带有的一个参数，意味着对测量结果可信任性、有效性的怀疑程度或不肯定程度。</p>
+        <p>测量不确定度一般包含若干分量。</p>
+        <p>按数值评定方法的不同分为两类：</p>
+        <ul>
+            <li><span lang="en">A</span>类评定：由一系列测量数据的统计分布获得的不确定度，用实验标准差表征。</li>
+            <li><span lang="en">B</span>类评定：基于经验或资料及假设的概率分布，用估计的标准偏差表征。</li>
+        </ul>
+
+        <b>标准不确定度（\(u\)）</b>
+        <p>以标准差表示的不确定度，其分量一般用\(u_1, u_2, \cdots, u_n\)表示。</p>
+
+
+        <b><span lang="en">A</span>类评定方法</b>
+        <p>对同一被测量\(x\)独立重复观测\(n\)时，当用\(\bar x\)作为测量结果时，测量结果的<span lang="en">A</span>类评定的标准不确定度为：</p>
+        $$u_A(x) = s(\bar x) = s(x)/\sqrt n$$
+        其中，\(n\geq 6\)时，\(s(x)\)用贝塞尔公式计算；\(2\leq 6\leq 5\)时，\(s(x)\)用极差法计算。
+
+
+        <h2>第五节 扩展不确定度</h2>
+        <b>扩展不确定度（展伸不确定度、范围不确定度，\(U\)、\(U_p\)）</b>
+        <p>合成标准不确定度与一个大于1的数字因子的乘积。</p>
+        表示方式
+        <ul>
+            <li>标准差的倍数，即合成标准不确定度乘包含因子：\(U = ku_c\)</li>
+            <li>根据给定的置信概率\(p\)确定扩展不确定数：\(U_p =  k_pu_c\)</li>
+        </ul>
+
+        <b>包含因子（覆盖因子，\(k\)、\(k_p\)）</b>
+        <p>为确定扩展不确定度，对合成标准不确定度所乘的大于1的数。</p>
+        
+        确定包含因子的方法
+        <ul>
+            <li>自由度法</li>
+            <li>超越系数法</li>
+            <li>简易法</li>
+        </ul>
+
+        <h2>第六节 测量结果的表示方法</h2>
+        <p>若某标准砝码质量为\(m\)，测量结果为\(100.02147g\)，合成标准不确定度\(u_c(m) = 0.35\)<span lang="en">mg</span>，自由度为9。</p>
+
+        <h3>一、合成标准不确定度表示方法</h3>
+        <span lang="en">（1）</span>\(m = 100.02147\)<span lang="en">g</span>，\(u_c(m) = 0.35\)<span lang="en">mg</span>或\(u_c(m) = 0.00035\)<span lang="en">g</span>，（自由度\(\nu = 9\)）。<br>
+        <span lang="en">（2）</span>\(m = 100.02147(35)\)<span lang="en">g</span>，（\(\nu=9\)）。括号内的数值按标准差给出，末位与测量结果的最低位对齐。<br>
+        <span lang="en">（3）</span>\(m = 100.02147(0.00035)\)<span lang="en">g</span>，（\(\nu = 9\)）。括号内的数值按标准差给出，单位同测量结果一致。
+
+        <h3>二、扩展不确定度表示方法</h3>
+        <p>取包含因子\(k = 2\)，扩展不确定度\(U(m) = ku_c(m) = 0.00070\)<span lang="en">g</span></p>
+        <span lang="en">（1）</span>\(M = m \pm U(m) = (100.02147 \pm 0.00070)\)<span lang="en">g</span>，\(k = 2\)，（\(\nu = 9\)）<br>
+        <span lang="en">（1）</span>\(m = 100.02147\)<span lang="en">g</span>，\(U(m) = 0.00070\)<span lang="en">g</span>，\(k = 2\)，（\(\nu = 9\)）
+    </body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>激光原理</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <h1>第三章 激光器的工作原理</h1>
+
+        
+        <h2>第一节 粒子数反转分布</h2>
+        <b>二能级系统</b>
+        <ul>
+            <li>\(E_1\)：低能级（基态）</li>
+            <li>\(E_2\)：高能级（激发态）</li>
+        </ul>
+        <p>假设两个原子分别处在简化而能及系统的低能级与高能级，若一个能量恰等于这两个能级能量差的光子\(h\nu = E_2 - E_1\)趋近于这两个原子，即光子的频率与原子系统的两个能级共振。</p>
+        <p>考虑受激辐射爱因斯坦系数与受激吸收爱因斯坦系数间的关系式</p>
+        $$\frac{g_2}{g_1}\frac{B_{12}}{B_{21}} = 1$$
+        <p>当\(g_2 = g_1\)时，有\(B_{12} = B_{21}\)，即发生受激辐射和受激吸收的概率是相同的。</p>
+        <p>当物质处于热平衡状态时，各能级上的粒子数服从玻尔兹曼统计分布</p>
+        $$\frac{n_2}{n_1} = \frac{g_2}{g_1}e^{\frac{-(E_2-E_1)}{KT}}$$
+        <p>\(g_2 = g_1\)时，因\(E_2 > E_1\)</p>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <h2>第二节 速率方程理论</h2>
+        <h3>一、四能级系统速率方程</h3>
+        <b>四能级系统</b>
+        <ul>
+            <li>基态\(E_1\)</li>
+            <li>激光跃迁的下能级\(E_2\)</li>
+            <li>激光跃迁的上能级\(E_3\)</li>
+            <li>泵浦带（泵浦能级）\(E_4\)</li>
+        </ul>
+
+        符号说明
+        <table>
+            <tr>
+                <td class="tbtitle">符号</td>
+                <td class="tbtitle">解释</td>
+            </tr>
+            <tr>
+                <td>\(W_p\)</td>
+                <td>单位时间内基态\(E_1\)上的原子被泵浦抽运到泵浦带\(E_4\)上的概率</td>
+            </tr>
+            <tr>
+                <td>\(A_{41}\)、\(A_{32}\)</td>
+                <td>自发辐射概率</td>
+            </tr>
+            <tr>
+                <td>\(S_{41}\)</td>
+                <td>原子从\(E_4\)到\(E_1\)的无辐射跃迁概率</td>
+            </tr>
+            <tr>
+                <td>\(S_{43}\)、\(S_{21}\)</td>
+                <td>弛豫概率</td>
+            </tr>
+        </table><br>
+
+        <b>弛豫</b>
+        <p>原子从一个激发态向一个较低能级转变的过程。</p>
+
+        <b>原子速率方程</b>
+        $$
+        \begin{cases}
+        \frac{\mathrm{d}n_1}{\mathrm{d}t} = n_2S_{21} + 
+
+        \end{cases}
+        $$
+    </body>
+
+</html>

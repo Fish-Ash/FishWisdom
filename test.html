@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分界线示例</title>
+    <style>
+        .HBox {
+            display: flex;
+        }
+        .left, .right {
+            flex: 1; /* 左右两侧各占一半宽度 */
+            padding: 20px;
+        }
+ 
+        .divider {
+            width: 2px; 
+            background-color: #000; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="HBox">
+        <div class="left">
+            <h2>左侧内容</h2>
+            <p>这里是左侧的内容区域。</p>
+            
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="right">
+            <h2>右侧内容</h2>
+            <p>这里是右侧的内容区域。</p>
+        </div>
+    </div>
+
+</body>
+</html>

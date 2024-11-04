@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>算法</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h2>拉格朗日乘子法</h2>
+        <b>带等式约束的优化问题</b>
+        $$\begin{align}
+        &\mathop{\min}_{x} &&f(x)\\
+        &subject~~ to\quad &&g_i(x) = 0, \quad i=1,2,\cdots,n
+        \end{align}$$
+        构造拉格朗日函数：
+        $$L(x, \lambda) = f(x) + \mathop{\sum}_{i=1}^n\lambda_ig_i(x)$$
+        求驻点：
+        $$\begin{cases}
+        \frac{\partial L}{\partial x} = f'(x) = 0\\
+        \frac{\partial L}{\partial \lambda_i} = g_i(x) = 0
+        \end{cases}$$
+        <b>带不等式约束的优化问题</b>
+        <p>需要满足<span lang="en">KTT</span>条件</p>
+        <p><span lang="en">KTT</span>条件确保在最优解处拉格朗日函数的构造与原问题的约束条件之间的关系保持一致</p>
+    </body>
+
+</html>

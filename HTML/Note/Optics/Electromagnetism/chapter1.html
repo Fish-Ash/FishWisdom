@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>电磁学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>电</h1>
+
+        <h2>电荷</h2>
+        <b>电荷的性质</b>
+        <ul>
+            <li><b>电荷守恒定律</b>：一孤立系统内的电荷的代数和始终保持不变。</li>
+            <li><b>电荷量子化</b>：任何带电体所带电量都是基本电量\(e=1.602\times 10^{-19}\)<span lang="en">C</span>的整数倍。</li>
+            <li><b>相对论不变性</b>：电荷的电量与其运动状态无关</li>
+        </ul>
+
+        <h2>库伦定律</h2>
+        $$
+        \mathbf{F} = k\frac{Q_1Q_2}{r^2}\mathbf{r}\\
+        E = k\frac{Q}{r^2}\\
+        k = \frac{1}{4\pi\epsilon_0}
+        $$
+        适用条件：
+        <ul>
+            <li>真空（非必要）</li>
+            <li>静止</li>
+            <li>点电荷</li>
+        </ul>
+
+        
+        <table>
+            <tr>
+                <td colspan="2"><b>介电常数（电容率）\(\epsilon\)</b></td>
+            </tr>
+            <tr>
+                <td>真空中</td>
+                <td>$$\epsilon_0 = 8.8542\times 10^{-12} C^2/N\cdot m^2$$</td>
+            </tr>
+            <tr>
+                <td>各向同性均匀介质中</td>
+                <td>\(\epsilon\)为常数</td>
+            </tr>
+            <tr>
+                <td>相对介电常数</td>
+                <td>$$\epsilon_r = \epsilon/\epsilon_0$$</td>
+            </tr>
+        </table>
+
+        静止条件的推广：
+        <ul>
+            <li>适用于静止电荷对运动电荷的作用</li>
+            <li>不适用于运动电荷对静止电荷的作用</li>
+        </ul>
+        <p>这一情况说明电力不遵循牛顿第三定律（动量守恒），但系统遵循动量守恒，说明有一动量变化的第三者介入（场）</p>
+
+        <b>非接触作用力</b>
+        <ul>
+            <li>近距作用：需要媒介物且需要时间传递。媒介物即为<b>场</b></li>
+            <li>超距作用：不需要媒介物且无需时间传递。</li>
+        </ul>
+        
+        
+        <b>场</b>
+        <p>在一定的空间范围内，连续分布的客体。</p>
+        <ul>
+            <li>矢量场</li>
+            <li>标量场</li>
+        </ul>
+
+
+        <h2>流体力学贡献</h2>
+        <b>源</b>
+        <p>发出场</p>
+
+        <b>汇</b>
+        <p>宣泄场，相当于负源</p>
+
+        <b>旋</b>
+        <p>矢量首尾相接构成闭合曲线</p>
+
+        <b>通量</b>
+        <p>流量，有源-正数，有汇-负数</p>
+
+
+        <b>静电场的环路定理</b>
+        $$\oint_l\mathbf{E}\cdot\mathrm{d}\mathbf{l} = 0$$
+
+        <h2>静电场中的电介质</h2>
+        <b>电偶极子</b>
+        <p>两个等值异号的点电荷\(+q\)和\(-q\)组成的一对点电荷系，它们之间的距离\(l\)比所讨论问题中涉及的距离\(r\)小得多。</p>
+        
+        <b>电偶极子的轴\(\mathbf{l}\)</b>
+        <p>由负电荷\(-q\)指向正电荷\(+q\)的矢径\(\mathbf{l}\)</p>
+
+        <b>电偶极矩\(\mathbf{p}\)</b>
+        $$\mathbf{p} = q\mathbf{l}$$
+        
+        <img src="./img/ElectricDiploe.png" width="400"><br>
+
+
+        <b id="Dielectric">电介质</b>
+        <p>不导电的绝缘介质，内部无可以自由移动的电荷（自由电子）。</p>
+
+        <b>电介质的极化</b>
+        <p>在外电场的作用下，电介质内的正、负电荷仍可作微观的相对移动，从而使电介质内部或表面出现带电现象。</p>
+        <p>此时，总电场\(\mathbf{E}\)是自由电荷电场强度\(\mathbf{E}_0\)和极化电荷电场强度\(\mathbf{E}'\)的叠加。</p>
+
+        <b>极化电荷\(q'\)（束缚电荷）</b>
+        <p>电介质极化出现的电荷。</p>
+
+        <b>介质极化率\(\chi\)</b>
+        <p>对于同一点，\(\chi\)为一个常数，但不同点的\(\chi\)可以不同。若电介质中各点的\(\chi\)相同，则该电介质为均匀电介质。</p>
+
+        <b>极化强度\(\mathbf{P}\)</b>
+        <p>各向同性介质中：</p>
+        $$\mathbf{P} = \epsilon_0\chi\mathbf{E}$$
+
+        <b>极化强度与极化电荷的关系式</b>
+        $$\oint_S\mathbf{P}\mathrm{d}\mathbf{S} = -\sum q_i'$$
+
+
+        <b>电介质的击穿</b>
+        <p>当外电场不太强时，只是引起电介质的极化，不会破坏电解质的绝缘性能。</p>
+        <p>当外电场过强时，电介质分子中的正负电荷有可能被拉开而形成可自由移动的电荷，由于大量自由电荷的产生，电介质的绝缘性能就会遭到明显破坏而变成导体，这种现象就叫做电介质的击穿。</p>
+
+
+        <b>击穿电场强度</b>
+        <p>一种电介质材料能承受的不被击穿的最大电场强度。</p>
+
+
+        <b>电位移矢量\(\mathbf{D}\)</b>
+        $$\mathbf{D} = \epsilon_0\mathbf{E} + \mathbf{P}$$
+        <span class="tip">各向同性介质<span class="tiptext">$$\mathbf{P} = \epsilon_0\chi\mathbf{E}$$</span></span>中：令\(\epsilon_r = 1 + \chi\)为<b>介质的相对介电常数</b>有：
+        $$\mathbf{D} = \epsilon_0(1 + \chi)\mathbf{E} = \epsilon_0\epsilon_r\mathbf{E} = \epsilon\mathbf{E}$$
+
+
+
+        <h2>尚不理解</h2>
+        <ul>
+            <li>电力可屏蔽</li>
+            <li>P2 20min-22min</li>
+        </ul>
+        
+    </body>
+
+</html>

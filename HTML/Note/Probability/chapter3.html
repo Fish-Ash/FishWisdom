@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>概率论</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+    <div class="header"><h1>不惑</h1></div>
+    <ul class="navibar">
+        <li><a href="../../Home.html">主页</a></li>
+        <li><a href="../../Navigation.html">导航</a></li>
+    </ul>
+
+    <body>
+        <h1>第三章 多维随机变量及其分布</h1>
+        <h2>第一节 多维变量及其分布</h2>
+        <h3>一、二维随机变量及其分布函数</h3>
+        <p><b>二维随机变量\((X,Y)\)的分布函数（随机变量X和Y的联合分布函数）</b>：\(F(x,y) = P\{X\leq x, Y\leq y\}\)</p>
+        <p>$$P\{x_1 < x \leq x_2, y_1 < y \leq y_2\} = F(x_2, y_2) - F(x_1, y_2) - F(x_2, y_1) + F(x_1, y_1)$$</p>
+        <p><b>分布函数的性质：</b>
+        <ul>
+            <li>\(0\leq F(x,y) \leq 1\)</li>
+            <li>\(F(-\infty, -\infty) = 0, F(+\infty, +\infty) = 1\)</li>
+            <li>\(F(-\infty, y) = F(x, -\infty) = 0\)</li>
+        </ul>
+        </p>
+        <p><b>边缘分布函数</b>：
+        $$F_X(x) = F(x, +\infty)$$
+        $$F_Y(y) = F(+\infty, y)$$
+        </p>
+
+
+        
+        <h3>二、二维离散型随机变量及其概率分布</h3>
+        <h3>三、二维连续型随机变量及其分布函数</h3>
+        <p><b>边缘概率密度</b>：
+        $$f_X(x) = \int_{-\infty}^{+\infty}f(x,y)dy$$
+        $$f_Y(x) = \int_{-\infty}^{+\infty}f(x,y)dx$$</p>
+        <h3>四、两个重要的连续型随机变量及其分布</h3>
+        <h4>1.二维均匀分布</h4>
+        <p>设\(G\)是平面上的有界区域，其面积为\(A\)，若二维随机变量\((X,Y)\)具有概率密度：
+            $$ f(x,y) = \begin{cases}\frac1A, ~(x,y)\in G\\ 0, ~others\end{cases} $$
+            则称二维随机变量\((X,Y)\)在\(G\)上的服从均匀分布，记为\((X,Y)\sim U(G)\)
+        </p>
+
+        <h2>第二节 随机变量的独立性</h2>
+
+        <h2>多维随机变量函数的分布</h2>
+        <h3>连续型随机变量函数的分布</h3>
+        <p>
+            设\(X\)与\(Y\)为相互独立的连续型随机变量
+            <br>
+            \(M = max\{X,Y\}\)的分布：
+            \(\begin{align}
+            F_M(z) 
+            &= P\{M \leq z\}\\ 
+            &= P\{X\leq z, Y\leq z\}\\
+            &= P\{X\leq z\}P\{Y\leq z\}\\
+            &= F_X(z)F_Y(z)
+            \end{align}
+            \)
+            \(\begin{align}
+            f_M(z)
+            &= F_M'(z)\\
+            &= f_X(z)F_Y(z) + F_X(z)f_Y(z)\\
+            \end{align}
+            \)
+            <br><br>
+            \(N = min\{X,Y\}\)的分布：
+            \(\begin{align}
+            F_N(z)
+            &= P\{N \leq z\}\\
+            &= 1 - P\{N > z\}\\
+            &= 1 - P\{X>z\}P\{Y>z\}\\
+            &= 1 - [1-F_X(z)][1-F_Y(z)]
+            \end{align}    
+            \)
+            \(\begin{align}
+            f_N(z)
+            &= F_N'(z)\\
+            &= f_X(z)[1-F_Y(z)]+f_Y(z)[1-F_X(z)]
+            \end{align}
+            \)
+        </p>
+    </body>
+
+</html>

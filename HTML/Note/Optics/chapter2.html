@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>应用光学</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第二章 理想光学系统</h1>
+        <h2>第一节 理想光学系统与共线成像理论</h2>
+        <p><b>理想光学系统（高斯光学系统）</b>：在任意大的空间中以任意宽的光束都成完善像的理想模型
+            <br>意义：作为衡量实际光学系统成像质量的标准，评估和比较实际光学系统的不完善程度。</p>
+        <h2>第二节 理想光学系统的基点与基面</h2>
+        
+        <p>基点：
+            <ul>
+                <li>焦点
+                    <ul>
+                        <li>物方焦点（前焦点、第一焦点）（F）：
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;轴上无限远处像点的共轭点</li>
+                        <li>像方焦点（后焦点、第二焦点）（F'）：
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;轴上无限远处物点的共轭点</li>
+                    </ul></li>
+                <li>主点
+                <ul>
+                    <li>物方主点（\(H\)）：
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;物方主面与光轴的交点
+                    </li>
+                    <li>像方主点（\(H'\)）：
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;像方主面与光轴的交点
+                    </li>
+                </ul></li>
+                <li>节点
+                    <br>定义：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;\(\gamma = +1\)的一对共轭点
+                    <ul>
+                        <li>物方节点（\(J\)）
+                        </li>
+                        <li>像方节点（\(J'\)）
+                        </li>
+                    </ul>
+                    性质：
+                    <ul>
+                        <li>通过节点的光线，传播方向不变</li>
+                        <li>当\(n = n'\)时，节点与主点重合。</li>
+                    </ul>
+                    <img src="./img/2.J.png" width="450">
+                </li>
+            </ul>
+
+           <br><br> <b>焦平面</b>：</p>
+        <ul>
+            <li><b>物方焦平面</b>：过F且垂直于光轴的平面，与无限远处垂直于光轴的像平面共轭。
+            <br>
+            <i>物方焦平面上任何一点发出的光线，通过理想光学系统后是一组相互平行的光线，它们与光轴的夹角大小反映了轴外点离开轴上点的距离。</i></li>
+            <li><b>像方焦平面</b>：过F'且垂直于光轴的平面，与无限远处垂直于光轴的物平面共轭。
+            <br>
+            <i>以一束相互平行的光线经过共轴理想光学系统后，一定相交于像方焦平面上的某点，此点就是无限远轴外物点的共轭像点。</i></li>
+        </ul>
+        <p><b>焦距</b>：</p>
+        <ul>
+            <li><b>物方焦距（前焦距、第一焦距）（f）</b>：物方主点与物方焦点之间的距离</li>
+            <li><b>像方焦距（后焦距、第二焦距）（f'）</b>：像方主点与像方焦点之间的距离</li>
+        </ul>
+        <i>\(f'>0\)的光学系统被称为正光组；\(f' < 0\)的光学系统被称为负光组
+            <br>
+            人眼的f约为-17mm，f'约为23mm</i>
+        
+        <h2>第三节 理想光学系统的物像关系</h2>
+        
+        <h3>一、图解法求像</h3>
+        <h3>二、解析法求像</h3>
+        <p><b>牛顿公式</b>：以焦点为原点的物像关系式。</p>
+        <p><b>高斯公式</b>：以主点为原点的物像关系式。</p>
+
+        <h2>第四节 理想光学系统的放大率</h2>
+        <h2>第五节 理想光学系统的组合</h2>
+        <p><b>光学间隔（\(\Delta\)）</b>：第一个光组像方焦点\(F_1'F_2\)</p>
+        <p><b>光组间隔（\(d\)）</b>：两光组主平面间的距离\(H_1'H_2\)</p>
+        <p><b>折合距离</b>：一线段其长度与所在介质折射率相除所得的值\(x/n\)</p>
+        <p><b>光焦度（\(\Phi\)）</b>：折合焦距的倒数\(\Phi = n'/f' = -n/f\)
+        <ul>
+            <li>\(\Phi > 0\)：会聚</li>
+            <li>\(\Phi = 0\)：既不会聚也不发散</li>
+            <li>\(\Phi > 0\)：发散</li>
+        </ul>
+        单位：<b>折光度（屈光度）</b>：空气中焦距为1m的系统其光焦度为1个折光度
+        </p>
+
+        <h3>一、两个光组组合分析</h3>
+        <p>解释：
+            <ul>
+                <li>平行入射光组的光：必经过光组Ⅰ和光组Ⅱ的像方焦点（整个光组出射面）</li>
+                <li>平行出射光组的光：必经过光组Ⅰ（整个光组入射面）和光组Ⅱ的物方焦点</li>
+            </ul>
+        </p>
+        <p>分析：
+            <ul>
+                <li>对于光组Ⅰ：\(F\)与\(F_2\)共轭
+                    $$x_F\cdot\Delta = f_1f_1' \Rightarrow x_F = \frac{f_1f_1'}{\Delta}$$
+                </li>
+                <li>对于光组Ⅱ：\(F_1'\)与\(F'\)共轭
+                    $$-\Delta\cdot x_F' = f_2f_2' \Rightarrow x_F' = -\frac{f_2f_2'}{\Delta}$$
+                </li>
+            </ul>
+        </p>
+
+
+        <h3>二、经典理想光组</h3>
+        <p><ul>
+            <li>远摄型光组</li>
+            <li>反远距型光组</li>
+            <li>望远系统</li>
+            <li>显微系统</li>
+        </ul></p>
+        <h2>第六节 透镜</h2>
+        <p><b>透镜</b>：透镜是构成光学系统的最基本单元，是由两个折射面包围一种透明介质所形成的光学零件。</p>
+        <p>按功能分：
+            <ul>
+                <li><b>会聚透镜（正透镜，凸透镜）</b>：对光线有会聚作用，光焦度为正值。</li>
+                <li><b>发散透镜（负透镜，凹透镜）</b>：对光线有发散作用，光焦度为负值。</li>
+            </ul>
+            按形状分：
+            <ul>
+                <li>双凸、平凸、月凸</li>
+                <li>双凹、平凹、月凹</li>
+            </ul>
+        </p>
+        <p>成像分析：</p>
+        <p>对于单个折射球面$$\frac{n'}{l'} - \frac{n}{l} = \frac{n'-n}{r}$$
+            当\(l \rightarrow -\infty\)时，\(l'\rightarrow f'\)；当\(l'\rightarrow \infty\)时，\(l\rightarrow f\)
+            $$\begin{cases}
+            f' = \frac{n'r}{n'-n}\\
+            f = -\frac{nr}{n'-n}
+            \end{cases}\Rightarrow \frac{f'}{n'} = -\frac{f}{n}$$
+            对于透镜：设透镜放在空气中，有\(n_1 = n_2' = 1, n_1' = n_2 = n\)
+            $$\begin{cases}
+            f_1 = -\frac{n_1r}{n_1'-n_1} = \frac{r}{1-n}\\
+            f_1' = \frac{n_1'r}{n_1'-n_1} = \frac{nr}{n-1}
+            \end{cases}
+            ~~~~~\begin{cases}
+            f_2 = -\frac{n_2r}{n_2'-n_2} = \frac{nr}{n-1}\\
+            f_2' = \frac{n_2'r}{n_2'-n_2} = \frac{r}{1-n}
+            \end{cases}$$
+            $$f' = -f = -\frac{f_1'f_2'}{\Delta} = \frac{nr_1r_2}{(n-1)[n(r_2-r_1)+(n-1)d]}$$
+        </p>
+        <p><b>薄透镜</b>：厚度很小（\(d\rightarrow 0\)）的透镜</p>
+        <p><b>薄透镜焦距公式</b>：\(\Phi_{thin} = \frac{1}{f_{thin}} = (n-1)(\rho_1 - \rho_2)\)</p>
+        
+        
+
+    </body>
+
+</html>

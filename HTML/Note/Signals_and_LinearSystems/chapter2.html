@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>信号与线性系统分析</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">
+            <h1>不惑</h1>
+        </div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        
+        <h1>第二章 连续系统的时域分析</h1>
+        <h2>第一节 LTI连续系统的响应</h2>
+
+        <p>
+            LTI系统数学模型：
+            $$\mathop{\sum}^{n}_{j=0}a_jy^{(j)}(t) = \mathop{\sum}^{m}_{i=0}b_if^{(i)}(t)$$
+
+            齐次解\(y_h(t)\)
+            $$\mathop{\sum}^{n}_{j=0}a_jy^{(j)}(t) = 0$$
+            
+            特解\(y_p(t)\)
+            <ol>
+                <li>根据\(f(t)\)的类型确定\(y_p(t)\)的形式</li>
+                <li>将\(y_p(t)\)代入系统方程解出待定系数，得到\(y_p(t)\)</li>
+            </ol>
+        </p>
+        <p><b>r重实根对应的齐次解</b>：\((C_{r-1}t^{r-1}+C_{r-2}t^{r-2}+\dots+C_1t+C_0)e^{\lambda t}\)</p>
+        <h3>求解零输入响应</h3>
+        <p>
+            <ol>
+                <li>求解齐次方程$$\mathop{\sum}^{n}_{j=0}a_jy^{(j)}(t) = 0$$
+                    特征方程为$$\mathop{\sum}^{n}_{j=0}a_j\lambda = 0$$ 
+                </li>
+                <li>由特征根查表得带有待定系数的零输入响应解\(y_{zi}(t)\)，并导出\(y_{zi}^{(n)}(t)\)</li>
+                <li>由条件\(y_{zi}^{(j)}(0_+)=y_{zi}^{(j)}(0_-)=y^{j}(0_-)\)解出待定系数</li>
+            </ol>
+
+        </p>
+        <h3>求解零状态响应</h3>
+        <p>
+            \(\begin{cases}
+            y_{zs}(t) = y_h(t) + y_p(t)\\
+            y_{zs}^{(n)}(0_-) = 0
+            \end{cases}\)
+            <br>激励方程中不存在\(\delta(t)\)时：
+            <ol>
+                <li>根据\(y_{zs}^{(n)}(0_+) = 0\)解出待定系数</li>
+            </ol>
+            <ol>
+                <li>构造\(\mathop{\sum}^{n}_{j=0}a_jy_1^{(j)}(t) = f(t)\)</li>
+            <li>对\(f(t)\)求导得\(f^{(i)}(t)\)</li>
+            <li>得到\(\mathop{\sum}^{n}_{i=0}b_if^{(i)}(t)\)，将\(y_{zs1}(t)\)构造为\(y_{zs}(t)\)的形式</li>
+            <li>\(\int_{0_-}^{0_+}y_{zs}^{(n)}(t)dt = y_{zs}^{n-1}(0_+) - y_{zs}^{n-1}(0_-)\)
+                <br>由于\(y_{zs}(t)\)在\(t=0\)处连续：
+                $$\begin{cases}
+                \int_{0_-}^{0_+}y_{zs}(t)=0\\
+                y_{zs}(0_+) = y_{zs}(0_-) = 0
+                \end{cases}$$
+            </li>
+        </ol>
+        </p>
+        <h2>第二节 冲激响应和阶跃响应</h2>
+        <h3>一、冲激响应</h3>
+        <p><b>单位冲激响应（冲激响应）</b>：LTI系统中，激励为\(\delta(t)\)时的零状态响应。
+        $$ h(t) = T[{0}, \delta(t)] $$</p>
+
+        <p><b>卷积积分（卷积）</b>：定义在\((-\infty, +\infty)\)上的\(f_1(t)、f_2(t)\)，有：
+        $$f(t) = f_1(t)*f_2(t) = \int_{-\infty}^{+\infty}f_1(\tau)f_2(t-\tau)d\tau$$</p>
+        <p><b>图解法求卷积积分</b>：
+        <ol>
+            <li>换元，得到\(f_1(\tau)、f_2(\tau)\)</li>
+            <li>反转，将\(f_2(\tau)\)沿纵坐标反转，得到\(f_2(-\tau)\)</li>
+            <li>平移，将\(f_2(-\tau)\)向右平移\(t\)个单位长度，得到\(f_2(t-\tau)\)</li>
+            <li>将\(f_1(\tau)、f_2(t-\tau)\)相乘后求积分，得到\(f(t)\)</li>
+        </ol>
+        </p>
+    </body>
+
+</html>

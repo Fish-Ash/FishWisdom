@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>算法</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>一些概念</h1>
+
+        <p><b>鲁棒性</b>：</p>
+
+        <p><b>残差</b>：数据真实值与预测值间的偏差</p>
+        <p><b>数据稀疏性</b>：数据集中大量数据缺失或为零的特性</p>
+        <p><b>独热编码（One-Hot Encoding）</b>：将文本数据转换为数值数据形成的一种二进制串</p>
+        
+        <p><b>海明距离（Hamming Distance）</b>：用于计算两个等长字符串的距离，其值为两个字符串对应位置不同字符的个数。</p>
+        <p><b>欧式距离（Euclidean Distance）</b>：两点之间的直线距离</p>
+    
+        <p><b>平均绝对误差（Mean Absolute Error, MAE）</b>：\(\frac1m \mathop{\sum}\limits_{i=1}^m|\hat y_i - y_i|\)</p>
+        <p><b>均方误差（Mean Squared Error, MSE）</b></p>
+        <p><b>均方根误差（Mean Root Squared Error, MRSE）</b></p>
+        <p><b>平均绝对百分比误差（Mean Absolute Percentage Error, MAPE）</b></p>
+
+
+
+        <p><ul>
+            <li><b>TP（True Positive）真正例</b>：实际为正例且被预测为正例的样本数</li>
+            <li><b>FN（False Negative）假反例</b>：实际为正例但被预测为反例的样本数</li>
+        </ul></p>
+        <p><b>准确率（Accuracy）</b>：正确预测的样本数占样本总数的比值。$$accuracy = \frac{TP+TN}{TP+FP+TN+FN}$$</p>
+        <p><b>召回率/查全率（Recall）</b>：正确预测的正例样本数占正例样本总数的比值。$$recall = \frac{TP}{TP + FN}$$</p>
+        <p><b>精确率/查准率（Precision）</b>：正确预测的正例样本数占预测为正例的样本总数的比值。$$precision = \frac{TP}{TP+FP}$$</p>
+        <p><b>F1-score</b>：\(\frac{2\cdot recall\cdot precision}{recall + precision}\)</p>
+    
+    
+        <p>核密度估计法、文本分析</p>
+        <p>分类方法：XGBoost、感知器、SVM支持向量机、LSTM、RNN</p>
+
+        <p><b>自相关系数（ACF）：</b>
+            <ul>
+                <li>有序的随机变量序列与其自身相比较。</li>
+                <li>自相关系数反映了同一序列在不同时序的取值之间的相关性。</li>
+                <li>对于时间序列\(y_t\)，\(y_t\)和\(y_{t-k}\)的相关系数称为\(y_t\)间隔为\(k\)的自相关系数</li>
+            </ul>
+            $$ACF(k) = \frac{Cov(y_t, y_t-k)}{Var(y_t)}$$
+        </p>
+
+
+        <p>
+            <b>凸集</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;如果对集合中的任意两个点，其连线上的所有点也在集合中，则称该集合为凸集。
+            <br>
+            <br>
+            <b>闭集</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;如果集合包含了一个序列的所有点，以及该序列的极限（序列的极限存在），则称该集合为闭集。
+            <b>闭凸性</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;若一个集合既是凸的又是闭的，则称此集合具有闭凸性。
+        </p>
+
+        <p>
+            <b>盒式约束</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;设\(\mathbf{x}\)为一个\(n\)维向量，表示优化问题中的决策变量，盒式约束定义了每个变量\(x_i\)的上界\(u_i\)和下界\(l_i\)，即
+            $$\mathbf{l} < \mathbf{x} < \mathbf{u}$$
+
+            <b>摄动</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;在系统、模型或函数中施加小的变化或扰动。
+            <br>
+            <br>
+        </p>
+
+        <b>L1范数（曼哈顿范数，1-范数）</b>：
+        $$\|\mathbf{x}\|_1 = \mathop{\sum}^{n}_{i=1}|x_i|$$
+        <b>L2范数（欧几里得范数）</b>：
+        $$\|\mathbf{x}\|_2 = \sqrt{\mathop{\sum}_{i=1}^nx_i^2}$$
+
+        <p>
+            <b>敏感性分析</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;\(S(t, r) = \frac{dt}{dr} \cdot \frac rt\)即为\(t\)对\(r\)的敏感性
+        </p>
+
+
+
+        <h2>一些算法</h2>
+
+        <h3>图像：</h3>
+        <b>卡尔曼滤波</b>
+        <br>
+        <b>非极大值抑制（None-Maximum Suppression, NMS）</b>
+        <br>
+        <b>IoU（Intersection over Union）：
+            
+        </b>
+        <p>
+            混合整数线性规划（MILP）
+        </p>
+
+
+        <h2>不确定性优化算法</h2>
+        <p>
+            <ul>
+                <li>随机规划</li>
+                <li>模糊规划</li>
+                <li>区间规划</li>
+                <li>鲁棒优化</li>
+            </ul>
+
+        </p>
+        <h3>鲁棒优化</h3>
+        <p> 
+            <b>定义</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;参数在一定范围的变动下，解的优化性能仍能得以保证或部分保证的方法。
+            <br>
+            <br><b>描述</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;鲁棒优化理论将不确定性的所有可能实现事先划定在一个确定性的集合\(W\)中，鲁棒优化的最优解对集合\(W\)中的每个元素可能造成的不良影响都有抑制性，即若优化策略能应对最坏的情况，则亦可以应对其他所有情况。
+        </p>
+
+        <h3>期望效用理论</h3>
+        <p>
+            <b>定义</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;期望效用理论是经济学和决策理论中的一种模型，用于描述和分析人在不确定情况下如何做出选择。该理论假设决策者根据每个结果的概率及其效用（即该结果带来的主观价值）来做出决策。
+            <br>
+            <br>效用：用于衡量一个结果对决策者的主观价值，效用值越高，表示结果越令决策者满意。
+            <br>概率：每个结果发生的概率，所有可能结果的概率之和为1
+            <br>期望效用：
+            $$E(U) = \mathop{\sum}_{i=1}^n p_i\cdot U_i$$
+            <br>决策准则：选择期望效用最大的选项
+        </p>
+
+        <p>
+            <b>设备残值</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;设备在使用寿命结束后，仍然具有的一定经济价值。这一价值通常是指设备在其使用寿命终止时，出售或废弃设备所能获得的估计金额。
+        </p>
+
+        <p>
+            <b>互补品</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;互补品是指两种商品或服务在消费时具有互补性，通常是一起使用的。当一种商品的需求增加时，另一种商品的需求也会增加。
+            <br>
+            <br>
+            <b>替代品</b>：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;替代品是指两种商品或服务在功能上具有替代性，当一种商品的需求增加时，另一种商品的需求会减少。
+        </p>
+
+    </body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>概率论</title>
+        <link rel="stylesheet" type="text/css" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../../Home.html">主页</a></li>
+            <li><a href="../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第二章 随机变量及其分布</h1>
+        <h2>第一节 随机变量</h2>
+        <h2>第二节 离散型随机变量及其概率分布</h2>
+        <h3>一、离散型随机变量及其概率分布</h3>
+        <p><b>离散型随机变量</b>：可能的取值只有有限个或可列无限多个的随机变量\(X\)，</p>
+        <p>离散型随机变量\(X\)的<b>概率分布（概率函数、分布律（列））</b>：\(X\)取所有可能值的概率，即\(P\{X = x_k\} = p_k,~k =1,2,\cdots\)</p>
+
+        <p><b>二项分布的泊松近似</b>：当\(n\rightarrow \infty\)而\(p\rightarrow 0\)时，\(b(n,p)\)可以近似看作\(P(np)\)</p>
+        
+        <h2>第三节 随机变量的分布函数</h2>
+        <h3>一、随机变量的分布函数</h3>
+        <p>随机变量\(X\)的<b>分布函数</b>：\(F(X) = P\{X \leq x\} \)</p>
+        <p><b>分布函数的性质</b>：
+        <ul>
+            <li>非负性：\(0\leq F(x)\leq 1,~x\in (-\infty, +\infty)\)</li>
+            <li>单调不减性：当\(x_1 < x_2\)时，有\(F(x_1)\leq F(x_2)\)</li>
+            <li>规范性：\(F(+\infty) = \mathop{lim}\limits_{x\rightarrow +\infty}F(x)=1\)，\(F(-\infty) = \mathop{lim}\limits_{x\rightarrow -\infty}F(x)=0\)</li>
+            <li>对于连续型随机变量：\(F(x) = F(x\pm 0)\)</li>
+        </ul></p>
+
+        <h2>第四节 连续型随机变量及其概率密度</h2>
+        <p>若对随机变量\(X\)的分布函数\(F(x)\)存在非负的可积函数\(f(x)\)，使得对于任意实数\(x\)有\(F(x) = \int^x_{-\infty}f(t)dt\)</p>
+        <p>几何意义：\(F(x)\)为\((-\infty, x)\)区间上\(f(x)\)围成的面积</p>
+        <p>$$f(x)为概率密度 \Leftrightarrow 
+            \begin{cases}
+            f(x) \geq 0, x \in \mathbb{R}\\
+            \int_{-\infty}^{+\infty}f(x)dx = 1
+            \end{cases}$$</p>
+        <p><b>标准正态分布</b>：</p>
+
+        <h2>第五节 随机变量函数的分布</h2>
+        <h3>连续型随机变量函数分布</h3>
+        <p>设随机变量\(X\)具有概率密度\(f_X(x), -\infty < x < +\infty\)，且\(g(x)\)处处可导且单调，则\(Y = g(X)\)的概率密度为
+            $$f_Y(y) = 
+            \begin{align}
+            \begin{cases}
+            f_X[h(y)]|h'(y)|,~&\alpha < y < \beta\\
+            0,~&others
+            \end{cases}
+            \end{align}$$
+            其中，\(h(y)\)为\(g(x)\)的反函数，\(\alpha = min\{g(-\infty), g(+\infty)\}, \beta = max\{g(-\infty), g(+\infty)\}\)
+        </p>
+    </body>
+
+</html>

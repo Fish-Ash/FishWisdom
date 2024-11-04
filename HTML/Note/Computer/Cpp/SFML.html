@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>SFML</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1 lang="en">SFML</h1>
+
+        <h2>导入头文件</h2>
+        <code><pre class="code">
+            
+            #include&lt;SFML/Graphics.hpp&gt;
+        </pre></code>
+
+
+        <h2>主窗口</h2>
+        <code><pre class="code">
+
+            int main()
+            {
+                RenderWindow window(VideoMode(1200, 800), "SFML works!");
+                Color background_color = Color::White;
+
+                while (window.isOpen())
+                {
+                    Event event;
+                    while (window.pollEvent(event))
+                    {
+                        if (event.type == Event::Closed)
+                            window.close();
+                    }
+
+                    window.clear(background_color);
+                    window.display();
+                }
+
+                return 0;
+            }
+        </pre></code>
+
+
+
+    </body>
+
+</html>

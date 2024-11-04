@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Pandas</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1><span lang="en">Python</span>基础</h1>
+
+        <h2 lang="en">Input and Output</h2>
+        <b lang="en">Input</b>
+        <code><pre class="code">
+
+            var = input("hint")
+        </pre></code>
+        <b lang="en">Output</b><br><br>
+        <b>保留<span lang="en">n</span>位小数（四舍五入）</b>
+        <code><pre class="code">
+
+            print(f"{var:.nf}")
+        </pre></code>
+
+
+
+        <hr>
+        <h2>数据类型</h2>
+        <ul>
+            <li>整型：<span lang="en">int</span></li>
+        </ul>
+        <b>类型强制转换</b>
+        <code><pre class="code">
+
+            int(var)
+        </pre></code>
+        注：默认向下取整
+
+        <h2 lang="en">list</h2>
+
+        <b>求和</b>
+        <code><pre class="code">
+
+            sum(list)
+        </pre></code>
+        <b>求元素数量</b>
+        <code><pre class="code">
+
+            list.count(var)
+        </pre></code>
+
+        <b>列表连接</b>
+        <code><pre class="code">
+
+            list1 + list2
+        </pre></code>
+
+        <b>字符串列表合成字符串</b>
+        <code><pre class="code">
+
+            "".join(list)
+        </pre></code>
+        
+        <b>排序</b>
+        <code><pre class="code">
+
+            sorted(list)  \\生成一个浅拷贝的正向排序
+            sorted(list, reverse = True) \\生成一个浅拷贝的逆向排序
+        </pre></code>
+
+        <b>逆序输出</b>
+        <code><pre class="code">
+
+            list(reversed(list))
+        </pre></code>
+
+
+        <b>列表推导式</b>
+        <code><pre class="code">
+
+            [x for x in literable if condition]
+        </pre></code>
+
+
+
+
+        <h2 lang="en">set</h2>
+        <b></b>
+
+
+        <hr>
+        <h2 lang="en">map()</h2>
+        <b>生成可迭代对象</b>
+        <code><pre class="code">
+
+            map(function, iterable)
+        </pre></code>
+        注1：通常可迭代对象会转为<span lang="en">list</span>对象，以便于查看
+        <br>
+        注2：<span lang="en">function</span>仅为函数名，其参数为<span lang="en">iterable</span>中的每一个元素
+        
+        
+        
+        
+
+        <hr>
+        <h2 lang="en">bin()</h2>
+        <b>十进制转二进制数</b>
+        <code><pre class="code">
+
+            bin(num)
+        </pre></code>
+        注：返回字符串以<span lang="en">0b</span>开头，后面跟着<span lang="en">num</span>的二进制数
+        
+        
+        
+        <hr>
+        <table>
+            <tr>
+                <td class="tbtitle">关键字</td>
+                <td class="tbtitle">解释</td>
+            </tr>
+            <tr>
+                <td><b lang="en">nonlocal</b></td>
+                <td class="tbtext">用于嵌套函数中，声明修改的是外部函数的变量。</td>
+            </tr>
+        </table>
+    </body>
+
+</html>

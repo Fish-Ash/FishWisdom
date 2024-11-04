@@ -1,0 +1,76 @@
+<!DOCTYPE>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset = "utf-8">
+        <title>拉曼光谱</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <p><b>高光谱图像（hyperspectral image, HSI）</b>：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;由一系列波段图像组成的具有大量数据的三维图像，提供了非常丰富的空间和光谱信息。
+        <br>
+        <br>缺点：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;庞大的数据量给HSI的的存储与传输带来了沉重的负担。
+        <br>
+        <br>高光谱成像的目的：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;对场景的光谱反射率进行采样，收集具有两个空间维度(h, w)和一个光谱维度λ的3-D数据集，称为数据立方体(h, w， λ)
+        <br>
+        <br>重构的目的：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;根据测量值重构三维高光谱图像
+        </p>
+
+
+        <p><b>感知压缩（compression sensing, CS）理论</b>：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;一种超越传统Nyquist-Shannon采样定理的信号采集与重构框架。
+        </p>
+
+        <p><b>传统的扫描成像方法</b>：
+        <br>
+        <br>方法：
+        <ul>
+            <li>掸扫</li>
+            <li>推扫</li>
+            <li>光谱扫描</li>
+        </ul>
+        <br>缺点：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;扫描过程中可能出现运动伪影和照明效率不足，最终导致成像质量下降
+        </p>
+
+        <p><b>编码孔径快照光谱成像（Coded Aperture Snapshot Spectral Imaging, CASSI）</b>：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;一种高光谱快照成像系统，利用CS理论，通过随机线性投影将三维HSI形成二维快照测量。
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;CASSI能从单次曝光中快读获取动态场景的光谱图像，其所需的样品数量要远远少于基于扫描方法的光谱仪。相应地，需要一种优化算法来重建光谱场景。
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;CASSI系统的痛点在于如何提高从二维压缩测量中重建三维HSI的优化算法质量，这是一个不适定问题。
+        <br>
+        <br>方法：
+        <ul>
+            <li>基于模型驱动的方法</li>
+            <li>基于数据驱动的方法</li>
+        </ul>
+        步骤：
+            <ol><li>对高维光谱图像进行<b>编码降维采集</b></li>
+                <li>对低维观测图像进行<b>解码升维重构</b></li></ol>
+        </p>
+
+        <hr>
+        <p><b>编码降维压缩</b></p>
+        <p>编码模板设计：在标准前向模型的基础上，对传统随机编码方式进行优化，以减少调制过程中的信息损失</p>
+        <p>压缩感知理论</p>
+        <p>奈奎斯特-香农采样定理</p>
+
+
+        <hr>
+        <p><b>解码升维重构</b></p>
+    </body>
+</html>

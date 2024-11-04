@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>误差理论</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第三章 随机误差</h1>
+
+
+        <h2>第三节 标准差的计算方法</h2>
+        <p>标准差用于描述一组测量数据的分散性。</p>
+
+        <b id="BesselFormula">贝塞尔公式</b>
+        $$\sigma = s = \sqrt{\frac{\mathop{\sum}_{i=1}^{n}\nu_i^2}{n-1}}$$
+        其中，残差（参与误差）\(\nu_i = x_i - \bar{x_i}\)，自由度为\(n-1\)
+
+
+        <br><br>
+        <b>极差法</b>
+        <p>适用于\(n &lt;10\)的正态分布整体</p>
+        <p>设等精度多次测量的测得值\(x_1,x_2,\cdots,x_n\)服从正态分布，则极差为：</p>
+        $$\omega_n = x_{max} - x_{min}$$
+        <p>当测量误差服从正态分布时，标准差为：</p>
+        $$s = \omega_n/d_n$$
+        其中，\(d_n\)为极差法系数
+
+        <br><br>
+        <b>最大误差法</b>
+        <p>真值已知且测量误差服从正态分布时：</p>
+        $$s = \frac{1}{k_n}|\delta_i|_{max} $$
+        其中，\(|\delta_i|_{max}\)为真误差绝对值最大值，\(\frac{1}{k_n}\)为真值已知时的最大误差系数。
+        <p>真值未知时：</p>
+        $$s = \frac{1}{k'_n}|\nu_i|_{max}$$
+        其中，\(|\nu_i|_{max}\)为最大残差，\(\frac{1}{k'_n}\)为真值未知时的最大误差法系数。
+    </body>
+
+</html>

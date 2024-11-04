@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>激光原理</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <h1>第一章 光的电磁理论基础</h1>
+
+        <h2>第一节 光的电磁波性质</h2>
+
+        <b>电磁波</b>
+        <p>变化的电磁场</p>
+        <p>电磁矢量以速度\(v\)按波动形式在介质中传播</p>
+        $$v = 1/\sqrt{\mu\epsilon}$$
+        <p>光就是电磁波</p>
+    
+        <b>光速\(c\)</b>
+        <p>真空中电磁波的传播速度</p>
+        $$c = 1/\sqrt{\mu_0\epsilon_0}\approx2.9979\times 10^8m/s$$
+        式中，\(\mu_0\)为真空中的磁导率,\(\epsilon_0\)为真空中的介电常数
+    
+        <br><br>
+        <b>介质的折射率\(n\)</b>
+        <p>电磁波在真空中的速度\(c\)与在不导电的均匀介质中的速度\(v\)之比</p>
+        $$n = \frac{c}{v}=\frac{\sqrt{\mu\epsilon}}{\sqrt{\mu_0\epsilon_0}} = \sqrt{\mu_r\epsilon_r}$$
+        式中，相对磁导率\(\mu_r = \mu/\mu_0\)
+
+        <h3>物质方程</h3>
+        <p>静止的各向同性介质中，有：</p>
+        $$\mathbf{j} = \sigma\mathbf{E}$$
+        $$\mathbf{D} = \epsilon\mathbf{E}$$
+        $$\mathbf{B} = \mu\mathbf{H}$$
+
+        <ul>
+            <li>\(\sigma\)：电导率，各向同性均匀介质中\(\sigma = 0\)</li>
+            <li>\(\mu\)：磁导率，各项同性均匀介质中为常数。\(\mu_0 = 4\pi\times 10^{-7}N\cdot s^2/C^2\)。非磁性物质\(\mu = \mu_0\)</li>
+        </ul>
+
+        <h2>平面波的表达式</h2>
+        $$\mathbf{E} = \mathbf{E_0}\exp[i\omega(t - \frac{r}{v})] = \mathbf{E_0}\exp[i(\omega t + \alpha)]$$
+        $$\mathbf{H} = \mathbf{H_0}\exp[i\omega(t - \frac{r}{v})] = \mathbf{H_0}\exp[i(\omega t + \beta)]$$
+        其中，\(\alpha\)、\(\beta\)可以分别看作是\(\mathbf{E}\)与\(\mathbf{H}\)的初相。
+
+        <h2>第二节 光在电介质面上的反射与折射</h2>
+
+        <b>电磁场的连续条件</b>
+        <p>在没有传导电流和自由电荷的介质中，磁感强度\(\mathbf{B}\)与电感强度\(\mathbf{D}\)的法向分量在界面上连续；电场强度\(\mathbf{E}\)和磁场强度\(\mathbf{H}\)的切向分量在界面上连续。</p>
+        $$
+        \begin{align}
+        \begin{cases}
+        B_{1n} = B_{2n}\\
+        D_{1n} = D_{2n}\\
+        H_{1t} = H_{2t}\\
+        E_{1t} = E_{2t}
+        \end{cases}
+        \end{align}
+        $$
+
+        任一方位振动的光矢量\(\mathbf{E}\)，都可分解为互相垂直的两个分量
+        <ul>
+            <li>\(p\)偏振波（\(E_p\)）：\(\mathbf{E}\)平行于入射面振动的分量，又称<span lang="en">TM</span>波（<span class="tip">横磁波<span class="tiptext">\(\mathbf{H}\)沿界面切线方向</span></span>）</li>
+            <li>\(s\)偏振波（\(E_s\)）：\(\mathbf{E}\)垂直于入射面振动的分量，又称<span lang="en">TE</span>波（<span class="tip">横电波<span class="tiptext">\(\mathbf{E}\)沿界面切线方向</span></span>）</li>
+        </ul>
+
+        <h2>菲涅尔公式</h2>
+        <p>表示反射波、折射波与入射波的振幅和相位关系。</p>
+
+        <table>
+            <tr>
+                <td rowspan="2"><span lang="en">s</span>波</td>
+                <td>振幅反射系数\(r_s\)</td>
+                <td>$$r_s = \frac{A'_{1s}}{A_{1s}} = \frac{\frac{n_1}{\mu_1}\cos\theta_1 - \frac{n_2}{\mu_2}\cos\theta_2}{\frac{n_1}{\mu_1}\cos\theta_1 + \frac{n_2}{\mu_2}\cos\theta_2}$$</td>
+                <td rowspan="4">两种介质都是电介质时，考虑一般的非磁性物质，即\(\mu_1 = \mu_2\)</td>
+                <td>$$r_s = \frac{n_1\cos\theta_1 - n_2\cos\theta_2}{n_1\cos\theta_1 + n_2\cos\theta_2}$$</td>
+            </tr>
+            <tr>
+                <td>振幅透射系数\(t_s\)</td>   
+                <td>$$t_s = \frac{A_{2s}}{A_{1s}} = \frac{2\frac{n_1}{\mu_1}\cos\theta_1}{\frac{n_1}{\mu_1}\cos\theta_1 + \frac{n_2}{\mu_2}\cos\theta_2}$$</td>
+                <td>$$t_s = \frac{2n_1\cos\theta_1}{n_1\cos\theta_1 + n_2\cos\theta_2}$$</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><span lang="en">p</span>波</td>
+                <td>振幅反射系数\(r_p\)</td>
+                <td>$$r_p = \frac{A'_{1p}}{A_{1p}} = \frac{\frac{n_2}{\mu_2}\cos\theta_1 - \frac{n_1}{\mu_1}\cos\theta_2}{\frac{n_2}{\mu_2}\cos\theta_1 + \frac{n_1}{\mu_1}\cos\theta_2}$$</td>
+                <td>$$r_p = \frac{n_2\cos\theta_1 - n_1\cos\theta_2}{n_2\cos\theta_1 + n_1\cos\theta_2}$$</td>
+            </tr>
+            <tr>
+                <td>振幅透射系数\(t_p\)</td>
+                <td>$$t_p = \frac{A_{2p}}{A_{1p}} = \frac{2\frac{n_1}{\mu_1}\cos\theta_1}{\frac{n_2}{\mu_2}\cos\theta_2+\frac{n_1}{\mu_1}\cos\theta_2}$$</td>
+                <td>$$t_p = \frac{2n_1\cos\theta_1}{n_2\cos\theta_1 + n_1\cos\theta_2}$$</td>
+            </tr>
+        </table><br>
+    
+    
+        考虑垂直入射的情况，即\(\theta_1 = \theta_2 = 0\)，相对折射率\(n = n_2/n_1\)
+        <table>
+            <tr>
+                <td rowspan="2"><span lang="en">s</span>波</td>
+                <td>振幅反射系数\(r_s\)</td>
+                <td>$$r_s = \frac{n_1 - n_2}{n_1 + n_2} = -\frac{n-1}{n+1}$$</td>
+            </tr>
+            <tr>
+                <td>振幅透射系数\(t_s\)</td>   
+                <td>$$t_s = \frac{2n_1}{n_1 + n_2} = \frac{2}{n + 1}$$</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><span lang="en">p</span>波</td>
+                <td>振幅反射系数\(r_p\)</td>
+                <td>$$r_p = \frac{n_2 - n_1}{n_2 + n_1} = \frac{n - 1}{n + 1}$$</td>
+            </tr>
+            <tr>
+                <td>振幅透射系数\(t_p\)</td>
+                <td>$$t_p = \frac{2n_1}{n_2 + n_1} = \frac{2}{n + 1}$$</td>
+            </tr>
+        </table><br>
+
+        其他情况下，考虑折射定律\(n_1\sin\theta_1 = n_2\sin\theta_2\)
+        <table>
+            <tr>
+                <td rowspan="2"><span lang="en">s</span>波</td>
+                <td>振幅反射系数\(r_s\)</td>
+                <td>$$r_s = \frac{\sin(\theta_1 - \theta_2)}{\sin(\theta_1 + \theta_2)}$$</td>
+            </tr>
+            <tr>
+                <td>振幅透射系数\(t_s\)</td>   
+                <td>$$t_s = \frac{2\cos\theta_1\sin\theta_2}{\sin(\theta_1 + \theta_2)}$$</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><span lang="en">p</span>波</td>
+                <td>振幅反射系数\(r_p\)</td>
+                <td>$$r_p = \frac{\tan(\theta_1-\theta_2)}{\tan(\theta_1 + \theta_2)}$$</td>
+            </tr>
+            <tr>
+                <td>振幅透射系数\(t_p\)</td>
+                <td>$$t_p = \frac{2\cos\theta_1\sin\theta_2}{\sin(\theta_1 + \theta_2)\cos(\theta_1 - \theta_2)}$$</td>
+            </tr>
+        </table><br>
+
+
+        <h2>坡印廷矢量\(\mathbf{S}\)（辐射强度矢量、能流密度）</h2>
+        <p>用于描述电磁能量的传播。</p>
+        <p>其方向表示能量流动的方向。各向同性介质中，亦为波的传播方向。</p>
+        <p>其大小等于单位时间内垂直通过单位面积的能量。</p>
+        $$\mathbf{S} = \mathbf{E} \times \mathbf{H} = \frac{1}{\mu}\mathbf{E}\times\mathbf{B}$$
+
+        <b>光强度\(I\)</b>
+        <p>介质中某点坡印廷矢量的瞬时值是忽大忽小的，但在一个周期内其平均值是一个定值，将其定义为光强度。</p>
+        $$I = \frac{1}{T}\int_0^TS\mathrm{d}t = \frac{1}{2}\sqrt{\frac{\epsilon}{\mu}}A^2$$
+        <p>取\(\mathbf{E}\)与\(\mathbf{H}\)的实数部分，有：</p>
+        $$\mathbf{E} = \mathbf{E_0}\cos(\omega t + \alpha)$$
+        $$\mathbf{H} = \mathbf{H_0}\cos(\omega t + \beta)$$
+        $$\begin{align}
+        I &= \frac{1}{T}\int_0^{T}S\mathrm{d}t\\
+          &= \frac{1}{T}\int_0^{T}|\mathbf{E}||\mathbf{H}|\sin\frac{\pi}{2}\mathrm{d}t\\
+          &= \frac{1}{T}\int_{0}^TE_0H_0\cos(\omega t + \alpha)\cos(\omega t + \beta)\mathrm{d}t\\
+          &= \frac{1}{2}E_0H_0\cos(\alpha - \beta)
+        \end{align}$$
+        $$\begin{align}
+        \because Re(EH^*) &= Re\{E_0\exp[{i(\omega t + \alpha)}]\cdot H_0\exp[{-i(\omega t + \beta)}]\}\\
+                 &= E_0H_0\cos(\alpha - \beta)
+        \end{align}$$
+        $$\therefore I = \frac{1}{2} Re(EH^*)$$
+
+
+        <h2>入射波、反射波与透射波的能量关系</h2>
+        <img src="./img/W.png" width="400"><br>
+        通过单位面积的光能为：<br><br>
+        入射波：\(W_1 = I_1\cos\theta_1 = \frac{1}{2}\sqrt{\frac{\epsilon_1}{\mu_1}}A_1^2\cos\theta_1\)<br><br>
+        反射波：\(W'_1 = I'_1\cos\theta_1 = \frac{1}{2}\sqrt{\frac{\epsilon_1}{\mu_1}}A_1'^2\cos\theta_1\)<br><br>
+        透射波：\(W_2 = I_2\cos\theta_2 = \frac{1}{2}\sqrt{\frac{\epsilon_2}{\mu_2}}A_2^2\cos\theta_2\)
+
+        <table>
+            <tr>
+                <td></td>
+                <td class="tbtitle">定义</td>
+                <td class="tbtitle">公式</td>
+            </tr>
+            <tr>
+                <td>反射比\(\rho\)</td>
+                <td>反射波与入射波能量之比</td>
+                <td>$$\rho = \frac{W_1'}{W_1} = \frac{A_1^2}{A_1'^2}$$</td>
+            </tr>
+            <tr>
+                <td>透射比\(\tau\)</td>
+                <td>透射波与入射波能量之比</td>
+                <td>$$\tau = \frac{W_2}{W_1} = \frac{\sqrt{\epsilon_2\mu_1}\cos\theta_2}{\sqrt{\epsilon_1\mu_2}\cos\theta_1}\frac{A_2^2}{A_1^2} = \frac{n_2\cos\theta_2}{n_1\cos\theta_1}\frac{A_2^2}{A_1^2}$$（<span class="tip">非磁性物质<span class="tiptext">\(\mu_1 = \mu_2\)</span></span>）</td>
+            </tr>
+        </table>
+        
+    </body>
+
+
+</html>

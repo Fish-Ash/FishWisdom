@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>误差理论</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第四章 系统误差</h1>
+        <h2>第一节 系统误差概述</h2>
+
+        <h3>三、系统误差的分类</h3>
+        <b>按系统误差在测量过程中的不同变化特性</b>
+        <ul>
+            <li>恒定系统误差（定值系统误差）：整个测量过程中，误差大小和符号固定不变的系统误差</li>
+        </ul>
+        <b><span lang="en">t</span>检验法</b>
+        <p>设某量的测量值服从正态分布，若独立测得该量的两组数据如下：</p>
+        $$
+        x_i, i=1,2,\cdots,n_x\\
+        y_j, j=1,2,\cdots,n_y\\
+        \bar x = \frac{1}{n_x}\mathop{\sum}_{i=1}^{n_x}x_i\\
+        \bar y = \frac{1}{n_y}\mathop{\sum}_{j=1}^{n_y}y_j\\
+        s_x^2 = \frac{1}{n_x}\mathop{\sum}_{i=1}^{n_x}(x_i-\bar x)^2\\
+        s_y^2 = \frac{1}{n_y}\mathop{\sum}_{j=1}^{n_y}(y_i-\bar y)^2\\
+        \nu = n_x + n_y -2\\
+        t = (\bar x - \bar y)\sqrt{\frac{n_xn_y\nu}{(n_x + n_y)(n_xs_x^2+n_ys_y^2)}}
+        $$
+    </body>
+
+</html>

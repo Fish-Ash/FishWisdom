@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>压缩感知理论</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <h1>压缩感知理论</h1>
+
+        <p><span lang="en">Compressed Sensing</span>理论可以以远低于奈奎斯特采样定理所要求的标准对信号进行采样并重建。</p>
+
+        <h2>条件</h2>
+        <b>稀疏性条件</b>
+        <p>信号在某个基或字典下是稀疏的</p>
+        <b>相干性条件</b>
+        <p>测量矩阵与稀疏基之间的相干性越低，越容易重建</p>
+
+        <hr>
+        <b lang="en">basis</b>：
+        <p>对于一个<span lang="en">n</span>维的向量空间，一个基由<span lang="en">n</span>个线性无关的向量组成。该向量空间的任一向量均可由基中的向量线性组合而成。</p>
+    
+        <b>正交基</b>
+        <p>正交基中，任意两个向量内积为0</p>
+
+        <b>稀疏基</b>
+        <p>使信号\(x\)在此基下的表示\(s\)具有很少非零分量的基\(\Psi\)</p>
+        $$x = \Psi s$$
+        <p>完备性：基的数量等于信号空间的维度，对任一信号仅有唯一的表示方式</p>
+        <ul>
+            <li>傅里叶基</li>
+            <li>小波基</li>
+            <li>离散余弦变换基</li>
+            <li>字典学习</li>
+        </ul>
+
+        <b lang="en">Dictionary</b>
+        <p>对于字典矩阵\(\mathbb{D}^{m\times n}\)，每列称为一个原子</p>
+        <p>\(m\)为信号维度</p>
+        <p>\(n\)为字典中的原子数量</p>
+        <p>过完备性：原子数大于信号维度，提供了多种信号表示方式</p>
+
+        量化稀疏性
+        <ul>
+            <li><span lang="en">L1</span>范数越小，信号越稀疏</li>
+            <li>稀疏度指标：非零元素个数/总元素个数</li>
+        </ul>
+
+    </body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+</head>
+
+<body>
+    <div class="logo">
+        <h1>不惑</h1>
+    </div>
+    <div class="login">   
+        <h2>登陆</h2>
+        <span>账号：</span>
+        <input type="text" placeholder="请输入账号" class="input">
+        <br>
+        <span>密码：</span>
+        <input type="password" placeholder="请输入密码" class="input">
+        <div>
+        <button class="login_btn"><a href="Home.html">登 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</a></button>
+        </div>
+    </div>
+</body>
+
+<style>
+    body{
+        margin: 0;
+        display: flex;
+        justify-content: center;/* 元素左右居中对齐 */
+        align-items: center;/* 元素上下居中对齐 */
+        background-image: linear-gradient(#5192E6 0%, #18E7D7 100%);/* 背景图渐变 */
+        height: 100vh;/* 背景图填充整个屏幕 */
+    }
+    .logo{
+        position: absolute;
+        top: 0;
+        text-align: center;
+        font-family: 华文行楷;
+        color: #ffffff;
+        font-size: 35px;
+
+    }
+    .login{
+        text-align: center;/* 元素居中对齐 */
+        background-color: rgba(87, 86, 86, 0.2);
+        width: 600px;
+        height: 520px;
+        border-radius: 25px;
+        box-shadow: 0px 0px 50px 0px #0a958a;
+    }
+    .login h2{
+        color: aliceblue;
+        font-size: 25px;
+        font-family: 楷体;
+    }
+    .login span{
+        color:#ffffff;
+        font-size:20px;
+        font-weight: 100;
+    }
+    .login input{
+        background-color: transparent;
+        border: 0;
+        outline: none;
+        border-bottom: 1px solid #ffffff;
+        width:320px;
+        height:45px;
+        margin:30px 30px 30px 5px;
+        color:#ffffff;
+        font-size: 20px;
+    }
+    .input::placeholder{
+        color: #01eeff;
+        font-style: italic;
+        font-weight: 50;
+        font-size: 16px;
+    }
+    .login_btn{
+        width:240px;
+        height:60px;
+        border-radius: 30px;
+        background-color: rgba(255, 255, 255, 0.582);
+        border: 1px solid rgb(190, 225, 255);
+        font-size: 30px;
+        font-weight: 100;
+        color: rgb(47, 146, 233);
+        margin-top: 15px;
+    }
+</style>

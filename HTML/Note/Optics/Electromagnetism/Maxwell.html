@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+<meta charset="utf-8">
+<title>应用光学</title>
+<link rel="stylesheet" href="../../../../CSS/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+</head>
+
+
+<body>
+    <div class="header"><h1>不惑</h1></div>
+
+
+    <ul class="navibar">
+    <li><a href="../../Home.html">主页</a></li>
+    <li><a href="../../Navigation.html">导航</a></li>
+    </ul>
+
+    <h1><span lang="en">Maxwell</span>方程组</h1>
+    <p><span lang="en">Maxwell</span>方程组由以下四个定律组成：</p>
+    <ul>
+        <li lang="en"><a href="Gauss's Law.html" class="goto">Gauss's Law</a></li>
+        <li lang="en"><a href="Gauss's Law for Magnetism.html" class="goto">Gauss's Law for Magnetism</a></li>
+        <li>法拉第电磁感应定律</li>
+        <li>安培全电流定律</li>
+    </ul> 
+    积分形式
+    $$
+    \begin{cases}
+    \iint\limits_{闭}\mathbf{D}\cdot \mathrm{d}\mathbf{\sigma} = Q\\
+    \iint\limits_{闭}\mathbf{B}\cdot \mathrm{d}\mathbf{\sigma} = 0\\
+    \oint \mathbf{E}\cdot \mathrm{d}\mathbf{l} = -\iint \frac{\partial \mathbf{B}}{\partial t}\mathrm{d}\mathbf{\sigma}\\
+    \oint \mathbf{H}\cdot \mathrm{d}\mathbf{l} = I + \iint \frac{\partial \mathbf{D}}{\partial t}\mathrm{d}\mathbf{\sigma}
+    \end{cases}
+    $$
+
+    参数说明
+    <ul>
+        <li>\(\mathbf{D}\)：电感强度</li>
+        <li>\(Q\)：闭合曲面内包含的总电荷量</li>
+        <li>\(\mathbf{B}\)：磁感强度</li>
+        <li>\(\mathbf{E}\)：电场强度</li>
+        <li>\(\mathbf{H}\)：磁场强度</li>
+        <li>\(I\)：传导电流</li>
+        <li>\(\frac{\partial\mathbf{B}}{\partial t}\)：磁场随时间的变化率</li>
+        <li>\(\frac{\partial \mathbf{D}}{\partial t}\)：位移电流密度</li>
+        <li>\(\iint\frac{\partial \mathbf{D}}{\partial t}\mathrm{d}\sigma\)：位移电流</li>
+    </ul>
+    微分形式
+    $$
+    \begin{cases}
+    \nabla\cdot\mathbf{D} = \rho\\
+    \nabla\cdot\mathbf{B} = 0\\
+    \nabla\times\mathbf{E} = -\frac{\partial \mathbf{B}}{\partial{t}}\\
+    \nabla\times\mathbf{H} = \mathbf{j} + \frac{\partial \mathbf{D}}{\partial t}
+    \end{cases}
+    $$
+
+    $$
+    \begin{cases}
+    \nabla\cdot E  =\frac{\rho}{\epsilon_0}\\
+    \nabla\times E = -\frac{\partial B}{\partial t}\\
+    \nabla\cdot B = 0\\
+    \nabla\times B = \mu_0j_0+\epsilon_0\mu_0\frac{\partial E}{\partial t}
+    \end{cases}
+    $$
+</body>
+
+</html>

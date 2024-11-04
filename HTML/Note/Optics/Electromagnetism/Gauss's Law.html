@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>电磁学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1 lang="en">Gauss's Law</h1>
+
+
+        <table>
+            <tr>
+                <td class="tbtitle" rowspan="3">公式</td>
+                <td rowspan="3">$$\oint_S\mathbf{D}\mathrm{d}\mathbf{S} = Q$$</td>
+                <td>\(\mathbf{D}\)</td>
+                <td>电位移矢量</td>
+            </tr>
+            <tr>
+                <td>\(\mathbf{S}\)</td>
+                <td>闭合曲面</td>
+            </tr>
+            <tr>
+                <td>\(Q\)</td>
+                <td>闭合面内自由电荷代数和</td>
+            </tr>
+            <tr>
+                <td class="tbtitle">描述</td>
+                <td class="tbtext" colspan="3"><b>静电场中，通过任意闭合曲面的电位移通量等于闭合面内自由电荷的代数和。</b></td>
+            </tr>
+        </table>
+
+        <h1>证明</h1>
+        <h2>球面内点电荷</h2>
+        <div style="text-align: center;"><img src="./img/Gauss1.png" width="200"></div>
+        <br><br>
+        <p>以点电荷\(q\)为中心，取任意长度\(r\)为半径做闭合球面\(S\)。在\(S\)上求面元d\(S\)，其法线\(\mathbf{n}\)与面元处的电场强度\(\mathbf{E}\)方向相同，故通过\(\mathrm{d}S\)的电通量为：</p>
+        $$\mathrm{d}\Phi_e = \mathbf{E}\mathrm{d}\mathbf{S} = E\cos0\mathrm{d}S = \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\mathrm{d}S$$
+        <p>通过整个闭合球面\(S\)的电通量为：</p>
+        $$\Phi_e = \oint_S\mathrm{d}\Phi_e = \oint_S \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\mathrm{d}S = \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\cdot 4\pi r^2 = \frac{q}{\epsilon_0}$$
+        
+        <h2>任意闭合曲面内点电荷</h2>
+        <div style="text-align: center;"><img src="./img/Gauss2.png" width="200"></div>
+        <p>作一任意闭合曲面\(S'\)包围点电荷，易知穿过\(S'\)的电场线根数与穿过\(S\)的电场线根数相等，即：</p>
+        $$\Phi_e = \frac{q}{\epsilon_0}$$
+
+        <h2>任意闭合曲面外点电荷</h2>
+        <div style="text-align: center;"><img src="./img/Gauss3.png" width="200"></div>
+        <p>在点电荷外作一任意闭合曲面\(S''\)，其外部的电荷发出的电场线进入该闭合曲面的根数与穿过闭合曲面的根数相等，故闭合曲面外的点电荷对该闭合曲面上的电场强度无贡献，即：</p>
+        $$\Phi_e = \frac{q}{\epsilon_0} = 0$$
+        <h2>任意带电系统的电场</h2>
+        <p>根据场强叠加原理，有：</p>
+        $$\Phi_e = \oint_S\mathbf{E}\cdot\mathrm{d}\mathbf{S} = \sum\limits_{i=1}^n\oint_S\mathbf{E}_i\cdot\mathrm{d}\mathbf{S} = \frac{\sum q_i}{\epsilon_0}$$
+
+        <h2><a href="chapter1.html#Dielectric" class="goto">电介质</a>中</h2>
+        <p>电介质中，总电场\(\mathbf{E}\)是自由电荷电场强度\(\mathbf{E}_0\)和极化电荷电场强度\(\mathbf{E}'\)的叠加。</p>
+        $$\oint_S\mathbf{E}\mathrm{d}\mathbf{S} = \frac{1}{\epsilon_0}(\sum q_i + \sum q_i')$$
+        <span class="tip">$$\because \oint_S\mathbf{P}\mathrm{d}\mathbf{S} = -\sum q_i'$$<span class="tiptext">极化强度与极化电荷的关系式</span></span>
+        $$\therefore \oint_S\mathbf{D}\mathrm{d}\mathbf{S} = \oint_S \epsilon_0\mathbf{E} + \mathbf{P}\mathrm{d}\mathbf{S} = \sum q_i = Q$$
+        <p>没有介质存在时，\(\mathbf{D} = \epsilon_0\mathbf{E_0}\)，公式依然成立。</p>
+        
+
+        <div class="ending">Ending...</div>
+    </body>
+
+</html>

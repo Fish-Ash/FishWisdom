@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>机械原理</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第十章 齿轮机构及其设计</h1>
+        <p>
+            <ul>
+                <li>齿顶圆\(r_a\)：齿轮中心到轮齿最高点（齿顶）的距离</li>
+                <li>齿根圆\(r_f\)：齿轮中心到轮齿最低点（齿根）的距离</li>
+                <li>齿顶圆齿厚\(s_a\)：齿顶两边线的距离</li>
+                <li>齿根圆齿厚\(s_f\)：齿根两边线的距离</li>
+                <li>齿顶齿槽宽\(e_a\)：相邻两齿顶间的距离</li>
+                <li>齿根齿槽宽\(e_f\)：相邻两齿根间的距离</li>
+                <li>分度圆：齿厚等于齿槽宽的位置，分度圆直径\(d = mz\)</li>
+                <li>齿距\(p = s + e = \pi m\)</li>
+                <li>模数：m</li>
+                <li>齿宽：齿轮的横向长度</li>
+                <li>齿顶高\(h_a\)：分度圆到齿顶圆的高度</li>
+                <li>齿根高\(h_f\)：分度圆到齿根圆的高度</li>
+                <li>齿高：\(h = h_a + h_f\)</li>
+                <li>基圆：渐开线的公法线均切于基圆</li>
+                <li>法向齿距：渐开线公法线与下一个齿同侧渐开线延长线的交点的距离，\(p_n = p_b = pcos\alpha\)</li>
+                <li>齿顶高系数：齿顶高与模数的比值，\(h_a^* = h_a/m = 1\)</li>
+                <li>顶隙距离：\(c^* = (h_f - h_a)/m = 0.25\)</li>
+            </ul>
+            找基圆：
+            <ol>
+                <li>过分度圆与齿边交点（P）做渐开线切线，过圆心（O）做半径，交点（N）为半径做圆即为基圆</li>
+                <li>压力角：\(PON = 20°\)</li>
+            </ol>
+            标准齿轮计算：
+            <br>\(\alpha = 20°\)、\(h_a* = 1\)、\(c* = 0.25\)， \(m\)已知，齿数\(z\)已知
+            <ul>
+                <li>分度圆直径\(d = mz\)</li>
+                <li>基圆直径\(d_b = d\cos\alpha = mz\cos20°\)</li>
+                <li>齿顶高\(h_a = h_a^* \times m = m\)</li>
+                <li>齿根高\(h_f = c^*m + h_a = 1.25m\)</li>
+                <li>齿全高\(h = h_a + h_f = 2.25m\)</li>
+                <li>齿顶圆直径\(d_a = d + 2h_a = mz + 2m\)</li>
+                <li>齿根圆直径\(d_f = d - 2hf = mz - 2.5m\)</li>
+                <li>其他压力角\(\alpha_k = \arccos(d_b/d_k)\)</li>
+                <li>齿距\(p = \pi m\)</li>
+                <li>基圆齿距与法向齿距\(p_b = p_n = p \cos\alpha = \pi m \cos20°\)</li>
+                <li>分度圆齿厚与齿槽宽\(s = e = \pi m/2\)</li>
+                <li>其他齿厚\(s_k = sr_k/r - 2r[(\tan\alpha_k - \alpha_k) - (\tan\alpha - \alpha)]\)</li>
+                <li>顶隙\(c = c^*m = 0.25m\)</li>
+                <li>标准中心距\(a = m(z_1+z_2)/2\)</li>
+                <li>传动比\(i_{12} = \omega_1/\omega_2 = z_2/z_1 = d_2/d_1\)</li>
+                <li>按标准中心距安装时，节圆与分度圆重合\(d' = d\)</li>
+                <li>以非标准中心距安装时，节圆直径\((d_1' + d_2')/2 = a\)，\(i = d_1'/d_2'\)，\(d_1'\)与\(d_2'\)发生改变；同时，\(a\cos\alpha = a'\cos\alpha'\)，\(\alpha'\)改变</li>
+            </ul>
+        </p>
+
+    </body>
+
+</html>

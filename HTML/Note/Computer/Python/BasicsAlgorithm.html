@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Pandas</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1><span lang="en">Python</span>基础算法</h1>
+
+        <b>回溯算法 求解列表所有子集</b>
+        <code><pre class="code">
+
+            def sublists(list):
+                def backtrack(start, path):
+                    res.append(path)
+
+                    for i in range(start, len(list)):
+                        backtrack(i+1, path + list[i:i+1])
+
+                res = []
+                backtrack(0, [])
+                return res
+        </pre></code>
+
+    </body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>STM32</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../../.Home.html">主页</a></li>
+            <li><a href="../../.Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>环境配置</h1>
+
+        <h2>一些网站</h2>
+        <a href="https://www.st.com.cn/">意法半导体官网（下载数据手册）</a><br>
+        <a href="https://www.st.com/en/development-tools/stsw-link009.html/"><span lang="en">STLink</span>驱动下载</a><br>
+        <a href="https://www.keil.arm.com/devices/">Keil器件支持包下载</a>
+
+        <h2>安装<span lang="en">STLink</span>驱动安装</h2>
+        <p><span class="path">en.stsw-link009</span>文件夹下，以管理员身份运行<span class="path">dpinst_amd64.exe</span>程序（64位电脑）即可。</p>
+
+
+        <h2>接线</h2>
+        <span lang="en">STLink</span>针脚说明如图所示<br>
+        <img src="./img/STLink.jpg" width="400"><br>
+        <b>最小系统板与<span lang="en">STLink</span>连线对应</b>
+        <table>
+            <tr>
+                <td class="tbtitle">最小系统板</td>
+                <td class="tbtitle">针脚编号</td>
+                <td class="tbtitle">说明</td>
+            </tr>
+            <tr>
+                <td lang="en">3V3</td>
+                <td lang="en">1</td>
+                <td>高电平</td>
+            </tr>
+            <tr>
+                <td lang="en">SWIO</td>
+                <td lang="en">7</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td lang="en">SWCLK</td>
+                <td lang="en">9</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td lang="en">GND</td>
+                <td lang="en">20</td>
+                <td>低电平</td>
+            </tr>
+
+        </table>
+
+        <b>接线验证</b>
+        <p>打开<span lang="en">Keil5</span>软件，选择<button class="opt">魔术棒</button>\(\rightarrow\)<button class="opten">Debug</button>。</p>
+        <p>在右侧最上栏下拉选择<button class="opten">ST-Link Debuger</button>，点击<button class="opten">Setting</button>。</p>
+        <p>若在<span lang="en">SW Device</span>一栏中<span lang="en">IDCODE</span>显示为16进制数据，则说明接线无误。</p>
+    
+    
+        <h3>跑马灯实验</h3>
+
+        代码修改<span lang="en">led.h</span>
+        <ul>
+            <li lang="en">line30：GPIO<span style="color:red">A</span> \(\rightarrow\) GPIO<span style="color:red">C</span></li>
+            <li lang="en">line31：GPIO_PIN_<span style="color:red">8</span> \(\rightarrow\) GPIO_PIN_<span style="color:red">13</span></li>
+            <li lang="en">line32：HAL_RCC_GPIO<span style="color:red">A</span>_CLK_ENABLE\(\rightarrow\)HAL_RCC_GPIO<span style="color:red">C</span>_CLK_ENABLE</li>
+        </ul>
+
+
+        <b lang="en">Error:</b>
+        <pre>
+        Rebuild started: Project: atk_f103
+        *** Target 'Template' uses ARM-Compiler 'Default Compiler Version 5' which is not available.
+        *** Please review the installed ARM Compiler Versions:
+        'Manage Project Items - Folders/Extensions' to manage ARM Compiler Versions.
+        'Options for Target - Target' to select an ARM Compiler Version for the target.
+        *** Rebuild aborted.
+        Build Time Elapsed:  00:00:00
+        </pre>
+        <b lang="en">Solution</b><br>
+        <button class="opt">魔术棒</button>\(\rightarrow\)<button class="opten">target</button>将<span lang="en">ARM Compiler</span>选择为<span lang="en">V6.21</span>
+    
+
+        <br><br>
+        <b>通过<span lang="en">STLink</span>烧录程序</b>
+        <ol>
+            <li>编译程序<button class="opten">Build</button></li>
+            <li>烧录程序<button class="opten">Download</button></li>
+        </ol>
+
+        <br><br>
+        注：
+        <ol>
+            <li>最小系统板不支持串口下载</li>
+        </ol>
+    </body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>激光原理</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <h1>第四章 光学谐振腔</h1>
+
+        <b>平行平面腔（法布里-珀罗干涉仪，<span lang="en">F-P</span>腔）</b>
+        <p>由两块平行平面反射镜组成。</p>
+        
+
+        <h3>二、光学谐振腔的作用</h3>
+        <b>1、提供光学正反馈</b>
+        <p></p>
+        <b>2、控制腔内振荡光束的特性</b>
+        <p>控制腔内光束的纵向分布特性，使大量光子集结在谐振腔所限制的少数几个模式中，从而提高光子的简并度，获得单色性好，方向性腔的相干光。</p>
+        <p>控制激光束的横向分布特性，影响光束的光斑尺寸，横模及光束的发散角等。</p>
+        <p>改变腔内光束的损耗（不同的腔镜几何结构还能改变腔内的几何偏折损耗），在增益一定的情况下通过改变输出耦合率来实现对激光器的控制。</p>
+    
+        <h2>第四节 光学谐振腔的几何光学分析</h2>
+        <h3>一、光线传播矩阵</h3>
+
+        <b>自由空间的光线矩阵</b>
+        $$
+        \begin{align}
+        \begin{cases}
+        x_2 \approx x_1 + \theta_1L &= 1\cdot x + L\cdot \theta_1\\
+        \theta_2 = \theta_1 &= 0\cdot x_1 + 1\cdot \theta_1 
+        \end{cases}
+        \end{align}
+        \Rightarrow
+        \left[
+        \begin{array}{cc}
+        x_2\\
+        \theta_2
+        \end{array}
+        \right] = 
+        \left[
+        \begin{array}{cc}
+        1 & L\\
+        0 & 1
+        \end{array}
+        \right]
+        \left[
+        \begin{array}{cc}
+        x_1\\
+        \theta_1
+        \end{array}
+        \right]
+        $$
+        
+
+        <b>光腔的自行闭合</b>
+        <p>指的是光在光学谐振腔内传播时，由于谐振腔结构和反射镜的配置，光束能够在腔内沿特定路径反射多次后回到初始位置，形成一个闭合的路径。这一现象确保了光能够在谐振腔内来回反射，并不断与增益介质相互作用，从而维持激光振荡。</p>
+        
+    </body>
+
+</html>

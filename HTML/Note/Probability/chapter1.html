@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>概率论</title>
+<link rel="stylesheet" type="text/css" href="../../../CSS/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+<body>
+<h1>第一章</h1>
+<p>
+<b>全概率公式</b>：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;若\(B_1, B_2, \cdots, B_n\)为\(\Omega\)的一个完备事件组，则：
+$$A = AB_1 \cup AB_2 \cup \cdots \cup AB_n$$
+$$\begin{align}
+P(A) &= P(AB_1) + P(AB_2) + \cdots + P(AB_n)\\
+&= \mathop{\sum}\limits_{i=1}^n P(AB_i)\\
+&= \mathop{\sum}\limits_{i=1}^n P(B_i)P(A|B_i)
+\end{align}$$
+</p>
+
+<p>
+    概率的性质：
+    <br>\(P(A\cup B) = P(A) + P(B) - P(AB)\)
+    <br>\(P(A - B) = P(A\bar B) = P(A) - P(AB)\)
+</p>
+</body>
+
+</html>

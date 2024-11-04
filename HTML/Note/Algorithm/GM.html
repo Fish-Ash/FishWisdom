@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>算法</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>灰色预测模型</h1>
+        <p>
+            适用场景：数据少，看不出明显规律
+
+            <br>
+            找规律:
+            <br>
+            累加生成序列：
+            $$x^{(1)}(i) = \mathop{\sum}_{k=1}^ix^{(0)}(i)$$
+
+            构建一阶常微分方程拟合曲线<span class="note">（不懂为什么用一阶常微分方程，需要补充高数相关知识）</span>
+            $$\frac{dx^{(1)}}{dt} + ax^{(1)} = u$$
+            要预测数据就要解微分方程，要解微分方程，就要求解\(a\)和\(u\)
+            <br>
+            由于数据是离散的而非连续的，故：
+            $$
+            \frac{dx^{(1)}}{dt} = \frac{\Delta x^{(1)}}{\Delta t} = x^{(0)}(t)\\
+            x^{(0)}(t) = -ax^{(1)} + u
+            $$
+            
+        </p>
+        
+    </body>
+
+</html>

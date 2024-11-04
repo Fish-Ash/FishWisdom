@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>算法</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>Numpy</h1>
+
+        <p>
+            伪模拟量：
+            <br>
+            <code>
+                np.linspace(start, end, num)
+            </code><br>
+
+            <br>
+            展平列表：
+            <br>
+            <code>
+                [item for sublist in list for item in sublist]
+            </code><br>
+
+            <br>
+            随机初始化矩阵:
+            <br>
+            <code>
+                x_min + np.random.rand(col, row)*(x_max - x_min)
+            </code><br>
+
+            <br>matplotlib正常显示中文：<br>
+            <code>
+                plt.rcParams['font.sans-serif'] = ['SimHei']
+            </code><br>
+            <code>
+                plt.rcParams['axes.unicode_minus'] = False
+            </code>
+        </p>
+    </body>
+
+</html>

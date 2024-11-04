@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>算法</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>粒子群算法（PSO）</h1>
+
+        <p>
+            分类：
+            <ul>
+                <li>离散型粒子群算法\(\rightarrow\)动态规划问题</li>
+                <li>连续型粒子群算法\(\rightarrow\)函数最优化问题</li>
+            </ul>
+
+            基本粒子群算法：
+            <br>
+            <br>参数介绍
+            <ul>
+                <li>在一个D维目标搜索空间中，有N个粒子组成一个群落：
+                    $$X = \{X_1, X_2, \cdots, X_N\}$$
+                </li>
+                <li>第i个粒子为一个D维的向量：
+                    $$X_i = (x_{i1}, x_{i2}, \cdots, x_{iD})$$
+                </li>
+                <li>第i个粒子的速度也为一个D维的向量：
+                    $$V_i = (v_{i1}, v_{i2}, \cdots, v_{iD})$$
+                </li>
+                <li>第i个例子迄今为止搜索到的最优位置称为个体极值：
+                    $$p_{best} = (p_{i1}, p_{i2}, \cdots, p_{iD})$$
+                </li>
+                <li>整个粒子群迄今为止搜索到的最优位置为全局最优：
+                    $$g_{best} = (g_1, g_2, \cdots, g_D)$$
+                </li>
+            </ul>
+            <br>参数更新
+            <br>
+            <br>1.速度更新
+            $$v_{ij}(t+1) = v_{ij}(t) + c_1r_1(t)[p_{ij}(t)-x_{ij}(t)] + c_2r_2(t)[p_{gj}(t) - x_{ij}(t)]$$
+            <ul>
+                <li>\(v_{ij}(t)\)：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;动量部分，代表粒子有维持自己先前速度的趋势。</li>
+                <li>\(c_1r_1(t)[p_{ij}(t)-x_{ij}(t)]\)：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                </li>
+            </ul>
+            2.位置更新
+            $$x(t+1) = x(t) + v(t+1)$$
+        </p>
+        <p>标准粒子群算法
+            <br>1.速度更新
+            $$v_{ij}(t+1) = w\cdot v_{ij}(t) + c_1r_1(t)[p_{ij}(t)-x_{ij}(t)] + c_2r_2(t)[p_{gj}(t) - x_{ij}(t)]$$
+            <ul>
+                <li>\(w\)：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;动态权重，保证在迭代前期具有足够的全局搜索能力，后期专注于局部最优解的搜索能力，即\(w\propto \frac1t\)
+                    $$w = w_{max} - \frac{(w_{max}-w_{min})\cdot t}{T}$$
+                </li>
+            </ul>
+            2.位置更新
+            $$x(t+1) = x(t) + v(t+1)$$
+        </p>
+        
+        
+    </body>
+
+</html>

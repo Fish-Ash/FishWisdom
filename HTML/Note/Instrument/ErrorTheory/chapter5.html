@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>误差理论</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第五章 粗大误差</h1>
+
+        <b>产生原因</b>
+        <ul>
+            <li>测量条件</li>
+            <li>测量人员</li>
+            <li>测量仪器</li>
+        </ul>
+
+        <b>判别方法</b>
+        <p>
+            <li>直观判别法</li>
+            <li>统计判别法</li>
+        </p>
+
+        <h2>统计判别法</h2>
+        <b>莱伊达准则（\(3\sigma\)准则）</b>
+        <p>根据随机误差的有界性，对于某一服从正态分布的测量列，当测量次数足够多时（\(n\gg10\)）其残差的绝对值大于三倍标准差的概率很小。</p>
+        <p>故若</p>
+        $$|x_i - \bar x| > 3\sigma$$
+        则认为\(x_i\)含有粗大误差，将其剔除。其中，\(\sigma\)由<a href="chapter3.html#BesselFormula" class="goto">贝塞尔公式</a>计算得出。
+    
+        <br><br>
+        <b>格拉布斯准则</b>
+        <p>设某数据测量量的测量误差服从正态分布，若测量数据\(x_k\)满足</p>
+        $$g_{(k)} = \frac{|\nu_k|}{s}\geq g_0(n,a)$$
+        则认为\(x_k\)含有粗大误差，将其剔除。其中，\(g_{(k)}\)为查表得数据\(x_k\)的统计量；\(g_0(n,a)\)为统计量的临界值，由测量次数\(n\)及显著水平\(\alpha\)决定（通常取\(\alpha=0.05\)）。
+    
+        <br><br>
+        <b>狄克逊准则</b>
+        <p>对某量做等精度测量，得：</p>
+        $$x_1, x_2,\cdots,x_n$$
+        <p>排序得：</p>
+        $$x_{(1)}\leq x_{(2)}\leq\cdots x_{(n)}$$
+        <p>当\(x_i\)服从正态分布时，\(x_{(1)}\)和\(x_{(n)}\)的统计量如下：</p>
+        $$\begin{align}
+        &n\leq 7 
+        &&\begin{cases}
+        \gamma_{10} = \frac{x_{(n)} - x_{(n-1)}}{x_{(n)} - x_{(1)}}\\
+        \gamma'_{10} = \frac{x_{(1)} - x_{(2)}}{x_{(1)} - x_{(n)}}
+        \end{cases}\\
+        &8\leq n\leq 10
+        &&\begin{cases}
+        \gamma'_{11} = \frac{x_{(n)} - x_{(n-1)}}{x_{(n)} - x_{(2)}}
+        \end{cases}
+        
+        
+        \end{align}$$
+    
+    </body>
+
+</html>

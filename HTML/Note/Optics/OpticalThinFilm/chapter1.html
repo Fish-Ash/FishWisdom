@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>应用光学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第一章 光学薄膜特性的理论计算</h1>
+
+        <h2>概述</h2>
+
+        <b>光学薄膜的类型与符号</b>
+        <table>
+            <tr>
+                <td>类型</td>
+                <td>减反膜</td>
+                <td>滤光膜</td>
+                <td>保护膜</td>
+                <td>内反射</td>
+                <td>外反膜</td>
+            </tr>
+            <tr>
+                <td>符号</td>
+                <td><img src=".\img\Film1.png" width="50"></td>
+                <td><img src=".\img\Film2.png" width="50"></td>
+                <td><img src=".\img\Film3.png" width="50"></td>
+                <td><img src=".\img\Film4.png" width="50"></td>
+                <td><img src=".\img\Film5.png" width="50"></td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>高反膜</td>
+                <td>分束膜</td>
+                <td>分色膜</td>
+                <td>偏振膜</td>
+                <td>导电膜</td>
+            </tr>
+            <tr>
+                <td>符号</td>
+                <td><img src=".\img\Film6.png" width="50"></td>
+                <td><img src=".\img\Film7.png" width="50"></td>
+                <td><img src=".\img\Film8.png" width="50"></td>
+                <td><img src=".\img\Film9.png" width="50"></td>
+                <td><img src=".\img\Film10.png" width="50"></td>
+            </tr>
+        </table>
+
+        <h2>第一节 单色平面电磁波</h2>
+
+        <b>复折射率</b>
+        $$N = c/v = n - ik$$
+        其中，\(n\)为介质的折射率，\(k\)为消光系数。
+        <br><br>
+
+        <b>沿给定方向余弦\((\alpha,\beta,\gamma)\)传播的平面波</b>
+        $$\begin{align}
+        \mathbf{E} &= \mathbf{E}_0\exp\{i[\omega t - \frac{2\pi N}{\lambda}(\alpha x + \beta y + \gamma z)]\}\\
+                   &= \mathbf{E}_0\exp\{i[\omega t - \frac{2\pi N}{\lambda}\mathbf{S_0}\cdot \mathbf{r}]\}
+        \end{align}$$
+        其中，\(\mathbf{S_0} = (\alpha, \beta, \gamma)\)为方向余弦，\(\mathbf{r} = (x, y, z)\)为坐标矢径。
+
+        $$
+        \begin{align}
+        &\begin{cases}
+        \nabla\times\mathbf{H} = \mathbf{j} + \frac{\partial \mathbf{D}}{\partial t}\\
+        \frac{\partial \mathbf{E}}{\partial t} = i\omega\mathbf{E}\\
+        \mathbf{D} = \epsilon \mathbf{E}\\
+        \mathbf{j} = \sigma \mathbf{E}
+        \end{cases}
+        \Rightarrow
+        \nabla\times\mathbf{H} = (\sigma + i\omega\epsilon)\mathbf{E}\\
+
+        &\because N^2 = (\epsilon\mu - i\frac{\sigma\mu}{\omega})/\epsilon_0\mu_0\\
+        &\therefore \sigma+i\omega\epsilon = i\frac{\omega\epsilon_0\mu_0N^2}{\mu} = i\frac{\omega N^2}{\mu c^2}\\
+        &\therefore \nabla \times \mathbf{H} = \frac{\omega N^2}{\mu c^2}\mathbf{E}
+        \end{align}
+        $$
+
+        <b>介质的光学导纳</b>
+        $$Y = \frac{|\mathbf{H}|}{|\mathbf{S}_0 \times \mathbf{E}|} = \frac{|\mathbf{H}|}{|\mathbf{E}|} = \frac{N\sqrt{\epsilon_0/\mu_0}}{\mu_r}$$
+
+        <b>自由空间导纳</b>
+        $$y_0 = \sqrt{\epsilon_0/\mu_0}$$
+        国际单位制中值为\(1/377\)西门子。
+        <p>在光波段，\(\mu_r\rightarrow 1\)，有</p>
+        $$Y = N\cdot y_0$$
+        <p>若以\(y_0\)为单位，光学导纳也可表示为：</p>
+        $$Y = N$$
+
+
+        <b>反射率\(R\)</b>
+        <p>反射光强度与入射光强度之比。</p>
+
+        <b>透射率\(T\)</b>
+        <p>透射光强度与入射光强度之比。</p>
+
+        <b>有效导纳\(\eta\)</b>
+        <p>磁场强度的切向分量与电场方向的切向分量之比。</p>
+        $$\eta = \mathbf{H}_t^+/(\mathbf{S}_0\times \mathbf{E}_t^+) = -\mathbf{H}_t^-/(\mathbf{S}_0\times \mathbf{E}_t^-) $$
+
+        <div class="HBox">
+            <div class="left">
+                <p>对于<span lang="en">TM</span>波，引入边界条件，有：</p>
+                $$\mathbf{H}_t = \mathbf{H}$$
+                $$\mathbf{E}_t = \mathbf{E}\cos\theta$$
+                其中，\(\theta\)为\(\mathbf{E}\)与界面的夹角。
+                $$\mathbf{H}_t = \mathbf{H} = N(\mathbf{S}_0\times \mathbf{E}) = N(\mathbf{r}_0\times\mathbf{E}_t/\cos\theta) = \frac{N}{\cos\theta}(\mathbf{r}_0\times\mathbf{E}_t)$$
+                $$\eta_p = \mathbf{H}_t/(\mathbf{S}_0\times \mathbf{E}_t) = \frac{N}{\cos\theta}$$
+            </div>
+            <div class="divider"></div>
+            <div class="right">
+                <p>对于<span lang="en">TE</span>波，引入边界条件，有：</p>
+                $$
+                    \mathbf{E}_t = \mathbf{E}\\
+                    \mathbf{H}_t = \mathbf{H}\cos\theta
+                $$
+                其中，\(\theta\)为\(\mathbf{H}\)与界面的夹角。
+                $$\mathbf{S}_0\times \mathbf{E}_t = \mathbf{S}_0\times\mathbf{E} = \mathbf{H}/N = \frac{1}{N\cos\theta}\mathbf{H}$$
+                $$\eta_p = \frac{\mathbf{H}}{(\mathbf{S}_0\times\mathbf{E})} = N\cos\theta$$
+            </div>
+
+        </div>
+
+
+ 
+
+
+
+        <h2>第二节 平面电磁波在单一界面上的反射与折射</h2>
+        <h3>一、反射定律与折射定律</h3>
+
+        <p>讨论光在两种各项同性均匀介质的分界面上发生的反射与折射</p>
+        
+    </body>
+
+</html>

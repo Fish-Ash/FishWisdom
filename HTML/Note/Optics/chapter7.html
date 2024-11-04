@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+<meta charset="utf-8">
+<title>应用光学</title>
+<link rel="stylesheet" href="../../../CSS/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+<body>
+    <div class="header"><h1>不惑</h1></div>
+
+
+    <ul class="navibar">
+    <li><a href="../../Home.html">主页</a></li>
+    <li><a href="../../Navigation.html">导航</a></li>
+    </ul>
+
+
+    <h1>第七章 典型光学系统</h1>
+    <h2>第一节 人眼</h2>
+
+    <p>眼睛：由内至外折射率逐渐减小
+        <br>光线经角膜折射后进入虹彩（瞳孔），由水晶体聚焦在视网膜上，形成倒立实像，经大脑神经处理后给人正立的感官
+    </p>
+    <p>人眼的入瞳为眼瞳</p>
+    <p>瞳孔是人眼的可变光阑，在2-8mm范围内进行大小的改变</p>
+    <p>平均折射率为1.4的水晶体受周围肌肉调节，能改变水晶体的曲率半径，从而改变人眼的焦距，使不同距离物体分别成像在视网膜上</p>
+    <p>由于虹彩的存在，具有自适应能力，根据物体的亮暗，瞳孔直径自动调节可以实现2到8mm的变化，以调节进入人眼光能，起到自我保护的作用。</p>
+    <p>人眼是一个广角镜头，可以从6至8°变化到150°，人在观察物体时眼睛会自动旋转进行目标的定位与跟踪</p>
+    <p>人眼具有有限的分辨能力，受视网膜视神经细胞（\(3\mu m\)）和人眼瞳孔尺寸（\(2\sim 8 mm\)）的限制 </p>
+
+    <p>小视场（焦距为\(23mm\)）情况下，分辨率为\(1'\)。光线越暗、瞳孔越大、像差越大、分辨率越低。设计时要求物体细节经目视光学系统放大后应大于或等于人眼分辨率</p>
+
+    <p>人眼的时间分辨率一般为25帧，所以运动目标的速度大于50帧时，人眼即感觉其是连续的</p>
+
+    <hr>
+    <p></p>
+<hr>
+<p>
+    正常眼：
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;眼睛的远点在无限远，眼睛光学系统的后焦点在视网膜上
+    <br>
+    <br>反常眼：
+    <ul>
+        <li>近视眼：
+        </li>
+        <br>
+        <li>远视眼
+
+
+        </li>
+        <br>
+        <li>老花眼
+            <br>
+            <br>校正：利用凸透镜的会聚作用，将近点物体发出的光线会聚，经水晶体后成像在视网膜上。
+
+        </li>
+        <br>
+        <li>散光眼
+            <br>
+            <br>检验：用两正交的黑白线图案
+            <br>校正：圆柱面或双心圆柱面透镜
+        </li>
+        <br>
+        <li>弱视</li>
+        <br>
+        <li>斜视</li>
+    </ul>
+</p>
+
+<p>
+    <b>双目立体视觉</b>：
+    <br>
+    <br><b>眼睛的视觉基线\(b\)</b>：
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;两眼节点\(J_1\)与\(J_2\)的连线。
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;人眼两瞳孔间平均距离\(b = 62mm\)
+    <br>
+    <br><b>双目视差角\(\theta\)</b>：
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;观察点对双目节点的张角。
+
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;若观察点到视觉基线的距离为\(L\)，则\(\theta_A = b/L\)
+    <br>
+    <br><b>视差（立体视差）\(\Delta \theta\)</b>：
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;不同距离物体所对应的不同视差角间的差异。
+    <br>
+    <br><b>体视锐度\(\Delta \theta_{min}\)</b>：
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;人眼能感觉到的视差最小值。
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;\(\Delta \theta_{min}\)约为\(10''\)，经训练可达\(5''\)或\(3''\)。
+    <br>
+    <br><b>立体视觉半径\(L_{max}\)</b>：
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;立体视觉半径以外的物体，人眼不能分辨其远近。
+    
+</p>
+
+
+<h2>目视光学系统</h2>
+
+<p>组成：
+    <ul>
+        <li>目镜：放大镜</li>
+        <li>物镜</li>
+    </ul>
+    参数：
+    <ul>
+        <li>出瞳距（\(l_z'\)）：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;目镜像方主面与系统出瞳间的距离</li>
+        <br><li>镜目距（\(p'\)）：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;目镜最后一面顶点到出瞳的距离。
+        <ul>
+            <li>一般系统：\(p'\leq 6mm\)</li>
+            <li>军用系统：\(p'\approx 6mm\)</li>
+            <li>枪瞄系统：\(p'\approx 40mm\)</li>
+        </ul></li>
+    </ul>
+    <img src="./img/7.1.png" width="450"><br>
+    其他：
+    <ul>
+        <li>光瞳衔接原则：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;两个光学系统连用时，前面系统的出瞳与后面系统的入瞳需重合，否则会产生光束切割，即前面系统的部分成像光束将被后面系统拦截而不参与于成像。</li>
+        <br><li>目视系统与人眼连用，为满足光瞳衔接原则，目视系统的出瞳应在目镜后且与人眼的瞳孔重合。</li>
+    </ul>
+</p>
+<hr>
+
+<p>目镜：
+    <ul>
+        <li>参数：
+            <ul>
+                <li>焦距：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;焦距与目镜视觉放大倍率成反比。
+                </li>
+                <li>视场角
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;目镜视场选择源于系统物方视场角，需满足
+                    $$\tan \omega' = \Gamma\tan\omega$$
+                    &nbsp;&nbsp;&nbsp;&nbsp;视场角越大，像差越难校正，结构越复杂。一般目镜视场角在\(40°\sim 50°\)
+                </li>
+                <li>相对镜目距：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;镜目距（\(P'\)）是出瞳到目镜后表面的距离，相对镜目距是镜目距与目镜焦距的比值
+                </li>
+                <li>工作距离：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;目镜第一个面的顶点到其物方焦平面的距离
+                </li>
+            </ul>
+        </li>
+
+        <li>视度调节：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;通过调节目镜与前焦平面上分划板的相对位置，实现视度调节
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;视度由出射光束汇聚点距离的倒数计算
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;未调节时，分划板准确位于目镜前焦平面上，出射视度为0D。
+        </li>
+    </ul>
+</p>
+
+
+
+<p>摄影物镜：
+    <ul>
+        <li>光学特性：
+            <ul>
+                <li>焦距：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;焦距与成像尺寸成正比
+                </li>
+                <li>相对孔径：
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;决定摄影物镜的分辨率和像面照度
+                </li>
+                <li>视场角
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;视场角决定成像范围：
+                    <ul>
+                        <li>广角物镜：焦距短、视场角大</li>
+                        <li>远摄物镜：焦距长、视场角小</li>
+                    </ul>
+                    &nbsp;&nbsp;&nbsp;&nbsp;物方最大视场角：
+                    $$tan \omega_{max} = y'_{max}/2f'$$
+                    其中\(y'_{max}\)为感光元的对角线长度
+                </li>
+            </ul>
+        </li>
+    </ul>
+摄影系统的分辨率：
+<br>&nbsp;&nbsp;&nbsp;&nbsp;单位长度内所能分辨的黑白相间的线对数N，亦即能分辨的两点间最小距离的倒数。取决于物镜分辨率\(N_L\)与底片分辨率\(N_r\)
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;根据瑞利判据，摄影物镜的理论分辨率(\lambda = 550nm)为\(N_L = 1475\frac{D}{f'}\)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;像面照度与相对孔径的平方成正比
+<br>&nbsp;&nbsp;&nbsp;&nbsp;为改变像面照度，一般照相物镜都利用可变光阑控制孔径光阑的大小以改变相对孔径，从而改进F数
+</p>
+
+
+<p>投影系统：
+    <ul>
+        <li>光学参数</li>
+        <ul>
+            <li>垂轴放大率：由银幕尺寸对图片尺寸之比</li>
+            <li>视场：</li>
+            <li>焦距：</li>
+            <li>相对孔径：</li>
+        </ul>
+    </ul>
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;普通摄影物镜倒置使用，可用作投影系统
+    照明系统：
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;用大孔径角和适当光源，在投影屏上获得均匀充足的照度。照度大小与光源发光强度和光源尺寸以及聚光系统的光学特性等有光
+    <br>按结构形式分：
+    <ul>
+        <li>透射</li>
+        <li>反射</li>
+        <li>折反照明系统</li>
+    </ul>
+    按照明方式分：
+    <ul>
+        <li>临界照明</li>
+        <li>柯勒照明</li>
+    </ul>
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;照明系统的拉赫不变量需要大于投影成像系统的拉赫不变量
+</p>
+
+
+<p>显微系统：
+    物镜：一次实放大
+    目镜：
+</p>
+</body>
+
+</html>

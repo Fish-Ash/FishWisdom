@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>误差理论</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第六章 误差传播与误差合成</h1>
+        <h2>第一节 函数误差</h2>
+
+        <b>间接测量</b>
+        <p>通过直接测量与被测量之间有一定函数关系的其他量，根据已知的函数关系式计算出被测量的量。</p>
+        $$y = f(x_1, x_2, \cdots x_n)$$
+
+        <b>函数误差</b>
+        <p>间接测量的量 是 直接测得的各个测得值 的函数，间接测得的被测误差 也应是 直接测得的各个测得值及其误差 的函数，故称这种间接测量的误差为函数误差。</p>
+        
+        <b>函数系统误差</b>
+        <p>若已知各个直接测得值的系统误差\(\Delta x_1, \Delta x_2, \cdots, \Delta x_n\)，则函数系统误差为：</p>
+        $$\Delta y = \frac{\partial f}{\partial x_1}\Delta x_1 + \frac{\partial f}{\partial x_2}\Delta x_2 +\cdots + \frac{\partial f}{\partial x_3}\Delta x_3$$
+        式中\(\frac{\partial f}{\partial x_i}\)为各个直接测得值的误差传递系数。
+    
+    
+        <h2>第二节 误差的合成</h2>
+        <h3>二、随机误差的合成</h3>
+
+        <b>极限误差合成</b>
+        <br><br>
+        单项极限误差：
+        $$\delta_i = k_i\sigma_i$$
+        式中，\(k_i\)为各单项随机误差的置信因子；
+        <br>\(\sigma_i\)为各单项随机误差的标准差
+
+        <h3>四、系统误差和随机误差的合成</h3>
+        <p>当测量中存在各种不同性质的多项系统误差与随机误差时，应将其综合求得总误差。</p>
+        <p>常用极限误差表，也可用标准差表示</p>
+        <b>极限误差表示</b>
+    </body>
+
+</html>

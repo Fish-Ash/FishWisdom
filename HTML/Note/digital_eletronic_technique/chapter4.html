@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>数字电路</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第四章 组合逻辑电路</h1>
+        <h2>第一节 组合逻辑电路的分析</h2>
+        <p>
+            任务：
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;已知逻辑电路图，求解逻辑功能的过程
+            <br><b>组合逻辑电路</b>：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;输出状态只取决于同一时刻输入状态的逻辑电路
+        <br>
+        <br>组合逻辑电路分析方法：
+        <ol>
+            <li>写出各级逻辑函数表达式，最终得到输出信号与输入信号的逻辑函数表达式，并对其化简和变换。</li>
+            <li>列出真值表，分析电路确定其功能。</li>
+        </ol>
+        奇校验电路：
+        <br><img src="./img/4.1.1.png", width="450">
+        $$Z = A⊕B\\
+        L = Z⊕C = A⊕B⊕C
+        $$
+
+        偶校验器：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;奇校验器输出端加一级反相器
+    </p>
+    
+    <h2>组合逻辑电路的设计</h2>
+    <p>
+        任务：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;已知逻辑要求，求解逻辑表达式并画出电路图的过程
+    </p>
+
+    <h2>第三节 组合逻辑电路中的竞争-冒险</h2>
+    <p>
+        <b>竞争冒险</b>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;电路在电平变化的瞬间，可能与稳态下的逻辑功能不一致，产生错误输出。
+        <br><b>竞争</b>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;在一定条件下，当一个逻辑门的两个输入端的信号同时向相反方向变化，而变化的时间有差异的现象。
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;体现为门电路输出端的逻辑表达式化简为两个互补信号相乘或相加：\(L = A\cdot\bar A\)或\(L = A+\bar A\)
+        <br><b>消除竞争冒险的方法</b>
+        <ul>
+            <li>发现并消去互补相乘项</li>
+            <li>增加乘积项以避免互补项相加</li>
+            <li>输出端并联电容器</li>
+        </ul>
+    </p>
+
+
+    <h2>第四节 常用组合逻辑电路模块</h2>
+    <p><b>编码</b>：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;用一个二进制代码表示特定含义的信息
+        <br><b>编码器</b>：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;具有编码功能的逻辑电路
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;输入\(x \leq 2^n\)个编码对象，输出\(n\)个二进制代码
+        <br>分类
+        <ul>
+            <li>普通编码器</li>
+            <li>优先编码器</li>
+        </ul>
+    </p>
+    <p><b>译码</b>：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;译码是编码的逆过程，将具有特定含义的二进制码转换为对应的输出信号。
+        <br><b>译码器</b>：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;具有译码功能的逻辑电路。
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;译码器具有\(n\)个输入端、\(2^n\)个输出端与一个使能输入端。
+    </p>
+
+    <p>
+        <b>数据分配</b>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;将公共数据线上的数据根据需要送到不同的通道上去
+        <br><b>数据分配器</b>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;实现数据分配功能的逻辑电路。
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;\(2^n\)路数据分配器有\(n\)个地址输入端。
+    </p>
+
+    <p>
+        <b>半加器</b>
+        <ul>
+            <li>\(S = A \oplus B\)</li>
+            <li>\(C = AB\)</li>
+        </ul>
+
+        <b>全加器</b>
+        <ul>
+            <li>\(S = A\oplus B\oplus C_i\)</li>
+            <li>\(C_o = AB + (A\oplus B)C_i\)</li>
+        </ul>
+    </p>
+    </body>
+
+</html>
