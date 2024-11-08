@@ -28,14 +28,113 @@
 
         <b>激光（<span lang="en">LASER</span>，<span lang="en">Light Amplification by Stimulated Emission of Radiation</span>）</b>：
         <p>受激辐射光放大</p>
-        <b>特点</b>
+
+        <table>
+            <tr>
+                <td>光电效应——光的粒子性</td>
+                <td rowspan="2">光具有波粒二象性</td>
+            </tr>
+            <tr>
+                <td>电子衍射——光的波动性</td>
+            </tr>
+        </table>
+
+        <h2>激光的特性</h2>
+        <table>
+            <tr>
+                <td class="tbtitle" colspan="3">激光特性</td>
+            </tr>
+            <tr>
+                <td rowspan="4">高光子简并度</td>
+                <td colspan="2">高方向性</td>
+            </tr>
+            <tr>
+                <td colspan="2">高亮度</td>
+            </tr>
+            <tr>
+                <td rowspan="2">窄线宽</td>
+                <td>高单色性</td>
+            </tr>
+            <tr>
+                <td>高相干性</td>
+            </tr>
+        </table>
+
+        <p>对于中心波长为\(\lambda\)（中心频率为\(\nu\)）的激光器，发出谱线的线宽为\(\Delta\lambda\)（或\(\Delta\nu\)）</p>
+
+        <h3>高单色性</h3>
+        单色性表征方式：
+        $$\Delta \nu/\nu = \Delta \lambda/\lambda$$
+        $$$$
+        线宽\(\Delta \nu\)和\(\Delta \lambda\)越窄，激光单色性越好。
+        
+        <h3>高相干性</h3>
+        <b>光的相干性</b>
+        <p>不同时刻、不同空间点上两个光波场的相关程度。</p>
+        <p>不同空间点上、不同时刻的光波场某些特性的相关性</p>
+        <table>
+ 
+            <tr>
+                <td rowspan="2">相干性</td>
+                <td>空间相干性：描述垂直于光束传播方向上各点的相位关系。</td>
+            </tr>
+            <tr>
+                <td>时间相干性：描述光束传播方向上各点的相位关系。</td>
+            </tr>
+        </table><br><br>
+        <table>
+            <tr>
+                <td><b>相干体积\(V_c\)</b></td>
+                <td>光波场都具有明显相干性的空间体积。</td>
+                <td>$$V_c = A_c L_c = A_c \tau_c c$$</td>
+            </tr>
+            <tr>
+                <td><b>相干面积\(A_c\)</b></td>
+                <td>垂直于光传播方向的截面。</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><b>相干长度\(L_c\)</b></td>
+                <td>沿光的传播方向。</td>
+                <td>$$L = \lambda^2/\Delta\lambda$$</td>
+            </tr>
+            <tr>
+                <td><b>相干时间\(\tau_c\)</b></td>
+                <td>光沿传播方向通过相干长度\(L_c\)所需的时间。</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <b>横模\(TEM_{mn}\)</b>
+        <p>用于表示激光器的横向光场分布。</p>
         <ul>
-            <li>高单色性</li>
-            <li>高方向性</li>
-            <li>高强度</li>
+            <li>只有一个基膜\(TEM_{00}\)时，激光的相干性非常好。</li>
+            <li>存在多个横膜（不同横膜间非相干时），相干性会降低。</li>
+        </ul>
+    
+        <b lang="en">Conclusion</b>
+        <p>相格空间体积以及一个光波模或光子态占有的空间体积都等于相干体积。</p>
+        <p>属于同一状态的光子或同一模式的光波是相干的，不同状态的光子或不同模式的光波是不相干的。</p>
+        
+
+        <h3>高方向性</h3>
+        <p>光束发散角越小，方向性越高。</p>
+        <p>激光束的发散角主要由激光器受激辐射的机理和光学谐振腔对输出光束方向的限制所决定。</p>
+        <p>激光束所能达到的最小光束发散角不能小于激光通过输出孔径的衍射极限。光腔的输出孔径为\(D\)时，衍射极限角度为：</p>
+        $$\theta_m\approx \lambda/D$$
+
+
+        <h3>高亮度</h3>
+        <b>光源亮度</b>
+        <p>单位截面积单位立体角内包络的光功率，用于表征光源定向发光能力强弱。</p>
+        $$B = \frac{\Delta P}{\Delta S\Delta \Omega}$$
+        <ul>
+            <li>\(\Delta P\)：光功率</li>
+            <li>\(\Delta S\)：光束的截面积</li>
+            <li>\(\Delta \Omega\)：光束的立体角</li>
+            <li>单位：\(W/(cm^2\cdot Sr)\)</li>
         </ul>
 
-        <p>光具有波粒二象性</p>
 
         <h2>第三节 激光产生的条件</h2>
 
@@ -58,10 +157,6 @@
             </tr>
         </table>
 
-        <h3>激光的特性</h3>
-        <b>高单色性</b>
-        <br>单色性表征方式：
-        $$\Delta v/v = \Delta \lambda/\lambda$$
 
         <h3>第四节 激光器的分类</h3>
         <table>

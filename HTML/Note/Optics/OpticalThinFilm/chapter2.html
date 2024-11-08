@@ -28,6 +28,11 @@
         $$\mathbf{H_1} = \mathbf{H}_1^+ = \mathbf{H}_0^- + \mathbf{H}_0^-$$
         注：此处为矢量和。
 
+        <h2>单层介质薄膜的反射率</h2>
+        <p>单层膜的反射系数：</p>
+        $$r = (\eta_0 - Y)/(\eta_0 + Y)$$
+        $$R = r^2 = (\frac{\eta_0 - Y}{\eta_0 + Y})^2$$
+
         <p>设\(\mathbf{E_{1t}}\)为在界面\(t\)上的\(\mathbf{E_1}\)。</p>
         $$\begin{cases}
         E_0 = E_0^+ + E_0^- = E_{11}^+ + E_{11}^-\\
@@ -74,13 +79,62 @@
         \begin{bmatrix}E_2\\H_2\end{bmatrix}
         \end{align}$$
 
-        $$\because $$
+        $$\because \begin{cases}
+        H_0 = YE_0\\
+        H_2 = \eta_2E_2
+        \end{cases}$$
+        $$\therefore E_0\begin{bmatrix}1\\Y\end{bmatrix}=\begin{bmatrix}
+        \cos\delta_1 & \frac{i}{\eta_1}\sin\delta_1\\
+        i\eta_1\sin\delta_1 & \cos\delta_1
+        \end{bmatrix}
+        \begin{bmatrix}1\\\eta_2\end{bmatrix}E_2$$
+
+        令
+        $$\begin{bmatrix}1\\Y\end{bmatrix}=
+        \begin{bmatrix}B\\C\end{bmatrix} = 
+        \begin{bmatrix}
+        \cos\delta_1 & \frac{i}{\eta_1}\sin\delta_1\\
+        i\eta_1\sin\delta_1 & \cos\delta_1
+        \end{bmatrix}
+        \begin{bmatrix}1\\\eta_2\end{bmatrix}$$
+
+        $$\therefore Y = C/B = \frac{\eta_2\cos\delta_1+i\eta_1\cos\delta_1}{\cos\delta_1+i(\eta_2/\eta_1)\sin\delta_1}$$
 
         <b>薄膜的特征矩阵</b>
         $$\begin{bmatrix}
         \cos\delta_1 & \frac{i}{\eta_1}\sin\delta_1\\
         i\eta_1\sin\delta_1 & \cos\delta_1
         \end{bmatrix}$$
+
+        <p>当薄膜的有效光学厚度为\(1/4\)波长的整数倍时，即</p>
+        $$nd\cos\theta = m\frac{\lambda_0}{4}$$
+        <p>其相位厚度为\(\frac\pi2\)的整数倍，即</p>
+        $$\delta = \frac{2\pi}{\lambda}nd\cos\theta = m\frac\pi2$$
+
+        <div class="HBox">
+            <div class="left">
+                <p>\(m\)为奇数时：\(\begin{cases}\cos\delta_1 = 0\\\sin\delta_1 = 1~or~-1\end{cases}\)</p>
+                $$\begin{align}
+                \therefore \begin{bmatrix}1\\Y\end{bmatrix} &= \begin{bmatrix}0&\pm i/\eta_1\\\pm i\eta_1&0\end{bmatrix}
+                \begin{bmatrix}1\\\eta_s\end{bmatrix}\\
+                &= \begin{bmatrix}\pm i\frac{\eta_s}{\eta_1}\\\pm i\eta_1\end{bmatrix}
+                \end{align}$$
+                $$\therefore Y = \eta_1^2/\eta_s$$
+                （四分之一波长法则）
+                $$R = (\frac{\eta_0 - \eta_1^2/\eta_s}{\eta_0 + \eta_1^2/\eta_s})^2$$
+            </div>
+            <div class="divider"></div>
+            <div class="right">                
+                <p>\(m\)为偶数时：\(\begin{cases}\cos\delta_1 = 1~or~-1\\\sin\delta_1 = 0\end{cases}\)</p>
+                $$\begin{align}
+                \therefore \begin{bmatrix}1\\Y\end{bmatrix} &= \begin{bmatrix}\pm 1&0\\0&\pm 1\end{bmatrix}
+                \begin{bmatrix}1\\\eta_s\end{bmatrix}\\
+                &= \begin{bmatrix}\pm1\\\pm\eta_s\end{bmatrix}
+                \end{align}$$
+                $$\therefore Y = \eta_s$$
+                $$R = (\frac{\eta_0 - \eta_s}{\eta_0 + \eta_s})^2$$
+            </div>
+        </div>
 
         <b>速写符号</b>
         <table>
