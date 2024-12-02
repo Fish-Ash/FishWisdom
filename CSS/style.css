@@ -100,8 +100,8 @@ ul.pagination li a {
     background-color: #26bcd5;
 }
 
-.navibar li:last-child{
-    float:'right';
+.navibar .next{
+    float:right;
 }
 
 /* 页尾 */

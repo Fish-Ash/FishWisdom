@@ -4,15 +4,17 @@ from SomeFun import *
 plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
 # 超参数
-def func(x):# 目标函数
-    return x[0] + 6*np.sin(4*x[0]) +9*np.cos(5*x[0])
 
-st = [(0,9)] # 约束条件
+def func(x):# 目标函数
+    return x[0] + 6*np.sin(4*x[0]) +9*np.cos(5*x[0]) + x[1]
+
+st = [(0,9), (0,9)] # 约束条件
 
 
 def PSO(st, func, w_st=[0.4,0.8], c=[1.5,1.5], N=100, epochs=200, draw=1):
     D = len(st)
-    # 绘图
+
+    
     if D == 2 and draw == 1:
         analog = []
         for i in range(D):
@@ -24,11 +26,12 @@ def PSO(st, func, w_st=[0.4,0.8], c=[1.5,1.5], N=100, epochs=200, draw=1):
         ax3.plot_surface(X,Y,Z,cmap = 'rainbow')
         plt.show()
 
+        
+
     # 初始化种群及速度
     X = []
     for i in range(D):
-        x = (st[i][0] + np.random.rand(N)*(st[i][1] - st[i][0])).tolist()
-        X.append(x)
+        X.append((st[i][0] + np.random.rand(N)*(st[i][1] - st[i][0])).tolist())
     X = np.array(T(X))
 
     V = -1 + np.random.rand(N,D)*2
@@ -61,12 +64,12 @@ def PSO(st, func, w_st=[0.4,0.8], c=[1.5,1.5], N=100, epochs=200, draw=1):
                 X[n][i] = st[i][0] if X[n][i]<st[i][0] else st[i][1] if X[n][i]>st[i][1] else X[n][i]
             gb[epoch] = g_best
         
-    if draw == 1:
-        plt.plot(range(epochs), gb, color = '#a7dce0', linewidth = 3)
-        plt.xlabel('迭代次数')
-        plt.ylabel('适应度值')
-        plt.title('适应度进化曲线')
-        plt.show()
+    # if draw == 1:
+    #     plt.plot(range(epochs), gb, color = '#a7dce0', linewidth = 3)
+    #     plt.xlabel('迭代次数')
+    #     plt.ylabel('适应度值')
+    #     plt.title('适应度进化曲线')
+    #     plt.show()
         
     print(gb[epoch], x_best)
     

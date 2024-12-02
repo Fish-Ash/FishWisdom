@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Pandas</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1 lang="en">QT</h1>
+
+        <h2>常规</h2>
+
+
+        <h2>控件</h2>
+
+        <h3>按钮</h3>
+
+        <pre class="code"><code>
+            #include &lt;QPushButton&gt;
+            QPushButton* Button = new QPushButton(ButtonName)
+        </code></pre>
+
+
+        <h2>布局</h2>
+
+        <h3>线程</h3>
+
+        <h2>引入头文件</h2>
+        <pre class="code"><code>
+            #include &lt;QSemaphore&gt;
+        </code></pre>
+
+
+        <h2 lang="en">QSemaphore</h2>
+
+        <b>创建信号量</b>
+        <pre class="code"><code>
+            QSemaphore sem(n)
+        </code></pre>
+        其中，<span lang="en">n</span>为初始化的信号量值。<br><br>
+
+        <b>获取当前信号量值</b>
+        <pre class="code"><code>
+            sem.available()
+        </code></pre>
+
+        <b>释放信号量</b>
+        <pre class="code"><code>
+            sem.release(n)
+        </code></pre>
+        其中，<span lang="en">n</span>为释放的信号量数。
+
+        <b></b>
+
+
+
+        <p>在向QT线程中传入参数时，首先需修改子线程的头文件，在public中先定义一个变量，再在private变量中声明它，再在cpp文件中声明两次</p>
+</html>

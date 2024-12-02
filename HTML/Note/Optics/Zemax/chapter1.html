@@ -55,7 +55,20 @@
 
 
 
-        <h2>镜头数据</h2>
+        <h2 lang="en">Lens Data</h2>
+        <h3>数据栏</h3>
+        <table>
+            <tr>
+                <td lang="en">Thickness<br>(Solve Type)</td>
+                <td lang="en">M</td>
+                <td lang="en">Marginal Rays Height</td>
+            </tr>
+            <tr>
+                <td lang="en">Comment</td>
+                <td colspan="2">注释</td>
+            </tr>
+        </table>
+
         <h3>更新</h3>
         <b>工具栏第一项</b>
         <ul>
@@ -86,5 +99,54 @@
                 <td></td>
             </tr>
         </table>
-        
+
+        <h3>启动经典绘图</h3>
+        <button class="opten">Setup</button>\(\rightarrow\)<button class="opten">OpticalStudio Preferences</button>\(\rightarrow\)<button class="opten">Graphics</button>\(\rightarrow\)<button class="opten">Enable Classic View</button>
+
+        <h2 lang="en">Cross-Section</h2>
+        <h3 lang="en">Settings</h3>
+        <table>
+            <tr>
+                <td lang="en">Color Rays By</td>
+                <td lang="en">Field#</td>
+                <td>图中每种颜色的光线对应一个不同的视场。</td>
+            </tr>
+        </table>
+
+        <h2>页面最下方数据</h2>
+        <table>
+            <tr>
+                <td lang="en">EFFL</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td lang="en">WFNO</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td lang="en">ENPD</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td lang="en">TOTR</td>
+                <td>光学系统第一面到像面的距离，亦即所有厚度之和</td>
+            </tr>
+        </table>
+
+        <h2>操作数</h2>
+        <table>
+            <tr>
+                <td lang="en">EFLX</td>
+                <td>弧矢方向焦距</td>
+            </tr>
+            <tr>
+                <td lang="en">EFLY</td>
+                <td>子午方向焦距</td>
+            </tr>
+        </table>
+
+        <h2>一些经验之谈</h2>
+        <p>由于红外系统艾里斑较大，很容易设计到衍射极限，直接用波前做优化函数即可。</p>
+        <p>想要去掉一块透镜，选择去掉承担光线偏折最小的一块，即光焦度最小、焦距最大的一块。</p>
+    </body>
 </html>

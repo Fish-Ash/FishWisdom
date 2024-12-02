@@ -47,11 +47,33 @@
         <b>解决方案</b>：
         <p>项目-属性-<span lang="en">C/C++</span>-预处理器-预处理器定义-编辑-增加：“<span lang="en">_CRT_SECURE_NO_WARNINGS</span>”</p>
         
-        <h lang="en">LINK2019</h3>
+        <h3 lang="en">LINK2019</h3>
         <b>产生原因</b>：
         <p>未链接静态库</p>
         <b>解决方案</b>：
         <p>#pragma comment(lib, libpath)</p>
+
+
+
+        <h2>链接库文件</h2>
+        <table>
+            <tr>
+                <td rowspan="3">项目-属性</td>
+                <td rowspan="2"><span lang="en">VC++</span>目录</td>
+                <td>包含目录</td>
+                <td>添加<span lang="en">include</span>文件夹所在路径</td>
+            </tr>
+            <tr>
+                <td>库目录</td>
+                <td>添加<span lang="en">lib</span>文件夹所在路径</td>
+            </tr>
+            <tr>
+                <td>链接器-输入</td>
+                <td>附加依赖项</td>
+                <td>添加<span lang="en">lib</span>文件名</td>
+            </tr>
+        </table>
+        
     </body>
 
 </html>

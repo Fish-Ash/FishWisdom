@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>激光原理</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <h1>菲涅尔公式</h1>
+        表示反射波、折射波与入射波的振幅和相位关系。
+        <br><br>
+        <table>
+            <tr>
+                <td rowspan="2"><span lang="en">s</span>波</td>
+                <td>振幅反射系数\(r_s\)</td>
+                <td>$$r_s = \frac{A'_{1s}}{A_{1s}} = \frac{\frac{n_1}{\mu_1}\cos\theta_1 - \frac{n_2}{\mu_2}\cos\theta_2}{\frac{n_1}{\mu_1}\cos\theta_1 + \frac{n_2}{\mu_2}\cos\theta_2}$$</td>
+                <td rowspan="4">两种介质都是电介质时，考虑一般的非磁性物质，即\(\mu_1 = \mu_2\)</td>
+                <td>$$r_s = \frac{n_1\cos\theta_1 - n_2\cos\theta_2}{n_1\cos\theta_1 + n_2\cos\theta_2}$$</td>
+            </tr>
+            <tr>
+                <td>振幅透射系数\(t_s\)</td>   
+                <td>$$t_s = \frac{A_{2s}}{A_{1s}} = \frac{2\frac{n_1}{\mu_1}\cos\theta_1}{\frac{n_1}{\mu_1}\cos\theta_1 + \frac{n_2}{\mu_2}\cos\theta_2}$$</td>
+                <td>$$t_s = \frac{2n_1\cos\theta_1}{n_1\cos\theta_1 + n_2\cos\theta_2}$$</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><span lang="en">p</span>波</td>
+                <td>振幅反射系数\(r_p\)</td>
+                <td>$$r_p = \frac{A'_{1p}}{A_{1p}} = \frac{\frac{n_2}{\mu_2}\cos\theta_1 - \frac{n_1}{\mu_1}\cos\theta_2}{\frac{n_2}{\mu_2}\cos\theta_1 + \frac{n_1}{\mu_1}\cos\theta_2}$$</td>
+                <td>$$r_p = \frac{n_2\cos\theta_1 - n_1\cos\theta_2}{n_2\cos\theta_1 + n_1\cos\theta_2}$$</td>
+            </tr>
+            <tr>
+                <td>振幅透射系数\(t_p\)</td>
+                <td>$$t_p = \frac{A_{2p}}{A_{1p}} = \frac{2\frac{n_1}{\mu_1}\cos\theta_1}{\frac{n_2}{\mu_2}\cos\theta_2+\frac{n_1}{\mu_1}\cos\theta_2}$$</td>
+                <td>$$t_p = \frac{2n_1\cos\theta_1}{n_2\cos\theta_1 + n_1\cos\theta_2}$$</td>
+            </tr>
+        </table><br>
+    
+    
+        考虑垂直入射的情况，即\(\theta_1 = \theta_2 = 0\)，相对折射率\(n = n_2/n_1\)
+        <table>
+            <tr>
+                <td rowspan="2"><span lang="en">s</span>波</td>
+                <td>振幅反射系数\(r_s\)</td>
+                <td>$$r_s = \frac{n_1 - n_2}{n_1 + n_2} = -\frac{n-1}{n+1}$$</td>
+            </tr>
+            <tr>
+                <td>振幅透射系数\(t_s\)</td>   
+                <td>$$t_s = \frac{2n_1}{n_1 + n_2} = \frac{2}{n + 1}$$</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><span lang="en">p</span>波</td>
+                <td>振幅反射系数\(r_p\)</td>
+                <td>$$r_p = \frac{n_2 - n_1}{n_2 + n_1} = \frac{n - 1}{n + 1}$$</td>
+            </tr>
+            <tr>
+                <td>振幅透射系数\(t_p\)</td>
+                <td>$$t_p = \frac{2n_1}{n_2 + n_1} = \frac{2}{n + 1}$$</td>
+            </tr>
+        </table><br>
+
+        其他情况下，考虑折射定律\(n_1\sin\theta_1 = n_2\sin\theta_2\)
+        <table>
+            <tr>
+                <td rowspan="2"><span lang="en">s</span>波</td>
+                <td>振幅反射系数\(r_s\)</td>
+                <td>$$r_s = \frac{\sin(\theta_1 - \theta_2)}{\sin(\theta_1 + \theta_2)}$$</td>
+            </tr>
+            <tr>
+                <td>振幅透射系数\(t_s\)</td>   
+                <td>$$t_s = \frac{2\cos\theta_1\sin\theta_2}{\sin(\theta_1 + \theta_2)}$$</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><span lang="en">p</span>波</td>
+                <td>振幅反射系数\(r_p\)</td>
+                <td>$$r_p = \frac{\tan(\theta_1-\theta_2)}{\tan(\theta_1 + \theta_2)}$$</td>
+            </tr>
+            <tr>
+                <td>振幅透射系数\(t_p\)</td>
+                <td>$$t_p = \frac{2\cos\theta_1\sin\theta_2}{\sin(\theta_1 + \theta_2)\cos(\theta_1 - \theta_2)}$$</td>
+            </tr>
+        </table><br>
+
+        <h2>关于菲涅尔公式单调性的讨论</h2>
+        由折射定律：
+        $$
+        n_1\sin\theta_1 = n_2\sin\theta_2(0\leq \theta_1 \leq \frac{\pi}{2})\\
+        \sin\theta_2 = \frac1n\sin\theta_1\\
+        \cos\theta_2 = \sqrt{1 - \frac{1}{n^2}\sin^2\theta_1}
+        $$
+
+        光从光疏介质入射到光密介质时：
+        $$ n_1 \lt n_2 \Rightarrow n = n_2/n_1 \gt 1 $$        
+        
+        光从光密介质入射到光密介质时：
+        $$ n_1 \gt n_2 \Rightarrow n = n_2/n_1 \lt 1 $$
+
+        <details>
+            <summary>对于\(r_s\)：</summary>
+            $$
+            \begin{align}
+                r_s &= \frac{n_1\cos\theta_1 - n_2\cos\theta_2}{n_1\cos\theta_1 + n_2\cos\theta_2}\\
+                    &= 1 - \frac{2n_2\cos\theta_2}{n_1\cos\theta_1 + n_2\cos\theta_2}\\
+                    &= 1 - \frac{2}{\frac{1}{n}\frac{\cos\theta_1}{\cos\theta_2} + 1}
+            \end{align}
+            $$
+            $$
+            \begin{align}
+                \frac{\cos\theta_1}{\cos\theta_2} &= \sqrt{\frac{\cos^2\theta_1}{1 - \frac{1}{n^2}\sin^2\theta_1}}\\
+                                                  &= \sqrt{\frac{n^2\cos^2\theta_1}{(n^2 - 1) + \cos^2\theta_1}}\\
+                                                  &= \sqrt{\frac{n^2}{(n^2-1)\frac{1}{\cos^2\theta_1}+1}}
+            \end{align}
+            $$
+    
+            <li><span class="tip">\(n\gt 1\)<span class="tiptext">光疏入光密</span></span>时：\(r_s\downarrow\)</li>
+            <li><span class="tip">\(n\lt 1\)<span class="tiptext">光密入光疏</span></span>时：\(r_s\uparrow\)</li>
+        </details>
+        
+    </body>
+
+
+</html>

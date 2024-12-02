@@ -25,10 +25,10 @@
         <h2>第一节 光的电磁波性质</h2>
 
         <b>电磁波</b>
-        <p>变化的电磁场</p>
-        <p>电磁矢量以速度\(v\)按波动形式在介质中传播</p>
+        <p>变化的电磁场。</p>
+        <p>电磁矢量以速度\(v\)按波动形式在介质中传播。</p>
         $$v = 1/\sqrt{\mu\epsilon}$$
-        <p>光就是电磁波</p>
+        <p>光本质上是一种电磁波。</p>
     
         <b>光速\(c\)</b>
         <p>真空中电磁波的传播速度</p>
@@ -90,80 +90,22 @@
             <li>\(s\)偏振波（\(E_s\)）：\(\mathbf{E}\)垂直于入射面振动的分量，又称<span lang="en">TE</span>波（<span class="tip">横电波<span class="tiptext">\(\mathbf{E}\)沿界面切线方向</span></span>）</li>
         </ul>
 
-        <h2>菲涅尔公式</h2>
-        <p>表示反射波、折射波与入射波的振幅和相位关系。</p>
 
-        <table>
-            <tr>
-                <td rowspan="2"><span lang="en">s</span>波</td>
-                <td>振幅反射系数\(r_s\)</td>
-                <td>$$r_s = \frac{A'_{1s}}{A_{1s}} = \frac{\frac{n_1}{\mu_1}\cos\theta_1 - \frac{n_2}{\mu_2}\cos\theta_2}{\frac{n_1}{\mu_1}\cos\theta_1 + \frac{n_2}{\mu_2}\cos\theta_2}$$</td>
-                <td rowspan="4">两种介质都是电介质时，考虑一般的非磁性物质，即\(\mu_1 = \mu_2\)</td>
-                <td>$$r_s = \frac{n_1\cos\theta_1 - n_2\cos\theta_2}{n_1\cos\theta_1 + n_2\cos\theta_2}$$</td>
-            </tr>
-            <tr>
-                <td>振幅透射系数\(t_s\)</td>   
-                <td>$$t_s = \frac{A_{2s}}{A_{1s}} = \frac{2\frac{n_1}{\mu_1}\cos\theta_1}{\frac{n_1}{\mu_1}\cos\theta_1 + \frac{n_2}{\mu_2}\cos\theta_2}$$</td>
-                <td>$$t_s = \frac{2n_1\cos\theta_1}{n_1\cos\theta_1 + n_2\cos\theta_2}$$</td>
-            </tr>
-            <tr>
-                <td rowspan="2"><span lang="en">p</span>波</td>
-                <td>振幅反射系数\(r_p\)</td>
-                <td>$$r_p = \frac{A'_{1p}}{A_{1p}} = \frac{\frac{n_2}{\mu_2}\cos\theta_1 - \frac{n_1}{\mu_1}\cos\theta_2}{\frac{n_2}{\mu_2}\cos\theta_1 + \frac{n_1}{\mu_1}\cos\theta_2}$$</td>
-                <td>$$r_p = \frac{n_2\cos\theta_1 - n_1\cos\theta_2}{n_2\cos\theta_1 + n_1\cos\theta_2}$$</td>
-            </tr>
-            <tr>
-                <td>振幅透射系数\(t_p\)</td>
-                <td>$$t_p = \frac{A_{2p}}{A_{1p}} = \frac{2\frac{n_1}{\mu_1}\cos\theta_1}{\frac{n_2}{\mu_2}\cos\theta_2+\frac{n_1}{\mu_1}\cos\theta_2}$$</td>
-                <td>$$t_p = \frac{2n_1\cos\theta_1}{n_2\cos\theta_1 + n_1\cos\theta_2}$$</td>
-            </tr>
-        </table><br>
-    
-    
-        考虑垂直入射的情况，即\(\theta_1 = \theta_2 = 0\)，相对折射率\(n = n_2/n_1\)
-        <table>
-            <tr>
-                <td rowspan="2"><span lang="en">s</span>波</td>
-                <td>振幅反射系数\(r_s\)</td>
-                <td>$$r_s = \frac{n_1 - n_2}{n_1 + n_2} = -\frac{n-1}{n+1}$$</td>
-            </tr>
-            <tr>
-                <td>振幅透射系数\(t_s\)</td>   
-                <td>$$t_s = \frac{2n_1}{n_1 + n_2} = \frac{2}{n + 1}$$</td>
-            </tr>
-            <tr>
-                <td rowspan="2"><span lang="en">p</span>波</td>
-                <td>振幅反射系数\(r_p\)</td>
-                <td>$$r_p = \frac{n_2 - n_1}{n_2 + n_1} = \frac{n - 1}{n + 1}$$</td>
-            </tr>
-            <tr>
-                <td>振幅透射系数\(t_p\)</td>
-                <td>$$t_p = \frac{2n_1}{n_2 + n_1} = \frac{2}{n + 1}$$</td>
-            </tr>
-        </table><br>
+        <h2><a href="Fresnel.html">菲涅尔公式</a></h2>
 
-        其他情况下，考虑折射定律\(n_1\sin\theta_1 = n_2\sin\theta_2\)
-        <table>
-            <tr>
-                <td rowspan="2"><span lang="en">s</span>波</td>
-                <td>振幅反射系数\(r_s\)</td>
-                <td>$$r_s = \frac{\sin(\theta_1 - \theta_2)}{\sin(\theta_1 + \theta_2)}$$</td>
-            </tr>
-            <tr>
-                <td>振幅透射系数\(t_s\)</td>   
-                <td>$$t_s = \frac{2\cos\theta_1\sin\theta_2}{\sin(\theta_1 + \theta_2)}$$</td>
-            </tr>
-            <tr>
-                <td rowspan="2"><span lang="en">p</span>波</td>
-                <td>振幅反射系数\(r_p\)</td>
-                <td>$$r_p = \frac{\tan(\theta_1-\theta_2)}{\tan(\theta_1 + \theta_2)}$$</td>
-            </tr>
-            <tr>
-                <td>振幅透射系数\(t_p\)</td>
-                <td>$$t_p = \frac{2\cos\theta_1\sin\theta_2}{\sin(\theta_1 + \theta_2)\cos(\theta_1 - \theta_2)}$$</td>
-            </tr>
-        </table><br>
+        <h2>全偏振现象与<span lang="en">Brewster</span>角</h2>
 
+        <p>光从光疏介质入射到光密介质时，由菲涅尔公式：</p>
+        <ul>
+            <li>\(\theta_1 = 0°\)即垂直入射时，\(r_p \gt 0 \gt r_s\)、\(t_s\gt 0\)、\(t_p\gt 0\)，此时存在反射波与折射波。</li>
+            <li>\(\theta_1 = 90°\)即掠入射时，\(r_s = r_p = -1\)，\(t_s = t_p = 0\)，此时仅有反射光。</li>
+        </ul>
+
+        <b>全偏振现象</b>
+        <p>反射光的振动方向只沿一个平面内的现象。</p>
+        <p>由于\(r_p\gt 0\)的范围及其单调特性，可知当光从光疏介质进入到光密介质时，\(r_p\)可能会等于零。</p>
+        <p>\(r_p=0\)意味着此时反射光中只有\(s\)方向偏振的电场，即反射光为全偏振光。</p>
+        <p>\(r_p = \frac{\tan(\theta_1 - \theta_2)}{\tan(\theta_1 + \theta_2)} = 0\)，由于\(\theta_1 \neq \theta_2\)，故\(\tan(\theta_1 - \theta_2)\neq 0\)，只能是\(\tan(\theta_1 + \theta_2) = 0\)即\(\theta_1 + \theta_2 = \pi/2\)。称此时的入射角为<b>起偏振角</b>或<b><span lang="en">Brewster</span>角（\(\theta_B\)）</b>。</p>
 
         <h2>坡印廷矢量\(\mathbf{S}\)（辐射强度矢量、能流密度）</h2>
         <p>用于描述电磁能量的传播。</p>

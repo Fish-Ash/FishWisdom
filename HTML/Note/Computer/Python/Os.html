@@ -17,31 +17,35 @@
             <li><a href="../Navigation.html">导航</a></li>
         </ul>
 
-        <h1>Pandas</h1>
-
-        <h2>清洗空值</h2>
-        <pre class="code"><code>
-            DataFrame.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
-        </code></pre>
-        <ul>
-            <li><span lang="en">axis</span></li>
-        </ul>
+        <h1 lang="en">os</h1>
         
 
-
-        <h2>数据融合</h2>
+        <b>连接路径</b>
         <pre class="code"><code>
-            joint_df = pd.merge(df1, df2, on='')
+            path = os.path.join(path1, path2)
         </code></pre>
-        <ul>
-            <li><span lang="en">df1</span>：融合的主体</li>
-            <li><span lang="en">df2</span>：融合的材料</li>
-            <li><span lang="en">on</span>：融合的依据</li>
-        </ul>
 
-        <h2>数据透视</h2>
-        <p class="code"></p>
-        
+
+        <b>判断路径是否存在</b>
+        <pre class="code"><code>
+            os.path.isdir(path) -> bool
+        </code></pre>
+
+        <b>获取指定路径下的全部文件名称</b>
+        <pre calss="code"><code>
+            os.listdir(path)
+        </code></pre>
+
+        <b>创建文件夹</b>
+        <pre class="code"><code>
+            os.makdir(path)
+        </code></pre>
+
+        <b>结束程序</b>
+        <pre class="code"><code>
+            os._exit(0)
+        </code></pre>
+
     </body>
 
 </html>

@@ -15,142 +15,98 @@
 
         
         <ul class="navibar">
-            <li><a href="../Home.html">主页</a></li>
-            <li><a href="../Navigation.html">导航</a></li>
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
 
         <h1>第二章 光学薄膜特性的理论计算</h1>
 
-        <h2>对电场矢量正方向的规定</h2>
-        <img src="./img/PDitectE.png" width="400">
-        <p>应用<span class="tip">边界条件<span class="tiptext">$$E_{1t} = E_{2t}\\H_{1t} = H_{2t}$$</span></span>，得：</p>
-        $$\mathbf{E_1} = \mathbf{E}_1^+ = \mathbf{E}_0^- + \mathbf{E}_0^-$$
-        $$\mathbf{H_1} = \mathbf{H}_1^+ = \mathbf{H}_0^- + \mathbf{H}_0^-$$
-        注：此处为矢量和。
 
-        <h2>单层介质薄膜的反射率</h2>
-        <p>单层膜的反射系数：</p>
-        $$r = (\eta_0 - Y)/(\eta_0 + Y)$$
-        $$R = r^2 = (\frac{\eta_0 - Y}{\eta_0 + Y})^2$$
-
-        <p>设\(\mathbf{E_{1t}}\)为在界面\(t\)上的\(\mathbf{E_1}\)。</p>
-        $$\begin{cases}
-        E_0 = E_0^+ + E_0^- = E_{11}^+ + E_{11}^-\\
-        H_0 = H_0^+ + H_0^- = \eta_1E_{11}^+ - \eta_1E_{11}^-
-        \end{cases}$$
-        $$\because\begin{cases}
-        E_{12}^+ = e^{-i\delta_1}E_{11}^+\\
-        E_{12}^- = e^{i\delta_1}E_{11}^-
-        \end{cases}$$
-        $$\therefore\begin{cases}
-        E_0 = e^{i\delta_1}E_{12}^+ + e^{-i\delta_1}E_{12}^-\\
-        H_0 = \eta_1e^{i\delta_1}E_{12}^+ + \eta_1e^{-i\delta_1}E_{12}^-  
-        \end{cases}$$
-        $$\begin{bmatrix}
-        E_0\\
-        H_0
-        \end{bmatrix}=
-        \begin{bmatrix}
-        e^{i\delta_1} & e^{-i\delta_1}\\
-        \eta_1e^{i\delta_1} & -\eta_1e^{-i\delta_1}
-        \end{bmatrix}
-        \begin{bmatrix}
-        E_{12}^+\\
-        E_{12}^-
-        \end{bmatrix}
-        $$
-
-
-        $$\begin{align}
-        \begin{bmatrix}E_0\\H_0\end{bmatrix}
-        &=\begin{bmatrix}
-        e^{i\delta_1} & e^{-i\delta_1}\\
-        \eta_1e^{i\delta_1} & -\eta_1e^{-i\delta_1}
-        \end{bmatrix} 
-        \begin{bmatrix}
-        \frac{1}{2} & \frac{1}{2\eta_1}\\
-        \frac{1}{2} & -\frac{1}{2\eta_1}
-        \end{bmatrix}
-        \begin{bmatrix}E_2\\H_2\end{bmatrix}\\
-        &=\begin{bmatrix}
-        \cos\delta_1 & \frac{i}{\eta_1}\sin\delta_1\\
-        i\eta_1\sin\delta_1 & \cos\delta_1
-        \end{bmatrix}
-        \begin{bmatrix}E_2\\H_2\end{bmatrix}
-        \end{align}$$
-
-        $$\because \begin{cases}
-        H_0 = YE_0\\
-        H_2 = \eta_2E_2
-        \end{cases}$$
-        $$\therefore E_0\begin{bmatrix}1\\Y\end{bmatrix}=\begin{bmatrix}
-        \cos\delta_1 & \frac{i}{\eta_1}\sin\delta_1\\
-        i\eta_1\sin\delta_1 & \cos\delta_1
-        \end{bmatrix}
-        \begin{bmatrix}1\\\eta_2\end{bmatrix}E_2$$
-
-        令
+        <h2>第一节 特征矩阵法</h2>
         $$\begin{bmatrix}1\\Y\end{bmatrix}=
         \begin{bmatrix}B\\C\end{bmatrix} = 
         \begin{bmatrix}
-        \cos\delta_1 & \frac{i}{\eta_1}\sin\delta_1\\
-        i\eta_1\sin\delta_1 & \cos\delta_1
+        \cos\delta_1 & \frac{i}{n_1}\sin\delta_1\\
+        in_1\sin\delta_1 & \cos\delta_1
+        \end{bmatrix}\cdots
+        \begin{bmatrix}
+        \cos\delta_t & \frac{i}{n_t}\sin\delta_t\\
+        in_t\sin\delta_t & \cos\delta_t
         \end{bmatrix}
-        \begin{bmatrix}1\\\eta_2\end{bmatrix}$$
+        \begin{bmatrix}1\\n_g\end{bmatrix}$$
+        注：\(1\rightarrow t\)为从空气到基底的膜层。
 
-        $$\therefore Y = C/B = \frac{\eta_2\cos\delta_1+i\eta_1\cos\delta_1}{\cos\delta_1+i(\eta_2/\eta_1)\sin\delta_1}$$
+        $$Y = C/B$$
+        $$R = (\frac{n_0 - Y}{n_0 + Y})^2$$
+        $$T = 1 - R$$
+        <b>优点</b>：计算严格、精确。<br><br>
+        <b>缺点</b>：计算复杂。
 
-        <b>薄膜的特征矩阵</b>
-        $$\begin{bmatrix}
-        \cos\delta_1 & \frac{i}{\eta_1}\sin\delta_1\\
-        i\eta_1\sin\delta_1 & \cos\delta_1
-        \end{bmatrix}$$
 
-        <p>当薄膜的有效光学厚度为\(1/4\)波长的整数倍时，即</p>
-        $$nd\cos\theta = m\frac{\lambda_0}{4}$$
-        <p>其相位厚度为\(\frac\pi2\)的整数倍，即</p>
-        $$\delta = \frac{2\pi}{\lambda}nd\cos\theta = m\frac\pi2$$
 
-        <div class="HBox">
-            <div class="left">
-                <p>\(m\)为奇数时：\(\begin{cases}\cos\delta_1 = 0\\\sin\delta_1 = 1~or~-1\end{cases}\)</p>
-                $$\begin{align}
-                \therefore \begin{bmatrix}1\\Y\end{bmatrix} &= \begin{bmatrix}0&\pm i/\eta_1\\\pm i\eta_1&0\end{bmatrix}
-                \begin{bmatrix}1\\\eta_s\end{bmatrix}\\
-                &= \begin{bmatrix}\pm i\frac{\eta_s}{\eta_1}\\\pm i\eta_1\end{bmatrix}
-                \end{align}$$
-                $$\therefore Y = \eta_1^2/\eta_s$$
-                （四分之一波长法则）
-                $$R = (\frac{\eta_0 - \eta_1^2/\eta_s}{\eta_0 + \eta_1^2/\eta_s})^2$$
-            </div>
-            <div class="divider"></div>
-            <div class="right">                
-                <p>\(m\)为偶数时：\(\begin{cases}\cos\delta_1 = 1~or~-1\\\sin\delta_1 = 0\end{cases}\)</p>
-                $$\begin{align}
-                \therefore \begin{bmatrix}1\\Y\end{bmatrix} &= \begin{bmatrix}\pm 1&0\\0&\pm 1\end{bmatrix}
-                \begin{bmatrix}1\\\eta_s\end{bmatrix}\\
-                &= \begin{bmatrix}\pm1\\\pm\eta_s\end{bmatrix}
-                \end{align}$$
-                $$\therefore Y = \eta_s$$
-                $$R = (\frac{\eta_0 - \eta_s}{\eta_0 + \eta_s})^2$$
-            </div>
-        </div>
+        <h2>第二节 矢量作图法</h2>
+        <b>适用于</b>：层数较少的减反膜<br><br>
+        <b>适用条件</b>：
+        <p>膜层无吸收</p>
+        <p>只考虑入射波在每个界面的单次反射</p>
+        <b>缺点</b>：
+        <p>忽略了膜层内的多次反射，对于其他类型的膜系，往往误差太大而不能应用。</p>
+        矢量计算如下：<br><br>
+        （1）计算出各分界面上的振幅反射系数：
+        $$r_i = \frac{n_i - n_{i+1}}{n_i + n_{i+1}}$$
+        （2）计算各层薄膜位相厚度：
+        $$\delta_i = \frac{2\pi}{\lambda}n_id_i$$
+        （3）计算两相继矢量间的夹角：
+        $$\delta_{ii+1} = 2\delta_i$$
+        绘图原则如下：<br><br>
+        （1）以\(r_i\)为模，\(\delta_{ii+1}\)为夹角将矢量绘制在极坐标系中。<br><br>
+        （2）\(r_i > 0\)时指向原点，\(r_i &lt; 0\)时背离原点。<br><br>
+        结果分析如下：<br><br>
+        （1）合矢量为所求。<br><br>
+        （2）合矢量的模为膜系的振幅反射系数。<br><br>
 
-        <b>速写符号</b>
-        <table>
-            <tr>
-                <td lang="en">H</td>
-                <td>高折射率的\(1/4\)波长膜层</td>
-            </tr>
-            <tr>
-                <td lang="en">L</td>
-                <td>低折射率的\(1/4\)波长膜层</td>
-            </tr>
-            <tr>
-                <td lang="en">M</td>
-                <td>中间折射率的\(1/4\)波长膜层</td>
-            </tr>
-        </table>
+        <h2>第三节 有效界面法（史密斯方法）</h2>
+        <b>无吸收介质单层膜特征矩阵</b>
+        $$M = \begin{bmatrix}\cos \delta & \frac{i}{\eta}\sin\delta\\i\eta\sin\delta& \cos\delta\end{bmatrix} = \begin{bmatrix}m_{11}&m_{12}\\m_{21}&m_{22}\end{bmatrix}$$
+        其中\(m_{11}\)、\(m_{22}\)为纯实数，\(m_{12}\)、\(m_{21}\)为纯虚数。
+        $$m_{11}m_{22} - m_{12}m_{21} = \cos^2\delta + \sin^2 \delta = 1$$
+        $$m_{11} = m_{22}$$
+        <b>多层膜特征矩阵</b>
+        $$M = M_1M_2\cdots M_k = \begin{bmatrix}M_{11} & M_{12}\\M_{21} & M_{22}\end{bmatrix}$$
+        其中\(M_{11}\)、\(M_{22}\)为纯实数，\(M_{12}\)、\(M_{21}\)为纯虚数。
+        $$M_{11}M_{22} - M_{12}M_{21} = 1$$
+        <p>一般来说\(M_{11} \neq M_{22}\)，因此不能和一个单层膜等效。</p>
+
+
+        <h2>第四节 导纳图解法</h2>
+        <b>整个过程中多层膜导纳的变化轨迹</b>
+        <p>从基片开始，通过每一层膜直到多层膜的前表面，把平行于基片的任意平面处的光学导纳画在一复平面内。</p>
+        <p>对于每层介质膜，导纳轨迹是圆心位于实轴上的圆弧。</p>
+
+        <p>假设基片导纳为\(\alpha + i\beta\)，其上有一导纳为\(n\)的单层膜：</p>
+        $$\begin{bmatrix}1 \\ Y\end{bmatrix} = \begin{bmatrix}B\\C\end{bmatrix} 
+        = \begin{bmatrix}\cos\delta & \frac{i}{n}\sin\delta\\in\sin\delta & \cos\delta\end{bmatrix}
+        \begin{bmatrix}1 \\ \alpha + i\beta\end{bmatrix}$$
+        $$\begin{align}
+        Y &= C/B\\
+          &= x+iy\\
+          &= \frac{in\sin\delta + (\alpha + i\beta)\cos\delta}{\cos\delta + (\alpha + i\beta)\frac{i}{n}\sin\delta}\\
+          &= \frac{\alpha\cos\delta + i(n\sin\delta + \beta\cos\delta)}{(\cos\delta - \frac{\beta}{n}\sin\delta) + i\frac{\alpha}{n}\sin\delta}
+        \end{align}$$
+
+        $$\begin{cases}
+        (\frac{x\beta}{n} + \frac{y\alpha}{n})\sin\delta + (a - x)\cos\delta = 0\\
+        (n - \frac{x\alpha}{n} + \frac{y\beta}{n})\sin\delta + (\beta - y)\cos\delta = 0
+        \end{cases}$$
+
+        光学导纳的轨迹方程：
+        $$x^2 + y^2 - \frac{\alpha^2 + \beta^2 + n^2}{\alpha}x = -n^2$$
+        这是圆心坐标位于\((\frac{\alpha^2 + \beta^2 + n^2}{2\alpha}, 0)\)且经过\((\alpha, \beta)\)的圆弧。
+
+        <ul class="navibar">
+            <li><a href="chapter1.html">上一页</a></li>
+            <li class="next"><a href="chapter3.html">下一页</a></li>
+        </ul>
     </body>
 
 </html>

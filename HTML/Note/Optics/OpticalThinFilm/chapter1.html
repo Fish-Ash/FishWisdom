@@ -144,7 +144,170 @@
         <h3>一、反射定律与折射定律</h3>
 
         <p>讨论光在两种各项同性均匀介质的分界面上发生的反射与折射</p>
+
+
+        <h2>对电场矢量正方向的规定</h2>
+        <img src="./img/PDitectE.png" width="400">
+        <p>应用<span class="tip">边界条件<span class="tiptext">$$E_{1t} = E_{2t}\\H_{1t} = H_{2t}$$</span></span>，得：</p>
+        $$\mathbf{E_1} = \mathbf{E}_1^+ = \mathbf{E}_0^- + \mathbf{E}_0^-$$
+        $$\mathbf{H_1} = \mathbf{H}_1^+ = \mathbf{H}_0^- + \mathbf{H}_0^-$$
+        注：此处为矢量和。
+
+        <h2>单层介质薄膜的反射率</h2>
+        <p>单层膜的反射系数：</p>
+        $$r = (\eta_0 - Y)/(\eta_0 + Y)$$
+        $$R = r^2 = (\frac{\eta_0 - Y}{\eta_0 + Y})^2$$
+
+        <p>设\(\mathbf{E_{1t}}\)为在界面\(t\)上的\(\mathbf{E_1}\)。</p>
+        $$\begin{cases}
+        E_0 = E_0^+ + E_0^- = E_{11}^+ + E_{11}^-\\
+        H_0 = H_0^+ + H_0^- = \eta_1E_{11}^+ - \eta_1E_{11}^-
+        \end{cases}$$
+        $$\because\begin{cases}
+        E_{12}^+ = e^{-i\delta_1}E_{11}^+\\
+        E_{12}^- = e^{i\delta_1}E_{11}^-
+        \end{cases}$$
+        $$\therefore\begin{cases}
+        E_0 = e^{i\delta_1}E_{12}^+ + e^{-i\delta_1}E_{12}^-\\
+        H_0 = \eta_1e^{i\delta_1}E_{12}^+ + \eta_1e^{-i\delta_1}E_{12}^-  
+        \end{cases}$$
+        $$\begin{bmatrix}
+        E_0\\
+        H_0
+        \end{bmatrix}=
+        \begin{bmatrix}
+        e^{i\delta_1} & e^{-i\delta_1}\\
+        \eta_1e^{i\delta_1} & -\eta_1e^{-i\delta_1}
+        \end{bmatrix}
+        \begin{bmatrix}
+        E_{12}^+\\
+        E_{12}^-
+        \end{bmatrix}
+        $$
+
+
+        $$\begin{align}
+        \begin{bmatrix}E_0\\H_0\end{bmatrix}
+        &=\begin{bmatrix}
+        e^{i\delta_1} & e^{-i\delta_1}\\
+        \eta_1e^{i\delta_1} & -\eta_1e^{-i\delta_1}
+        \end{bmatrix} 
+        \begin{bmatrix}
+        \frac{1}{2} & \frac{1}{2\eta_1}\\
+        \frac{1}{2} & -\frac{1}{2\eta_1}
+        \end{bmatrix}
+        \begin{bmatrix}E_2\\H_2\end{bmatrix}\\
+        &=\begin{bmatrix}
+        \cos\delta_1 & \frac{i}{\eta_1}\sin\delta_1\\
+        i\eta_1\sin\delta_1 & \cos\delta_1
+        \end{bmatrix}
+        \begin{bmatrix}E_2\\H_2\end{bmatrix}
+        \end{align}$$
+
+        $$\because \begin{cases}
+        H_0 = YE_0\\
+        H_2 = \eta_2E_2
+        \end{cases}$$
+        $$\therefore E_0\begin{bmatrix}1\\Y\end{bmatrix}=\begin{bmatrix}
+        \cos\delta_1 & \frac{i}{\eta_1}\sin\delta_1\\
+        i\eta_1\sin\delta_1 & \cos\delta_1
+        \end{bmatrix}
+        \begin{bmatrix}1\\\eta_2\end{bmatrix}E_2$$
+
+        令
+        $$\begin{bmatrix}1\\Y\end{bmatrix}=
+        \begin{bmatrix}B\\C\end{bmatrix} = 
+        \begin{bmatrix}
+        \cos\delta_1 & \frac{i}{\eta_1}\sin\delta_1\\
+        i\eta_1\sin\delta_1 & \cos\delta_1
+        \end{bmatrix}
+        \begin{bmatrix}1\\\eta_2\end{bmatrix}$$
+
+        $$\therefore Y = C/B = \frac{\eta_2\cos\delta_1+i\eta_1\cos\delta_1}{\cos\delta_1+i(\eta_2/\eta_1)\sin\delta_1}$$
+
+        <b>薄膜的特征矩阵</b>
+        $$\begin{bmatrix}
+        \cos\delta_1 & \frac{i}{\eta_1}\sin\delta_1\\
+        i\eta_1\sin\delta_1 & \cos\delta_1
+        \end{bmatrix}$$
+
+        <p>当薄膜的<b>有效光学厚度</b>为\(1/4\)波长的整数倍时，即</p>
+        $$nd\cos\theta = m\frac{\lambda_0}{4}$$
+        <p>其<b>相位厚度</b>为\(\frac\pi2\)的整数倍，即</p>
+        $$\delta = \frac{2\pi}{\lambda}nd\cos\theta = \frac{m}{2}\pi$$
+
+        <div class="HBox">
+            <div class="left">
+                <p>\(m\)为奇数时：\(\begin{cases}\cos\delta_1 = 0\\\sin\delta_1 = 1~or~-1\end{cases}\)</p>
+                $$\begin{align}
+                \therefore \begin{bmatrix}1\\Y\end{bmatrix} &= \begin{bmatrix}0&\pm i/\eta_1\\\pm i\eta_1&0\end{bmatrix}
+                \begin{bmatrix}1\\\eta_s\end{bmatrix}\\
+                &= \begin{bmatrix}\pm i\frac{\eta_s}{\eta_1}\\\pm i\eta_1\end{bmatrix}
+                \end{align}$$
+                $$\therefore Y = \eta_1^2/\eta_s$$
+                （四分之一波长法则）
+                $$R = (\frac{\eta_0 - \eta_1^2/\eta_s}{\eta_0 + \eta_1^2/\eta_s})^2$$
+            </div>
+            <div class="divider"></div>
+            <div class="right">                
+                <p>\(m\)为偶数时：\(\begin{cases}\cos\delta_1 = 1~or~-1\\\sin\delta_1 = 0\end{cases}\)</p>
+                $$\begin{align}
+                \therefore \begin{bmatrix}1\\Y\end{bmatrix} &= \begin{bmatrix}\pm 1&0\\0&\pm 1\end{bmatrix}
+                \begin{bmatrix}1\\\eta_s\end{bmatrix}\\
+                &= \begin{bmatrix}\pm1\\\pm\eta_s\end{bmatrix}
+                \end{align}$$
+                $$\therefore Y = \eta_s$$
+                $$R = (\frac{\eta_0 - \eta_s}{\eta_0 + \eta_s})^2$$
+                <p>此时，对于参考波长\(\lambda_0\)，该膜层对膜系的反射或透射特性无任何影响，故称为<b>虚设层</b>。</p>
+                <p>在其他波长上，薄膜的特征矩阵不再是单位矩阵，对膜系的特征是有影响的，故常用于平滑膜系的分光特性。</p>
+            </div>
+        </div>
+
+        <p>当\(nd\cos\theta\)为\(\frac{\lambda}{4}\)的整数倍时，反射率将达到极值。</p>
+        <ul>
+            <li>\(\eta_1 &gt; \eta_s\)时，\(\frac{\lambda}{4}\)奇数倍波长\(R\)达到极大值，偶数倍波长\(R\)达到极小值。</li>
+            <li>\(\eta_1 = \eta_s\)时，\(R\)恒为定值。</li>
+            <li>\(\eta_1 &lt; \eta_s\)时，\(\frac{\lambda}{4}\)奇数倍波长\(R\)达到最小值，偶数倍波长\(R\)达到极大值。</li>
+        </ul>
+        $$
+        (\frac{\eta_0 - \eta_1^2/\eta_s}{\eta_0 + \eta_1^2/\eta_s})^2 - (\frac{\eta_0 - \eta_s}{\eta_0 + \eta_s})^2 = (\frac{\eta_0 - \eta_1^2/\eta_s}{\eta_0 + \eta_1^2/\eta_s} + \frac{\eta_0 - \eta_s}{\eta_0 + \eta_s})(\frac{\eta_0 - \eta_1^2/\eta_s}{\eta_0 + \eta_1^2/\eta_s} - \frac{\eta_0 - \eta_s}{\eta_0 + \eta_s})\\
+        \because (\eta_0+\eta_1^2/\eta_s)(\eta_0+\eta_s) > 0\\
+        \begin{align}
+        \therefore &[(\eta_0 - \eta_1^2/\eta_s)(\eta_0 + \eta_s) + (\eta_0 + \eta_1^2/\eta_s)(\eta_0 - \eta_s)][(\eta_0 - \eta_1^2/\eta_s)(\eta_0 + \eta_s) - (\eta_0 + \eta_1^2/\eta_s)(\eta_0 - \eta_s)]\\
+        &=4(\eta_0^2 - \eta_1^2)(\eta_0\eta_s - \eta_0\eta_1^2/\eta_s)
+        \end{align}\\
+        \because \eta_0 &lt; \eta_1\\
+        R_1 &gt; R_2:\eta_0\eta_s - \eta_0\eta_1^2/\eta_s &lt; 0\Rightarrow \eta_1 &gt; \eta_s\\
+        R_1 &lt; R_2:\eta_0\eta_s - \eta_0\eta_1^2/\eta_s &gt; 0\Rightarrow \eta_1 &lt; \eta_s
+
+        $$
+
+        <b>速写符号</b>
+        <table>
+            <tr>
+                <td lang="en">H</td>
+                <td>高折射率的\(1/4\)波长膜层</td>
+            </tr>
+            <tr>
+                <td lang="en">L</td>
+                <td>低折射率的\(1/4\)波长膜层</td>
+            </tr>
+            <tr>
+                <td lang="en">M</td>
+                <td>中间折射率的\(1/4\)波长膜层</td>
+            </tr>
+        </table>
+
+        <h2>多层薄膜的特性计算</h2>
+        <b>膜系的特征矩阵</b>
+        $$
+        \begin{bmatrix}1\\Y\end{bmatrix} = \begin{bmatrix}B\\C\end{bmatrix} = \left\{\prod_\limits{j=1}^K\begin{bmatrix}\cos\delta_j & \frac{i}{\eta_j}\sin\delta_j\\i\eta_j\sin\delta_j& \cos\delta_j \end{bmatrix}\right\}\begin{bmatrix}1\\\eta_{K+1}\end{bmatrix}
+        $$
         
+
+        <ul class="navibar">
+            <li class="next"><a href="chapter2.html">下一页</a></li>
+        </ul>
     </body>
 
 </html>
