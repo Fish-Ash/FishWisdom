@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>应用光学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>像差理论</h1>
+
+        <table>
+            <tr>
+                <td rowspan="7">像差：<br>实际像与理想像之间的差异。</td>
+                <td rowspan="6">几何像差</td>
+                <td rowspan="4">单色像差：<br>单色光成像产生的像差。</td>
+                <td><a href="#SphericalAberration">球差</a></td>
+            </tr>
+            <tr>
+                <td>彗差（正弦差）</td>
+            </tr>
+            <tr>
+                <td>像散</td>
+            </tr>
+            <tr>
+                <td>场曲</td>
+            </tr>
+            <tr>
+                <td rowspan="2">色差：<br>不同色光的成像差异。</td>
+                <td>位置色差</td>
+            </tr>
+            <tr>
+                <td>倍率色差</td>
+            </tr>
+            <tr>
+                <td colspan="3">波像差（波差）：<br>实际波面与理想球面的偏差。</td>
+            </tr>
+        </table>
+
+
+
+        <h2 id="SphericalAberration">球差（<span lang="en">Spherical Aberration</span>）</h2>
+        
+        <b>定义</b>
+        <p>球差又叫球面像差，是指轴上点发出的光束通过球面透镜时，透镜不同孔径区域的光束最后汇集在光轴的不同位置，在像面上形成圆形弥散斑。</p>
+
+        <p><b>球差（轴向球差、\(\delta L'\)）</b>：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;轴上点发出的同心光束经光学系统后，不再是同心光束。不同入射高度\(h(U)\)的光线经过光学系统后交光轴于不同位置，相对理想像点有不同程度的偏离，称这种偏离为轴向球差。
+        $$\delta L' = L' - l'$$
+        &nbsp;&nbsp;&nbsp;&nbsp;其中\(L'\)为实际像距，\(l'\)为理想相距。
+        <br>
+
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;球差与孔径的位置无关，与孔径的大小有关，一般随孔径的增大而增大。
+        <br>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;球差是轴上点成像存在的唯一一种单色像差
+
+        <br>
+        <br>球差的校正：
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;通常对边缘光线校正球差
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;单正透镜产生负球差、单负透镜产生负球差
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;对于共轴球面系统，单透镜本身不能校正球差，正负透镜相结合有可能校正球差
+        </p>
+
+
+    </body>
+
+</html>

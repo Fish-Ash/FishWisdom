@@ -4,7 +4,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>激光原理</title>
+        <title>光学设计</title>
         <link rel="stylesheet" href="../../../../CSS/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
     </head>
@@ -22,6 +22,10 @@
 
         <h1>光学系统像质评价</h1>
 
+        <h2>像差分析</h2>
+        <p>通常在分析某种像差特性时，均假定其他像差不存在，这样不但简化了数学模型，也排除了其他像差的干扰。</p>
+
+        <p>完全消除像差是没有可能且没有必要的。</p>
         <b>像质评价</b>
         <p>确保光学系统满足预期性能的核心环节。</p>
 
@@ -54,5 +58,28 @@
     </body>
 
     <h2><span lang="en">MTF</span>曲线图</h2>
+
+    <p>用于定量分析和描述光学系统在不同空间频率下对图像细节和对比度的传递能力。</p>
+    <p>成像系统最权威的像质评价标准——光学传递函数（<span lang="en">Optical Transfer Function, OTF</span>）</p>
+    <p><span lang="en">OTF</span>提供了一种基于频域分析的方式，能够量化光学系统如何传递来自物体的不同细节信息，从而更精确地反映系统的成像性能。</p>
+    <p><span lang="en">OTF</span>由<b>调制传递函数（<span lang="en">Modulation Transfer Functionm, MTF</span>）</b>和<b>相位传递函数（<span lang="en">Phase Transfer Function, PTF</span></b>）两部分组成。</p>
+    <b>奈奎斯特频率（空间分辨率）</b>
+    <p>\(1mm\)的像空间内，光学系统可分辨的每毫米线对数。</p>
+    $$N = \frac{1}{2\times PixelSize}$$
+    <p>\(N\)为奈奎斯特频率，单位为\(lp/mm\)，一般设置为<span lang="en">MTF</span>曲线的横坐标。</p>
+    <p><span lang="en">MTF</span>曲线的黑色曲线为衍射受限曲线。</p>
+    <p>在奈奎斯特频率处，光学系统的<span lang="en">MTF</span>值应大于要求的目标值。</p>
     
+    <h2>点列图</h2>
+    <p>由于光学系统存在像差，光线与像面的焦点不再集中于一点，而是形成一个具有一定大小的弥散斑，称之为点列图。</p>
+    <p>采样点分布越集中，即点列图弥散斑半径越小，像质越好。</p>
+    <p>采样点越多，模拟的效果越精确，但计算量也会随之增大。</p>
+    <b><span lang="en">GEO</span>半径</b>
+    <p>像差最大的光线与像面交点到主光线的距离。</p>
+    <b><span lang="en">RMS</span>（均方根）半径</b>
+    $$RMS = \sqrt{\frac{\sum\limits_{i=1}^n[(x_i - x_c)^2 + (y_i - y_c)^2]}{n}}$$
+    其中，\((x_i, y_i)\)为采样点坐标，\((x_c, y_c)\)为参考点坐标，\(n\)为采样点数量。
+
+    <p>包围点列图的黑色圆圈即为艾里斑</p>
+
 </html>

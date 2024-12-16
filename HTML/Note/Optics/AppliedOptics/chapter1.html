@@ -170,6 +170,12 @@
 
 
         <h3>二、实际光线光路计算</h3>
+        $$\frac{\sin(\pi - I)}{-L + r} = \frac{\sin(-U)}{r} \Rightarrow \sin I = (L - r)\frac{\sin U}{r}$$
+        $$n\sin I = n' \sin I' \Rightarrow \sin I' = \frac{n}{n'}\sin I$$
+        $$I = -U + \phi = -U + U' + I' \Rightarrow U' = U + I - I'$$
+        $$\frac{\sin I'}{L' - r} = \frac{\sin U'}{r}\Rightarrow L' = r(\frac{\sin I'}{\sin U'} + 1)$$
+
+
         <h3>三、近轴光线光路计算</h3>
         <p><b>近轴区</b>：当U很小时，I、I'、U'都很小。光线在光轴附近很小的区域内，这个区域即为近轴区。近轴区内的光线即为近轴光线。
         <br>此时有：\(\sin\theta=\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\frac{\theta^7}{7!}+\dots\)，

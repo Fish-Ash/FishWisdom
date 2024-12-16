@@ -19,46 +19,17 @@
 <li><a href="../../Navigation.html">导航</a></li>
 </ul>
 <h1>第六章 光线的光路计算及像差理论</h1>
-<h2>第一节 概述</h2>
-<b>像差</b>：
-<p>实际像与理想像之间的差异。</p>
-<ul>
-    <li>几何像差：
-        <ul>
-            <li>单色像差：单色光成像产生的像差。
-                <ul>
-                    <li>球差</li>
-                    <li>彗差（正弦差）</li>
-                    <li>像散</li>
-                    <li>场曲</li>
-                </ul>
-            </li>
-            <li>色差：不同色光的成像差异
-                <ul>
-                    <li>位置色差</li>
-                    <li>倍率色差</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li>波像差（波差）：实际波面与理想球面的偏差</li>
-</ul>
 
 <table>
     <tr>
-        <td rowspan="6">像差</td>
-        <td rowspan="4">几何像差</td>
-        <td rowspan="4">单色像差</td>
-        <td>球差</td>
+        <td><span lang="en">F</span>光</td>
+        <td>\(\lambda = 486.1nm\)</td>
     </tr>
     <tr>
-        <td>彗差（正弦差）</td>
-    </tr>
-    <tr>
-        <td></td>
+        <td><span lang="en">C</span>光</td>
+        <td>\(\lambda = 656.3nm\)</td>
     </tr>
 </table>
-</p>
 
 <p><b>像差校正的谱线选择</b>：
     <br>&nbsp;&nbsp;&nbsp;&nbsp;谱线选择主要取决于光能接收器的光谱特性
@@ -87,28 +58,6 @@
         <li>其他光学系统</li>
     </ul>
 </p>
-
-<h2>第二节 光线的光路计算</h2>
-
-<h2>第三节 轴上点的球差</h2>
-<p><b>球差（轴向球差、\(\delta L'\)）</b>：
-<br>&nbsp;&nbsp;&nbsp;&nbsp;轴上点发出的同心光束经光学系统后，不再是同心光束。不同入射高度\(h(U)\)的光线经过光学系统后交光轴于不同位置，相对理想像点有不同程度的偏离，称这种偏离为轴向球差。
-$$\delta L' = L' - l'$$
-&nbsp;&nbsp;&nbsp;&nbsp;其中\(L'\)为实际像距，\(l'\)为理想相距。
-<br>
-
-<br>&nbsp;&nbsp;&nbsp;&nbsp;球差与孔径的位置无关，与孔径的大小有关，一般随孔径的增大而增大。
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;球差是轴上点成像存在的唯一一种单色像差
-
-<br>
-<br>球差的校正：
-<br>&nbsp;&nbsp;&nbsp;&nbsp;通常对边缘光线校正球差
-<br>&nbsp;&nbsp;&nbsp;&nbsp;单正透镜产生负球差、单负透镜产生负球差
-<br>&nbsp;&nbsp;&nbsp;&nbsp;对于共轴球面系统，单透镜本身不能校正球差，正负透镜相结合有可能校正球差
-</p>
-
-
 
 <h2>正弦差</h2>
 <p>
@@ -198,10 +147,9 @@ $$SC' = \frac1\beta\frac{n\sin U}{n'\sin U'}- \frac{\delta L'}{L'-l_z'}-1 = \fra
 </p>
 
 
-<p><b>位置色差（轴向色差）(\(\Delta L_{FC}'\))</b>：
-<br>定义：
-<br>&nbsp;&nbsp;&nbsp;&nbsp;轴上点两种色光成像的位置差异
-<br>
+<b>位置色差（轴向色差）</b>：
+<p>轴上点两种色光成像的位置差异。</p>
+<p>对于目视光学系统，用\(\Delta L_{FC}'\)表示，即系统对<span lang="en">F</span>光和<span lang="en">C</span>光消色差。</p>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;轴上点白光成像，形成按色光波长由短到长，像点离透镜由近及远地排列在光轴上的现象。
 $$\phi = (n-1)(\rho_1 - \rho_2)$$
 <br>危害：
