@@ -85,11 +85,11 @@
                 <td class="tbtext" colspan="3">表示几何要素特征的尺寸要素，通过两点法测量得到的两点之间的距离。</td>
             </tr>
             <tr>
-                <td class="tbtitle" rowspan="2"><b>公称尺寸</b></td>
-                <td class="tbtext" colspan="3">由图样规范定义的理想形状要素的尺寸，设计时给定。</td>
-            </tr>
-            <tr>
-                <td class="tbtext" colspan="3">是根据零件的强度、刚度等的计算和结构的设计确定的，应依据<span lang="en">GB/T 2822-2005</span>《标准尺寸》化整为优先数。</td>
+                <td class="tbtitle"><b>公称尺寸</b></td>
+                <td class="tbtext" colspan="3">
+                    <p>由图样规范定义的理想形状要素的尺寸，设计时给定。</p>
+                    <p>是根据零件的强度、刚度等的计算和结构的设计确定的，应依据<span lang="en">GB/T 2822-2005</span>《标准尺寸》化整为优先数。</p>
+                </td>
             </tr>
             <tr>
                 <td class="tbtitle" rowspan="2"><b>极限尺寸</b></td>
@@ -102,11 +102,11 @@
                 <td class="tbtext">尺寸所允许的最小值</td>
             </tr>
             <tr>
-                <td class="tbtitle" rowspan="2"><b>实际尺寸</b></td>
-                <td class="tbtext" colspan="3">零件加工后的实际表面通过测量获得的尺寸，再通过拟合操作，从非理想表面模型或实际要素中建立理想尺寸要素</td>
-            </tr>
-            <tr>
-                <td class="tbtext" colspan="3">合格条件：\(\begin{cases}D_{min}\leq D_a\leq D_{max}\\d_{min}\leq d_a\leq d_{max}\end{cases}\)</td>
+                <td class="tbtitle"><b>实际尺寸</b></td>
+                <td class="tbtext" colspan="3">
+                    <p>零件加工后的实际表面通过测量获得的尺寸，再通过拟合操作，从非理想表面模型或实际要素中建立理想尺寸要素。</p>
+                    <p>合格条件：\(\begin{cases}D_{min}\leq D_a\leq D_{max}\\d_{min}\leq d_a\leq d_{max}\end{cases}\)</p>
+                </td>
             </tr>
         </table><br>
 
@@ -127,7 +127,7 @@
             </tr>
             <tr>
                 <td>零偏差</td>
-                <td class="tbtitle"><b>实际偏差</b></td>
+                <td class="tbtitle" colspan="2"><b>实际偏差</b></td>
                 <td class="tbtext" colspan="2">实际尺寸减去公称尺寸所得的代数差。</td>
             </tr>
         </table>
@@ -197,6 +197,10 @@
         <h3>五、<span lang="en">ISO</span>配合制</h3>
         <b>基孔制</b>
         <p>孔的基本偏差为0的配合，即孔的下极限偏差为0。</p>
+        <p>一般情况下，优先选用基孔制。</p>
+        <p>原因：经济性好。</p>
+        
+        
         <b>基轴制</b>
         <p>轴的基本偏差为0的配合，即轴的上极限偏差为0。</p>
 
@@ -204,15 +208,36 @@
         <h2>第二节 极限与配合国家标准的构成</h2>
         <h3>一、标准公差系列</h3>
         <b><span lang="en">GB/T 1800.1-2020</span>规定了\(20\)个等级的标准化公差数值</b>：
-        <p>标准公差分20个等级，分别用\(IT01、IT0、IT1、IT2\cdots IT18\)表示。</p>
+        <p>标准公差分\(20\)个等级，分别用\(IT01、IT0、IT1、IT2\cdots IT18\)表示。</p>
         <p>其中，\(IT01\)精度最高、\(IT18\)精度最低。</p>
+        $$ES = EI + IT$$
+        $$es = ei + IT$$
 
         <h3>二、基本偏差系列</h3>
         <b><span lang="en">GB/T 1800.1-2020</span>规定了\(28\)种极限偏差</b>：
         <ul>
             <li>孔：\(26\)个英文字母去掉\(I、L、O、Q、W\)，加上\(CD、EF、FG、JS、ZA、ZB、ZC\)</li>
-            <li>孔：\(26\)个英文字母去掉\(i、l、o、q、w\)，加上\(cd、ef、fg、js、za、zb、zc\)</li>
+            <li>轴：\(26\)个英文字母去掉\(i、l、o、q、w\)，加上\(cd、ef、fg、js、za、zb、zc\)</li>
         </ul>
+
+        <table>
+            <tr class="tbtitle">
+                <td colspan="2">孔</td>
+                <td colspan="2">轴</td>
+            </tr>
+            <tr>
+                <td lang="en">A、B、C、CD、D、E、EF、F、FG、G</td>
+                <td>$$EI \gt 0$$</td>
+                <td lang="en">a、b、c、cd、d、e、ef、f、fg、g</td>
+                <td>$$es \lt 0$$</td>
+            </tr>
+            <tr>
+                <td><span lang="en">H</span><br>（基孔制中基准孔的基本偏差代号）</td>
+                <td>$$EI = 0$$</td>
+                <td><span lang="en">h</span><br>（基轴制中基准轴的基本偏差代号）</td>
+                <td>$$es = 0$$</td>
+            </tr>
+        </table>
 
 
         <span lang="en">e.g.</span>求\(\phi 50f6\)轴的极限偏差数值。

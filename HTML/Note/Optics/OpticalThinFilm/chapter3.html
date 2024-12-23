@@ -32,7 +32,7 @@
             <li>表面反射光经过多次反射或漫射，有一部分成为杂散光，最后也达到像平面，使像的衬度降低，从而影响成像的质量。</li>
         </ul>
 
-        <b>理想单层减反膜</b>
+        <h3>理想单层减反膜</h3>
         $$R = (\frac{n_0 - Y}{n_0 + Y})^2$$
         当\(Y = n_0\)时，\(R = 0\)
         $$\begin{align}
@@ -57,7 +57,13 @@
             <li>采用几种折射率不同的均匀膜构成多层减反膜。</li>
         </ul>
 
-        <h2>分束镜</h2>
+        <p>可见区使用最普遍的材料是\(n = 1.52\)左右的冕牌玻璃，理想的减反射模材料为\(\sqrt{1.52}\approx 1.23\)，但至今能用的最理想薄膜材料为氟化镁\(n = 1.38\)</p>
+
+        <h3>\(\lambda_0/4-\lambda_0/4\)双层减反膜（<span lang="en">V</span>形膜）</h3>
+
+
+
+        <h2>第二节 分束镜</h2>
         <b>中性分束镜</b>
         <p>把一束光分成光谱成分相同的两束光，也即它在一定的波长区域内，对各波长具有相同的透射率和反射率比，因而反射光和透射光成中性。</p>
         
@@ -91,7 +97,51 @@
         <p><b>材料</b>：铝模</p>
         <p><b>保护膜</b>：氧化镁或氟化锂</p>
 
+        <h3>多层介质高反射膜</h3>
+        <b>膜系</b>
+        <p>\((HL)^sH\)</p>
+        <p>对于中心波长\(\lambda_0\)，\(Y = (\frac{n_H}{n_L})^{2s}\frac{n_H^2}{n_g}\)</p>
+        <p>\(R = (\frac{1 - Y}{1 + Y})^2\)，\(Y\)越大，即层数越多，反射率越高。</p>
+        <p>实际上由于膜层中存在<b>吸收</b>和<b>散射损失</b>，当膜系达到一定层数时，继续加镀可能由于吸收、散射损失的增加而使反射率下降。</p>
+        <p>散射损耗主要由薄膜的<b>体内缺陷</b>（如微粒尘埃、细微裂痕等）和<b>表面粗糙度</b>引起。</p>
+        <b>表面散射损耗（<span lang="en">SSL</span>）</b>
+        <p>由表面粗糙度引起的散射损耗，在散射损耗中占主体地位。</p>
+        
+        
+        
+        <h3>高反射带的宽度计算方法</h3>
+        <p>若多层膜由\(s\)个重复的基本周期构成，则其特征矩阵为：</p>
+        $$\mu = M^s$$
+        其中\(M\)是重复周期的矩阵，可以写为：
+        $$\begin{bmatrix}m_{11} & m_{12} \\m_{21} & m_{22}\end{bmatrix}$$
+        <p>满足条件\(|\frac{1}{2}(m_{11} + m_{22})|\gt1\)的波长位于膜系的反射带内，反射率将随周期数目的增加而稳定增大。</p>
+        <p>满足条件\(|\frac{1}{2}(m_{11} + m_{22})|\lt1\)的波长位于膜系的透射带内，反射率随膜层的增加而起伏。</p>
+        <p>反射带的边界由|\(\frac{1}{2}(m_{11} + m_{22})|=1\)决定。</p>
 
+
+        <p>对于膜系\((HL)^sH\)，每个周期的特征矩阵为：</p>
+        $$M = \begin{bmatrix}\cos\delta & \frac{i}{n_L}\sin\delta\\ in_L\sin\delta & \cos\delta\end{bmatrix}\begin{bmatrix}\cos\delta & \frac{i}{n_H}\sin\delta\\in_H\sin\delta & \cos\delta\end{bmatrix}$$
+        $$\begin{align}
+        \therefore |\frac{1}{2}(m_{11} + m_{22})| &= |\frac{1}{2}(\cos^2\delta - \frac{n_H}{n_L}\sin^2\delta - \frac{n_L}{n_H}\sin^2\delta + \cos^2\delta)|\\
+                                                  &= |\cos^2\delta - \frac{1}{2}(\frac{n_H}{n_L} + \frac{n_L}{n_H})\sin^2\delta|
+        \end{align}$$
+        $$\because \cos^2\delta - \frac{1}{2}(\frac{n_H}{n_L} + \frac{n_L}{n_H})\sin^2\delta \lt 1$$
+        故边界：
+        $$
+        \cos^2\delta - \frac{1}{2}(\frac{n_H}{n_L} + \frac{n_L}{n_H})\sin^2\delta = -1\\
+        \cos^2\delta - \frac{1}{2}(\frac{n_H}{n_L} + \frac{n_L}{n_H}) + \frac{1}{2}(\frac{n_H}{n_L} + \frac{n_L}{n_H})\cos^2\delta = -1\\
+        [\frac{1}{2}(\frac{n_H}{n_L} + \frac{n_L}{n_H}) + 1]\cos^2\delta = \frac{1}{2}(\frac{n_H}{n_L} + \frac{n_L}{n_H}) - 1\\
+        \begin{align}
+        \cos^2\delta &= \frac{\frac{1}{2}(\frac{n_H}{n_L} + \frac{n_L}{n_H}) - 1}{\frac{1}{2}(\frac{n_H}{n_L} + \frac{n_L}{n_H}) + 1}\\
+                     &= \frac{n_H^2 + n_L^2 - 2n_Hn_L}{n_H^2 + n_L^2 + 2n_Hn_L}\\
+                     &= (\frac{n_H - n_L}{n_H + n_L})^2
+        \end{align}
+        $$
+        $$\begin{align}
+        \because \delta &= \frac{2\pi}{\lambda}\frac{\lambda_0}{4}\\
+                        &= \frac{\pi}{2}\frac{\lambda_0}{\lambda}\\
+                        &= \frac{\pi}{2}g
+        \end{align}$$
 
         <h2>第四节 干涉截止滤光片</h2>
         <p>要求某一波长范围的光束高透射，而偏离这一波长区域的光束骤然变化为高反射（或称抑制）。</p>

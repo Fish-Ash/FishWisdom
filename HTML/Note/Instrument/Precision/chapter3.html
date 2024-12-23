@@ -30,52 +30,119 @@
         <b>几何公差</b>
         <p>控制几何误差的评价指标</p>
         <p>被测要素的提取要素相对于图纸上给定理想形状、理想方向、理想位置的允许变动量。</p>
-        <ul>
-            <li>形状公差</li>
-            <li>方向公差</li>
-            <li>由特定测量方法定义的跳动公差</li>
-        </ul>
+        <p>用于表示要素的形状、要素与要素间方向和位置的精度。</p>
+        <table>
+            <tr>
+                <td rowspan="6">形状公差</td>
+                <td>直线度</td>
+                <td><img src="Img/1-1.png" width="30"></td>
+            </tr>
+            <tr>
+                <td>平面度</td>
+                <td><img src="Img/1-2.png" width="30"></td>
+            </tr>
+            <tr>
+                <td>圆度</td>
+                <td><img src="Img/1-3.png" width="30"></td>
+            </tr>
+            <tr>
+                <td>圆柱度</td>
+                <td><img src="Img/1-4.png" width="30"></td>
+            </tr>
+            <tr>
+                <td>线轮廓度</td>
+                <td><img src="Img/1-5.png" width="30"></td>
+            </tr>
+            <tr>
+                <td>面轮廓度</td>
+                <td><img src="Img/1-6.png" width="30"></td>
+            </tr>
+            <tr>
+                <td>方向公差</td>
+            </tr>
+            <tr>
+                <td>位置公差</td>
+            </tr>
+            <tr>
+                <td>由特定测量方法定义的跳动公差</td>
+            </tr>
+        </table>
+
 
         <b>要素（几何要素）</b>
         <p>几何公差的研究对象</p>
         <p>构成机械零件几何特征的点、线、面</p>
 
         <b>分类</b><br>
-        按制造过程分为三个范畴
+        <details>
+            <summary>按制造过程分为三个范畴</summary>
+            <table>
+                <tr>
+                    <td rowspan="2">设计范畴<br>（机械制图中绘制的几何要素）</td>
+                    <td>公称组成要素</td>
+                    <td class="tbtext">由技术制图或其他方法确定的理论正确的组成要素。即构成工件表面的理论轮廓要素。</td>
+                </tr>
+                <tr>
+                    <td>公称导出要素</td>
+                    <td class="tbtext">由一个或几个公称组成要素导出的中心点、轴线或中心平面。即构成工件表面的理论对称中心要素。</td>
+                </tr>
+                <tr>
+                    <td>工件范畴</td>
+                    <td>实际（组成）要素</td>
+                    <td class="tbtext">加工后工件表面实际存在的几何要素。</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">检验范畴</td>
+                    <td>提取组成要素</td>
+                    <td class="tbtext">按规定方法，由实际（组成）要素提取有限数目的点所形成的实际（组成）要素的近似替代。</td>
+                </tr>
+                <tr>
+                    <td>提取导出要素</td>
+                    <td class="tbtext">由一个或几个提取组成要素计算导出的中心点、中心或中心面。</td>
+                </tr>
+                <tr>
+                    <td>拟合组成要素</td>
+                    <td class="tbtext">按规定方法，由非理想表面模拟或实际表面建立的理想组成要素。</td>
+                </tr>
+                <tr>
+                    <td>拟合导出要素</td>
+                    <td class="tbtext">由一个或几个拟合组成要素导出的中心点、轴线或中心平面。</td>
+                </tr>
+            </table>
+        </details>
 
-        <table>
-            <tr>
-                <td rowspan="2">设计范畴<br>（机械制图中绘制的几何要素）</td>
-                <td>公称组成要素</td>
-                <td class="tbtext">由技术制图或其他方法确定的理论正确的组成要素。即构成工件表面的理论轮廓要素。</td>
-            </tr>
-            <tr>
-                <td>公称导出要素</td>
-                <td class="tbtext">由一个或几个公称组成要素导出的中心点、轴线或中心平面。即构成工件表面的理论对称中心要素。</td>
-            </tr>
-            <tr>
-                <td>工件范畴</td>
-                <td>实际（组成）要素</td>
-                <td class="tbtext">加工后工件表面实际存在的几何要素。</td>
-            </tr>
-            <tr>
-                <td rowspan="4">检验范畴</td>
-                <td>提取组成要素</td>
-                <td class="tbtext">按规定方法，由实际（组成）要素提取有限数目的点所形成的实际（组成）要素的近似替代。</td>
-            </tr>
-            <tr>
-                <td>提取导出要素</td>
-                <td class="tbtext">由一个或几个提取组成要素计算导出的中心点、中心或中心面。</td>
-            </tr>
-            <tr>
-                <td>拟合组成要素</td>
-                <td class="tbtext">按规定方法，由非理想表面模拟或实际表面建立的理想组成要素。</td>
-            </tr>
-            <tr>
-                <td>拟合导出要素</td>
-                <td class="tbtext">由一个或几个拟合组成要素导出的中心点、轴线或中心平面。</td>
-            </tr>
-        </table>
+        <details>
+            <summary>按所处的检测关系分类</summary>
+            <table>
+                <tr>
+                    <td>被测要素</td>
+                    <td class="tbtext">图样上给出了形状、方向、位置或跳动公差要求的公称组成要素或公称导出要素。</td>
+                </tr>
+                <tr>
+                    <td>基准要素</td>
+                    <td class="tbtext">
+                        <p>图样上规定用来确定被测要素方向或位置的公称组成要素或公称导出要素。</p>
+                        <p>基准要素自身也是被测要素。</p>
+                    </td>
+                </tr>
+            </table>
+        </details>
+        
+        <details>
+            <summary>按功能关系分类</summary>
+            <table>
+                <tr>
+                    <td>单一要素</td>
+                    <td>按本身功能要求仅给出形状公差要求的被测要素。</td>
+                </tr>
+                <tr>
+                    <td>关联要素</td>
+                    <td>相对于基准要素有功能关系而给出方向、位置或跳动公差要求的被测要素。</td>
+                </tr>
+            </table>
+        </details>
+
+        
 
         <h2>第二节 几何公差的标注</h2>
         <b>几何公差的全符号标注（<span lang="en">GB/T 1182-2018</span>）</b>
@@ -85,6 +152,59 @@
             <li>（可选）辅助平面与要素框格</li>
             <li>（可选）相邻标注（补充标准）</li>
         </ul>
+
+        <h3>指引线</h3>
+        <table>
+            <tr class="tbtitle">
+                <td>被测要素</td>
+                <td>绘图方法</td>
+                <td>例图</td>
+            </tr>
+            <tr>
+                <td>公称组成要素</td>
+                <td class="tbtext">指引线的箭头应置于被测要素的轮廓线或轮廓线延长线上，必须与尺寸线明显错开。</td>
+                <td><img src="./Img/Line1.png" width="200"></td>
+            </tr>
+            <tr>
+                <td rowspan="2">公称导出要素</td>
+                <td class="tbtext">指引线的箭头应与尺寸线在一条线上。</td>
+                <td><img src="./Img/Line2.png" width="200"></td>
+            </tr>
+            <tr>
+                <td>若尺寸的箭头在尺寸线外侧，指引线箭头</td>
+                <td><img src="./Img/Line3.png" width="200"></td>
+            </tr>
+        </table>
+
+        <h3>基准</h3>
+        <p>基准要素字母放在方框中，用细实线与三角形相连。</p>
+        <p>三角形应涂黑，靠在基准要素上。</p>
+        <p>连线由三角形顶部引出。</p>
+        <p>方框必须正向放置，方框中的字母必须水平书写。</p>
+        <br>
+        <img src="./Img/Base1.png" width="100">
+        <table>
+            <tr class="tbtitle">
+                <td>被测要素</td>
+                <td>绘图方法</td>
+                <td>例图</td>
+            </tr>
+            <tr>
+                <td>公称组成要素</td>
+                <td class="tbtext">基准三角形应在基准要素的轮廓线或其延长线上。且基准符号的连线与尺寸线应明显错开</td>
+                <td><img src="./Img/Base2.png" width="200"></td>
+            </tr>
+            <tr>
+                <td rowspan="2">公称导出要素</td>
+                <td class="tbtext">基准符号的连线应与尺寸线在一条线上。</td>
+                <td><img src="./Img/Base3.png" width="200"></td>
+            </tr>
+            <tr>
+                <td>若尺寸的箭头在尺寸线外侧，指引线箭头</td>
+                <td><img src="./Img/Base4.png" width="200"></td>
+            </tr>
+        </table>
+
 
         <b>公差框格</b>
         <br><br>
@@ -108,6 +228,96 @@
             <li>公共基准</li>
             <li>基准体系</li>
         </ul>
+
+        <h2> 第三节 几何公差的标注及公差带</h2>
+        <h3>一、形状公差</h3>
+        <b>母线</b>
+        <p>曲面可看作一动线再空间运动的轨迹，该动线称为母线。</p>
+        <b>素线</b>
+        <p>母线位于曲面任一位置上时称为素线。</p>
+
+        <table>
+            <tr>
+                <td colspan="2">公差</td>
+                <td>图</td>
+                <td>被测要素</td>
+                <td colspan="2">公差带</td>
+            </tr>
+            <tr>
+                <td rowspan="3">直线度</td>
+                <td>给定平面的直线度</td>
+                <td><img src="./Img/Straightness1.png" width="300"></td>
+                <td class="tbtext">给定平面内被测表面的素线，该素线平行于平面<span lang="en">A</span>。</td>
+                <td class="tbtext">平行于基准<span lang="en">A</span>的任意相交平面内，间距为\(t\)的两平行直线限定的区域。</td>
+                <td><img src="./Img/Straightness1-1.png" width="100"></td>
+            </tr>
+            <tr>
+                <td>棱线</td>
+                <td><img src="./Img/Straightness2.png" width="180"></td>
+                <td>棱线</td>
+                <td class="tbtext">距离为\(t\)的两平行平面间的区域。</td>
+                <td><img src="./Img/Straightness2-2.png" width="100"></td>
+            </tr>
+            <tr>
+                <td>轴线</td>
+                <td><img src="./Img/Straightness3.png" width="200"></td>
+                <td>轴线</td>
+                <td class="tbtext">直径为\(\Phi t\)的圆柱面间的区域。</td>
+                <td><img src="./Img/Straightness3-1.png" width="100"></td>
+            </tr>
+            <tr>
+                <td colspan="2">平面度</td>
+                <td></td>
+                <td>平面</td>
+                <td class="tbtext">距离为\(t\)的两平面间的区域</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">圆度</td>
+                <td></td>
+                <td></td>
+                <td class="tbtext">半径差为\(t\)的两共面同心圆间的区域</td>
+                <td></td>
+            </tr>            <tr>
+                <td colspan="2">圆柱度</td>
+                <td></td>
+                <td></td>
+                <td class="tbtext">半径差为\(t\)的两同轴圆柱面间的区域</td>
+                <td></td>
+            </tr>
+        </table>
+        <span class="Question">为什么棱线的公差带是两个平面</span>
+        <br>
+        <span class="Question">线轮廓度和面轮廓度算是形状公差还是方向公差</span>
+
+
+
+        <h2>第四节 公差原则</h2>
+
+        <table>
+            <tr>
+                <td>独立原则</td>
+                <td>同一要素的尺寸公差与几何公差相互独立、彼此无关。</td>
+            </tr>
+            <tr>
+                <td>相关公差要求</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <b>体外作用尺寸</b>
+        <table>
+            <tr>
+                <td>孔</td>
+                <td>\(D_{fe}\)</td>
+                <td class="tbtext">被测孔在给定长度上，与实际孔体外相接的最大理想轴的直径或宽度。</td>
+            </tr>
+            <tr>
+                <td>轴</td>
+                <td>\(d_{fe}\)</td>
+                <td class="tbtext">被测轴在给定长度上，与实际轴体外相接的最小理想孔的直径或宽度。</td>
+            </tr>
+        </table>
 
     </body>
 
