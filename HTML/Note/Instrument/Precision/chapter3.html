@@ -31,42 +31,6 @@
         <p>控制几何误差的评价指标</p>
         <p>被测要素的提取要素相对于图纸上给定理想形状、理想方向、理想位置的允许变动量。</p>
         <p>用于表示要素的形状、要素与要素间方向和位置的精度。</p>
-        <table>
-            <tr>
-                <td rowspan="6">形状公差</td>
-                <td>直线度</td>
-                <td><img src="Img/1-1.png" width="30"></td>
-            </tr>
-            <tr>
-                <td>平面度</td>
-                <td><img src="Img/1-2.png" width="30"></td>
-            </tr>
-            <tr>
-                <td>圆度</td>
-                <td><img src="Img/1-3.png" width="30"></td>
-            </tr>
-            <tr>
-                <td>圆柱度</td>
-                <td><img src="Img/1-4.png" width="30"></td>
-            </tr>
-            <tr>
-                <td>线轮廓度</td>
-                <td><img src="Img/1-5.png" width="30"></td>
-            </tr>
-            <tr>
-                <td>面轮廓度</td>
-                <td><img src="Img/1-6.png" width="30"></td>
-            </tr>
-            <tr>
-                <td>方向公差</td>
-            </tr>
-            <tr>
-                <td>位置公差</td>
-            </tr>
-            <tr>
-                <td>由特定测量方法定义的跳动公差</td>
-            </tr>
-        </table>
 
 
         <b>要素（几何要素）</b>
@@ -238,13 +202,14 @@
 
         <table>
             <tr>
-                <td colspan="2">公差</td>
+                <td colspan="3">公差</td>
                 <td>图</td>
                 <td>被测要素</td>
                 <td colspan="2">公差带</td>
             </tr>
             <tr>
-                <td rowspan="3">直线度</td>
+                <td rowspan="8">形状公差</td>
+                <td rowspan="3">直线度<img src="Img/1-1.png" width="30"></td>
                 <td>给定平面的直线度</td>
                 <td><img src="./Img/Straightness1.png" width="300"></td>
                 <td class="tbtext">给定平面内被测表面的素线，该素线平行于平面<span lang="en">A</span>。</td>
@@ -266,31 +231,179 @@
                 <td><img src="./Img/Straightness3-1.png" width="100"></td>
             </tr>
             <tr>
-                <td colspan="2">平面度</td>
+                <td colspan="2">平面度<img src="Img/1-2.png" width="30"></td>
                 <td></td>
                 <td>平面</td>
                 <td class="tbtext">距离为\(t\)的两平面间的区域</td>
-                <td></td>
+                <td><img src="./Img/Straightness2-2.png" width="100"></td>
             </tr>
             <tr>
-                <td colspan="2">圆度</td>
+                <td colspan="2">圆度<img src="Img/1-3.png" width="30"></td>
                 <td></td>
                 <td></td>
                 <td class="tbtext">半径差为\(t\)的两共面同心圆间的区域</td>
-                <td></td>
+                <td><img src="Img/Circle.png" width="100"></td>
             </tr>            <tr>
-                <td colspan="2">圆柱度</td>
+                <td colspan="2">圆柱度<img src="Img/1-4.png" width="30"></td>
                 <td></td>
-                <td></td>
+                <td>圆柱面</td>
                 <td class="tbtext">半径差为\(t\)的两同轴圆柱面间的区域</td>
                 <td></td>
             </tr>
+            <tr>
+                <td colspan="2">线轮廓度<img src="Img/1-5.png" width="30"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">面轮廓度<img src="Img/1-6.png" width="30"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="5">方向公差</td>
+                <td colspan="2">平行度</td>
+                <td></td>
+                <td>平面或直线</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">垂直度</td>
+                <td></td>
+                <td>平面或直线</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">倾斜度</td>
+                <td></td>
+                <td>平面或直线</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">线轮廓度</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">面轮廓度</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="6">位置公差</td>
+                <td colspan="2">位置度</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">同心度</td>
+                <td></td>
+                <td>圆心</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">同轴度</td>
+                <td></td>
+                <td>圆柱面轴线或圆锥面轴线</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">对称度</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">线轮廓度</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">面轮廓度</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="6">由特定测量方法定义的跳动公差</td>
+                <td rowspan="4">圆跳动公差</td>
+                <td>径向圆跳动公差</td>
+                <td></td>
+                <td class="tbtext">指示表测杆轴线与基准轴线垂直且相交，指向圆柱面被测要素。圆柱面被测要素绕公共基准轴线<span lang="en">A-B</span>旋转一周。</td>
+                <td class="tbtext">在垂直于基准轴线的任一测量平面内、半径差为\(t\)且圆心在基准上的两同心圆间的区域。</td>
+                <td><img src="Img/Circle.png" width="100"></td>
+            </tr>
+            <tr>
+                <td>轴向圆跳动公差</td>
+                <td></td>
+                <td>端平面</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>斜向圆跳动公差</td>
+                <td></td>
+                <td>圆锥面</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>给定方向的圆跳动公差</td>
+                <td></td>
+                <td>圆锥截面</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="2">全跳动公差</td>
+                <td>径向全跳动公差</td>
+                <td></td>
+                <td>圆柱面</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>轴向全跳动公差</td>
+                <td></td>
+                <td>端平面</td>
+                <td></td>
+            </tr>
         </table>
-        <span class="Question">为什么棱线的公差带是两个平面</span>
-        <br>
-        <span class="Question">线轮廓度和面轮廓度算是形状公差还是方向公差</span>
 
+        <b>跳动公差带的特点</b>
+        <p>跳动公差带相对于基准轴线有确定的位置或方向。</p>
+        <ul>
+            <li>径向圆跳动公差带形状与圆度公差带形状相同，其圆心位于基准轴线上。</li>
+            <li>径向全跳动公差带形状与圆柱度公差带形状相同，其轴线与基准轴线同轴。</li>
+            <li>轴向圆跳动公差带轴线与基准轴线重合。</li>
+            <li>轴向全跳动公差带方向与基准轴线方向垂直。</li>
+        </ul>
+        <p>跳动公差可综合控制被测要素的形状、方向或位置误差。</p>
+        <ul>
+            <li>径向圆跳动公差：圆度误差+同轴度误差</li>
+            <li>径向全跳动公差：圆柱度误差+同轴度误差</li>
+            <li>轴向圆跳动公差：被测端面不同半径位置的平面度误差+相对于基准轴线的垂直度误差</li>
+            <li>轴向全跳动公差：被测端面的平面度误差+相对于基准轴线的垂直度误差</li>
+        </ul>
 
+        <table>
+
+        </table>
 
         <h2>第四节 公差原则</h2>
 
@@ -309,15 +422,133 @@
         <table>
             <tr>
                 <td>孔</td>
-                <td>\(D_{fe}\)</td>
+                <td>\(D_{fe} = D_a - f\)</td>
                 <td class="tbtext">被测孔在给定长度上，与实际孔体外相接的最大理想轴的直径或宽度。</td>
+                <td><img src="./Img/3-4-1.png" width="150"></td>
             </tr>
             <tr>
                 <td>轴</td>
-                <td>\(d_{fe}\)</td>
+                <td>\(d_{fe} = d_a + f\)</td>
                 <td class="tbtext">被测轴在给定长度上，与实际轴体外相接的最小理想孔的直径或宽度。</td>
+                <td><img src="./Img/3-4-2.png" width="150"></td>
             </tr>
         </table>
+
+        <br>
+        <table>
+            <tr>
+                <td>最大实体状态<span lang="en">MMC</span></td>
+                <td class="tbtext">提取组成要素的局部尺寸处处位于极限尺寸，且使其具有材料最多的状态。</td>
+                <td>孔处于下极限尺寸时的状态</td>
+                <td>轴处于上极限尺寸时的状态</td>
+            </tr>
+            <tr>
+                <td>最大实体尺寸<span lang="en">MMS</span></td>
+                <td class="tbtext">实际要素在最大实体状态下的极限尺寸。</td>
+                <td>$$D_M = D_{min}$$</td>
+                <td>$$d_M = d_{max}$$</td>
+            </tr>
+            <tr>
+                <td>最大实体实效状态<br><span lang="en">MMVC</span></td>
+                <td class="tbtext">在给定长度上，实际要素处于最大实体状态且其导出要素的几何误差等于给出的几何公差值时的综合极限状态。</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>最大实体实效尺寸<br><span lang="en">MMVS</span></td>
+                <td class="tbtext">实际要素在最大实体实效状态下的体外作用尺寸。</td>
+                <td>$$D_{MV} = D_{min} - t$$</td>
+                <td>$$d_{MV} = d_{max} + t$$</td>
+            </tr>
+            <tr>
+                <td>最小实体状态<span lang="en">LMC</span></td>
+                <td class="tbtext">提取组成要素的局部尺寸处处位于极限尺寸，且使其具有材料最少的状态。</td>
+                <td>孔处于上极限尺寸时的状态</td>
+                <td>轴处于下极限尺寸时的状态</td>
+            </tr>
+            <tr>
+                <td><br><span lang="en"></span></td>
+                <td class="tbtext"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><br><span lang="en"></span></td>
+                <td class="tbtext"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><br><span lang="en"></span></td>
+                <td class="tbtext"></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <b>边界</b>
+        <p>设计时给定的具有理想形状的极限包容面。</p>
+        <p>实际轴的极限包容面为具有理想形状的孔表面。</p>
+        <p>实际孔的极限包容面为具有理想形状的轴表面。</p>
+        <table>
+            <tr>
+                <td>最大实体边界<br><span lang="en">MMB</span></td>
+                <td class="tbtext">极限包容界面的尺寸采用最大实体尺寸。</td>
+            </tr>
+            <tr>
+                <td>最大实体实效边界<br><span lang="en">MMVB</span></td>
+                <td class="tbtext">极限包容界面的尺寸采用最大实体实效尺寸。</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="tbtext"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="tbtext"></td>
+            </tr>
+        </table>
+
+        <b>包容要求<img src="./Img/CircledE.png" width="30"></b>
+        <p>包容要求采用<b>最大实体边界</b>。</p>
+        <table>
+            <tr>
+                <td>孔</td>
+                <td>\(D_a \le D_{max}\) 且 \(D_{fe} \ge D_{min}\)</td>
+            </tr>
+            <tr>
+                <td>轴</td>
+                <td>\(d_a \ge d{min}\) 且 \(d_{fe} \le d_{max}\)</td>
+            </tr>
+        </table>
+
+
+        <b>最大实体要求<img src="./Img/CircledM.png" width="30"></b>
+        <p>最大实体要求采用<b>最大实体实效边界</b>。</p>
+        <table>
+            <tr>
+                <td>孔</td>
+                <td>\(D_{min}\le D_a \le D_{max}\) 且 \(D_{fe} \ge D_{MV}\)</td>
+            </tr>
+            <tr>
+                <td>轴</td>
+                <td>\(d_{min}\le d_a \le d_{max}\) 且 \(d_{fe} \le d_{MV}\)</td>
+            </tr>
+        </table>
+
+        <h2>第五节 几何精度设计</h2>
+        <b>几何公差值的选择</b>
+        <ul>
+            <li>满足功能的条件下，取低不取高。</li>
+            <li>同一要素上，形状公差值\(\lt\)方向公差值\(\lt\)位置公差值。</li>
+        </ul>
+
+        <b>未注几何公差等级</b>
+        <ul>
+            <li><span lang="en">H</span>：高精度</li>
+            <li><span lang="en">K</span>：中等精度</li>
+            <li><span lang="en">L</span>：低精度</li>
+        </ul>
 
     </body>
 

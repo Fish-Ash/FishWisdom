@@ -34,14 +34,60 @@
             </tr>
             <tr>
                 <td>零件尺寸链</td>
-                <td></td>
+                <td>由一个设计零件的设计尺寸构成的设计链。</td>
             </tr>
             <tr>
                 <td>工艺尺寸链</td>
-                <td></td>
+                <td>由同一零件的几个工艺尺寸构成的尺寸链。</td>
+            </tr>
+        </table>
+        
+        <b>环</b>
+        <p>列入尺寸链的每一个尺寸。</p>
+        <p>表示方式：<span lang="en">A<sub>0</sub>，B<sub>1</sub>，C<sub>2</sub>/2，……</span></p>
+
+        <table>
+            <tr>
+                <td rowspan="2">环</td>
+                <td>封闭环</td>
+                <td class="tbtext">尺寸链中，在装配过程或加工过程最后形成的尺寸。</td>
+                <td lang="en">X<sub>0</sub></td>
+            </tr>
+            <tr>
+                <td>组成环</td>
+                <td class="tbtext">
+                    <p>尺寸链中，对封闭环有影响的全部环。</p>
+                    <p>任一组成环变动必将引起封闭环的变动。</p>
+                </td>
+                <td lang="en">A<sub>1</sub>，B<sub>2</sub>，……</td>
             </tr>
         </table>
 
+        <br>
+        <table>
+            <tr>
+                <td>增环</td>
+                <td class="tbtext">当尺寸链中其他组成环不变时，其变动引起封闭环同向变动的组成环。</td>
+            </tr>
+            <tr>
+                <td>减环</td>
+                <td class="tbtext">当尺寸链中其他组成环不变时，其变动引起封闭环反向变动的组成环。</td>
+            </tr>
+        </table>
+
+        <b>尺寸链的计算</b>
+        <p>计算封闭环与组成环的公称尺寸与极限偏差。</p>
+        <ul>
+            <li>设计计算</li>
+            <p>已知封闭环的公称尺寸与极限偏差以及各组成环的公称尺寸，计算各组成环的极限偏差。</p>
+            <li>校核计算</li>
+            <p>已知所有组成环的公称尺寸和极限偏差，计算封闭环的公称尺寸和极限偏差。</p>
+        </ul>
+
+
+        <b>完全互换法</b>
+        $$L_0 = \sum\limits_{i=1}^nL_i - \sum\limits_{j=1}^mL_j$$
+        $$$$
 
 
     </body>

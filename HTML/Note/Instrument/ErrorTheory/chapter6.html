@@ -22,19 +22,40 @@
         <h1>第六章 误差传播与误差合成</h1>
         <h2>第一节 函数误差</h2>
 
+        <h3>函数系统误差的计算</h3>
         <b>间接测量</b>
         <p>通过直接测量与被测量之间有一定函数关系的其他量，根据已知的函数关系式计算出被测量的量。</p>
         $$y = f(x_1, x_2, \cdots x_n)$$
 
         <b>函数误差</b>
-        <p>间接测量的量 是 直接测得的各个测得值 的函数，间接测得的被测误差 也应是 直接测得的各个测得值及其误差 的函数，故称这种间接测量的误差为函数误差。</p>
+        <p>间接测量的量是直接测得的各个测得值的函数，间接测得的被测误差也应是直接测得的各个测得值及其误差的函数，故称这种间接测量的误差为函数误差。</p>
+        <p>研究函数误差的实质是在研究误差的传播问题。</p>
         
         <b>函数系统误差</b>
         <p>若已知各个直接测得值的系统误差\(\Delta x_1, \Delta x_2, \cdots, \Delta x_n\)，则函数系统误差为：</p>
         $$\Delta y = \frac{\partial f}{\partial x_1}\Delta x_1 + \frac{\partial f}{\partial x_2}\Delta x_2 +\cdots + \frac{\partial f}{\partial x_3}\Delta x_3$$
         式中\(\frac{\partial f}{\partial x_i}\)为各个直接测得值的误差传递系数。
     
-    
+
+        <h4>系统误差计算及修正</h4>
+        <b>线性函数</b>
+        <p>函数关系式为</p>
+        $$y = a_1x_1 + a_2x_2 + \cdots + a_nx_n$$
+        <p>若不考虑测得值的系统误差，可以直接由测得的\(x_i\)值计算出\(y\)。</p>
+        $$\Delta x = x - x_0$$
+        $$\Delta y = a_1\Delta x_1 + a_2 \Delta x_2 + \cdots a_n\Delta x_n$$
+        <p>修正后的结果为</p>
+        $$y_c = y - \Delta y$$
+
+        <hr>
+
+        <h3>函数随机误差的计算</h3>
+        $$\sigma_y = \sqrt{\sum\limits_{i=1}^n(\frac{\partial f}{\partial x_i})^2\sigma_{x_i}^2 + 2\sum\limits_{1\le i\lt j}^n(\frac{\partial f}{\partial x_i}\frac{\partial f}{\partial x_j}D_{ij})}$$
+        其中：\(D_{ij} = \rho_{ij}\sigma_i\sigma_j\)为测得值误差的标准差；\(\rho_{ij}\)为第\(i\)个测得值与第\(j\)个测得值间的相关系数。
+        <p>若各测得值的误差相互独立</p>
+        $$\sigma_y = \sqrt{\sum\limits_{i=1}^n(\frac{\partial f}{\partial x_i})^2\sigma_{x_i}^2}$$
+
+
         <h2>第二节 误差的合成</h2>
         <h3>二、随机误差的合成</h3>
 
@@ -49,6 +70,19 @@
         <p>当测量中存在各种不同性质的多项系统误差与随机误差时，应将其综合求得总误差。</p>
         <p>常用极限误差表，也可用标准差表示</p>
         <b>极限误差表示</b>
+        $$\Delta_总 = \pm\sqrt{\frac{1}{n}\sum\limits_{i=1}^q(a_i\delta_i)^2 + \sum\limits_{j=1}^S(b_je_j)^2}$$
+
+        <br>
+        <b>最可信赖值</b>
+        $$x_0 = \bar x - \Delta$$
+        其中\(\Delta\)为已定系统误差
+
+
+        <h3>误差分配问题</h3>
+        $$\begin{cases}
+        \sigma_f \le t\\
+        \frac{\partial f}{\partial x_i}\sigma_i = \frac{\partial f}{\partial x_j}\sigma_j
+        \end{cases}$$
     </body>
 
 </html>

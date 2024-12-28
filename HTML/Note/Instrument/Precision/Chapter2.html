@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>互换性</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第二章 尺寸精度与检测</h1>
+        
+        <h2>第一节 基本术语及定义</h2>
+        <h3>尺寸</h3>
+        <table>
+            <tr>
+                <td></td>
+                <td>孔</td>
+                <td>轴</td>
+            </tr>
+            <tr>
+                <td>公称尺寸</td>
+                <td>\(D\)</td>
+                <td>\(d\)</td>
+            </tr>
+            <tr>
+                <td>上极限尺寸</td>
+                <td>\(D_{max}\)</td>
+                <td>\(d_{max}\)</td>
+            </tr>
+            <tr>
+                <td>下极限尺寸</td>
+                <td>\(D_{min}\)</td>
+                <td>\(d_{min}\)</td>
+            </tr>
+            <tr>
+                <td>实际尺寸</td>
+                <td>\(D_a\)</td>
+                <td>\(d_a\)</td>
+            </tr>
+            <tr>
+                <td>上偏差</td>
+                <td>\(ES\)</td>
+                <td>\(es\)</td>
+            </tr>
+            <tr>
+                <td>下偏差</td>
+                <td>\(EI\)</td>
+                <td>\(ei\)</td>
+            </tr>
+            <tr>
+                <td>公差</td>
+                <td>\(T_h\)</td>
+                <td>\(T_s\)</td>
+            </tr>
+        </table><br>
+
+        <table>
+            <tr>
+                <td class="tbtitle"><b>孔</b></td>
+                <td class="tbtext">圆柱工件的内尺寸要素，包括非圆柱形的内尺寸要素（如键槽的宽度表面）</td>
+            </tr>
+            <tr>
+                <td class="tbtitle"><b>轴</b></td>
+                <td class="tbtext">圆柱工件的外尺寸要素，包括非圆柱形的外尺寸要素（如平键的宽度表面）</td>
+            </tr>
+        </table><br>
+
+        <b>尺寸要素</b>
+        <p>用于表达理想要素参数方程的<b>线性尺寸</b>或<b>角度尺寸</b>。</p>
+
+        <table>
+            <tr>
+                <td class="tbtitle"><b>尺寸<br>（线性尺寸）</b></td>
+                <td class="tbtext" colspan="3">表示几何要素特征的尺寸要素，通过两点法测量得到的两点之间的距离。</td>
+            </tr>
+            <tr>
+                <td class="tbtitle"><b>公称尺寸</b></td>
+                <td class="tbtext" colspan="3">
+                    <p>由图样规范定义的理想形状要素的尺寸，设计时给定。</p>
+                    <p>是根据零件的强度、刚度等的计算和结构的设计确定的，应依据<span lang="en">GB/T 2822-2005</span>《标准尺寸》化整为优先数。</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="tbtitle" rowspan="2"><b>极限尺寸</b></td>
+                <td class="tbtext" rowspan="2">尺寸所允许的极限值，设计时给定</td>
+                <td class="tbtitle">上极限尺寸</td>
+                <td class="tbtext">尺寸所允许的最大值</td>
+            </tr>
+            <tr>
+                <td class="tbtitle">下极限尺寸</td>
+                <td class="tbtext">尺寸所允许的最小值</td>
+            </tr>
+            <tr>
+                <td class="tbtitle"><b>实际尺寸</b></td>
+                <td class="tbtext" colspan="3">
+                    <p>零件加工后的实际表面通过测量获得的尺寸，再通过拟合操作，从非理想表面模型或实际要素中建立理想尺寸要素。</p>
+                    <p>合格条件：\(\begin{cases}D_{min}\leq D_a\leq D_{max}\\d_{min}\leq d_a\leq d_{max}\end{cases}\)</p>
+                </td>
+            </tr>
+        </table><br>
+
+        
+        <table>
+            <tr>
+                <td>正偏差<br>（必须冠以正号）</td>
+                <td class="tbtitle" rowspan="3"><b>偏差（尺寸偏差）</b></td>
+                <td class="tbtext" rowspan="3">某尺寸减公称尺寸的代数差。</td>
+                <td class="tbtitle" rowspan="2"><b>极限偏差</b></td>
+                <td class="tbtitle"><b>上偏差<br>（上极限偏差）</b></td>
+                <td class="tbtext">上极限尺寸减去公称尺寸所得的代数差。$$\begin{cases}ES = D_{max} - D\\es = d_{max} - d\end{cases}$$</td>
+            </tr>
+            <tr>
+                <td>负偏差<br>（必须冠以负号）</td>
+                <td class="tbtitle"><b>下偏差<br>（下极限偏差）</b></td>
+                <td class="tbtext">下极限尺寸减去公称尺寸所得的代数差。$$\begin{cases}EI = D_{min} - D\\ei = d_{min} - d\end{cases}$$</td>
+            </tr>
+            <tr>
+                <td>零偏差</td>
+                <td class="tbtitle" colspan="2"><b>实际偏差</b></td>
+                <td class="tbtext" colspan="2">实际尺寸减去公称尺寸所得的代数差。</td>
+            </tr>
+        </table>
+
+        <b>公差（尺寸公差）</b>
+        <p>上极限尺寸与下极限尺寸之差，或上极限偏差与下极限偏差之差。是实际尺寸的允许变动量。</p>
+        $$T_h = D_{max} - D_{min} = ES - EI$$
+        $$T_s = d_{max} - d_{min} = es - ei$$
+
+        <b>基本偏差</b>
+        <p>用于确定公差带相对公称尺寸位置的极限偏差。</p>
+        <p>最接近公称尺寸的极限偏差。</p>
+        <p>一般来说，孔的基本偏差是指\(EI\)，轴的极限偏差是指\(es\)。</p>
+
+        <b>公差带</b>
+        <p>孔：斜杠</p>
+        <p>轴：点</p>
+
+
+        <h3>配合相关术语及定义</h3>
+        <b>配合</b>
+        <p>设计时定义的具有理想形状的工件模型，公称尺寸相同的、相互结合的孔和轴公差带之间的关系。</p>
+
+        <b>间隙与过盈</b>
+        <p>孔的尺寸与相配合的轴的尺寸之差</p>
+        <ul>
+            <li>孔的直径大于轴的直径时，差为正值，表示为间隙\(X\)</li>
+            <li>孔的直径小于轴的直径时，差为负值，表示为过盈\(Y\)</li>
+        </ul>
+
+        <b>配合的分类</b><br><br>
+        <b>（一）间隙配合</b>
+        <p>孔和轴装配时总存在间隙（包括最小间隙为零）的配合。</p>
+        <p>孔的下极限尺寸\(\geq\)轴的上极限尺寸，即孔的公差带在轴的公差带之上。</p>
+        <ul>
+            <li>最大间隙：\(X_{max} = D_{max} - d_{min} = ES - ei\)</li>
+            <li>最小间隙：\(X_{min} = D_{min} - d_{max} = EI - es\)</li>
+            <li>平均间隙：\(X_{ave} = (X_{max} + X_{min})/2\)</li>
+        </ul>
+        注：间隙值前必须冠以正号。
+        
+        <br><br>
+
+        <b>（二）过盈配合</b>
+        <p>孔和轴装配时总是存在过盈（包括最小过盈为零）的配合。</p>
+        <p>孔的上极限尺寸\(\leq\)轴的下极限尺寸，即孔的公差带在轴的公差带之下。</p>
+        <ul>
+            <li>最大过盈：\(Y_{max} = D_{min} - d_{max} = EI - es\)</li>
+            <li>最小过盈：\(Y_{min} = D_{max} - d_{min} = ES - ei\)</li>
+            <li>平均过盈：\(Y_{ave} = (Y_{max} + Y_{min})/2\)</li>
+        </ul>
+        注：过盈值前必须冠以负号。
+
+        <br><br>
+
+        <b>（三）过渡配合</b>
+        <p>孔和轴装配时可能具有间隙或过盈配合。</p>
+        <p>孔公差带和轴公差带交叠。</p>
+        <ul>
+            <li>最大间隙：\(X_{max} = D_{max} - d_{min} = Y_{min}\)</li>
+            <li>最大过盈：\(Y_{max} = D_{min} - d_{max} = X_{min}\)</li>
+            <li>平均间隙或平均过盈：\(X_{ave}~or~Y_{ave} = (X_{max} + Y_{max})/2\)</li>
+        </ul>
+
+        <b>（四）配合公差</b>
+        <p>组成配合的两个尺寸要素的尺寸公差之和，亦即配合的最大量值与最小量值之差，是对其配合所允许的变动量。</p>
+        <ul>
+            <li>间隙配合：\(T_f = T_h + T_s = X_{max} - X_{min}\)</li>
+            <li>过盈配合：\(T_f = T_h + T_s = Y_{min} - Y_{max}\)</li>
+            <li>过渡配合：\(T_f = T_h + T_s = X_{max} - X_{min}\)</li>
+        </ul>
+
+        <p>相互配合的孔轴间有相对运动时，必须选择间隙配合。</p>
+        <p>无相对运动且传递载荷（转矩或轴向力）时，应选取过盈配合或过渡配合。</p>
+
+        <h3>五、<span lang="en">ISO</span>配合制</h3>
+        <b>基孔制</b>
+        <p>孔的基本偏差为0的配合，即孔的下极限偏差为0。</p>
+        <p>一般情况下，优先选用基孔制。</p>
+        <p>原因：经济性好。</p>
+        
+        
+        <b>基轴制</b>
+        <p>轴的基本偏差为0的配合，即轴的上极限偏差为0。</p>
+
+
+        <h2>第二节 极限与配合国家标准的构成</h2>
+        <h3>一、标准公差系列</h3>
+        <b><span lang="en">GB/T 1800.1-2020</span>规定了\(20\)个等级的标准化公差数值</b>：
+        <p>标准公差分\(20\)个等级，分别用\(IT01、IT0、IT1、IT2\cdots IT18\)表示。</p>
+        <p>其中，\(IT01\)精度最高、\(IT18\)精度最低。</p>
+        $$ES = EI + IT$$
+        $$es = ei + IT$$
+
+        <h3>二、基本偏差系列</h3>
+        <b><span lang="en">GB/T 1800.1-2020</span>规定了\(28\)种极限偏差</b>：
+        <ul>
+            <li>孔：\(26\)个英文字母去掉\(I、L、O、Q、W\)，加上\(CD、EF、FG、JS、ZA、ZB、ZC\)</li>
+            <li>轴：\(26\)个英文字母去掉\(i、l、o、q、w\)，加上\(cd、ef、fg、js、za、zb、zc\)</li>
+        </ul>
+
+        <table>
+            <tr class="tbtitle">
+                <td colspan="2">孔</td>
+                <td colspan="2">轴</td>
+            </tr>
+            <tr>
+                <td lang="en">A、B、C、CD、D、E、EF、F、FG、G</td>
+                <td>$$EI \gt 0$$</td>
+                <td lang="en">a、b、c、cd、d、e、ef、f、fg、g</td>
+                <td>$$es \lt 0$$</td>
+            </tr>
+            <tr>
+                <td><span lang="en">H</span><br>（基孔制中基准孔的基本偏差代号）</td>
+                <td>$$EI = 0$$</td>
+                <td><span lang="en">h</span><br>（基轴制中基准轴的基本偏差代号）</td>
+                <td>$$es = 0$$</td>
+            </tr>
+            <tr>
+                <td><span lang="en">JS</span></td>
+                <td>
+                    $$ES = +IT/2$$
+                    $$EI = -IT/2$$
+                </td>
+                <td><span lang="en">js</span></td>
+                <td>
+                    $$es = +IT/2$$
+                    $$ei = -IT/2$$
+                </td>
+            </tr>
+        </table>
+
+
+        <span lang="en">e.g.</span>求\(\phi 50f6\)轴的极限偏差数值。
+        <br><br>
+        解：
+        <p>\(\phi 50f6\)：</p>
+        <ul>
+            <li>\(50\)：公称尺寸</li>
+            <li>\(f\)：基本偏差</li>
+            <li>\((IT)6\)：标准公差</li>
+        </ul>
+    </body>
+
+</html>
