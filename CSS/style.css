@@ -44,6 +44,10 @@ td, th {
     text-indent: 2em;
 }
 
+.tbcontext{
+    text-align:left;
+}
+
 /* 页面样式 */
 .header {
     font-family: 华文行楷;
@@ -265,4 +269,30 @@ visibility: visible;
 .divider {
     width: 2px; 
     background-color: #000; 
+}
+
+
+.ScrollButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ScrollButton button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.ScrollButton button:hover {
+    background-color: #0056b3;
 }

@@ -61,6 +61,12 @@
 
         <h3>\(\lambda_0/4-\lambda_0/4\)双层减反膜（<span lang="en">V</span>形膜）</h3>
 
+        <h3>超宽带减反射膜</h3>
+        <b><span lang="en">Willey</span>经验公式</b>        
+        $$R_{AVE}(B,L,T,D) = (4.378/D)(1/T)^{0.31}[e^{(B-1.4)} - 1](L-1)^{3.5}$$
+        <ul>
+            <li>\(L\)：最外层薄膜的折射率。\(L\)越小、\(R_{ave}\)越低，薄膜透射率越好。</li>
+        </ul>
 
 
         <h2>第二节 分束镜</h2>
@@ -81,27 +87,74 @@
         <p>一般介质膜分束镜的偏振效应较大。</p>
 
 
+        <b>常用分光膜结构</b>
+        <ul>
+            <li>平板分光膜</li>
+            <li>立方棱镜分光膜</li>
+        </ul>
+
+        <b>立方体偏振分光镜设计原则</b>
+        <p>在偏振分束镜的每个界面上，入射角均满足布儒斯特定律。</p>
+
+
+
         <h2>第三节 高反射膜</h2>
         <b>常用材料</b>
         <p lang="en">Al、Ag、Au</p>
+        <table>
+            <tr>
+                <td><b lang="en">Al</b></td>
+                <td class="tbcontext">
+                    <p>从紫外区到红外区都具有很高反射率的唯一材料，同时铝模表面在大气中能生成一层薄的<span lang="en">Al<sub>2</sub>O<sub>3</sub></span>薄膜，所以膜层较为牢固、稳定。</p>
+                </td>
+            </tr>
+            <tr>
+                <td><b lang="en">Ag</b></td>
+                <td class="tbcontext">
+                    <p>银膜在可见光区和红外区都有很高的反射率，且在倾斜使用时引入的偏振效应最小。</p>
+                    缺点：
+                    <ul>
+                        <li>与玻璃基片的黏附性差。</li>
+                        <li>易受硫化物影响失去光泽。</li>
+                    </ul>
+                    保护膜
+                    <p>一种组合的氧化铝及氧化硅镀层。</p>
+                    <p><span lang="en">Al<sub>2</sub>O<sub>3</sub></span>与银膜的黏附性好，但对潮气侵蚀的保护性差。</p>
+                    <p><span lang="en">SiO<sub>x</sub></span>对潮气侵蚀的保护性好，但与银膜的黏附性差。</p>
+                </td>
+            </tr>
+            <tr>
+                <td><b lang="en">Au</b></td>
+                <td class="tbcontext">
+                    <p>在红外区的反射率很高，常用作红外反射镜。</p>
+                    <p>金膜与玻璃基片附着性差，常用铬膜作为衬底层；在金膜的淀积过程中，辅以离子束轰击，可显著提高金膜与基片的附着力。</p>
+                </td>
+            </tr>
+        </table>
 
-        <b lang="en">Al</b>
-        <p>从紫外区到红外区都具有很高反射率的唯一材料，同时铝模表面在大气中能生成一层薄的<span lang="en">Al<sub>2</sub>O<sub>3</sub></span>薄膜，所以膜层较为牢固、稳定。</p>
+        
+
+        
 
 
-        <b lang="en">Au</b>
-        <p>在红外区的反射率很高，常用作红外反射镜。</p>
-        <p>金膜与玻璃基片附着性差，常用铬膜作为衬底层；在金膜的淀积过程中，辅以离子束轰击，可显著提高金膜与基片的附着力。</p>
+        
 
         <b>紫外区反射镜</b>
         <p><b>材料</b>：铝模</p>
-        <p><b>保护膜</b>：氧化镁或氟化锂</p>
+        <p><b>保护膜</b>：氟化镁（镀层很牢固）或氟化锂（镀层强度较差）</p>
+        不使用<span lang="en">Al<sub>2</sub>O<sub>3</sub></span>或<span lang="en">SiO</span>做保护膜的原因：
+        <p>其在紫外区有显著的吸收。</p>
 
         <h3>多层介质高反射膜</h3>
         <b>膜系</b>
         <p>\((HL)^sH\)</p>
+        <b>影响多层介质高反射膜反射率的因素</b>
+        <ul>
+            <li>\(n_H/n_L\)的值</li>
+            <li>层数</li>
+        </ul>
         <p>对于中心波长\(\lambda_0\)，\(Y = (\frac{n_H}{n_L})^{2s}\frac{n_H^2}{n_g}\)</p>
-        <p>\(R = (\frac{1 - Y}{1 + Y})^2\)，\(Y\)越大，即层数越多，反射率越高。</p>
+        <p>\(R = (\frac{1 - Y}{1 + Y})^2\)，\(Y\)越大，反射率越高。</p>
         <p>实际上由于膜层中存在<b>吸收</b>和<b>散射损失</b>，当膜系达到一定层数时，继续加镀可能由于吸收、散射损失的增加而使反射率下降。</p>
         <p>散射损耗主要由薄膜的<b>体内缺陷</b>（如微粒尘埃、细微裂痕等）和<b>表面粗糙度</b>引起。</p>
         <b>表面散射损耗（<span lang="en">SSL</span>）</b>
@@ -142,6 +195,21 @@
                         &= \frac{\pi}{2}\frac{\lambda_0}{\lambda}\\
                         &= \frac{\pi}{2}g
         \end{align}$$
+        令高反射带边界值为：
+        $$\delta_e = \frac{\pi}{2}g_e = \frac{\pi}{2}(1\pm \delta g)$$
+        $$\Delta g = \frac{2}{\pi}\arcsin(\frac{n_H - n_L}{n_H + n_L})$$
+        用\(g\)表示的高反射区域为：
+        $$1-\Delta g \sim 1 + \Delta g$$
+        对应\(\lambda\)范围为：
+        $$\lambda_{min} = \lambda_0/(1+\Delta g)$$
+        $$\lambda_{max} = \lambda_0/(1-\Delta g)$$
+        高反射带的波长宽度：
+        $$\Delta \lambda = \lambda_{max} - \lambda_{min} \approx 2\Delta g\lambda_0$$
+        三级次波长宽度：
+        $$(\Delta\lambda)_3 = \lambda_0/(3 - \Delta g) - \lambda_0/(3 + \Delta g) \approx \frac{2}{9}\Delta g\lambda_0$$
+
+
+
 
         <h2>第四节 干涉截止滤光片</h2>
         <p>要求某一波长范围的光束高透射，而偏离这一波长区域的光束骤然变化为高反射（或称抑制）。</p>

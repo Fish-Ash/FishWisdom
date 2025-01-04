@@ -71,7 +71,7 @@
 
         <h2>第二节 光在电介质面上的反射与折射</h2>
 
-        <b>电磁场的连续条件</b>
+        <b id="BoundaryCondition">电磁场的连续条件</b>
         <p>在没有传导电流和自由电荷的介质中，磁感强度\(\mathbf{B}\)与电感强度\(\mathbf{D}\)的法向分量在界面上连续；电场强度\(\mathbf{E}\)和磁场强度\(\mathbf{H}\)的切向分量在界面上连续。</p>
         $$
         \begin{align}
@@ -89,12 +89,14 @@
             <li>\(p\)偏振波（\(E_p\)）：\(\mathbf{E}\)平行于入射面振动的分量，又称<span lang="en">TM</span>波（<span class="tip">横磁波<span class="tiptext">\(\mathbf{H}\)沿界面切线方向</span></span>）</li>
             <li>\(s\)偏振波（\(E_s\)）：\(\mathbf{E}\)垂直于入射面振动的分量，又称<span lang="en">TE</span>波（<span class="tip">横电波<span class="tiptext">\(\mathbf{E}\)沿界面切线方向</span></span>）</li>
         </ul>
-
-
+        
+        
         <h2><a href="Fresnel.html">菲涅尔公式</a></h2>
-
+        
         <h2>全偏振现象与<span lang="en">Brewster</span>角</h2>
-
+        
+        <b>偏振</b>
+        <p>光斜入射时，反射光中的\(p\)分量与\(s\)分量不等，反射光变为部分偏振光。</p>
         <p>光从光疏介质入射到光密介质时，由菲涅尔公式：</p>
         <ul>
             <li>\(\theta_1 = 0°\)即垂直入射时，\(r_p \gt 0 \gt r_s\)、\(t_s\gt 0\)、\(t_p\gt 0\)，此时存在反射波与折射波。</li>
@@ -105,7 +107,22 @@
         <p>反射光的振动方向只沿一个平面内的现象。</p>
         <p>由于\(r_p\gt 0\)的范围及其单调特性，可知当光从光疏介质进入到光密介质时，\(r_p\)可能会等于零。</p>
         <p>\(r_p=0\)意味着此时反射光中只有\(s\)方向偏振的电场，即反射光为全偏振光。</p>
-        <p>\(r_p = \frac{\tan(\theta_1 - \theta_2)}{\tan(\theta_1 + \theta_2)} = 0\)，由于\(\theta_1 \neq \theta_2\)，故\(\tan(\theta_1 - \theta_2)\neq 0\)，只能是\(\tan(\theta_1 + \theta_2) = 0\)即\(\theta_1 + \theta_2 = \pi/2\)。称此时的入射角为<b>起偏振角</b>或<b><span lang="en">Brewster</span>角（\(\theta_B\)）</b>。</p>
+        <p>\(r_p = \frac{\tan(\theta_1 - \theta_2)}{\tan(\theta_1 + \theta_2)} = 0\)，由于\(\theta_1 \neq \theta_2\)，故\(\tan(\theta_1 - \theta_2)\neq 0\)，只能是\(\tan(\theta_1 + \theta_2) = \infty\)即\(\theta_1 + \theta_2 = \pi/2\)。称此时的入射角为<b>起偏振角</b>或<b><span lang="en">Brewster</span>角（\(\theta_B\)）</b>。</p>
+        $$\tan\theta_B = n$$
+
+
+        <b>全反射</b>
+        <p>当光从光密介质入射到光疏介质时，入射角大于临界角时，光全部返回原介质中的现象。</p>
+        <p>当光从光密入光疏时：</p>
+        $$n_1\gt n_2\Rightarrow n_1/n_2\gt 1$$
+        故某一时刻，
+        $$\sin\theta_2 = \frac{n_1}{n_2}\sin\theta_1 > 1$$
+        $$\because \sin\theta_2 \lt 1$$
+        故此时无折射光，临界角为：
+        $$\sin\theta_2 = \frac{n_1}{n_2}\sin\theta_c = 1$$
+        $$\sin\theta_c = \frac{n_2}{n_1}$$
+        <p>全反射时发生相位的变化。</p>
+
 
         <h2>坡印廷矢量\(\mathbf{S}\)（辐射强度矢量、能流密度）</h2>
         <p>用于描述电磁能量的传播。</p>
@@ -157,6 +174,7 @@
             </tr>
         </table>
         
+
     </body>
 
 

@@ -70,24 +70,28 @@
         <b><span lang="en">GPIO</span>的八种工作模式</b>
         <table>
             <tr>
-                <td>输入浮空</td>
-                <td>输入用，完全浮空，状态不定</td>
+                <td>上拉输入</td>
+                <td>内部上拉，默认高电平</td>
             </tr>
             <tr>
-                <td>输入上拉</td>
-                <td>输入用，内部上拉，默认高电平</td>
+                <td>下拉输入</td>
+                <td>内部下拉，默认低电平</td>
             </tr>
             <tr>
-                <td>输入下拉</td>
-                <td>输入用，内部下拉，默认低电平</td>
+                <td>浮空输入</td>
+                <td>完全浮空，信号由触发器输入</td>
             </tr>
             <tr>
-                <td>模拟功能</td>
-                <td lang="en">ADC、DAC</td>
-            </tr>
+                <td>模拟输入</td>
+                <td>关闭了施密特触发器，不接上下拉电阻。<span lang="en">ADC、DAC</span></td>
+            </tr> 
             <tr>
                 <td>开漏输出</td>
-                <td>软件<span lang="en">IIC</span>的<span lang="en">SDA、SCL</span>等</td>
+                <td class="tbcontext">
+                    <p>输出数据寄存器上的\(0\)激活<span lang="en">N-MOS</span>，<span lang="en">I/O</span>口输出低电平。</p>
+                    <p>输出数据寄存器上的\(1\)激活<span lang="en">P-MOS</span>，<span lang="en">I/O</span>口输出高电平。</p>
+                    <p>软件<span lang="en">IIC</span>的<span lang="en">SDA、SCL</span>等。</p>
+                </td>
             </tr>
             <tr>
                 <td>推挽输出</td>
@@ -102,6 +106,26 @@
                 <td>片上外设功能（<span lang="en">SPI</span>的<span lang="en">SCK、MISO、MOSI</span>引脚等）</td>
             </tr>
         </table>
+
+        <b>中断</b>
+        <p>系统在执行当前程序的过程中，由于某种随机出现的外设请求，使得<span lang="en">CPU</span>暂停当前执行程序而转去执行外设服务的程序，当外设服务程序执行完毕后，<span lang="en">CPU</span>再返回原暂停处继续执行原程序。</p>
+
+        <b>中断源</b>
+        <p>引起中断的事件。</p>
+
+        <b>中断向量</b>
+        <p>中断服务程序的入口地址。</p>
+
+        <b>中断处理过程</b>
+        <p>响应中断请求</p>
+        <p>保护现场</p>
+        <p>开中断</p>
+        <p>中断服务</p>
+        <p>关中断</p>
+        <p>恢复现场</p>
+        <p>开中断</p>
+        <p>中断返回</p>
+
 
         <b><span lang="en">STM32</span>中断优先级</b>
         <table>
@@ -126,6 +150,49 @@
 
 
 
+        <b>定时器</b>
+        <table>
+            <tr>
+                <td>高级定时器</td>
+                <td lang="en">TIM1</td>
+            </tr>
+            <tr>
+                <td>通用定时器</td>
+                <td lang="en">TIM2、TIM3、TIM4、TIM5</td>
+            </tr>
+            <tr>
+                <td>基本定时器</td>
+                <td lang="en">TIM6、TIM7</td>
+            </tr>
+        </table>
+
+        <b>时基单元</b>
+        <ul>
+            <li>计数器寄存器</li>
+            <ul>
+                <li>向上计数模式</li>
+                <li>向下计数模式</li>
+                <li>中央对齐模式</li>
+            </ul>
+            <li>预分频器寄存器</li>
+            <li>自动装载寄存器</li>
+        </ul>
+
+
+        <b>计算机<span lang="en">CPU</span>与外部设备的基本通信方式</b>
+        <table>
+            <tr>
+                <td>并行通信</td>
+                <td class="tbtext">在每次传输中，数据的各位同时传送，一次传送的数据有多少位，就需要用多少根传输线。</td>
+                <td class="tbtext">传送速度快</td>
+                <td>易受干扰、远距离通信时所需成本较高。</td>
+            </tr>
+        </table>
+        
+        <ul>
+            <li>并行通信</li>
+            <li>串行通信</li>
+        </ul>
     
     </body>
 

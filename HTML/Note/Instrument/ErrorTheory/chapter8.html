@@ -42,6 +42,35 @@
         $$\mathbf{C} = \mathbf{X}^T\mathbf{X} = 
         \begin{bmatrix}1 & \sum x_i\\\sum x_i & \sum x_i^2\end{bmatrix}$$
         $$\therefore \mathbf{p} = \mathbf{C}^{-1}\mathbf{X}^T\mathbf{Y}$$
+    
+        <hr>
+
+
+        <h2>标准差的估计</h2>
+        <h3>直接测量结果的标准差估计</h3>
+        <b>等权测量数据</b>
+        $$s = \sqrt{\frac{\sum\limits_{i=1}^n\nu_i^2}{n-t}}$$
+        其中\(n\)为测量次数、\(t\)为参数个数。
+        <br><br>
+        <b>不等权测量数据</b>
+        $$s = \sqrt{\frac{\sum\limits_{i=1}^n\omega_i\nu_i^2}{n-t}}$$
+
+        <h3>待求量的标准差估计</h3>
+        <p>待求量\(x_i\)的标准差：</p>
+        $$\sigma_{x_i} = \sigma \sqrt{d_{ii}}$$
+        其中\(\sigma\)为直接测量结果的标准差估计、\(d_{ii}\)为\((A^TA)^{-1}\)的对角元素。
+        <p>待求量\(x_i\)与\(x_j\)的相关系数：</p>
+        $$\rho_{ij} = \frac{d_{ij}}{\sqrt{d_{ii}d_{jj}}}$$
+
+
+    
+        <h2>组合测量问题</h2>
+        $$\nu = X - Ax$$
+        $$X = A\hat{x}$$
+        $$A^TA\hat{x} = A^TX$$
+        $$\hat{x} = (A^TA)^{-1}A^TX$$
+
+
     </body>
 
 </html>

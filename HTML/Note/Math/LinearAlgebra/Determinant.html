@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>线性代数</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>行列式</h1>
+        $$\left |\begin{matrix}
+        a_{11} & a_{12} & a_{13}\\
+        a_{21} & a_{22} & a_{23}\\
+        a_{31} & a_{32} & a_{33}    
+        \end{matrix}\right |$$
+
+        <b>余子式</b>
+        $$M_{22} = 
+        \left |\begin{matrix}
+        a_{11} & a_{13}\\
+        a_{31} & a_{33}
+        \end{matrix}\right |$$
+
+        <b>代数余子式</b>
+        $$A_{ij} = (-1)^{i+j}M_{ij}$$
+
+        <b>按行/列展开</b>
+        $$\left |\begin{matrix}
+        a_{11} & a_{12} & a_{13}\\
+        a_{21} & a_{22} & a_{23}\\
+        a_{31} & a_{32} & a_{33}
+        \end{matrix}\right | = 
+        a_{i1}A_{i1} + a_{i2}A_{i2} + a_{i3}A_{i3} = a_{1j}A_{1j} + a_{2j}A_{2j} + a_{3j}A_{3j}
+        $$
+
+    </body>
+
+</html>

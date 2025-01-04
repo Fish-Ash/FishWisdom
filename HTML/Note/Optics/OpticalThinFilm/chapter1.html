@@ -91,7 +91,9 @@
         $$
 
         <b>介质的光学导纳</b>
+        <p>磁场强度\(\mathbf{H}\)与电场强度\(\mathbf{E}\)绝对值之比。</p>
         $$Y = \frac{|\mathbf{H}|}{|\mathbf{S}_0 \times \mathbf{E}|} = \frac{|\mathbf{H}|}{|\mathbf{E}|} = \frac{N\sqrt{\epsilon_0/\mu_0}}{\mu_r}$$
+        \(\mathbf{S_0}\)：平面波传播方向的单位矢量。
 
         <b>自由空间导纳</b>
         $$y_0 = \sqrt{\epsilon_0/\mu_0}$$
@@ -112,28 +114,28 @@
         <p>磁场强度的切向分量与电场方向的切向分量之比。</p>
         $$\eta = \mathbf{H}_t^+/(\mathbf{S}_0\times \mathbf{E}_t^+) = -\mathbf{H}_t^-/(\mathbf{S}_0\times \mathbf{E}_t^-) $$
 
-        <div class="HBox">
-            <div class="left">
-                <p>对于<span lang="en">TM</span>波，引入边界条件，有：</p>
-                $$\mathbf{H}_t = \mathbf{H}$$
-                $$\mathbf{E}_t = \mathbf{E}\cos\theta$$
-                其中，\(\theta\)为\(\mathbf{E}\)与界面的夹角。
-                $$\mathbf{H}_t = \mathbf{H} = N(\mathbf{S}_0\times \mathbf{E}) = N(\mathbf{r}_0\times\mathbf{E}_t/\cos\theta) = \frac{N}{\cos\theta}(\mathbf{r}_0\times\mathbf{E}_t)$$
-                $$\eta_p = \mathbf{H}_t/(\mathbf{S}_0\times \mathbf{E}_t) = \frac{N}{\cos\theta}$$
-            </div>
-            <div class="divider"></div>
-            <div class="right">
-                <p>对于<span lang="en">TE</span>波，引入边界条件，有：</p>
-                $$
-                    \mathbf{E}_t = \mathbf{E}\\
-                    \mathbf{H}_t = \mathbf{H}\cos\theta
-                $$
-                其中，\(\theta\)为\(\mathbf{H}\)与界面的夹角。
-                $$\mathbf{S}_0\times \mathbf{E}_t = \mathbf{S}_0\times\mathbf{E} = \mathbf{H}/N = \frac{1}{N\cos\theta}\mathbf{H}$$
-                $$\eta_p = \frac{\mathbf{H}}{(\mathbf{S}_0\times\mathbf{E})} = N\cos\theta$$
-            </div>
-
-        </div>
+        <table>
+            <tr>
+                <td class="tbtext">
+                    <p>对于<span lang="en">TM</span>波，引入<a href="../PhysicalOptics/chapter1.html#BoundaryCondition">边界条件</a>，有：</p>
+                    $$\mathbf{H}_t = \mathbf{H}$$
+                    $$\mathbf{E}_t = \mathbf{E}\cos\theta$$
+                    其中，\(\theta\)为\(\mathbf{E}\)与界面的夹角。
+                    $$\mathbf{H}_t = \mathbf{H} = N(\mathbf{S}_0\times \mathbf{E}) = N(\mathbf{r}_0\times\mathbf{E}_t/\cos\theta) = \frac{N}{\cos\theta}(\mathbf{r}_0\times\mathbf{E}_t)$$
+                    $$\eta_p = \mathbf{H}_t/(\mathbf{S}_0\times \mathbf{E}_t) = \frac{N}{\cos\theta}$$
+                </td>
+                <td class="tbtext">
+                    <p>对于<span lang="en">TE</span>波，引入边界条件，有：</p>
+                    $$
+                        \mathbf{E}_t = \mathbf{E}\\
+                        \mathbf{H}_t = \mathbf{H}\cos\theta
+                    $$
+                    其中，\(\theta\)为\(\mathbf{H}\)与界面的夹角。
+                    $$\mathbf{S}_0\times \mathbf{E}_t = \mathbf{S}_0\times\mathbf{E} = \mathbf{H}/N = \frac{1}{N\cos\theta}\mathbf{H}$$
+                    $$\eta_p = \frac{\mathbf{H}}{(\mathbf{S}_0\times\mathbf{E})} = N\cos\theta$$
+                </td>
+            </tr>
+        </table>
 
 
  
@@ -259,7 +261,7 @@
                 $$\therefore Y = \eta_s$$
                 $$R = (\frac{\eta_0 - \eta_s}{\eta_0 + \eta_s})^2$$
                 <p>此时，对于参考波长\(\lambda_0\)，该膜层对膜系的反射或透射特性无任何影响，故称为<b>虚设层</b>。</p>
-                <p>在其他波长上，薄膜的特征矩阵不再是单位矩阵，对膜系的特征是有影响的，故常用于平滑膜系的分光特性。</p>
+                <p>在其他波长上，薄膜的特征矩阵不再是单位矩阵，对膜系的特征是有影响的，故半波长厚度的虚设层常用于平滑膜系的分光特性。</p>
             </div>
         </div>
 

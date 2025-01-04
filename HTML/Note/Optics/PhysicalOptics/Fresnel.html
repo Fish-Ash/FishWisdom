@@ -50,49 +50,37 @@
         </table><br>
     
     
-        考虑垂直入射的情况，即\(\theta_1 = \theta_2 = 0\)，相对折射率\(n = n_2/n_1\)
+        
         <table>
+            <tr>
+                <td colspan="2"></td>
+                <td>斜入射时，考虑折射定律\(n_1\sin\theta_1 = n_2\sin\theta_2\)</td>
+                <td>垂直入射时，\(\theta_1 = \theta_2 = 0\)，相对折射率\(n = n_2/n_1\)</td>
+            </tr>
             <tr>
                 <td rowspan="2"><span lang="en">s</span>波</td>
                 <td>振幅反射系数\(r_s\)</td>
+                <td>$$r_s = \frac{\sin(\theta_1 - \theta_2)}{\sin(\theta_1 + \theta_2)}$$</td>
                 <td>$$r_s = \frac{n_1 - n_2}{n_1 + n_2} = -\frac{n-1}{n+1}$$</td>
             </tr>
             <tr>
                 <td>振幅透射系数\(t_s\)</td>   
+                <td>$$t_s = \frac{2\cos\theta_1\sin\theta_2}{\sin(\theta_1 + \theta_2)}$$</td>
                 <td>$$t_s = \frac{2n_1}{n_1 + n_2} = \frac{2}{n + 1}$$</td>
             </tr>
             <tr>
                 <td rowspan="2"><span lang="en">p</span>波</td>
                 <td>振幅反射系数\(r_p\)</td>
+                <td>$$r_p = \frac{\tan(\theta_1-\theta_2)}{\tan(\theta_1 + \theta_2)}$$</td>
                 <td>$$r_p = \frac{n_2 - n_1}{n_2 + n_1} = \frac{n - 1}{n + 1}$$</td>
             </tr>
             <tr>
                 <td>振幅透射系数\(t_p\)</td>
+                <td>$$t_p = \frac{2\cos\theta_1\sin\theta_2}{\sin(\theta_1 + \theta_2)\cos(\theta_1 - \theta_2)}$$</td>
                 <td>$$t_p = \frac{2n_1}{n_2 + n_1} = \frac{2}{n + 1}$$</td>
             </tr>
         </table><br>
 
-        其他情况下，考虑折射定律\(n_1\sin\theta_1 = n_2\sin\theta_2\)
-        <table>
-            <tr>
-                <td rowspan="2"><span lang="en">s</span>波</td>
-                <td>振幅反射系数\(r_s\)</td>
-                <td>$$r_s = \frac{\sin(\theta_1 - \theta_2)}{\sin(\theta_1 + \theta_2)}$$</td>
-            </tr>
-            <tr>
-                <td>振幅透射系数\(t_s\)</td>   
-                <td>$$t_s = \frac{2\cos\theta_1\sin\theta_2}{\sin(\theta_1 + \theta_2)}$$</td>
-            </tr>
-            <tr>
-                <td rowspan="2"><span lang="en">p</span>波</td>
-                <td>振幅反射系数\(r_p\)</td>
-                <td>$$r_p = \frac{\tan(\theta_1-\theta_2)}{\tan(\theta_1 + \theta_2)}$$</td>
-            </tr>
-            <tr>
-                <td>振幅透射系数\(t_p\)</td>
-                <td>$$t_p = \frac{2\cos\theta_1\sin\theta_2}{\sin(\theta_1 + \theta_2)\cos(\theta_1 - \theta_2)}$$</td>
-            </tr>
-        </table><br>
 
         <h2>关于菲涅尔公式单调性的讨论</h2>
         由折射定律：

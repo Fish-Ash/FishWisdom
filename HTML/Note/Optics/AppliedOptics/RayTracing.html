@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+<meta charset="utf-8">
+<title>应用光学</title>
+<link rel="stylesheet" href="../../../../CSS/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+<body>
+    <div class="header"><h1>不惑</h1></div>
+
+
+    <ul class="navibar">
+    <li><a href="../../../Home.html">主页</a></li>
+    <li><a href="../../../Navigation.html">导航</a></li>
+    </ul>
+
+
+    <h1>光线追迹</h1>
+    <img src="./img/RayTracing.png" width="400">
+
+    <h2>实际光线</h2>
+    <details>
+        <summary>
+            $$
+            \begin{cases}
+            \sin I = \frac{L-r}{r}\sin U\\
+            \sin I' = \frac{n}{n'}\sin I\\
+            U' = U + I - I'\\
+            L' = (1 + \frac{\sin I'}{\sin U'})r
+            \end{cases}
+            $$
+        </summary>
+            $$
+            \frac{\sin(\pi - I)}{-L + r} = \frac{\sin(-U)}{r} \Rightarrow
+            \sin I = \frac{L-r}{r}\sin U
+            $$
+        
+            $$
+            n\sin I = n'\sin I' \Rightarrow
+            \sin I' = \frac{n}{n'}\sin I
+            $$
+        
+            $$
+            \begin{cases}
+            I = -U + \phi\\
+            \phi = I' + U'
+            \end{cases}\Rightarrow
+            U' = U + I - I'
+            $$
+        
+            $$
+            \frac{\sin I'}{L' - r} = \frac{\sin U'}{r} \Rightarrow
+            L' = (1 + \frac{\sin I'}{\sin U'})r
+            $$
+    </details>
+
+
+    <h2>近轴光线</h2>
+    $$
+    \begin{cases}
+    i = \frac{L-r}{r}u\\
+    i' = \frac{n}{n'}i\\
+    u' = u + i - i'\\
+    l' = (1 + \frac{i'}{u'})r
+    \end{cases}
+    $$
+    
+
+    
+
+</body>
+
+</html>
