@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Pandas</title>
+        <link rel="stylesheet" href="../../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../../../../Home.html">主页</a></li>
+            <li><a href="../../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1 lang="en">Opencv</h1>
+        
+        <p>用于管理虚拟环境。</p>
+        <p>因为Python代码会用到很多库嘛，如果不用虚拟环境的话，就会出现一个环境下有无数个库的情况（哪怕用不到），还有一种情况就是Python的版本和库的版本对应不上，这就是为什么要建虚拟环境。</p>
+
+
+        <p>以下指令均为终端指令</p>
+
+        <b>查看现有的虚拟环境列表</b>
+        <code><pre class="code">
+
+            conda info -e
+        </pre></code>
+
+        <b>创建虚拟环境</b>
+        <code><pre class="code">
+
+            conda create -n EnvName python=x.x
+        </pre></code>
+        <p>其中<span lang="en">EnvName</span>为自己取的虚拟环境的名字，<span lang="en">x.x</span>为你设定的<span lang="en">Python</span>的版本。</p>
+ 
+        <b>激活虚拟环境</b>
+        <code><pre class="code">
+
+            conda activate EnvName
+        </pre></code>
+        <p>成功激活后路径前会有一个括号显示虚拟环境的名称。</p>
+
+
+        <b>退出当前虚拟环境</b>
+        <code><pre class="code">
+
+            conda deactivate
+        </pre></code>
+
+        <b>删除虚拟环境</b>
+        <code><pre class="code">
+
+            conda remove -n EnvName --all
+        </pre></code>
+
+
+        <b>查看当前环境下有哪些库</b>
+        <code><pre class="code">
+            
+            conda list
+        </pre></code>
+
+        <b>在当前环境下安装库</b>
+        <code><pre class="code">
+
+            conda install RequirementName
+        </pre></code>
+
+    </body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>基本初等函数</h1>
+        
+        <h2 id="PowerFunction">幂函数</h2>
+        <h2>指数函数</h2>
+        <b>基本形式</b>
+        $$y = a^x$$
+        <b>性质</b>
+        $$a^k b^k = (ab)^k$$
+        $$\frac{a^m}{a^n} = a^{m-n}$$
+
+
+
+
+        <h2>对数函数</h2>
+        <b>基本形式</b>
+        $$y = \log_ax$$
+        <table>
+            <tr>
+                <td>\(a\)</td>
+                <td>对数的底数</td>
+            </tr>
+            <tr>
+                <td>\(x\)</td>
+                <td>对数的真数</td>
+            </tr>
+        </table>
+
+        <b>指对互换公式</b>
+        $$y = log_ax \Leftrightarrow x = a^y$$
+
+        <b>换底公式</b>
+        $$\log_ab = \frac{\log_cb}{\log_ca}$$
+
+        <b>性质</b>
+        $$\log_am + \log_an = \log_a(mn)$$
+        <p class="prove">
+            $$\begin{cases}
+            x = log_am\\
+            y = log_an
+            \end{cases}\Rightarrow
+            \begin{cases}
+            m = a^x\\
+            n = a^y
+            \end{cases}\\
+            mn = a^{x+y} \Rightarrow log_amn = x+y = log_am + log_an
+            $$
+        </p>
+        $$\log_am - \log_an = \log_a\frac{m}{n}$$
+        <p class="prove">
+            $$\begin{cases}
+            x = log_am\\
+            y = log_an
+            \end{cases}\Rightarrow
+            \begin{cases}
+            m = a^x\\
+            n = a^y
+            \end{cases}\\
+            \frac{m}{n} = a^{x-y} \Rightarrow log_a\ = x-y = log_am - log_an
+            $$
+        </p>
+        $$\log_{a^m}k^n = \frac{n}{m}\log_ak$$
+        <p class="prove">
+            $$
+            \begin{cases}
+            x = log_{a^m}k^n\\
+            y = log_ak
+            \end{cases}\Rightarrow
+            \begin{cases}
+            k^n = a^{mx}\\
+            k = a^y
+            \end{cases}\\
+            a^{ny} = a^{mx}\Rightarrow x = \frac{n}{m}y\\
+            \therefore \log_{a^m}k^n = \frac{n}{m}\log_ak
+            $$
+        </p>
+        $$a^{log_ak} = k$$
+        <p class="prove">
+            $$
+            log_ak = log_ak\\
+            k = a^{log_ak}
+            $$
+        </p>
+</html>

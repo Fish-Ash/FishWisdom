@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <title>高等数学</title>
-        <link rel="stylesheet" href="../../../CSS/style.css">
+        <link rel="stylesheet" href="../../../../CSS/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
     </head>
 
@@ -15,39 +15,87 @@
 
         
         <ul class="navibar">
-            <li><a href="../Home.html">主页</a></li>
-            <li><a href="../Navigation.html">导航</a></li>
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
 
         <h1>第一章 映射与函数</h1>
-        <p>
-            基本初等函数
-            <table>
-                <tr>
-                    <td class="tbgrid">名称</td>
-                    <td class="tbgrid">表达式</td>
-                </tr>
-                <tr>
-                    <td>幂函数</td>
-                    <td>\(y = x^a\)</td>
-                </tr>
-                <tr>
-                    <td>指数函数</td>
-                    <td>\(y = a^x\)（\(a>0\)且\(a\neq 1\)）</td>
-                </tr>
-                <tr>
-                    <td>对数函数</td>
-                    <td>\(y = \log_ax\)（\(a>0\)且\(a\neq 1\)）</td>
-                </tr>
-                <tr>
-                    <td>三角函数</td>
-                    <td>\(y = \sin x\)、\(y = \cos x\)、\(y = \tan x\)等</td>
-                </tr>
-                <tr>
-                    <td>反三角函数</td>
-                    <td>\(y = \arcsin x\)、\(y = \arccos x\)、\(y = \arctan x\)等</td>
-                </tr>
-            </table>
+
+        <b>函数</b>
+        <p>设\(x\)、\(y\)是两个变量，\(D\)是一个数集。</p>
+        <p>若对于每个\(x\in D\)，按照一定的法则总有一个确定的数\(y\)与之对应，则称\(y\)为\(x\)的函数，记作</p>
+        $$y = f(x),x\in D$$
+        <ul>
+            <li>自变量：\(x\)</li>
+            <li>因变量：\(y\)</li>
+            <li>函数定义域：\(D_f = D\)</li>
+            <li>函数值域：\(R_f = f(D) = \{y|y = f(x),x\in D\}\)</li>
+        </ul>
+
+        <b>判断两个函数是否为同一函数</b>
+        <ul>
+            <li>对应法则是否相同</li>
+            <li>定义域是否相同</li>
+        </ul>
+
+        <b>反函数</b>
+        <p>设函数\(y = f(x)\)定义域为\(D\)，值域为\(R_y\)。</p>
+        <p>若对任意\(y\in R_y\)，有唯一确定的\(x\in D\)，使得\(y = f(x)\)，则记\(x = f^{-1}(y)\)为函数\(y = f(x)\)的反函数。</p>
+        <ul>
+            <li>不是每个函数都有反函数。</li>
+            <li>单调函数一定有反函数，反函数不一定是单调函数。</li>
+            <li>\(f^{-1}[f(x)] = f[f^{-1}(x)] = x\)</li>
+        </ul>
+
+        <h3>特殊函数</h3>
+        <b>符号函数</b>
+        $$
+        y = sgnx = 
+        \begin{align}\begin{cases}
+        -1, &x \lt 0,\\
+        0, &x = 0,\\
+        1, &x \gt 0
+        \end{cases}\end{align}
+        $$
+
+        <b>取整函数</b>
+        $$y = [x]$$
+        \([x]\)为不大于\(x\)的最大整数。
+
+
+        <br><br>
+        <b>基本初等函数</b>
+        <table>
+            <tr>
+                <td class="tbgrid">名称</td>
+                <td class="tbgrid">表达式</td>
+            </tr>
+            <tr>
+                <td>幂函数</td>
+                <td>\(y = x^a\)</td>
+            </tr>
+            <tr>
+                <td>指数函数</td>
+                <td>\(y = a^x\)（\(a>0\)且\(a\neq 1\)）</td>
+            </tr>
+            <tr>
+                <td>对数函数</td>
+                <td>\(y = \log_ax\)（\(a>0\)且\(a\neq 1\)）</td>
+            </tr>
+            <tr>
+                <td>三角函数</td>
+                <td>\(y = \sin x\)、\(y = \cos x\)、\(y = \tan x\)等</td>
+            </tr>
+            <tr>
+                <td>反三角函数</td>
+                <td>\(y = \arcsin x\)、\(y = \arccos x\)、\(y = \arctan x\)等</td>
+            </tr>
+        </table>
+
+        <b>初等函数</b>
+        <p>由常数和基本初等函数经过有限次四则运算和有限次函数复合所构成，并可用一个式子表示的函数。</p>
+
+
             函数的自然定义域
             <table>
                 <tr>
@@ -67,17 +115,22 @@
                     <td>\(x>0\)</td>
                 </tr>
             </table>
-        </p>
 
 
         <h2>常见函数的性质</h2>
+        <b>单调性</b>
+        <br><br>
+        <b>奇偶性</b>
+        <ul>
+            <li>奇函数：定义在\((-l, l)\)上的函数，满足\(f(-x) = -f(x)\)</li>
+            <li>偶函数：定义在\((-l, l)\)上的函数，满足\(f(-x) = f(x)\)</li>
+        </ul>
+        <b>周期性</b>
+        $$f(x + T) = f(x)$$
+        <b>有界性</b>
+
         <p>\(\frac 1x > -n(n>0) \Rightarrow x\in(-\infty, -\frac 1n)\cup(0, +\infty)\)
             <br>
-            <br><b>奇偶性</b>
-            <ul>
-                <li>奇函数：定义在\((-l, l)\)上的函数，满足\(f(-x) = -f(x)\)</li>
-                <li>偶函数：定义在\((-l, l)\)上的函数，满足\(f(-x) = f(x)\)</li>
-            </ul>
         </p>
 
 
