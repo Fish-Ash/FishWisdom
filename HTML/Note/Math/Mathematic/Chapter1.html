@@ -21,6 +21,7 @@
 
         <h1>第一章 映射与函数</h1>
 
+        <h2>函数的基本概念</h2>
         <b>函数</b>
         <p>设\(x\)、\(y\)是两个变量，\(D\)是一个数集。</p>
         <p>若对于每个\(x\in D\)，按照一定的法则总有一个确定的数\(y\)与之对应，则称\(y\)为\(x\)的函数，记作</p>
@@ -47,23 +48,9 @@
             <li>\(f^{-1}[f(x)] = f[f^{-1}(x)] = x\)</li>
         </ul>
 
-        <h3>特殊函数</h3>
-        <b>符号函数</b>
-        $$
-        y = sgnx = 
-        \begin{align}\begin{cases}
-        -1, &x \lt 0,\\
-        0, &x = 0,\\
-        1, &x \gt 0
-        \end{cases}\end{align}
-        $$
 
-        <b>取整函数</b>
-        $$y = [x]$$
-        \([x]\)为不大于\(x\)的最大整数。
+        <h2>常见函数</h2>
 
-
-        <br><br>
         <b>基本初等函数</b>
         <table>
             <tr>
@@ -95,26 +82,45 @@
         <b>初等函数</b>
         <p>由常数和基本初等函数经过有限次四则运算和有限次函数复合所构成，并可用一个式子表示的函数。</p>
 
+        <h3>特殊函数</h3>
+        <b>符号函数</b>
+        $$
+        y = sgnx = 
+        \begin{align}\begin{cases}
+        -1, &x \lt 0,\\
+        0, &x = 0,\\
+        1, &x \gt 0
+        \end{cases}\end{align}
+        $$
 
-            函数的自然定义域
-            <table>
-                <tr>
-                    <td class="tbgrid">函数</td>
-                    <td class="tbgrid">自然定义域</td>
-                </tr>
-                <tr>
-                    <td>\(\sqrt x\)</td>
-                    <td>\(x\geq 0\)</td>
-                </tr>
-                <tr>
-                    <td>\(\frac1x\)</td>
-                    <td>\(x\neq 0\)</td>
-                </tr>
-                <tr>
-                    <td>\(\ln(x)\)</td>
-                    <td>\(x>0\)</td>
-                </tr>
-            </table>
+        <b>取整函数</b>
+        $$y = [x]$$
+        \([x]\)为不大于\(x\)的最大整数。
+
+
+        <br><br>
+        
+
+
+        函数的自然定义域
+        <table>
+            <tr>
+                <td class="tbgrid">函数</td>
+                <td class="tbgrid">自然定义域</td>
+            </tr>
+            <tr>
+                <td>\(\sqrt x\)</td>
+                <td>\(x\geq 0\)</td>
+            </tr>
+            <tr>
+                <td>\(\frac1x\)</td>
+                <td>\(x\neq 0\)</td>
+            </tr>
+            <tr>
+                <td>\(\ln(x)\)</td>
+                <td>\(x>0\)</td>
+            </tr>
+        </table>
 
 
         <h2>常见函数的性质</h2>
@@ -137,10 +143,10 @@
 
         <hr>
         <h2>第二节 数列的极限</h2>
-        <p><b>数列极限</b>：
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;设\(\{x_n\}\)为一数列，若存在常数\(a\)，对\(\forall\)正数\(\epsilon\)，总\(\exists N \in \mathbb{N}_+\)，使得当\(n>N\)时，\(x_n - a < \epsilon\)都成立。
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;则称\(\{x_n\}\)收敛于极限\(a\)，记作\(\mathop{lim}\limits_{n\rightarrow \infty} = a\)或\(x_n \rightarrow a(n\rightarrow \infty)\)
-        </p>
+        <b>数列极限</b>
+        <p>设\(\{x_n\}\)为一数列，若存在常数\(a\)，对\(\forall\epsilon\gt 0\)，总\(\exists N \in \mathbb{N}_+\)，使得当\(n>N\)时，\(x_n - a \lt \epsilon\)都成立。</p>
+        <p>则称\(\{x_n\}\)收敛于极限\(a\)，记作\(\mathop{lim}\limits_{n\rightarrow \infty} = a\)或\(x_n \rightarrow a(n\rightarrow \infty)\)</p>
+
 
         <p><b>题型1：判断数列\(\{x_n\}\)是否收敛，若收敛求出极限</b></p>
         注意：
@@ -173,6 +179,30 @@
             <br>&nbsp;&nbsp;&nbsp;&nbsp;常数\(A\)称为函数\(f(x)\)当\(x\rightarrow x_0\)时的极限，记作\(\mathop{lim}\limits_{x\rightarrow x_0}f(x) = A\)或\(f(x)\rightarrow A(x\rightarrow x_0)\)
         </p>
 
+
+        <b>\(1^\infty\)型极限</b>
+        $$
+        \begin{cases}
+        \lim \alpha(x) = 0\\
+        \lim \beta(x) = \infty\\
+        \lim \alpha(x)\beta(x) = k
+        \end{cases}\Rightarrow
+        \lim [1 + \alpha(x)]^{\beta(x)} = e^k
+        $$
+
+        <b>常用函数的极限</b>
+        $$\lim\limits_{x\rightarrow0}\frac{\sin x}{x} = 1$$
+        <p class="prove">
+            $$\lim\limits_{x\rightarrow0}\frac{\sin x}{x} = \lim\limits_{x\rightarrow0}\frac{\cos x}{1}（洛必达） = 1$$
+        </p>
+        $$\lim\limits_{x\rightarrow0}(1+x)^{\frac{1}{x}} = e$$
+        $$\lim\limits_{x\rightarrow\infty}(1+\frac{1}{x})^x = e$$
+        $$\lim\limits_{x\rightarrow0}\frac{a^x - 1}{x} = \ln a$$
+        <p class="prove">
+            $$\lim\limits_{x\rightarrow0}\frac{a^x - 1}{x} = \lim\limits_{x\rightarrow0}\frac{a^x\ln a}{1}（洛必达） = \ln a$$
+        </p>
+        $$\lim\limits_{x\rightarrow\infty}\sqrt[n]{n} = 1$$
+        $$$$
     </body>
 
 </html>
