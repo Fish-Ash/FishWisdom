@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../Home.html">主页</a></li>
+            <li><a href="../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>三角函数专题</h1>
+
+        <h2>三角函数及其图像</h2>
+        <table>
+            <tr>
+                <td><b>正弦函数</b></td>
+                <td>$$\sin x$$</td>
+                <td><b>余割函数</b></td>
+                <td>$$\csc x = \frac{1}{\sin x}$$</td>
+            </tr>
+            <tr>
+                <td><b>余弦函数</b></td>
+                <td>$$\cos x$$</td>
+                <td><b>正割函数</b></td>
+                <td>$$\sec x = \frac{1}{\cos x}$$</td>
+            </tr>
+            <tr>
+                <td><b>正切函数</b></td>
+                <td>$$\tan x = \frac{\sin x}{\cos x}$$</td>
+                <td><b>余切函数</b></td>
+                <td>$$\cot x = \frac{\cos x}{\sin x}$$</td>
+            </tr>
+            <tr>
+                <td><b>反正弦函数</b></td>
+                <td>$$\arcsin x$$</td>
+                <td><b>反正切函数</b></td>
+                <td>$$\arccos x$$</td>
+            </tr>
+        </table>
+        
+        <h2>三角函数导数</h2>
+        <table>
+            <tr>
+                <td>$$(\sin x)' = \cos x$$</td>
+                <td>$$(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}$$</td>
+                <td>$$(\sec x)' = \sec x\tan x$$</td>
+            </tr>
+            <tr>
+                <td>$$(\cos x)' = -\sin x$$</td>
+            </tr>
+            <tr>
+                <td>$$(\tan x)' = \sec^2x$$</td>
+                <td>$$(\arctan x)' = \frac{1}{1 + x^2}$$</td>
+            </tr>
+        </table>
+
+        
+        
+
+        
+        
+
+        <b>两角和差公式</b>
+        $$\sin(\alpha \pm \beta) = \sin\alpha \cos\beta \pm \cos\alpha \sin\beta$$
+        $$\cos(\alpha \pm \beta) = \cos\alpha \cos\beta \mp \sin\alpha \sin\beta$$
+        $$\tan(\alpha \pm \beta) = \frac{\tan\alpha \pm \tan\beta}{1 \mp \tan\alpha\tan\beta}$$
+
+        <b>二倍角公式</b>
+        $$\sin2\theta = 2\sin\theta\cos\theta$$
+        $$
+        \begin{align}
+        \cos2\theta &= \cos^2\theta - \sin^2\theta\\
+                    &= 1 - 2\sin^2\theta\\
+                    &= 2\cos^2\theta - 1
+        \end{align}
+        $$
+        $$\tan2\theta = \frac{2\tan^2\theta}{1-\tan^2\theta}$$
+
+        <b>降幂公式</b>
+        $$
+        \begin{cases}
+        \sin^2\theta = \frac{1-\cos2\theta}{2}\\
+        \cos^2\theta = \frac{1 + \cos2\theta}{2}
+        \end{cases}
+        $$
+        <b>积化和差公式</b>
+        $$cos\alpha\cdot cos\beta = \frac{1}{2}[cos(\alpha + \beta) + cos(\alpha - \beta)]$$
+    
+
+        <b>二倍角公式</b>
+
+        <h2>三角函数带皮亚诺余项的麦克劳林展开式</h2>
+        <table>
+            <tr>
+                <td>
+                    $$
+                    \begin{align}
+                    \sin x &= f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + o(x^3)\\
+                           &= x - \frac16 x^3 + o(x^3)\\
+                           
+                    \end{align}
+                    \Rightarrow
+                    \begin{cases}
+                    \sin x \sim x\\
+                    x - \sin x \sim \frac16 x^3
+                    \end{cases}
+                    $$
+                </td>
+            </tr>
+            <tr>         
+                <td>
+                    $$
+                    \begin{align}
+                    \arcsin x &= f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + o(x^3)\\
+                              &= x + \frac16 x^3 + o(x^3)
+                    \end{align}
+                    \Rightarrow
+                    \begin{cases}
+                    \arcsin x \sim x\\
+                    \arcsin x - x \sim \frac16 x^3
+                    \end{cases}
+                    $$
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    $$
+                    \begin{align}
+                    \tan x &= f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + o(x^3)\\
+                           &= x + \frac13x^3 + o(x^3)  
+                    \end{align}
+                    \Rightarrow
+                    \begin{cases}
+                    \tan x \sim x\\
+                    \tan x - x \sim \frac13x^3
+                    \end{cases}
+                    $$
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    $$
+                    \begin{align}
+                    \arctan x &= f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + o(x^3)\\
+                              &= x - \frac13x^3 + o(x^3)
+                    \end{align}
+                    \Rightarrow
+                    \begin{cases}
+                    \arctan x \sim x\\
+                    x - \arctan x \sim \frac13x^3
+                    \end{cases}
+                    $$
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    $$
+                    \begin{align}
+                    \cos x &= f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + o(x^3)\\
+                           &= 1 - \frac{1}{2}x^2 + o(x^2)
+                    \end{align}
+                    \Rightarrow
+                    1 - \cos x \sim \frac12 x^2
+                    $$
+                </td>
+            </tr>
+        </table>
+
+    </body>
+
+</html>

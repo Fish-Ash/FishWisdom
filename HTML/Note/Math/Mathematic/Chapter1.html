@@ -127,15 +127,46 @@
 
         <h2>常见函数的性质</h2>
         <b>单调性</b>
-        <br><br>
+        <ul>
+            <li>单调递增：区间\(D\)内，\(\forall x_1 \lt x_2\)，有\(f(x_1) \lt f_(x_2)\)</li>
+            <li>单调不减：区间\(D\)内，\(\forall x_1 \lt x_2\)，有\(f(x_1) \leq f_(x_2)\)</li>
+            <li>单调递减：区间\(D\)内，\(\forall x_1 \lt x_2\)，有\(f(x_1) \gt f_(x_2)\)</li>
+            <li>单调不增：区间\(D\)内，\(\forall x_1 \lt x_2\)，有\(f(x_1) \geq f_(x_2)\)</li>
+        </ul>
+
         <b>奇偶性</b>
         <ul>
             <li>奇函数：定义在\((-l, l)\)上的函数，满足\(f(-x) = -f(x)\)</li>
             <li>偶函数：定义在\((-l, l)\)上的函数，满足\(f(-x) = f(x)\)</li>
+            <li>既奇又偶函数：\(f(x) = 0\)</li>
+            <li>非奇非偶函数</li>
         </ul>
+        $$
+        \begin{align}
+        奇+奇 = 奇 &&偶+偶=偶 &&&奇+偶=?\\
+        奇\times奇 = 偶 && 偶\times 偶 = 偶 &&&奇\times 偶 = 奇
+        \end{align}
+        $$
+
+
         <b>周期性</b>
+        <p>若\(\exists T>0\)，对\(\forall x\)，恒有</p>
         $$f(x + T) = f(x)$$
+        <p>则称\(f(x)\)为以\(T\)为周期的周期函数。</p>
+        <p>若存在使上式成立的最小正数\(T\)，则其被称为<b>最小正周期</b>。</p>
+        <p>不是所有的周期函数都有最小正周期，例如常数函数、迪利克雷函数。</p>
+        <p>若\(f(x)\)周期为\(T\)，则\(f(ax+b)\)周期为\(\frac{T}{|a|}\)</p>
+
+
         <b>有界性</b>
+        <p>对于\(\forall x\in D\)</p>
+        <ul>
+            <li>若\(\exists M \gt 0\)， 使得\(|f(x)|\leq M\)，则称\(f(x)\)有界。</li>
+            <li>若\(\exists M \gt 0\)， 使得\(f(x)\leq M\)，则称\(f(x)\)有上界。</li>
+            <li>若\(\exists M \gt 0\)， 使得\(f(x)\geq -M\)，则称\(f(x)\)有下界。</li>
+        </ul>
+
+
 
         <p>\(\frac 1x > -n(n>0) \Rightarrow x\in(-\infty, -\frac 1n)\cup(0, +\infty)\)
             <br>
@@ -146,8 +177,8 @@
         <hr>
         <h2>第二节 数列的极限</h2>
         <b>数列极限</b>
-        <p>设\(\{x_n\}\)为一数列，若存在常数\(a\)，对\(\forall\epsilon\gt 0\)，总\(\exists N \in \mathbb{N}_+\)，使得当\(n>N\)时，\(x_n - a \lt \epsilon\)都成立。</p>
-        <p>则称\(\{x_n\}\)收敛于极限\(a\)，记作\(\mathop{lim}\limits_{n\rightarrow \infty} = a\)或\(x_n \rightarrow a(n\rightarrow \infty)\)</p>
+        <p>设\(\{x_n\}\)为一数列，若存在常数\(a\)，对\(\forall\epsilon\gt 0\)，总\(\exists N \in \mathbb{N}_+\)，使得当\(n>N\)时，\(|x_n - a| \lt \epsilon\)恒成立。</p>
+        <p>则称\(\{x_n\}\)收敛于极限\(a\)，记作\(\mathop{\lim x_n}\limits_{n\rightarrow \infty} = a\)或\(x_n \rightarrow a(n\rightarrow \infty)\)</p>
 
 
         <p><b>题型1：判断数列\(\{x_n\}\)是否收敛，若收敛求出极限</b></p>
@@ -158,14 +189,17 @@
 
         <p><b>题型2：证明数列\(\{x_n\}\)的极限为\(a\)</b>
         <ol>
-            <li>由\(|x_n - a|<\epsilon\)推出\(n > f(\epsilon)\)</li>
+            <li>由\(|x_n - a| \lt \epsilon\)推出\(n > f(\epsilon)\)</li>
             <li>\(\forall\)取一大于\(f(\epsilon)\)的正整数\(N\)，当\(n>N>f(\epsilon)\)时，\(|x_n - a|< \epsilon\)一定成立</li>
         </ol>
         技巧：
         <ol>
-            <li>可以设计一简单的\(g(n) > |x_n - a|\)，此时\(g(n)<\epsilon\)是\(|x_n - a| < \epsilon\)的充分条件</li>
+            <li>可以设计一简单的\(g(n) > |x_n - a|\)，此时\(g(n) \lt \epsilon\)是\(|x_n - a| < \epsilon\)的充分条件</li>
         </ol>
         </p>
+
+        <b>定理</b>
+        $$\lim\limits_{n\rightarrow \infty} x_n = a \Leftrightarrow \lim\limits_{n\rightarrow \infty} x_{2n} = \lim\limits_{n\rightarrow \infty} x_{2n+1} = a  $$
 
         <p><b>收敛函数的性质</b>
         <br><b>一、唯一性</b>
@@ -176,10 +210,19 @@
         </p>
 
         <h2>第三节 函数的极限</h2>
-        <p><b>函数极限</b>：
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;设函数\(f(x)\)在点\(x_0\)的某一去心邻域内有定义，若\(\exists\)常数\(A\)，对\(\forall \epsilon \in \mathbb{N}_+\)，总\(\exists \delta \in \mathbb{N}_+\)，使得当\(x\)满足不等式\(|x - x_0|<\delta\)时，对应函数值满足\(|f(x) - A|<\epsilon\)
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;常数\(A\)称为函数\(f(x)\)当\(x\rightarrow x_0\)时的极限，记作\(\mathop{lim}\limits_{x\rightarrow x_0}f(x) = A\)或\(f(x)\rightarrow A(x\rightarrow x_0)\)
-        </p>
+        <b>（一）自变量趋于有限值时函数的极限</b>
+        <p>设函数\(f(x)\)在点\(x_0\)的某去心邻域内有定义。若\(\exists\)常数\(A\)，对于\(\forall\epsilon \gt 0\)，总\(\exists \delta \gt 0\)，使得当\(|x - x_0|\lt \delta\)时，\(|f(x) - A| \lt \epsilon\)</p>
+        <p>常数\(A\)称为函数\(f(x)\)当\(x\rightarrow x_0\)时的极限，记作\(\mathop{lim}\limits_{x\rightarrow x_0}f(x) = A\)或\(f(x)\rightarrow A(x\rightarrow x_0)\)</p>
+        <ul>
+            <li>左极限：\(\lim\limits_{x\rightarrow x_{0^-}}f(x) = A \Leftrightarrow \forall \epsilon\gt 0, \exists \delta \gt 0, 当x_0 - \delta \lt x \lt x_0时，|f(x) - A|\lt \epsilon\)</li>
+            <li>右极限：\(\lim\limits_{x\rightarrow x_{0^+}}f(x) = A \Leftrightarrow \forall \epsilon\gt 0, \exists \delta \gt 0, 当x_0 \lt x \lt x_0 + \delta时，|f(x) - A|\lt \epsilon\)</li>
+        </ul>
+        $$\lim\limits_{x\rightarrow x_0}f(x) = A \Leftrightarrow \lim\limits_{x\rightarrow x_{0^-}}f(x) = \lim\limits_{x\rightarrow x_{0^+}}f(x) = A$$
+
+        <b>（二）自变量趋于无穷大时函数的极限</b>
+        $$\lim\limits_{x\rightarrow -\infty}f(x) = A \Leftrightarrow \forall \epsilon\gt 0, \exists X \gt 0, 当x\lt -X时，|f(x) - A|\lt \epsilon$$
+        $$\lim\limits_{x\rightarrow +\infty}f(x) = A \Leftrightarrow \forall \epsilon\gt 0, \exists X \gt 0, 当x\gt X时，|f(x) - A|\lt \epsilon$$
+        $$\lim\limits_{x\rightarrow \infty}f(x) = A \Leftrightarrow \forall \epsilon\gt 0, \exists X \gt 0, 当|x|\gt X时，|f(x) - A|\lt \epsilon \Leftrightarrow \lim\limits_{x\rightarrow -\infty}f(x) = \lim\limits_{x\rightarrow +\infty}f(x) = A$$
 
 
         <b>\(1^\infty\)型极限</b>
@@ -197,14 +240,151 @@
         <p class="prove">
             $$\lim\limits_{x\rightarrow0}\frac{\sin x}{x} = \lim\limits_{x\rightarrow0}\frac{\cos x}{1}（洛必达） = 1$$
         </p>
-        $$\lim\limits_{x\rightarrow0}(1+x)^{\frac{1}{x}} = e$$
-        $$\lim\limits_{x\rightarrow\infty}(1+\frac{1}{x})^x = e$$
+        $$\lim\limits_{x\rightarrow0}(1+x)^{\frac{1}{x}} = \lim\limits_{x\rightarrow\infty}(1+\frac{1}{x})^x = e$$
         $$\lim\limits_{x\rightarrow0}\frac{a^x - 1}{x} = \ln a$$
         <p class="prove">
             $$\lim\limits_{x\rightarrow0}\frac{a^x - 1}{x} = \lim\limits_{x\rightarrow0}\frac{a^x\ln a}{1}（洛必达） = \ln a$$
         </p>
         $$\lim\limits_{x\rightarrow\infty}\sqrt[n]{n} = 1$$
-        $$$$
+
+        $$\lim\limits_{x\rightarrow 0^+}(1 + \frac{1}{x})^x = \lim\limits_{x\rightarrow +\infty}(1 + x)^{\frac{1}{x}} = 1$$
+
+
+        <b>极限唯一性</b>
+        <p>若\(\lim f(x)\)存在，那么此极限唯一</p>
+        <b>局部有界性</b>
+        <p>若\(\lim\limits_{x\rightarrow x_0}f(x) = A\)，则\(\exists M\gt 0, \delta \gt 0\)，使得当\(0\lt |x-x_0|\lt \delta\)时，\(|f(x)|\leq M\)</p>
+
+
+        <b>函数极限与无穷小的关系</b>
+        $$\lim f(x) = A \Leftrightarrow f(x) = A + \alpha(x)$$
+        其中\(\alpha(x)\)为高阶无穷小，\(\lim \alpha(x) = 0\)
+    
+        <h2>第四节 极限存在准则</h2>
+        <b>夹逼准则</b>
+        <br><br>
+        数列形式
+        <p>若\(\exists N\in\mathbb{N}_+\)，当\(n \geq N\)时，\(y_n\leq x_n\leq z_n\)，且\(\lim\limits_{n\rightarrow \infty}y_n = \lim\limits_{n\rightarrow\infty}z = a\)</p>
+        <p>\(\Rightarrow \lim\limits_{n\rightarrow \infty}x_n = a\)</p>
+        函数形式
+        <p>当\(0\lt|x-x_0|\lt \delta\)时，\(g(x)\leq f(x)\leq h(x)\)，且\(\lim g(x) = \lim h(x) = A\)</p>
+        <p>\(\Rightarrow \lim f(x) = A\)</p>
+
+
+        <b>单调有界原理</b>
+        $$x_{n+1}\geq x_n, x_n\lt M\Rightarrow \exists \lim\limits_{n\rightarrow \infty}x_n$$
+        $$x_{n+1}\leq x_n, x_n\gt M\Rightarrow \exists \lim\limits_{n\rightarrow \infty}x_n$$
+
+
+        <h2>极限的四则运算法则</h2>
+        设\(\lim f(x) = A, \lim g(x) = B\)
+        <table>
+            <tr>
+                <td>$$\lim[f(x) \pm g(x)] = \lim f(x) \pm \lim g(x) = A \pm B$$</td>
+            </tr>
+            <tr>
+                <td>$$\lim[f(x)g(x)] = \lim f(x) \cdot \lim g(x) = A \cdot B$$</td>
+            </tr>
+            <tr>
+                <td>$$\lim \frac{f(x)}{g(x)} = \frac{\lim f(x)}{\lim g(x)} = \frac AB, B\neq 0$$</td>
+            </tr>
+        </table>
+
+        <b>推论</b>
+        $$极限存在+极限存在=极限存在$$
+        $$极限存在+极限不存在=极限不存在$$
+        $$极限不存在+极限不存在=未知情况$$
+        $$\lim f(x) = A \neq 0 \Rightarrow \lim f(x)g(x) = A\lim g(x)$$
+        $$\lim \frac{f(x)}{g(x)} = A, \lim g(x) = 0 \Rightarrow \lim f(x) = 0$$
+        $$\lim \frac{f(x)}{g(x)} = B \neq 0, \lim f(x) =0 \Rightarrow \lim g(x) = 0$$
+
+        <h2>求极限方法总结</h2>
+        数列
+        <ul>
+            <li>夹逼准则</li>
+        </ul>
+
+        函数
+        <ul>
+            <li>夹逼准则</li>
+            <li>洛必达法则</li>
+        </ul>
+
+
+        <h2>求极限注意事项</h2>
+        <ul>
+            <li>指数形式转化为对数形式</li>
+            <li>\(\ln(x)\)转化为\(\ln(x-1 + 1)\sim x-1\)</li>
+            <li>公式中的\(x\)是整体</li>
+        </ul>
+
+        <h2>无穷小量</h2>
+        <p>若\(\lim\limits_{x\rightarrow x_0}f(x) = 0\)，则称\(f(x)\)为\(x\rightarrow x_0\)时的无穷小量。</p>
+
+        <b>无穷小量阶的比较</b>
+        <p>在相同的自变量变化趋势下，设\(\lim\alpha = 0, \lim\beta = 0\)，且\(\beta(x)\neq 0\)</p>
+        <ul>
+            <li>\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = 0\)，称\(\alpha(x)\)为\(\beta(x)\)的高阶无穷小，记为\(\alpha(x) = o[\beta(x)]\)</li>
+            <li>\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = \infty\)，称 \(\alpha(x)\)为\(\beta(x)\)的低阶无穷小</li>
+            <li>\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = c\neq 0\)，称\(\alpha(x)\)为\(\beta(x)\)的同阶无穷小</li>
+            <li>\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = 1\)，称\(\alpha(x)\)与\(\beta(x)\)等价，记为\(\alpha(x)\sim \beta(x)(x\rightarrow x_0)\)</li>
+            <li>\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta^k(x)} = c\neq 0\)，称\(\alpha(x)\)为\(\beta(x)\)的\(k\)阶无穷小</li>
+        </ul>
+
+        <b>无穷小的运算</b>
+        $$o(x^m) + o(x^n) = o(x^k), k = \min\{m,n\}$$
+        $$o(x^m)\cdot o(x^n) = o(x^{m+n})$$
+        $$x^m\cdot o(x^n) = o(x^{m+n})$$
+        $$o(kx^n) = k\cdot o(x^n) = o(x^n), k\neq 0$$
+
+        <b>无穷小的性质</b>
+        <p>有限个无穷小的和仍是无穷小</p>
+        <p>有限个无穷小的乘积仍然是无穷小</p>
+        <p>无穷小与有界量的乘积仍然是无穷小</p>
+        <p>等价无穷小具有相同的函数值与导数值</p>
+
+
+        <b>常见等价无穷小</b>
+        $$1 - \cos x \sim \frac12 x^2$$
+        $$x - \ln(1 + x) \sim \frac12 x^2$$
+        $$\ln(1 + x) \sim x$$
+        $$e^x - 1 \sim x$$
+        $$a^x - 1 \sim x\ln a$$
+        $$(1 + x)^\alpha -1 = \alpha x$$
+
+        <h2>无穷大量</h2>
+        <p>\(\lim\limits_{x\rightarrow x_0}f(x) = \infty\)，称\(f(x)\)为\(x\rightarrow x_0\)时的无穷大量。</p>
+        $$对于\forall M \gt 0, \exists \delta \gt 0, 使得当0\lt |x - x_0|\lt \delta时，|f(x)|\gt M$$
+        <p>\(\lim\limits_{x\rightarrow \infty}f(x) = \infty\)，称\(f(x)\)为\(x\rightarrow \infty\)时的无穷大量。</p>
+        $$对于\forall M \gt 0, \exists X \gt 0, 使得当|x|\gt X时，|f(x)|\gt M$$
+
+        <b>常见无穷大量的比较</b>
+        <p>令\(\alpha \gt 0, \beta \gt 0, a\gt 1\)</p>
+        函数
+        <p>\(x\rightarrow +\infty\)时：</p>
+        $$\ln^\alpha x \ll x^\beta \ll a^x$$
+        数列
+        <p>\(n\rightarrow \infty\)时：</p>
+        $$\ln^\alpha n\ll n^\beta \ll a^n \ll n! \ll n^n$$
+
+        <b>无穷大量的性质</b>
+        <p>无穷大量包括正无穷与负无穷</p>
+        <p>两个无穷大量的乘积仍为无穷大量</p>
+        <p>无穷大量与有界变量之和仍是无穷大量</p>
+
+        <b>无穷大量与无界变量的关系</b>
+        <p>对于数列\(\{x_n\}\)，无穷大量要求\(n\gt N\)后所有项均满足\(|x_n|\gt M\)，无界变量仅要求存在一项满足\(|x_n|\gt M\)。</p>
+        <p>因此无界变量包含无穷大量。</p>
+
+        <b>无穷大量与无穷小量的关系</b>
+        <p>设\(f(x)\neq 0\)</p>
+        $$\lim f(x) = 0 \Leftrightarrow \lim \frac{1}{f(x)} = \infty$$
+
+        <b>泰勒公式</b>
+        $$f(x) = f(x_0) + \frac{f'(x_0)}{1!}(x-x_0) + \frac{f''(x_0)}{2!}(x-x_0)^2 + \cdots + \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n + o((x^{x-x_0})^n)$$
+        其中，\(o((x-x_0)^n)\)称为皮亚诺余项
+
+
     </body>
 
 </html>

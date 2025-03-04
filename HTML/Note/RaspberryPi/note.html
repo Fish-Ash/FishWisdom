@@ -5,7 +5,7 @@
     <head>
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>概率论</title>
+        <title>树莓派</title>
         <link rel="stylesheet" href="../../../CSS/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
     </head>
@@ -26,38 +26,57 @@
     <h2>树莓派初始化</h2>
     <h2>远程连接树莓派</h2>
     <h2>VScode连接树莓派</h2>
-    <ol>
-        <li>Install the extension: Remote Development</li>
-        <li>Install the extension: Python</li>
+    <ol lang="en">
+        <li lang="en">Install the extension: Remote Development</li>
+        <li lang="en">Install the extension: Python</li>
+        <li lang="en">Open Remote Explorer<img src="./Img/RemoteExplorer.png" width="50"></li>
+        <li>Select Remote(Tunnels/SSH)</li>
+        <li>Select SSH-Settings</li>
+        <li>Select C:\Users\FishAsh\.ssh\config</li>
+
     </ol>
 
     <h2>网络配置文件</h2>
     wpa_supplicant.conf
-<pre>
-country=CN
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-network={
-		ssid="FishWiFi"
-		psk="12345666"
-		priority=10
-}
-</pre>
+    <pre>
+    country=CN
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
+    network={
+            ssid="FishWiFi"
+            psk="12345666"
+            priority=10
+    }
+    </pre>
 
-<p>安装putty，登录树莓派，运行命令sudo apt-get install xrdp</p>
+    <h2>开启VNC功能</h2>
+    <p>使用putty连接树莓派</p>
+    <p>运行命令：sudo raspi-config</p>
+    <p>选择Interface Options，启用VNC</p>
+
+    <h2>配置静态ip地址</h2>
+    <p>命令行窗口输入ipconfig查找电脑</p>
+    <p>sudo nano /etc/dhcpcd.conf</p>
+
+    <p>安装putty，登录树莓派，运行命令sudo apt-get install xrdp</p>
 
 
-    <h2>简单<span lang="en">Liunx</span>命令</h2>
-    <ul>
-        <li><code>cd Desktop/</code>：转到桌面目录</li>
-        <li><code>ls</code>：查看目录</li>
-        <li><code>mkdir floder</code>：创建文件夹</li>
-        <li><code>rm -rf floder</code>：删除文件夹</li>
-        <li><code>touch file</code>：创建文件</li>
-        <li><code>python3 -m venv venvname</code>创建虚拟环境</li>
-        <li><code>source venvname/bin/activate</code></li>
-    </ul>
+        <h2>简单<span lang="en">Liunx</span>命令</h2>
+        <ul>
+            <li><code>cd Desktop/</code>：转到桌面目录</li>
+            <li><code>ls</code>：查看目录</li>
+            <li><code>mkdir floder</code>：创建文件夹</li>
+            <li><code>rm -rf floder</code>：删除文件夹</li>
+            <li><code>touch file</code>：创建文件</li>
+            <li><code>python3 -m venv venvname</code>创建虚拟环境</li>
+            <li><code>source venvname/bin/activate</code></li>
+        </ul>
 
+        <h2>树莓派虚拟环境管理</h2>
+        <code class="python"><pre>
+            sudo apt-get install virtualenv -y
+        </pre></code>
+        
 </body>
 
 </html>
