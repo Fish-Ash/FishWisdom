@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第二章 导数与微分</h1>
+        <h2>第一节 导数</h2>
+        <b>导数的概念</b>
+        $$f'(x_0) = \lim\limits_{\Delta x\rightarrow 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} = \lim\limits_{x\rightarrow x_0}\frac{f(x)-f(x_0)}{x-x_0}$$
+        <ul>
+            <li>左导数：\(f'_-(x_0) = \lim\limits_{\Delta x\rightarrow 0^-}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\)</li>
+            <li>右导数：\(f'_+(x_0) = \lim\limits_{\Delta x\rightarrow 0^+}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\)</li>
+        </ul>
+        $$f'(x_0)\Leftrightarrow f'_-(x_0) = f'_+(x_0)$$
+        注：
+        <ul>
+            <li>\(\lim\limits_{x\rightarrow x_0} f(x)\)与\(f(x_0)\)无关。</li>
+            <li>\(f'(x_0)\)与\(f(x_0)\)有关。</li>
+            <li>可导一定连续，连续不一定可导。</li>
+        </ul>
+
+        <h2>第二节 微分</h2>
+        <b>微分的定义</b>        
+        <p>设函数\(y = f(x)\)在点\(x_0\)的某邻域内有定义，\(\Delta x\)是\(x\)在\(x_0\)处的增量，\(x_0 + \Delta x\)在该临域内，若函数增量</p>
+        $$\Delta y = f(x + \Delta x) - f(x_0)$$
+        可表示为
+        $$\Delta y = A\Delta x + o(\Delta x)$$
+        则称函数\(y = f(x)\)在点\(x_0\)处可微，其中\(A\)为常数。
+        <p>\(\mathrm{d}y = \mathrm{d}f(x) = A\Delta x\)称为\(y=f(x)\)在\(x_0\)处的微分。</p>
+        <p>自变量\(x\)的增量\(\mathrm{d}x = \Delta x\)称为自变量的微分。</p>
+        <p>由于\(A = f'(x)\)，故函数\(y = f(x)\)的积分又可写为\(\mathrm{d}y = A\mathrm{d}x\)</p>
+        $$可导\Leftrightarrow 可微$$
+        <p>可微一定连续，连续不一定可微</p>
+
+        <b>微分近似计算</b>
+        <p>\(\Delta y = f(x_0 + \Delta x) - f(x) \approx \mathrm{d}y = f'(x_0)\Delta x\) </p>
+
+
+    </body>
+
+</html>
