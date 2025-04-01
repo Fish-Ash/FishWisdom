@@ -147,6 +147,7 @@
         奇\times奇 = 偶 && 偶\times 偶 = 偶 &&&奇\times 偶 = 奇
         \end{align}
         $$
+        <p>奇函数\(f(0) = 0\)</p>
 
 
         <b>周期性</b>
@@ -313,8 +314,14 @@
         $$极限存在+极限不存在=极限不存在$$
         $$极限不存在+极限不存在=未知情况$$
         $$\lim f(x) = A \neq 0 \Rightarrow \lim f(x)g(x) = A\lim g(x)$$
+        $$\lim f(x)g(x) = A, \lim g(x) = \infty \Rightarrow \lim f(x) = 0$$
         $$\lim \frac{f(x)}{g(x)} = A, \lim g(x) = 0 \Rightarrow \lim f(x) = 0$$
         $$\lim \frac{f(x)}{g(x)} = B \neq 0, \lim f(x) =0 \Rightarrow \lim g(x) = 0$$
+
+
+        <h2>函数极限的性质</h2>
+        <b>保号性</b>
+        <p>若\(\lim\limits_{x\rightarrow x_0}f(x) = A\)，且\(A\gt 0\)（或\(A \lt 0\)），那么\(\exists \delta\gt 0\)，使得当\(0\lt |x-x_0|\lt \delta\)时，\(|f(x)|\gt 0\)（或\(f(x)\lt 0\)）</p>
 
         <h2>求极限方法总结</h2>
         数列
@@ -326,6 +333,8 @@
         <ul>
             <li>夹逼准则</li>
             <li>洛必达法则</li>
+            <li>等价无穷小</li>
+            <li><a href="TaylorFormula.html">泰勒公式</a></li>
         </ul>
 
 
@@ -398,9 +407,7 @@
         <p>设\(f(x)\neq 0\)</p>
         $$\lim f(x) = 0 \Leftrightarrow \lim \frac{1}{f(x)} = \infty$$
 
-        <b>泰勒公式</b>
-        $$f(x) = f(x_0) + \frac{f'(x_0)}{1!}(x-x_0) + \frac{f''(x_0)}{2!}(x-x_0)^2 + \cdots + \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n + o((x^{x-x_0})^n)$$
-        其中，\(o((x-x_0)^n)\)称为皮亚诺余项
+
 
         <h2>函数连续性</h2>
         <b>连续</b>
@@ -428,10 +435,10 @@
                 <li>可去间断点：\(\lim\limits_{x\rightarrow x_0^-}f(x) = \lim\limits_{x\rightarrow x_0^+}f(x) \neq f(x_0)\)</li>
                 <li>跳跃间断点：\(\lim\limits_{x\rightarrow x_0^-}f(x) \neq \lim\limits_{x\rightarrow x_0^+}f(x)\)</li>
             </ul>
-            <li>第一类间断点：\(\lim\limits_{x\rightarrow x_0^-}f(x)\)与\(\lim\limits_{x\rightarrow x_0^+}f(x)\)至少一个不存在</li>
+            <li>第二类间断点：\(\lim\limits_{x\rightarrow x_0^-}f(x)\)与\(\lim\limits_{x\rightarrow x_0^+}f(x)\)至少一个不存在</li>
             <ul>
                 <li>无穷间断点：\(\lim\limits_{x\rightarrow x_0^-}f(x) = \infty\)或\(\lim\limits_{x\rightarrow x_0^+}f(x) = \infty\)</li>
-                <li>震荡间断点：\(\lim\limits_{x\rightarrow x_0}f(x)\)震荡</li>
+                <li>振荡间断点：\(\lim\limits_{x\rightarrow x_0}f(x)\)震荡</li>
             </ul>
         </ul>
         <b>找间断点方法</b>

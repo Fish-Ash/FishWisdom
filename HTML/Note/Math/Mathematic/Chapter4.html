@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第四章 不定积分</h1>
+        <h2>一、不定积分概念与性质</h2>
+        <b>原函数</b>
+        <p>若\(F'(x) = f(x)\)，称\(F(x)\)为\(f(x)\)的一个原函数。</p>
+        <p>若\(F(x)\)为\(f(x)\)的原函数，则\(F(x) + C\)也是\(f(x)\)的一个原函数。</p>
+
+        <b>不定积分</b>
+        <p>\(f(x)\)原函数的全体称为\(f(x)\)的不定积分。</p>
+        $$\int f(x) \mathrm{d}x = F(x) + C$$
+
+        <b>原函数存在定理</b>
+        $$f(x)在区间U内连续\Rightarrow f(x)在区间U上原函数F(x)存在$$
+        $$f(x)在区间U内存在第一类间断点\Rightarrow f(x)在区间U上原函数F(x)不存在$$
+
+
+        <b>常用函数不定积分</b>
+        $$\int \frac 1x \mathrm{d}x = \ln |x| + C$$
+        $$\int \frac{1}{\sqrt{a^2 - x^2}}\mathrm{d}x = \arcsin\frac{x}{a} + C$$
+        $$\int \frac{1}{a^2 + x^2}\mathrm{d}x = \frac{1}{a}\arctan\frac{x}{a} + C$$
+        $$\begin{align}
+        \int \frac{1}{x^2 - a^2}\mathrm{d}x &= \int \frac{1}{2a}(\frac{1}{x-a} - \frac{1}{x+a})\mathrm{d}x\\
+        &= \frac{1}{2a}\ln|\frac{x-a}{x+a}| + C
+        \end{align}$$
+        $$\int \frac{1}{\sqrt{x^2 + a^2}}\mathrm{d}x = \ln(x + \sqrt{x^2 + a^2}) + C$$
+        $$\int \frac{1}{\sqrt{x^2 - a^2}}\mathrm{d}x = \ln|x + \sqrt{x^2 - a^2}| + C$$
+        $$\int \sec x\mathrm{d}x = \ln|\sec x + \tan x| + C$$
+        $$\int \csc x\mathrm{d}x = -\ln|\csc x + \cot x| + C$$
+        
+        <h2>题型</h2>
+        <h3>判断函数是否存在原函数</h3>
+        <b>解题思路</b>
+        <p>函数连续\(\Rightarrow\)存在原函数</p>
+        <p>函数不连续\(\Rightarrow\)判断间断点类型</p>
+        <ul>
+            <li>若为第一类间断点\(\Rightarrow\)不存在原函数</li>
+            <li>若为第二类间断点\(\Rightarrow\)构造出\(F'(x) = f(x)\)</li>
+        </ul>
+    </body>
+</html>

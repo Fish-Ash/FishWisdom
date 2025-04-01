@@ -76,7 +76,25 @@
         <code class="python"><pre>
             sudo apt-get install virtualenv -y
         </pre></code>
-        
+
+
+        <h2>树莓派设置开机自启动</h2>
+        <p>创建/home/fishpi/.config/autostart文件夹</p>
+        <p>在文件夹下创建xxx.desktop文件</p>
+        <p>写入</p>
+        <pre>
+            <code>
+                [Desktop Entry]
+                Encoding=UTF-8
+                Type=Application
+                Name=Bin
+                Exec=lxterminal -e "source /home/fishpi/Venv/venv_name/bin/activate && python3 /home/fishpi/Desktop/py_name.py;$SHELL"
+                Termal=true
+            </code><br>
+        </pre>
+        并保存
+        <p>输入</p>
+        sudo chmod a+r /home/fishpi/.config/autostart/Bin.desktop
 </body>
 
 </html>

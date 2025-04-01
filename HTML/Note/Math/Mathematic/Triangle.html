@@ -53,17 +53,40 @@
         <table>
             <tr>
                 <td>$$(\sin x)' = \cos x$$</td>
-                <td>$$(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}$$</td>
-                <td>$$(\sec x)' = \sec x\tan x$$</td>
-            </tr>
-            <tr>
                 <td>$$(\cos x)' = -\sin x$$</td>
             </tr>
             <tr>
+                <td>$$(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}$$</td>
+                <td>$$(\arccos x)' = -\frac{1}{\sqrt{1-x^2}}$$</td>
+            </tr>
+            <tr>
                 <td>$$(\tan x)' = \sec^2x$$</td>
+                <td>$$(\cot x)' = -\csc^2x$$</td>
+            </tr>
+            <tr>
                 <td>$$(\arctan x)' = \frac{1}{1 + x^2}$$</td>
+                <td>$$(\arctan x)' = -\frac{1}{1 + x^2}$$</td>
+            </tr>
+            <tr>
+                <td>$$(\sec x)' = \sec x\tan x$$</td>
+                <td>$$(\csc x)' = -\csc x\cot x$$</td>
             </tr>
         </table>
+        <div class="prove">
+            $$(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}$$
+            <p>证明：</p>
+            <p>\(y = f(x) = \arcsin x\)的反函数为\(x = g(y) = \sin y\)</p>
+            $$\because g'(y) = \cos y$$
+            $$\begin{align}
+            \therefore f'(x) &= \frac{1}{g'(y)}\\
+                  &= \frac{1}{\cos y}\\
+                  &= \frac{1}{\sqrt{1 - \sin^2y}}\\
+                  &= \frac{1}{\sqrt{1 - \sin^2(\arcsin x)}}\\
+                  &= \frac{1}{\sqrt{1 - x^2}}
+            \end{align}
+            $$
+
+        </div>
 
         
         
