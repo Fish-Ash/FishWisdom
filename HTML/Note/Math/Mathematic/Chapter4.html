@@ -45,7 +45,66 @@
         $$\int \frac{1}{\sqrt{x^2 + a^2}}\mathrm{d}x = \ln(x + \sqrt{x^2 + a^2}) + C$$
         $$\int \frac{1}{\sqrt{x^2 - a^2}}\mathrm{d}x = \ln|x + \sqrt{x^2 - a^2}| + C$$
         $$\int \sec x\mathrm{d}x = \ln|\sec x + \tan x| + C$$
-        $$\int \csc x\mathrm{d}x = -\ln|\csc x + \cot x| + C$$
+        $$\begin{align}
+        \int \csc x\mathrm{d}x &= -\ln|\csc x + \cot x| + C\\
+                               &= \ln|\csc x - \cot x| + C
+        \end{align}$$
+
+        <h2>二、积分法</h2>
+
+        <h3>凑微分法</h3>
+        $$\int f[\phi(x)]\phi'(x)\mathrm{d}x = \int f[\phi(x)]\mathrm{d}\phi(x) = F[\phi(x)] + C$$
+
+        <h3>变量代换法</h3>
+        <table>
+            <tr>
+                <td>原式\((a\gt0)\)</td>
+                <td>变元代换</td>
+                <td>微元代换</td>
+                <td>结果</td>
+                <td>还原</td>
+            </tr>
+            <tr>
+                <td>$$\sqrt{a^2 - x^2}$$</td>
+                <td>$$x = a\sin t~(-\frac{\pi}{2} \leq t \leq \frac{\pi}{2})$$</td>
+                <td>$$\mathrm{d}x = a\cos t\mathrm{d}t$$</td>
+                <td>$$a\cos t$$</td>
+                <td><img src="Img/asint.png" width="100"></td>
+            </tr>
+            <tr>
+                <td>$$\sqrt{a^2 + x^2}$$</td>
+                <td>$$x = a\tan t~(-\frac{\pi}{2}\lt t \lt \frac{\pi}{2})$$</td>
+                <td>$$\mathrm{d}x = a\sec^2 t \mathrm{d}t$$</td>
+                <td>$$a\sec t$$</td>
+                <td><img src="Img/atant.png" width="100"></td>
+            </tr>
+            <tr>
+                <td>$$\sqrt{x^2 - a^2}$$</td>
+                <td>$$x  = a\sec t~(\begin{cases}0\leq t\lt \frac{\pi}{2}, x\geq a\\\frac{\pi}{2}\lt t \leq \pi, x\leq -a \end{cases})$$</td>
+                <td>$$\mathrm{d}x = a\sec t\tan t\mathrm{d}t$$</td>
+                <td>$$|a\tan t|$$</td>
+                <td><img src="Img/asect.png" width="150"></td>
+            </tr>
+        </table>
+
+        <h3>分部积分法</h3>
+        $$\mathrm{d}(uv) = u\mathrm{d}v + v\mathrm{d}u$$
+        $$\int u\mathrm{d}v = uv - \int v\mathrm{d}u $$
+        <p>\(u \)的优先级：反对幂指三</p>
+
+        <h3>三角有理化</h3>
+        <p>设\(\tan \frac{x}{2} = t\)，则\(x = 2\arctan t, \mathrm{d}x = \frac{2}{1 + t^2}\)</p>
+        <table>
+            <tr>
+                <td>$$\sin x = \frac{2\sin\frac{x}{2}\cos\frac{x}{2}}{\sin^2\frac{x}{2}+\cos^2\frac{x}{2}} = \frac{2\tan\frac{x}{2}}{\tan^2\frac{x}{2}+1} = \frac{2t}{t^2 + 1}$$</td>
+            </tr>
+            <tr>
+                <td>$$\cos x = \frac{\cos^2 \frac{x}{2}-\sin^2 \frac{x}{2}}{\sin^2\frac{x}{2} + \cos^2\frac{x}{2}} = \frac{1 - t^2}{t^2 + 1 }$$</td>
+            </tr>
+            <tr>
+                <td>$$\tan x = \frac{\sin x}{\cos x} = \frac{2t}{1-t^2}$$</td>
+            </tr>
+        </table>
         
         <h2>题型</h2>
         <h3>判断函数是否存在原函数</h3>
@@ -56,5 +115,44 @@
             <li>若为第一类间断点\(\Rightarrow\)不存在原函数</li>
             <li>若为第二类间断点\(\Rightarrow\)构造出\(F'(x) = f(x)\)</li>
         </ul>
+
+        <h3>求函数的积分</h3>
+        <table>
+            <tr>
+                <td>$$\begin{align}
+                    \int f(x)g'(x)\mathrm{d}x &= \int f(x) \mathrm{d}g(x)\\
+                                              &= f(x)g(x) - \int g(x)\mathrm{d}f(x)
+                    \end{align}$$</td>
+            </tr>
+            <tr>
+                <td>$$\int \frac{t}{ax^2 + bx + c}\mathrm{d}x \Rightarrow k\int \frac{1}{(x-m)^2 + n^2}\mathrm{d}(x-m) = \frac{k}{n}\arctan \frac{x-m}{n}$$</td>
+            </tr>
+            <tr>
+                <td>$$\int \frac{a_1 x + b_1}{a_2x^2 + b_2x + c}\mathrm{d}x \Rightarrow \int \frac{2a_2x + b_2}{a_2x^2 + b_2x + c}\mathrm{d}x + \int \frac{t}{a_2x^2 + b_2x + c}\mathrm{d}x$$</td>
+            </tr>
+            <tr>
+                <td class="tbtext">
+                    $$\frac{低次多项式0}{高次多项式1\times高次多项式2} = \frac{低次多项式1}{高次多项式1} + \frac{低次多项式2}{高次多项式2}$$
+                    <b>示例</b>
+                    $$\begin{align}
+                    &\frac{3x + 6}{(x-1)^2(x^2 + x + 1)}\\
+                    =& \frac{A(x-1)+B}{(x-1)^2}  + \frac{Cx + D}{x^2 + x + 1}
+                    \end{align}$$
+                </td>
+            </tr>
+            <tr>
+                <td>\(\sqrt{a^2 - x^2},\sqrt{a^2 + x^2}, \sqrt{x^2 - a^2}\Rightarrow\)变量代换法</td>
+            </tr>
+            <tr>
+                <td class="tbtext">
+                    <b>分段函数</b>
+                    <p>由于\(可导\Rightarrow 连续\)，\(F(x) = \int f(x)\mathrm{d}x\)一定连续。</p>    
+                    <p>故在分段点\(x_0\)处，由\(\lim\limits_{x\rightarrow x^-_0}F(x) = \lim\limits_{x\rightarrow x^+_0}F(x)\)求解出\(C_1\)与\(C_2\)间的关系。 </p>
+                </td>
+            </tr>
+        </table>
+
+
+
     </body>
 </html>

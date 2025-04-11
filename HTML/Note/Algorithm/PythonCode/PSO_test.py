@@ -14,7 +14,6 @@ st = [(0,9), (0,9)] # 约束条件
 def PSO(st, func, w_st=[0.4,0.8], c=[1.5,1.5], N=100, epochs=200, draw=1):
     D = len(st)
 
-    
     if D == 2 and draw == 1:
         analog = []
         for i in range(D):
@@ -25,8 +24,6 @@ def PSO(st, func, w_st=[0.4,0.8], c=[1.5,1.5], N=100, epochs=200, draw=1):
         ax3 = plt.axes(projection = '3d')
         ax3.plot_surface(X,Y,Z,cmap = 'rainbow')
         plt.show()
-
-        
 
     # 初始化种群及速度
     X = []

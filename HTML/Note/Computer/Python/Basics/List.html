@@ -2,12 +2,15 @@
 
 <html lang = "zh-cn">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Pandas</title>
-        <link rel="stylesheet" href="../../../../../CSS/style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>Pandas</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
 
 
     <body>
@@ -17,33 +20,24 @@
             <li><a href="../../../../Navigation.html">导航</a></li>
         </ul>
 
-        <h1>列表</h1>
+        <h1>迭代关系</h1>
 
-        <h2>批量转换</h2>
+        <h2>可迭代对象与迭代器</h2>
+        <b>可迭代对象（<span lang="en">Iterable</span>）</b>
+        <p>常见可迭代对象：列表、元组、字符串、字典、集合</p>
 
-        <b>字符串转整型</b>
-        <code><pre class="code">
+        <b>迭代器（<span lang="en">Iterator</span>）</b>
+        <p>常见迭代器：<span lang="en">map()、filter()、zip()</span>的返回值</p>
+        <p>迭代器无法直接使用<span lang="en">print()</span>输出，常先转化为列表。</p>
 
-            x,y = map(int, ['7', '11'])
-        </pre></code>
-        注：返回字符串以<span lang="en">0b</span>开头，后面跟着<span lang="en">num</span>的二进制数。
-        
-        <h3 lang="en">oct()</h3>
-        <b>十进制转八进制数</b>
-        <code><pre class="code">
+        <h2>迭代器</h2>
+        <h3 lang="en">map()</h3>
 
-            oct(num)
-        </pre></code>
-        注：返回字符串以<span lang="en">0o</span>开头，后面跟着<span lang="en">num</span>的二进制数。
-        
-        <h3 lang="en">hex()</h3>
-        <b>十进制转十六进制数</b>
-        <code><pre class="code">
+<pre class="Cdoe"><code class="Py">
+iterator = map(function, iterable)
 
-            hex(num)
-        </pre></code>
-        注：返回字符串以<span lang="en">0h</span>开头，后面跟着<span lang="en">num</span>的二进制数。
-        
+</code></pre>
+        <p>对于<span lang="en">iterable</span>中的每一个元素应用<span lang="en">function</span>，返回一个迭代器。</p>
 
     </body>
 

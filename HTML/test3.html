@@ -1,35 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>思维导图</title>
-    <script src="https://cdn.jsdelivr.net/gh/hizzgdev/jsmind/js/jsmind.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hizzgdev/jsmind/style/jsmind.css">
-</head>
-<body>
-    <div id="jsmind_container" style="width: 100%; height: 500px;"></div>
-    <script>
-        var mind = {
-            "meta": {
-                "name": "example",
-                "author": "jsmind",
-                "version": "1.0"
-            },
-            "format": "node_tree",
-            "data": { "id": "root", "topic": "中心主题", "children": [
-                { "id": "sub1", "topic": "子节点 1" },
-                { "id": "sub2", "topic": "子节点 2" }
-            ]}
-        };
 
-        var options = {
-            container: 'jsmind_container',
-            theme: 'primary',
-            editable: true
-        };
+<html lang = "zh-cn">
 
-        var jm = jsMind.show(options, mind);
-    </script>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>Pandas</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <link rel="stylesheet" href="/path/to/styles/default.min.css">
+        <script src="/path/to/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../../../../Home.html">主页</a></li>
+            <li><a href="../../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>进制转换</h1>
+
+        <h2>十进制转二进制</h2>
+
+        <h3 lang="en">bin()</h3>
+        <b>十进制转二进制数</b>
+        <code><pre class="code">
+
+            bin(num)
+        </pre></code>
+        注：返回字符串以<span lang="en">0b</span>开头，后面跟着<span lang="en">num</span>的二进制数。
+        
+        <h3 lang="en">oct()</h3>
+        <b>十进制转八进制数</b>
+        <code><pre class="code">
+
+            oct(num)
+        </pre></code>
+        注：返回字符串以<span lang="en">0o</span>开头，后面跟着<span lang="en">num</span>的二进制数。
+        
+        <h3 lang="en">hex()</h3>
+        <b>十进制转十六进制数</b>
+        <code><pre class="code">
+
+            hex(num)
+        </pre></code>
+        注：返回字符串以<span lang="en">0h</span>开头，后面跟着<span lang="en">num</span>的二进制数。
+        
+
+    </body>
+
 </html>

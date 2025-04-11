@@ -2,12 +2,15 @@
 
 <html lang = "zh-cn">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Pandas</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>Pandas</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
 
 
     <body>
@@ -20,26 +23,30 @@
         <h1><span lang="en">Python</span>基础</h1>
 
         <h2 lang="en">Environment</h2>
-        <code><pre class="code">
 
-            pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-        </pre></code>
+        <pre class="Code"><code class="Py">
+        pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+        </code></pre>
+
         <h2 lang="en">Input and Output</h2>
         <b lang="en">Input</b>
-        <code><pre class="code">
 
-            var = input("hint")
-        </pre></code>
+        <pre class="Code"><code class="Py">
+        var = input("hint")
+        </code></pre>
+
         <b lang="en">Output</b><br><br>
         <b>保留<span lang="en">n</span>位小数（四舍五入）</b>
-        <code><pre class="code">
 
-            print(f"{var:.nf}")
-        </pre></code>
-        <b>修改末尾值（默认为换行）</b>
-        <pre><code class="language-Py">
-            print("", end="...")
+        <pre class="Code"><code class="Py">
+        print(f"{var:.nf}")
         </code></pre>
+
+        <b>修改末尾值（默认为换行）</b>
+        <pre class="Code"><code class="Py">
+        print("", end="...")
+        </code></pre>
+
 
 
 
@@ -108,16 +115,7 @@
 
 
         <hr>
-        <h2 lang="en">map()</h2>
-        <b>生成可迭代对象</b>
-        <code><pre class="code">
 
-            map(function, iterable)
-        </pre></code>
-        注1：通常可迭代对象会转为<span lang="en">list</span>对象，以便于查看
-        <br>
-        注2：<span lang="en">function</span>仅为函数名，其参数为<span lang="en">iterable</span>中的每一个元素
-        
 
         <hr>
         <table>

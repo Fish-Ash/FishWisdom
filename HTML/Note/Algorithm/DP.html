@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>算法</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>动态规划</h1>
+
+        <b>示例</b>
+        <p>楼梯有\(n\)级台阶，每次可以上\(1\sim k\)阶，问共有多少种上楼方式</p>
+
+        <b>思路</b>
+        <p>\(n=1\)：一种上楼方式\([1]\)。</p>
+        <p>\(n=2\)：两种上楼方式\([1+1, 2]\)</p>
+        <p>其中，第一种为\(n=1\)时往上一阶、第二种为\(n=0\)时往上两阶。</p>
+        <p>\(n=3\)：四种上楼方式\([1+1+1, 2+1, 1+2, 3]\)</p>
+        <p>其中，前两种为\(n=2\)时向上一阶、第三种为\(n=1\)时向上两阶、第四种为\(n=0\)时向上三阶</p>
+        <p>\(\cdots\)</p>
+        <p>\(n=k\)：前\(k-1\)阶上楼方式的累加和再加一</p>
+        <p>其中，\(n=k-1\)时向上\(1\)阶、\(n=k-2\)时向上\(2\)阶、……、\(n=0\)时向上\(k\)阶。</p>
+        <p>\(n\gt k\)：\(dp[n] = dp[n-1] + dp[n-2] + \cdots + dp[n-k]\)</p>
+        <p>\(n=n-1\)时向上\(1\)阶、\(n=n-2\)时向上\(2\)阶、……、\(n=n-k\)时向上\(k\)阶</p>
+        
+    </body>
+
+</html>

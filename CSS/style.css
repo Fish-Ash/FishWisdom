@@ -166,9 +166,19 @@ color: white;
 }
 
 /* 代码 */
-.code{
-    background-color: #f3f3f3;
+.Code{
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f3f3f3; */
     color: #666;
+}
+
+.CodeCite{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: grey;
+    color:white;
+    font-family:"Times New Roman"
 }
 
 /* i{
@@ -201,11 +211,6 @@ color: white;
     font-family: 'Times New Roman', Times, serif;
     color:gray;
     font-style: italic;
-}
-
-pre.code{
-    font-family: Times New Roman; 
-    font-size: 14pt;
 }
 
 code.comment{

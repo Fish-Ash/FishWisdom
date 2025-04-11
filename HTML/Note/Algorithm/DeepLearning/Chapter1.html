@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang = "zh">
+
+    <head>
+        <meta charset="UTFs-8">
+        <title>算法</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第一章 基础知识</h1>
+
+        <table lang="en">
+            <tr>
+                <td rowspan="2">supervised learning</td>
+                <td>regression</td>
+            </tr>
+            <tr>
+                <td>classification</td>
+            </tr>
+            <tr>
+                <td rowspan="4">unsupervised learning</td>
+                <td lang="zh">聚类</td>
+            </tr>
+            <tr>
+                <td lang="zh">主成分分析</td>
+            </tr>
+            <tr>
+                <td lang="zh">因果关系和概率图模型</td>
+            </tr>
+            <tr>
+                <td lang="zh">生成对抗网络</td>
+            </tr>
+        </table>
+
+        <h3>未定项</h3>
+        <b>仿射变换</b>
+        <p>由线性变换（旋转、缩放、剪切）和平移（移动）组合而成</p>
+        <b>数据、模型、优化算法</b>
+        <b>输入层、输入、输出层、输出、隐藏层、隐藏单元</b>
+        <b>训练集、样本、标签、特征</b>
+
+        <h2 lang="en">Supervised Learning</h2>
+        <p></p>
+
+
+
+        <h2 lang="en">Regression</h2>
+        <b>类别</b>
+        <ul>
+            <li>二分类</li>
+            <li>多分类</li>
+        </ul>
+        <b>作用</b>
+        <p>预测数量</p>
+        
+        <h3 lang="en">linear regression</h3>
+        <b>假设</b>
+        <p>1、自变量x与因变量y之间的关系是线性的</p>
+        <p>2、假设任何噪声都比较正常，如符合正态分布</p>
+        <b>注</b>
+        <p>统计学模型中的线性并非数学严格意义上的线性，其表征的是输入x与权重w间的线性关系。</p>
+
+        <p>一种单层神经网络</p>
+        $$\hat y = w_1x_1 + \cdots + w_dx_d + b$$
+        设
+        $$\mathbf{w} = \left [\begin{matrix}w_1\\\vdots\\w_d\end{matrix}\right ]$$
+        $$\mathbf{x} = \left [\begin{matrix}x_1\\\vdots\\x_d\end{matrix}\right ]$$
+        $$\therefore \hat y = \mathbf{w}^T\mathbf{x} + b$$
+        <ul>
+            <li>\(\hat y\)：预测值</li>
+            <li lang="en">\(w\)：weight</li>
+            <li lang="en">\(b\)：bias</li>
+        </ul>
+
+        设
+        $$\hat{\mathbf{y}} = \left [\begin{matrix}y_1\\\vdots\\y_n\end{matrix}\right ]$$
+        $$\mathbf{w} = \left [\begin{matrix}w_1\\\vdots\\w_d\end{matrix}\right ]$$
+        $$\mathbf{x} = \left [\begin{matrix}x_1\\\vdots\\x_d\end{matrix}\right ]$$
+
+        <b lang="en">Loss Function</b>
+        <p>用于量化目标实际值与预测值之间的差距</p>
+
+        <b><span lang="en">Linear Regression Model</span>的神经网络表示</b>
+
+
+        <h2 lang="en">Classification</h2>
+        <b>作用</b>
+        <p>预测类别</p>
+
+
+    </body>
+
+</html>

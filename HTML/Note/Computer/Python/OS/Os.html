@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pandas</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+
+<body>
+    <div class="header"><h1>不惑</h1></div>
+    <ul class="navibar">
+        <li><a href="../Home.html">主页</a></li>
+        <li><a href="../Navigation.html">导航</a></li>
+    </ul>
+
+    <h1 lang="en">os</h1>
+    
+
+    <b>连接路径</b>
+    <pre class="Code"><code class="Py">
+        path = os.path.join(path1, path2)
+    </code></pre>
+
+
+    <b>判断路径是否存在</b>
+    <pre class="Code"><code class="Py">
+        os.path.isdir(path) -> bool
+    </code></pre>
+
+    <b>获取指定路径下的全部文件名称</b>
+    <pre calss="Code"><code class="Py">
+        os.listdir(path)
+    </code></pre>
+
+    
+    <b>结束程序</b>
+    <pre class="Code"><code>
+        os._exit(0)
+    </code></pre>
+    
+    <hr>
+    <h2>文件夹操作</h2>
+    <b>创建文件夹</b>
+    <pre class="Code"><code class="Py">
+        os.mkdir(path)
+    </code></pre>
+    
+    <pre class="Code"><code class="Py">
+        os.makedirs(path, exist_ok:bool = False)
+    </code></pre>
+    <p>当<span class="CodeCite">os.makedirs</span>中<span class="CodeCite">exist_ok</span>参数为<span class="CodeCite">True</span>时，不会新建文件夹</p>
+
+
+    <b>递归遍历目录树</b>
+    <pre class="Code"><code class="Py">
+        os.walk(path) -> root, dirs, files
+    </code></pre>
+    <p>其中，<span class="CodeCite">root</span>为当前遍历的文件夹名称；<span class="CodeCite">dirs</span>为当前遍历文件夹下所有的子文件夹名称；<span class="CodeCite">files</span>为当前遍历文件夹下所有文件名称。</p>
+</body>
+
+</html>
