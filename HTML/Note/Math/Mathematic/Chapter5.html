@@ -28,6 +28,11 @@
         <b>几何意义</b>
         <p>函数\(y = f(x)\)在区间\([a,b]\)上与\(x\)轴围成区域的面积。</p>
         <p>在\(x\)轴上方的定积分面积为正值，在\(x\)轴下方的定积分面积为负值，且可线性相加。</p>
+
+        <b>注意：</b>
+        <p>积分的上下限并无大小关系，下限\(a\)可以大于上限\(b\)，当换元的时候也无需交换位置。</p>
+        <p>举例来说，若换元后\(a'=b, b'=a\)，则\(\int_a^b f[\phi(x)]\mathrm{d}x = \int_{b}^{a} f(t)\mathrm{d}t\)</p>
+
         <b>定积分存在的充分条件</b>
         <p>\(f(x)\)在\([a,b]\)上连续\(\Rightarrow \int_a^b f(x)\mathrm{d}x\)存在</p>
         <p>\(f(x)\)在\([a,b]\)上有界，且只有有限个间断点\(\Rightarrow \int_a^b f(x)\mathrm{d}x\)存在</p>
@@ -72,8 +77,8 @@
         <b>沃利斯公式</b>
         $$\int_0^{\frac\pi2}\sin^n x\mathrm{d}x = \int_0^\frac\pi2 \cos^nx \mathrm{d}x =
         \begin{cases}
-        \frac{\pi}{2}\cdot \frac{1}{2}\cdot\frac{3}{4}\cdots\frac{n-3}{n-2}\cdot\frac{n-1}{n}, n为偶数\\
-        \frac{2}{3}\cdot\frac{4}{5}\cdots\frac{n-3}{n-2}\cdot\frac{n-1}{n},~~~~~~n为奇数\\
+        \frac{\pi}{2}\cdot \frac{1}{2}\cdots\frac{n-3}{n-2}\cdot\frac{n-1}{n}, n为偶数\\
+        \frac{2}{3}\cdot\frac{4}{5}\cdots\frac{n-3}{n-2}\cdot\frac{n-1}{n},n为奇数\\
         \end{cases}
         $$
         $$\int_0^\frac\pi2 f(\sin x)\mathrm{d}x = \int_0^\frac\pi2 f(\cos x)\mathrm{d}x$$
@@ -100,5 +105,103 @@
             $$\therefore F(-x)= -F(x)$$
             <p>故\(\int_0^xf(t)\mathrm{d}t\)为奇函数</p>
         </div>
+
+        <b>积分上限函数的导数</b>
+        $$\begin{align}
+        (\int_{a(x)}^{b(x)} f(t)\mathrm{d}t)' &= (F[b(x)] - F[a(x)])'\\
+                                              &= f'[b(x)]b'(x) - f'[a(x)]a'(x)
+        
+        \end{align}$$
+        $$\begin{align}
+        (\int_{a(x)}^{b(x)} f(t)g(x)\mathrm{d}t)' &= (g(x)\int_{a(x)}^{b(x)} f(t)\mathrm{d}t)'\\
+                                                  &= g'(x)\int_{a(x)}^{b(x)} f(t)\mathrm{d}t + g(x)(\int_{a(x)}^{b(x)} f(t)\mathrm{d}t)'
+        \end{align}$$
+        $$\int_{a(x)}^{b(x)}f[g(x,t)]\mathrm{d}t \overset{\text{u=g(x,t)}}{=\!=\!=\!=} \int_{\alpha(u)}^{\beta(u)} f(u)\mathrm{d}u $$
+    
+    
+        <h2>反常积分</h2>
+        <p>设\(f(x)\)为\([a,+\infty)\)上的连续函数，若极限\(\lim\limits_{t\rightarrow +\infty}\int_a^t f(x) \mathrm{d}x\)存在，则称此极限为\(f(x)\)在\([a,+\infty)\)上的反常积分，记作：</p>
+        $$\int_a^{+\infty}f(x)\mathrm{d}x = \lim\limits_{t\rightarrow +\infty}\int_a^t f(x) \mathrm{d}x$$
+
+        <p>设\(f(x)\)为\((-\infty,b]\)上的连续函数，若极限\(\lim\limits_{t\rightarrow -\infty}\int_t^b f(x) \mathrm{d}x\)存在，则称此极限为\(f(x)\)在\((-\infty,b]\)上的反常积分，记作：</p>
+        $$\int_{-\infty}^bf(x)\mathrm{d}x = \lim\limits_{t\rightarrow -\infty}\int_t^b f(x) \mathrm{d}x$$
+
+        <p>设\(f(x)\)在\((-\infty, +\infty)\)上连续，若\(\int_{-\infty}^a f(x)\mathrm{d} x\)与\(\int_a^{+\infty} f(x)\mathrm{d}x\)都存在，则:</p>
+        $$\int_{-\infty}^{+\infty} f(x) \mathrm{d}x = \int_{-\infty}^a f(x) \mathrm{d}x + \int_a^{+\infty} f(x) \mathrm{d}x $$
+
+        <p>若反常积分存在，称其收敛；若反常积分不存在，称其发散。</p>
+
+        <b>比较判别法（积分形式）</b>
+        <p>设\(f(x), g(x)\)在\([a,+\infty)\)上连续，且\(0\leq f(x)\leq g(x)\)：</p>
+        <ul>
+            <li>\(\int_a^{+\infty}g(x)\mathrm{d}x\)收敛\(\Rightarrow \int_a^{+\infty}f(x)\mathrm{d}x\)收敛</li>
+            <li>\(\int_a^{+\infty}f(x)\mathrm{d}x\)发散\(\Rightarrow \int_a^{+\infty}g(x)\mathrm{d}x\)发散</li>
+        </ul>
+
+        <b>比较判别法（极限形式）</b>
+        <p>设\(f(x), g(x)\)在\([a,+\infty)\)上连续，且\(\lim\limits_{x\rightarrow +\infty}\frac{f(x)}{g(x)} = \lambda\)：</p>
+        <ul>
+            <li>\(\lambda \neq 0\)：\(\int_a^{+\infty}f(x)\mathrm{d}x\)与\(\int_a^{+\infty}g(x)\mathrm{d}x\)同敛散</li>
+            <li>\(\lambda = 0\)：\(\int_a^{+\infty}g(x)\mathrm{d}x\)收敛\(\Rightarrow\int_a^{+\infty}f(x)\mathrm{d}x\)收敛</li>
+            <li>\(\lambda = 0\)：\(\int_a^{+\infty}g(x)\mathrm{d}x\)发散\(\Rightarrow\int_a^{+\infty}f(x)\mathrm{d}x\)发散</li>
+        </ul>
+
+        <b>常用结论</b>
+        $$\int_a^{+\infty} \frac{1}{x^p}\mathrm{d}x
+        \begin{cases}
+        收敛, p\gt 1\\
+        发散, p\leq 1
+        \end{cases}$$
+        <div class="prove">
+            $$\int_a^{+\infty} \frac{1}{x^p}\mathrm{d}x = \frac{x^{1-p}}{1-p}\Bigg|_a^{+\infty}$$
+            <p>当\(1-p\lt 0\)，即\(p\gt 1\)时：\(\int_a^{+\infty} \frac{1}{x^p}\mathrm{d}x\)收敛；</p>
+            <p>当\(1-p\geq 0\)，即\(p\leq 1\)时：\(\int_a^{+\infty} \frac{1}{x^p}\mathrm{d}x\)发散。  </p>
+        </div>
+        
+        <h2>无界函数的反常积分</h2>
+        <p>设\(f(x)\)在\((a,b]\)上连续，\(\lim\limits_{x\rightarrow a^+}f(x) = \infty\)，则称\(x=a\)为\(f(x)\)的瑕点。</p>
+        <p>若极限\(\lim\limits_{t\rightarrow a^+}\int_t^b f(x)\mathrm{d}x\)存在，称此极限为\(f(x)\)在\([a,b]\)上的反常积分，记为：</p>
+        $$\int_a^b f(x) \mathrm{d}x = \lim\limits_{t\rightarrow a^+}\int_t^b f(x)\mathrm{d}x$$
+        <p>此时称\(\int_a^b f(x)\mathrm{d}x\)收敛；若上述极限不存在，则称其发散。</p>
+        
+        <hr>
+
+        <p>设\(f(x)\)在\([a,b)\)上连续，\(\lim\limits_{x\rightarrow b^-}f(x) = \infty\)，称\(x=b\)是\(f(x)\)的瑕点。</p>
+        <p>若极限\(\lim\limits_{t\rightarrow b^-}\int_a^t f(x)\mathrm{d}x\)存在，称此极限为\(f(x)\)在\([a,b]\)上的反常积分，记为：</p>
+        $$\int_a^b f(x) \mathrm{d}x = \lim\limits_{t\rightarrow b^-}\int_a^t f(x)\mathrm{d}x$$
+        <p>此时称\(\int_a^b f(x)\mathrm{d}x\)收敛；若上述极限不存在，则称其发散。</p>
+
+        <hr>
+
+        <p>设\(f(x)\)在\([a,b]\)上除点\(C(a\lt C\lt b)\)外连续，\(\lim\limits_{x\rightarrow c}f(x)\mathrm{d}x = \infty\)，称\(c\)为\(f(x)\)的瑕点。</p>
+        <p>若反常积分\(\int_a^c f(x)\mathrm{d}x, \int_c^b f(x)\mathrm{d}x\)均收敛，则反常积分\(\int_a^b f(x)\mathrm{d}x\)也收敛，且\(\int_a^b f(x)\mathrm{d}x = \int_a^c f(x)\mathrm{d}x + \int_c^b f(x)\mathrm{d}x\)</p>
+
+        <b>比较判别法</b>
+        <p>设\(f(x), g(x)\)在\((a,b]\)上连续，且\(0\leq f(x)\leq g(x), x=a\)是\(f(x)\)和\(g(x)\)的瑕点。</p>
+        <ul>
+            <li>\(\int_a^b g(x)\mathrm{d}x\)收敛\(\Rightarrow \int_a^b f(x)\mathrm{d}x\)收敛。</li>
+            <li>\(\int_a^b f(x)\mathrm{d}x\)发散\(\Rightarrow \int_a^b g(x)\mathrm{d}x\)发散。</li>
+        </ul>
+
+        <b>比较判别法（极限形式）</b>
+        <p>设\(f(x), g(x)\)在\((a,b]\)上连续，\(x=a\)是\(f(x)\)和\(g(x)\)的瑕点，且\(\lim\limits_{x\rightarrow a^+}\frac{f(x)}{g(x)} = \lambda\)（有限或无穷）</p>
+        <ul>
+            <li>\(\lambda \neq 0\)时，\(\int_a^b f(x)\mathrm{d}x\)与\(\int_a^b g(x)\mathrm{d}x\)同收敛。</li>
+            <li>\(\lambda = 0\)时，\(\int_a^b g(x)\mathrm{d}x\)收敛\(\Rightarrow\int_a^b g(x)\mathrm{d}x\)收敛。</li>
+        </ul>
+        
+        <b>常用结论</b>
+        $$\int_a^b \frac{1}{(x-a)^p}\mathrm{d}x
+        \begin{cases}
+        p\lt 1,收敛\\
+        p\geq 1,发散
+        \end{cases}
+        $$
+        $$\int_a^b \frac{1}{(b-x)^p}\mathrm{d}x
+        \begin{cases}
+        p\lt 1,收敛\\
+        p\geq 1,发散
+        \end{cases}
+        $$
     </body>
 </html>

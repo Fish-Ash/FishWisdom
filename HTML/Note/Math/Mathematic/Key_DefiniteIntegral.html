@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>定积分</h1>
+        <hr>
+        <h2>牛顿-莱布尼茨公式（简单函数）</h2>
+        <p>对于简单函数\(f(x)\)，直接先用不定积分求\(f(x)\)的原函数\(F(x)\)，再利用牛顿-莱布尼兹公式求解。</p>
+        $$\int_a^b f(x)\mathrm{d}x = F(b) - F(a)$$
+
+        <hr>
+        <h2>函数奇偶性</h2>
+        <p>\(\int_{-a}^af(x)\mathrm{d}x \Rightarrow\)考虑\(f(x)\)的奇偶性：</p>
+        <ul>
+            <li>若\(f(x)\)为奇函数：\(\int_{-a}^a f(x)\mathrm{d}x = 0\)</li>
+            <li>若\(f(x)\)为偶函数：\(\int_{-a}^af(x)\mathrm{d}x = 2\int_0^af(x)\mathrm{d}x\)</li>
+        </ul>
+
+        <hr>
+        <h2>沃利斯公式（三角函数）</h2>
+        <p>当\(f(x)\)中含有\(\sin x\)或\(\cos x\)时，考虑使用沃利斯公式求解。</p>
+        $$\int_0^{\frac\pi2}\sin^n x\mathrm{d}x = \int_0^\frac\pi2 \cos^nx \mathrm{d}x =
+        \begin{cases}
+        \frac{\pi}{2}\cdot \frac{1}{2}\cdots\frac{n-3}{n-2}\cdot\frac{n-1}{n}, n为偶数\\
+        \frac{2}{3}\cdot\frac{4}{5}\cdots\frac{n-3}{n-2}\cdot\frac{n-1}{n},n为奇数\\
+        \end{cases}
+        $$
+        $$\int_0^\frac\pi2 f(\sin x)\mathrm{d}x = \int_0^\frac\pi2 f(\cos x)\mathrm{d}x$$
+        $$\int_0^\pi xf(\sin x)\mathrm{d}x = \frac{\pi}{2}\int_0^\pi f(\sin x)\mathrm{d}x$$
+
+        <hr>
+        <h2>几何意义（根号）</h2>
+        <p>对于\(\int_a^{-a}\sqrt{a^2 - x^2}\mathrm{d}x\)，令\(y = \sqrt{a^2 - x^2}\)，故\(\int_a^{-a}\sqrt{a^2 - x^2}\mathrm{d}x\)为\(x^2 + y^2 = a^2\)的上半圆与\(x\)轴为成的面积，即</p>
+        $$\int_a^{-a}\sqrt{a^2 - x^2}\mathrm{d}x = \frac12 \pi a^2$$
+        <b>推论</b>
+        <p>对于\(\int_a^b\sqrt{A + Bx - x^2}\mathrm{d}x\)，令\(y = \sqrt{A + Bx - x^2}\)，故\(\int_a^{-a}\sqrt{A + Bx - x^2}\mathrm{d}x\)为\((x - x_0)^2 + y^2 = r^2\)的上半圆在\([a,b]\)上与\(x\)轴为成的面积。</p>
+
+        <hr>
+        <h2>已知\(f'(x)\)</h2>
+        $$\int_a^b f(x) \mathrm{d}x = xf(x)|_a^b - \int_a^bxf'(x)\mathrm{d}x$$
+
+    </body>
+</html>

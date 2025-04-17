@@ -2,19 +2,21 @@
 
 <html lang = "zh-cn">
 
-    <head>
-        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>树莓派</title>
-        <link rel="stylesheet" href="../../../CSS/style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>Pandas</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
 
-    <div class="header"><h1>不惑</h1></div>
-    <ul class="navibar">
-        <li><a href="../../Home.html">主页</a></li>
-        <li><a href="../../Navigation.html">导航</a></li>
-    </ul>
+<div class="header"><h1>不惑</h1></div>
+<ul class="navibar">
+    <li><a href="../../Home.html">主页</a></li>
+    <li><a href="../../Navigation.html">导航</a></li>
+</ul>
 
 <body>
     <h1>树莓派使用说明</h1>
@@ -61,40 +63,57 @@
     <p>安装putty，登录树莓派，运行命令sudo apt-get install xrdp</p>
 
 
-        <h2>简单<span lang="en">Liunx</span>命令</h2>
-        <ul>
-            <li><code>cd Desktop/</code>：转到桌面目录</li>
-            <li><code>ls</code>：查看目录</li>
-            <li><code>mkdir floder</code>：创建文件夹</li>
-            <li><code>rm -rf floder</code>：删除文件夹</li>
-            <li><code>touch file</code>：创建文件</li>
-            <li><code>python3 -m venv venvname</code>创建虚拟环境</li>
-            <li><code>source venvname/bin/activate</code></li>
-        </ul>
+    <h2>简单<span lang="en">Liunx</span>命令</h2>
+    <ul>
+        <li><code>cd Desktop/</code>：转到桌面目录</li>
+        <li><code>ls</code>：查看目录</li>
+        <li><code>mkdir floder</code>：创建文件夹</li>
+        <li><code>rm -rf floder</code>：删除文件夹</li>
+        <li><code>touch file</code>：创建文件</li>
+        <li><code>python3 -m venv venvname</code>创建虚拟环境</li>
+        <li><code>source venvname/bin/activate</code></li>
+    </ul>
 
-        <h2>树莓派虚拟环境管理</h2>
-        <code class="python"><pre>
-            sudo apt-get install virtualenv -y
-        </pre></code>
+    <h2>树莓派虚拟环境管理</h2>
+    <code class="python"><pre>
+        sudo apt-get install virtualenv -y
+    </pre></code>
 
 
-        <h2>树莓派设置开机自启动</h2>
-        <p>创建/home/fishpi/.config/autostart文件夹</p>
-        <p>在文件夹下创建xxx.desktop文件</p>
-        <p>写入</p>
-        <pre>
-            <code>
-                [Desktop Entry]
-                Encoding=UTF-8
-                Type=Application
-                Name=Bin
-                Exec=lxterminal -e "source /home/fishpi/Venv/venv_name/bin/activate && python3 /home/fishpi/Desktop/py_name.py;$SHELL"
-                Termal=true
-            </code><br>
-        </pre>
-        并保存
-        <p>输入</p>
+    <h2>树莓派设置开机自启动</h2>
+    <p>创建/home/fishpi/.config/autostart文件夹</p>
+    <p>在文件夹下创建xxx.desktop文件</p>
+    <p>写入</p>
+    <pre><code>
+        [Desktop Entry]
+        Encoding=UTF-8
+        Type=Application
+        Name=Bin
+        Exec=lxterminal -e "source /home/fishpi/Venv/venv_name/bin/activate && python3 /home/fishpi/Desktop/py_name.py;$SHELL"
+        Termal=true
+    </code></pre>
+    并保存
+    <p>输入</p>
+    <pre><code>
         sudo chmod a+r /home/fishpi/.config/autostart/Bin.desktop
+    </code></pre>
+
+    <h2>树莓派开机速度优化</h2>
+    <b>查看开机时间</b>
+    <pre><code>
+        systemed-analyze
+    </code></pre>
+
+    <b>查看各项程序占用时间</b>
+    <pre><code>
+        systemed-analyze blame
+    </code></pre>
+
+    <b>树莓派服务</b>
+    <ul>
+        <li>NetworkManager-wait-online.service：启动等待服务</li>
+    </ul>
+
 </body>
 
 </html>
