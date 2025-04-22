@@ -42,8 +42,6 @@
         \int \frac{1}{x^2 - a^2}\mathrm{d}x &= \int \frac{1}{2a}(\frac{1}{x-a} - \frac{1}{x+a})\mathrm{d}x\\
         &= \frac{1}{2a}\ln|\frac{x-a}{x+a}| + C
         \end{align}$$
-        $$\int \frac{1}{\sqrt{x^2 + a^2}}\mathrm{d}x = \ln(x + \sqrt{x^2 + a^2}) + C$$
-        $$\int \frac{1}{\sqrt{x^2 - a^2}}\mathrm{d}x = \ln|x + \sqrt{x^2 - a^2}| + C$$
         $$\int \sec x\mathrm{d}x = \ln|\sec x + \tan x| + C$$
         $$\begin{align}
         \int \csc x\mathrm{d}x &= -\ln|\csc x + \cot x| + C\\
@@ -86,6 +84,23 @@
                 <td><img src="Img/asect.png" width="150"></td>
             </tr>
         </table>
+
+        $$\int \frac{1}{\sqrt{x^2 + a^2}}\mathrm{d}x = \ln(x + \sqrt{x^2 + a^2}) + C$$
+        <div class="prove">
+            <p>令\(x = a\tan t\)</p>
+            $$\begin{align}
+            &\int \frac{1}{\sqrt{x^2 + a^2}}\mathrm{d}x\\
+            =&\int \frac{1}{\sec t}\cdot a\sec^2 t\mathrm{d}t\\
+            =&a\int \sec t\mathrm{d}t\\
+            =&a\ln|\sec t + \tan t| + C\\
+            =&a\ln|\frac{\sqrt{x^2+a^2}}{a} + \frac{x}{a}| + C\\
+            =&a\ln(\sqrt{x^2+a^2}+x) + C
+            \end{align}$$
+        </div>
+        $$\int \frac{1}{\sqrt{x^2 - a^2}}\mathrm{d}x = \ln|x + \sqrt{x^2 - a^2}| + C$$
+        <div class="prove">
+            <p>令</p>
+        </div>
 
         <h3>分部积分法</h3>
         $$\mathrm{d}(uv) = u\mathrm{d}v + v\mathrm{d}u$$

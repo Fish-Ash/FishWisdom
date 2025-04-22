@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第六章 定积分的应用</h1>
+
+        <h2>平面图形面积</h2>
+        <p>设\(D\)是由\(y=f(x),y=g(x),x=a,x=b(f(x)\geq g(x))\)围成的平面区域：</p>
+        $$S = \int_a^b [f(x) - g(x)]\mathrm{d}x$$
+
+        <p>设\(D\)是由\(r=r_1(\theta), r=r_2(\theta), \theta=\alpha, \theta = \beta(r_1(\theta)\geq r_2(\theta))\)围成的平面区域：</p>
+        $$S = \frac12\int_\alpha^\beta[r_1^2(\theta)-r_2^2(\theta)]\mathrm{d}\theta$$
+
+        <h2>旋转体体积</h2>
+        <p>设\(D\)是由\(y=f(x),y=0,x=a,x=b\)围成的平面区域。</p>
+        <p>\(D\)绕\(x\)轴旋转一周所得旋转体体积：</p>
+        $$V = \pi \int_a^b f^2(x)\mathrm{d}x$$
+        <p>\(D\)绕\(y\)轴旋转一周所得旋转体体积：</p>
+        $$V = 2\pi\int_a^bxf(x)\mathrm{d}x$$
+
+        <h2>曲线弧长</h2>
+        <p>曲线\(C\)：\(y = f(x), a\leq x\leq b\)的弧长：</p>
+        $$L = \int_a^b \sqrt{1+[f'(x)]^2}\mathrm{d}x$$
+        <div class="prove">
+            $$\Delta L = \sqrt{(\Delta x)^2 + (\Delta y)^2} = \sqrt{1 + (\frac{\Delta y}{\Delta x})^2}\Delta x$$
+            $$L = \lim\limits_{n\rightarrow \infty}\sum\limits_{k=1}^n\sqrt{1 + (\frac{\Delta y}{\Delta x})^2}\Delta x$$
+        </div>
+
+        <p>曲线\(C\)：\(\begin{cases}x = x(t)\\y = y(t)\end{cases}, a\leq x\leq b\)的弧长：</p>
+        $$L = \int_a^b \sqrt{[x'(t)]^2 + [y'(t)]}\mathrm{d}t$$
+
+        <p>曲线\(C\)：\(r = r(\theta), \alpha \leq \theta \leq \beta\)的弧长：</p>
+        $$L = \int_\alpha^\beta \sqrt{r^2(\theta) + [r'(\theta)]^2}\mathrm{d}\theta$$
+
+        <h2>旋转体的侧面积</h2>
+        <p>由\(y=f(x)\geq 0, x=a, x=b\)以及\(x\)轴围成的区域绕\(x\)轴旋转所得旋转体的侧面积：</p>
+        $$S = 2\pi\int_a^bf(x)\sqrt{1+[f'(x)]^2}\mathrm{d}x$$
+
+        <h2>物理应用</h2>
+
+        
+    </body>
+</html>
