@@ -176,45 +176,7 @@
 
 
         <hr>
-        <h2>第二节 数列的极限</h2>
-        <b>数列极限</b>
-        <p>设\(\{x_n\}\)为一数列，若存在常数\(a\)，对\(\forall\epsilon\gt 0\)，总\(\exists N \in \mathbb{N}_+\)，使得当\(n>N\)时，\(|x_n - a| \lt \epsilon\)恒成立。</p>
-        <p>则称\(\{x_n\}\)收敛于极限\(a\)，记作\(\mathop{\lim x_n}\limits_{n\rightarrow \infty} = a\)或\(x_n \rightarrow a(n\rightarrow \infty)\)</p>
-
-
-        <p><b>题型1：判断数列\(\{x_n\}\)是否收敛，若收敛求出极限</b></p>
-        注意：
-        <ol>
-            <li>若含\((-1)^n\)项，判断另一个因子是否趋于0</li>
-        </ol>
-
-        <p><b>题型2：证明数列\(\{x_n\}\)的极限为\(a\)</b>
-        <ol>
-            <li>由\(|x_n - a| \lt \epsilon\)推出\(n > f(\epsilon)\)</li>
-            <li>\(\forall\)取一大于\(f(\epsilon)\)的正整数\(N\)，当\(n>N>f(\epsilon)\)时，\(|x_n - a|< \epsilon\)一定成立</li>
-        </ol>
-        技巧：
-        <ol>
-            <li>可以设计一简单的\(g(n) > |x_n - a|\)，此时\(g(n) \lt \epsilon\)是\(|x_n - a| < \epsilon\)的充分条件</li>
-        </ol>
-        </p>
-
-        <b>定理</b>
-        $$\lim\limits_{n\rightarrow \infty} x_n = a \Leftrightarrow \lim\limits_{n\rightarrow \infty} x_{2n} = \lim\limits_{n\rightarrow \infty} x_{2n+1} = a  $$
-
-        <p><b>收敛函数的性质</b>
-        <br><b>一、唯一性</b>
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;若\(\{x_n\}\)收敛，其极限唯一
-        <br><b>二、有界性</b>
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;\(\{x_n\}\)收敛是\(\{x_n\}\)有界的充分不必要条件
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;假命题：有界数列一定收敛\(\Rightarrow\)反例：\(\{(-1)^n\}\)
-        </p>
-
-        <h3>利用单调有界原理求数列极限</h3>
-        <ul>
-            <li>若\(x_n\lt x_{n+1}, x_n \lt M\)，则\(\lim\limits_{n\rightarrow \infty}\)存在。</li>
-            <li>若\(x_n\gt x_{n+1}, x_n \gt M\)，则\(\lim\limits_{n\rightarrow \infty}\)存在。</li>
-        </ul>
+        <h2><a href="1.SequenceLimit.html">第二节 数列的极限</a></h2>
 
         <h2>第三节 函数的极限</h2>
         <b>（一）自变量趋于有限值时函数的极限</b>
@@ -230,17 +192,6 @@
         $$\lim\limits_{x\rightarrow -\infty}f(x) = A \Leftrightarrow \forall \epsilon\gt 0, \exists X \gt 0, 当x\lt -X时，|f(x) - A|\lt \epsilon$$
         $$\lim\limits_{x\rightarrow +\infty}f(x) = A \Leftrightarrow \forall \epsilon\gt 0, \exists X \gt 0, 当x\gt X时，|f(x) - A|\lt \epsilon$$
         $$\lim\limits_{x\rightarrow \infty}f(x) = A \Leftrightarrow \forall \epsilon\gt 0, \exists X \gt 0, 当|x|\gt X时，|f(x) - A|\lt \epsilon \Leftrightarrow \lim\limits_{x\rightarrow -\infty}f(x) = \lim\limits_{x\rightarrow +\infty}f(x) = A$$
-
-
-        <b>\(1^\infty\)型极限</b>
-        $$
-        \begin{cases}
-        \lim \alpha(x) = 0\\
-        \lim \beta(x) = \infty\\
-        \lim \alpha(x)\beta(x) = k
-        \end{cases}\Rightarrow
-        \lim [1 + \alpha(x)]^{\beta(x)} = e^k
-        $$
 
         <b>常用函数的极限</b>
         $$\lim\limits_{x\rightarrow\infty}\sqrt[n]{n} = 1$$
@@ -428,7 +379,7 @@
             <li>第二类间断点：\(\lim\limits_{x\rightarrow x_0^-}f(x)\)与\(\lim\limits_{x\rightarrow x_0^+}f(x)\)至少一个不存在</li>
             <ul>
                 <li>无穷间断点：\(\lim\limits_{x\rightarrow x_0^-}f(x) = \infty\)或\(\lim\limits_{x\rightarrow x_0^+}f(x) = \infty\)</li>
-                <li>振荡间断点：\(\lim\limits_{x\rightarrow x_0}f(x)\)震荡</li>
+                <li>振荡间断点：\(\lim\limits_{x\rightarrow x_0}f(x)\)振荡</li>
             </ul>
         </ul>
         <b>找间断点方法</b>

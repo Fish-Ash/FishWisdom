@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>极限</h1>
+
+        <h2>函数极限</h2>
+
+        <h3>化简</h3>
+        <p>（1）四则运算：</p>
+        $$\lim f(x)g(x) = \lim f(x)\lim g(x)$$
+        $$\lim [f(x) + g(x)] = \lim f(x) + \lim g(x)$$
+        <p>（2）等价无穷小：</p>
+        <img src="./Img/triangle_infinitesimal.png" width="400"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   >
+        $$1 - \cos x = \frac{1}{2}x^2$$
+        $$\ln(1 + x) \sim e^x - 1 \sim x$$   
+        $$x - \ln(1 + x) \sim \frac12 x^2$$
+        $$a^x - 1 \sim x\ln a$$
+        $$(1 + x)^\alpha -1 = \alpha x$$
+
+        <p>（3）洛必达法则</p>
+        <p>\(\frac{0}{0}\)型 \(\frac{\infty}{\infty}\)型</p>        
+        $$\lim\frac{f(x)}{g(x)} = \lim\frac{f'(x)}{g'(x)}$$
+
+        <p>（5）<b>\(1^\infty\)型极限</b></p>
+        $$
+        \begin{cases}
+        \lim \alpha(x) = 0\\
+        \lim \beta(x) = \infty\\
+        \end{cases}\Rightarrow
+        \lim [1 + \alpha(x)]^{\beta(x)} = e^{\lim \alpha(x)\beta(x)}
+        $$
+
+        <p>（6）\(\lim\limits_{x\rightarrow 0}a^{\frac{1}{x}}\)</p>
+        $$\lim\limits_{x\rightarrow 0^+}a^{\frac{1}{x}} = a^{+\infty} = \infty$$
+        $$\lim\limits_{x\rightarrow 0^-}a^{\frac{1}{x}} = (\frac{1}{a})^{+\infty} = 0$$
+
+
+        
+        <b>无穷小量阶的比较</b>
+        <p>\(\alpha(x)\)为\(\beta(x)\)的：</p>
+        <ul>
+            <li>高阶无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = 0\)  \(\alpha(x) = o[\beta(x)]\)</li>
+            <li>低阶无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = \infty\)</li>
+            <li>同阶无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = c\neq 0\)</li>
+            <li>等价无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = 1\)  \(\alpha(x)\sim \beta(x)(x\rightarrow x_0)\)  </li>
+            <li>\(k\)阶无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta^k(x)} = c\neq 0\)</li>
+        </ul>
+
+
+        <h2>数列极限</h2>
+
+        <h3>单调有界原理</h3>
+        <p>1、利用数学归纳法得出有界性。</p>
+        <p>2、证明函数单调性。</p>
+        $$\lim\limits_{n\rightarrow \infty}\sum\limits_{k=1}^nf(\frac{k}{n})\frac{1}{n} = \int_0^1f(x)\mathrm{d}x$$
+
+    </body>
+</html>

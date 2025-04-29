@@ -86,22 +86,48 @@
 
 
         <h2>函数渐近线</h2>
-        <h3>水平渐近线</h3>
-        <ul>
-            <li>\(\lim\limits_{x\rightarrow +\infty}f(x) = a\)，称\(y = a\)为\(y = f(x)\)右侧水平渐近线</li>
-            <li>\(\lim\limits_{x\rightarrow -\infty}f(x) = b\)，称\(y = b\)为\(y = f(x)\)左侧水平渐近线</li>
-            <li>\(\lim\limits_{x\rightarrow \infty}f(x) = c\)，称\(y = c\)为\(y = f(x)\)水平渐近线</li>
-        </ul>
-
-        <h3>铅直渐近线</h3>
-        <p>\(\lim\limits_{x\rightarrow x_0^+}f(x) = \infty\)或\(\lim\limits_{x\rightarrow x_0^-}f(x) = \infty\)，称\(x=x_0\)为\(y = f(x)\)的铅直渐近线。</p>
-
-        <h3>斜渐近线</h3>
-        <ul>
-            <li>\(\lim\limits_{x\rightarrow +\infty}\frac{f(x)}{x} = a, \lim\limits_{x\rightarrow +\infty}[f(x) - ax] = b\)，称\(y = ax + b\)为\(y = f(x)\)右侧斜渐近线。</li>
-            <li>\(\lim\limits_{x\rightarrow -\infty}\frac{f(x)}{x} = a, \lim\limits_{x\rightarrow -\infty}[f(x) - ax] = b\)，称\(y = ax + b\)为\(y = f(x)\)左侧斜渐近线。</li>
-            <li>\(\lim\limits_{x\rightarrow \infty}\frac{f(x)}{x} = a, \lim\limits_{x\rightarrow \infty}[f(x) - ax] = b\)，称\(y = ax + b\)为\(y = f(x)\)斜渐近线。</li>
-        </ul>
+        <table>
+            <tr>
+                <td>类型</td>
+                <td>名称</td>
+                <td>条件</td>
+                <td>渐近线</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><b>水平渐近线</b></td>
+                <td>左侧水平渐近线</td>
+                <td>$$\lim\limits_{x\rightarrow -\infty}f(x) = y_0$$</td>
+                <td rowspan="3">$$y = y_0$$</td>
+            </tr>
+            <tr>
+                <td>右侧水平渐近线</td>
+                <td>$$\lim\limits_{x\rightarrow +\infty}f(x) = y_0$$</td>
+            </tr>
+            <tr>
+                <td>水平渐近线</td>
+                <td>$$\lim\limits_{x\rightarrow \infty}f(x) = y_0$$</td>
+            </tr>
+            <tr>
+                <td><b>铅直渐近线</b></td>
+                <td>铅直渐近线</td>
+                <td>\(\lim\limits_{x\rightarrow x_0^+}f(x) = \infty\)或\(\lim\limits_{x\rightarrow x_0^-}f(x) = \infty\)</td>
+                <td>$$x=x_0$$</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><b>斜渐近线</b></td>
+                <td>左侧斜渐近线</td>
+                <td>$$\lim\limits_{x\rightarrow -\infty}\frac{f(x)}{x} = a, \lim\limits_{x\rightarrow -\infty}[f(x) - ax] = b$$</td>
+                <td rowspan="3">$$y = ax + b$$</td>
+            </tr>
+            <tr>
+                <td>右侧斜渐近线</td>
+                <td>$$\lim\limits_{x\rightarrow +\infty}\frac{f(x)}{x} = a, \lim\limits_{x\rightarrow +\infty}[f(x) - ax] = b$$</td>
+            </tr>
+            <tr>
+                <td>斜渐近线</td>
+                <td>$$\lim\limits_{x\rightarrow \infty}\frac{f(x)}{x} = a, \lim\limits_{x\rightarrow \infty}[f(x) - ax] = b$$</td>
+            </tr>
+        </table>
 
         <h2>曲线弧微分与曲率（曲率半径）</h2>
         <b>弧微分</b>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第八章 多元函数微分学</h1>
+
+        <h2>多元函数的基本概念</h2>
+
+        <h3>二元函数</h3>
+        $$z = f(x,y)$$
+        <ul>
+            <li>自变量：\(x,y\)</li>
+            <li>因变量：\(z\)</li>
+            <li>定义域：\((x,y)\in \mathbb{D}\)</li>
+            <li>值域：\(z \in \mathbb{R}\)</li>
+        </ul>
+        <b>几何意义</b>
+        <p>表示空间中的曲面。</p>
+
+        <b>二元函数的极限</b>
+        <p>设\(z = f(x,y)\)在区域\(D\)上有定义，点\(P_0(x_0, y_0)\in D\)或在区域\(D\)的边界上，对于\(\forall \epsilon\gt 0, \exists \delta \gt 0\)，使得\(P(x,y)\in D\)，且\(0\lt \sqrt{(x-x_0)^2 + (y-y_0)^2}\lt \delta\)时，都有\(|f(x,y) - A|\lt \epsilon\)</p>
+        <p>称\(f(x,y)\)在\((x,y)\rightarrow (x_0, y_0)\)时极限值为\(A\)，记为</p>
+        $$\lim\limits_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=A$$
+
+        <p>[注]二元函数极限路径任意</p>
+        <b>二元函数的性质</b>
+        <ul>
+            <li>有界性</li>
+            <li>保号性</li>
+            <li>有理运算</li>
+            <li>极限与无穷小的关系</li>
+            <li>夹逼性</li>
+        </ul>
+
+        <h2>多元函数连续性</h2>
+        <p>设多元函数\(z = f(x,y)\)在区域\(D\)上有定义，点\(P_0(x_0, y_0) \in D\)，若\(\lim\limits_{(x,y)\rightarrow (x_0, y_0)}f(x,y) = f(x_0,y_0)\)，称\(f(x,y)\)在\(P_0(x_0, y_0)\)处连续。</p>
+        <p>若\(f(x,y)\)在区域\(D\)上每个点\((x,y)\)都连续，称\(z = f(x,y)\)在区域\(D\)上连续。</p>
+
+        <b>多元连续函数的性质</b>
+        <p>多元连续函数的四则运算均为连续函数</p>
+        <p>多元连续函数的复合函数仍为连续函数</p>
+        <p>多元初等函数在其定义域内连续</p>
+        <p>最值定理：有界闭区域\(D\)上的多元连续函数必有最大值和最小值</p>
+
+        <h2>偏导数</h2>
+        <p>设\(z = f(x,y)\)在点\(P_0(x_0,y_0)\)的某邻域内有定义，若</p>
+        $$\lim\limits_{\Delta x \rightarrow 0} \frac{f(x_0 + \Delta x, y_0) - f(x_0, y_0)}{\Delta x} = \lim\limits_{x\rightarrow 0}\frac{f(x, y_0) - f(x_0, y_0)}{x-x_0}$$
+        存在，称其为\(f(x,y)\)在\(P_0(x_0,y_0)\)处关于\(x\)的偏导数，记为\(\frac{\partial f}{\partial x}|_{(x_0, y_0)}\)或\(f'_x(x_0, y_0)\).
+        <p>同理，\(f(x,y)\)在\(P_0(x_0,y_0)\)处关于\(y\)的偏导数记为\(\frac{\partial f}{\partial y}|_{(x_0, y_0)}\)或\(f'_y(x_0, y_0)\).</p>
+
+        <b>二元函数偏导数的几何意义</b>
+        <p>设\(M(x_0, y_0, z_0)\)为曲面\(z = f(x,y)\)上一点，过\(M\)作平面\(y = y_0\)与曲面\(z = f(x,y)\)相交，其交线为平面\(y = y_0\)上的曲线\(z = f(x,y_0)\)，即\(\begin{cases}z = f(x,y_0)\\y = y_0\end{cases}\).</p>
+        <p>则\(f'_x(x_0,y_0)\)表示该曲线在点\(M\)处切线的斜率。</p>
+
+        <b>高阶偏导数</b>
+        <p>若\(z = f(x,y)\)在区域\(D\)内的偏导数\(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\)仍然存在偏导数，则称之为\(f(x,y)\)的二阶偏导数，记为</p>
+        $$f''_{xx} = \frac{\partial^2 f}{\partial x^2} = \frac{\partial}{\partial x}(\frac{\partial f}{\partial x})$$
+        $$f''_{yy} = \frac{\partial^2 f}{\partial y^2} = \frac{\partial}{\partial y}(\frac{\partial f}{\partial y})$$
+        $$f''_{xy} = \frac{\partial^2 f}{\partial x\partial y} = \frac{\partial}{\partial y}(\frac{\partial f}{\partial x})$$
+        $$f''_{yx} = \frac{\partial^2 f}{\partial y\partial x} = \frac{\partial}{\partial x}(\frac{\partial f}{\partial y})$$
+
+        <p>定理：若\(f(x,y)\)的两个二阶混合导数\(\frac{\partial^2 f}{\partial x \partial y}, \frac{\partial^2 f}{\partial y \partial x}\)在区域\(D\)内连续，则\(\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}\)</p>
+
+        <h2>全微分</h2>
+        <p>若二元函数\(z = f(x,y)\)在\(x_0, y_0\)处的全增量</p>
+        $$\Delta z = f(x_0 + \Delta x, y_0 + \Delta y) - f(x_0, y_0)$$
+        可以表示为
+        $$\Delta z = A\Delta x + B\Delta y + o(\rho)$$
+        其中\(A,B\)与\(\Delta x,\Delta y\)无关，\(\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}\)
+        <p>称\(z = f(x,y)\)处可微，而\(A\Delta x + B\Delta y\)称为\(z = f(x,y)\)在\((x_0,y_0)\)处的全微分，记为</p>
+        $$\mathrm{d}z = A\Delta x + B\Delta y$$
+
+        <b>全微分的必要条件</b>
+        <p>若\(z = f(x,y)\)在\((x_0,y_0)\)处可微，则该函数在\((x,y)\)处的偏导数\(\frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}\)必存在，且</p>
+        $$\mathrm{d}z = \frac{\partial z}{\partial x}\mathrm{d}x + \frac{\partial z}{\partial y}\mathrm{d}y$$
+
+        <b>可微的等价条件</b>
+        <p>对于\(z = f(x,y)\)，记</p>
+        $$\Delta f = f(x_0 + \Delta x, y_0 + \Delta y) - f(x_0, y_0)$$
+        $$\mathrm{d}f = f'_x(x_0, y_0)\Delta x + f'_y(x_0, y_0)\Delta y$$
+        $$\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$$
+        <p>若\(\lim\limits_{\rho \rightarrow 0}\frac{\Delta f - \mathrm{d}f}{\rho} = 0\)，则称\(z = f(x,y)\)在\((x_0, y_0)\)处可微.</p>
+
+        <b>可微的充分条件</b>
+        <p>若\(z = f(x,y)\)的偏导数\(\frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}\)在\((x_0, y_0)\)处连续，则\(z = f(x, y)\)在\((x_0, y_0)\)处可微.</p>
+
+        <p>偏导数连续\(\Rightarrow\)可微</p>
+        <p>可微\(\Rightarrow\)连续\(\Rightarrow\)极限存在</p>
+        <p>可微\(\Rightarrow\)偏导数存在</p>
+
+        <p>对比一元函数：可导\(\Leftrightarrow\)可微\(\Rightarrow\)连续\(\Rightarrow\)极限存在</p>
+
+
+    </body>
+</html>
