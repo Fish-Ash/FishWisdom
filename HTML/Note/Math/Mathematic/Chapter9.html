@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第九章 二重积分</h1>
+
+        <h2>二重积分的概念与性质</h2>
+        <b>二重积分</b>
+        <p>设\(z = f(x,y)\)在有界闭区域\(D\)上有定有定义，将区域\(D\)划分为\(n\)个小区域，其中\(\Delta \sigma_i\)表示第\(i\)个小区域的面积。</p>
+        $$\iint\limits_D f(x,y)\mathrm{d}x\mathrm{d}y = \lim\limits_{\lambda\rightarrow 0}\sum\limits_{i=1}^nf(\epsilon_i, \eta_i)\Delta \sigma_i$$
+
+        <b>二重积分几何意义</b>
+        $$\iint\limits_D f(x,y)\mathrm{d}x\mathrm{d}y = 曲顶柱体体积$$
+
+        <b>二重积分的性质</b>
+        <p>（1）若在区域\(D\)上\(f(x,y)\leq g(x,y)\)，则</p>
+        $$\iint\limits_D f(x,y)\mathrm{d}\sigma \leq \iint\limits_D g(x,y)\mathrm{d}\sigma$$
+        <p>（2）</p>
+        $$|\iint\limits_Df(x,y)\mathrm{d}\sigma|\leq \iint\limits_D|f(x,y)|\mathrm{d}\sigma$$
+        <p>积分中值定理</p>
+        $$\iint\limits_D f(x,y)\mathrm{d}\sigma = f(\xi, \eta)\sigma, (\xi, \eta)\in D$$
+
+        <h2>二重积分的计算</h2>
+        <h3>直角坐标系</h3>
+        $$\begin{align}
+        \iint\limits_D f(x,y)\mathrm{d}\sigma &= \int_a^b\mathrm{d}x\int_{\phi_1(x)}^{\phi_2(x)}f(x,y)\mathrm{d}y\\
+                                              &= \int_a^b\mathrm{d}y\int_{\phi_1(y)}^{\phi_2(y)}f(x,y)\mathrm{d}x
+        \end{align}$$
+
+        <h3>极坐标系</h3>
+        $$\iint\limits_D f(x,y)\mathrm{d}\sigma = \int_\alpha^\beta\mathrm{d}\theta\int_{r_1(\theta)}^{r_2{\theta}}f(r\cos\theta, r\sin\theta)r\mathrm{d}r$$        
+
+        <h2>二重积分的对称性</h2>
+        <p>区域\(D\)关于\(x\)轴对称：</p>
+        $$\iint\limits_D f(x,y)\mathrm{d}\sigma = \begin{cases}
+        0, f(x,-y) = -f(x,y)\\
+        2\iint\limits_{D_0}f(x,y)\mathrm{d}\sigma, f(x,-y) = f(x,y)
+        \end{cases}$$
+
+        <p>区域\(D\)关于\(y\)轴对称：</p>
+        $$\iint\limits_D f(x,y)\mathrm{d}\sigma = \begin{cases}
+        0, f(-x,y) = -f(x,y)\\
+        2\iint\limits_{D_0}f(x,y)\mathrm{d}\sigma, f(-x,y) = f(x,y)
+        \end{cases}$$
+
+        <p>区域\(D\)关于\(y = x\)对称：</p>
+        $$\iint\limits_D f(x,y)\mathrm{d}\sigma = \iint\limits_D f(y,x)\mathrm{d}\sigma = \frac12\iint\limits_D [f(x,y) + f(y,x)]\mathrm{d}\sigma$$
+    </body>
+</html>
