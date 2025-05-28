@@ -36,17 +36,15 @@
 
         <b>常用函数不定积分</b>
         $$\int \frac 1x \mathrm{d}x = \ln |x| + C$$
-        $$\int \frac{1}{\sqrt{a^2 - x^2}}\mathrm{d}x = \arcsin\frac{x}{a} + C$$
-        $$\int \frac{1}{a^2 + x^2}\mathrm{d}x = \frac{1}{a}\arctan\frac{x}{a} + C$$
-        $$\begin{align}
-        \int \frac{1}{x^2 - a^2}\mathrm{d}x &= \int \frac{1}{2a}(\frac{1}{x-a} - \frac{1}{x+a})\mathrm{d}x\\
-        &= \frac{1}{2a}\ln|\frac{x-a}{x+a}| + C
-        \end{align}$$
         $$\int \sec x\mathrm{d}x = \ln|\sec x + \tan x| + C$$
         $$\begin{align}
         \int \csc x\mathrm{d}x &= -\ln|\csc x + \cot x| + C\\
-                               &= \ln|\csc x - \cot x| + C
+        &= \ln|\csc x - \cot x| + C
         \end{align}$$
+        $$\int \frac{1}{\sqrt{a^2 - x^2}}\mathrm{d}x = \arcsin\frac{x}{a} + C$$
+        $$\int \frac{1}{a^2 + x^2}\mathrm{d}x = \frac{1}{a}\arctan\frac{x}{a} + C$$
+        $$\int \tan x\mathrm{d}x = -\ln|\cos x| + C$$
+        $$\int \cot x\mathrm{d}x = \ln|\sin x| + C$$
 
         <h2>二、积分法</h2>
 
@@ -84,6 +82,9 @@
                 <td><img src="Img/asect.png" width="150"></td>
             </tr>
         </table>
+
+        $$\begin{align}\int \sqrt{2r x - x^2}\mathrm{d}x &= \int \sqrt{r^2 - (x-r)^2}\mathrm{d}x\\
+        &= \int \end{align}$$
 
         $$\int \frac{1}{\sqrt{x^2 + a^2}}\mathrm{d}x = \ln(x + \sqrt{x^2 + a^2}) + C$$
         <div class="prove">
@@ -167,7 +168,31 @@
             </tr>
         </table>
 
+        <b>不定积分常用结论</b>
+        $$\int \ln x \mathrm{d}x = x\ln x - x + C$$
+        $$\int x\sin x \mathrm{d}x = \sin x - x\cos x + C$$
+        $$\int x\cos x \mathrm{d}x = \cos x + x\sin x + C$$
+        $$\int \cos^2 x \mathrm{d}x = \frac{1}{2}x + \frac{1}{4}\sin 2x + C$$
+        
+        <ul>
+            <li>公式法</li>
+            <li>几何法
+                $$y = \int_0^r \sqrt{2rx - x^2}\mathrm{d}x = \frac{1}{4}\pi r^2$$
+                $$y = \int_0^{2r} \sqrt{2rx - x^2}\mathrm{d}x = \frac{1}{2}\pi r^2$$
+            </li>
+            <li>换元法（分母含根式）
+                <p>令分母为\(t\)，注意换\(\mathrm{d}x = x'(t)\mathrm{d}t\)与上下限.</p>
+            </li>
+            <li>
+                <b>分部积分法</b>
+            </li>
 
+        </ul>
 
+        <ul class="navibar">
+            <li><a href="chapter3.html">上一页</a></li>
+            <li class="catalog"><a href="Mathematic.html">主页</a></li>
+            <li class="next"><a href="chapter5.html">下一页</a></li>
+        </ul>
     </body>
 </html>

@@ -48,19 +48,55 @@
         $$\iint\limits_D f(x,y)\mathrm{d}\sigma = \int_\alpha^\beta\mathrm{d}\theta\int_{r_1(\theta)}^{r_2{\theta}}f(r\cos\theta, r\sin\theta)r\mathrm{d}r$$        
 
         <h2>二重积分的对称性</h2>
-        <p>区域\(D\)关于\(x\)轴对称：</p>
-        $$\iint\limits_D f(x,y)\mathrm{d}\sigma = \begin{cases}
-        0, f(x,-y) = -f(x,y)\\
-        2\iint\limits_{D_0}f(x,y)\mathrm{d}\sigma, f(x,-y) = f(x,y)
-        \end{cases}$$
+        <table>
+            <tr>
+                <td colspan="3">$$\iint\limits_D f(x,y)\mathrm{d}\sigma$$</td>
+            </tr>
+            <tr>
+                <td rowspan="2">\(D\)关于\(x\)轴对称</td>
+                <td>\(f(x,y)\)为\(y\)的奇函数</td>
+                <td>\(0\)</td>
+            </tr>
+            <tr>
+                <td>\(f(x,y)\)为\(y\)的偶函数</td>
+                <td>\(2\iint\limits_{D_0}f(x,y)\mathrm{d}\sigma\)</td>
+            </tr>
+            <tr>
+                <td rowspan="2">\(D\)关于\(y\)轴对称</td>
+                <td>\(f(x,y)\)为\(x\)的奇函数</td>
+                <td>\(0\)</td>
+            </tr>
+            <tr>
+                <td>\(f(x,y)\)为\(x\)的偶函数</td>
+                <td>\(2\iint\limits_{D_0}f(x,y)\mathrm{d}\sigma\)</td>
+            </tr>
+            <tr>
+                <td colspan="2">\(D\)关于\(y = x\)对称</td>
+                <td>\(\frac12\iint\limits_D [f(x,y) + f(y,x)]\mathrm{d}\sigma\)</td>
+            </tr>
+        </table>
+        <p>[注1]：研究\(f(x,y)\)关于某一变量的奇偶性时，将另一变量视为常数.</p>
+        <p>[注2]：\(D_0\)为\(D\)关于坐标轴对称的一半.</p>
 
-        <p>区域\(D\)关于\(y\)轴对称：</p>
-        $$\iint\limits_D f(x,y)\mathrm{d}\sigma = \begin{cases}
-        0, f(-x,y) = -f(x,y)\\
-        2\iint\limits_{D_0}f(x,y)\mathrm{d}\sigma, f(-x,y) = f(x,y)
-        \end{cases}$$
+        <h2>补充说明</h2>
+        <p>二重积分的正负性取决于\(f(x,y)\)在区域\(D\)上的取值。</p>
 
-        <p>区域\(D\)关于\(y = x\)对称：</p>
-        $$\iint\limits_D f(x,y)\mathrm{d}\sigma = \iint\limits_D f(y,x)\mathrm{d}\sigma = \frac12\iint\limits_D [f(x,y) + f(y,x)]\mathrm{d}\sigma$$
+        <hr>
+
+        <b>求重积分通用解法</b>
+        <p>1、画出区域\(D\).</p>
+        <p>2、观察区域\(D\)的对称性，化简二重积分.</p>
+
+        <b>二重积分比较大小</b>
+        <p>在区域\(D\)上，\(f(x,y )\gt g(x, y) \Rightarrow \iint\limits_D f(x, y) \mathrm{d}x \gt \iint\limits_D g(x,y)\mathrm{d}x\)</p>
+        <p>核心思路：</p>
+        <p>1、找出两个积分共有元\(\phi(x,y)\).</p>
+        <p>2、通过\(D\)判断\(\phi(x,y)\)的值域.</p>
+
+        <ul class="navibar">
+            <li><a href="chapter8.html">上一页</a></li>
+            <li class="catalog"><a href="Mathematic.html">主页</a></li>
+            <li class="next"><a href="chapter10.html">下一页</a></li>
+        </ul>
     </body>
 </html>

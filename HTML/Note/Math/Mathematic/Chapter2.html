@@ -73,12 +73,16 @@
         
         
         <h2>第二节 微分</h2>
-        <b>微分的定义</b>        
-        <p>设函数\(y = f(x)\)在点\(x_0\)的某邻域内有定义，\(\Delta x\)是\(x\)在\(x_0\)处的增量，\(x_0 + \Delta x\)在该临域内，若函数增量</p>
-        $$\Delta y = f(x + \Delta x) - f(x_0)$$
-        可表示为
-        $$\Delta y = A\Delta x + o(\Delta x)$$
-        则称函数\(y = f(x)\)在点\(x_0\)处可微，其中\(A\)为常数。
+        <h3>微分的定义</h3>
+        <p>设函数\(y = f(x)\)在点\(x_0\)的某邻域内有定义，\(\Delta x\)是\(x\)在\(x_0\)处的增量，\(x_0 + \Delta x\)在该邻域内。</p>
+        <b>曲线的增量</b>
+        $$\Delta y = f(x_0 + \Delta x) - f(x_0)$$
+        <b>直线\(y = Ax + B\)的增量</b>
+
+        $$\mathrm{d} y = f(x_0 + \Delta x) - f(x_0) = A\Delta x$$
+        若
+        $$\lim\limits_{\Delta x \rightarrow 0}\frac{\Delta y - A\Delta x}{\Delta x} = 0\Leftrightarrow\Delta y = A\Delta x + o(\Delta x)$$
+        则称函数\(y = f(x)\)在点\(x_0\)处可微.
         <p>\(\mathrm{d}y = \mathrm{d}f(x) = A\Delta x\)称为\(y=f(x)\)在\(x_0\)处的微分。</p>
         <p>自变量\(x\)的增量\(\mathrm{d}x = \Delta x\)称为自变量的微分。</p>
         <p>由于\(A = f'(x)\)，故函数\(y = f(x)\)的积分又可写为\(\mathrm{d}y = f'(x)\mathrm{d}x\)</p>
@@ -88,7 +92,13 @@
         <b>微分近似计算</b>
         <p>\(\Delta y = f(x_0 + \Delta x) - f(x) \approx \mathrm{d}y = f'(x_0)\Delta x\) </p>
 
+        <p>[注]\(\mathrm{d}(f(x) + C) = f'(x)\mathrm{d}x\)</p>
 
+        <ul class="navibar">
+            <li><a href="chapter1.html">上一页</a></li>
+            <li class="catalog"><a href="Mathematic.html">主页</a></li>
+            <li class="next"><a href="chapter3.html">下一页</a></li>
+        </ul>        
     </body>
 
 </html>

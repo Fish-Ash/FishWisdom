@@ -81,6 +81,7 @@ ul.pagination li a {
     padding: 0;
     overflow: hidden;
     background-color: #f3f3f3;
+    display: flex;
 }
 
 .navibar li {
@@ -104,8 +105,12 @@ ul.pagination li a {
     background-color: #26bcd5;
 }
 
+.navibar .catalog{
+    margin-inline: auto;
+}
+
 .navibar .next{
-    float:right;
+    margin-left: auto;
 }
 
 /* 页尾 */

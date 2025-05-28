@@ -26,6 +26,7 @@
             <li>若在\((a,b)\)内\(f'(x)\gt 0\)，则\(f(x)\)在\([a,b]\)内单调递增。</li>
             <li>若在\((a,b)\)内\(f'(x)\lt 0\)，则\(f(x)\)在\([a,b]\)内单调递减。</li>
         </ul>
+        <p>[注]有限个\(f'(x) = 0\)的点不影响函数单调性</p>
 
 
         <h2>函数极值</h2>
@@ -84,6 +85,31 @@
         $$f'''(x_0) \neq 0 \Rightarrow (x_0, f(x_0))为f(x)的拐点$$
         $$f'''(x_0) = 0 \nRightarrow (x_0, f(x_0))不为f(x)的拐点$$
 
+        <h2>函数间断点</h2>
+        <b>间断</b>
+        <p>设\(f(x)\)在\(x_0\)某个去心邻域内有定义，但\(f(x)\)在\(x_0\)处不连续，称\(x_0\)为\(f(x)\)的间断点。</p>
+        $$\lim\limits_{x\rightarrow x_0}f(x) \neq f(x_0)$$
+
+        <b>间断点</b>
+        <ul>
+            <li>第一类间断点：\(\lim\limits_{x\rightarrow x_0^-}f(x)\)与\(\lim\limits_{x\rightarrow x_0^+}f(x)\)均存在</li>
+            <ul>
+                <li>可去间断点：\(\lim\limits_{x\rightarrow x_0^-}f(x) = \lim\limits_{x\rightarrow x_0^+}f(x) \neq f(x_0)\)</li>
+                <li>跳跃间断点：\(\lim\limits_{x\rightarrow x_0^-}f(x) \neq \lim\limits_{x\rightarrow x_0^+}f(x)\)</li>
+            </ul>
+            <li>第二类间断点：\(\lim\limits_{x\rightarrow x_0^-}f(x)\)与\(\lim\limits_{x\rightarrow x_0^+}f(x)\)至少一个不存在</li>
+            <ul>
+                <li>无穷间断点：\(\lim\limits_{x\rightarrow x_0^-}f(x) = \infty\)或\(\lim\limits_{x\rightarrow x_0^+}f(x) = \infty\)</li>
+                <li>振荡间断点：\(\lim\limits_{x\rightarrow x_0^-}f(x)\)或\(\lim\limits_{x\rightarrow x_0^+}f(x)\)振荡</li>
+            </ul>
+        </ul>
+        <b>找间断点方法</b>
+        <p>找函数定义域内无意义的点。</p>
+        <ul>
+            <li>\(\frac1x\)：\(x\neq 0\)</li>
+            <li>\(\ln|x|\)：\(x\neq 0\)</li>
+        </ul>
+
 
         <h2>函数渐近线</h2>
         <table>
@@ -133,9 +159,9 @@
         <b>弧微分</b>
         <p>设\(f(x)\)在\((a,b)\)内有连续导数，则称弧微分\(\mathrm{d}s = \sqrt{1 + f'(x)}\mathrm{d}x\)</p>
         <b>曲率</b>
-        $$\rho = \frac{|f''(x)|}{(1 + f'^2(x))^{\frac32}}$$
+        $$\kappa = \frac{|f''(x)|}{[1 + f'^2(x)]^{3/2}}$$
         <b>曲率半径</b>
-        $$R = \frac{1}{\rho} = \frac{(1 + f'^2(x))^{\frac32}}{|f''(x)|}$$
+        $$\rho = \frac{1}{\kappa} = \frac{(1 + f'^2(x))^{\frac32}}{|f''(x)|}$$
 
         <h2>函数零点</h2>
         <p>通过\(f'(x)\)求解出\(f(x)\)在每个区间内的单调性；求解单调区间内两端点对应的函数值，若异号则存在一根。</p>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>傅里叶级数</h1>
+
+        <p>设函数\(f(x)\)为周期为\(2l\)的周期函数，则其展开为傅里叶级数</p>
+        $$f(x)\sim \frac{a_0}{2} + \sum\limits_{n=1}^\infty(a_n\cos \frac{n\pi}{l}x + b_n\sin\frac{n\pi}{l}x)$$
+        $$a_n = \frac{1}{l}\int_{-l}^{l}f(x)\cos\frac{n\pi}{l}x\mathrm{d}x, n=0,1,2,\cdots$$
+        $$b_n = \frac{1}{l}\int_{-l}^lf(x)\sin\frac{n\pi}{l}x\mathrm{d}x, n=1,2,\cdots$$
+
+        <h2>收敛定理（狄利克雷条件）</h2>
+        <p>设\(f(x)\)为周期函数，若其满足：</p>
+        <ul>
+            <li>在一个周期内连续或只有有限个第一类间断点</li>
+            <li>在一个周期内至多只有有限个极值点</li>
+        </ul>
+        <p>则\(f(x)\)的傅里叶级数收敛，且：</p>
+        <ul>
+            <li>\(x_0\)为\(f(x)\)连续点\(\Rightarrow\)级数收敛于\(f(x_0)\)</li>
+            <li>\(x_0\)为\(f(x)\)间断点\(\Rightarrow\)级数收敛于\(\frac{1}{2}[f(x_0^-) + f(x_0^+)]\)</li>
+        </ul>
+ </body>
+</html>

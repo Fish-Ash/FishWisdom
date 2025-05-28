@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>无穷</h1>
+        <h2>无穷小量</h2>
+        <p>若\(\lim\limits_{x\rightarrow x_0}f(x) = 0\)，则称\(f(x)\)为\(x\rightarrow x_0\)时的无穷小量。</p>
+
+        <b>无穷小量阶的比较</b>
+        <p>\(\lim\alpha = 0, \lim\beta = 0, \beta(x)\neq 0\).</p>
+        <p>\(\alpha(x)\)为\(\beta(x)\)的：</p>
+        <ul>
+            <li>高阶无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = 0\)  \(\alpha(x) = o[\beta(x)]\)</li>
+            <li>低阶无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = \infty\)</li>
+            <li>同阶无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = c\neq 0\)</li>
+            <li>等价无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = 1\)  \(\alpha(x)\sim \beta(x)(x\rightarrow x_0)\)  </li>
+            <li>\(k\)阶无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta^k(x)} = c\neq 0\)</li>
+        </ul>
+
+        <b>无穷小的运算</b>
+        $$o(x^m) + o(x^n) = o(x^k), k = \min\{m,n\}$$
+        $$o(x^m)\cdot o(x^n) = o(x^{m+n})$$
+        $$x^m\cdot o(x^n) = o(x^{m+n})$$
+        $$o(kx^n) = k\cdot o(x^n) = o(x^n), k\neq 0$$
+
+        <b>无穷小的性质</b>
+        <p>有限个无穷小的和仍是无穷小</p>
+        <p>有限个无穷小的乘积仍然是无穷小</p>
+        <p>无穷小与有界量的乘积仍然是无穷小</p>
+        <p>等价无穷小具有相同的函数值与导数值</p>
+
+
+        <b>常见等价无穷小</b>
+        $$x - \ln(1 + x) \sim \frac12 x^2$$
+        $$\ln(1 + x) \sim x$$
+        $$e^x - 1 \sim x$$
+        $$a^x - 1 \sim x\ln a$$
+        $$(1 + x)^\alpha -1 = \alpha x$$
+
+        <h2>无穷大量</h2>
+        <p>\(\lim\limits_{x\rightarrow x_0}f(x) = \infty\)，称\(f(x)\)为\(x\rightarrow x_0\)时的无穷大量。</p>
+        $$对于\forall M \gt 0, \exists \delta \gt 0, 使得当0\lt |x - x_0|\lt \delta时，|f(x)|\gt M$$
+        <p>\(\lim\limits_{x\rightarrow \infty}f(x) = \infty\)，称\(f(x)\)为\(x\rightarrow \infty\)时的无穷大量。</p>
+        $$对于\forall M \gt 0, \exists X \gt 0, 使得当|x|\gt X时，|f(x)|\gt M$$
+
+        <b>常见无穷大量的比较</b>
+        <p>令\(\alpha \gt 0, \beta \gt 0, a\gt 1\)</p>
+        函数
+        <p>\(x\rightarrow +\infty\)时：</p>
+        $$\ln^\alpha x \ll x^\beta \ll a^x$$
+        数列
+        <p>\(n\rightarrow \infty\)时：</p>
+        $$\ln^\alpha n\ll n^\beta \ll a^n \ll n! \ll n^n$$
+
+        <b>无穷大量的性质</b>
+        <p>无穷大量包括正无穷与负无穷</p>
+        <p>两个无穷大量的乘积仍为无穷大量</p>
+        <p>无穷大量与有界变量之和仍是无穷大量</p>
+
+        <b>无穷大量与无界变量的关系</b>
+        <p>对于数列\(\{x_n\}\)，无穷大量要求\(n\gt N\)后所有项均满足\(|x_n|\gt M\)，无界变量仅要求存在一项满足\(|x_n|\gt M\)。</p>
+        <p>因此无界变量包含无穷大量。</p>
+
+        <b>无穷大量与无穷小量的关系</b>
+        <p>设\(f(x)\neq 0\)</p>
+        $$\lim f(x) = 0 \Leftrightarrow \lim \frac{1}{f(x)} = \infty$$
+
+        <hr>
+        <b>无穷小量阶的比较</b>
+        <p>\(\lim\alpha = 0, \lim\beta = 0, \beta(x)\neq 0\).</p>
+        <p>\(\alpha(x)\)为\(\beta(x)\)的：</p>
+        <ul>
+            <li>高阶无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = 0\)  \(\alpha(x) = o[\beta(x)]\)</li>
+            <li>低阶无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = \infty\)</li>
+            <li>同阶无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = c\neq 0\)</li>
+            <li>等价无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = 1\)  \(\alpha(x)\sim \beta(x)(x\rightarrow x_0)\)  </li>
+            <li>\(k\)阶无穷小：\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta^k(x)} = c\neq 0\)</li>
+        </ul>
+
+        <b>反常积分中常用的等价无穷小与等价无穷大</b>
+        <table>
+            <tr>
+                <td colspan="3">$$(x^\alpha + x^\beta)^t (\alpha \lt \beta)$$</td>
+            </tr>
+            <tr>
+                <td>等价无穷小</td>
+                <td>$$x^{\alpha t}$$</td>
+                <td>$$\lim\limits_{x\rightarrow 0}(\frac{x^\alpha + x^\beta}{x^\alpha})^t = \lim\limits_{x\rightarrow 0}(1 + \frac{x^\beta}{x^\alpha})^t = 1$$</td>
+            </tr>
+            <tr>
+                <td>等价无穷大</td>
+                <td>$$x^{\beta t}$$</td>
+                <td>$$\lim\limits_{x\rightarrow \infty}(\frac{x^\alpha + x^\beta}{x^\beta})^t = \lim\limits_{x\rightarrow 0}(\frac{x^\alpha}{x^\beta} + 1)^t = 1$$</td>
+            </tr>
+        </table>
+        
+
+
+    </body>
+</html>

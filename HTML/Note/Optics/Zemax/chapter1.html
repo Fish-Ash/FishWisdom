@@ -118,7 +118,7 @@
         <table>
             <tr>
                 <td lang="en">EFFL</td>
-                <td></td>
+                <td>有效焦距</td>
             </tr>
             <tr>
                 <td lang="en">WFNO</td>
@@ -164,10 +164,23 @@
                 <td lang="en">EFLY</td>
                 <td>子午方向焦距</td>
             </tr>
+            <tr>
+                <td colspan="2">计算相关</td>
+            </tr>
+            <tr>
+                <td lang="en">CONS</td>
+                <td>提供一个常数值</td>
+            </tr>
+            <tr>
+                <td lang="en">DIVI</td>
+                <td>控制<span lang="en">Opt1/Opt2</span>的值等于目标值</td>
+            </tr>
         </table>
+        
 
         <h2>一些经验之谈</h2>
         <p>由于红外系统艾里斑较大，很容易设计到衍射极限，直接用波前做优化函数即可。</p>
         <p>想要去掉一块透镜，选择去掉承担光线偏折最小的一块，即光焦度最小、焦距最大的一块。</p>
+        <p>一般控制垂轴色差，轴向色差随之减小</p>
     </body>
 </html>

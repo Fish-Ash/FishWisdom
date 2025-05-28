@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第十一章 向量代数与空间解析几何及多元微分学在几何上的应用</h1>
+
+        <h2>向量及其运算</h2>
+
+        <h3>向量的数量积（点乘）</h3>
+        <b>几何表示</b>
+        $$\mathbf{a}\cdot\mathbf{b} = |\mathbf{a}|\cdot|\mathbf{b}|\cdot\cos\lt\mathbf{a}, \mathbf{b}\gt$$
+        <b>代数表示</b>
+        $$\mathbf{a} = (a_x, a_y, a_z), \mathbf{b} = (b_x, b_y, b_z)$$
+        $$\mathbf{a}\cdot \mathbf{b} = a_xb_x + a_yb_y + a_zb_z$$
+        <b>运算规律</b>
+        <ul>
+            <li>交换律</li>
+            <li>结合律</li>
+        </ul>
+
+        <b>几何应用</b>
+        <p>向量的模：\(|\mathbf{a}| = \sqrt{a^2}\)</p>
+        <p>向量夹角：\(\cos \lt\mathbf{a},\mathbf{b}\gt \frac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}|\cdot|\mathbf{b}|}\)</p>
+        <p>向量垂直：\(\mathbf{a}\cdot \mathbf{b} = 0\)</p>
+
+        <h3>向量积（叉乘）</h3>
+        <b>几何表示</b>
+        $$\mathbf{a} \times \mathbf{b}$$
+        <ul>
+            <li>大小：\(|\mathbf{a}|\cdot|\mathbf{b}|\cdot\sin\lt\mathbf{a}, \mathbf{b}\gt\)</li>
+            <li>方向：垂直于\(\mathbf{a}\)与\(\mathbf{b}\)，满足右手法则.</li>
+        </ul>
+        <b>代数表示</b>
+        $$\mathbf{a} = (a_x, a_y, a_z), \mathbf{b} = (b_x, b_y, b_z)$$
+        $$\mathbf{a}\times \mathbf{b} =\left |\begin{matrix}i & j & k\\a_x & a_y & a_z\\b_x & b_y & b_z\end{matrix}\right |$$
+
+        <b>运算规律</b>
+        <ul>
+            <li>反交换率：\(\mathbf{a}\times\mathbf{b} = -\mathbf{b}\times \mathbf{a}\)</li>
+            <li>分配率</li>
+        </ul>
+
+        <b>几何应用</b>
+        <p>同时垂直于\(\mathbf{a}\)和\(\mathbf{b}\)的向量：\(\mathbf{a}\times\mathbf{b}\)</p>
+        <p>以\(\mathbf{a}\)与\(\mathbf{b}\)为边的平行四边形面积：\(S = |\mathbf{a}\times\mathbf{b}| = |\mathbf{a}|\cdot|\mathbf{b}|\cdot\sin\lt \mathbf{a}, \mathbf{b}\gt\)</p>
+        <p>判断两个向量\(\mathbf{a}\)与\(\mathbf{b}\)平行：\(\mathbf{a}\times\mathbf{b} = 0\)</p>
+
+        <h3>混合积</h3>
+        <b>几何表示</b>
+        $$[a,b,c] = (a\times b)\cdot c$$
+
+        <b>代数表示</b>
+        $$[a,b,c] = \left |\begin{matrix}a_x & a_y & a_z\\b_x & b_y & b_z\\c_x & c_y & c_z\end{matrix}\right |$$
+
+        <b>运算规律</b>
+        <ul>
+            <li>交换变号：\([a,b,c] = -[b,a,c] = -[a,c,b]\)</li>
+        </ul>
+
+        <b>几何应用</b>
+        <p>以\(\mathbf{a}, \mathbf{b}, \mathbf{c}\)为棱的平行六面体的体积：\(V = |[a,b,c]|\)</p>
+        <p>向量\(\mathbf{a}, \mathbf{b}, \mathbf{c}\)共面：\([a,b,c] = 0\)</p>
+
+        <h3>常用结论</h3>
+        $$\mathbf{a}\times \mathbf{a} = 0$$
+        <div class="prove">
+            $$\mathbf{a}\times \mathbf{a} = |a||a|\sin 0 = 0$$
+        </div>
+        $$(\mathbf{a}\times\mathbf{b})\cdot\mathbf{a} = 0$$
+        <div class="prove">
+            $$\mathbf{a}\times\mathbf{b} \perp \mathbf{a} \Rightarrow (\mathbf{a}\times\mathbf{b})\cdot\mathbf{a} = 0$$
+        </div>
+
+        <h2>空间中的直线方程与平面方程</h2>
+        <h3>平面方程</h3>
+        <p>设平面法向量\(\mathbf{n} = (A,B,C)\)，在平面上任取两点\((x,y,z)\)与\((x_0, y_0, z_0)\).故向量\((x-x_0, y-y_0, z-z_0)\)与\(\mathbf{n}\)垂直.</p>
+        <b>点法式</b>
+        $$A(x-x_0) + B(y-y_0) + C(z-z_0) = 0$$
+        <b>一般式</b>
+        $$Ax + By + Cz -(Ax_0 +By_0 + Cz_0) = 0$$
+        <p>令\(Ax_0 + By_0 + Cz_0 = D\)，有</p>
+        $$Ax + By + Cz + D = 0$$
+        <b>截距式</b>
+        <p>设平面与\(x,y,z\)轴的截距分别为\(a,b,c\)</p>
+        $$\frac{x}{a} + \frac{y}{b} + \frac{z}{c} = 1$$
+        
+        <h3>直线方程</h3>
+        <b>一般式（两平面交线）</b>
+        $$\begin{cases}
+        A_1x + B_1y + C_1z + D_1 = 0\\
+        A_2x + B_2y + C_2z + D_2 = 0
+        \end{cases}$$
+
+        <p>设向量\(\mathbf{s} = (l,m,n)\)与直线平行，在直线上任取两点\((x,y,z)\)与\((x_0, y_0, z_0)\)构成向量\((x-x_0, y-y_0, z-z_0)\).</p>
+        <b>对称式</b>
+        $$\frac{x-x_0}{l} = \frac{y - y_0}{m} = \frac{z - z_0}{n} = t$$
+
+        <b>参数式</b>
+        $$\begin{cases}
+        x = x_0 + lt\\
+        y = y_0 + mt\\
+        z = z_0 + nt
+        \end{cases}$$
+        
+        <h3>直线与平面之间的角度</h3>
+        <b>直线与直线间的夹角</b>
+        $$\cos \theta = \frac{\mathbf{s_1}\cdot \mathbf{s_2}}{|\mathbf{s_1}|\cdot|\mathbf{s_2}|}$$
+
+        <b>平面与平面间的夹角</b>
+        $$\cos \theta = \frac{\mathbf{n_1}\cdot \mathbf{n_2}}{|\mathbf{n_1}|\cdot|\mathbf{n_2}|}$$
+
+        <b>直线与平面间的夹角</b>
+        $$\sin \theta = \frac{\mathbf{n}\cdot \mathbf{s}}{|\mathbf{n}|\cdot|\mathbf{s}|}$$
+
+        <b>点到平面的距离</b>
+        <p>点\((x_0, y_0, z_0)\)到平面\(Ax + By + Cz+ D = 0\)的距离</p>
+        $$d = \frac{|Ax_0 + By_0 + Cz_0|}{\sqrt{A^2 + B^2 + C^2}}$$
+
+        <b>点到直线的距离</b>
+        <p>点\((x_0, y_0, z_0)\)到直线\(\frac{x - x_1}{l} = \frac{y - y_1}{m} = \frac{z - z_1}{n}\)的距离</p>
+        $$d = \frac{|(x_1 - x_0, y_1 - y_0, z_1 - z_0)\times(l,m,n)|}{\sqrt{l^2 + m^2 + n^2 }}$$
+        
+ 
+
+        <h2>空间中的二次曲面方程</h2>
+
+        <h2>空间曲线</h2>
+
+    </body>
+</html>

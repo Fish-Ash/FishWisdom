@@ -191,17 +191,37 @@
         </ul>
         
         <b>常用结论</b>
-        $$\int_a^b \frac{1}{(x-a)^p}\mathrm{d}x
+        $$\int_a^{+\infty} \frac{1}{x^p}\mathrm{d}x(a\gt 0)
         \begin{cases}
-        p\lt 1,收敛\\
-        p\geq 1,发散
+        p\gt 1, 收敛\\
+        p\leq 1, 发散
         \end{cases}
         $$
-        $$\int_a^b \frac{1}{(b-x)^p}\mathrm{d}x
+        $$\int_a^b \frac{1}{(x-a)^q}\mathrm{d}x, \int_a^b \frac{1}{(b-x)^q}\mathrm{d}x
         \begin{cases}
-        p\lt 1,收敛\\
-        p\geq 1,发散
+        q\lt 1,收敛\\
+        q\geq 1,发散
         \end{cases}
         $$
+        $$
+        \int_a^{+\infty} \frac{1}{x^\alpha \ln^\beta x}\mathrm{d}x(a\gt 1)
+        \begin{cases}
+        \alpha \gt 1, 收敛\\
+        \alpha \lt 1, 发散\\
+        \alpha = 1\begin{cases}
+        \beta \gt 1, 收敛\\
+        \beta \leq 1, 发散
+        \end{cases}
+        \end{cases}
+        $$
+
+        <h2>反常积分判敛</h2>
+        <p>1、找出瑕点与\(x\rightarrow \infty\)的点。</p>
+
+        <ul class="navibar">
+            <li><a href="chapter4.html">上一页</a></li>
+            <li class="catalog"><a href="Mathematic.html">主页</a></li>
+            <li class="next"><a href="chapter6.html">下一页</a></li>
+        </ul>
     </body>
 </html>
