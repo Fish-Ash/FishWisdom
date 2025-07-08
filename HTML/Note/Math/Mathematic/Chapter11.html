@@ -21,62 +21,143 @@
 
         <h1>第十一章 向量代数与空间解析几何及多元微分学在几何上的应用</h1>
 
-        <h2>向量及其运算</h2>
+        <h2>第一节 向量</h2>
 
-        <h3>向量的数量积（点乘）</h3>
-        <b>几何表示</b>
-        $$\mathbf{a}\cdot\mathbf{b} = |\mathbf{a}|\cdot|\mathbf{b}|\cdot\cos\lt\mathbf{a}, \mathbf{b}\gt$$
-        <b>代数表示</b>
+        <b>向量（矢量）</b>
+        <p>既有大小又有方向的量.</p>
+        $$\mathbf{a} = (x,y,z)$$
+
+        <b>向量的模</b>
+        <p>向量的大小.</p>
+        $$|\mathbf{a}| = \sqrt{x^2 + y^2 + z^2}$$
+
+        <b>单位向量</b>
+        <p>\(|\mathbf{a}| = 1|\)的向量.</p>
+
+        <b>零向量</b>
+        <p>\(|\mathbf{a}| = 1|\)的向量，记作\(\mathbf{0}\).</p>
+        <p>零向量的方向是任意的. </p>
+
+        <b>两向量的夹角</b>
+        <p>向量尾尾相连的夹角.</p>
+
+        <h2>第二节 坐标系</h2>
+        <b>卦限</b>
+        <img src="Img/octant.jpg" width="300j">
+
+        <h2>第三节 向量的运算</h2>
+        <h3>一、向量的加减</h3>
+        $$\mathbf{a}\pm \mathbf{b}$$
+        <img src="Img/vectorpm.png" width="300">
+
+        <h3>二、向量的数乘</h3>
+        <table>
+            <tr><td colspan="2">运算规律</td></tr>
+            <tr>
+                <td>结合律</td>
+                <td>$$\lambda(\mu \mathbf{a}) = \mu(\lambda \mathbf{a}) = (\lambda\mu)\mathbf{a}$$</td>
+            </tr>
+            <tr>
+                <td rowspan="2">分配律</td>
+                <td>$$(\lambda + \mu)\mathbf{a} = \lambda\mathbf{a} + \mu\mathbf{a}$$</td>
+            </tr>
+            <tr>
+                <td>$$\lambda(\mathbf{a} + \mathbf{b}) = \lambda \mathbf{a} + \lambda \mathbf{b}$$</td>
+            </tr>
+        </table>
+
         $$\mathbf{a} = (a_x, a_y, a_z), \mathbf{b} = (b_x, b_y, b_z)$$
-        $$\mathbf{a}\cdot \mathbf{b} = a_xb_x + a_yb_y + a_zb_z$$
-        <b>运算规律</b>
-        <ul>
-            <li>交换律</li>
-            <li>结合律</li>
-        </ul>
+        <table>
+            <tr>
+                <td colspan="2"><b>向量的数量积（点乘）</b></td>
+            </tr>
+            <tr>
+                <td>几何表示</td>
+                <td>$$\mathbf{a}\cdot\mathbf{b} = |\mathbf{a}|\cdot|\mathbf{b}|\cdot\cos\lt\mathbf{a}, \mathbf{b}\gt$$</td>
+            </tr>
+            <tr>
+                <td>代数表示</td>
+                <td>$$\mathbf{a}\cdot \mathbf{b} = a_xb_x + a_yb_y + a_zb_z$$</td>
+            </tr>
+            <tr>
+                <td rowspan="3">运算规律</td>
+                <td>交换律</td>
+            </tr>
+            <tr>
+                <td>结合律</td>
+            </tr>
+            <tr>
+                <td>分配律</td>
+            </tr>
+            <tr>
+                <td rowspan="3">几何应用</td>
+                <td>向量的模：\(|\mathbf{a}| = \sqrt{a^2}\)</td>
+            </tr>
+            <tr>
+                <td>向量夹角：\(\cos \lt\mathbf{a},\mathbf{b}\gt \frac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}|\cdot|\mathbf{b}|}\)</td>
+            </tr>
+            <tr>
+                <td>$$\mathbf{a}\perp\mathbf{b} \Rightarrow \mathbf{a}\cdot \mathbf{b} = 0$$</td>
+            </tr>
+        </table>
+        <br>
 
-        <b>几何应用</b>
-        <p>向量的模：\(|\mathbf{a}| = \sqrt{a^2}\)</p>
-        <p>向量夹角：\(\cos \lt\mathbf{a},\mathbf{b}\gt \frac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}|\cdot|\mathbf{b}|}\)</p>
-        <p>向量垂直：\(\mathbf{a}\cdot \mathbf{b} = 0\)</p>
+        <table>
+            <tr><td colspan="2"><b>向量的向量积（叉乘）</b></td></tr>
+            <tr>
+                <td>几何表示</td>
+                <td>
+                    $$\mathbf{a} \times \mathbf{b}$$
+                    <p>大小：\(|\mathbf{a}|\cdot|\mathbf{b}|\cdot\sin\lt\mathbf{a}, \mathbf{b}\gt\)</p>
+                    <p>方向：垂直于\(\mathbf{a}\)与\(\mathbf{b}\)，满足右手法则.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>代数表示</td>
+                <td>$$\mathbf{a}\times \mathbf{b} =\left |\begin{matrix}i & j & k\\a_x & a_y & a_z\\b_x & b_y & b_z\end{matrix}\right |$$</td>
+            </tr>
+            <tr>
+                <td rowspan="2">运算规律</td>
+                <td>反交换律：\(\mathbf{a}\times\mathbf{b} = -\mathbf{b}\times \mathbf{a}\)</td>
+            </tr>
+            <tr>
+                <td>分配律</td>
+            </tr>
+            <tr>
+                <td rowspan="3">几何应用</td>
+                <td>同时垂直于\(\mathbf{a}\)和\(\mathbf{b}\)的向量：\(\mathbf{a}\times\mathbf{b}\)</td>
+            </tr>
+            <tr>
+                <td>以\(\mathbf{a}\)与\(\mathbf{b}\)为边的平行四边形面积：\(S = |\mathbf{a}\times\mathbf{b}| = |\mathbf{a}|\cdot|\mathbf{b}|\cdot\sin\lt \mathbf{a}, \mathbf{b}\gt\)</td>
+            </tr>
+            <tr>
+                <td>$$\mathbf{a} // \mathbf{b} \Rightarrow \mathbf{a}\times\mathbf{b} = 0$$</td>
+            </tr>
+        </table>
 
-        <h3>向量积（叉乘）</h3>
-        <b>几何表示</b>
-        $$\mathbf{a} \times \mathbf{b}$$
-        <ul>
-            <li>大小：\(|\mathbf{a}|\cdot|\mathbf{b}|\cdot\sin\lt\mathbf{a}, \mathbf{b}\gt\)</li>
-            <li>方向：垂直于\(\mathbf{a}\)与\(\mathbf{b}\)，满足右手法则.</li>
-        </ul>
-        <b>代数表示</b>
-        $$\mathbf{a} = (a_x, a_y, a_z), \mathbf{b} = (b_x, b_y, b_z)$$
-        $$\mathbf{a}\times \mathbf{b} =\left |\begin{matrix}i & j & k\\a_x & a_y & a_z\\b_x & b_y & b_z\end{matrix}\right |$$
-
-        <b>运算规律</b>
-        <ul>
-            <li>反交换率：\(\mathbf{a}\times\mathbf{b} = -\mathbf{b}\times \mathbf{a}\)</li>
-            <li>分配率</li>
-        </ul>
-
-        <b>几何应用</b>
-        <p>同时垂直于\(\mathbf{a}\)和\(\mathbf{b}\)的向量：\(\mathbf{a}\times\mathbf{b}\)</p>
-        <p>以\(\mathbf{a}\)与\(\mathbf{b}\)为边的平行四边形面积：\(S = |\mathbf{a}\times\mathbf{b}| = |\mathbf{a}|\cdot|\mathbf{b}|\cdot\sin\lt \mathbf{a}, \mathbf{b}\gt\)</p>
-        <p>判断两个向量\(\mathbf{a}\)与\(\mathbf{b}\)平行：\(\mathbf{a}\times\mathbf{b} = 0\)</p>
-
-        <h3>混合积</h3>
-        <b>几何表示</b>
-        $$[a,b,c] = (a\times b)\cdot c$$
-
-        <b>代数表示</b>
-        $$[a,b,c] = \left |\begin{matrix}a_x & a_y & a_z\\b_x & b_y & b_z\\c_x & c_y & c_z\end{matrix}\right |$$
-
-        <b>运算规律</b>
-        <ul>
-            <li>交换变号：\([a,b,c] = -[b,a,c] = -[a,c,b]\)</li>
-        </ul>
-
-        <b>几何应用</b>
-        <p>以\(\mathbf{a}, \mathbf{b}, \mathbf{c}\)为棱的平行六面体的体积：\(V = |[a,b,c]|\)</p>
-        <p>向量\(\mathbf{a}, \mathbf{b}, \mathbf{c}\)共面：\([a,b,c] = 0\)</p>
+        <br>
+        <table>
+            <tr><td colspan="2"><b>混合积</b></td></tr>
+            <tr>
+                <td>几何表示</td>
+                <td>$$[a,b,c] = (a\times b)\cdot c$$</td>
+            </tr>
+            <tr>
+                <td>代数表示</td>
+                <td>$$[a,b,c] = \left |\begin{matrix}a_x & a_y & a_z\\b_x & b_y & b_z\\c_x & c_y & c_z\end{matrix}\right |$$</td>
+            </tr>
+            <tr>
+                <td>运算规律</td>
+                <td>交换变号：\([a,b,c] = -[b,a,c] = -[a,c,b]\)</td>
+            </tr>
+            <tr>
+                <td rowspan="2">几何应用</td>
+                <td>以\(\mathbf{a}, \mathbf{b}, \mathbf{c}\)为棱的平行六面体的体积：\(V = |[a,b,c]|\)</td>
+            </tr>
+            <tr>
+                <td>向量\(\mathbf{a}, \mathbf{b}, \mathbf{c}\)共面：\([a,b,c] = 0\)</td>
+            </tr>
+        </table>
 
         <h3>常用结论</h3>
         $$\mathbf{a}\times \mathbf{a} = 0$$
@@ -101,6 +182,30 @@
         <p>设平面与\(x,y,z\)轴的截距分别为\(a,b,c\)</p>
         $$\frac{x}{a} + \frac{y}{b} + \frac{z}{c} = 1$$
         
+        <table>
+            <tr>
+                <td colspan="2">特殊平面</td>
+            </tr>
+            <tr>
+                <td>过<span lang="en">x</span>轴的平面</td>
+                <td>$$By + Cz = 0 \Rightarrow y + tz = 0$$</td>
+            </tr>
+            <tr>
+                <td>过<span lang="en">y</span>轴的平面</td>
+                <td>$$Ax + Cz = 0 \Rightarrow x + tz = 0$$</td>
+            </tr>
+            <tr>
+                <td>过<span lang="en">z</span>轴的平面</td>
+                <td>$$Ax + By = 0 \Rightarrow x + ty = 0$$</td>
+            </tr>
+        </table>
+        <div class="prove">
+            <p>以过<span lang="en">x</span>轴的平面为例：</p>
+            <p>点\((x,0,0), x\in \mathbb{R}\)均位于该平面内，带入一般式\(Ax + By + Cz + D = 0\)得：</p>
+            $$Ax + D = 0 \Rightarrow By + Cz = 0$$
+        </div>
+
+        <hr>
         <h3>直线方程</h3>
         <b>一般式（两平面交线）</b>
         $$\begin{cases}
@@ -108,15 +213,15 @@
         A_2x + B_2y + C_2z + D_2 = 0
         \end{cases}$$
 
-        <p>设向量\(\mathbf{s} = (l,m,n)\)与直线平行，在直线上任取两点\((x,y,z)\)与\((x_0, y_0, z_0)\)构成向量\((x-x_0, y-y_0, z-z_0)\).</p>
+        <p>设方向向量\(\mathbf{s} = (a,b,c)\)与直线平行，在直线上任取两点\((x,y,z)\)与\((x_0, y_0, z_0)\)构成向量\((x-x_0, y-y_0, z-z_0)\).</p>
         <b>对称式</b>
-        $$\frac{x-x_0}{l} = \frac{y - y_0}{m} = \frac{z - z_0}{n} = t$$
+        $$\frac{x-x_0}{a} = \frac{y - y_0}{b} = \frac{z - z_0}{c} = t$$
 
         <b>参数式</b>
         $$\begin{cases}
-        x = x_0 + lt\\
-        y = y_0 + mt\\
-        z = z_0 + nt
+        x = x_0 + at\\
+        y = y_0 + bt\\
+        z = z_0 + ct
         \end{cases}$$
         
         <h3>直线与平面之间的角度</h3>
@@ -139,9 +244,22 @@
         
  
 
-        <h2>空间中的二次曲面方程</h2>
+        <h2>空间中的曲面及曲线方程</h2>
+        <h2>空间中的曲面</h2>
+        <p>隐函数：\(F(x,y,z) = 0\Rightarrow z = z(x,y)\)</p>
+        <p>显函数：\(z = f(x,y)\)</p>
 
-        <h2>空间曲线</h2>
+        <h2>空间中的曲线</h2>
+        <p>一般式：</p>
+        $$\begin{cases}F(x,y,z)=0\\G(x,y,z)=0\end{cases}$$
+        <p>参数式：</p>
+        $$\begin{cases}x=x(t)\\y=y(t)\\z=z(t)\end{cases}$$
 
+        <h3>旋转曲面</h3>
+        <p>设\(L\)为\(yoz\)平面上的一条曲线，其方程为\(\begin{cases}f(y,z)=0\\x=0\end{cases}\)</p>
+        <p>曲线绕\(y\)轴旋转所得的旋转曲面方程为</p>
+        $$f(y, \pm\sqrt{x^2+z^2}) = 0$$
+        <p>曲线绕\(z\)轴旋转所得的旋转曲面方程为</p>
+        $$f(\pm \sqrt{x^2 + y^2}, z) = 0$$
     </body>
 </html>

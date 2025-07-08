@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>线性代数</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>向量</h1>
+        <b>\(n\)维向量</b>
+        <p>由\(n\)个数\(a_1, a_2, \cdots a_n\)组成的有序数组</p>
+        $$(a_1, a_2, \cdots, a_n)~or~ \left(\begin{matrix}a_1\\a_2\\\vdots\\a_n\end{matrix}\right)$$
+        <p>其中第\(i\)个数\(a_i(i=1,2,\cdots,n)\)称为\(n\)维向量的第\(i\)个分量.</p>
+        
+        <table>
+            <tr>
+                <td><b>\(n\)维实向量</b></td>
+                <td>分量全为实数的向量</td>
+            </tr>
+            <tr>
+                <td><b>\(n\)维复向量</b></td>
+                <td>含有复数的向量</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td><b>\(n\)维行向量</b></td>
+                <td>\(1\times n\)矩阵</td>
+            </tr>
+            <tr>
+                <td><b>\(n\)维列向量</b></td>
+                <td>\(n\times1\)矩阵</td>
+            </tr>
+        </table>
+        <p>[注]行（列）向量的转置即为列（行）向量.</p>
+        <p>[注]\(\alpha\)与\(\alpha^T\)常被视为不同向量.</p>
+
+        <b>零向量</b>
+        $$\mathbf{0} = (0,0,\cdots 0)^T$$
+        
+        <b>负向量</b>
+        $$-\alpha = (-a_1, -a_2, \cdots, -a_n)^T$$
+
+        <h2>\(n\)维向量的线性运算</h2>
+        $$\alpha = (a_1, a_2, \cdots, a_n)^T$$
+        $$\beta = (b_1, b_2, \cdots, b_n)^T$$
+
+        <b>向量加法</b>
+        $$\alpha + \beta = (a_1 + b_1, a_2 + b_2, \cdots, a_n + b_n)^T$$
+        <b>运算规律</b>
+        <p>交换律：\(\alpha + \beta = \beta + \alpha\)</p>
+        <p>结合律：\(\alpha + (\beta + \gamma) = (\alpha + \beta) + \gamma\)</p>
+        <p>\(\alpha + \mathbf{0} = \mathbf{0} + \alpha = \alpha\)</p>
+        <p>\(\alpha + (-\alpha) = 0\)</p>
+
+        <b>向量数乘</b>
+        $$k\alpha = (ka_1, ka_2, \cdots, ka_n)^T$$
+        <b>运算规律</b>
+        <p>结合律：\(k(l\alpha) = (kl)\alpha\)</p>
+        <p>分配律：\(k(\alpha + \beta) = k\alpha + k\beta\)</p>
+        <p>分配律：\((k+l)\alpha = k\alpha + l\alpha\)</p>
+
+
+        <h2>向量组的线性组合</h2>
+        <p>给定一组向量\(\alpha_1, \alpha_2, \cdots, \alpha_s\)以及一个向量\(\beta\)，若存在一组数\(\lambda_1, \lambda_2, \cdots, \lambda_s\)，使得</p>
+        $$\beta = \lambda_1\alpha_1 + \lambda_2\alpha_2 + \cdots + \lambda_s\alpha_s$$
+        <p>称\(\beta\)可表示为\(\alpha_1, \alpha_2, \cdots, \alpha_s\)的线性组合.</p>
+        <p>或称\(\beta\)可由向量组\(\alpha_1, \alpha_2, \cdots, \alpha_s\)线性表示.</p>
+        <p>其中，\(\lambda_1, \lambda_2, \cdots, \lambda_s\)称为组合系数.</p>
+        <p>[注]零向量可以表示为任一向量组的线性组合，因为可以取其组合系数均为\(0\).</p>
+
+        <b>定理</b>
+        <p>向量\(\beta\)可由向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性表示\(\Leftrightarrow \mathbf{A} = (\alpha_1, \alpha_2, \cdots, \alpha_n)\)的秩与\(\bar{\mathbf{A}} = (\alpha_1, \alpha_2, \cdots, \alpha_n, \beta)\)的秩相等.</p>
+
+        <p>任一\(n\)维向量\(\alpha = (a_1, a_2, \cdots, a_n)^T\)是\(n\)维向量组\(\epsilon_1 = (1,0,\cdots,0)^T, \epsilon_2 = (0,1,\cdots,0)^T, \cdots, \epsilon_n = (0,0,\cdots, 1)^T\)的线性组合.</p>
+        <div class="prove">
+            $$\alpha = a_1\epsilon_1 + a_2\epsilon_2 + \cdots + a_n\epsilon_n$$
+        </div>
+
+        <p>向量组\(\alpha_1, \alpha_2, \cdots, \alpha_s\)中每个向量\(\alpha_i(i=1,2,\cdots,s)\)可由该向量组线性表示.</p>
+        <div class="prove">
+            $$\alpha_i = 0\alpha_1 + \cdots + 0\alpha_{i-1} + 1\alpha_i + 0\alpha_{i+1} + \cdots + 0\alpha_s$$
+        </div>
+
+        <h3>题型</h3>
+        <b>判断向量\(\beta\)是否为\(\alpha_1, \alpha_2, \cdots, \alpha_n\)的线性组合，若是，写出表达式.</b>
+        <p>对矩阵\(\bar{\mathbf{A}} = (\alpha_1, \cdots, \alpha_n, \beta)\)实施初等行变换，化为行最简形矩阵.</p>
+        <p>若\(R(\mathbf{A}) \neq R(\bar{\mathbf{A}})\)，则向量\(\beta\)不是\(\alpha_1, \alpha_2, \cdots, \alpha_n\)的线性组合.</p>
+        <p>若\(R(\mathbf{A}) = R(\bar{\mathbf{A}})\)，则增广矩阵的解即为系数.</p>
+
+
+        <b>向量组的等价</b>
+        <p>设有\(n\)维向量组</p>
+        $$(Ⅰ):\alpha_1, \alpha_2, \cdots, \alpha_r$$
+        $$(Ⅱ):\beta_1, \beta_2, \cdots, \beta_s$$
+        <p>若向量组\((Ⅰ)\)中的每个向量\(\alpha_i(i=1,2,\cdots, r)\)均可有向量组\((Ⅱ)\)线性表示，即</p>
+        $$
+        \begin{align}
+        &\alpha_1 = p_{11}\beta_1 + p_{21}\beta_2 + \cdots + p_{s1}\beta_s\\
+        &\alpha_2 = p_{12}\beta_1 + p_{22}\beta_2 + \cdots + p_{s2}\beta_s\\
+        &\cdots\cdots\\
+        &\alpha_r = p_{1r}\beta_1 + p_{2r}\beta_2 + \cdots + p_{sr}\beta_s\\
+        \end{align}
+        $$
+        <p>称向量组\((Ⅱ)\)可由向量组\(Ⅰ\)线性表示/</p>
+        <p>矩阵表示为</p>
+        $$
+        (\alpha_1, \alpha_2, \cdots, \alpha_r) = (\beta_1, \beta_2, \cdots, \beta_s)\left(\begin{matrix}p_{11}&p_{12}&\cdots&p_{1r}\\p_{21}&p_{22}&\cdots&p_{2r}\\\vdots&\vdots&&\vdots\\p_{s1}&p_{s2}&\cdots&p_{sr}\end{matrix}\right)
+        $$
+        <p>记</p>
+        $$\mathbf{P} = \left(\begin{matrix}p_{11}&p_{12}&\cdots&p_{1r}\\p_{21}&p_{22}&\cdots&p_{2r}\\\vdots&\vdots&&\vdots\\p_{s1}&p_{s2}&\cdots&p_{sr}\end{matrix}\right)$$
+        则
+        $$(\alpha_1, \alpha_2, \cdots, \alpha_r) = (\beta_1, \beta_2, \cdots, \beta_s)\mathbf{P}$$
+        <p>称\(\mathbf{P}\)为向量组\(\alpha_1, \alpha_2, \cdots, \alpha_r\)关于向量组\(\beta_1, \beta_2, \cdots, \beta_s\)的<b>表示矩阵</b>.</p>
+        <p>若向量组\((Ⅰ)\)可由向量组\((Ⅱ)\)线性表示，且向量组\((Ⅱ)\)也可由向量组\((Ⅱ)\)线性表示，那么称向量组\(Ⅰ\)与向量组\(Ⅱ\)<b>等价</b>.</p>
+
+
+        <h2>向量组的线性相关性</h2>
+
+        <p>设\(\alpha_1, \alpha_2, \cdots, \alpha_s\)为\(s\)个\(m\)维向量，若存在不全为\(0\)的数\(k_1, k_2, \cdots, k_s\)，使得</p>
+        $$k_1\alpha_1 + k_2\alpha_2 + \cdots + k_s\alpha_s = 0$$
+        <p>称向量组\(\alpha_1, \alpha_2, \cdots, \alpha_s\)线性相关.</p>
+        <p>否则，称向量组\(\alpha_1, \alpha_2, \cdots, \alpha_s\)<b>线性无关</b>.</p>
+
+        <b>结论</b>
+        <p>一个向量\(\alpha\)线性相关\(\Leftrightarrow \alpha=0\).</p>
+        <p>两个向量构成的向量组线性相关\(\Leftrightarrow\)其对应分量成比例.</p>
+        <p>含有零向量的向量组必线性相关.</p>
+        <p>由\(n\)个\(n\)维单位向量</p>
+        $$\epsilon_1 = (1,0,\cdots,0)^T, \epsilon_2 = (0,1,\cdots,0)^T, \cdots, \epsilon_n = (0,0,\cdots, 1)^T$$
+        <p>组成的向量组线性无关.</p>
+
+        <p>向量组\(\alpha_1, \alpha_2, \alpha_3\)线性无关\(\Leftrightarrow\)向量组\(\alpha_1 + \alpha_2, \alpha_1 + \alpha_3, \alpha_2 + \alpha_3\)线性无关.</p>
+
+        <h2>向量组线性相关性的判定</h2>
+        <p>对于向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)</p>
+        $$\mathbf{A} = (\alpha_1, \alpha_2, \cdots, \alpha_n)$$
+        <p>\(R(\mathbf{A}) = n\Leftrightarrow\)向量组线性无关</p>
+        <p>\(R(\mathbf{A}) \lt n\Leftrightarrow\)向量组线性相关</p>
+
+        <div class="prove">
+            <p>\(R(\mathbf{A}) = n\)，即以\(\mathbf{A}\)为系数矩阵的齐次方程组仅有零解，即只有\(0\alpha_1 + 0\alpha_2 + \cdots + 0\alpha_n = 0\)成立，向量组线性无关.</p>
+            <p>\(R(\mathbf{A}) lt n\)，即以\(\mathbf{A}\)为系数矩阵的齐次方程组存在非零解，向量组线性相关.</p>
+        </div>
+        
+        <b>推论1</b>
+        <p>\(n\)个\(n\)维列向量</p>
+        $$
+        \begin{align}
+        &\alpha_1 = (a_{11}, a_{21}, \cdots, a_{n1})^T\\
+        &\alpha_2 = (a_{12}, a_{22}, \cdots, a_{n2})^T\\
+        &\cdots\cdots\\
+        &\alpha_n = (a_{1n}, a_{2n}, \cdots, a_{nn})^T
+        \end{align}
+        $$
+        <p>线性相关\(\Leftrightarrow |\mathbf{A}| = |\alpha_1, \alpha_2, \cdots, \alpha_n| = 0\)</p>
+        <p>线性无关\(\Leftrightarrow |\mathbf{A}| = |\alpha_1, \alpha_2, \cdots, \alpha_n| \neq 0\)</p>
+
+        <b>推论2</b>
+        <p>若向量组中向量的个数大于向量的维数，则该向量组必线性相关.</p>
+
+        <b>定理</b>
+        <p>向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性相关\(\Leftrightarrow\)向量组中至少存在一个向量可由其他向量线性表示.</p>
+        <div class="prove">
+            <b>充分性：</b>
+            <p>设\(\alpha_t\)可由其他向量线性表示</p>
+            $$\alpha_t = k_1\alpha_1 + k_2\alpha_2 + \cdots + k_{t-1}\alpha_{t-1} + k_{t+1}\alpha_{t+1} + \cdots k_n\alpha_n$$
+            $$k_1\alpha_1 + k_2\alpha_2 + \cdots + k_{t-1}\alpha_{t-1} + k_{t+1}\alpha_{t+1} + \cdots k_n\alpha_n - \alpha_t = 0$$
+            <p>\(-1\neq 0\)即\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性相关.</p>
+            <b>必要性：</b>
+            <p>\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性相关</p>
+            $$k_1\alpha_1 + k_2\alpha_2 + \cdots + k_{t-1}\alpha_{t-1} + k_t\alpha_t + k_{t+1}\alpha_{t+1} + \cdots k_n\alpha_n = 0$$
+            <p>设\(k_t \neq 0\)</p>
+            $$\alpha_t = -\frac{k_1}{k_t}\alpha_1 -\frac{k_2}{k_t}\alpha_2 - \cdots - \frac{k_{t-1}}{k_t}\alpha_{t-1} - \frac{k_{t+1}}{k_t}\alpha_{t+1} - \cdots -\frac{k_n}{k_t}\alpha_n $$
+            <p>即\(\alpha_t\)可由其他向量线性表示.</p>
+        </div>
+
+        <b>定理</b>
+        <p>向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性无关而\(\alpha_1, \alpha_2, \cdots, \alpha_n, \beta\)线性相关\(\Leftrightarrow\beta\)可由\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性表示，且表达式唯一</p>
+
+        <b>定理</b>
+        <p>一个向量组中的某个子向量组线性相关\(\Rightarrow\)该向量组线性相关.</p>
+
+
+        <b>定理</b>
+        <p>\(r\)维向量组</p>
+        $$
+        \begin{align}
+        &\alpha_1 = (a_{11}, a_{12}, \cdots, a_{1r})^T\\
+        &\alpha_2 = (a_{12}, a_{22}, \cdots, a_{2r})^T\\
+        &\cdots\cdots\\
+        &\alpha_n = (a_{1n}, a_{2n}, \cdots, a_{nr})^T
+        \end{align}
+        $$
+        中每个向量添加\(m-r\)个分量得到
+        $$
+        \begin{align}
+        &\beta_1 = (a_{11}, a_{12}, \cdots, a_{1r}, a_{1,r+1}, \cdots, a_{1m})^T\\
+        &\beta_2 = (a_{12}, a_{22}, \cdots, a_{2r}, a_{2,r+1}, \cdots, a_{2m})^T\\
+        &\cdots\cdots\\
+        &\beta_n = (a_{1n}, a_{2n}, \cdots, a_{nr}, a_{n,r+1}, \cdots, a_{nm})^T
+        \end{align}        
+        $$
+        <p>\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性无关\(\Leftrightarrow \beta_1, \beta_2, \cdots, \beta_n\)线性无关.</p>
+        <p>\(\beta_1, \beta_2, \cdots, \beta_n\)线性相关\(\Leftrightarrow \alpha_1, \alpha_2, \cdots, \alpha_n\)线性相关.</p>
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </body>
+
+</html>

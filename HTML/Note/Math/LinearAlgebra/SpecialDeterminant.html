@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>线性代数</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>特殊行列式</h1>
+        <h2>主对角型行列式</h2>
+        $$
+            D = \left |\begin{matrix}a_{11} & 0 & \cdots & 0\\0 & a_{22} & \cdots & 0\\ \vdots & \vdots & &\vdots\\0 & 0 & \cdots & a_{nn}\end{matrix}\right |
+              = \left |\begin{matrix}a_{11} & a_{12} & \cdots & a_{1n}\\0 & a_{22} & \cdots & a_{2n}\\ \vdots & \vdots & &\vdots\\0 & 0 & \cdots & a_{nn}\end{matrix}\right |
+              = \left |\begin{matrix}a_{11} & 0 & \cdots & 0\\a_{21} & a_{22} & \cdots & 0\\ \vdots & \vdots & &\vdots\\a_{n1} & a_{n2}& \cdots & a_{nn}\end{matrix}\right |
+              = a_{11}a_{22}\cdots a_{nn}
+        $$
+
+        <h2>副对角型行列式</h2>
+        $$
+            D = \left |\begin{matrix} 0&\cdots&0&a_{1n} \\ 0&\cdots&a_{2,n-1}&0 \\ \vdots&&\vdots&\vdots\\a_{n1}&\cdots&0&0\end{matrix}\right |
+              = \left |\begin{matrix} a_{11}&\cdots&a_{1,n-1}&a_{1n} \\ a_{21}&\cdots&a_{2,n-1}&0 \\ \vdots&&\vdots&\vdots\\a_{n1}&\cdots&0&0\end{matrix}\right |
+              = \left |\begin{matrix} 0&\cdots&0&a_{1n} \\ 0&\cdots&a_{2,n-1}&a_{2n} \\ \vdots&&\vdots&\vdots\\a_{nn}&\cdots&a_{n,n-1}&a_{n1}\end{matrix}\right |
+              = (-1)^{\frac{n(n-1)}{2}}a_{1n}a_{2,n-1}\cdots a_{n1}
+        $$
+        <div class="prove">
+            <p>逆序数法</p>
+            <p>非零项仅有\(a_{1n}a_{2,n-1},\cdots,a_{n1}\)</p>
+            <p>逆序数\(\tau[n(n-1)\cdots1] = \frac{(1+n-1)(n-1)}{2} = \frac{n(n-1)}{2}\)</p>
+            <p>故\(D = (-1)^{\frac{n(n-1)}{2}}a_{1n}a_{2,n-1}\cdots a_{n1}\)</p>
+        </div>
+
+
+
+        $$\left | \begin{matrix} \mathbf{A} & \mathbf{O} \\ \mathbf{*}&\mathbf{B}\end{matrix} \right | = \left | \begin{matrix} \mathbf{A} & \mathbf{*} \\ \mathbf{O}&\mathbf{B}\end{matrix} \right | = |\mathbf{A}||\mathbf{B}|$$
+        $$\left | \begin{matrix} \mathbf{O} & \mathbf{A} \\ \mathbf{B}&\mathbf{*}\end{matrix} \right | = \left | \begin{matrix} \mathbf{*} & \mathbf{A} \\ \mathbf{B}&\mathbf{O}\end{matrix} \right | = (-1)^{mn}|\mathbf{A}||\mathbf{B}|$$
+        
+        $$\left | \begin{matrix}a&b&b&\cdots&b \\ b&a&b&\cdots&b \\ \vdots&\vdots&\vdots&&\vdots \\ b&b&b&\cdots&a \end{matrix}\right | = [a+(n-1)b](a-b)^{n-1}$$
+        <div class="prove">
+        $$\begin{align}
+        \left | \begin{matrix}a&b&b&\cdots&b \\ b&a&b&\cdots&b \\ \vdots&\vdots&\vdots&&\vdots \\ b&b&b&\cdots&a \end{matrix}\right | &= \left | \begin{matrix}a+(n-1)b&b&b&\cdots&b \\ a+(n-1)b&a&b&\cdots&b \\ \vdots&\vdots&\vdots&&\vdots \\ a+(n-1)b&b&b&\cdots&a \end{matrix}\right |\\
+        &= [a+(n-1)b]\left | \begin{matrix}1&b&b&\cdots&b \\ 1&a&b&\cdots&b \\ \vdots&\vdots&\vdots&&\vdots \\ 1&b&b&\cdots&a \end{matrix}\right |\\
+        &= [a + (n-1)b]\left | \begin{matrix}1&b&b&\cdots&b \\ 0&a-b&0&\cdots&0 \\ \vdots&\vdots&\vdots&&\vdots \\ 0&0&0&\cdots&a-b \end{matrix}\right |\\
+        &= [a+(n-1)b](a-b)^{n-1}
+        \end{align}$$
+        </div>
+
+        <b>范德蒙德行列式</b>
+        $$\left | \begin{matrix}1&1&1&\cdots&1 \\ x_1&x_2&x_3&\cdots&x_n \\ x_1^2&x_2^2&x_3^2&\cdots&x_n^2 \\ \vdots&\vdots&\vdots&&\vdots \\x_1^{n-1}&x_2^{n-1}&x_3^{n-1}&\cdots&x_n^{n-1}\end{matrix}\right | = \prod\limits_{1\leq j\lt i\leq n}(x_i - x_j)$$
+        
+    </body>
+
+</html>

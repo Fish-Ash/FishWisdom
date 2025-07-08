@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>机械原理</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>齿轮的绘制</h1>
+
+        <h2>必需参数</h2>
+        <p>模数：m</p>
+        <p>齿数：z</p>
+        <p>半齿宽：s = "m"*pi/4</p>
+        <p>齿根圆角半径：r = "m"*0.38</p>
+
+        <h2>步骤</h2>
+        <p>1、打开方程式，输入"m"、"z"、"a" = 20、"rb" = "m"*"z"*cos("a")/2</p>
+
+        <p>2、绘制样条曲线-方程式驱动的曲线，选择参数性，参数如下：</p>
+        <p>Xt = "rb"*cos(t)+"rb"*t*sin(t)</p>
+        <p>Yt = "rb"*sin(t)-"rb"*t*cos(t)</p>
+        <p>t1 = 0</p>
+        <p>t2 = pi/4</p>
+
+        <p>3、将样条曲线转换为实体</p>
+
+        <p>4、绘制四个圆，其直径分别为："m"*"z"、"m"*"z"*cos("a")、"m"*("z"-2.5)、"m"*("z"+2)</p>
+
+    </body>
+
+</html>

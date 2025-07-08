@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>应用光学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第一章 光学测量基础</h1>
+        <h2>第二节 目视光学仪器的对准误差和调焦误差</h2>
+        <b>对准（横向对准）</b>
+        <p>在垂直于瞄准轴方向上，使目标和比较标记重合或置中的过程.</p>
+        <b>调焦（纵向对准）</b>
+        <p>目标和比较标记沿瞄准轴方向重合或置中的过程.</p>
+
+
+        <table>
+            <tr>
+                <td colspan="6"><b>人眼的对准误差\(\delta\)</b></td>
+            </tr>
+            <tr>
+                <td>压线对准</td>
+                <td>游标对准</td>
+                <td>夹线对准</td>
+                <td>叉丝对准</td>
+                <td>狭缝夹线对准</td>
+                <td>狭缝叉丝对准</td>
+            </tr>
+            <tr>
+                <td>$$60''$$</td>
+                <td>$$15''$$</td>
+                <td>$$10''$$</td>
+                <td>$$10''$$</td>
+                <td>$$10''$$</td>
+                <td>$$10''$$</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td rowspan="2"></td>
+                <td rowspan="2">对准误差</td>
+                <td colspan="2">调焦误差</td>
+            </tr>
+            <tr>
+                <td>清晰度法</td>
+                <td>消视差法</td>
+            </tr>
+            <tr>
+                <td><a href="../AppliedOptics/TypicalOpticalSystem.html#TeleSystem">望远系统</a></td>
+                <td>$$\gamma = \frac{\delta}{\Gamma}(')$$</td>
+                <td>$$\frac{1}{\sqrt3}(\frac{0.29\alpha_e}{\Gamma D} + \frac{4\lambda}{3D^2})(m^{-1})$$</td>
+                <td>$$\sigma = \frac{1}{\sqrt3}\frac{0.58\delta}{\Gamma^2(D' - D_e/2)}(m^{-1})$$</td>
+            </tr>
+            <tr>
+                <td><a href="../AppliedOptics/TypicalOpticalSystem.html#MicroSystem">显微系统</a></td>
+                <td>$$\Delta y = \frac{0.073}{\Gamma_M}\delta(mm)$$</td>
+                <td>$$\sigma = \frac{1}{\sqrt3}(\frac{0.073n\alpha_e}{2\Gamma NA} + \frac{n\lambda}{3NA^2})(mm)$$</td>
+                <td>$$\sigma = \frac{1}{\sqrt3}(\frac{0.073n\delta}{\Gamma NA}\frac{D'}{D'-D_e/2})(mm)$$</td>
+            </tr>
+        </table>
+        <p>[注]\(n\)通常取\(1\)</p>
+        <p>[注]求显微系统对准误差时，\(\delta\)的单位为分（\('\)）.</p>
+
+        <b>光电对准装置</b>
+        <ul>
+            <li>光电望远镜</li>
+            <li>光电显微镜</li>
+        </ul>
+
+
+        <h2>第三节 光学测量仪器的基本部件</h2>
+
+        <h3>平行光管的调校</h3>
+        <b>可调前置镜法</b>
+        <p>调校标准不确定度计算：</p>
+        <p>清晰度法</p>
+        $$\sigma_{TP_1} = \frac{1}{\sqrt3}(\frac{0.29\alpha_e}{\Gamma_T D} + \frac{4\lambda}{3D^2})$$
+        <p>消视差法</p>
+        $$\sigma_{TP_1} = \frac{1}{\sqrt3}\frac{0.58\delta}{\Gamma_T^2(D' - D_e/2)}$$
+        
+        <b>自准直法</b>
+        <p>清晰度法</p>
+        $$\sigma_{TP_1} = \frac{1}{2\sqrt3}(\frac{0.29\alpha_e}{\Gamma D_{有效}}+ \frac{4\lambda}{3D_{有效}^2})$$
+        
+        <p>消视差法</p>
+        $$\sigma_{TP} = \frac{1}{2\sqrt3}[\frac{0.58\delta}{\Gamma^2(D'-D_e/2)}]$$
+
+
+        <p>平面反射镜面形偏差（系统误差）</p>
+        $$SD_0 = \frac{4N\lambda}{D_0^2}$$
+
+        <b>五棱镜法</b>
+        $$\sigma_{TP} = \frac{1}{\sqrt3}\frac{0.29\delta}{\Gamma(D - D_p)}$$
+
+        <p>[注]消视差法需满足条件\(D' \gt D_e/2\)，否则不可使用.</p>
+        <p>[注]单位均为\(m^{-1}\)</p>
+
+        <b>参数表</b>
+        <table>
+            <tr>
+                <td colspan="7">通用</td>
+            </tr>
+            <tr>
+                <td>人眼极限分辨角</td>
+                <td>人眼瞳孔直径</td>
+                <td>人眼对准误差</td>
+                <td>入射光波长</td>
+                <td>平行光管物镜口径</td>
+                <td>系统出瞳直径</td>
+                <td>有效通光口径</td>
+            </tr>
+            <tr>
+                <td>$$\alpha_e = 2'$$</td>
+                <td>$$D_e = 2mm$$</td>
+                <td>$$\delta(')$$</td>
+                <td>$$\lambda(\mu m)$$</td>
+                <td>$$D$$</td>
+                <td>$$D' = D/\Gamma$$</td>
+                <td>$$D_{有效} = \Gamma\min\{D',D_e\}$$</td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <td>前置镜法</td>
+                <td colspan="3">自准直法</td>
+            </tr>
+            <tr>
+                <td>前置镜放大倍率</td>
+                <td>光圈数</td>
+                <td>平面反射镜口径</td>
+                <td>自准直目镜放大倍率</td>
+            </tr>
+            <tr>
+                <td>$$\Gamma_T = f_o/f_e \gt 1$$</td>
+                <td>$$N$$</td>
+                <td>$$D_0$$</td>
+                <td>$$\Gamma = f'/f_m'$$</td>
+            </tr>
+        </table>
+
+        <b>自准直目镜</b>
+        <p>带<b>分划板</b>和<b>分划板照明装置</b>的目镜.</p>
+
+        <table>
+            <tr>
+                <td colspan="4">三种自准直目镜比较</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>高斯式自准直目镜</td>
+                <td>阿贝式自准直目镜</td>
+                <td>双分划板式自准直目镜</td>
+            </tr>
+            <tr>
+                <td>反射像亮度</td>
+                <td>暗</td>
+                <td>亮</td>
+                <td>暗</td>
+            </tr>
+            <tr>
+                <td>反射像衬度</td>
+                <td>差</td>
+                <td>好</td>
+                <td>好</td>
+            </tr>
+            <tr>
+                <td>视放大率</td>
+                <td>小</td>
+                <td>大</td>
+                <td>大</td>
+            </tr>
+            <tr>
+                <td>视场</td>
+                <td>大</td>
+                <td>小</td>
+                <td>大</td>
+            </tr>
+            <tr>
+                <td>失调</td>
+                <td>无</td>
+                <td>无</td>
+                <td>有</td>
+            </tr>
+        </table>
+
+
+        <ul class="navibar">
+            <li class="next"><a href="Chapter2.html">下一页</a></li>
+        </ul>
+    </body>
+
+</html>

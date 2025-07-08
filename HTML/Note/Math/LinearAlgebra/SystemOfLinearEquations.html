@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>线性代数</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>线性方程组</h1>
+        <b>含\(m\)个方程，\(n\)个未知量的\(n\)元线性方程组</b>
+        $$
+        \begin{cases}
+        a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1\\
+        a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_n\\
+        \cdots\cdots\\
+        a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n = b_m
+        \end{cases}
+        $$
+
+        <p>记</p>
+        <table>
+            <tr>
+                <td>方程组的系数矩阵</td>
+                <td>$$\mathbf{A} = \left(\begin{matrix}a_{11}&a_{12}&\cdots&a_{1n} \\ a_{21}&a_{22}&\cdots&a_{2n} \\ \vdots&\vdots&&\vdots \\ a_{m1}&a_{m2}&\cdots&a_{mn}\end{matrix}\right)$$</td>
+            </tr>
+            <tr>
+                <td>方程组的\(n\)元未知量矩阵</td>
+                <td>$$\mathbf{x} = \left(\begin{matrix}x_1\\x_2\\\vdots\\x_n\end{matrix}\right)$$</td>
+            </tr>
+            <tr>
+                <td>方程组的常数项矩阵</td>
+                <td>$$\mathbf{b} = \left(\begin{matrix}b_1\\b_2\\\vdots\\b_n\end{matrix}\right)$$</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>方程组的矩阵形式</td>
+            </tr>
+            <tr>
+                <td><b>非齐次线性方程组</b></td>
+                <td>$$\mathbf{b} \neq \mathbf{O}$$</td>
+                <td>$$\mathbf{A}\mathbf{x} = \mathbf{b}$$</td>
+            </tr>
+            <tr>
+                <td><b>齐次线性方程组</b></td>
+                <td>$$\mathbf{b} = \mathbf{O}$$</td>
+                <td>$$\mathbf{A}\mathbf{x} = \mathbf{O}$$</td>
+            </tr>
+        </table>
+        <b>方程组的增广矩阵</b>
+        $$\bar{\mathbf{A}} = (\mathbf{A}, \mathbf{b}) = \left(\begin{matrix}a_{11}&a_{12}&\cdots&a_{1n}&b_1 \\ a_{21}&a_{22}&\cdots&a_{2n}&b_2 \\ \vdots&\vdots&&\vdots&\vdots \\ a_{m1}&a_{m2}&\cdots&a_{mn}&b_n\end{matrix}\right)$$
+        <p>[注]线性方程组唯一地由增广矩阵\(\bar{\mathbf{A}}\)确定，反之增广矩阵\(\bar{\mathbf{A}}\)也完全刻画了线性方程组.</p>
+        <p>[注]\(R(\bar{\mathbf{A}}) = R(\mathbf{A})\)或\(R(\bar{\mathbf{A}}) = R(\mathbf{A})+1\)</p>
+
+        <b>方程组的解</b>
+        <p>若\(x_1 = c_1, x_2 = c_2, \cdots, x_n = c_n\)可使方程组中的\(m\)个等式均成立，则称有序数组\((c_1, c_2, \cdots, c_n)\)为方程组的一个解.</p>
+        <p>方程组的所有解称为<b>方程组解的集合</b>.</p>
+        <p>若两个方程组解的集合相同，称这两个方程组<b>同解</b>.</p>
+
+
+        <b>线性方程组解的判定定理</b>
+        <p>\(R(\mathbf{A}) \lt R(\mathbf{\bar{\mathbf{A}}})\Leftrightarrow\)无解.</p>
+        <p>\(R(\mathbf{A}) = R(\mathbf{\bar{\mathbf{A}}}) = n \Leftrightarrow\)有唯一解.</p>
+        <p>\(R(\mathbf{A}) = R(\mathbf{\bar{\mathbf{A}}}) = r \lt n \Leftrightarrow\)有无穷多解.</p>
+
+
+        <b>求解线性方程组的步骤</b>
+        <p>对于线性方程组\(\mathbf{A}\mathbf{x} = \mathbf{b}\)，写出增广矩阵\(\bar{\mathbf{A}} = (\mathbf{A}, \mathbf{b})\)，并将其化为行阶梯形矩阵，从\(\bar{\mathbf{A}}\)的行阶梯形矩阵中确定\(R(\mathbf{A})\)和\(R(\bar{\mathbf{A}})\).</p>
+        <p>若\(R(\mathbf{A})\lt R(\bar{\mathbf{A}})\)，则方程组无解.</p>
+        <p>若\(R(\mathbf{A}) = R(\bar{\mathbf{A}}) = r\)，则进一步将增广矩阵化为行最简形矩阵（与原方程组同解）.</p>
+        <p>当\(r = n\)时，直接写出方程组的唯一解.</p>
+        <p>当\(r \lt n\)时，依据行最简形矩阵写出原方程组的同解方程组，将\(r\)个非零首元对应的未知量作为保留未知量，将剩下\(n - r\)个未知量作为自由未知量，即可得到方程组的全部解.</p>
+        
+
+
+        <h2>齐次线性方程组</h2>
+        <b>齐次线性方程组解的判定定理</b>
+        <p>\(R(\mathbf{A}) = n \Leftrightarrow\)仅有零解.</p>
+        <p>\(R(\mathbf{A}) \lt n \Leftrightarrow\)有无穷多解.</p>
+
+        <div class="prove">
+            <p>由于齐次方程组的增广矩阵最后一列均为\(0\)，故在任何情况下都有\(R(\mathbf{A}) = R(\bar{\mathbf{A}})\)，即齐次线性方程组恒有解，因为其至少有零解.</p>
+        </div>
+        
+        <b>推论</b>
+        <p>若\(n\)元齐次线性方程组的方程个数\(m\)小于未知数个数\(n\)，则其必有非零解.</p>
+        <div class="prove">
+            $$R(\mathbf{A}) \leq m \lt n$$
+        </div>
+        <p>含\(n\)个方程\(n\)个未知数的齐次线性方程组有非零解\(\Leftrightarrow |\mathbf{A}| = 0\)</p>
+    </body>
+
+</html>

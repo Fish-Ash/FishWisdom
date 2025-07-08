@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>题型</h1>
+
+        <h2>求\(\mathbf{A}^n\)</h2>
+        <h3>题目条件：\(\mathbf{A} = \mathbf{\alpha}\mathbf{\beta}\)</h3>
+        <p>思路：\(\mathbf{A}^n = (\mathbf{\alpha}\mathbf{\beta})^n = \mathbf{\alpha}(\mathbf{\beta}\mathbf{\alpha})^{n-1}\mathbf{\beta}\)</p>
+        <h3>题目条件：\(\left(\begin{matrix}\mathbf{X_1}\\&\mathbf{X_2}\\&&\ddots\\&&&\mathbf{X}_t\end{matrix}\right)\)</h3>
+        <p>思路：\(\mathbf{A}^n = \left(\begin{matrix}\mathbf{X_1}^n\\&\mathbf{X_2}^n\\&&\ddots\\&&&\mathbf{X}_t^n\end{matrix}\right)\)</p>
+
+
+        <b>已知矩阵方程\(f(\mathbf{A})\)，求\(g(\mathbf{A})\)的逆矩阵</b>
+        <p>思路：将\(f(\mathbf{A})\)化为\(g(\mathbf{A})\phi(\mathbf{A}) = \mathbf{E}\)的形式，\(\phi(\mathbf{A}) = g^{-1}(\mathbf{A})\)</p>
+        <p>要点：\(\mathbf{A} = \mathbf{A}\mathbf{E}\)</p>
+
+
+        <h2>已知\(R\)，求未知数\(k\)</h2>
+        <p>思路：通过基本行/列变换，化简矩阵，发现有\(t\)行/列无法依靠不含参数列继续化简.</p>
+        <p>此时参数的值影响这些列能否被化简为0.</p>
+
+
+    </body>
+
+</html>
