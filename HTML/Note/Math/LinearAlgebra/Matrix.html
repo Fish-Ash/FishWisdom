@@ -26,6 +26,11 @@
         $$\left (\begin{matrix}a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots && \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn}\end{matrix} \right )$$
         <p>其中\(a_{ij}\)称为矩阵第\(i\)行第\(j\)列的元素.</p>
 
+        <b>矩阵的表示方法</b>
+        $$\mathbf{A}$$
+        $$\mathbf{A}_{m\times n}$$
+        $$\mathbf{A} = (a_{ij})_{m\times n}$$
+
         <table>
             <tr>
                 <td colspan="3">特殊形式的矩阵</td>
@@ -164,6 +169,10 @@
         <h3>分块对角矩阵求逆</h3>
         <p>\(\mathbf{A}\)可逆\(\Leftrightarrow |\mathbf{A}_i|\neq 0(i=1,2,\cdots,t)\)</p>
         $$\mathbf{A}^{-1} = \left(\begin{matrix}\mathbf{A}_1^{-1} \\ &\mathbf{A}_2^{-1} \\ &&\ddots \\ &&&\mathbf{A}_t^{-1}\end{matrix}\right)$$
+
+        <b>结论</b>
+        <p>\(\alpha_i\)为列向量.</p>
+        $$(\lambda_{11}\alpha_1 + \lambda_{21}\alpha_2+\cdots+\lambda_{n1}\alpha_n, \lambda_{12}\alpha_1 + \lambda_{22}\alpha_2+\cdots+\lambda_{n2}\alpha_n, \cdots, \lambda_{1m}\alpha_1 + \lambda_{2m}\alpha_2+\cdots+\lambda_{nm}\alpha_n) = (\alpha_1, \alpha_2, \cdots, \alpha_n)\left(\begin{matrix}\lambda_{11}&\lambda_{12}&\cdots&\lambda_{1m}\\\lambda_{21}&\lambda_{22}&\cdots&\lambda_{2m}\\\vdots&\vdots&&\vdots\\\lambda_{n1}&\lambda_{n2}&\cdots&\lambda_{nm}\end{matrix}\right)$$
 
         <h2>矩阵的秩</h2>
         <b>矩阵\(\mathbf{A}\)的\(k\)阶子式</b>

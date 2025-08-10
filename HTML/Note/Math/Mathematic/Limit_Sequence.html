@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>数列极限</h1>
+        <div class="Card-Definition">
+            <b>数列的收敛与发散</b>
+            <p>对于数列\(\{x_n\}\)：</p>
+            <p>若\(\exists a \in \mathbb{R}\)，对于\(\forall\epsilon\gt 0\)，总\(\exists N \in \mathbb{N}_+\)，使得当\(n>N\)时，\(|x_n - a| \lt \epsilon\)恒成立。</p>
+            <p>则称\(a\)为数列\(\{x_n\}\)的极限，或称\(\{x_n\}\)<b>收敛</b>于极限\(a\)，记作\(\mathop{\lim}\limits_{n\rightarrow \infty}x_n = a\)或\(x_n \rightarrow a(n\rightarrow \infty)\)</p>
+        </div>
+        <p>[注]要使\(n \gt \epsilon\)，令\(N = [\epsilon]\)，则当\(n \gt N = [\epsilon]\)时，\(n \geq [\epsilon] + 1\gt \epsilon\)</p>
+        <p>[注]要使\(\frac{1}{kn + c}\lt \epsilon(c\gt 0)\)，当\(\frac{1}{kn} \lt c\)时，\(\frac{1}{kn + c}\lt \frac{1}{kn}\lt c\)</p>
+
+        <p><b>题型1：判断数列\(\{x_n\}\)是否收敛，若收敛求出极限</b></p>
+        注意：
+        <ol>
+            <li>若含\((-1)^n\)项，判断另一个因子是否趋于0</li>
+        </ol>
+
+        <p><b>题型2：证明数列\(\{x_n\}\)的极限为\(a\)</b>
+        <ol>
+            <li>由\(|x_n - a| \lt \epsilon\)推出\(n > f(\epsilon)\)</li>
+            <li>\(\forall\)取一大于\(f(\epsilon)\)的正整数\(N\)，当\(n>N>f(\epsilon)\)时，\(|x_n - a|< \epsilon\)一定成立</li>
+        </ol>
+        技巧：
+        <ol>
+            <li>可以设计一简单的\(g(n) > |x_n - a|\)，此时\(g(n) \lt \epsilon\)是\(|x_n - a| < \epsilon\)的充分条件</li>
+        </ol>
+        </p>
+
+        <b>定理</b>
+        $$\lim\limits_{n\rightarrow \infty} x_n = a \Leftrightarrow \lim\limits_{n\rightarrow \infty} x_{2n} = \lim\limits_{n\rightarrow \infty} x_{2n+1} = a  $$
+
+        <div class="Card-Method">
+            <h2>求数列极限的方法</h2>
+
+            <h3>\(x_{n+1} = f(x_n)\)</h3>
+            
+            <table>
+                <tr>
+                    <td colspan="2"><b>1、利用数学归纳法得出有界性</b></td>
+                </tr>
+                <tr>
+                    <td class="tbtext">
+                        <p>当\(n=1\)时，\(x_1\lt M\).</p>
+                        <p>设\(n=k\)时\(x_1\lt M\)，则\(n=k+1\)时\(x_1\lt M\).</p>
+                        <p>故\(\forall x_n\lt M\).</p>
+                    </td>
+                   <td class="tbtext">
+                        <p>当\(n=1\)时，\(x_1\gt M\).</p>
+                        <p>设\(n=k\)时\(x_1\gt M\)，则\(n=k+1\)时\(x_1\gt M\).</p>
+                        <p>故\(\forall x_n\gt M\).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>2、证明数列单调性</b></td>
+                </tr>
+                <tr>
+                    <td class="tbtext">
+                        <p>\(x_n\)单调递增，\(\lim\limits_{n\rightarrow \infty} x_n\)存在.</p>
+                    </td>
+                                        <td class="tbtext">
+                        <p>\(x_n\)单调递减，\(\lim\limits_{n\rightarrow \infty} x_n\)存在.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+    </body>
+
+</html>

@@ -87,12 +87,12 @@
         <p>向量\(\beta\)可由向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性表示\(\Leftrightarrow \mathbf{A} = (\alpha_1, \alpha_2, \cdots, \alpha_n)\)的秩与\(\bar{\mathbf{A}} = (\alpha_1, \alpha_2, \cdots, \alpha_n, \beta)\)的秩相等.</p>
 
         <p>任一\(n\)维向量\(\alpha = (a_1, a_2, \cdots, a_n)^T\)是\(n\)维向量组\(\epsilon_1 = (1,0,\cdots,0)^T, \epsilon_2 = (0,1,\cdots,0)^T, \cdots, \epsilon_n = (0,0,\cdots, 1)^T\)的线性组合.</p>
-        <div class="prove">
+        <div class="Prove">
             $$\alpha = a_1\epsilon_1 + a_2\epsilon_2 + \cdots + a_n\epsilon_n$$
         </div>
 
         <p>向量组\(\alpha_1, \alpha_2, \cdots, \alpha_s\)中每个向量\(\alpha_i(i=1,2,\cdots,s)\)可由该向量组线性表示.</p>
-        <div class="prove">
+        <div class="Prove">
             $$\alpha_i = 0\alpha_1 + \cdots + 0\alpha_{i-1} + 1\alpha_i + 0\alpha_{i+1} + \cdots + 0\alpha_s$$
         </div>
 
@@ -116,7 +116,7 @@
         &\alpha_r = p_{1r}\beta_1 + p_{2r}\beta_2 + \cdots + p_{sr}\beta_s\\
         \end{align}
         $$
-        <p>称向量组\((Ⅱ)\)可由向量组\(Ⅰ\)线性表示/</p>
+        <p>称向量组\((Ⅱ)\)可由向量组\(Ⅰ\)线性表示</p>
         <p>矩阵表示为</p>
         $$
         (\alpha_1, \alpha_2, \cdots, \alpha_r) = (\beta_1, \beta_2, \cdots, \beta_s)\left(\begin{matrix}p_{11}&p_{12}&\cdots&p_{1r}\\p_{21}&p_{22}&\cdots&p_{2r}\\\vdots&\vdots&&\vdots\\p_{s1}&p_{s2}&\cdots&p_{sr}\end{matrix}\right)
@@ -126,107 +126,164 @@
         则
         $$(\alpha_1, \alpha_2, \cdots, \alpha_r) = (\beta_1, \beta_2, \cdots, \beta_s)\mathbf{P}$$
         <p>称\(\mathbf{P}\)为向量组\(\alpha_1, \alpha_2, \cdots, \alpha_r\)关于向量组\(\beta_1, \beta_2, \cdots, \beta_s\)的<b>表示矩阵</b>.</p>
-        <p>若向量组\((Ⅰ)\)可由向量组\((Ⅱ)\)线性表示，且向量组\((Ⅱ)\)也可由向量组\((Ⅱ)\)线性表示，那么称向量组\(Ⅰ\)与向量组\(Ⅱ\)<b>等价</b>.</p>
+
+        <div class="Card-Definition">
+            <b>等价</b>
+            <p>若向量组Ⅰ可由向量组Ⅱ线性表示，且向量组Ⅱ也可由向量Ⅰ线性表示，那么称向量组Ⅰ与向量组Ⅱ<b>等价</b>.</p>
+        </div>
+
+        <div class="Card-Property">
+            <b>反身性</b>
+            <p>每一个向量组与自身等价.</p>
+        </div>
+
+        <div class="Card-Property">
+            <b>对称性</b>
+            <p>向量组Ⅰ与向量组Ⅱ等价\(\Leftrightarrow\)向量组Ⅱ与向量组Ⅰ等价.</p>
+        </div>
+
+        <div class="Card-Property">
+            <b>传递性</b>
+            <p>向量组Ⅰ与向量组Ⅱ等价，向量组Ⅱ与向量组Ⅲ等价\(\Leftrightarrow\)向量组Ⅰ与向量组Ⅲ等价.</p>
+        </div>
 
 
-        <h2>向量组的线性相关性</h2>
 
-        <p>设\(\alpha_1, \alpha_2, \cdots, \alpha_s\)为\(s\)个\(m\)维向量，若存在不全为\(0\)的数\(k_1, k_2, \cdots, k_s\)，使得</p>
-        $$k_1\alpha_1 + k_2\alpha_2 + \cdots + k_s\alpha_s = 0$$
-        <p>称向量组\(\alpha_1, \alpha_2, \cdots, \alpha_s\)线性相关.</p>
-        <p>否则，称向量组\(\alpha_1, \alpha_2, \cdots, \alpha_s\)<b>线性无关</b>.</p>
 
-        <b>结论</b>
-        <p>一个向量\(\alpha\)线性相关\(\Leftrightarrow \alpha=0\).</p>
-        <p>两个向量构成的向量组线性相关\(\Leftrightarrow\)其对应分量成比例.</p>
-        <p>含有零向量的向量组必线性相关.</p>
-        <p>由\(n\)个\(n\)维单位向量</p>
-        $$\epsilon_1 = (1,0,\cdots,0)^T, \epsilon_2 = (0,1,\cdots,0)^T, \cdots, \epsilon_n = (0,0,\cdots, 1)^T$$
-        <p>组成的向量组线性无关.</p>
+        <h2>向量的内积</h2>
+        <div class="Card-Definition">
+            <b>向量的内积</b>
+            $$\alpha = (x_1, x_2, \cdots, x_n)^T$$
+            $$\beta = (y_1, y_2, \cdots, y_n)^T$$
+            $$(\alpha, \beta) = \alpha^T\beta = x_1y_1 + x_2y_2 + \cdots + x_ny_n$$
+            <p>称\((\alpha, \beta)\)为向量\(\alpha\)与向量\(\beta\)的内积.</p>
+        </div>
 
-        <p>向量组\(\alpha_1, \alpha_2, \alpha_3\)线性无关\(\Leftrightarrow\)向量组\(\alpha_1 + \alpha_2, \alpha_1 + \alpha_3, \alpha_2 + \alpha_3\)线性无关.</p>
+        <div class="Card-Property">
+            $$(\alpha, \beta) = (\beta, \alpha)$$
+            $$(\lambda\alpha, \beta) = \lambda(\alpha, \beta)$$
+            $$(\alpha + \beta, \gamma) = (\alpha, \gamma) + (\beta, \gamma)$$
+            $$\alpha=\mathbf{0}\Rightarrow(\alpha, \alpha) = 0, \alpha\neq \mathbf{0} \Rightarrow (\alpha, \alpha)\gt 0$$
+        </div>
 
-        <h2>向量组线性相关性的判定</h2>
-        <p>对于向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)</p>
-        $$\mathbf{A} = (\alpha_1, \alpha_2, \cdots, \alpha_n)$$
-        <p>\(R(\mathbf{A}) = n\Leftrightarrow\)向量组线性无关</p>
-        <p>\(R(\mathbf{A}) \lt n\Leftrightarrow\)向量组线性相关</p>
+        <b>柯西-施瓦茨不等式</b>
+        $$(\alpha, \beta)^2 \leq (\alpha, \alpha)(\beta, \beta)$$
 
-        <div class="prove">
-            <p>\(R(\mathbf{A}) = n\)，即以\(\mathbf{A}\)为系数矩阵的齐次方程组仅有零解，即只有\(0\alpha_1 + 0\alpha_2 + \cdots + 0\alpha_n = 0\)成立，向量组线性无关.</p>
-            <p>\(R(\mathbf{A}) lt n\)，即以\(\mathbf{A}\)为系数矩阵的齐次方程组存在非零解，向量组线性相关.</p>
+        <h3>向量的长度和夹角</h3>
+        <div class="Card-Definition">
+            <b>向量的长度</b>
+            $$\|\alpha\| = \sqrt{(\alpha, \alpha)} = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}$$
+        </div>
+
+        <div class="Card-Definition">
+            <b>单位向量</b>
+            <p>\(\|\alpha\| = 1\)的向量\(\alpha\).</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>向量标准化（单位化）</b>
+            <p>对于非零向量\(\alpha\)，\(e = \frac{\alpha}{\|a\|}\)为单位向量.</p>
+        </div>
+
+        <div class="Card-Property">
+            $$\|\lambda \alpha\| = |\lambda|\|\alpha\|$$
+        </div>
+
+        <div class="Card-Definition">
+            <b>向量的夹角</b>
+            <p>\(\alpha \neq \mathbf{0}, \beta \neq \mathbf{0}\)时</p>
+            $$\cos \theta = \frac{(\alpha, \beta)}{\|\alpha\|\|\beta\|}(0\leq \theta\leq \pi)$$
+            <p>称\(\theta\)为\(\alpha\)与\(\beta\)的夹角.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>正交</b>
+            <p>\((\alpha,\beta) = 0\)时，称\(\alpha\)与\(\beta\)正交，记作\(\alpha \perp \beta\).</p>
+        </div>
+        <p>[注]对于任意向量\(\alpha\)，总有\((\alpha, \mathbf{0}) = \mathbf{0}\)，故零向量与任何向量都正交.</p>
+
+        <div class="Card-Definition">
+            <b>正交向量组</b>
+            <p>若\(\alpha_1, \alpha_2, \cdots, \alpha_n\)为一个非零向量组，且其中的向量两两正交，则称其为正交向量组.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>正交规范向量组（标准正交向量组）</b>
+            <p>所有向量均为单位向量的正交向量组.</p>
+        </div>
+
+        <b>定理</b>
+        <p>正交向量组线性无关.</p>
+
+        <div class="Card-Definition">
+            <b>特征值与特征向量</b>
+            <p>设\(\mathbf{A}\)为\(n\)阶矩阵，若数\(\lambda\)和\(n\)维非零列向量\(\alpha\)满足</p>
+            $$\mathbf{A}\alpha = \lambda\alpha$$
+            <p>称数\(\lambda\)为方阵\(\mathbf{A}\)的特征值.</p>
+            <p>非零列向量\(\alpha\)为\(\mathbf{A}\)对应于特征值\(\lambda\)的特征向量.</p>
+        </div>
+        <p>上式也可写成</p>
+        $$(\lambda\mathbf{E} - \mathbf{A})\alpha = \mathbf{0}$$
+        <p>这说明\(\alpha\)是齐次线性方程组\((\lambda\mathbf{E} - \mathbf{A})\mathbf{x} = \mathbf{0}\)的非零解.</p>
+        <p>方程组\((\lambda\mathbf{E} - \mathbf{A})\mathbf{x} = \mathbf{0}\)有非零解的充分必要条件为\(|\lambda\mathbf{E} - \mathbf{A}| = 0\)</p>
+        
+        <div class="Card-Definition">
+            <b>矩阵\(\mathbf{A}\)的特征多项式</b>
+            $$f(\lambda) = |\lambda\mathbf{E} = \mathbf{A}|$$
+            
+            <b>矩阵\(\mathbf{A}\)的特征方程</b>
+            $$f(\lambda) = |\lambda\mathbf{E} = \mathbf{A}| = 0$$
         </div>
         
-        <b>推论1</b>
-        <p>\(n\)个\(n\)维列向量</p>
-        $$
-        \begin{align}
-        &\alpha_1 = (a_{11}, a_{21}, \cdots, a_{n1})^T\\
-        &\alpha_2 = (a_{12}, a_{22}, \cdots, a_{n2})^T\\
-        &\cdots\cdots\\
-        &\alpha_n = (a_{1n}, a_{2n}, \cdots, a_{nn})^T
-        \end{align}
-        $$
-        <p>线性相关\(\Leftrightarrow |\mathbf{A}| = |\alpha_1, \alpha_2, \cdots, \alpha_n| = 0\)</p>
-        <p>线性无关\(\Leftrightarrow |\mathbf{A}| = |\alpha_1, \alpha_2, \cdots, \alpha_n| \neq 0\)</p>
+        <div class="Card-Method">
+            <h2>求矩阵特征值与特征向量的方法</h2>
+            <b>特征值</b>
+            $$f(\lambda) = |\lambda \mathbf{E} - \mathbf{A}| = 0 \Rightarrow \lambda_i$$
+            <b>特征向量</b>
+            $$(\lambda_i \mathbf{E} - \mathbf{A})\alpha = 0 \Rightarrow \alpha$$
+        </div>
+        <p>[注]\(\lambda\)需标注（\(k\)重），一重可以省略不写.</p>
+        <p>[注]\(\alpha\)的通解中\(k_i\)不同时为\(0\).</p>
 
-        <b>推论2</b>
-        <p>若向量组中向量的个数大于向量的维数，则该向量组必线性相关.</p>
-
-        <b>定理</b>
-        <p>向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性相关\(\Leftrightarrow\)向量组中至少存在一个向量可由其他向量线性表示.</p>
-        <div class="prove">
-            <b>充分性：</b>
-            <p>设\(\alpha_t\)可由其他向量线性表示</p>
-            $$\alpha_t = k_1\alpha_1 + k_2\alpha_2 + \cdots + k_{t-1}\alpha_{t-1} + k_{t+1}\alpha_{t+1} + \cdots k_n\alpha_n$$
-            $$k_1\alpha_1 + k_2\alpha_2 + \cdots + k_{t-1}\alpha_{t-1} + k_{t+1}\alpha_{t+1} + \cdots k_n\alpha_n - \alpha_t = 0$$
-            <p>\(-1\neq 0\)即\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性相关.</p>
-            <b>必要性：</b>
-            <p>\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性相关</p>
-            $$k_1\alpha_1 + k_2\alpha_2 + \cdots + k_{t-1}\alpha_{t-1} + k_t\alpha_t + k_{t+1}\alpha_{t+1} + \cdots k_n\alpha_n = 0$$
-            <p>设\(k_t \neq 0\)</p>
-            $$\alpha_t = -\frac{k_1}{k_t}\alpha_1 -\frac{k_2}{k_t}\alpha_2 - \cdots - \frac{k_{t-1}}{k_t}\alpha_{t-1} - \frac{k_{t+1}}{k_t}\alpha_{t+1} - \cdots -\frac{k_n}{k_t}\alpha_n $$
-            <p>即\(\alpha_t\)可由其他向量线性表示.</p>
+        <div class="Card-Definition">
+            <b>方阵的迹</b>
+            <p>方阵主对角线上的元素之和</p>
+            $$Tr(\mathbf{A}) = a_{11} + a_{22} + \cdots + a_{nn}$$
         </div>
 
-        <b>定理</b>
-        <p>向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性无关而\(\alpha_1, \alpha_2, \cdots, \alpha_n, \beta\)线性相关\(\Leftrightarrow\beta\)可由\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性表示，且表达式唯一</p>
+        <div class="Card-Property">
+            <b>方阵特征值的性质</b>
+            <p>\(n\)阶方阵\(\mathbf{A}\)的特征值为\(\lambda_1, \lambda_2, \cdots, \lambda_n\)（包含重根）.</p>
+            $$\sum\limits_{i=1}^n\lambda_i = Tr(\mathbf{A})$$
+            $$\lambda_1\lambda_2\cdots\lambda_n = |\mathbf{A}|$$
+        </div>
 
-        <b>定理</b>
-        <p>一个向量组中的某个子向量组线性相关\(\Rightarrow\)该向量组线性相关.</p>
+        <div class="Card-Theorem">
+            <p>\(n\)阶方阵可逆\(\Leftrightarrow \lambda_i\neq 0(i=1,2,\cdots, n )\)</p>
+        </div>
+
+        <div class="Card-Theorem">
+            <p>\(n\)阶方阵\(\mathbf{A}\)与\(\mathbf{A}^T\)具有相同的特征值.</p>
+        </div>
+
+        <div class="Card-Theorem">
+            <p>\(\lambda\)为\(n\)阶方阵\(\mathbf{A}\)的特征值，\(k,m\in \mathbb{N}^+\)，则</p>
+            <p>\(\lambda^k\)为\(\mathbf{A}^k\)的特征值.</p>
+            <p>\(f(\lambda) = a_0\lambda^m + a_1\lambda^{m-1} + \cdots + a_{m-1}\lambda + a_m\)是\(f(\mathbf{A}) = a_0\mathbf{A}^m + a_1\mathbf{A}^{m-1}+\cdots+a_{m-1}\mathbf{A} + a_m\mathbf{E}\)的特征值.</p>
+        </div>
+
+        <div class="Card-Theorem">
+            <p>\(\lambda\)为可逆方阵\(\mathbf{A}\)的特征值，则</p>
+            <p>\(1/\lambda\)为\(\mathbf{A}^{-1}\)的特征值.</p>
+            <p>\(|\mathbf{A}|/\lambda\)为\(\mathbf{A}^*\)的特征值.</p>
+        </div>
+
+        <div class="Card-Theorem">
+            <p>若\(\mathbf{p}_1, \mathbf{p}_2, \cdots, \mathbf{p}_m\)是\(n\)阶方阵\(\mathbf{A}\)属于互不相同特征值\(\lambda_1, \lambda_2, \cdots, \lambda_m\)的特征向量，则\(\mathbf{p}_1, \mathbf{p}_2, \cdots, \mathbf{p}_m\)线性无关.</p>
+        </div>
 
 
-        <b>定理</b>
-        <p>\(r\)维向量组</p>
-        $$
-        \begin{align}
-        &\alpha_1 = (a_{11}, a_{12}, \cdots, a_{1r})^T\\
-        &\alpha_2 = (a_{12}, a_{22}, \cdots, a_{2r})^T\\
-        &\cdots\cdots\\
-        &\alpha_n = (a_{1n}, a_{2n}, \cdots, a_{nr})^T
-        \end{align}
-        $$
-        中每个向量添加\(m-r\)个分量得到
-        $$
-        \begin{align}
-        &\beta_1 = (a_{11}, a_{12}, \cdots, a_{1r}, a_{1,r+1}, \cdots, a_{1m})^T\\
-        &\beta_2 = (a_{12}, a_{22}, \cdots, a_{2r}, a_{2,r+1}, \cdots, a_{2m})^T\\
-        &\cdots\cdots\\
-        &\beta_n = (a_{1n}, a_{2n}, \cdots, a_{nr}, a_{n,r+1}, \cdots, a_{nm})^T
-        \end{align}        
-        $$
-        <p>\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性无关\(\Leftrightarrow \beta_1, \beta_2, \cdots, \beta_n\)线性无关.</p>
-        <p>\(\beta_1, \beta_2, \cdots, \beta_n\)线性相关\(\Leftrightarrow \alpha_1, \alpha_2, \cdots, \alpha_n\)线性相关.</p>
 
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
 
     </body>
-
 </html>

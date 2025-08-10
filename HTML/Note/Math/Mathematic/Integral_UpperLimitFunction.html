@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>积分上限函数</h1>
+        <p>变上限积分\(\int_a^x f(t)\mathrm{d}t\)是上限\(x\)的函数，称为积分上限函数。</p>
+        $$\int_a^x f(t)\mathrm{d}t = F(t)|_a^x = F(x) - F(a)$$
+
+        <b>性质</b>
+        <p>若\(f(x)\)在\([-l,l]\)上连续：</p>
+        <ul>
+            <li>
+                <div class="Formula">
+                    \(f(x)\)为奇函数\(\Rightarrow \int_a^xf(t)\mathrm{d}t\)为偶函数
+                    <div class="Derivation">
+                        <p>若\(f(x)\)为奇函数\(\Rightarrow F(x)\)为偶函数</p>
+                        $$\int_a^xf(t)\mathrm{d}t = F(x) - F(a)$$
+                        $$\therefore F(-x) - F(a) = F(x) - F(a)$$
+                        <p>故\(\int_a^xf(t)\mathrm{d}t\)为偶函数</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="Formula">
+                    \(f(x)\)为偶函数\(\Rightarrow \int_0^xf(t)\mathrm{d}t\)为奇函数
+                    <div class="Derivation">
+                        <p>若\(f(x)\)为偶函数\(\Rightarrow F(x)\)为奇函数</p>
+                        $$\int_0^xf(t)\mathrm{d}t = F(x) - F(0) = F(x)$$
+                        $$\therefore F(-x)= -F(x)$$
+                        <p>故\(\int_0^xf(t)\mathrm{d}t\)为奇函数</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <b>积分上限函数的导数</b>
+        $$\begin{align}
+        (\int_{a(x)}^{b(x)} f(t)\mathrm{d}t)' &= (F[b(x)] - F[a(x)])'\\
+                                              &= f'[b(x)]b'(x) - f'[a(x)]a'(x)
+        
+        \end{align}$$
+        $$\begin{align}
+        (\int_{a(x)}^{b(x)} f(t)g(x)\mathrm{d}t)' &= (g(x)\int_{a(x)}^{b(x)} f(t)\mathrm{d}t)'\\
+                                                  &= g'(x)\int_{a(x)}^{b(x)} f(t)\mathrm{d}t + g(x)(\int_{a(x)}^{b(x)} f(t)\mathrm{d}t)'
+        \end{align}$$
+        $$\int_{a(x)}^{b(x)}f[g(x,t)]\mathrm{d}t \overset{\text{u=g(x,t)}}{=\!=\!=\!=} \int_{\alpha(u)}^{\beta(u)} f(u)\mathrm{d}u $$
+    
+    
+
+        <ul class="navibar">
+            <li><a href="Integral_Improper.html">上一页</a></li>
+            <li class="catalog"><a href="Catalog.html">主页</a></li>
+        </ul>
+
+        <script src="/JavaScript/Capacity.js"></script>
+    </body>
+</html>

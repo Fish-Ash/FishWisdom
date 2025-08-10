@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>线性代数</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>向量组的秩</h1>
+        <div class="Card-Definition">
+            <b>极大无关组</b>
+            <p>从向量组中选取一个子向量组，若子向量组线性无关，且原向量组中的每个向量都可由子向量组线性表示，则成子向量组为原向量组的一个<b>极大线性无关向量组</b>，简称<b>极大无关组</b>.</p>
+        </div>
+        <p>[注]向量组的极大无关组不唯一.</p>
+        <p>[注]只含零向量的向量组没有极大无关组.</p>
+        <p>[注]线性无关向量组的极大无关组就是它本身.</p>
+
+        <b>定理</b>
+        <p>任一向量组与其极大无关组等价.</p>
+        <b>推论</b>
+        <p>向量组中任意两极大无关组等价，从而这两个极大无关组中所含向量个数相等.</p>
+
+        <div class="Card-Definition">
+            <b>向量组的秩</b>
+            <p>向量组的极大无关组所含向量的个数，记作\(R(\alpha_1, \alpha_2, \cdots, \alpha_n)\)</p>
+        </div>
+        <p>[注]若一个向量仅含零向量，规定其秩为零.</p>
+
+        <b>定理</b>
+        <p>向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)可由向量组\(\beta_1, \beta_2, \cdots, \beta_m\)线性表示\(\Leftrightarrow R(\alpha_1, \alpha_2, \cdots, \alpha_n)\leq R(\beta_1, \beta_2, \cdots, \beta_m)\)</p>
+
+        <b>推论</b>
+        <p>若向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)与向量组\(\beta_1, \beta_2, \cdots, \beta_m\)等价\(\Leftrightarrow R(\alpha_1, \alpha_2, \cdots, \alpha_n) = R(\beta_1, \beta_2, \cdots, \beta_m)\)</p>
+
+
+        <h3>向量组秩与矩阵秩的关系</h3>
+        <p>矩阵\(\mathbf{A} = (a_{ij})_{m\times n}\)按行、列分块为</p>
+        $$\mathbf{A} = \left(\begin{matrix}\alpha_1^T\\\alpha_2^T\\\vdots\\\alpha_m^T\end{matrix}\right) = (\beta_1, \beta_2, \cdots, \beta_n)$$
+        <p><b>\(\mathbf{A}\)的行秩</b>：\(R(\alpha_1^T, \alpha_2^T, \cdots, \alpha_m^T)\)</p>
+        <p><b>\(\mathbf{A}\)的列秩</b>：\(R(\beta_1, \beta_2, \cdots, \beta_n)\)</p>
+        $$R(\mathbf{A}) = R(\alpha_1^T, \alpha_2^T, \cdots, \alpha_m^T) = R(\beta_1, \beta_2, \cdots, \beta_n)$$
+      
+
+        <div class="Card-Method">
+            <h2>求向量组的秩、极大无关组并将其他向量用极大无关组表示的方法</h2>
+
+            <p>对矩阵施以初等行变换，不改变矩阵列向量组的线性关系.</p>
+            <p>对于给定的向量组，将其组合成矩阵，而后化为行最简型矩阵的形式.</p>
+
+            <b>向量组的秩</b>
+            <p>向量组的秩即为行最简型矩阵的非零行数即矩阵的秩.</p>
+
+            <b>向量组的一个极大无关组</b>
+            <p>含非零首元列对应的向量组即为极大无关组.</p>
+
+            <b>用极大无关组表示其余向量</b>
+            <p>行最简型行列式中，极大无关组对应的列均为单位列向量，非极大无关组对应列用单位列向量表示的方式，即为极大无关组表示向量组中其他向量的方式.</p>
+        </div>
+
+    </body>
+
+</html>

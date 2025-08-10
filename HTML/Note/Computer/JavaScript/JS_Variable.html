@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1><span lang="en">JavaScript</span>变量</h1>
+        <p><span lang="en">JavaScript</span>提供以下三种声明变量的方法：</p>
+        <pre class="Code"><code class="javascript">
+            var x;
+            let y;
+            const z;
+        </code></pre>
+        <p>其中，<span lang="en">var</span>变量与<span lang="en">let</span>变量均为常规变量，可以是整型、浮点型、字符串或null值，但是<span lang="en">let</span>变量更安全.</p>
+        <p><span lang="en">const</span>声明的是常量.</p>
+
+
+        <h2>数据类型</h2>
+        <ul lang="en">
+            <li>String</li>
+            <li>Number</li>
+            <li>Boolean</li>
+            <li>null</li>
+            <li>undefined</li>
+        </ul>
+
+        <b>字符串拼接</b>
+        <pre class="Code"><code>
+            "String" + Variable +"String";
+        </code></pre>
+
+        <b>模板字符串</b>
+        <pre class="Code"><code>
+            `String ${Variable} String`;
+        </code></pre>
+
+        <b>字符串字数</b>
+        <pre class="Code"><code>
+            S.length;
+        </code></pre>
+
+        <b>字符串全大写</b>
+        <pre class="Code"><code>
+            S.toUpperCase();
+        </code></pre>        
+        
+        <b>字符串全小写</b>
+        <pre class="Code"><code>
+            S.toLowerCase();
+        </code></pre>
+
+        <b>字符串切片</b>
+        <pre class="Code"><code>
+            S.substring(start, end);
+        </code></pre>
+
+        <b>字符串分割</b>
+        <pre class="Code"><code>
+            S.split("");
+        </code></pre>
+
+        <h3>数组</h3>
+        <b>定义数组</b>
+        <pre class="Code"><code>
+            const array = [];
+            const array = new Array();
+        </code></pre>
+
+        <b>索引</b>
+        <pre class="Code"><code>
+            Array[index];
+        </code></pre>
+
+        <b>数组头部增加元素</b>
+        <pre class="Code"><code>
+            array.unshift(element);
+        </code></pre>
+
+        <b>数组尾部增加元素</b>
+        <pre class="Code"><code>
+            array.push();
+        </code></pre>
+
+        <b>删除数组末尾元素</b>
+        <pre class="Code"><code>
+            array.pop();
+        </code></pre>
+
+        <b>判断变量是否为数组</b>
+        <pre class="Code"><code>
+            Array.isArray(Variable);
+        </code></pre>
+
+        <b>获取特定元素的索引</b>
+        <pre class="Code"><code>
+            array.indexOf(element);
+        </code></pre>
+    </body>
+
+</html>

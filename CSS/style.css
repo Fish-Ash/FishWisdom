@@ -1,12 +1,8 @@
 @charset "utf-8";
-/* 常规段落 */
-p{
-    text-indent: 2em;
-}
-.note{
-    color: rgb(66, 162, 246);
-}
 
+/* 常用 */
+
+/* 主体 */
 body{
     background-color: white;
     color: black;
@@ -15,6 +11,65 @@ body{
 :lang(en){
     font-family: 'Times New Roman', Times, serif;
 }
+
+/* 常规段落 */
+p{
+    text-indent: 2em;
+}
+
+
+/* 页内目录 */
+.PageCatalog{
+    background-color: #e6f7ff;
+    border: 1px solid #a0c4ff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.PageCatalog ul{
+    list-style-type: none;
+    padding: 0%;
+}
+
+.PageCatalog li{
+    margin-bottom: 10px;
+}
+
+.PageCatalog a{
+    text-decoration: none;
+    color: #1890ff;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border:1px solid transparent;
+    transition: all 0.3s ease; /* 平滑过渡效果 */
+
+}
+
+.PageCatalog a:hover{
+    background-color: #ffffff;
+    border:1px solid #1890ff;
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加轻微阴影 */
+}
+
+/* 页尾 */
+.Ending{
+    background-color: #a7dce0;
+    color: #1c7887;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+
+
+
+
+.note{
+    color: rgb(66, 162, 246);
+}
+
 
 
 
@@ -48,6 +103,7 @@ td, th {
     text-align:left;
 }
 
+
 /* 页面样式 */
 .header {
     font-family: 华文行楷;
@@ -80,8 +136,8 @@ ul.pagination li a {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #f3f3f3;
     display: flex;
+    background-color: #f3f3f3;
 }
 
 .navibar li {
@@ -105,21 +161,14 @@ ul.pagination li a {
     background-color: #26bcd5;
 }
 
-.navibar .catalog{
-    margin-inline: auto;
+.navibar catalog{
+    margin: 0 auto;
 }
 
 .navibar .next{
     margin-left: auto;
 }
 
-/* 页尾 */
-.ending{
-    background-color: #a7dce0;
-    color: #1c7887;
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-}
 
 /* 目录 */
 .catalog{
@@ -166,7 +215,7 @@ color: white;
     }
 
 /* 证明 */
-.prove{
+.Prove{
     color:#26bcd5;
 }
 
@@ -324,4 +373,89 @@ padding: 0;
 .SideBar li {
 padding: 10px;
 border-bottom: 1px solid #ccc;
+}
+
+
+
+/* 回到顶部 */
+.BackToTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #a7dce0;
+    color: #1c7887;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* 公式 */
+.Formula{
+  cursor: pointer;
+  padding: 10px;
+}
+.Derivation{
+    color: skyblue;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+.Derivation.active {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+
+
+/* Card-Definition */
+.Card-Definition{
+    border: 2px solid black;
+    padding:20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Card-Formula */
+.Card-Formula{
+    border: 2px solid orange;
+    padding:20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+/* Card-Property */
+.Card-Property{
+    border: 2px solid blue;
+    padding:20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Card-Method */
+.Card-Method{
+    border: 2px dashed red;
+    padding:0px 20px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Card-Theorem */
+.Card-Theorem{
+    border: 2px solid teal;
+    padding:20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* TheoremQuote */
+.TheoremQuote{
+    color: teal;
 }

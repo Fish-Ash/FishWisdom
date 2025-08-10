@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>逆矩阵</h1>
+
+        <h2>概念</h2>
+        <div class="Card-Definition">
+            <b>逆矩阵</b>
+            <p>设\(\mathbf{A}\)是\(n\)阶方阵，若存在一个\(n\)阶方阵\(\mathbf{B}\)，使得\(\mathbf{A}\mathbf{B} = \mathbf{B}\mathbf{A} = \mathbf{E}\)，则称矩阵\(\mathbf{A}\)为可逆矩阵，矩阵\(\mathbf{B}\)称为\(\mathbf{A}\)的逆矩阵，记为\(\mathbf{A}^{-1}\).</p>
+        </div>
+        <p>[注1]逆矩阵运算仅限于方阵.</p>
+        <p>[注2]矩阵\(\mathbf{A}\)的逆矩阵唯一.</p>
+
+        <h2>逆矩阵存在的条件</h2>
+        <b>伴随矩阵</b>
+        $$\mathbf{A}^* = \left(\begin{matrix}
+        A_{11} & A_{21} & \cdots & A_{n1}\\
+        A_{12} & A_{22} & \cdots & A_{n2}\\
+        \vdots & \vdots & & \vdots\\
+        A_{13} & A_{23} & \cdots & A_{33}
+        \end{matrix}\right)$$
+        <p>其中\(A_{ij}\)为\(|\mathbf{A}|\)中元素\(a_{ij}\)的代数余子式.</p>
+        $$\mathbf{A}\mathbf{A^*} = \mathbf{A^*}\mathbf{A} = |\mathbf{A}|\mathbf{E}$$
+
+        <table>
+            <tr><td colspan="2"><b>伴随矩阵的变换</b></td></tr>
+            <tr>
+                <td>$$\mathbf{A}^* \rightarrow \mathbf{A}^{-1}$$</td>
+                <td>$$\mathbf{A}^* = |\mathbf{A}|\mathbf{A}^{-1}$$</td>
+            </tr>
+            <tr>
+                <td>$$\mathbf{A}^*\rightarrow\mathbf{A}$$</td>
+                <td>$$\mathbf{A} = |\mathbf{A}|(\mathbf{A}^*)^{-1}$$</td>
+            </tr>
+            <tr>
+                <td>$$|\mathbf{A}^*|\rightarrow |\mathbf{A}|$$</td>
+                <td>$$|\mathbf{A}^*| = |\mathbf{A}|^{n-1}$$
+                    <div class="Prove">
+                        $$|\mathbf{A}^*| = ||\mathbf{A}|\mathbf{A}^{-1}| = |\mathbf{A}|^n\frac{1}{|\mathbf{A}|}$$
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <b>充分必要条件</b>
+        <p>\(n\)阶方阵\(\mathbf{A}\)可逆\(\Leftrightarrow|\mathbf{A}|\neq 0\)</p>
+        $$\mathbf{A}^{-1} = \frac{\mathbf{A}^*}{|\mathbf{A}|}$$
+        <p>[注]\(\mathbf{A} = (a)\Rightarrow \mathbf{A}^{-1} = (\frac{1}{a})\)</p>
+
+        <p>\(|\mathbf{A}| \neq 0\)，\(\mathbf{A}\)为可逆矩阵，也称为<b>非奇异方阵</b>.</p>
+        <p>\(|\mathbf{A}| = 0\)，\(\mathbf{A}\)为不可逆矩阵，也称为<b>奇异方阵</b>.</p>
+
+        <div class="Card-Method">
+            <h2>判断矩阵可逆的方法</h2>
+            <h3>直接法</h3>
+            <p>\(|\mathbf{A}| \neq 0 \Leftrightarrow \mathbf{A}\)可逆</p>
+            <p>\(|\mathbf{A}| = 0 \Leftrightarrow \mathbf{A}\)不可逆</p>
+        </div>
+
+        <h2>逆矩阵的性质</h2>
+        <p>\(\mathbf{A}\)可逆\(\Rightarrow\mathbf{A}^{-1}\)可逆，且\((\mathbf{A}^{-1})^{-1} = \mathbf{A}\).</p>
+        <p>\(\mathbf{A}\)可逆\(\Rightarrow\mathbf{A}^T\)可逆，且\((\mathbf{A}^T)^{-1} = (\mathbf{A}^{-1})^{T}\).</p>
+        <p>\(\mathbf{A}\)可逆，且\(k\neq 0\)\(\Rightarrow k\mathbf{A}\)可逆，且\((k\mathbf{A})^{-1} = \frac{\mathbf{A}^{-1}}{k}\).</p>
+        <p>\(\mathbf{A}\)可逆\(\Rightarrow |\mathbf{A}^{-1}| = |\mathbf{A}|^{-1}\).</p>
+        <p>\(\mathbf{A}_1, \mathbf{A}_2, \cdots \mathbf{A}_n\)均可逆\(\Rightarrow \mathbf{A}_1\mathbf{A}_2\cdots\mathbf{A}_n\)可逆，且\((\mathbf{A}_1\mathbf{A}_2\cdots\mathbf{A}_n)^{-1} = \mathbf{A}_n^{-1}\cdots\mathbf{A}_2^{-1}\mathbf{A}_1^{-1}\).</p>
+
+
+        <h2>一阶方阵求逆</h2>
+        $$(a)^{-1} = (\frac{1}{a}) = \frac{1}{a}$$
+
+        <h2>二阶方阵求逆</h2>
+        $$\mathbf{A}^{-1} = \left(\begin{matrix}a&b\\c&d\end{matrix}\right)^{-1} = \frac{1}{|{\mathbf{A}}|}\left(\begin{matrix}d&-b\\-c&a\end{matrix}\right)$$
+
+        <h2>分块矩阵求逆</h2>
+        $$\left(\begin{matrix}\mathbf{A}&\mathbf{O} \\ \mathbf{O}&\mathbf{B}\end{matrix}\right)^{-1} = \left(\begin{matrix}\mathbf{A}^{-1}&\mathbf{O} \\ \mathbf{O}&\mathbf{B}^{-1}\end{matrix}\right)$$
+        $$\left(\begin{matrix}\mathbf{O}&\mathbf{A} \\ \mathbf{B}&\mathbf{O}\end{matrix}\right)^{-1} = \left(\begin{matrix}\mathbf{O}&\mathbf{B}^{-1} \\ \mathbf{A}^{-1}&\mathbf{O}\end{matrix}\right)$$
+        $$\left(\begin{matrix}\mathbf{A}&\mathbf{O} \\ \mathbf{C}&\mathbf{B}\end{matrix}\right)^{-1} = \left(\begin{matrix}\mathbf{A}^{-1}&\mathbf{O} \\ -\mathbf{B}^{-1}\mathbf{C}\mathbf{A}^{-1}&\mathbf{B}^{-1}\end{matrix}\right)$$
+        $$\left(\begin{matrix}\mathbf{A}&\mathbf{C} \\ \mathbf{O}&\mathbf{B}\end{matrix}\right)^{-1} = \left(\begin{matrix}\mathbf{A}^{-1}&-\mathbf{A}^{-1}\mathbf{C}\mathbf{B}^{-1} \\ \mathbf{O}&\mathbf{B}^{-1}\end{matrix}\right)$$
+
+        <h2 id="2">初等矩阵求逆</h2>
+        $$\mathbf{E}(i,j)^{-1} = \mathbf{E}(i,j)$$
+        $$\mathbf{E}(i(k))^{-1} = \mathbf{E}(i(\frac{1}{k}))$$
+        $$\mathbf{E}(i,j(k))^{-1} = \mathbf{E}(i,j(-k))$$
+    </body>
+
+</html>

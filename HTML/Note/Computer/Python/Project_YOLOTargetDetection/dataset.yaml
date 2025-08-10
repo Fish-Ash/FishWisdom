@@ -1,0 +1,23 @@
+path: \\?\D:\YoloData
+train: images/train
+val: images/val
+test:
+
+names:
+    0: class1
+    1: class2
+
+# 往下可以加类别
+
+augmentation:
+    hflip: 0.5
+    vflip: 0.5
+    degress: 10.0
+    translate: 0.1
+    scale: 0.9
+    hsv_h: 0.015
+    hsv_s: 0.7
+    hsv_v: 0.4
+    mosaic: 0.2
+    mixup: 0.1
+    copy_paste: 0.2

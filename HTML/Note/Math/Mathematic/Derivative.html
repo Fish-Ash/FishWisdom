@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>导数</h1>
+        <div class="Card-Formula">
+            <b>导数</b>
+            $$f'(x_0) = \lim\limits_{\Delta x\rightarrow 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} = \lim\limits_{x\rightarrow x_0}\frac{f(x)-f(x_0)}{x-x_0}$$
+            <ul>
+                <li>左导数：\(f'_-(x_0) = \lim\limits_{\Delta x\rightarrow 0^-}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\)</li>
+                <li>右导数：\(f'_+(x_0) = \lim\limits_{\Delta x\rightarrow 0^+}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\)</li>
+            </ul>
+            $$f'(x_0)\Leftrightarrow f'_-(x_0) = f'_+(x_0)$$
+            <p>[注]可导一定连续，连续不一定可导。</p>
+        </div>
+
+        <div class="Card-Formula">
+            <b>二阶导数</b>
+            $$f''(x_0) = \lim\limits_{x\rightarrow x_0}\frac{f'(x) - f'(x_0)}{x - x_0}$$
+        </div>
+
+        <div class="Card-Formula">
+            <b>常用导数公式</b>
+        <table>
+            <tr>
+                <td colspan="2"><b>三角函数导数</b></td>
+            </tr>
+            <tr>
+                <td>$$(\sin x)' = \cos x$$</td>
+                <td>$$(\cos x)' = -\sin x$$</td>
+            </tr>
+            <tr>
+                <td>$$(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}$$</td>
+                <td>$$(\arccos x)' = -\frac{1}{\sqrt{1-x^2}}$$</td>
+            </tr>
+            <tr>
+                <td>$$(\tan x)' = \sec^2x$$</td>
+                <td>$$(\cot x)' = -\csc^2x$$</td>
+            </tr>
+            <tr>
+                <td>$$(\arctan x)' = \frac{1}{1 + x^2}$$</td>
+                <td>$$(\arctan x)' = -\frac{1}{1 + x^2}$$</td>
+            </tr>
+            <tr>
+                <td>$$(\sec x)' = \sec x\tan x$$</td>
+                <td>$$(\csc x)' = -\csc x\cot x$$</td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>指对函数导数</b></td>
+            </tr>
+            <tr>
+                <td>$$(a^x)' = a^x\ln x(a\gt 0, a\neq 1)$$</td>
+                <td>$$(e^x)' = e^x$$</td>
+            </tr>
+            <tr>
+                <td>$$(\log_a x)' = \frac{1}{x\ln a}(a\gt 0, a\neq 1)$$</td>
+                <td>$$(\ln x)' = \frac{1}{x}$$</td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>其他函数导数</b></td>
+            </tr>
+            <tr>
+                <td>$$(C)' = 0$$</td>
+                <td>$$(x^a)' = ax^{a-1}$$</td>
+            </tr>
+        </table>
+        </div>
+
+        <h3>导数的几何意义</h3>
+        <p>\(f'(x_0)\)表示曲线\(y=f(x)\)在点\((x_0, f(x_0))\)处切线的斜率。</p>
+
+        <div class="Card-Method">
+            <h2>求曲线的切线方程或法线方程</h2>
+            <h3>过曲线上一点</h3>
+            <p><b>切线方程</b>：\(y - f(x_0) = f'(x_0)(x-x_0)\)</p>
+            <p><b>法线方程</b>：\(y - f(x_0) = -\frac{1}{f'(x_0)}(x-x_0)\)</p>
+
+            <h3>过曲线外一点</h3>
+            <p>设切线或法线经过曲线上\((x_0, f(x_0))\)，求出切线方程或法线方程.</p>
+            <p>将曲线外点带入方程求出\(x_0\).</p>
+        </div>
+
+        <div class="Card-Method">
+            <h2>求隐函数的导数</h2>
+            <p>注意将\(y\)视为\(y(x)\).</p>
+
+            <b>求高阶导数\(y^{(n)}\)</b>
+            <p>将\(y^{(n-1)}(x,y)\)代入表达式表示.</p>
+        </div>
+
+        <div class="Card-Method">
+            <h2>求反函数的导数</h2>
+            <p>设函数\(y = f(x)\)的导数为\(f'(x)\)，则其反函数\(x = g(y)\)的导数为</p>
+            $$g'(y) = (f^{-1})'(y) = \frac{1}{f'(x)}$$
+        </div>
+
+        <div class="Card-Property">
+            <p>奇函数的导函数是偶函数</p>
+            <p>偶函数的导函数是奇函数</p>
+            <p>周期函数的导函数仍是周期函数</p>
+        </div>
+
+        <div class="Card-Method">
+            <h2>求参数方程的导数</h2>
+            <p>设\(y = y(x)\)由参数方程\(\begin{cases}x = x(t)\\y = y(t)\end{cases}\)确定</p>
+
+            <h3>一阶导数</h3>
+            $$\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{y'(t)}{x'(t)}$$
+            <div class="Prove">
+                $$\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}} = \frac{y'(t)}{x'(t)}, x'(t)\neq 0$$
+            </div>
+
+            <h3>二阶导数</h3>
+            $$\frac{\mathrm{d}^2y}{\mathrm{d}x^2} = [\frac{y'(t)}{x'(t)}]'\frac{1}{x'(t)}$$
+            <div class="Prove">
+                $$\begin{align}
+                \frac{\mathrm{d}^2y}{\mathrm{d}x^2} &= \frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}y}{\mathrm{d}x})\\
+                                                    &= \frac{\mathrm{d}}{\mathrm{d}t}(\frac{\mathrm{d}y}{\mathrm{d}x})\frac{\mathrm{d}t}{\mathrm{d}x}\\
+                                                    &= \frac{\mathrm{d}}{\mathrm{d}t}[\frac{y'(t)}{x'(t)}]\frac{1}{x'(t)}\\
+                                                    &= [\frac{y'(t)}{x'(t)}]'\frac{1}{x'(t)}
+                \end{align}$$
+            </div>
+        </div>
+
+        <p>[注]使用对数求导法时，应将\(y(x)\)代回\(y'\)的表达式中表示.</p>
+
+        <div class="Card-Formula">
+            <b>常用高阶导数公式</b>
+            $$\begin{align}
+            &(\sin x)^{(n)} = \sin(x + n\frac{\pi}{2})\\\\
+            &(\cos x)^{(n)} = \cos(x + n\frac{\pi}{2})
+            \end{align}$$
+
+            <b>莱布尼兹公式</b>
+            $$(u\cdot v)^{(n)} = \sum\limits_{k=0}^{n}C_n^ku^{(k)}v^{(n-k)}$$
+        </div>
+
+        <h3>题型</h3> 
+        <b>证明函数不等式</b>
+        <p>构造辅助函数，将函数不等式问题转化为函数零点问题</p>
+
+        常用结论
+        <p>设\(f(x) = \phi |x - a|\)，\(\phi(x)\)在\(x = a\)处连续，则\(f(x)\)在\(x=a\)处可导\(\Leftrightarrow \phi(a) = 0 \)</p>
+        
+    
+ 
+    </body>
+
+</html>

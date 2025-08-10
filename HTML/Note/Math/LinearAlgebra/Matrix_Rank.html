@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        
+        <h1>矩阵的秩</h1>
+        <b>矩阵\(\mathbf{A}\)的\(k\)阶子式</b>
+        <p>在\(m\times n\)矩阵\(\mathbf{A}\)中，任取\(k\)行\(k\)列（\(1\leq k\leq \min\{m,n\}\)），位于这些行列交叉处的\(k^2\)个元素按原次序组成的一个\(k\)阶行列式.</p>
+        <p>在一个\(m\times n\)矩阵中，共有\(C_m^k\cdot C_n^k\)个\(k\)阶子式.</p>
+        
+        <div class="Card-Theorem">
+            $$\mathbf{A}\cong\mathbf{B}\Rightarrow R(\mathbf{A}) = R(\mathbf{B})$$
+        </div>
+
+        <div class="Card-Theorem">
+            <p>矩阵左乘或右乘可逆矩阵，不改变矩阵的秩.</p>
+        </div>
+
+        <div class="Card-Method">
+            <h2>求矩阵秩的方法</h2>
+            <h3>直接法</h3>
+            <p>矩阵的秩等于其行阶梯形矩阵中非零行的行数.</p>
+
+            <h3>题目条件：初等变换</h3>
+            <div class="TheoremQuote">
+                $$\mathbf{A}\cong\mathbf{B}\Rightarrow R(\mathbf{A}) = R(\mathbf{B})$$
+            </div>
+
+            <h3>题目条件：矩阵运算</h3>
+            <p>将矩阵化为\(\mathbf{A}\mathbf{B}\)的形式，并确定其中一个矩阵可逆.</p>
+            <div class="TheoremQuote"><p>矩阵左乘或右乘可逆矩阵，不改变矩阵的秩.</p></div>
+        </div>
+
+        <b>利用初等变换求矩阵的秩</b>
+        
+
+        <b>矩阵秩的性质</b>
+        <p>\(0\leq R(\mathbf{A}_{m\times n}) \leq \min\{m,n\}\)</p>
+        <p>\(R(\mathbf{A}^T) = R(\mathbf{A})\)</p>
+        <p>\(R(k\mathbf{A}) = R(\mathbf{A})(k\neq 0)\)</p>
+        <p>\(\mathbf{A}_{n\times n}\)可逆\(\Leftrightarrow R(\mathbf{A}) = n\)</p>
+        <p>\(R(\mathbf{A} + \mathbf{B}) \leq R(\mathbf{A}) + R(\mathbf{B})\)</p>
+        <p>\(R(\mathbf{A}\mathbf{B}) \leq \min\{R(\mathbf{A}), R(\mathbf{B})\}\)</p>
+        <p>\(\mathbf{A}_{m\times n}\mathbf{B}_{n\times l} = \mathbf{O} \Rightarrow R(\mathbf{A}) + R(\mathbf{B}) \leq n\)</p>
+
+    </body>
+
+</html>

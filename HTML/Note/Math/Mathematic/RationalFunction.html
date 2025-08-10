@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>有理函数</h1>
+        <div class="Card-Definition">
+            <b>有理函数（有理分式）</b>
+            <p>两个多项式的商</p>
+            $$\frac{P(x)}{Q(x)}$$
+            <p>[注]假定分子多项式\(P(x)\)与分母多项式\(Q(x)\)间无公因式.</p>
+            <b>真分式</b>
+            <p>分子多项式次数小于分母多项式次数的有理函数.</p>
+            <b>假分式</b>
+            <p>分子多项式次数大于分母多项式次数的有理函数.</p>
+        </div>
+
+        <p>利用多项式的除法，总可以将一个假分式化成一个多项式与真分式之和的形式.</p>
+
+        <p>对于真分式\(\frac{P(x)}{Q(x)}\)，若分母可分解为两个没有公因式的多项式的乘积</p>
+        $$Q(x) = Q_1(x)Q_2(x)$$
+        <p>那么可将真分式分解为两个真分式之和</p>
+        $$\frac{P(x)}{Q(x)} = \frac{P_1(x)}{Q_1(x)} + \frac{P_2(x)}{Q_2(x)}$$
+        <p>\(P(x)\)可以用待定系数法求解.</p>
+
+        <div class="Card-Method">
+            <h2>待定系数法分解真分式</h2>
+            $$Q(x) = Q_1(x)Q_2(x)\cdots Q_n(x)$$
+            $$\frac{P(x)}{Q(x)} = \frac{P_1(x)}{Q_1(x)} + \frac{P_2(x)}{Q_2(x)} + \cdots + \frac{P_n(x)}{Q_n(x)}$$
+            <p>假设\(Q_i(x)\)的最高次数为\(k\).</p>
+            <p>设\(P_i(x) = p_{i1}x^{(k-1)} + p_{i2}x^{k-2} + \cdots + p_{i,k-1}x + p_{ik}\)</p>
+            <p>将\(\frac{P_1(x)}{Q_1(x)} + \frac{P_2(x)}{Q_2(x)} + \cdots + \frac{P_n(x)}{Q_n(x)}\)通分，其分子应等于\(P(x)\)，由此关系解得系数\(p\).</p>
+        </div>
+    </body>
+
+</html>

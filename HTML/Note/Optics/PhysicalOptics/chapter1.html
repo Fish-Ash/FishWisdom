@@ -4,16 +4,15 @@
 
     <head>
         <meta charset="utf-8">
-        <title>激光原理</title>
+        <title>物理光学</title>
         <link rel="stylesheet" href="../../../../CSS/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
     </head>
 
 
     <body>
-        <div class="header"><h1>不惑</h1></div>
-
-        
+        <div class="header" id="PageHead"><h1>不惑</h1></div>
+        <a class="BackToTop" href="#PageHead">Top</a>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
@@ -22,28 +21,19 @@
 
         <h1>第一章 光的电磁理论基础</h1>
 
-        <h2>第一节 光的电磁波性质</h2>
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#PlaneWave">平面电磁波</a></li>
+                <li><a href="#SpatialFrequency">光波场的空间频率域表示</a></li>
+            </ul>
+        </div>
 
-        <b>电磁波</b>
-        <p>变化的电磁场。</p>
-        <p>电磁矢量以速度\(v\)按波动形式在介质中传播。</p>
-        $$v = 1/\sqrt{\mu\epsilon}$$
-        <p>光本质上是一种电磁波。</p>
-    
-        <b>光速\(c\)</b>
-        <p>真空中电磁波的传播速度</p>
-        $$c = 1/\sqrt{\mu_0\epsilon_0}\approx2.9979\times 10^8m/s$$
-        式中，\(\mu_0\)为真空中的磁导率,\(\epsilon_0\)为真空中的介电常数
-    
-        <br><br>
-        <b>介质的折射率\(n\)</b>
-        <p>电磁波在真空中的速度\(c\)与在不导电的均匀介质中的速度\(v\)之比</p>
-        $$n = \frac{c}{v}=\frac{\sqrt{\mu\epsilon}}{\sqrt{\mu_0\epsilon_0}} = \sqrt{\mu_r\epsilon_r}$$
-        式中，相对磁导率\(\mu_r = \mu/\mu_0\)
+        <h2><a href="../Electromagnetism/Maxwell.html"><span lang="en">Maxwell</span>方程组</a></h2>
+        <h2><a href="../Electromagnetism/OpticalBasis.html">光的电磁理论基础<a></a></h2>
 
 
         <h3>物质方程</h3>
-        <p>静止的各向同性介质中，有：</p>
+        <p>静止的各向同性（物质每一点的物理性质不随方向而改变）介质中，有：</p>
         $$\mathbf{j} = \sigma\mathbf{E}$$
         $$\mathbf{D} = \epsilon\mathbf{E}$$
         $$\mathbf{B} = \mu\mathbf{H}$$
@@ -56,126 +46,338 @@
 
         
         <br><br>
-        <b>等相面（波面）</b>
-        <p>某一时刻相位相同的点的空间位置</p>
+        <div class="Card-Definition">
+            <b>等相面（等相位面，波面）</b>
+            <p>某一时刻相位相同的点的空间位置.</p>
+            <p>相邻等相面间的相位差为\(2\pi\).</p>
+        </div>
+        <div class="Card-Definition">
         <b>波矢量\(\mathbf{k}\)</b>
         $$\mathbf{k} = k\mathbf{k_0}$$
         <p>\(\mathbf{k}_0\)为单位矢量，沿波的传播方向，即等相面的法线方向。</p>
-        <p>\(k = 2\pi/\lambda = \omega/\nu\)为空间角频率或波数。</p>
+        <p>\(k = \sqrt{k_x^2 + k_y^2 + k_z^2} =  2\pi/\lambda = \omega/\nu\)为<b>空间角频率</b>或<b>波数</b>。</p>
+        <p>\(k = 0 \Leftrightarrow\)沿\(\mathbf{k}\)方向相位不发生改变.</p>
+        </div>
+
+        <div class="Card-Formula">
+            <b>基本公式</b>
+            $$c = 1/\sqrt{\mu_0\epsilon_0}\approx2.9979\times 10^8m/s$$
+            $$n = c/v$$
+            $$\mu_r = \mu/\mu_0$$
+            $$\epsilon_r = \epsilon/\epsilon_0$$
+            $$\omega = 2\pi\nu = 2\pi/T$$
+            $$\lambda = vT$$
+            $$k = 2\pi/\lambda$$
+            $$f = \frac{1}{\lambda}$$
+
+            <b>衍生公式</b>
+            $$\nu = 1/T$$
+             <div class="Formula">
+                $$n = \frac{\sqrt{\mu\epsilon}}{\sqrt{\mu_0\epsilon_0}} = \sqrt{\mu_r\epsilon_r}$$
+                <div class="Derivation">
+                    $$n = \frac{c}{v} = \frac{\sqrt{\mu\epsilon}}{\sqrt{\mu_0\epsilon_0}} = \sqrt{\mu_r\epsilon_r}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$k = \omega/v$$
+                <div class="Derivation">
+                    $$k = \frac{2\pi}{\lambda} = \frac{2\pi}{vT} = \frac{\omega}{v}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\lambda = \lambda_0/n$$
+                <div class="Derivation">
+                    $$\lambda = vT = cT/n = \lambda_0/n$$
+                </div>
+            </div>
+            <div class="Formula">
+                $$f = \frac{k}{2\pi}$$
+                <div class="Derivation">
+                    $$f = \frac{1}{\lambda}$$
+                    $$k = \frac{2\pi}{\lambda} \Rightarrow \lambda = \frac{2\pi}{k}$$
+                    $$f = \frac{k}{2\pi}$$
+                </div>
+            </div>
+
+            <table>
+                <tr class="tbtitle">
+                    <td>参数</td>
+                    <td>符号</td>
+                </tr>
+                <tr>
+                    <td>光在真空中的传播速度</td>
+                    <td>$$c$$</td>
+                </tr>
+                <tr>
+                    <td>光在介质中的传播速度</td>
+                    <td>$$v$$</td>
+                </tr>
+                <tr>
+                    <td>介质的折射率</td>
+                    <td>$$n$$</td>
+                </tr>
+                <tr>
+                    <td>磁导率</td>
+                    <td>$$\mu$$</td>
+                </tr>
+                <tr>
+                    <td>真空中的磁导率</td>
+                    <td>$$\mu_0$$</td>
+                </tr>
+                <tr>
+                    <td>振动频率</td>
+                    <td>$$\nu$$</td>
+                </tr>
+                <tr>
+                    <td>振动周期</td>
+                    <td>$$T$$</td>
+                </tr>
+                <tr>
+                    <td>介质中的光波长</td>
+                    <td>$$\lambda$$</td>
+                </tr>
+                <tr>
+                    <td>真空中的光波长</td>
+                    <td>$$\lambda_0$$</td>
+                </tr>
+            </table>
+        </div>
 
 
-        <h2>平面波的表达式</h2>
+        <h2 id="PlaneWave">单色平面电磁波</h2>
+        <h3>表达式</h3>
         $$\mathbf{E} = \mathbf{E_0}\exp[i\omega(t - \frac{r}{v})] = \mathbf{E_0}\exp[i(\omega t + \alpha)]$$
-        $$\mathbf{H} = \mathbf{H_0}\exp[i\omega(t - \frac{r}{v})] = \mathbf{H_0}\exp[i(\omega t + \beta)]$$
-        其中，\(\alpha\)、\(\beta\)可以分别看作是\(\mathbf{E}\)与\(\mathbf{H}\)的初相。
+        其中，\(\alpha\)可以看作是\(\mathbf{E}\)的初相。
 
-        <h2>第二节 光在电介质面上的反射与折射</h2>
+        <p>[注]光波中包含电场矢量\(\mathbf{E}\)与磁场矢量\(\mathbf{H}\)，从波的传播特性来看，其具有相同的地位；但从光与介质的相互作用来看，磁场的作用远比电场弱，甚至不起作用.因此，在讨论光的波动特性时，常常只考虑电场矢量\(\mathbf{E}\).通常称\(\mathbf{E}\)为光矢量，\(\mathbf{E}\)的振动称为光振动.</p>
+        <b>三角函数表示</b>
+        <p>设平面波沿直角坐标系\(xyz\)的\(z\)方向传播.</p>
+        <div class="Formula">
+            $$\mathbf{E} = \mathbf{E}_0\cos(\omega t - kz) = \mathbf{E}_0\cos[\omega(t - \frac{z}{v})] = \mathbf{E}_0\cos[2\pi(\frac{t}{T} - \frac{z}{\lambda})]$$
+            <div class="Derivation">
+                $$
+                \begin{align}
+                \mathbf{E} &= \mathbf{E}_0\cos(\omega t - kz)\\
+                           &= \mathbf{E}_0\cos[\omega(t - \frac{k}{w}z)]\\\\
+                           &\because k = \frac{2\pi}{\lambda}, \omega = \frac{2\pi}{T}\\\\
+                \mathbf{E} &= \mathbf{E}_0\cos[\omega(t - \frac{T}{\lambda}z)]\\
+                           &= \mathbf{E}_0\cos[\omega(t - \frac{z}{v})]\\
+                           &= \mathbf{E}_0\cos[2\pi(\frac{t}{T} - \frac{z}{\lambda})]
+                \end{align}
+                $$
+            </div>
+        </div>
 
-        <b id="BoundaryCondition">电磁场的连续条件</b>
-        <p>在没有传导电流和自由电荷的介质中，磁感强度\(\mathbf{B}\)与电感强度\(\mathbf{D}\)的法向分量在界面上连续；电场强度\(\mathbf{E}\)和磁场强度\(\mathbf{H}\)的切向分量在界面上连续。</p>
-        $$
-        \begin{align}
-        \begin{cases}
-        B_{1n} = B_{2n}\\
-        D_{1n} = D_{2n}\\
-        H_{1t} = H_{2t}\\
-        E_{1t} = E_{2t}
-        \end{cases}
-        \end{align}
-        $$
+        <b>复数形式</b>
+        <p>复数的虚部无物理意义，为了便于计算，引入单色平面波的复数形式.</p>
+        <div class="Formula">
+            $$\mathbf{E} = \mathbf{E}_0 e^{-i(\omega t - kz)}$$
+            <div class="Derivation">
+                <p>由欧拉方程</p>
+                $$\begin{align}
+                \mathbf{E} &= \mathbf{E}_0 e^{-i(\omega t - kz)}\\
+                &= \mathbf{E}_0 [\cos(\omega t - kz) - i\sin(\omega t - kz)]
+                \end{align}$$
+                <p>由于虚部无物理意义，故</p>
+                $$\mathbf{E} = \mathbf{E}_0 \cos(\omega t - kz)$$
+            </div>
+        </div>
 
-        任一方位振动的光矢量\(\mathbf{E}\)，都可分解为互相垂直的两个分量
-        <ul>
-            <li>\(p\)偏振波（\(E_p\)）：\(\mathbf{E}\)平行于入射面振动的分量，又称<span lang="en">TM</span>波（<span class="tip">横磁波<span class="tiptext">\(\mathbf{H}\)沿界面切线方向</span></span>）</li>
-            <li>\(s\)偏振波（\(E_s\)）：\(\mathbf{E}\)垂直于入射面振动的分量，又称<span lang="en">TE</span>波（<span class="tip">横电波<span class="tiptext">\(\mathbf{E}\)沿界面切线方向</span></span>）</li>
-        </ul>
         
+        <div class="Card-Definition">
+            <b>复振幅</b>
+            <p>复振幅反映了光场振动的振幅和相位随空间的变化.</p>
+            $$\mathbf{E} = \mathbf{E}_0 e^{-i(\omega t - kz)} = \mathbf{E}_0 e^{ikz}e^{-i\omega t}$$
+            <p>\(\tilde{E} = \mathbf{E}_0 e^{ikz}\)称为复振幅.</p>            
+        </div>
+
         
-        <h2><a href="Fresnel.html">菲涅尔公式</a></h2>
+        <b>沿任意波矢量\(\mathbf{k}\)方向传播的平面简谐波</b>
+        $$\mathbf{E} = \mathbf{E}_0\cos(\omega t - \mathbf{k}\cdot \mathbf{r} + \phi_0) = \mathbf{E}_0 e^{-i(\omega t - \mathbf{k}\cdot \mathbf{r} + \phi_0)}$$
+        <p>复振幅为</p>
+        $$\tilde{\mathbf{E}} =\mathbf{E}_0 e^{i(\mathbf{k}\cdot \mathbf{r} - \phi_0)}$$
+
+        <h3>性质</h3>
+        <b>平面电磁波是横波</b>
+        $$\mathbf{k}\mathbf{E} = 0$$
+        $$\mathbf{k}\mathbf{B} = 0$$
+        <p>电矢量与磁矢量方向均垂直于波传播方向，平面电磁波为横波</p>
+
+        <b>\(\mathbf{E}, \mathbf{B}, \mathbf{k}_0\)互成右手螺旋系</b>
+        <p></p>
+        <b>\(\mathbf{E}, \mathbf{B}\)同相位</b>
         
-        <h2>全偏振现象与<span lang="en">Brewster</span>角</h2>
-        
-        <b>偏振</b>
-        <p>光斜入射时，反射光中的\(p\)分量与\(s\)分量不等，反射光变为部分偏振光。</p>
-        <p>光从光疏介质入射到光密介质时，由菲涅尔公式：</p>
-        <ul>
-            <li>\(\theta_1 = 0°\)即垂直入射时，\(r_p \gt 0 \gt r_s\)、\(t_s\gt 0\)、\(t_p\gt 0\)，此时存在反射波与折射波。</li>
-            <li>\(\theta_1 = 90°\)即掠入射时，\(r_s = r_p = -1\)，\(t_s = t_p = 0\)，此时仅有反射光。</li>
-        </ul>
-
-        <b>全偏振现象</b>
-        <p>反射光的振动方向只沿一个平面内的现象。</p>
-        <p>由于\(r_p\gt 0\)的范围及其单调特性，可知当光从光疏介质进入到光密介质时，\(r_p\)可能会等于零。</p>
-        <p>\(r_p=0\)意味着此时反射光中只有\(s\)方向偏振的电场，即反射光为全偏振光。</p>
-        <p>\(r_p = \frac{\tan(\theta_1 - \theta_2)}{\tan(\theta_1 + \theta_2)} = 0\)，由于\(\theta_1 \neq \theta_2\)，故\(\tan(\theta_1 - \theta_2)\neq 0\)，只能是\(\tan(\theta_1 + \theta_2) = \infty\)即\(\theta_1 + \theta_2 = \pi/2\)。称此时的入射角为<b>起偏振角</b>或<b><span lang="en">Brewster</span>角（\(\theta_B\)）</b>。</p>
-        $$\tan\theta_B = n$$
+        <div class="Card-Formula">
+            <b>单色平面电磁波的一般方程</b>
+            $$E = E_0\cos(\omega t - kr + \phi_0) = E_0e^{-i(\omega t - kr+ + \phi_0)}$$
+            <ul>
+                <li>振动方向：\(\mathbf{E}_0\)的方向</li>
+                <li>传播方向：\(\mathbf{k}_0\)的方向</li>
+                <li>振幅：\(E_0\)，单位为\(V/m\)</li>
+                <li>频率：\(\nu = 2\pi/\omega\)，单位为\(Hz\)</li>
+                <li>波长：\(\lambda = 2\pi/k\)，单位为\(m\)</li>
+            </ul>
+        </div>
 
 
-        <b>全反射</b>
-        <p>当光从光密介质入射到光疏介质时，入射角大于临界角时，光全部返回原介质中的现象。</p>
-        <p>当光从光密入光疏时：</p>
-        $$n_1\gt n_2\Rightarrow n_1/n_2\gt 1$$
-        故某一时刻，
-        $$\sin\theta_2 = \frac{n_1}{n_2}\sin\theta_1 > 1$$
-        $$\because \sin\theta_2 \lt 1$$
-        故此时无折射光，临界角为：
-        $$\sin\theta_2 = \frac{n_1}{n_2}\sin\theta_c = 1$$
-        $$\sin\theta_c = \frac{n_2}{n_1}$$
-        <p>全反射时发生相位的变化。</p>
+        <h2>球面波</h2>
+        <b>最简单的简谐球面光波——单色球面光波的波函数</b>
+        $$E = \frac{A_1}{r}\cos(\omega t - kr)$$
+        <p>复数形式</p>
+        $$E = \frac{A_1}{r}e^{-i(\omega t - kr)}$$
+        <p>复振幅</p>
+        $$\tilde{E} = \frac{A_1}{r}e^{ikr}$$
+        <p>\(A_1\)为离开点光源单位距离外的振幅值.</p>
 
 
-        <h2>坡印廷矢量\(\mathbf{S}\)（辐射强度矢量、能流密度）</h2>
-        <p>用于描述电磁能量的传播。</p>
-        <p>其方向表示能量流动的方向。各向同性介质中，亦为波的传播方向。</p>
-        <p>其大小等于单位时间内垂直通过单位面积的能量。</p>
-        $$\mathbf{S} = \mathbf{E} \times \mathbf{H} = \frac{1}{\mu}\mathbf{E}\times\mathbf{B}$$
+        <h2 id="SpatialFrequency">光波场的空间频率域表示</h2>
+        <p>在空间域内，波数\(k\)可称为<b>空间圆频率</b>，波长\(\lambda\)可称为<b>光波场的空间周期</b>.</p>
+        <div class="Card-Definition">
+            <b>光波场在光波传播方向上的空间频率\(f_k\)</b>
+            <p>表示光波场沿波矢\(\mathbf{k}\)方向每增加单位长度，光波场增加的周期数.</p>
+            $$f_k = \frac{1}{\lambda}$$
+        </div>
+        <p>[注]光波场的空间周期与空间频率随观察方向不同而不同.</p>
+        <b>三维空间表示式</b>
+        $$E = E_0  e^{i(k_xx + k_yy + k_zz + \phi_0)}$$
+        <p>[注]三维空间表示式即为省略时间相位因子的表示式.</p>
 
-        <b>光强度\(I\)</b>
-        <p>介质中某点坡印廷矢量的瞬时值是忽大忽小的，但在一个周期内其平均值是一个定值，将其定义为光强度。</p>
-        $$I = \frac{1}{T}\int_0^TS\mathrm{d}t = \frac{1}{2}\sqrt{\frac{\epsilon}{\mu}}A^2$$
-        <p>取\(\mathbf{E}\)与\(\mathbf{H}\)的实数部分，有：</p>
-        $$\mathbf{E} = \mathbf{E_0}\cos(\omega t + \alpha)$$
-        $$\mathbf{H} = \mathbf{H_0}\cos(\omega t + \beta)$$
+
+        <h2>光波的速度</h2>
+        <div class="Card-Definition">
+            <b>相速度</b>
+            <p>等相位面的传播速度.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>群速度（包络速度）</b>
+            <p>等振幅面的传播速度.</p>
+        </div>
+        <h3>单色光波的速度</h3>
+        <b>单色光波的能量传播速度（能流速度）</b>
+        $$v = \omega/k = c/n$$
+
+        <b>单色光波的相速度</b>
+        <p>单色光波的相速度等于单色光波的能量传播速度.</p>
+
+
+        <h3>复色光波的速度</h3>
+        <p>简单起见，以二色光波为例：</p>
+        $$E = E_{01}\cos(\omega_1t - k_1z) + E_{02}\cos(\omega_2t - k_2z)$$
+        <p>设\(E_{0} = E_{01} = E_{02}\)，由<a href="../../Math/Mathematic/Function_Tri.html#SumToProduct">和差化积公式</a></p>
         $$\begin{align}
-        I &= \frac{1}{T}\int_0^{T}S\mathrm{d}t\\
-          &= \frac{1}{T}\int_0^{T}|\mathbf{E}||\mathbf{H}|\sin\frac{\pi}{2}\mathrm{d}t\\
-          &= \frac{1}{T}\int_{0}^TE_0H_0\cos(\omega t + \alpha)\cos(\omega t + \beta)\mathrm{d}t\\
-          &= \frac{1}{2}E_0H_0\cos(\alpha - \beta)
+        E &= E_0[\cos(\omega_1t - k_1z) + \cos(\omega_2t - k_2z)]\\
+          &= 2E_0\cos\frac{\omega_1t-k_1z + \omega_2t - k_2z}{2}\cos\frac{\omega_1t-k_1z - \omega_2t + k_2z}{2}\\
+          &= 2E_0\cos(\frac{\omega_1 + \omega_2}{2}t - \frac{k_1+k_2}{2}z)\cos(\frac{\omega_1 - \omega_2}{2}t - \frac{k_1 - k_2}{2}z)\\
+          &= 2E_0\cos(\omega_mt - k_mz)\cos(\bar{\omega}t - \bar{k}z)
         \end{align}$$
         $$\begin{align}
-        \because Re(EH^*) &= Re\{E_0\exp[{i(\omega t + \alpha)}]\cdot H_0\exp[{-i(\omega t + \beta)}]\}\\
-                 &= E_0H_0\cos(\alpha - \beta)
+        &\omega_m = \frac{1}{2}(\omega_1 - \omega_2) = \frac{1}{2}\Delta\omega\\\\
+        &k_m = \frac{1}{2}(k_1 - k_2) = \frac{1}{2}\Delta k\\\\
+        &\bar{\omega} = \frac{1}{2}(\omega_1 + \omega_2)\\\\
+        &\bar{k} = \frac{1}{2}(k_1 + k_2)
         \end{align}$$
-        $$\therefore I = \frac{1}{2} Re(EH^*)$$
+
+        <b>复色光波的相速度</b>
+        $$v = \frac{\bar{\omega}}{\bar{k}}$$
+
+        <b>复色光波的群速度</b>
+        $$v_g = \frac{\omega_m}{k_m} = \frac{\Delta \omega}{\Delta k}$$
+        <p>当\(\Delta \omega\)很小时</p>
+        <div class="Formula">
+            $$v_g = \frac{\mathrm{d}\omega}{\mathrm{d}k} =  = v(1 + \frac{\lambda}{n}\frac{\mathrm{d}n}{\mathrm{d}\lambda})$$
+            <div class="Derivation">
+                $$\because \omega = kv$$
+                $$v_g = \frac{\mathrm{d}\omega}{\mathrm{d}k} = \frac{\mathrm{d}(kv)}{\mathrm{d}k} = \frac{k\mathrm{d}v + v\mathrm{d}k}{\mathrm{d}k} = v + k\frac{\mathrm{d}v}{\mathrm{d}k}$$
+                $$\because v = c/n, k = 2\pi/\lambda$$
+                $$\therefore \mathrm{d}v = -\frac{c}{n^2}\mathrm{d}n, \mathrm{d}k = -\frac{2\pi}{\lambda^2}\mathrm{d}\lambda$$
+                $$v_g = v + \frac{2\pi}{\lambda}\frac{-\frac{c}{n^2}\mathrm{d}n}{-\frac{2\pi}{\lambda^2}\mathrm{d}\lambda} = v + v\frac{\lambda}{n}\frac{\mathrm{d}n}{\mathrm{d}\lambda} = v(1 + \frac{\lambda}{n}\frac{\mathrm{d}n}{\mathrm{d}\lambda})$$
+            </div>
+        </div>
+        <p>在折射率\(n\)随波长\(\lambda\)变化的色散介质中，复色光波的相速度不等于群速度：</p>
+        <ul>
+            <li>正常色散介质（\(\mathrm{d}n/\mathrm{d}\lambda \lt 0\)）：\(v \gt v_g\)</li>
+            <li>反常色散介质（\(\mathrm{d}n/\mathrm{d}\lambda \gt 0\)）：\(v \lt v_g\)</li>
+        </ul>
+        <p>无色散介质（\(\mathrm{d}n/\mathrm{d}\lambda = 0\)）中，复色光波的群速度等于相速度，实际上只有真空才属于这种情况.</p>
 
 
-        <h2>入射波、反射波与透射波的能量关系</h2>
-        <img src="./img/W.png" width="400"><br>
-        通过单位面积的光能为：<br><br>
-        入射波：\(W_1 = I_1\cos\theta_1 = \frac{1}{2}\sqrt{\frac{\epsilon_1}{\mu_1}}A_1^2\cos\theta_1\)<br><br>
-        反射波：\(W'_1 = I'_1\cos\theta_1 = \frac{1}{2}\sqrt{\frac{\epsilon_1}{\mu_1}}A_1'^2\cos\theta_1\)<br><br>
-        透射波：\(W_2 = I_2\cos\theta_2 = \frac{1}{2}\sqrt{\frac{\epsilon_2}{\mu_2}}A_2^2\cos\theta_2\)
 
-        <table>
-            <tr>
-                <td></td>
-                <td class="tbtitle">定义</td>
-                <td class="tbtitle">公式</td>
-            </tr>
-            <tr>
-                <td>反射比\(\rho\)</td>
-                <td>反射波与入射波能量之比</td>
-                <td>$$\rho = \frac{W_1'}{W_1} = \frac{A_1^2}{A_1'^2}$$</td>
-            </tr>
-            <tr>
-                <td>透射比\(\tau\)</td>
-                <td>透射波与入射波能量之比</td>
-                <td>$$\tau = \frac{W_2}{W_1} = \frac{\sqrt{\epsilon_2\mu_1}\cos\theta_2}{\sqrt{\epsilon_1\mu_2}\cos\theta_1}\frac{A_2^2}{A_1^2} = \frac{n_2\cos\theta_2}{n_1\cos\theta_1}\frac{A_2^2}{A_1^2}$$（<span class="tip">非磁性物质<span class="tiptext">\(\mu_1 = \mu_2\)</span></span>）</td>
-            </tr>
-        </table>
+        <h2>平面光波的偏振特性</h2>
+        <p>光波的偏振特性是横波区别于纵波的最明显标志.</p>
+        <p>设光波沿\(z\)方向传播，电场矢量为</p>
+        $$\mathbf{E} = \mathbf{E}_0 \cos(\omega t - kz + \phi_0)$$
+        <p>为表征光波的偏振特性，将其表示为沿\(x, y\)方向上振动的两个独立分量的线性组合</p>
+        $$\mathbf{E} = \mathbf{i}\mathbf{E}_x + \mathbf{j}\mathbf{E}_y$$
+        $$E_x = E_{0x}\cos(\omega t - kz + \phi_x) = E_{0x}e^{-i(\omega t - kz + \phi_x)}$$
+        $$E_y = E_{0y}\cos(\omega t - kz + \phi_y) = E_{0y}e^{-i(\omega t - kz + \phi_y)}$$
+
+        <div class="Formula">
+            $$(\frac{E_x}{E_{0x}})^2 + (\frac{E_y}{E_{0y}})^2 - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos \phi = \sin^2 \phi(\phi = \phi_y - \phi_x)$$
+            <div class="Derivation">
+                <p>令\(\phi = \phi_y - \phi_x, \omega t - kz + \phi_x = \theta\)</p>
+                $$E_x = E_{0x}\cos\theta \Rightarrow \cos\theta = \frac{E_x}{E_{0x}}$$
+                $$\sin\theta = \sqrt{1 - (\frac{E_x}{E_{0x}})^2}$$
+                $$E_y = E_{0y}\cos(\theta + \phi) = E_{0y}(\cos\theta\cos\phi - \sin\theta\sin\phi)$$
+                $$(\frac{E_y}{E_{0y}}) = \frac{E_x}{E_{0x}}\cos\phi - \sqrt{1 - (\frac{E_x}{E_{0x}})^2}\sin \phi$$
+                $$[1 - (\frac{E_x}{E_{0x}})]\sin^2\phi = (\frac{E_x}{E_{0x}})^2\cos^2\phi - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos\phi + (\frac{E_y}{E_{0y}})^2$$
+                $$\sin^2\phi = (\frac{E_x}{E_{0x}})^2 - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos\phi + (\frac{E_y}{E_{0y}})^2$$
+            </div>
+        </div>
+
+        <b>线偏振光</b>
+        <p>条件：\(\phi = m\pi(m = 0, \pm 1, \pm 2, \cdots)\)</p>
+        <div class="Formula">
+            $$\frac{1}{E_{0x}}E_x \pm \frac{1}{E_{0y}}E_y = 0$$
+            <div class="Derivation">
+                $$\phi = m\pi(m = 0, \pm 1, \pm 2, \cdots) \Rightarrow \begin{cases}\sin \phi = 0\\ \cos\phi = \pm 1\end{cases}$$
+                $$(\frac{E_x}{E_{0x}})^2 + (\frac{E_y}{E_{0y}})^2 - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos \phi = \sin^2 \phi$$
+                $$(\frac{E_x}{E_{0x}})^2 \pm 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}}) + (\frac{E_y}{E_{0y}})^2 = 0$$
+                $$(\frac{E_x}{E_{0x}} \pm \frac{E_y}{E_{0y}})^2 = 0$$
+                $$\frac{1}{E_{0x}}E_x \pm \frac{1}{E_{0y}}E_y = 0$$                
+            </div>
+        </div>
+        $$\frac{E_y}{E_x} = \frac{E_{0y}}{E_{0x}}e^{-i\phi} = \frac{E_{0y}}{E_{0x}}e^{-im\pi}$$
+
+        <p>当\(m\)为偶数时，光场在\(Ⅰ,Ⅲ\)象限内振动.</p>
+        <p>当\(m\)为奇数时，光场在\(Ⅱ,Ⅳ\)象限内振动.</p>
+
+        <b>圆偏振光</b>
+        <p>条件：\(E_{0x} = E_{0y} = E'_0, \phi = m\pi/2(m = \pm 1, \pm 3, \pm 5\cdots)\)</p>
+        <div class="Formula">
+            $$E^2_x + E^2_y = E'^2_0$$
+            <div class="Derivation">
+                $$\phi = m\pi/2(m = \pm 1, \pm 3, \pm 5\cdots) Rightarrow \begin{cases}\sin \phi = \pm 1 \\ \cos\phi = 0\end{cases}$$
+                $$E_{0x} = E_{0y} = E'_0$$
+                $$(\frac{E_x}{E_{0x}})^2 + (\frac{E_y}{E_{0y}})^2 - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos \phi = \sin^2 \phi$$
+                $$(\frac{E_x}{E'_0})^2 + (\frac{E_y}{E'_0})^2 = 1$$
+                $$E^2_x + E^2_y = E'^2_0$$                
+            </div>
+        </div>
+        $$\frac{E_y}{E_x} = \frac{E_{0y}}{E_{0x}}e^{-i\phi} = e^{\mp i\frac{\pi}{2}} = \mp i$$
+        <p>规定：逆着光传播方向看，\(\mathbf{E}\)顺时针旋转，称为<b>右旋</b>偏振光；\(\mathbf{E}\)逆时针旋转，称为<b>左旋</b>偏振光.</p>        
+        <p>\(\phi = \frac{\pi}{2}\)时，为右旋偏振光；\(\phi=-\frac{\pi}{2}\)时，为左旋偏振光.</p>
+
+        <b>椭圆偏振光</b>
+        <p>\(2m\pi \lt \phi \lt (2m+1)\pi\)：右旋椭圆偏振光.</p>
+        <p>\((2m-1)\pi \lt \phi \lt 2m\pi\)：左旋椭圆偏振光.</p>
         
 
+        <h3>琼斯矩阵法表示偏振态</h3>
+        <b>琼斯矩阵</b>
+        $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}E_{0x}e^{-i\phi_x}\\E_{0y}e^{-i\phi_y}\end{matrix}\right]$$
+
+        <b>\(Ⅰ，Ⅲ\)象限内的线偏振光</b>
+        <p>此时\(\phi_x = \phi_y = \phi_0\)</p>
+        $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}E_{0x}\\E_{0y}\end{matrix}\right]e^{-i\phi_0}$$
+
+        <b>右旋、左旋圆偏振光</b>
+        <p>此时\(\phi_y - \phi_x = \pm \frac{\pi}{2}, E_{0x} = E_{0y} = E_0\)</p>
+        $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}1\\\mp i\end{matrix}\right]E_0e^{-i\phi_x}$$
+        
+
+        <script src="/JavaScript/Capacity.js"></script>
     </body>
-
-
 </html>

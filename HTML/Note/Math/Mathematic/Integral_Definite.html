@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>定积分</h1>
+
+        <h2>定积分的应用——曲边梯形的面积</h2>
+        <div class="Card-Definition">
+            <b>曲边梯形</b>
+            <p>设\(f(x)\)在\([a,b]\)上非负且连续.</p>
+            <p>由\(y=0, x=a, x=b, y=f(x)\)围成的图形称为<b>曲边梯形</b>.</p>
+            <p>曲线弧称为<b>曲边</b>.</p>
+        </div>
+
+        <p>在区间\([a,b]\)中插入若干分点\(a= x_0\lt x_1\lt \cdots \lt x_{n-1} \lt x_n = b\).</p>
+        <p>每一个小区间的长度\(\Delta x_i = x_i - x_{i-1}\).</p>
+        <p>在\([x_{i-1}, x_{i}]\)上任取一点\(\xi_i\)，曲边梯形的面积可以近似表示为</p>
+        $$S \approx f(\xi_1)\Delta x_1 + f(\xi_2)\Delta x_2 + \cdots + f(\xi_n)\Delta x_n$$
+        <p>将分段数\(n\)无限增多，则每个小区间的长度均接近于\(0\)，此时拟合面积将无限接近于真实面积，即</p>
+        $$S = \lim\limits_{n\rightarrow \infty}\sum\limits_{i=1}^nf(\xi_i)\Delta_i$$
+
+        <h2>定积分的应用——变速直线运动的路程</h2>
+        <p>某物体按速度\(v = v(t)\)做变速直线运动，设其在\([T_1, T_2]\)时间段内的路程为\(s\).</p>
+        <p>在时间间隔\([T_1, T-2]\)内插入若干分点：\(T_1 = t_0 \lt t_1 \lt \cdots \lt t_{n-1} \lt t_n = T_2\).</p>
+        <p>每一小段的时长\(\Delta t_i = t_i - t_{i-1}\).</p>
+        <p>在\([t_{i-1}, t_i]\)上任取一个时刻\(\tau_i\)，以\(v(\tau_i)\)代替\([t_{i-1}, t_i]\)上各个时刻的速度，\(s\)的值可以近似表示为</p>
+        $$s \approx \sum\limits_{i=1}^n v(\tau_i)\Delta t_i $$
+        <p>将分段数\(n\)无限增多，则每个小区间的时间均接近于\(0\)，此时拟合路程将无限接近于真实路程，即</p>
+        $$s = \lim\limits_{n\rightarrow \infty}\sum\limits_{i=1}^n v(\tau_i)\Delta t_i$$
+
+
+        <h2>定积分定义</h2>
+        <b>定义</b>
+        <p>\(\int_0^1f(x)\mathrm{d}x = \lim\limits_{n\rightarrow \infty}\sum\limits_{k=1}^nf(\frac{k}{n})\frac{1}{n}\)</p>
+        <p>\(\int_a^b f(x)\mathrm{d}x\)</p>
+        <b>几何意义</b>
+        <p>函数\(y = f(x)\)在区间\([a,b]\)上与\(x\)轴围成区域的面积。</p>
+        <p>在\(x\)轴上方的定积分面积为正值，在\(x\)轴下方的定积分面积为负值，且可线性相加。</p>
+
+        <b>注意：</b>
+        <p>积分的上下限并无大小关系，下限\(a\)可以大于上限\(b\)，当换元的时候也无需交换位置。</p>
+        <p>举例来说，若换元后\(a'=b, b'=a\)，则\(\int_a^b f[\phi(x)]\mathrm{d}x = \int_{b}^{a} f(t)\mathrm{d}t\)</p>
+
+        <b>定积分存在的充分条件</b>
+        <p>\(f(x)\)在\([a,b]\)上连续\(\Rightarrow \int_a^b f(x)\mathrm{d}x\)存在</p>
+        <p>\(f(x)\)在\([a,b]\)上有界，且只有有限个间断点\(\Rightarrow \int_a^b f(x)\mathrm{d}x\)存在</p>
+        <p>\(f(x)\)在\([a,b]\)上只有有限个第一类间断点\(\Rightarrow \int_a^b f(x)\mathrm{d}x\)存在</p>
+        <b>定积分存在的必要条件</b>、
+        <p>\(\int_a^b f(x)\mathrm{d}x\)存在\(\Rightarrow[a,b]\)有界且\(f(x)\)在\([a,b]\)上有界</p>
+
+        <h2>定积分性质</h2>
+        <div class="Card-Property">
+            <b>定积分性质</b>
+            <div class="Formula">
+                <p>\(\int_a^a f(x) \mathrm{d}x = 0\)</p>
+                <div class="Derivation">
+                    $$\int_a^a f(x) \mathrm{d}x = F(a) - F(a) = 0$$
+                </div>
+            </div>
+            <div class="Formula">
+                <p>\(\int_a^b f(x) \mathrm{d}x = -\int_b^a f(x) \mathrm{d}x\)</p>
+                <div class="Derivation">
+                    $$\int_a^b f(x) \mathrm{d}x = F(b) - F(a) = -[F(a) - F(b)] = -\int_b^a f(x) \mathrm{d}x$$
+                </div>
+            </div>
+        </div>
+        <h3>不等式性质</h3>
+        <p>在\([a,b]\)上\(f(x)\leq g(x) \Rightarrow \int_a^bf(x)\mathrm{d}x\leq \int_a^bg(x)\mathrm{d}x\)</p>
+        <p>若\(f(x)\)在\([a,b]\)上最大值为\(M\)，最小值为\(m \Rightarrow m(b-a)\leq \int_a^bf(x)\mathrm{d}x\leq M(b-a)\)</p>
+        <p>\(|\int_a^b f(x)\mathrm{d}x|\leq \int_a^b|f(x)|\mathrm{d}x\)</p>
+
+        <h3>积分中值定理</h3>
+        <p>若\(f(x)\)在\([a,b]\)内连续，则至少存在一点\(\xi \in [a,b]\)使得\(\int_a^bf(x)\mathrm{d}x=f(\xi)(b-a)\)</p>
+        <p>若\(f(x)\)在\([a,b]\)内连续，则至少存在一点\(\xi \in (a,b)\)使得\(\int_a^bf(x)\mathrm{d}x=f(\xi)(b-a)\)</p>
+        <p>设\(f(x), g(x)\)在\([a,b]\)内连续，且\(g(x)\)不变号，则至少存在一点\(\xi \in [a,b]\)，使得</p>
+        $$\int_a^b f(x)g(x) \mathrm{d}x = f(\xi)\int_a^bg(x)\mathrm{d}x$$
+        <div class="Prove">
+            <p>\(f(x)\)在\([a,b]\)上连续\(\Rightarrow f(x)\)在\([a,b]\)上存在最大值\(M\)与最小值\(m\)使得\(m\leq f(x)\leq M\)</p>
+            <p>\(g(x)\)不变号\(\Rightarrow\)不妨设\(g(x)\gt 0 \Rightarrow mg(x)\leq f(x)g(x)\leq Mg(x)\)</p>
+        </div>
+
+        
+        <div class="Card-Method">
+            <h2>求定积分的方法</h2>
+            <b>奇偶函数积分</b>
+            <p>奇函数：\(\int_{-a}^a f(x)\mathrm{d}x = 0\)</p>
+            <p>偶函数：\(\int_{-a}^a f(x)\mathrm{d}x = 2\int_0^a f(x)\mathrm{d}x\)</p>
+            
+            <b>周期函数积分</b>
+            $$\int_a^{a+nT}f(x)\mathrm{d}x = n\int_b^{b+T}f(x)\mathrm{d}x$$
+            
+            <b>沃利斯公式</b>
+            $$\begin{align}
+            &n = 1:\int_0^{\frac\pi2}\sin x\mathrm{d}x = \int_0^{\frac\pi2}\cos x\mathrm{d}x = 1\\\\
+            &n\gt 1:\int_0^{\frac\pi2}\sin^n x\mathrm{d}x = \int_0^\frac\pi2 \cos^nx \mathrm{d}x =
+            \begin{cases}
+            \frac{2}{3}\cdot\frac{4}{5}\cdots\frac{n-3}{n-2}\cdot\frac{n-1}{n},n为奇数\\
+            \frac{\pi}{2}\cdot \frac{1}{2}\cdots\frac{n-3}{n-2}\cdot\frac{n-1}{n}, n为偶数\\
+            \end{cases}
+            \end{align}$$
+            $$\int_0^\frac\pi2 f(\sin x)\mathrm{d}x = \int_0^\frac\pi2 f(\cos x)\mathrm{d}x$$
+            $$\int_0^\pi xf(\sin x)\mathrm{d}x = \frac{\pi}{2}\int_0^\pi f(\sin x)\mathrm{d}x = \pi \int_0^{\frac{\pi}{2}}f(\sin x)\mathrm{d}x$$
+            
+            <b>牛顿-莱布尼茨公式</b>
+            $$\int_a^b f(x)\mathrm{d}x = F(x)|_a^b = F(b) -F(a)$$
+
+            <b>换元法</b>
+            $$\int_a^b f(x) \mathrm{d}x = \int_{\phi(a)}^{\phi(b)}f[\phi(t)]\phi'(t)\mathrm{d}t$$
+
+            <b>几何法</b>
+            <p>计算积分区域的面积得到积分的值.</p>
+            $$y = \int_0^r \sqrt{2rx - x^2}\mathrm{d}x = \frac{1}{4}\pi r^2$$
+            $$y = \int_0^{2r} \sqrt{2rx - x^2}\mathrm{d}x = \frac{1}{2}\pi r^2$$
+        
+        </div>
+
+        <ul class="navibar">
+            <li><a href="Integral_Indefinite.html">上一页</a></li>
+            <li class="catalog"><a href="Catalog.html">主页</a></li>
+            <li class="next"><a href="Integral_Improper.html">下一页</a></li>
+        </ul>
+
+        <script src="/JavaScript/Capacity.js"></script>
+    </body>
+</html>

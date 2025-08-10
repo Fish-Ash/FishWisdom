@@ -2,14 +2,15 @@
 
 <html lang = "zh-cn">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Pandas</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
-    </head>
-
-
+<head>
+    <meta charset="utf-8">
+    <title>Pandas</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
     <body>
         <div class="header"><h1>不惑</h1></div>
         <ul class="navibar">
@@ -26,16 +27,14 @@
         <p>以下指令均为终端指令</p>
 
         <b>查看现有的虚拟环境列表</b>
-        <code><pre class="code">
-
+        <pre><code>
             conda info -e
-        </pre></code>
+        </code></pre>
 
         <b>创建虚拟环境</b>
-        <code><pre class="code">
-
+        <pre><code>
             conda create -n EnvName python=x.x
-        </pre></code>
+        </code></pre>
         <p>其中<span lang="en">EnvName</span>为自己取的虚拟环境的名字，<span lang="en">x.x</span>为你设定的<span lang="en">Python</span>的版本。</p>
  
         <b>激活虚拟环境</b>

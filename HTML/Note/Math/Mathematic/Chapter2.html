@@ -20,56 +20,7 @@
         </ul>
 
         <h1>第二章 导数与微分</h1>
-        <h2>第一节 导数</h2>
-        <b>导数的概念</b>
-        $$f'(x_0) = \lim\limits_{\Delta x\rightarrow 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} = \lim\limits_{x\rightarrow x_0}\frac{f(x)-f(x_0)}{x-x_0}$$
-        <ul>
-            <li>左导数：\(f'_-(x_0) = \lim\limits_{\Delta x\rightarrow 0^-}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\)</li>
-            <li>右导数：\(f'_+(x_0) = \lim\limits_{\Delta x\rightarrow 0^+}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\)</li>
-        </ul>
-        $$f'(x_0)\Leftrightarrow f'_-(x_0) = f'_+(x_0)$$
-        <p>[注]可导一定连续，连续不一定可导。</p>
 
-        <h3>导数的几何意义</h3>
-        <p>\(f'(x_0)\)表示曲线\(y=f(x)\)在点\((x_0, f(x_0))\)处切线的斜率。</p>
-        <ul>
-            <li>切线方程：\(y - f(x_0) = f'(x_0)(x-x_0)\)</li>
-            <li>法线方程：\(y - f(x_0) = -\frac{1}{f'(x_0)}(x-x_0)\)</li>
-        </ul>
-
-        <h3>计算</h3>
-        <p>奇函数的导函数是偶函数</p>
-        <p>偶函数的导函数是奇函数</p>
-        <p>周期函数的导函数仍是周期函数</p>
-
-        <b>反函数的导数</b>
-        <p>设函数\(y = f(x)\)的导数为\(f'(x)\)，则其反函数\(x = g(y)\)的导数为\(g'(y) = \frac{1}{f'(x)}\)</p>
-
-        <b>参数方程的导数</b>
-        <p>设\(y = y(x)\)由参数方程\(\begin{cases}x = x(t)\\y = y(t)\end{cases}\)确定</p>
-        $$\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}} = \frac{y'(t)}{x'(t)}, x'(t)\neq 0$$
-        $$\begin{align}
-        \frac{\mathrm{d}^2y}{\mathrm{d}x^2} &= \frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}y}{\mathrm{d}x})\\
-                                            &= \frac{\mathrm{d}}{\mathrm{d}t}(\frac{\mathrm{d}y}{\mathrm{d}x})\frac{\mathrm{d}t}{\mathrm{d}x}\\
-                                            &= \frac{\mathrm{d}}{\mathrm{d}t}[\frac{y'(t)}{x'(t)}]\frac{1}{x'(t)}\\
-                                            &= [\frac{y'(t)}{x'(t)}]'\frac{1}{x'(t)}
-        \end{align}$$
-
-        <b>常用高阶导数公式</b>
-        <ul>
-            <li>\((\sin x)^{(n)} = \sin(x + n\frac{\pi}{2})\)</li>
-            <li>\((\cos x)^{(n)} = \cos(x + n\frac{\pi}{2})\)</li>
-            <li>\((u\cdot v)^{(n)} = \sum\limits_{k=0}^{n}C_n^ku^{(k)}v^{(n-k)}\)（莱布尼茨公式）</li>
-        </ul>
-
-        <h3>题型</h3> 
-        <b>证明函数不等式</b>
-        <p>构造辅助函数，将函数不等式问题转化为函数零点问题</p>
-
-        常用结论
-        <p>设\(f(x) = \phi |x - a|\)，\(\phi(x)\)在\(x = a\)处连续，则\(f(x)\)在\(x=a\)处可导\(\Leftrightarrow \phi(a) = 0 \)</p>
-        
-        
         
         
         <h2>第二节 微分</h2>

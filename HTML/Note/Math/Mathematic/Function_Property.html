@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>函数性质</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#Monotonicity">单调性</a></li>
+                <li><a href="#Parity">奇偶性</a></li>
+                <li><a href="#Periodicity">周期性</a></li>
+                <li><a href="#Boundedness">有界性</a></li>
+            </ul>
+        </div>
+
+        <h2 id="Monotonicity">单调性</h2>
+        <table>
+            <tr>
+                <td></td>
+                <td>区间\(D\)内，\(\forall x_1 \lt x_2\)</td>
+            </tr>
+            <tr>
+                <td>单调递增</td>
+                <td>$$f(x_1) \lt f(x_2)$$</td>
+            </tr>
+            <tr>
+                <td>单调不减</td>
+                <td>$$f(x_1) \leq f(x_2)$$</td>
+            </tr>
+            <tr>
+                <td>单调递减</td>
+                <td>$$f(x_1) \gt f(x_2)$$</td>
+            </tr>
+            <tr>
+                <td>单调不增</td>
+                <td>$$f(x_1) \geq f(x_2)$$</td>
+            </tr>
+        </table>
+
+        <h2 id="Parity">奇偶性</h2>
+        <ul>
+            <li>奇函数：定义在\((-l, l)\)上的函数，满足\(f(-x) = -f(x)\)</li>
+            <li>偶函数：定义在\((-l, l)\)上的函数，满足\(f(-x) = f(x)\)</li>
+            <li>既奇又偶函数：\(f(x) = 0\)</li>
+            <li>非奇非偶函数</li>
+        </ul>
+        $$
+        \begin{align}
+        奇+奇 = 奇 &&偶+偶=偶 &&&奇+偶=?\\
+        奇\times奇 = 偶 && 偶\times 偶 = 偶 &&&奇\times 偶 = 奇
+        \end{align}
+        $$
+        <p>奇函数\(f(0) = 0\)</p>
+
+
+        <h2 id="Periodicity">周期性</h2>
+        <p>若\(\exists T>0\)，对\(\forall x\)，恒有</p>
+        $$f(x + T) = f(x)$$
+        <p>则称\(f(x)\)为以\(T\)为周期的周期函数。</p>
+        <p>若存在使上式成立的最小正数\(T\)，则其被称为<b>最小正周期</b>。</p>
+        <p>不是所有的周期函数都有最小正周期，例如常数函数、迪利克雷函数。</p>
+        <p>若\(f(x)\)周期为\(T\)，则\(f(ax+b)\)周期为\(\frac{T}{|a|}\)</p>
+
+
+        <h2 id="Boundedness">有界性</h2>
+        <table>
+            <tr>
+                <td></td>
+                <td>对于\(\forall x\in D, \exists M \gt 0\)</td>
+            </tr>
+            <tr>
+                <td>有界</td>
+                <td>$$|f(x)|\leq M$$</td>
+            </tr>
+            <tr>
+                <td>有上界</td>
+                <td>$$f(x) \leq M$$</td>
+            </tr>
+            <tr>
+                <td>有下界</td>
+                <td>$$f(x) \geq -M$$</td>
+            </tr>
+        </table>
+
+        <div class="Ending">Ending...</div>
+    </body>
+
+</html>

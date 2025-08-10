@@ -19,9 +19,9 @@
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
 
-        <h2><a href="1.SequenceLimit.html">第二节 数列的极限</a></h2>
+        <h2><a href="Limit_Sequence.html">数列的极限</a></h2>
 
-        <h2>第三节 函数的极限</h2>
+        <h2>函数的极限</h2>
         <b>（一）自变量趋于有限值时函数的极限</b>
         <p>设函数\(f(x)\)在点\(x_0\)的某去心邻域内有定义。若\(\exists\)常数\(A\)，对于\(\forall\epsilon \gt 0\)，总\(\exists \delta \gt 0\)，使得当\(|x - x_0|\lt \delta\)时，\(|f(x) - A| \lt \epsilon\)</p>
         <p>常数\(A\)称为函数\(f(x)\)当\(x\rightarrow x_0\)时的极限，记作\(\mathop{lim}\limits_{x\rightarrow x_0}f(x) = A\)或\(f(x)\rightarrow A(x\rightarrow x_0)\)</p>
@@ -37,21 +37,6 @@
         $$\lim\limits_{x\rightarrow \infty}f(x) = A \Leftrightarrow \forall \epsilon\gt 0, \exists X \gt 0, 当|x|\gt X时，|f(x) - A|\lt \epsilon \Leftrightarrow \lim\limits_{x\rightarrow -\infty}f(x) = \lim\limits_{x\rightarrow +\infty}f(x) = A$$
 
         <b>常用函数的极限</b>
-        $$\lim\limits_{x\rightarrow\infty}\sqrt[n]{n} = 1$$
-        $$\lim\limits_{n\rightarrow \infty}\sqrt[n]{x_1^n + x_2^n + \cdots + x_m^n} = \max\{x_1, x_2, \cdots x_m\}, x_i\gt0$$
-        <div class="prove">
-            <p>不妨设\(0\lt x_1 \leq x_2 \leq \cdots \leq x_m\)</p>
-            $$x_m^n \leq x_1^n + x_2^n +\cdots + x_m^n \leq mx_m^n$$
-            $$\sqrt[n]{x_m^n} \leq \sqrt[n]{x_1^n + x_2^n +\cdots + x_m^n} \leq \sqrt[n]{mx_m^n}$$
-            $$
-            \begin{cases}
-            \lim\limits_{n\rightarrow \infty}\sqrt[n]{x_m^n} = x_m\\
-            \lim\limits_{n\rightarrow \infty}\sqrt[n]{mx_m^n} = x_m
-            \end{cases}\Rightarrow
-            \lim\limits_{n\rightarrow \infty}\sqrt[n]{x_1^n + x_2^n + \cdots + x_m^n} = x_m
-            $$
-        </div>
-        $$\lim\limits_{x\rightarrow 0^+}(1 + \frac{1}{x})^x = \lim\limits_{x\rightarrow +\infty}(1 + x)^{\frac{1}{x}} = 1$$
 
 
         <b>极限唯一性</b>
@@ -114,13 +99,78 @@
             <li>夹逼准则</li>
         </ul>
 
-        函数
-        <ul>
-            <li>夹逼准则</li>
-            <li>洛必达法则</li>
-            <li>等价无穷小</li>
-            <li><a href="TaylorFormula.html">泰勒公式</a></li>
-        </ul>
+        <div class="Card-Formula">
+            <b>重要极限</b>
+            $$\lim\limits_{x\rightarrow 0^+}(1 + \frac{1}{x})^x = \lim\limits_{x\rightarrow +\infty}(1 + x)^{\frac{1}{x}} = 1$$
+            $$\lim\limits_{x\rightarrow\infty}\sqrt[n]{n} = 1$$
+            <div class="Formula">
+                $$\lim\limits_{n\rightarrow \infty}\sqrt[n]{x_1^n + x_2^n + \cdots + x_m^n} = \max\{x_1, x_2, \cdots x_m\}, x_i\gt0$$
+                <div class="Derivation">
+                    <p>不妨设\(0\lt x_1 \leq x_2 \leq \cdots \leq x_m\)</p>
+                    $$x_m^n \leq x_1^n + x_2^n +\cdots + x_m^n \leq mx_m^n$$
+                    $$\sqrt[n]{x_m^n} \leq \sqrt[n]{x_1^n + x_2^n +\cdots + x_m^n} \leq \sqrt[n]{mx_m^n}$$
+                    $$
+                    \begin{cases}
+                    \lim\limits_{n\rightarrow \infty}\sqrt[n]{x_m^n} = x_m\\
+                    \lim\limits_{n\rightarrow \infty}\sqrt[n]{mx_m^n} = x_m
+                    \end{cases}\Rightarrow
+                    \lim\limits_{n\rightarrow \infty}\sqrt[n]{x_1^n + x_2^n + \cdots + x_m^n} = x_m
+                    $$
+                </div>
+            </div>
+
+        </div>
+
+        <div class="Card-Method">
+            <h2>求函数极限的方法</h2>
+            <h3>直接代入法</h3>
+            <p>若直接代入后极限的分子分母不同时为\(0\)，则可直接得出结果.</p>
+            <p>反之参考以下方法:</p>
+
+            <h3>有理函数-假分式</h3>
+            <p>对于易于约分的假分式，将假分式化为真分式后直接代入.</p>
+            $$\lim\limits_{x\rightarrow \infty}\frac{a_0x^m + a_1x^{m-1} + \cdots + a_m}{b_0x^n + b_1x^{n-1} + \cdots + b_m} = \begin{cases}0, n\gt m\\\frac{a_0}{b_0}, n=m\\\infty, n\lt m\end{cases}$$
+            <p>对于\(\lim\limits_{x\rightarrow \infty}\frac{P(x)}{Q(x)}\)，分子分母同时除以最高次\(x^n\).</p>
+            <p>\(\lim\limits_{x\rightarrow 0}\frac{c}{x} = \infty, \lim\limits_{x\rightarrow 0}\frac{x}{c} = 0\).</p>
+            <p>\(\lim\limits_{x\rightarrow \infty}\frac{c}{x} = 0, \lim\limits_{x\rightarrow \infty}\frac{x}{c} = \infty\).</p>
+
+            <h3>四则运算</h3>
+            $$\lim f(x)g(x) = \lim f(x)\lim g(x)$$
+            $$\lim [f(x) + g(x)] = \lim f(x) + \lim g(x)$$
+
+            <h3><a href="./Infinty.html#sim">等价无穷小</a></h3>
+            <h3><a href="./TaylorFormula.html">泰勒展开</a></h3>
+            <p>分子为多项式时，可以展开其中一项.</p>
+            $$\lim \frac{o(x)}{x} = 0$$
+
+            <h3>洛必达法则</h3>
+            <p>\(\frac{0}{0}\)型 \(\frac{\infty}{\infty}\)型</p>        
+            $$\lim\frac{f(x)}{g(x)} = \lim\frac{f'(x)}{g'(x)}$$
+            <p>[注]洛必达法则求得极限不存在，说明洛必达法则不适用，不能说明原极限不存在.</p>
+
+            <h3>\(1^\infty\)型极限</h3>
+            $$
+            \begin{cases}
+            \lim \alpha(x) = 0\\
+            \lim \beta(x) = \infty\\
+            \end{cases}\Rightarrow
+            \lim [1 + \alpha(x)]^{\beta(x)} = e^{\lim \alpha(x)\beta(x)}
+            $$
+
+            <h3>\(\lim\limits_{x\rightarrow 0}a^{\frac{1}{x}}\)</h3>
+            $$\lim\limits_{x\rightarrow 0^+}a^{\frac{1}{x}} = a^{+\infty} = \infty$$
+            $$\lim\limits_{x\rightarrow 0^-}a^{\frac{1}{x}} = (\frac{1}{a})^{+\infty} = 0$$
+
+
+            <h3>\(\sum f(n, k)\)型</h3>
+
+            <b>定积分定义</b>
+            $$\lim\limits_{n\rightarrow \infty}\sum\limits_{k=1}^n f(\frac kn)\frac1n = \int_0^1 f(x) \mathrm{d}x$$
+
+            <b>夹逼准则</b>
+            <p>放缩分母</p>
+
+        </div>
 
 
         <h2>求极限注意事项</h2>
@@ -128,70 +178,48 @@
             <li>指数形式转化为对数形式</li>
             <li>\(\ln(x)\)转化为\(\ln(x-1 + 1)\sim x-1\)</li>
             <li>公式中的\(x\)是整体</li>
+            <li>$$\lim\limits_{x\rightarrow \infty}a^x = \begin{cases}
+                0,|x|\lt 1\\
+                \infty, |x|\gt 1\\
+                1, x=1\\
+                (-1)^x, x= -1
+                \end{cases}$$</li>
         </ul>
 
-        <h2>无穷小量</h2>
-        <p>若\(\lim\limits_{x\rightarrow x_0}f(x) = 0\)，则称\(f(x)\)为\(x\rightarrow x_0\)时的无穷小量。</p>
 
-        <b>无穷小量阶的比较</b>
-        <p>在相同的自变量变化趋势下，设\(\lim\alpha = 0, \lim\beta = 0\)，且\(\beta(x)\neq 0\)</p>
-        <ul>
-            <li>\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = 0\)，称\(\alpha(x)\)为\(\beta(x)\)的高阶无穷小，记为\(\alpha(x) = o[\beta(x)]\)</li>
-            <li>\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = \infty\)，称 \(\alpha(x)\)为\(\beta(x)\)的低阶无穷小</li>
-            <li>\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = c\neq 0\)，称\(\alpha(x)\)为\(\beta(x)\)的同阶无穷小</li>
-            <li>\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta(x)} = 1\)，称\(\alpha(x)\)与\(\beta(x)\)等价，记为\(\alpha(x)\sim \beta(x)(x\rightarrow x_0)\)</li>
-            <li>\(\lim\limits_{x\rightarrow x_0} \frac{\alpha(x)}{\beta^k(x)} = c\neq 0\)，称\(\alpha(x)\)为\(\beta(x)\)的\(k\)阶无穷小</li>
-        </ul>
-
-        <b>无穷小的运算</b>
-        $$o(x^m) + o(x^n) = o(x^k), k = \min\{m,n\}$$
-        $$o(x^m)\cdot o(x^n) = o(x^{m+n})$$
-        $$x^m\cdot o(x^n) = o(x^{m+n})$$
-        $$o(kx^n) = k\cdot o(x^n) = o(x^n), k\neq 0$$
-
-        <b>无穷小的性质</b>
-        <p>有限个无穷小的和仍是无穷小</p>
-        <p>有限个无穷小的乘积仍然是无穷小</p>
-        <p>无穷小与有界量的乘积仍然是无穷小</p>
-        <p>等价无穷小具有相同的函数值与导数值</p>
-
-
-        <b>常见等价无穷小</b>
-        $$x - \ln(1 + x) \sim \frac12 x^2$$
-        $$\ln(1 + x) \sim x$$
-        $$e^x - 1 \sim x$$
-        $$a^x - 1 \sim x\ln a$$
-        $$(1 + x)^\alpha -1 = \alpha x$$
-
-        <h2>无穷大量</h2>
-        <p>\(\lim\limits_{x\rightarrow x_0}f(x) = \infty\)，称\(f(x)\)为\(x\rightarrow x_0\)时的无穷大量。</p>
-        $$对于\forall M \gt 0, \exists \delta \gt 0, 使得当0\lt |x - x_0|\lt \delta时，|f(x)|\gt M$$
-        <p>\(\lim\limits_{x\rightarrow \infty}f(x) = \infty\)，称\(f(x)\)为\(x\rightarrow \infty\)时的无穷大量。</p>
-        $$对于\forall M \gt 0, \exists X \gt 0, 使得当|x|\gt X时，|f(x)|\gt M$$
-
-        <b>常见无穷大量的比较</b>
-        <p>令\(\alpha \gt 0, \beta \gt 0, a\gt 1\)</p>
-        函数
-        <p>\(x\rightarrow +\infty\)时：</p>
-        $$\ln^\alpha x \ll x^\beta \ll a^x$$
-        数列
-        <p>\(n\rightarrow \infty\)时：</p>
-        $$\ln^\alpha n\ll n^\beta \ll a^n \ll n! \ll n^n$$
-
-        <b>无穷大量的性质</b>
-        <p>无穷大量包括正无穷与负无穷</p>
-        <p>两个无穷大量的乘积仍为无穷大量</p>
-        <p>无穷大量与有界变量之和仍是无穷大量</p>
-
-        <b>无穷大量与无界变量的关系</b>
-        <p>对于数列\(\{x_n\}\)，无穷大量要求\(n\gt N\)后所有项均满足\(|x_n|\gt M\)，无界变量仅要求存在一项满足\(|x_n|\gt M\)。</p>
-        <p>因此无界变量包含无穷大量。</p>
-
-        <b>无穷大量与无穷小量的关系</b>
-        <p>设\(f(x)\neq 0\)</p>
-        $$\lim f(x) = 0 \Leftrightarrow \lim \frac{1}{f(x)} = \infty$$
-
-
+        <div class="Card-Property">
+            <table>
+                <tr>
+                    <td colspan="2"><h2>极限性质</h2></td>
+                </tr>
+                <tr>
+                    <td><b>数列极限</b></td>
+                    <td><b>函数极限</b></td>
+                </tr>
+                <tr>
+                    <td colspan="2">有界性</td>
+                </tr>
+                <tr>
+                    <td>\(\{x\}\)收敛\(\Rightarrow \{x\}\)有界</td>
+                    <td>\(\lim\limits_{x\rightarrow x_0} f(x)\)存在\(\Rightarrow f(x)\)在\(x_0\)某去心邻域内局部有界</td>
+                </tr>
+                <tr>
+                    <td colspan="2">保号性</td>
+                </tr>
+                <tr>
+                    <td class="tbtext">
+                        <p>设\(\lim\limits_{n\rightarrow \infty}x_n = A\)</p>
+                        <p>\(A\gt 0 \Rightarrow \exists N\gt 0\)，\(n\gt N\)时，\(x_n \gt 0\)</p>
+                        <p>\(A\lt 0 \Rightarrow \exists N\gt 0\)，\(n\gt N\)时，\(x_n \lt 0\)</p>
+                        <p>\(\exists N\gt 0\)，\(n\gt N\)时，\(x_n \geq 0 \Rightarrow A\geq 0\)</p>
+                        <p>\(\exists N\gt 0\)，\(n\gt N\)时，\(x_n \leq 0 \Rightarrow A\leq 0\)</p>
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </div>
 
         <h2>函数连续性</h2>
         <b>连续</b>
@@ -226,6 +254,8 @@
             <li class="catalog"><a href="Mathematic.html">主页</a></li>
             <li class="next"><a href="chapter2.html">下一页</a></li>
         </ul>
+
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
 </html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>物理光学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead"><h1>不惑</h1></div>
+        <a class="BackToTop" href="#PageHead">Top</a>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        
+        
+        <h1>光在电介质面上的反射与折射</h1>
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#Fresnel">菲涅尔公式</a></li>
+                <li><a href="#TotalPolarization">全偏振</a></li>
+                <li><a href="#TotalReflection">全反射</a></li>
+            </ul>
+        </div>
+        
+        <div class="Card-Definition">
+            <b>垂直入射</b>
+            <p>入射角\(\theta_1 = 0\).</p>
+
+            <b>略入射</b>
+            <p>入射角\(\theta_1 \rightarrow 90°\).</p>
+        </div>
+
+        <b id="BoundaryCondition">电磁场的连续条件</b>
+        <p>在没有传导电流和自由电荷的介质中，磁感强度\(\mathbf{B}\)与电感强度\(\mathbf{D}\)的法向分量在界面上连续；电场强度\(\mathbf{E}\)和磁场强度\(\mathbf{H}\)的切向分量在界面上连续。</p>
+        $$
+        \begin{align}
+        \begin{cases}
+        B_{1n} = B_{2n}\\
+        D_{1n} = D_{2n}\\
+        H_{1t} = H_{2t}\\
+        E_{1t} = E_{2t}
+        \end{cases}
+        \end{align}
+        $$
+
+        任一方位振动的光矢量\(\mathbf{E}\)，都可分解为互相垂直的两个分量
+        <ul>
+            <li>\(p\)偏振波（\(E_p\)）：\(\mathbf{E}\)平行于入射面振动的分量，又称<span lang="en">TM</span>波（<span class="tip">横磁波<span class="tiptext">\(\mathbf{H}\)沿界面切线方向</span></span>）</li>
+            <li>\(s\)偏振波（\(E_s\)）：\(\mathbf{E}\)垂直于入射面振动的分量，又称<span lang="en">TE</span>波（<span class="tip">横电波<span class="tiptext">\(\mathbf{E}\)沿界面切线方向</span></span>）</li>
+        </ul>
+        
+        
+        <h2><a href="Fresnel.html" id="Fresnel">菲涅尔公式</a></h2>
+
+        <div class="Card-Definition">
+            <b>坡印廷矢量（辐射强度矢量、能流密度）\(\mathbf{S}\)</b>
+            <p>用于描述电磁能量的传播。</p>
+            <p>其方向表示能量流动的方向。各向同性介质中，亦为波的传播方向。</p>
+            <p>其大小等于单位时间内垂直通过单位面积的能量。</p>
+            $$\mathbf{S} = \mathbf{E} \times \mathbf{H} = \frac{1}{\mu}\mathbf{E}\times\mathbf{B}$$
+        </div>
+        <div class="Card-Definition">
+            <b>光强度\(I\)</b>
+            <p>介质中某点坡印廷矢量的瞬时值是忽大忽小的，但在一个周期内其平均值是一个定值，将其定义为光强度。</p>
+            $$I = \frac{1}{T}\int_0^TS\mathrm{d}t = \frac{1}{2}\sqrt{\frac{\epsilon}{\mu}}A^2(W/m^2)$$
+        </div>
+
+        <p>取\(\mathbf{E}\)与\(\mathbf{H}\)的实数部分，有：</p>
+        $$\mathbf{E} = \mathbf{E_0}\cos(\omega t + \alpha)$$
+        $$\mathbf{H} = \mathbf{H_0}\cos(\omega t + \beta)$$
+        $$\begin{align}
+        I &= \frac{1}{T}\int_0^{T}S\mathrm{d}t\\
+          &= \frac{1}{T}\int_0^{T}|\mathbf{E}||\mathbf{H}|\sin\frac{\pi}{2}\mathrm{d}t\\
+          &= \frac{1}{T}\int_{0}^TE_0H_0\cos(\omega t + \alpha)\cos(\omega t + \beta)\mathrm{d}t\\
+          &= \frac{1}{2}E_0H_0\cos(\alpha - \beta)
+        \end{align}$$
+        $$\begin{align}
+        \because Re(EH^*) &= Re\{E_0\exp[{i(\omega t + \alpha)}]\cdot H_0\exp[{-i(\omega t + \beta)}]\}\\
+                 &= E_0H_0\cos(\alpha - \beta)
+        \end{align}$$
+        $$\therefore I = \frac{1}{2} Re(EH^*)$$
+
+
+        <h2>入射波、反射波与透射波的能量关系</h2>
+        <img src="./img/W.png" width="400"><br>
+        通过单位面积的光能为：<br><br>
+        入射波：\(W_i = I_i\cos\theta_1 = \frac{1}{2}\sqrt{\frac{\epsilon_1}{\mu_1}}E_{0i}^2\cos\theta_1\)<br><br>
+        反射波：\(W_r = I_r\cos\theta_1 = \frac{1}{2}\sqrt{\frac{\epsilon_1}{\mu_1}}E_{0r}^2\cos\theta_1\)<br><br>
+        透射波：\(W_t = I_t\cos\theta_2 = \frac{1}{2}\sqrt{\frac{\epsilon_2}{\mu_2}}E_{0t}^2\cos\theta_2\)
+
+        <table>
+            <tr>
+                <td></td>
+                <td class="tbtitle">定义</td>
+                <td class="tbtitle">公式</td>
+            </tr>
+            <tr>
+                <td>反射率\(R\)（反射比\(\rho\)）</td>
+                <td>反射波与入射波能量之比</td>
+                <td>$$R = \rho = \frac{W_r}{W_i} = \frac{E_{0r}^2}{E_{0i}^2} = r^2$$</td>
+            </tr>
+            <tr>
+                <td>透射率\(T\)（透射比\(\tau\)）</td>
+                <td>透射波与入射波能量之比</td>
+                <td>
+                    $$T = \tau = \frac{W_t}{W_i} = \frac{\sqrt{\epsilon_2\mu_1}\cos\theta_2}{\sqrt{\epsilon_1\mu_2}\cos\theta_1}\frac{A_2^2}{A_1^2} = \frac{n_2\cos\theta_2}{n_1\cos\theta_1}\frac{A_2^2}{A_1^2} = \frac{n_2\cos\theta_2}{n_1\cos\theta_1}t^2$$
+                    （<span class="tip">非磁性物质<span class="tiptext">\(\mu_1 = \mu_2\)</span></span>）
+                </td>
+            </tr>
+        </table>
+        $$R_s + T_s = 1$$
+        $$R_p + T_p = 1$$
+
+
+        <h2>全偏振现象与<span lang="en">Brewster</span>角</h2>
+        
+        <h3>偏振</h3>
+        <p>光斜入射时，反射光中的\(p\)分量与\(s\)分量不等，反射光变为部分偏振光。</p>
+        <p>光从光疏介质入射到光密介质时，由菲涅尔公式：</p>
+        <ul>
+            <li>\(\theta_1 = 0°\)即垂直入射时，\(r_p \gt 0 \gt r_s\)、\(t_s\gt 0\)、\(t_p\gt 0\)，此时存在反射波与折射波。</li>
+            <li>\(\theta_1 = 90°\)即掠入射时，\(r_s = r_p = -1\)，\(t_s = t_p = 0\)，此时仅有反射光。</li>
+        </ul>
+
+        <div class="Card-Definition" id="TotalPolarization">
+            <b>全偏振</b>
+            <p>反射光的振动方向只沿一个平面内的现象.</p>
+
+            <p>由\(r_s, r_p, t_s, t_p\)的取值可知，仅有\(r_p\)的值可能为\(0\).</p>
+            <p>\(r_p = 0\)时，反射光中只有\(s\)方向偏振的电场，即反射光为全偏振光.</p>
+            <p>\(r_p = \frac{\tan(\theta_1 - \theta_2)}{\tan(\theta_1 + \theta_2)} = 0\)，由于\(\theta_1 \neq \theta_2\)，故\(\tan(\theta_1 - \theta_2)\neq 0\)，只能是\(\tan(\theta_1 + \theta_2) = \infty\)即\(\theta_1 + \theta_2 = \pi/2\)。称此时的入射角为<b>起偏振角</b>或<b><span lang="en">Brewster</span>角（\(\theta_B\)）</b>。</p>
+            $$\tan\theta_B = n$$
+        </div>
+
+
+        <div class="Card-Definition" id="TotalReflection">
+            <b>全反射</b>
+            <p>当光从光密介质入射到光疏介质、入射角大于临界角\(\theta_c\)时，光全部返回原介质中的现象.</p>
+            $$\sin\theta_c = n$$
+
+            <div class="Prove">
+                <p>光全部返回原介质\(\Rightarrow\)只有反射光，不存在折射光.</p>
+                $$\sin\theta_2 = \frac{n_1}{n_2}\sin\theta_1 \gt 1 \Rightarrow \frac{n_1}{n_2} \gt 1$$
+                <p>故条件1为：从光密介质入射到光疏介质.</p>
+                <p>设临界角为\(\theta_c\)，当\(\theta_1 = \theta_c\)时，\(\sin\theta_2\)恰好等于\(1\).</p>
+                $$\sin\theta_2 = \frac{n_1}{n_2}\sin\theta_c = 1$$
+                $$\sin\theta_c = \frac{n_1}{n_1} = n$$
+                <p>由于\(\sin\theta_2\)为关于\(\theta_1\)的单调递增函数，所以\(\theta_1 \gt \theta_c\)时，\(\sin\theta_2 \gt 1\).</p>
+                <p>故条件2为\(\theta_1 \gt \theta_c\).</p>
+            </div>
+            <p>全反射时发生相位的变化。</p>
+        </div>
+
+        <h2>有菲涅尔系数推断相位变化</h2>
+
+        $$E_{i} = E_{0i}\cos(\omega t - kr + \phi_0)$$
+
+        <p>对于折射波，在\(0\sim\frac{\pi}{2}\)范围内</p>
+        $$t_s = \frac{2n_1\cos\theta_1}{n_1\cos\theta_1 + n_2\cos\theta_2} \gt 0$$
+        $$t_s = \frac{2n_1\cos\theta_1}{n_2\cos\theta_1 + n_1\cos\theta_2} \gt 0$$
+        $$t = \frac{E_{0t}}{E_{0i}} \gt 0 \Rightarrow E_t = E_{0t}\cos(\omega t - kr + \phi_0)$$
+        <p>这表明折射波与入射波的相位总是相同的.</p>
+        <hr>
+        <p>对于反射波，在\(0\sim\frac{\pi}{2}\)范围内，\(r_s, r_t\)有正有负.</p>
+        <p>\(r = \frac{E_{0r}}{E_{0i}} \gt 0 \Rightarrow E_r = E_{0r}\cos(\omega t - kz + \phi_0)\)：相位不发生改变.</p>
+        <p>\(r = \frac{E_{0r}}{E_{0i}} \lt 0 \Rightarrow E_r = -E_{0r}\cos(\omega t - kz + \phi_0) = E_{0r}\cos(\omega t - kz + \phi_0 + \pi)\)：相位改变\(\pi\).</p>
+
+        <p>相位改变\(\pi\)的物理意义是光的振动方向反向，表现在图上时均以迎着光传播的方向观察.</p>
+
+
+
+        <h2>反射光和折射光的偏振特性</h2>
+        <ul>
+            <li>完全非偏振光</li>
+            <li>部分偏振光</li>
+            <li>完全偏振光</li>
+        </ul>
+
+        <div class="Card-Definition">
+            <b>偏振度</b>
+            $$P = \frac{I_M - I_m}{I_M + I_m}$$
+            <p>\(I_M, I_m\)分别为两个特殊（正交）方向上所对应的最大和最小光强.</p>
+            <p>完全非偏振光\(P=0\)，完全偏振光\(P=1\)，部分偏振光\(0\lt P\lt 1\)，\(P\)值越接近\(1\)，光的偏振程度越高.</p>
+        </div>
+
+        <b>自然光的反射、折射特性</b>
+        <p>自然光的反射率</p>
+        $$R_n = \frac{W_r}{W_i}$$
+        <p>入射的自然光能量\(W_i = W_{is} + W_{ip}\)，且\(W_{is} = W_{ip}\)</p>
+        $$R_n = \frac{W_{rs} + W_{rp}}{W_{is} + W_{ip}} = \frac{W_{rs}}{2W_{is}} + \frac{W_{rp}}{2W_{ip}} = \frac{1}{2}(R_s + R_p)$$
+
+        <p>反射光偏振度为</p>
+        $$P_r = \left|\frac{I_{rp} - I_{rs}}{I_{rp} + I_{rs}}\right| = \left|\frac{R_p - R_s}{R_p + R_s}\right|$$
+
+        <p>折射光偏振度为</p>
+        $$P_t = \left|\frac{I_{tp} - I_{ts}}{I_{tp} + I_{ts}}\right| = \left|\frac{T_p - T_s}{T_p + T_s}\right|$$
+
+        <p>自然光正入射和略入射界面时，\(R_s = R_p, T_s = T_p \Rightarrow P_s = P_t = 0\)，反射光与折射光仍为自然光.</p>
+        <p>自然光斜入射界面时，\(R_s\neq R_p, T_s\neq T_p\)，反射光和折射光均为部分偏振光.</p>
+
+
+
+
+        <script src="/JavaScript/Capacity.js"></script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!-- 公式容器 -->
+<div class="Formula">
+  \( Aₙ = a₁ + (n-1)d \)
+  <div class="Derivation">
+    <p>1. 等差数列定义：从第二项起，每一项与前一项的差为常数 \( d \)，即：</p>
+    \( a₂ - a₁ = d \)
+    <p>\( a₃ - a₂ = d \)</p>
+    <p>2. 累加得：\( aₙ - a₁ = (n-1)d \)，故 \( Aₙ = a₁ + (n-1)d \)</p>
+  </div>
+</div>
+
+<style>
+  .Formula {
+    cursor: pointer;
+  }
+  .Derivation {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    padding: 0 1em;
+  }
+  .Derivation.active {
+    max-height: 500px; /* 足够容纳推导内容的高度 */
+    opacity: 1;
+  }
+  </style>
+  <script src="../../JavaScript/Capacity.js"></script>

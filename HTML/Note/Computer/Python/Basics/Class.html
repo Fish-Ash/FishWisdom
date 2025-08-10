@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>Python</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+<body>
+    <div class="header"><h1>不惑</h1></div>
+    <ul class="navibar">
+    <li><a href="../../../../Home.html">主页</a></li>
+    <li><a href="../../../../Navigation.html">导航</a></li>
+    </ul>
+
+    <h1>类</h1>
+
+    <b>创建一个类最基础的程序</b>
+    <pre><code>
+        class Creature:
+            pass
+    </code></pre>
+
+    <h2>方法</h2>
+    <p>类中定义的函数.</p>
+
+    <h3>特殊方法</h3>
+    <b>__init__</b>
+    <p>__init__方法的作用是，创建示例时自动初始化.</p>
+    <pre><code>
+        class Creature:
+            def __init__(self):
+                pass
+    </code></pre>
+    
+    <b>自定义方法</b>
+    <pre><code>
+        class Creature:
+        def Attack(self):
+        print("Attack!")
+    </code></pre>
+    <p>[注]定义方法（无论是特殊方法还是自定义方法）时，必须将self作为第一个参数声明；但在实例时，不需要传入self参数.</p>
+    <p>[注]是否要在__init__()中增加参数，取决于创建实例时是否依赖给定的初始值.</p>
+
+    <hr>
+    <h2>属性</h2>
+    <pre><code>
+    class Creature:
+        def __init__(self, element):
+            self.Element = element
+    </code></pre>
+
+    <hr>
+    <h2>实例化类</h2>
+    <pre><code>
+        fish = Creature(element)
+    </code></pre>
+    <p>称fish为Creature类的一个实例</p>
+    <p>[注]实例化类时，一定要在类名后加括号，不然就是复制类.</p>
+
+
+    <b>调用属性</b>
+    <pre><code>
+        fish.Element
+    </code></pre>
+
+    <hr>
+    <h2>继承</h2>
+    <pre><code>
+        class Animal(Creature):
+            def __init__(self):
+                super().__init__()
+    </code></pre>
+    <p>super().__init__()用于使子类继承父类的__init__方法.</p>
+    
+
+</body>
+
+</html>

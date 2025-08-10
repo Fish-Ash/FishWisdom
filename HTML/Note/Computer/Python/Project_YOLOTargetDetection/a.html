@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pandas</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../../../../Home.html">主页</a></li>
+            <li><a href="../../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>YOLO模型</h1>
+        <b>Nano版本</b>
+        <p>适用于树莓派等设备</p>
+
+
+        <h1>数据集</h1>
+<pre><code class="Py">
+YoloData/
+├─images
+│  ├─train
+│  │  ├─train_1.jpg
+│  │  ├─train_2.jpg
+│  │  └─...
+│  └─val
+│      ├─val_1.jpg
+│      ├─val_2.jpg
+│      └─...
+├─labels
+│  ├─train
+│  │   ├─train_1.txt
+│  │   ├─train_2.txt
+│  │   └─...
+│  └─val
+│       ├─end_1.txt
+│       ├─end_2.txt
+│       └─...
+└─dataset.yaml
+</code></pre>
+
+        <a href="dataset.yaml"><b>dataset.yaml文件格式</b></a>
+
+
+        <h1>训练</h1>
+        <p>执行命令</p>
+<pre><code>
+yolo detect train data=dataset.yaml model=yolov10n/s/m/b/l/x.pt epochs=500 batch=4 imgsz=640 device=0,1,2,3,4,5,6,7
+</code></pre>
+
+    </body>
+
+</html>

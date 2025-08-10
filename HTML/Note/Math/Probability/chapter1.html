@@ -12,33 +12,323 @@
 
 
     <body>
-        <div class="header"><h1>不惑</h1></div>
+        <div class="header" id="PageHead"><h1>不惑</h1></div>
         <ul class="navibar">
             <li><a href="../../Home.html">主页</a></li>
             <li><a href="../../Navigation.html">导航</a></li>
         </ul>
 
-        <h1>第一章</h1>
+        <h1>第一章 随机事件及其概率</h1>
 
-        $$A_n^k = \frac{n!}{(n-k)!}$$
-        $$C_n^k = \frac{n!}{k!(n-k)!}$$
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#TotalProbabilityFormula">全概率公式</a></li>
+                <li><a href="#BayesianFormula">贝叶斯公式</a></li>
+            </ul>
+        </div>
 
-        <p>
-        <b>全概率公式</b>：
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;若\(B_1, B_2, \cdots, B_n\)为\(\Omega\)的一个完备事件组，则：
-        $$A = AB_1 \cup AB_2 \cup \cdots \cup AB_n$$
-        $$\begin{align}
-        P(A) &= P(AB_1) + P(AB_2) + \cdots + P(AB_n)\\
-        &= \mathop{\sum}\limits_{i=1}^n P(AB_i)\\
-        &= \mathop{\sum}\limits_{i=1}^n P(B_i)P(A|B_i)
-        \end{align}$$
-        </p>
+        <h2>第一节 随机事件</h2>
+        <b>随机试验的特点</b>
+        <p>可重复性：试验可以在相同条件下重复进行.</p>
+        <p>可观测性：每次试验结果具有多种可能性，并能事先明确试验的所有可能结果.</p>
+        <p>随机性（不确定性）：试验前不能确定哪一个结果会出现.</p>
+
+        <div class="Card-Definition">
+            <b>随机试验（\(E\)）</b><br><br>
+            <b>样本点（\(\omega\)）</b>
+            <p>随机试验\(E\)的每一种可能结果.</p>
+            <b>样本空间\(\Omega, S\)</b>
+            <p>随机试验\(E\)所有样本点的集合.</p>
+            <b>事件（随机事件）</b>
+            <p>样本空间的子集，通常记为\(A,B,C,\cdots\).</p>
+            <p>事件\(A\)发生，即属于该事件的某一个样本点在随机事件中出现.</p>
+            <b>基本事件</b>
+            <p>由一个样本点组成的事件.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <table>
+                <tr>
+                    <td colspan="4">事件间的关系</td>
+                </tr>
+                <tr>
+                    <td>名称</td>
+                    <td>定义</td>
+                    <td>符号</td>
+                    <td>含义</td>
+                </tr>
+                <tr>
+                    <td><b>子事件</b></td>
+                    <td class="tbtext">若事件\(A\)的样本也属于事件\(B\)，则称\(A\)为\(B\)的子事件，也称事件\(B\)包含事件\(A\)或事件\(A\)包含于事件\(B\).</td>
+                    <td>$$A \subset B$$</td>
+                    <td class="tbtext">事件\(A\)发生必然导致事件\(B\)发生.</td>
+                </tr>
+                <tr>
+                    <td><b>相等事件</b></td>
+                    <td class="tbtext">若事件\(A\)与事件\(B\)互为子事件，则称事件\(A\)与事件\(B\)相等.</td>
+                    <td>$$A = B$$</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><b>和事件</b></td>
+                    <td class="tbtext">事件\(A\)和\(B\)的全部样本点组成的集合称为事件\(A\)和\(B\)的和事件.</td>
+                    <td>$$A \cup B = \{\omega | \omega \in A~or~\omega \in B\}$$</td>
+                    <td class="tbtext">事件\(A\cup B\)表示事件\(A\)和\(B\)至少有一个发生.</td>
+                </tr>
+                <tr>
+                    <td><b>积事件</b></td>
+                    <td class="tbtext">既属于事件\(A\)又属于事件\(B\)的样本点组成的集合称为事件\(A\)与事件\(B\)的积事件.</td>
+                    <td>$$AB = A\cap B = \{\omega | \omega \in A~and~\omega \in B\}$$</td>
+                    <td class="tbtext">事件\(AB\)表示事件\(A\)和\(B\)同时发生.</td>
+                </tr>
+                <tr>
+                    <td><b>互斥事件<br>（互不相容事件）</b></td>
+                    <td class="tbtext">若事件\(A\)与事件\(B\)没有公共的样本点，即\(AB = \emptyset\)，称事件\(A\)与\(B\)为互斥事件.</td>
+                    <td></td>
+                    <td class="tbtext">事件\(A\)与\(B\)不可能同时发生.</td>
+                </tr>
+                <tr>
+                    <td><b>对立事件<br>（逆事件）</b></td>
+                    <td class="tbtext">若\(AB = \emptyset\)且\(A\cup B = \Omega\)，称事件\(A,B\)互为对立事件.</td>
+                    <td>\(A\)的对立事件记为\(\bar{A}\)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><b>差事件</b></td>
+                    <td class="tbtext">属于事件\(A\)而不属于事件\(B\)的样本点组成的集合称为事件\(A\)与事件\(B\)的差事件.</td>
+                    <td>$$A - B = A\bar{B} = A - AB = \{\omega | \omega \in A~and~\omega \notin B\}$$</td>
+                    <td class="tbtext">事件\(A\)发生而事件\(B\)不发生.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="Card-Property">
+           
+            <table>
+                <tr>
+                    <td colspan="2"><b>事件的运算规律</b></td>
+                </tr>
+                <tr>
+                    <td><b>交换律</b></td>
+                    <td>$$A\cup B = B\cup A, AB = BA$$</td>
+                </tr>
+                <tr>
+                    <td><b>结合律</b></td>
+                    <td>$$(A\cup B)\cup C = A\cup (B\cup C), (AB)C = A(BC)$$</td>
+                </tr>
+                <tr>
+                    <td><b>分配律</b></td>
+                    <td>$$(A\cup B)C = AC\cup BC, (AB)\cup C = (A\cup C)(B\cup C)$$</td>
+                </tr>
+                <tr>
+                    <td><b>德摩根定律（对偶律）</b></td>
+                    <td>
+                        $$\overline{A\cup B} = \bar{A} \cap \bar{B}$$
+                        $$\overline{A\cap B} = \bar{A} \cup \bar{B}$$
+                        $$\overline{\mathop{\cup}\limits_{i=1}^{n} A_i} = \mathop{\cap}\limits_{i=1}^n \bar{A_i}$$
+                        $$\overline{\mathop{\cap}\limits_{i=1}^{n} A_i} = \mathop{\cup}\limits_{i=1}^n \bar{A_i}$$
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>吸收率</b></td>
+                    <td>\(A \subset B \Rightarrow A\cup B = B, AB = A\)</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2>第二节 随机事件的概率</h2>
+        <h3>古典概型</h3>
+        <div class="Card-Definition">
+            <b>古典概型</b>
+            <p>样本空间中的基本事件个数有限且具有等可能性的试验模型.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>古典概率</b>
+            <p>设随机试验\(E\)的样本空间\(\Omega\)由\(n\)个样本点组成，每个样本等可能发生.</p>
+            <p>事件\(A\)由\(m\)个样本点组成，事件\(A\)发生的概率即为古典概率，记作\(P(A)\).</p>
+            $$P(A) = \frac{m}{n}$$
+        </div>
+
+        <div class="Card-Formula">
+            <h2>排列组合公式</h2>
+            <b>排列公式</b>
+            <p>从\(n\)个不同元素中任取\(k(1\leq k \leq n)\)个的不同排列总数.</p>
+            $$A_n^k = \frac{n!}{(n-k)!} = n(n-1)\cdots(n-k+1)$$
+            <p>\(k=n\)时称为全排列.</p>
+            <b>组合公式</b>
+            <p>从\(n\)个不同元素中任取\(k(1\leq k \leq n)\)个的不同组合总数.</p>
+            $$C_n^k = \frac{A_n^k}{A_k^k} = \frac{n!}{k!(n-k)!} = \frac{n(n-1)\cdots(n-k+1)}{k(k-1)\cdots 1}$$
+        </div>
         
-        <p>
-            概率的性质：
-            <br>\(P(A\cup B) = P(A) + P(B) - P(AB)\)
-            <br>\(P(A - B) = P(A\bar B) = P(A) - P(AB)\)
-        </p>
+        <div class="Card-Formula">
+            <b>超几何分布概率公式</b>
+            <p>设有\(N\)件产品，其中\(D\)件次品，从中任取\(n\)件，其中恰有\(k(k\leq D)\)件次品的概率.</p>
+            $$p = \frac{C_D^k C_{N-D}^{n-k}}{C_N^n}$$
+            <div class="Prove">
+                <p>从\(N\)件产品中取出\(n\)件，所有可能的取法有\(C_N^n\)种.</p>
+                <p>恰有\(k\)件次品，即从\(D\)件次品中取出\(k\)件，从\(N-D\)件合格品中取出\(n-k\)件，所有可能的取法有\(C_D^kC_{N-D}^{n-k}\)种.</p>
+            </div>
+        </div>
+
+        <h3>几何概型</h3>
+        <div class="Card-Definition">
+            <b>几何概型</b>
+            <p>若一个随机试验相当于从直线、平面或空间的某区域\(\Omega\)内任取一点，而所取的点落在\(\Omega\)中任意两个度量（长度、面积、体积）相等的子区域内是等可能的，则称此试验模型为几何概型.</p>
+        </div>
+        <div class="Card-Definition">
+            <b>几何概率</b>
+            <p>几何概型中，对任意有度量的子区域\(A \subset \Omega\)，定义事件“\(\Omega\)内任取一点落在\(A\)上的概率”为几何概率，记为\(P(A)\).</p>
+            $$P(A) = \frac{A}{\Omega}$$
+        </div>
+
+
+        <div class="Card-Formula">
+            $$P(\bar{A}) = 1 - P(A)$$
+            $$A = \emptyset \Rightarrow P(A) = 0$$
+            $$P(A) = 0 \nRightarrow A = \emptyset$$
+            $$P(AB) \leq \min\{P(A), P(B)\}$$
+            <b>加法公式</b>
+            $$P(A\cup B) = P(A) + P(B) - P(AB)$$
+            $$P(A\cup B\cup C) = P(A) + P(B) + P(C) - P(AB) - P(AC) - P(BC) + P(ABC)$$
+            <b>减法公式</b>
+            $$P(A - B) = P(A\bar{B}) = P(A) - P(AB)$$
+        </div>
+
+
+        <h2>第三节 条件概率</h2>
+        <div class="Card-Definition">
+            <b>条件概率</b>
+            <p>在事件\(A\)发生的条件下，事件\(B\)发生的概率.</p>
+            $$P(B|A) = \frac{P(AB)}{P(A)}$$
+        </div>
+
+        <div class="Card-Definition">
+            <b>完备事件组</b>
+            <p>设\(\Omega\)为某一随机试验\(E\)的样本空间，\(A_1, A_2, \cdots, A_n\)为\(E\)的一组事件，且满足：</p>
+            <ul>
+                <li>\(A_iA_j = \emptyset,~i,j=1,2,\cdots,n,~i\neq j\)</li>
+                <li>\(A_1\cup A_2\cup\cdots\cup A_n = \Omega\)</li>
+            </ul>
+            <p>称\(A_1, A_2, \cdots, A_n\)为\(\Omega\)的一个划分，或称为\(\Omega\)的一个完备事件组.</p>
+        </div>
+
+        <div class="Card-Definition" id="TotalProbabilityFormula">
+            <b>全概率公式</b>
+            <p>设\(\Omega\)为某随机试验\(E\)的样本空间，\(B\)为\(E\)内的任意事件，\(A_1, A_2, \cdots, A_n\)为\(\Omega\)的一个完备事件组，且\(P(A_i) \gt 0,~i=1,2,\cdots,n\)，则：</p>
+            <div class="Formula">
+                $$P(B) = \mathop{\sum}\limits_{i=1}^n P(A_i)P(B|A_i)$$
+                <div class="Derivation">
+                    $$B = A_1B \cup A_2B \cup \cdots \cup A_nB$$
+                    $$\begin{align}
+                    P(B) &= P(A_1B) + P(A_2B) + \cdots + P(A_nB)\\
+                    &= \mathop{\sum}\limits_{i=1}^n P(A_iB)\\
+                    &= \mathop{\sum}\limits_{i=1}^n P(A_i)P(B|A_i)
+                    \end{align}$$
+                </div>
+            </div>
+            
+            <b>理解</b>
+            <p>在两步模型中，求第二步情况\(B\)发生的概率，对第一步不同情况\(A_i\)下第二步\(B\)发生的概率进行加权求和.</p>
+        </div>
+
+        <div class="Card-Definition" id="BayesianFormula">
+            <b>贝叶斯公式</b>
+            <p>设\(\Omega\)为某随机试验\(E\)的样本空间，\(B\)为\(E\)内的任意事件，\(P(B)\gt0\)，\(A_1, A_2, \cdots, A_n\)为\(\Omega\)的一个完备事件组，且\(P(A_i) \gt 0,~i=1,2,\cdots,n\)，则在事件\(A\)发生的条件下，事件\(B\)发生的概率为：</p>
+            <div class="Formula">
+                $$P(A_i|B) = \frac{P(A_i)P(B|A_i)}{\sum\limits_{j=1}^n P(A_j)P(B|A_j)}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    P(A_i|B) &= \frac{P(A_iB)}{P(B)}\\
+                             &= \frac{P(A_i)P(B|A_i)}{\sum\limits_{j=1}^n P(A_j)P(B|A_j)}
+                    \end{align}$$
+                </div>
+            </div>
+            <b>理解</b>
+            <p>在两步模型中，第二步情况\(B\)发生的条件下，第一步情况\(A_i\)发生的概率.</p>
+        </div>   
+
+
+        <h2>第四节 事件的独立性与伯努利检验</h2>
+        <div class="Card-Definition">
+            <b>事件的独立性</b>
+            <p>若事件\(A, B\)满足</p>
+            $$P(AB) = P(A)P(B)$$
+            <p>则称事件\(A\)与事件\(B\)相互独立，简称为\(A,B\)独立.</p>
+        </div>
+
+        <div class="Card-Property">
+            <div class="Formula">
+                <p>\(A,B\)独立\(\Rightarrow\)事件\(A,\bar{B}\)，事件\(\bar{A}, B\)，事件\(\bar{A}, \bar{B}\)独立.</p>
+                <div class="Derivation">
+                    <p>\(A,B\)独立\(\Rightarrow P(AB) = P(A)P(B)\)</p>
+                    $$\begin{align}
+                    P(A\bar{B}) &= P(A-AB)\\
+                                &= P(A) - P(A)P(B)\\
+                                &= P(A)[1 - P(B)]\\
+                                &= P(A)P(\bar{B})
+                    \end{align}$$
+                    $$\begin{align}
+                    P(\bar{A}B) &= P(B-AB)\\
+                                &= P(B) - P(A)P(B)\\
+                                &= P(B)[1 - P(A)]\\
+                                &= P(\bar{A})P(B)
+                    \end{align}$$
+                    $$\begin{align}
+                    P(\bar{A}\bar{B}) &= P(\overline{A\cup B})\\
+                                      &= 1 - P(A\cup B)\\
+                                      &= 1 - [P(A) + P(B) - P(A)P(B)]\\
+                                      &= 1 - P(A) - P(B)[1 - P(A)]\\
+                                      &= P(\bar{A}) - P(B)P(\bar{A})\\
+                                      &= P(\bar{A})P(\bar{B})
+                    \end{align}$$
+                </div>
+            </div>
+            <div class="Formula">
+                <p>必然事件\(\Omega\)与任何事件\(A\)独立，不可能事件\(\emptyset\)与任何事件\(A\)独立.</p>
+                <div class="Derivation">
+                    $$P(\Omega) = 1, P(\emptyset) = 0$$
+                    $$P(A\Omega) = P(A) = P(A)P(\Omega)$$
+                    $$P(A\emptyset) = P(\emptyset) = P(A)P(\emptyset)$$
+                </div>
+            </div>
+            <div class="Formula">
+                <p>\(P(A)\gt 0, P(B)\gt 0 \Rightarrow A,B\)互斥则不独立，独立则不互斥.</p>
+                <div class="Derivation">
+                    <p>\(A,B\)互斥\(\Rightarrow P(AB) = P(\emptyset) = 0\).</p>
+                    <p>\(A,B\)独立\(\Rightarrow P(AB) = P(A)P(B) \gt 0\).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="Card-Definition">
+            <b>多个事件的独立性</b>
+            <p>若事件\(A_1, A_2, A_3\)满足</p>
+            $$P(A_1A_2) = P(A_1)P(A_2)$$
+            $$P(A_2A_3) = P(A_2)P(A_3)$$
+            $$P(A_1A_3) = P(A_1)P(A_3)$$
+            <p>则称事件\(A_1,A_2,A_3\)<b>两两相互独立</b>.</p>
+            <p>若在此基础上还满足</p>
+            $$P(A_1A_2A_3) = P(A_1)P(A_2)P(A_3)$$
+            <p>则称事件\(A_1A_2A_3\)<b>相互独立</b>.</p>
+        </div>
+        <p>相互独立的事件一定是两两相互独立的，两两相互独立的事件不一定相互独立.</p>
+        <p>若事件\(A_1,A_2,\cdots,A_n\)相互独立，则其中任意\(m(1\leq m\leq n)\)个事件也相互独立.</p>
+        <p>若事件\(A_1,A_2,\cdots,A_n\)相互独立，则将其中任意\(m\)个事件换成它们的对立事件，所得的\(n\)个事件也相互独立.</p>
+
+        <div class="Card-Definition">
+            <b>伯努利试验</b>
+            <p>在试验\(E\)中，可能的结果只有两个，记为事件\(A\)发生与事件\(A\)不发生.</p>
+            <b>伯努利概型（\(n\)重伯努利试验）</b>
+            <p>在相同条件下独立重复\(n\)次伯努利试验的模型.</p>
+
+            <b>伯努利定理</b>
+            <p>在一次伯努利试验中，事件\(A\)发生的概率为\(p(0\lt p \lt 1)\)，则在\(n\)重伯努利试验中，事件\(A\)恰好发生\(k\)次的概率为\(P_n(k) = C_n^kp^k(1-p)^{n-k}(k=0,1,2,\cdots,n)\).</p>
+        </div>
+
+
+        <a class="BackToTop" href="#PageHead">Top</a>
+        <script src="/JavaScript/Capacity.js"></script>
     </body>
 
 </html>

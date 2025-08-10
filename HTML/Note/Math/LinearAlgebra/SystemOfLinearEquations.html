@@ -29,8 +29,6 @@
         a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n = b_m
         \end{cases}
         $$
-
-        <p>记</p>
         <table>
             <tr>
                 <td>方程组的系数矩阵</td>
@@ -93,16 +91,173 @@
         <p>\(R(\mathbf{A}) = n \Leftrightarrow\)仅有零解.</p>
         <p>\(R(\mathbf{A}) \lt n \Leftrightarrow\)有无穷多解.</p>
 
-        <div class="prove">
+        <div class="Prove">
             <p>由于齐次方程组的增广矩阵最后一列均为\(0\)，故在任何情况下都有\(R(\mathbf{A}) = R(\bar{\mathbf{A}})\)，即齐次线性方程组恒有解，因为其至少有零解.</p>
         </div>
         
         <b>推论</b>
-        <p>若\(n\)元齐次线性方程组的方程个数\(m\)小于未知数个数\(n\)，则其必有非零解.</p>
-        <div class="prove">
-            $$R(\mathbf{A}) \leq m \lt n$$
+        <div class="Card-Theorem">
+            <p>若\(n\)元齐次线性方程组的方程个数\(m\)小于未知数个数\(n\)，则其必有非零解.</p>
+            <div class="Prove">
+                $$R(\mathbf{A}) \leq m \lt n$$
+            </div>
         </div>
-        <p>含\(n\)个方程\(n\)个未知数的齐次线性方程组有非零解\(\Leftrightarrow |\mathbf{A}| = 0\)</p>
-    </body>
 
+        <div class="Card-Theorem">
+            <p>含\(n\)个方程\(n\)个未知数的齐次线性方程组有非零解\(\Leftrightarrow |\mathbf{A}| = 0\)</p>
+            <div class="Prove">
+                $$|\mathbf{A}| = 0 \Leftrightarrow R(\mathbf{A})\lt n$$
+            </div>
+        </div>
+
+        <div class="Card-Method" id="Homo">
+            <h2>齐次线性方程组解的判定</h2>
+
+            <table>
+                <tr>
+                    <td></td>
+                    <td>有非零解</td>
+                    <td>仅有零解</td>
+                </tr>
+                <tr>
+                    <td>$$m \lt n$$</td>
+                    <td colspan="2">必有非零解.</td>
+                </tr>
+                <tr>
+                    <td>$$m = n$$</td>
+                    <td>$$|\mathbf{A}| = 0$$</td>
+                    <td>$$|\mathbf{A}| \neq 0$$</td>
+                </tr>
+                <tr>
+                    <td>$$m \gt n$$</td>
+                    <td>$$R(\mathbf{A}) \lt n$$</td>
+                    <td>$$R(\mathbf{A})  n$$</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <h2>线性方程组解的结构</h2>
+        <b>解（解向量）</b>
+        <p>\(n\)元线性方程组的一组解\(x_1 = c_1, x_2 = c_2, \cdots, x_n = c_n\)可以看作是一个\(n\)维向量\(\xi = (c_1, c_2, \cdots, c_n)^T\).</p>
+
+        <h3>齐次线性方程组\(\mathbf{A}\mathbf{x} = \mathbf{0}\)解的结构</h3>
+        <div class="Card-Property">
+            <p>若\(\xi_1, \xi_2\)是\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的两个解向量，那么\(\xi_1+\xi_2\)也是\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的解向量.</p>
+            <div class="Prove">
+                <p>\(\because \xi_1, \xi_2\)是\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的两个解向量.</p>
+                $$\therefore \begin{cases}
+                \mathbf{A}\xi_1 = \mathbf{0}\\
+                \mathbf{A}\xi_2 = \mathbf{0}
+                \end{cases}\Rightarrow \mathbf{A}(\xi_1 + \xi_2) = \mathbf{0}$$
+                <p>\(\therefore \xi_1+\xi_2\)也是\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的解向量.</p>
+            </div>
+        </div>
+        <div class="Card-Property">
+            <p>若\(\xi\)是\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的解向量，\(k\)为常数，那么\(k\xi\)也是\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的解向量.</p>
+            <div class="Prove">
+                <p>\(\because \xi\)是\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的解向量.</p>
+                $$\therefore \mathbf{A}(k\xi) = k(\mathbf{A}\xi) = \mathbf{0}$$
+                <p>\(\therefore k\xi\)也是\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的解向量.</p>
+            </div>
+        </div>
+
+        <p>由以上两个性质可以得出，若\(\xi_1, \xi_2, \cdots, \xi_n\)为\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的解向量，那么\(\xi_1, \xi_2, \cdots, \xi_n\)的线性组合也是\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的解向量.</p>
+        <p>上述性质启发我们，可以找到有限个解，来表示齐次线性方程组的任意一解.</p>
+
+        <div class="Card-Definition">
+            <b>基础解系</b>
+            <p>若\(\mathbf{A}\mathbf{x} = \mathbf{0}\)有无穷多解，则其全部解向量组成的\(n\)维向量组的一个极大无关组</p>
+            $$\xi_1, \xi_2, \cdots, \xi_t$$
+            <p>称为\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的一个基础解系.</p>
+        </div>
+        <p>[注]：\(\mathbf{A}\mathbf{x} = \mathbf{0}\)仅有零解时，无基础解系.</p>
+        <p>[注]：\(\mathbf{A}\mathbf{x} = \mathbf{0}\)有无穷多解时，基础解系不唯一.</p>
+
+        <div class="Card-Definition">
+            <b>齐次线性方程组\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的通解</b>
+            $$\eta = c_1\xi_1 + c_2\xi_2 + \cdots + c_t\xi_t$$
+            <p>其中\(c\)为任意常数.</p>
+        </div>
+
+        <p>\(R(\mathbf{A}_{m\times n}) = r\)时，\(t = n-r\).</p>
+
+        <div class="Card-Method">
+            <h2>求齐次线性方程组基础解系及通解的方法</h2>
+            <p>将齐次线性方程组的系数矩阵\(\mathbf{A}\)化为行最简型矩阵.</p>
+            <p>由最简型矩阵得到同解方程组以及\(R(\mathbf{A})\).</p>
+            <p>基础解系中解向量的个数\(t = n - R(\mathbf{A})\).</p>
+            <p>将同解方程组中\(t\)个未知量作为自由未知量，令其为\(c_i\)即可得到方程组通解，其中\(c_i\)为任意常数.</p>
+            <p>将通解中的\(c_i\)提出，余下列向量即为方程组的一个基础解系.</p>
+        </div>
+
+        <h2>求满足基础解系的齐次线性方程组</h2>
+        <p>已知基础解系\(\xi_i\)，则\(\mathbf{A}\xi_i = \mathbf{0}\).</p>
+        <p>令\(\mathbf{A}\)的行向量为\(\alpha\)，有\(\alpha^T\xi_i = 0\)，构成一个齐次方程组.</p>
+        <p>令该齐次方程组的系数矩阵为\(\mathbf{B} = \left(\begin{matrix}\xi_1\\\xi_2\\\vdots\\\xi_t\end{matrix}\right)\).</p>
+        <p>按此解出基础解系\(\alpha_1^T, \alpha_2^T, \cdots, \alpha_t^T\).</p>
+        <p>\(\mathbf{A} = \left(\begin{matrix}\alpha_1^T\\\alpha_2^T\\\vdots\\\alpha_t^T\end{matrix}\right)\)即为所求方程组的系数矩阵.</p>
+
+        <div class="Card-Method">
+            <h2>求满足基础解系的方程组</h2>
+            $$\mathbf{B} = \left(\begin{matrix}\xi_1\\\xi_2\\\vdots\\\xi_t\end{matrix}\right)$$
+            <p>求得基础解系\(\alpha_1^T, \alpha_2^T, \cdots, \alpha_t^T\).</p>
+            $$\mathbf{A} = \left(\begin{matrix}\alpha_1^T\\\alpha_2^T\\\vdots\\\alpha_t^T\end{matrix}\right)$$
+        </div>
+
+
+        <h3>非齐次线性方程组\(\mathbf{A}\mathbf{x} = \mathbf{b}\)解的结构</h3>
+
+        <b>导出组（导出方程组）</b>
+        <p>由非齐次线性方程组\(\mathbf{A}\mathbf{x} = \mathbf{b}\)导出的齐次线性方程组\(\mathbf{A}\mathbf{x} = \mathbf{0}\).</p>
+
+        <div class="Card-Property">
+            <p>若\(\gamma\)为\(\mathbf{A}\mathbf{x} = \mathbf{b}\)的一个解向量，\(\xi\)是其导出组\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的一个解向量，那么\(\gamma + \xi\)也是\(\mathbf{A}\mathbf{x} = \mathbf{b}\)的一个解向量.</p>
+            <div class="Prove">
+                <p>\(\gamma\)为\(\mathbf{A}\mathbf{x} = \mathbf{b}\)的一个解向量\(\Rightarrow \mathbf{A}\gamma = \mathbf{b}\)</p>
+                <p>\(\xi\)是其导出组\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的一个解向量\(\Rightarrow \mathbf{A}\xi = \mathbf{0}\)</p>
+                $$\therefore \mathbf{A}(\gamma + \xi) = \mathbf{b}$$
+                <p>\(\therefore \gamma + \xi\)也是\(\mathbf{A}\mathbf{x} = \mathbf{b}\)的一个解向量.</p>
+            </div>
+        </div>
+        <p>设\(\mathbf{A}\mathbf{x} = \mathbf{b}\)中，\(R(\mathbf{A}) = R(\bar{\mathbf{A}}) = r \lt n\)；\(\gamma_0\)是\(\mathbf{A}\mathbf{x} = \mathbf{b}\)的一个特解；\(\xi_1, \xi_2, \cdots, \xi_{n-r}\)是其导出组\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的一个基础解系.</p>
+        <p>由上述性质可知</p>
+        $$\gamma = \gamma + c_1\xi_1 + c_2\xi_2 + \cdots c_{n-r}\xi_{n-r}$$
+        <p>都是\(\mathbf{A}\mathbf{x} = \mathbf{b}\)的解，其中\(c_1, c_2, \cdots, c_{n-r}\)为任意常数.</p>
+
+        <div class="Card-Property">
+            <p>若\(\gamma_1, \gamma_2\)是\(\mathbf{A}\mathbf{x} = \mathbf{b}\)的两个任意解向量，那么\(\gamma_1 - \gamma_2\)是其导出组\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的解向量.</p>
+            <div class="Prove">
+                <p>\(\because \gamma_1, \gamma_2\)是\(\mathbf{A}\mathbf{x} = \mathbf{b}\)的两个任意解向量.</p>
+                $$\therefore
+                \begin{cases}\mathbf{A}\gamma_1 = \mathbf{b}\\
+                \mathbf{A}\gamma_2 = \mathbf{b}
+                \end{cases}\Rightarrow
+                \mathbf{A}(\gamma_1 - \gamma_2) = \mathbf{0}
+                $$
+                <p>\(\therefore\gamma_1 - \gamma_2\)是其导出组\(\mathbf{A}\mathbf{x} = \mathbf{0}\)的解向量.</p>
+            </div>
+        </div>
+        <p>设\(\gamma\)为\(\mathbf{A}\mathbf{x} = \mathbf{b}\)的任一解.</p>
+        <p>由上述性质可知</p>
+        $$\gamma - \gamma_0 = c_1\xi_1 + c_2\xi_2 + \cdots c_{n-r}\xi_{n-r}$$
+        <p>故\(\mathbf{A}\mathbf{x} = \mathbf{b}\)的任一解\(\gamma\)均可表示为</p>
+        $$\gamma = \gamma_0 + c_1\xi_1 + c_2\xi_2 + \cdots c_{n-r}\xi_{n-r}$$
+
+        <div class="Card-Definition">
+            <b>非齐次线性方程组\(\mathbf{A}\mathbf{x} = \mathbf{b}\)的通解</b>
+            $$\gamma = \gamma_0 + c_1\xi_1 + c_2\xi_2 + \cdots c_{n-r}\xi_{n-r}$$
+            <p>其中\(\gamma_0\)为\(\mathbf{A}\mathbf{x} = \mathbf{b}\)的一个特解，\(c_1,c_2, \cdots, c_{n-r}\)为任意常数.</p>
+        </div>
+
+        <div class="Card-Method">
+            <h2>求非齐次线性方程组的通解</h2>
+            <p>将增广矩阵\(\bar{\mathbf{A}}\)初等变换为行最简型矩阵，得到同解方程.</p>
+            <p>将非零首元对应未知量作为保留未知量，余下未知量作为自由未知量并赋值为\(0\)，解得保留未知量的值，得到特解\(\gamma_0\).</p>
+            <p>解出导出方程组的通解\(c_1\xi_1 + c_2\xi_2 + \cdots + c_t\xi_t\).</p>
+            <p>非齐次线性方程组的通解为\(\gamma_0 + c_1\xi_1 + c_2\xi_2 + \cdots + c_t\xi_t\).</p>
+        </div>
+
+        <div class="Ending">Ending...</div>
+    </body>
 </html>

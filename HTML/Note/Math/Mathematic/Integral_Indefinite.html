@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+    
+    
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+        
+        <h1>不定积分</h1>
+        <h2>一、不定积分概念与性质</h2>
+        <div class="Card-Definition">
+            <b>原函数</b>
+            <p>若\(F'(x) = f(x)\)，称\(F(x)\)为\(f(x)\)的一个原函数.</p>
+            <p>[注]若\(F(x)\)为\(f(x)\)的原函数，则\(F(x) + C\)也是\(f(x)\)的一个原函数。</p>
+        </div>
+        
+        <div class="Card-Definition">
+            <b>不定积分</b>
+            <p>\(f(x)\)原函数的全体称为\(f(x)\)的不定积分。</p>
+            $$\int f(x) \mathrm{d}x = F(x) + C$$
+        </div>
+        
+        <b>原函数存在定理</b>
+        $$f(x)在区间U内连续\Rightarrow f(x)在区间U上原函数F(x)存在$$
+        $$f(x)在区间U内存在第一类间断点\Rightarrow f(x)在区间U上原函数F(x)不存在$$
+        
+        
+        <div class="Card-Formula">
+            <b>不可由导数公式直接得出的不定积分</b>
+            $$\begin{align}
+            &\int \frac 1x \mathrm{d}x = \ln |x| + C\\\\
+            &\int \sec x\mathrm{d}x = \ln|\sec x + \tan x| + C\\\\
+            &\int \csc x\mathrm{d}x = -\ln|\csc x + \cot x| + C = \ln|\csc x - \cot x| + C\\\\
+            &\int \frac{1}{\sqrt{a^2 - x^2}}\mathrm{d}x = \arcsin\frac{x}{a} + C\\\\
+            &\int \frac{1}{a^2 + x^2}\mathrm{d}x = \frac{1}{a}\arctan\frac{x}{a} + C\\\\
+            \end{align}$$
+            
+            <div class="Formula">
+                \(\int \tan x\mathrm{d}x = -\ln|\cos x| + C\)
+                <div class="Derivation">
+                    $$\begin{align}
+                    \int \tan x \mathrm{d}x &= -\int \frac{1}{\cos x}\mathrm{d}\cos x\\
+                    &= -\ln |\cos x| + C
+                    \end{align}$$
+                </div>
+            </div>
+            <div class="Formula">
+                \(\int \cot x\mathrm{d}x = \ln|\sin x| + C\)
+                <div class="Derivation">
+                    
+                </div>
+            </div>
+            
+            <b>不定积分常用结论</b>
+            $$\int \ln x \mathrm{d}x = x\ln x - x + C$$
+            $$\int x\sin x \mathrm{d}x = \sin x - x\cos x + C$$
+            $$\int x\cos x \mathrm{d}x = \cos x + x\sin x + C$$
+            $$\int \cos^2 x \mathrm{d}x = \frac{1}{2}x + \frac{1}{4}\sin 2x + C$$
+            <div class="Formula">
+            $$\int \frac{1}{\sqrt{x^2 + a^2}}\mathrm{d}x = \ln(x + \sqrt{x^2 + a^2}) + C$$
+            <div class="Derivation">
+                <p>令\(x = a\tan t\)</p>
+                $$\begin{align}
+                &\int \frac{1}{\sqrt{x^2 + a^2}}\mathrm{d}x\\
+                =&\int \frac{1}{\sec t}\cdot a\sec^2 t\mathrm{d}t\\
+                =&a\int \sec t\mathrm{d}t\\
+                =&a\ln|\sec t + \tan t| + C\\
+                =&a\ln|\frac{\sqrt{x^2+a^2}}{a} + \frac{x}{a}| + C\\
+                =&a\ln(\sqrt{x^2+a^2}+x) + C
+                \end{align}$$
+            </div>
+        </div>
+        $$\int \frac{1}{\sqrt{x^2 - a^2}}\mathrm{d}x = \ln|x + \sqrt{x^2 - a^2}| + C$$
+        
+        </div>
+        
+        
+        <div class="Card-Property">
+            <b>不定积分的性质</b>
+            $$\begin{align}
+            &\int [f(x) \pm g(x)]\mathrm{d}x = \int f(x)\mathrm{d}x \pm \int g(x)\mathrm{d}x\\\\
+            &\int kf(x)\mathrm{d}x = k\int f(x)\mathrm{d}x
+            \end{align}$$
+        </div>
+        
+        <h2>二、积分法</h2>
+        
+        <h3>凑微分法</h3>
+        $$\int f[\phi(x)]\phi'(x)\mathrm{d}x = \int f[\phi(x)]\mathrm{d}\phi(x) = F[\phi(x)] + C$$
+        
+        <h3>变量代换法</h3>
+        <table>
+            <tr>
+                <td>原式\((a\gt0)\)</td>
+                <td>变元代换</td>
+                <td>微元代换</td>
+                <td>结果</td>
+                <td>还原</td>
+            </tr>
+            <tr>
+                <td>$$\sqrt{a^2 - x^2}$$</td>
+                <td>$$x = a\sin t~(-\frac{\pi}{2} \leq t \leq \frac{\pi}{2})$$</td>
+                <td>$$\mathrm{d}x = a\cos t\mathrm{d}t$$</td>
+                <td>$$a\cos t$$</td>
+                <td><img src="Img/asint.png" width="100"></td>
+            </tr>
+            <tr>
+                <td>$$\sqrt{a^2 + x^2}$$</td>
+                <td>$$x = a\tan t~(-\frac{\pi}{2}\lt t \lt \frac{\pi}{2})$$</td>
+                <td>$$\mathrm{d}x = a\sec^2 t \mathrm{d}t$$</td>
+                <td>$$a\sec t$$</td>
+                <td><img src="Img/atant.png" width="100"></td>
+            </tr>
+            <tr>
+                <td>$$\sqrt{x^2 - a^2}$$</td>
+                <td>$$x  = a\sec t~(\begin{cases}0\leq t\lt \frac{\pi}{2}, x\geq a\\\frac{\pi}{2}\lt t \leq \pi, x\leq -a \end{cases})$$</td>
+                <td>$$\mathrm{d}x = a\sec t\tan t\mathrm{d}t$$</td>
+                <td>$$|a\tan t|$$</td>
+                <td><img src="Img/asect.png" width="150"></td>
+            </tr>
+        </table>
+        
+        $$\begin{align}\int \sqrt{2r x - x^2}\mathrm{d}x &= \int \sqrt{r^2 - (x-r)^2}\mathrm{d}x\\
+        &= \int \end{align}$$
+
+        <h3>分部积分法</h3>
+        $$\mathrm{d}(uv) = u\mathrm{d}v + v\mathrm{d}u$$
+        $$\int u\mathrm{d}v = uv - \int v\mathrm{d}u $$
+        <p>\(u \)的优先级：反对幂指三</p>
+        
+        <h3>三角有理化</h3>
+        <p>设\(\tan \frac{x}{2} = t\)，则\(x = 2\arctan t, \mathrm{d}x = \frac{2}{1 + t^2}\)</p>
+        <table>
+            <tr>
+                <td>$$\sin x = \frac{2\sin\frac{x}{2}\cos\frac{x}{2}}{\sin^2\frac{x}{2}+\cos^2\frac{x}{2}} = \frac{2\tan\frac{x}{2}}{\tan^2\frac{x}{2}+1} = \frac{2t}{t^2 + 1}$$</td>
+            </tr>
+            <tr>
+                <td>$$\cos x = \frac{\cos^2 \frac{x}{2}-\sin^2 \frac{x}{2}}{\sin^2\frac{x}{2} + \cos^2\frac{x}{2}} = \frac{1 - t^2}{t^2 + 1 }$$</td>
+            </tr>
+            <tr>
+                <td>$$\tan x = \frac{\sin x}{\cos x} = \frac{2t}{1-t^2}$$</td>
+            </tr>
+        </table>
+        
+        <h2>题型</h2>
+        <h3>判断函数是否存在原函数</h3>
+        <b>解题思路</b>
+        <p>函数连续\(\Rightarrow\)存在原函数</p>
+        <p>函数不连续\(\Rightarrow\)判断间断点类型</p>
+        <ul>
+            <li>若为第一类间断点\(\Rightarrow\)不存在原函数</li>
+            <li>若为第二类间断点\(\Rightarrow\)构造出\(F'(x) = f(x)\)</li>
+        </ul>
+        
+
+        
+        
+        <div class="Card-Method">
+            <h2>被积函数化简方法</h2>
+            <table>
+                <tr>
+                    <td><b>一般分式</b></td>
+                    <td>按分子拆分</td>
+                </tr>
+                <tr>
+                    <td><b>有理函数</b></td>
+                    <td>部分分式分解</td>
+                </tr>
+                <tr>
+                    <td><b>三角函数</b></td>
+                    <td>积化和差</td>
+                </tr>
+            </table>
+            
+            $$\frac{u^m}{\sqrt{u^n + a}} = u^{m-n}\sqrt{u^n + a} - \frac{au^{m-n}}{\sqrt{u^n + a}}$$
+        </div>
+        
+        
+        
+        <div class="Card-Method">
+            <h2>求解不定积分的方法</h2>
+            <hr>
+            
+            <h3>初等函数</h3>
+            <p>直接利用公式求解</p>
+            <hr>
+            
+            <h3>\(\int f[\phi(x)]\phi'(x)\mathrm{d}x\)型——凑微分法</h3>
+            $$\int f[\phi(x)]\phi'(x)\mathrm{d}x = \int f[\phi(x)]\mathrm{d}\phi(x) = F[\phi(x)] + C$$
+            <hr>
+            
+            <h3>\(\int f(x)\cdot g(x)\mathrm{d}x\)型——分部积分法</h3>
+            $$\begin{align}
+            \int f(x)g'(x)\mathrm{d}x &= \int f(x) \mathrm{d}g(x)\\
+            &= f(x)g(x) - \int g(x)\mathrm{d}f(x)
+            \end{align}$$
+            <hr>
+            
+            <h3>\(\sqrt{a^2 - x^2},\sqrt{a^2 + x^2}, \sqrt{x^2 - a^2}\)型——三角代换法</h3>
+            <hr>
+
+            <h3>\(\sqrt{ax^2 + bx + c}\)型</h3>
+            <p>凑成\(\sqrt{a^2 - x^2},\sqrt{a^2 + x^2}, \sqrt{x^2 - a^2}\)型.</p>
+            <hr>
+
+            <h3>\(f(x)^2 + 1, f(x)^2 - 1\)型</h3>
+            <p>\(f(x)^2 + 1 \Rightarrow\)令\(f(x) = \tan t\)</p>
+            <p>\(f(x)^2 - 1 \Rightarrow\)令\(f(x) = \sec t\)</p>
+            <hr>
+            
+            <h3>\(\frac{1}{ax^2 + bx + c}\)型</h3>
+            $$\begin{align}
+            \int \frac{1}{ax^2 + bx + c} \mathrm{d}x &= A\int \frac{1}{(x + m)^2 + n^2}\mathrm{d}x\\
+            &= \frac{A}{n}\arctan \frac{x+m}{n}
+            \end{align}$$
+            <hr>
+            
+            <h3>\(\frac{a'x + b'}{ax^2 + bx + c}\)型</h3>
+            $$\int\frac{a'x + b'}{ax^2 + bx + c}\mathrm{d}x = A\int\frac{2ax + b}{ax^2 + bx + c}\mathrm{d}x + B\int\frac{1}{ax^2 + bx + c}\mathrm{d}x$$
+            <hr>
+
+            <h3>\(\frac{1}{x^m\sqrt{a + x^n}}\)型——倒代换</h3>
+            <p>令\(x = \frac{1}{u}\)</p>
+            
+            <h3>复杂分式</h3>
+            
+            <b>包括分母项数多或含根式导致不好化简的情况</b>
+            <p>令分母为\(t\)，注意换\(\mathrm{d}x = x'(t)\mathrm{d}t\)并在计算完成后将\(t\)代换回\(x\).</p>
+
+            <h3>三角函数</h3>
+            <b>\(\sin x\cdot f(\cos x), \cos x\cdot f(\sin x)\)型</b>
+            $$\int \sin x\cdot f(\cos x) \mathrm{d}x = -\int f(\cos x)\mathrm{d}(\cos x) $$
+            $$\int \cos x\cdot f(\sin x) \mathrm{d}x = \int f(\sin x)\mathrm{d}(\sin x) $$
+
+            <h3>分段函数</h3>
+            <p>由于\(可导\Rightarrow 连续\)，\(F(x) = \int f(x)\mathrm{d}x\)一定连续.</p>
+            <p>故在分段点\(x_0\)处，由\(\lim\limits_{x\rightarrow x^-_0}F(x) = \lim\limits_{x\rightarrow x^+_0}F(x)\)求解出\(C_1\)与\(C_2\)间的关系. </p>
+            
+            <p><b>[注]求不定积分时，结果一定要带上常数\(C\).</b></p>
+            
+        </div>
+    
+        
+        <ul class="navibar">
+            <li class="catalog"><a href="Catalog.html">目录</a></li>
+            <li class="next"><a href="Integral_Definite.html">下一页</a></li>
+        </ul>
+
+
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+    </html>

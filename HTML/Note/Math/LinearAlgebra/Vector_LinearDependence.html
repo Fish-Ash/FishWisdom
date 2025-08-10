@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>线性代数</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h2>向量组的线性相关性</h2>
+        
+        <div class="Card-Definition">
+            <b>线性相关与线性无关</b>
+            <p>设\(\alpha_1, \alpha_2, \cdots, \alpha_s\)为\(s\)个\(m\)维向量，若存在不全为\(0\)的数\(k_1, k_2, \cdots, k_s\)，使得</p>
+            $$k_1\alpha_1 + k_2\alpha_2 + \cdots + k_s\alpha_s = 0$$
+            <p>称向量组\(\alpha_1, \alpha_2, \cdots, \alpha_s\)<b>线性相关</b>.</p>
+            <p>否则，称向量组\(\alpha_1, \alpha_2, \cdots, \alpha_s\)<b>线性无关</b>.</p>
+        </div>
+
+        <b>结论</b>
+        <p>一个向量\(\alpha\)线性相关\(\Leftrightarrow \alpha=0\).</p>
+        <p>向量组\(\alpha_1, \alpha_2\)线性相关\(\Leftrightarrow \alpha_1, \alpha_2\)成比例.</p>
+        <p>含有零向量的向量组必线性相关.</p>
+        <p>由\(n\)个\(n\)维单位向量</p>
+        $$\epsilon_1 = (1,0,\cdots,0)^T, \epsilon_2 = (0,1,\cdots,0)^T, \cdots, \epsilon_n = (0,0,\cdots, 1)^T$$
+        <p>组成的向量组线性无关.</p>
+        <div class="Prove">
+            <p>设</p>
+            $$k_1\epsilon1 + k_2\epsilon_2 + \cdots + k_n\epsilon_n = \mathbf{0}$$
+            $$\therefore (k_1, k_2, \cdots, k_n)^T = (0,0,\cdots,0)^T$$
+            $$\therefore k_1 = k_2 = \cdots = k_n = 0$$
+            <p>故向量组\(\epsilon_1, \epsilon_2, \cdots, \epsilon_n\)线性无关.</p>
+        </div>
+
+        <p>向量组\(\alpha_1, \alpha_2, \alpha_3\)线性无关\(\Leftrightarrow\)向量组\(\alpha_1 + \alpha_2, \alpha_1 + \alpha_3, \alpha_2 + \alpha_3\)线性无关.</p>
+
+        <h2>向量组线性相关性的判定</h2>
+
+        <b>由<a class="goto" href="./SystemOfLinearEquations.html#Homo">齐次线性方程组解的情况</a>判定向量组的线性相关性</b>
+        <p>对于向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)</p>
+        $$\mathbf{A} = (\alpha_1, \alpha_2, \cdots, \alpha_n)$$
+
+        <p>以\(\mathbf{A}\)为系数矩阵的齐次方程组存在非零解时，向量组线性相关.</p>
+        <p>以\(\mathbf{A}\)为系数矩阵的齐次方程组仅有零解时，只有\(0\alpha_1 + 0\alpha_2 + \cdots + 0\alpha_n = 0\)成立，向量组线性无关.</p>
+
+        <div class="Card-Method">
+            <h2>向量组线性相关性的判定</h2>
+            <h3>由<a class="goto" href="./SystemOfLinearEquations.html#Homo">齐次线性方程组解的情况</a>判定</h3>
+            <p>线性相关\(\Leftrightarrow\)有非零解.</p>
+            <p>线性无关\(\Leftrightarrow\)仅有零解.</p>
+        </div>
+
+        <div class="Card-Property">
+            <p>对于向量数大于\(1\)的向量组：</p>
+            <p>向量组线性相关\(\Leftrightarrow\)向量组中至少存在一个向量可由其他向量线性表示.</p>
+            <p>向量组线性无关\(\Leftrightarrow\)向量组中任一向量均不能由其他向量线性表示.</p>
+            <div class="Prove">
+                <p>设向量组为\(\alpha_1, \alpha_2, \cdots, \alpha_n\).</p>
+                <b>充分性：</b>
+                <p>设\(\alpha_t\)可由其他向量线性表示</p>
+                $$\alpha_t = k_1\alpha_1 + k_2\alpha_2 + \cdots + k_{t-1}\alpha_{t-1} + k_{t+1}\alpha_{t+1} + \cdots k_n\alpha_n$$
+                $$k_1\alpha_1 + k_2\alpha_2 + \cdots + k_{t-1}\alpha_{t-1} + k_{t+1}\alpha_{t+1} + \cdots k_n\alpha_n - \alpha_t = 0$$
+                <p>\(-1\neq 0\)即\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性相关.</p>
+                <b>必要性：</b>
+                <p>\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性相关</p>
+                $$k_1\alpha_1 + k_2\alpha_2 + \cdots + k_{t-1}\alpha_{t-1} + k_t\alpha_t + k_{t+1}\alpha_{t+1} + \cdots k_n\alpha_n = 0$$
+                <p>设\(k_t \neq 0\)</p>
+                $$\alpha_t = -\frac{k_1}{k_t}\alpha_1 -\frac{k_2}{k_t}\alpha_2 - \cdots - \frac{k_{t-1}}{k_t}\alpha_{t-1} - \frac{k_{t+1}}{k_t}\alpha_{t+1} - \cdots -\frac{k_n}{k_t}\alpha_n $$
+                <p>即\(\alpha_t\)可由其他向量线性表示.</p>
+            </div>
+        </div>
+
+        <b>定理</b>
+        <p>向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性无关而\(\alpha_1, \alpha_2, \cdots, \alpha_n, \beta\)线性相关\(\Leftrightarrow\beta\)可由\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性表示，且表达式唯一。</p>
+        <div class="Prove">
+            <p>\(\because \alpha_1, \alpha_2, \cdots, \alpha_n, \beta\)线性相关. </p>
+            <p>\(\therefore\)存在一组不全为为\(0\)的数，使得</p>
+            $$k_1\alpha_1 + k_2\alpha_2 + \cdots + k_n\alpha_n + k\beta = 0$$
+            <p>要证\(\beta\)可由\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性表示，即证\(k\neq 0\).</p>
+            <p>反证法：假设\(k = 0\).</p>
+            <p>则存在不全为\(0\)的一组\(k_1, k_2, \cdots, k_n\)，使得\(k_1\alpha_1 + k_2\alpha_2 + \cdots + k_n\alpha_n = 0\).</p>
+            <p>这与“向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性无关”的条件矛盾，反证法不成立，即\(k\neq 0\).</p>
+            $$\therefore \beta = -\frac{k_1}{k}\alpha_1 -\frac{k_2}{k}\alpha_2 - \cdots -\frac{k_n}{k}\alpha_n$$
+            <p>故\(\beta\)可由\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性表示.</p>
+            <br>
+            <p>设\(\beta\)有两个表达式</p>
+            $$\beta = \lambda_1\alpha_1 + \lambda_2\alpha_2 + \cdots + \lambda_n\alpha_n$$
+            $$\beta = \mu_1\alpha_1 + \mu_2\alpha_2 + \cdots + \mu_n\alpha_n$$
+            <p>两式相减得</p>
+            $$(\lambda_1-\mu_1)\alpha_1 + (\lambda_2-\mu_2)\alpha_2 + \cdots + (\lambda_n-\mu_n)\alpha_n = 0$$
+            <p>\(\because\)向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性无关</p>
+            $$\therefore \lambda_i = \mu_i(i=1,2,\cdots,n)$$
+            <p>故表达式唯一.</p>
+        </div>
+
+        <b>定理</b>
+        <p>一个向量组中的某个子向量组线性相关\(\Rightarrow\)该向量组线性相关.</p>
+        <p>向量组线性无关\(\Rightarrow\)其任一子向量组也线性无关.</p>
+
+
+        <b>定理</b>
+        <p>\(r\)维向量组</p>
+        $$
+        \begin{align}
+        &\alpha_1 = (a_{11}, a_{12}, \cdots, a_{1r})^T\\
+        &\alpha_2 = (a_{12}, a_{22}, \cdots, a_{2r})^T\\
+        &\cdots\cdots\\
+        &\alpha_n = (a_{1n}, a_{2n}, \cdots, a_{nr})^T
+        \end{align}
+        $$
+        中每个向量添加\(m-r\)个分量得到
+        $$
+        \begin{align}
+        &\beta_1 = (a_{11}, a_{12}, \cdots, a_{1r}, a_{1,r+1}, \cdots, a_{1m})^T\\
+        &\beta_2 = (a_{12}, a_{22}, \cdots, a_{2r}, a_{2,r+1}, \cdots, a_{2m})^T\\
+        &\cdots\cdots\\
+        &\beta_n = (a_{1n}, a_{2n}, \cdots, a_{nr}, a_{n,r+1}, \cdots, a_{nm})^T
+        \end{align}        
+        $$
+        <p>\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性无关\(\Rightarrow \beta_1, \beta_2, \cdots, \beta_n\)线性无关.</p>
+        <p>\(\beta_1, \beta_2, \cdots, \beta_n\)线性相关\(\Rightarrow \alpha_1, \alpha_2, \cdots, \alpha_n\)线性相关.</p>
+
+
+        <b>定理</b>
+        <p>\(n\)维向量组\(\alpha_1, \alpha_2, \cdots, \alpha_r\)可由\(n\)维向量组\(\beta_1, \beta_2, \cdots, \beta_s\)线性表示，且\(r\gt s\)，则向量组\(\alpha_1, \alpha_2, \cdots, \alpha_r\)线性相关.</p>
+
+        <b>推论1</b>
+        <p>\(n\)维向量组\(\alpha_1, \alpha_2, \cdots, \alpha_r\)可由\(n\)维向量组\(\beta_1, \beta_2, \cdots, \beta_s\)线性表示，且向量组\(\alpha_1, \alpha_2, \cdots, \alpha_r\)线性无关，则\(r\leq s\).</p>
+
+        <b>推论2</b>
+        <p>向量组\(\alpha_1, \alpha_2, \cdots, \alpha_r\)与向量组\(\beta_1, \beta_2, \cdots, \beta_s\)等价且均线性无关，则\(r = s\).</p>
+
+
+    </body>
+
+</html>

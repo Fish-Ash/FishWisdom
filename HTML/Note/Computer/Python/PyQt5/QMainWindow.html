@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pandas</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../../../../Home.html">主页</a></li>
+            <li><a href="../../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1 lang="en">PyQt5</h1>
+
+        <b>初始界面</b>
+        <pre><code>
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        import sys
+
+        if __name__ == "__main__":
+            app = QApplication(sys.argv)
+            window = QMainWindow()
+            window.show()
+            sys.exit(app.exec_())
+        </code></pre>
+
+        <b>修改window大小</b>
+        <pre><code>
+          window.setGeometry(x,y,w,h)
+          """
+          x：界面左上角相对屏幕左上角的x轴距离
+          y：界面左上角相对屏幕左上角的y轴距离
+          w：界面宽度
+          h：界面高度
+
+          """
+        </code></pre>
+
+
+        <b>设置界面图标</b>
+        <pre><code>
+          from PyQt5.QtGui import QIcon
+
+          window.setWindowIcon(QIcon("Icon.png"))
+        </code></pre>
+
+        <b>隐藏系统默认的标题栏</b>
+        <pre><code>
+          from PyQt5.QtCore import Qt
+          window.setWindowFlags(Qt.FramelessWindowHint)
+        </code></pre>
+
+
+        <b>主部件</b>
+        <p>在向QMainWindow中添加布局或部件前，必须先创建主部件</p>
+        <pre><code class="Python">
+            from PyQt5.QtWidgets import QtWidget
+
+            CentralWidget = QtWidget()
+            self.setCentralWidget(CentralWidget)
+        </code></pre>
+
+        <b>关闭窗口</b>
+        <pre><code>
+            self.close
+        </code></pre>
+    </body>
+
+</html>

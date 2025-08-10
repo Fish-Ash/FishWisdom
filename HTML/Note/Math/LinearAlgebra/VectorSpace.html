@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>线性代数</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>向量空间</h1>
+        <div class="Card-Definition">
+            <b>向量空间</b>
+            <p>设\(V\)为\(n\)维向量的集合，\(P\)是一个数域，若\(V\)非空且</p>
+            <ul>
+                <li>对向量加法封闭：\(\alpha \in V, \beta \in V \Rightarrow \alpha+\beta \in V\)</li>
+                <li>对数乘运算封闭：\(\alpha \in V, \lambda \in P \Rightarrow \lambda\alpha \in V\)</li>
+            </ul>
+            <p>称集合\(V\)为数域\(P\)上的向量空间.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>子空间</b>
+            <p>若向量空间\(V_1 \in V_2\)，称\(V_1\)为\(V_2\)的子空间.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>向量空间的基与维数</b>
+            <p>向量空间\(V\)中，向量\(\alpha_1, \alpha_2, \cdots, \alpha_r \in V\)，且</p>
+            <ul>
+                <li>\(\alpha_1, \alpha_2, \cdots, \alpha_r\)线性无关</li>
+                <li>\(V\)中任一向量都可用\(\alpha_1, \alpha_2, \cdots, \alpha_r\)线性表示</li>
+            </ul>
+            <p>称向量组\(\alpha_1, \alpha_2, \cdots, \alpha_r\)为向量空间\(V\)中的一个<b>基</b>.</p>
+            <p>称\(r\)为向量空间\(V\)的<b>维数</b>，记作\(\mathrm{dim}V = r\).</p>
+            <p>称\(V\)为\(r\)维向量空间.</p>
+        </div>
+        <p>[注]只含零向量的向量空间称为零维向量空间，其没有基.</p>
+        <p>[注]若将向量空间\(V\)视为向量组，那么\(V\)的基就是向量组的极大无关组，\(V\)的维数就是向量组的秩.</p>
+
+        <div class="Card-Definition">
+            <b>\(\mathbf{R}^n\)的自然基</b>
+            <p>在\(n\)维向量空间\(\mathbf{R}^n\)中，\(n\)维单位向量组</p>
+            $$\epsilon_1 = (1,0,\cdots,0)^T, \epsilon_2 = (0,1,\cdots,0)^T,\cdots, \epsilon_n=(0,0,\cdots, 1)^T$$
+            <p>线性无关，且对任一向量\(\alpha = (a_1, a_2, \cdots, a_n) \in \mathbf{R}\)，有</p>
+            $$\alpha = a_1\epsilon_1 + a_2\epsilon_2 + \cdots + a_n\epsilon_n$$
+            <p>故向量组\(\epsilon_1, \epsilon_2, \cdots, \epsilon_n\)为向量空间\(\mathbf{R}^n\)的一个基，一般称之为\(\mathbf{R}^n\)的自然基，且\(\mathrm{dim}\mathbf{R}^n = n\).</p>
+        </div>
+        
+        <div class="Card-Definition">
+            <b>坐标</b>
+            <p>若在向量空间\(V\)中取定一个基\(\alpha_1, \alpha_2, \cdots, \alpha_r\)，那么\(V\)中任一向量\(\mathbf{x}\)可唯一表示为</p>
+            $$\mathbf{x} = \lambda_1\alpha_1 + \lambda_2\alpha_2 + \cdots + \lambda_r\alpha_r$$
+            <p>\(\lambda_1, \lambda_2, \cdots, \lambda_r\)称为向量\(\mathbf{x}\)在基\(\alpha_1, \alpha_2, \cdots, \alpha_r\)下的坐标，记作\((\lambda_1, \lambda_2, \cdots, \lambda_r)^T\)</p>
+        </div>
+
+
+        <h3>基变换与坐标变换</h3>
+        <p>在\(\mathbf{R}^n\)中取一个基\(\alpha_1, \alpha_2, \cdots, \alpha_n\)，再取一个新基\(\beta_1, \beta_2, \cdots, \beta_n\)，则它们可互相线性表示.</p>
+        $$(\beta_1, \beta_2, \cdots, \beta_n) = (\alpha_1, \alpha_2, \cdots, \alpha_n)\mathbf{A}$$
+        <p>其中\(\mathbf{A}\)称为由旧基\(\alpha_1, \alpha_2, \cdots, \alpha_n\)到新基\(\beta_1, \beta_2, \cdots, \beta_n\)的<b>过渡矩阵</b>.</p>
+        <p>\(\mathbf{A}\)的每一列元素分别是\(\beta_1, \beta_2, \cdots, \beta_n\)在\(\alpha_1, \alpha_2, \cdots, \alpha_n\)下的坐标.</p>
+
+        
+
+    </body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>反常积分</h1>
+
+        <p>设\(f(x)\)在\([a,+\infty)\)上连续，若\(\lim\limits_{t\rightarrow +\infty}\int_a^t f(x) \mathrm{d}x\)存在，则称此极限为\(f(x)\)在\([a,+\infty)\)上的反常积分，记作：</p>
+        $$\int_a^{+\infty}f(x)\mathrm{d}x = \lim\limits_{t\rightarrow +\infty}\int_a^t f(x) \mathrm{d}x$$
+
+        <p>设\(f(x)\)在\((-\infty,b]\)上连续，若 \(\lim\limits_{t\rightarrow -\infty}\int_t^b f(x) \mathrm{d}x\)存在，则称此极限为\(f(x)\)在\((-\infty,b]\)上的反常积分，记作：</p>
+        $$\int_{-\infty}^bf(x)\mathrm{d}x = \lim\limits_{t\rightarrow -\infty}\int_t^b f(x) \mathrm{d}x$$
+
+        <p>设\(f(x)\)在\((-\infty, +\infty)\)上连续，若\(\int_{-\infty}^a f(x)\mathrm{d} x\)与\(\int_a^{+\infty} f(x)\mathrm{d}x\)都存在，则:</p>
+        $$\int_{-\infty}^{+\infty} f(x) \mathrm{d}x = \int_{-\infty}^a f(x) \mathrm{d}x + \int_a^{+\infty} f(x) \mathrm{d}x $$
+
+        <p>若反常积分存在，称其收敛；若反常积分不存在，称其发散。</p>
+
+        <b>比较判别法（积分形式）</b>
+        <p>设\(f(x), g(x)\)在\([a,+\infty)\)上连续，且\(0\leq f(x)\leq g(x)\)：</p>
+        <ul>
+            <li>\(\int_a^{+\infty}g(x)\mathrm{d}x\)收敛\(\Rightarrow \int_a^{+\infty}f(x)\mathrm{d}x\)收敛</li>
+            <li>\(\int_a^{+\infty}f(x)\mathrm{d}x\)发散\(\Rightarrow \int_a^{+\infty}g(x)\mathrm{d}x\)发散</li>
+        </ul>
+
+        <b>比较判别法（极限形式）</b>
+        <p>设\(f(x), g(x)\)在\([a,+\infty)\)上连续，且\(\lim\limits_{x\rightarrow +\infty}\frac{f(x)}{g(x)} = \lambda\)：</p>
+        <ul>
+            <li>\(\lambda \neq 0\)：\(\int_a^{+\infty}f(x)\mathrm{d}x\)与\(\int_a^{+\infty}g(x)\mathrm{d}x\)同敛散</li>
+            <li>\(\lambda = 0\)：\(\int_a^{+\infty}g(x)\mathrm{d}x\)收敛\(\Rightarrow\int_a^{+\infty}f(x)\mathrm{d}x\)收敛</li>
+            <li>\(\lambda = 0\)：\(\int_a^{+\infty}g(x)\mathrm{d}x\)发散\(\Rightarrow\int_a^{+\infty}f(x)\mathrm{d}x\)发散</li>
+        </ul>
+
+        <b>常用结论</b>
+        $$\int_a^{+\infty} \frac{1}{x^p}\mathrm{d}x
+        \begin{cases}
+        收敛, p\gt 1\\
+        发散, p\leq 1
+        \end{cases}$$
+        <div class="Prove">
+            $$\int_a^{+\infty} \frac{1}{x^p}\mathrm{d}x = \frac{x^{1-p}}{1-p}\Bigg|_a^{+\infty}$$
+            <p>当\(1-p\lt 0\)，即\(p\gt 1\)时：\(\int_a^{+\infty} \frac{1}{x^p}\mathrm{d}x\)收敛；</p>
+            <p>当\(1-p\geq 0\)，即\(p\leq 1\)时：\(\int_a^{+\infty} \frac{1}{x^p}\mathrm{d}x\)发散。  </p>
+        </div>
+        
+        <h2>无界函数的反常积分</h2>
+        <p>设\(f(x)\)在\((a,b]\)上连续，\(\lim\limits_{x\rightarrow a^+}f(x) = \infty\)，则称\(x=a\)为\(f(x)\)的瑕点。</p>
+        <p>若极限\(\lim\limits_{t\rightarrow a^+}\int_t^b f(x)\mathrm{d}x\)存在，称此极限为\(f(x)\)在\([a,b]\)上的反常积分，记为：</p>
+        $$\int_a^b f(x) \mathrm{d}x = \lim\limits_{t\rightarrow a^+}\int_t^b f(x)\mathrm{d}x$$
+        <p>此时称\(\int_a^b f(x)\mathrm{d}x\)收敛；若上述极限不存在，则称其发散。</p>
+        
+        <hr>
+
+        <p>设\(f(x)\)在\([a,b)\)上连续，\(\lim\limits_{x\rightarrow b^-}f(x) = \infty\)，称\(x=b\)是\(f(x)\)的瑕点。</p>
+        <p>若极限\(\lim\limits_{t\rightarrow b^-}\int_a^t f(x)\mathrm{d}x\)存在，称此极限为\(f(x)\)在\([a,b]\)上的反常积分，记为：</p>
+        $$\int_a^b f(x) \mathrm{d}x = \lim\limits_{t\rightarrow b^-}\int_a^t f(x)\mathrm{d}x$$
+        <p>此时称\(\int_a^b f(x)\mathrm{d}x\)收敛；若上述极限不存在，则称其发散。</p>
+
+        <hr>
+
+        <p>设\(f(x)\)在\([a,b]\)上除点\(C(a\lt C\lt b)\)外连续，\(\lim\limits_{x\rightarrow c}f(x)\mathrm{d}x = \infty\)，称\(c\)为\(f(x)\)的瑕点。</p>
+        <p>若反常积分\(\int_a^c f(x)\mathrm{d}x, \int_c^b f(x)\mathrm{d}x\)均收敛，则反常积分\(\int_a^b f(x)\mathrm{d}x\)也收敛，且\(\int_a^b f(x)\mathrm{d}x = \int_a^c f(x)\mathrm{d}x + \int_c^b f(x)\mathrm{d}x\)</p>
+
+        <b>比较判别法</b>
+        <p>设\(f(x), g(x)\)在\((a,b]\)上连续，且\(0\leq f(x)\leq g(x), x=a\)是\(f(x)\)和\(g(x)\)的瑕点。</p>
+        <ul>
+            <li>\(\int_a^b g(x)\mathrm{d}x\)收敛\(\Rightarrow \int_a^b f(x)\mathrm{d}x\)收敛。</li>
+            <li>\(\int_a^b f(x)\mathrm{d}x\)发散\(\Rightarrow \int_a^b g(x)\mathrm{d}x\)发散。</li>
+        </ul>
+
+        <b>比较判别法（极限形式）</b>
+        <p>设\(f(x), g(x)\)在\((a,b]\)上连续，\(x=a\)是\(f(x)\)和\(g(x)\)的瑕点，且\(\lim\limits_{x\rightarrow a^+}\frac{f(x)}{g(x)} = \lambda\)（有限或无穷）</p>
+        <ul>
+            <li>\(\lambda \neq 0\)时，\(\int_a^b f(x)\mathrm{d}x\)与\(\int_a^b g(x)\mathrm{d}x\)同收敛。</li>
+            <li>\(\lambda = 0\)时，\(\int_a^b g(x)\mathrm{d}x\)收敛\(\Rightarrow\int_a^b g(x)\mathrm{d}x\)收敛。</li>
+        </ul>
+        
+        <b>常用结论</b>
+        $$\int_a^{+\infty} \frac{1}{x^p}\mathrm{d}x(a\gt 0)
+        \begin{cases}
+        p\gt 1, 收敛\\
+        p\leq 1, 发散
+        \end{cases}
+        $$
+        $$\int_a^b \frac{1}{(x-a)^q}\mathrm{d}x, \int_a^b \frac{1}{(b-x)^q}\mathrm{d}x
+        \begin{cases}
+        q\lt 1,收敛\\
+        q\geq 1,发散
+        \end{cases}
+        $$
+        $$
+        \int_a^{+\infty} \frac{1}{x^\alpha \ln^\beta x}\mathrm{d}x(a\gt 1)
+        \begin{cases}
+        \alpha \gt 1, 收敛\\
+        \alpha \lt 1, 发散\\
+        \alpha = 1\begin{cases}
+        \beta \gt 1, 收敛\\
+        \beta \leq 1, 发散
+        \end{cases}
+        \end{cases}
+        $$
+
+        <h2>反常积分判敛</h2>
+        <p>1、找出瑕点与\(x\rightarrow \infty\)的点。</p>
+
+
+        <div class="Card-Method">
+            <h2>求解反常积分</h2>
+            $$\int_{-\infty}^b f(x) \mathrm{d}x = F(b) - \lim\limits_{x\rightarrow -\infty}F(x)$$
+            $$\int_a^{+\infty} f(x) \mathrm{d}x = \lim\limits_{x\rightarrow +\infty}F(x) - F(b)$$
+            $$\int_{-infty}^{+\infty} f(x) \mathrm{d}x= \lim\limits_{x\rightarrow +\infty}F(x) - \lim\limits_{x\rightarrow -\infty}F(x)$$
+
+            <b>多项式的反常积分</b>
+            <p>\(\int f(x) \mathrm{d}x\)发散，\(\int g(x) \mathrm{d}x\)发散，但\(\int f(x) + g(x) \mathrm{d}x\)可能收敛.</p>
+        </div>
+        <ul class="navibar">
+            <li><a href="Integral_Definite.html">上一页</a></li>
+            <li class="catalog"><a href="Catalog.html">主页</a></li>
+            <li class="next"><a href="Integral_UpperLimitFunction.html">下一页</a></li>
+        </ul>
+
+        <script src="/JavaScript/Capacity.js"></script>
+    </body>
+</html>

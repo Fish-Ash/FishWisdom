@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pandas</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../../../../Home.html">主页</a></li>
+            <li><a href="../../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1 lang="en">Widget</h1>
+
+        <h2>文字</h2>
+        <pre><code>
+            from PyQt5.QtWidgets import QLabel
+
+            Label = QLabel("Content")
+        </code></pre>
+
+
+        <h2>按钮</h2>
+        <pre><code>
+            from PyQt5.QtWidgets import QPushButton
+
+            Btn = QPushButton("Content")
+        </code></pre>
+
+        <b>点击后执行</b>
+        <pre><code>
+            Btn.clicked.connect(Function)
+        </code></pre>
+
+        <b>更改样式</b>
+        <pre><code>
+        self.close_btn.setStyleSheet("""
+            QPushButton {
+                background-color: #e74c3c;
+                color: white;
+                border: none;
+                width: 30px;
+                height: 30px;
+            }
+            QPushButton:hover {
+                background-color: #c0392b;
+            }
+        """)
+        </code></pre>
+
+        <h2>美化</h2>
+        <b>修改控件大小</b>
+        <pre><code>
+        Widget.resize(width, height)
+        </code></pre>
+
+        <b>修改部件高度</b>
+        <pre><code>
+            Widget.setFixedHeight(Value)
+        </code></pre>
+
+        <b>部件样式设计</b>
+
+    </body>
+
+</html>
