@@ -6,17 +6,19 @@
 body{
     background-color: white;
     color: black;
-    font-family: "KaiTi", "楷体", serif;
-}
-:lang(en){
-    font-family: 'Times New Roman', Times, serif;
-}
+    font-family: 'Times New Roman', 'KaiTi';
 
+}
 /* 常规段落 */
 p{
     text-indent: 2em;
 }
 
+/* 常规图像 */
+img{
+    display: block;
+    margin: 0 auto;
+}
 
 /* 页内目录 */
 .PageCatalog{
@@ -381,6 +383,23 @@ border-bottom: 1px solid #ccc;
 .BackToTop {
     position: fixed;
     right: 20px;
+    bottom: 80px;
+    width: 50px;
+    height: 50px;
+    background-color: #a7dce0;
+    color: #1c7887;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.GoToBottom {
+    position: fixed;
+    right: 20px;
     bottom: 20px;
     width: 50px;
     height: 50px;
@@ -401,11 +420,12 @@ border-bottom: 1px solid #ccc;
   padding: 10px;
 }
 .Derivation{
+    text-align:left;
     color: skyblue;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 .Derivation.active {
   max-height: 1000px;
@@ -450,6 +470,22 @@ border-bottom: 1px solid #ccc;
 /* Card-Theorem */
 .Card-Theorem{
     border: 2px solid teal;
+    padding:20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+/* Card-Supplement */
+.Card-Supplement{
+    border: 2px solid gray;
+    padding:20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.Card-Analysis{
+    border: 2px solid skyblue;
     padding:20px;
     border-radius: 5px;
     margin-bottom: 20px;

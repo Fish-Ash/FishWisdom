@@ -11,15 +11,14 @@
 
 
     <body>
-        <a class="BackToTop" href="#PageHead">Top</a>
         <div class="header" id="PageHead"><h1>不惑</h1></div>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
-
+        
         <h1>函数图像</h1>
-
+        
         <div class="PageCatalog">
             <ul>
                 <li><a href="#Monotonicity">函数单调性</a></li>
@@ -32,6 +31,7 @@
                 <li><a href="#Zero">函数零点</a></li>
             </ul>
         </div>
+        <a class="BackToTop" href="#PageHead">Top</a>
 
 
         <h2 id="Monotonicity">函数单调性</h2>
@@ -85,12 +85,12 @@
             </tr>
             <tr>
                 <td>凹函数</td>
-                <td>$$f(\frac{x_1 + x_2}{2})\lt \frac{f(x_1)+f(x_2)}{2}$$</td>
+                <td>$$\frac{f(x_1)+f(x_2)}{2}\gt f(\frac{x_1 + x_2}{2})$$</td>
                 <td>$$f''(x)\gt 0$$</td>
             </tr>
             <tr>
                 <td>凸函数</td>
-                <td>$$f(\frac{x_1 + x_2}{2})\gt \frac{f(x_1)+f(x_2)}{2}$$</td>
+                <td>$$\frac{f(x_1)+f(x_2)}{2}\lt f(\frac{x_1 + x_2}{2})$$</td>
                 <td>$$f''(x) \lt 0$$</td>
             </tr>
         </table>
@@ -98,20 +98,23 @@
         <hr>
         
         <h2 id="InflectionPoint">函数拐点</h2>
-        <b>定义</b>
-        <p>连续曲线弧上凹凸分界点。</p>
+        <div class="Card-Definition">
+            <b>拐点</b>
+            <p>连续曲线弧上凹凸分界点。</p>
+            $$(x_0,f''(x_0))为f(x)的拐点\Rightarrow f''(x_0)=0或f''(x_0)不存在$$
+        </div>
 
-        <b>拐点的必要条件</b>
-        $$(x_0,f''(x_0))为f(x)的拐点\Rightarrow f''(x_0)=0或f''(x_0)不存在$$
+        <div class="Card-Method">
+            <h2>判断拐点的方法</h2>
+            <h3>二阶导数</h3>
+            <p>设\(f''(x_0) = 0\)或\(f(x)\)在\(x_0\)处连续：</p>
+            $$f''(x_0)两侧异号或f''(x_0)不存在\Rightarrow (x_0, f(x_0))为f(x_0)的拐点$$
+            $$f''(x_0)两侧同号\Rightarrow (x_0, f(x_0))不是f(x_0)的拐点$$
 
-        <b>拐点的第一充分条件</b>
-        <p>设\(f''(x_0) = 0\)或\(f(x)\)在\(x_0\)处连续：</p>
-        $$f''(x_0)两侧异号\Rightarrow (x_0, f(x_0))为f(x_0)的拐点$$
-        $$f''(x_0)两侧同号\Rightarrow (x_0, f(x_0))不是f(x_0)的拐点$$
-
-        <b>拐点的第二充分条件</b>
-        $$f'''(x_0) \neq 0 \Rightarrow (x_0, f(x_0))为f(x)的拐点$$
-        $$f'''(x_0) = 0 \nRightarrow (x_0, f(x_0))不为f(x)的拐点$$
+            <h3>三阶导数</h3>
+            $$f'''(x_0) \neq 0 \Rightarrow (x_0, f(x_0))为f(x)的拐点$$
+            $$f'''(x_0) = 0 \nRightarrow (x_0, f(x_0))不为f(x)的拐点$$
+        </div>
 
         <hr>
 
@@ -190,7 +193,7 @@
 
         <h2 id="Curvature">曲线弧微分与曲率（曲率半径）</h2>
         <b>弧微分</b>
-        <p>设\(f(x)\)在\((a,b)\)内有连续导数，则称弧微分\(\mathrm{d}s = \sqrt{1 + f'(x)}\mathrm{d}x\)</p>
+        <p>设\(f(x)\)在\((a,b)\)内有连续导数，则称弧微分\(\mathrm{d}s = \sqrt{1 + f'^2(x)}\mathrm{d}x\)</p>
         <div class="Card-Formula">
             <b>曲率\(\kappa\)</b>
             $$\kappa = \frac{|f''(x)|}{[1 + f'^2(x)]^{3/2}}$$

@@ -21,9 +21,7 @@ def replace_class_in_html(folder_path):
                     
                     # 替换目标字符串（精确匹配，区分引号类型）
                     # 同时处理双引号和单引号的情况（如 class='prove'）
-                    new_content = content.replace('class="prove"', 'class="Prove"')\
-                                         .replace("class='prove'", 'class="Prove"')
-                    
+                    new_content = content.replace('id="PowerFunction"', 'id="Power"')                    
                     # 仅当内容有变化时才写入，避免无效操作
                     if new_content != content:
                         with open(file_path, 'w', encoding='utf-8') as f:

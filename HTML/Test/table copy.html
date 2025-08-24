@@ -5,40 +5,92 @@
 <title>无标题文档</title>
 
 <style>
-/* 基础三线表样式 */
-.three-line-table {
-  width: 100%; /* 表格宽度，可按需调整 */
-  border-collapse: collapse; /* 合并边框，避免线条重叠 */
-  border-spacing: 0; /* 去除单元格间距 */
-  text-align: center; /* 内容居中，可改为 left/right */
+
+
+.three{
+border-collapse:collapse; /* 关键属性：合并表格内外边框(其实表格边框有2px，外面1px，里面还有1px哦) */
+border:solid #000000; /* 设置边框属性；样式(solid=实线)、颜色(#999=灰) */
+border-width:2px 0 2px 0px; /* 设置边框状粗细：上 右 下 左 = 对应：1px 0 0 1px */
+}
+td{
+    text-align: center; /* 水平居中单元格内容 */
+    vertical-align: middle; /* 垂直居中单元格内容 */
 }
 
-/* 1. 表格顶线（粗线） */
-.three-line-table {
-  border-top: 2px solid #333; /* 2px 粗，深灰色 */
+
+.right_header{
+    border:solid #000000;
+    border-width:1px 1px 2px 0px;
+    padding:2px;
+    font-weight:bolder;
+}
+.empty_header{
+    border:solid #000000;
+    border-width:1px 0px 2px 0px;
+    padding:2px;
+    font-weight:bolder;
+}
+.left_header{
+    border:solid #000000;
+    border-width:1px 0px 2px 1px;
+    padding:2px;
+    font-weight:bolder;
 }
 
-/* 2. 表头与内容的分隔线（细线） */
-.three-line-table th {
-  border-bottom: 1px solid #666; /* 1px 细，中灰色 */
-  padding: 8px 12px; /* 表头内边距 */
-  font-weight: bold; /* 表头文字加粗 */
+
+.empty_top{
+    border:solid #000000;
+    border-width:1px 0px 0px 0px;
+    padding:2px;
+    font-weight:bolder;
 }
 
-/* 3. 表格底线（粗线，与顶线一致） */
-.three-line-table {
-  border-bottom: 2px solid #333;
+.right_top{
+    border:solid #000000;
+    border-width:1px 1px 0px 0px;
+    padding:2px;
+    font-weight:bolder;
 }
 
-/* 单元格样式（去除所有内边框） */
-.three-line-table td {
-  padding: 8px 12px; /* 内容单元格内边距 */
-  border: none; /* 确保无竖线和多余横线 */
+.left_top{
+    border:solid #000000;
+    border-width:1px 0px 0px 1px;
+    padding:2px;
+    font-weight:bolder;
 }
 
-/* 可选：hover 效果（提升交互体验） */
-.three-line-table tr:hover td {
-  background-color: #f5f5f5; /* 鼠标悬停时行背景色变化 */
+.both_top{
+    border:solid #000000;
+    border-width:1px 1px 0px 1px;
+    padding:2px;
+    font-weight:bolder;
+}
+
+.empty_middle{
+    border:solid #000000;
+    border-width:0px 0px 0px 0px;
+    padding:2px;
+    font-weight:bolder;
+}
+
+.right_middle{
+    border:solid #000000;
+    border-width:0px 1px 0px 0px;
+    padding:2px;
+    font-weight:bolder;
+}
+.left_middle{
+    border:solid #000000;
+    border-width:0px 0px 0px 1px;
+    padding:2px;
+    font-weight:bolder;
+}
+
+.both_middle{
+    border:solid #000000;
+    border-width:0px 1px 0px 1px;
+    padding:2px;
+    font-weight:bolder;
 }
 </style>
 </head>
@@ -102,14 +154,6 @@
     <td class="right_middle">0</td>
     <td class="both_middle">0</td>
     <td class="left_middle">0</td>
-  </tr>
-</table>
-
-<table class="three-line-table">
-  <tr>
-    <td>hief</td>
-    <td>fheifie </td>
-    <td>efef</td>
   </tr>
 </table>
 </body>

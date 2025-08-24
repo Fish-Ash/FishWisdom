@@ -116,7 +116,7 @@
             \end{cases}
             \end{align}$$
             $$\int_0^\frac\pi2 f(\sin x)\mathrm{d}x = \int_0^\frac\pi2 f(\cos x)\mathrm{d}x$$
-            $$\int_0^\pi xf(\sin x)\mathrm{d}x = \frac{\pi}{2}\int_0^\pi f(\sin x)\mathrm{d}x = \pi \int_0^{\frac{\pi}{2}}f(\sin x)\mathrm{d}x$$
+            $$\int_0^\pi xf(\sin x)\mathrm{d}x = \frac{\pi}{2}\int_0^\pi f(\sin x)\mathrm{d}x$$
             
             <b>牛顿-莱布尼茨公式</b>
             $$\int_a^b f(x)\mathrm{d}x = F(x)|_a^b = F(b) -F(a)$$
@@ -128,8 +128,19 @@
             <p>计算积分区域的面积得到积分的值.</p>
             $$y = \int_0^r \sqrt{2rx - x^2}\mathrm{d}x = \frac{1}{4}\pi r^2$$
             $$y = \int_0^{2r} \sqrt{2rx - x^2}\mathrm{d}x = \frac{1}{2}\pi r^2$$
-        
         </div>
+
+        <div class="Card-Method">
+            <h2>比较同区间的定积分大小</h2>
+            <p>直接比较被积函数的大小.</p>
+            $$f(x) \gt g(x) \Rightarrow \int_a^b f(x) \mathrm{d}x \gt \int_a^b g(x) \mathrm{d}x$$
+
+            <p>当能计算出其中一个定积分的值为k时：</p>
+            $$\int_a^b f(x) \mathrm{d}x = k$$
+            <p>\(f(x)\)平均值为\(\frac{k}{b-a}\).</p>
+            $$g(x) \gt \frac{k}{b-a} \Rightarrow \int_a^b g(x)\mathrm{d}x \gt \int_a^b f(x)\mathrm{d}x$$
+        </div>
+
 
         <ul class="navibar">
             <li><a href="Integral_Indefinite.html">上一页</a></li>

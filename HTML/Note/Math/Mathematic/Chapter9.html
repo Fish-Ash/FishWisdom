@@ -37,6 +37,30 @@
         <p>积分中值定理</p>
         $$\iint\limits_D f(x,y)\mathrm{d}\sigma = f(\xi, \eta)\sigma, (\xi, \eta)\in D$$
 
+        <div class="Card-Method">
+            <h2>交换二重积分的积分次序</h2>
+            <h3>平面直角坐标系</h3>
+            <p>根据现有积分，确定积分区域，再按新次序积分即可.</p>
+
+            <h3>极坐标系</h3>
+            <p>根据现有积分，确定积分区域.</p>
+            <p></p>
+        </div>
+
+        <div class="Card-Method">
+            <h2>二重积分的计算</h2>
+            <h3>一般方法</h3>
+            <p>绘制出积分区域.</p>
+            <p>若\(f(x,y)\)关于某个变量好积分，关于另一个变量不好积分，交换积分次序.</p>
+
+            <h3>极坐标法</h3>
+            <p>将积分区域画出，利用极坐标表示积分区域\(r\)的范围\(r_1(\theta) \sim r_2(\theta)\)与\(\theta\)的范围\(\alpha\sim\beta\).</p>
+            $$\iint\limits_D f(x,y)\mathrm{d}\sigma = \int_\alpha^\beta\mathrm{d}\theta\int_{r_1(\theta)}^{r_2(\theta)}f(r\cos\theta, r\sin\theta)r\mathrm{d}r$$        
+            <b>圆心位于\((a,b)\)处</b>
+            <p>令\(x = a + r\cos\theta, y = b + r\sin\theta\)</p>
+
+        </div>
+
         <h2>二重积分的计算</h2>
         <h3>直角坐标系</h3>
         $$\begin{align}
@@ -45,7 +69,6 @@
         \end{align}$$
 
         <h3>极坐标系</h3>
-        $$\iint\limits_D f(x,y)\mathrm{d}\sigma = \int_\alpha^\beta\mathrm{d}\theta\int_{r_1(\theta)}^{r_2{\theta}}f(r\cos\theta, r\sin\theta)r\mathrm{d}r$$        
 
         <h2>二重积分的对称性</h2>
         <table>

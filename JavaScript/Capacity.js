@@ -3,3 +3,4 @@ document.querySelectorAll('.Formula').forEach(formula =>{
     this.closest('.Formula').querySelector('.Derivation').classList.toggle('active');
   });
 });
+

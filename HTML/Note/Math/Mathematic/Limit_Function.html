@@ -11,7 +11,7 @@
 
 
     <body>
-        <div class="header"><h1>不惑</h1></div>
+        <div class="header" id="PageHead"><h1>不惑</h1></div>
 
         
         <ul class="navibar">
@@ -19,9 +19,17 @@
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
 
-        <h2><a href="Limit_Sequence.html">数列的极限</a></h2>
+        <h1>函数极限</h1>
 
-        <h2>函数的极限</h2>
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#ImportantFormula">重要极限</a></li>
+                <li><a href="#Method">求极限方法总结</a></li>
+            </ul>
+        </div>
+        <a class="BackToTop" href="#PageHead">Top</a>
+
+        
         <b>（一）自变量趋于有限值时函数的极限</b>
         <p>设函数\(f(x)\)在点\(x_0\)的某去心邻域内有定义。若\(\exists\)常数\(A\)，对于\(\forall\epsilon \gt 0\)，总\(\exists \delta \gt 0\)，使得当\(|x - x_0|\lt \delta\)时，\(|f(x) - A| \lt \epsilon\)</p>
         <p>常数\(A\)称为函数\(f(x)\)当\(x\rightarrow x_0\)时的极限，记作\(\mathop{lim}\limits_{x\rightarrow x_0}f(x) = A\)或\(f(x)\rightarrow A(x\rightarrow x_0)\)</p>
@@ -83,6 +91,8 @@
         $$极限存在+极限存在=极限存在$$
         $$极限存在+极限不存在=极限不存在$$
         $$极限不存在+极限不存在=未知情况$$
+        $$极限存在\cdot 极限不存在 = 未知$$
+        $$极限不存在\cdot 极限不存在 = 未知$$
         $$\lim f(x) = A \neq 0 \Rightarrow \lim f(x)g(x) = A\lim g(x)$$
         $$\lim f(x)g(x) = A, \lim g(x) = \infty \Rightarrow \lim f(x) = 0$$
         $$\lim \frac{f(x)}{g(x)} = A, \lim g(x) = 0 \Rightarrow \lim f(x) = 0$$
@@ -93,13 +103,7 @@
         <b>保号性</b>
         <p>若\(\lim\limits_{x\rightarrow x_0}f(x) = A\)，且\(A\gt 0\)（或\(A \lt 0\)），那么\(\exists \delta\gt 0\)，使得当\(0\lt |x-x_0|\lt \delta\)时，\(|f(x)|\gt 0\)（或\(f(x)\lt 0\)）</p>
 
-        <h2>求极限方法总结</h2>
-        数列
-        <ul>
-            <li>夹逼准则</li>
-        </ul>
-
-        <div class="Card-Formula">
+        <div class="Card-Formula" id="ImportantFormula">
             <b>重要极限</b>
             $$\lim\limits_{x\rightarrow 0^+}(1 + \frac{1}{x})^x = \lim\limits_{x\rightarrow +\infty}(1 + x)^{\frac{1}{x}} = 1$$
             $$\lim\limits_{x\rightarrow\infty}\sqrt[n]{n} = 1$$
@@ -119,9 +123,32 @@
                 </div>
             </div>
 
+            <div class="Formula">
+                $$\lim\limits_{x\rightarrow +\infty}(x-\ln x) = +\infty$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \lim\limits_{x\rightarrow +\infty}(x-\ln x) &= \lim\limits_{x\rightarrow +\infty}(\ln e^x-\ln x)\\
+                                                                &= \lim\limits_{x\rightarrow +\infty}\ln\frac{e^x}{x}\\
+                                                                &= \lim\limits_{x\rightarrow +\infty}\ln\frac{e^x}{1}\\
+                                                                &= +\infty
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\lim\limits_{x\rightarrow +\infty}(\ln x - x) = -\infty$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \lim\limits_{x\rightarrow +\infty}(\ln x-x) &= \lim\limits_{x\rightarrow +\infty}(\ln x-\ln e^x)\\
+                                                                &= \lim\limits_{x\rightarrow +\infty}\ln\frac{x}{e^x}\\
+                                                                &= \lim\limits_{x\rightarrow +\infty}\ln\frac{1}{e^x}\\
+                                                                &= -\infty
+                    \end{align}$$
+                </div>
+            </div>
         </div>
 
-        <div class="Card-Method">
+        <div class="Card-Method" id="Method">
             <h2>求函数极限的方法</h2>
             <h3>直接代入法</h3>
             <p>若直接代入后极限的分子分母不同时为\(0\)，则可直接得出结果.</p>
@@ -166,10 +193,21 @@
 
             <b>定积分定义</b>
             $$\lim\limits_{n\rightarrow \infty}\sum\limits_{k=1}^n f(\frac kn)\frac1n = \int_0^1 f(x) \mathrm{d}x$$
+            <p>有时无法化成\(\frac{1}{n}f(\frac{k}{n})\)的形式，这时先将\(\frac{1}{n}\)提出后使用<b>夹逼准则</b>.</p>
+            <p>其中一边化为定积分定义的形式，另一边展开为\(f(\frac{k}{n})\)与\(g(\frac{1}{n})\)的多项式.</p>
 
             <b>夹逼准则</b>
             <p>放缩分母</p>
 
+            <b>\(\sin(\cos x),\cos(\sin x)\)型</b>
+            <p>一般使用和差化积公式化简.</p>
+
+            <b>\(\lim\limits_{x\rightarrow 0}\frac{A+B}{C}\)，\(A+B\)中含根式的情况</b>
+            <p>上下同乘\(A-B\)消去分子根式，分母中\(A-B\)一定不为零，可以直接计算.</p>
+
+            <b>\(\lim \sqrt[n]{f(x)}\)型</b>
+            <p>设\(\lim \sqrt[n]{f(x)}\)存在</p>
+            $$\lim \sqrt[n]{f(x)} = \sqrt[n]{\lim f(x)}$$
         </div>
 
 
@@ -185,6 +223,10 @@
                 (-1)^x, x= -1
                 \end{cases}$$</li>
         </ul>
+
+        <b>从极限导出函数</b>
+        $$\lim g[f(x)] = a$$
+        $$g[f(x)] = a + \Delta a, \lim \Delta a = 0$$
 
 
         <div class="Card-Property">
@@ -250,6 +292,8 @@
         <p>介值定理推论：\(f(x)\)在\([a,b]\)上连续，有最大值\(M\)与最小值\(m\)，对于\(\forall m \leq c \leq M\)，至少存在一点\(\xi \in (a,b)\)，使得\(f(\xi) = c\)。</p>
         <p>零点定理：\(f(x)\)在\([a,b]\)上连续且\(f(a)\cdot f(b) \lt 0\)，至少存在一点\(\xi \in (a,b)\)，使得\(f(\xi) = 0\)。</p>
         
+
+
         <ul class="navibar">
             <li class="catalog"><a href="Mathematic.html">主页</a></li>
             <li class="next"><a href="chapter2.html">下一页</a></li>

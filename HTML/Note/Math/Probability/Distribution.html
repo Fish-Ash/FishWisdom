@@ -22,11 +22,12 @@
 
         <div class="PageCatalog">
             <ul>
-
+                <li><a href="#Discrete">离散型随机变量</a></li>
+                <li><a href="#Continuous">连续型随机变量</a></li>
             </ul>
         </div>
 
-        <h1>离散型随机变量</h1>
+        <h2 id="Discrete">离散型随机变量</h2>
         <p>
             <b>数学期望</b>：
             $$E(X) = \sum\limits_{k=1}^{\infty}x_kp_k$$
@@ -44,52 +45,20 @@
 
         <hr>
 
-        <h3>退化分布（单点分布）</h3>
-        <p>$$ P\{X = C\} = 1 $$</p>
+        <h3>二项分布</h3>
+        <p>n重伯努利试验中，事件A发生的概率为\(p\)，\(X\)表示n重伯努利试验中事件A发生的次数，则称<b>\(X\)服从参数为\(n,p\)的二项分布</b>，记作\(X\sim b(n,p)\)</p>
         <hr>
 
-        <h3>二项分布</h3>
-        <p><b>定义</b>：
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;n重伯努利试验中，事件A发生的概率为\(p\)，\(X\)表示n重伯努利试验中事件A发生的次数，则称<b>\(X\)服从参数为\(n,p\)的二项分布</b>，记作\(X\sim b(n,p)\)
-            $$ P\{X = k\} = C_n^kp^k(1-p)^{n-k},k=0,1,2,\cdots,n $$
-            <b>数学期望</b>：
-            $$E(X) = np$$
-            <b>方差</b>：
-            $$D(X) = np(1-p)$$
-        </p>
-
-            <hr>
-
         <h3>（0-1）分布（两点分布）</h3>
-        <p><br>&nbsp;&nbsp;&nbsp;&nbsp;二项分布\(n = 1\)时的特殊情况，记作\(X\sim b(1,p)\)$$P\{X = k\} = p^k(1-p)^{(1-k)}, k=0,1$$</p>
+        <p>二项分布\(n = 1\)时的特殊情况.</p>
         <hr>
 
         <h3>几何分布</h3>
-        <p><b>定义</b>：
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;若事件A发生的概率为\(p\)，\(X\)表示事件A首次发生时已进行的次数，则称<b>X服从参数为p的几何分布</b>，记作\(X\sim G(p)\)
-            $$ P\{X = k\} = p(1-p)^{k-1},~k=1,2,\cdots $$
-            <b>数学期望</b>：
-            $$E(X) = p$$
-            <b>方差</b>：
-            
-
-        </p>
+            <p>若事件A发生的概率为\(p\)，\(X\)表示事件A首次发生时已进行的次数，则称<b>X服从参数为p的几何分布</b>，记作\(X\sim G(p)\)</p>
         <hr>
 
         <h3>泊松分布</h3>
         <p>
-            <b>定义</b>：
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;若<b>\(X\)服从参数为\(\lambda\)的泊松分布</b>，记作\(X\sim P(\lambda)\)
-            $$P\{X = k\} = \frac{\lambda^k e^{-\lambda}}{k!},~k = 0,1,2,\cdots,~\lambda>0 $$
-            <b>数学期望</b>：
-            $$\begin{align}
-            E(X) &= \mathop{\sum}\limits_{k=0}^\infty k\cdot\frac{\lambda^ke^{-\lambda}}{k!}\\
-            &= \lambda e^{-\lambda}\mathop{\sum}\limits_{k=1}^\infty\frac{\lambda^{k-1}}{(k-1)!}\\
-            &= \lambda e^{-\lambda} e^{\lambda}\\
-            &= \lambda
-            \end{align}$$
-            <b>方差</b>：
-            $$D(X) = \lambda$$
             <b>最大似然估计</b>：
             <br>&nbsp;&nbsp;&nbsp;&nbsp;设\(x_1, x_2,\cdots, x_n\)为样本\(X_1, X_2, \cdots,X_n\)的观测值。
             $$\begin{align}
@@ -102,10 +71,67 @@
             \end{align}$$
         </p>
 
+        <table>
+            <tr>
+                <td>分布</td>
+                <td>概率</td>
+                <td>符号</td>
+                <td>数学期望</td>
+                <td>方差</td>
+            </tr>
+            <tr>
+                <td>\(X\)服从<b>退化分布</b>（<b>单点分布</b>）</td>
+                <td>$$P\{X = C\} = 1,~C\in \mathbb{R}$$</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>\(X\)服从参数为\(n,p\)的<b>二项分布</b></td>
+                <td>$$ P\{X = k\} = C_n^kp^k(1-p)^{n-k},k=0,1,2,\cdots,n $$</td>
+                <td>$$X \sim b(n,p)$$</td>
+                <td>$$E(X) = np$$</td>
+                <td>$$D(X) = np(1-p)$$</td>
+            </tr>
+            <tr>
+                <td>\(X\)服从参数为\(p\)的<b>\((0-1)\)分布（<b>两点分布</b>）</b></td>
+                <td>$$P\{X = k\} = p^k(1-p)^{1-k}, k=0,1$$</td>
+                <td>$$X\sim b(1,p)$$</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>\(X\)服从参数为\(p\)的<b>几何分布</b></td>
+                <td>$$ P\{X = k\} = (1-p)^{k-1}p,~k=1,2,\cdots $$</td>
+                <td>$$X \sim G(p)$$</td>
+                <td>$$E(X) = p$$</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>\(X\)服从参数为\(\lambda\)的<b>泊松分布</b></td>
+                <td>$$P\{X = k\} = \frac{\lambda^k e^{-\lambda}}{k!},~\lambda \gt 0,~k=0,1,2,\cdots$$</td>
+                <td>$$X \sim P(\lambda)$$</td>
+                <td>
+                    <div class="Formula">
+                        $$E(X) = \lambda$$
+                        <div class="Derivation">
+                            $$\begin{align}
+                            E(X) &= \mathop{\sum}\limits_{k=0}^\infty k\cdot\frac{\lambda^ke^{-\lambda}}{k!}\\
+                            &= \lambda e^{-\lambda}\mathop{\sum}\limits_{k=1}^\infty\frac{\lambda^{k-1}}{(k-1)!}\\
+                            &= \lambda e^{-\lambda} e^{\lambda}\\
+                            &= \lambda
+                            \end{align}$$
+                        </div>
+                    </div>
+                </td>
+                <td>$$D(X) = \lambda$$</td>
+            </tr>
+        </table>
+
 
         <hr>
 
-        <h1>连续型随机变量</h1>
+        <h2 id="Continuous">连续型随机变量</h2>
         <p>
             <b>数学期望</b>:
             $$E(X) = \int_{-\infty}^{+\infty}xf(x)dx$$
@@ -120,81 +146,132 @@
             $$L(\theta) = \prod\limits_{i=1}^nf(x_i;\theta)$$
         </p>
 
-        <hr>
-        <h3>正态分布</h3>
-        <p>
-            <b>定义</b>：
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;若连续型随机变量\(X\)的概率密度为
-            $$ f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},~-\infty< x < +\infty $$
-            称<b>\(X\)服从参数为\(\mu,\lambda\)的正态分布</b>，<b>记作\(X\sim N(\mu, \sigma^2)\)</b>
-            <br><b>数学期望</b>：
-            $$E(X) = \mu$$
-        </p>
-        <hr>
-        <h3>均匀分布</h3>
-        <p>
-            <b>定义</b>：
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;若连续型随机变量\(X\)的概率密度为
-                    $$f(x)=
-                    \begin{align}
-                    \begin{cases}
-                    \frac{1}{b-a},~&a\leq x\leq b\\
-                    0,~&others
-                    \end{cases}
-                    \end{align}$$
-                称<b>\(X\)在区间[a,b]上服从均匀分布</b>，记作\(X\sim U[a,b]\)。其分布函数为
-                    $$F(x)=
-                    \begin{align}
-                    \begin{cases}
-                    0,~&x< a\\
-                    \frac{x-a}{b-a},~&a\leq x\leq b\\
-                    1,~&x>b
-                    \end{cases}
-                    \end{align}$$
-            <b>数学期望</b>：
-            $$\begin{align}
-            E(X)
-            &= \int_{a}^{b}\frac{x}{b-a}dx\\
-            &= \frac{x^2}{2(b-a)}|_a^b\\
-            &= \frac{a+b}{2}
-            \end{align}$$
-            <b>方差</b>：
-            $$D(X) = \frac{(b-a)^2}{12}$$    
-        </p>
-        <h3>指数分布</h3>
-        <p>
-            <b>定义</b>：
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;若连续型随机变量\(X\)的概率密度为
-                    $$f(x)=
-                    \begin{align}
-                    \begin{cases}
-                    \lambda e^{-\lambda x},~&x>0\\
-                    0,~&x\leq 0
-                    \end{cases}
-                    \end{align},~\lambda > 0
-                    $$
-                    称<b>\(X\)服从参数为\(\lambda\)的指数分布</b>，记作\(X\sim e(\lambda)\)。其分布函数为
-                    $$F(x)=
-                    \begin{align}
-                    \begin{cases}
-                    1-e^{-\lambda x},~&x>0\\
-                    0,~&x\leq 0
-                    \end{cases}
-                    \end{align}
-                    $$
-            <b>数学期望</b>：
-            $$E(X) = \frac 1\lambda$$
-            <b>方差</b>：
-            $$D(X) = \frac{1}{\lambda^2}$$
-            &nbsp;&nbsp;&nbsp;&nbsp;
-        </p>
 
         <table>
             <tr>
+                <td>分布</td>
+                <td>概率密度</td>
+                <td>分布函数</td>
+                <td>符号</td>
+                <td>数学期望</td>
+                <td>方差</td>
+            </tr>
+            <tr>
+                <td>\(X\)在区间\([a,b]\)上服从<b>均匀分布</b></td>
+                <td>
+                    $$f(x) = 
+                    \begin{align}\begin{cases}
+                    \frac{1}{b-a},~&a\leq x\leq b\\
+                    0,~&others
+                    \end{cases}\end{align}$$
+                </td>
+                <td>
+                    $$F(x)=
+                    \begin{align}\begin{cases}
+                    0,~&x\lt a\\
+                    \frac{x-a}{b-a},~&a\leq x\leq b\\
+                    1,~&x\gt b
+                    \end{cases}\end{align}$$
+                </td>
+                <td>$$X\sim U[a,b]$$</td>
+                <td>
+                    <div class="Formula">
+                        $$E(X) = \frac{a + b}{2}$$
+                        <div class="Derivation">
+                            $$\begin{align}
+                            E(X) &= \int_{a}^{b}\frac{x}{b-a}dx\\
+                                 &= \frac{x^2}{2(b-a)}|_a^b\\
+                                 &= \frac{a+b}{2}
+                            \end{align}$$
+                        </div>
+                    </div>
+                </td>
+                <td>$$D(X) = \frac{(b-a)^2}{12}$$ </td>
+            </tr>
+            <tr>
+                <td>\(X\)服从参数为\(\lambda\)的<b>指数分布</b></td>
+                <td>
+                    $$
+                    f(x)=
+                    \begin{align}\begin{cases}
+                    0,~&x\leq 0\\
+                    \lambda e^{-\lambda x},~&x>0
+                    \end{cases}\end{align},~\lambda > 0
+                    $$
+                </td>
+                <td>
+                    $$
+                    F(x)=
+                    \begin{align}\begin{cases}
+                    0,~&x\leq 0\\
+                    1-e^{-\lambda x},~&x>0
+                    \end{cases}\end{align}
+                    $$
+                </td>
+                <td>$$X\sim e(\lambda)$$</td>
+                <td>$$E(X) = \frac 1\lambda$$</td>
+                <td>$$D(X) = \frac{1}{\lambda^2}$$</td>
+            </tr>
+            <tr>
+                <td>\(X\)服从参数为\(\mu,\sigma\)的<b>正态分布</b></td>
+                <td>$$f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},~-\infty \lt x \lt +\infty$$</td>
                 <td></td>
+                <td>$$X\sim N(\mu, \sigma^2)$$</td>
+                <td>$$E(X) = \mu$$</td>
+                <td>$$D(X) = \sigma$$</td>
             </tr>
         </table>
 
+        <h3>均匀分布</h3>
+        <p>均匀分布也可表示为\(U(a.b)\)等，与\(x\)在\(a,b\)处是否取等号有关.</p>
+
+        <h3>正态分布</h3>
+        <b>标准正态分布</b>
+        <table>
+            <tr>
+                <td>分布</td>
+                <td>概率密度</td>
+                <td>分布函数</td>
+                <td>符号</td>
+            </tr>
+            <tr>
+                <td>\(X\)服从标准正态分布</td>
+                <td>$$\phi(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}},~-\infty\lt x\lt +\infty$$</td>
+                <td>$$\Phi(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^x e^{-\frac{t^2}{2}}\mathrm{d}t,~-\infty\lt x\lt +\infty$$</td>
+                <td>$$X\sim N(0,1)$$</td>
+            </tr>
+        </table>
+
+        <div class="Card-Formula">
+            $$X\sim N(\mu, \sigma^2) \Rightarrow Y = \frac{X - \mu}{\sigma} \sim N(0,1)$$
+            $$\Phi(x) = 1 - \Phi(-x)$$
+            $$\Phi(0) = 0.5$$
+        </div>
+
+        <h3>指数分布</h3>
+        <div class="Card-Property">
+            <b>指数分布的无记忆性</b>
+            <div class="Formula">
+                $$X\sim e(\lambda) \Rightarrow P\{x\gt a+b|x\gt a\} = P\{x\gt b\}$$
+                <div class="Derivation">
+                    <p>当\(b\lt 0\)时：</p>
+                    $$P\{x\gt a+b|x\gt a\} = \frac{P\{x\gt a\}}{P\{x\gt a\}} = 1 = P\{x\gt b\}$$
+                    <p>当\(b\gt 0\)时：</p>
+                    $$\begin{align}
+                    P\{x\gt a+b|x\gt a\} &= \frac{P\{x\gt a+b\}}{P\{x\gt a\}}\\
+                                         &= \frac{\int_{a+b}^{+\infty}f(x)\mathrm{d}x}{\int_a^{+\infty}f(x)\mathrm{d}x}\\
+                                         &= \frac{(1-e^{-\lambda x})|_{a+b}^{+\infty}}{(1-e^{-\lambda x})|_{a}^{+\infty}}\\
+                                         &= \frac{1- [1 - e^{-(a+b)}]}{1 - (1 - e^{-a})}\\
+                                         &= \frac{e^{-\lambda(a+b)}}{e^{-\lambda a}}\\
+                                         &= e^{-\lambda b}\\
+                                         &= \int_b^{+\infty}f(x)\mathrm{d}x\\
+                                         &= P\{x\gt b\}
+                    \end{align}$$
+                </div>
+            </div>
+        </div>
+
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
 </html>

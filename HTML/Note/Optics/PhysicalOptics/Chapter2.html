@@ -20,10 +20,165 @@
         </ul>
 
 
-        <h1>干涉</h1>
+        <h1>光的干涉</h1>
+
+        <div class="Card-Definition">
+            <b>干涉</b>
+            <p>两束或多束光在空间相遇时，在重叠区内形成稳定的强弱分布的现象.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h3>干涉光光强分析</h3>
+            <p>两列单色平面线偏振光：</p>
+            $$\mathbf{E_1} = \mathbf{E_{01}}e^{-i(\omega_1 t - \mathbf{k_1}\mathbf{r} + \phi_{01})}$$
+            $$\mathbf{E_2} = \mathbf{E_{02}}e^{-i(\omega_2 t - \mathbf{k_2}\mathbf{r} + \phi_{02})}$$
+            <p>在空间P点相遇，其振动方向夹角为\(\theta\)，则在P点处的总光强为：</p>
+            <div class="Formula">
+                $$I = I_1 + I_2 + 2\sqrt{I_1I_2}\cos\theta\cos\phi$$
+                $$\phi = (\omega_1 - \omega_2)t - (\mathbf{k_1} - \mathbf{k_2})\mathbf{r} + (\phi_{01}-\phi_{02})$$
+                <div class="Derivation">
+                    <img src="Img/E1E2.jpg">
+                    $$\mathbf{E_1} = \mathbf{i}E_1\cos\theta + \mathbf{j}E_1\sin\theta$$
+                    $$\mathbf{E_2} = \mathbf{i}E_2$$
+                    $$\begin{align}
+                    I &= \mathbf{E}\cdot \mathbf{E}^*\\
+                      &= (\mathbf{E}_1 + \mathbf{E}_2)\cdot(\mathbf{E}_1  + \mathbf{E}_2)^*\\
+                      &= (\mathbf{E}_1 + \mathbf{E}_2)\cdot(\mathbf{E}^*_1  + \mathbf{E}^*_2)\\
+                      &= I_1 + \mathbf{E}_2\mathbf{E}^*_1 + \mathbf{E}_1\mathbf{E}^*_2 + I_2\\
+                      &= I_1 + I_2 + \mathbf{i}E_2(\mathbf{i}E^*_1\cos\theta + \mathbf{j}E^*_2\cos\theta) + (\mathbf{i}E_1\cos\theta + \mathbf{j}E_2\sin\theta)\mathbf{i}E^*_2\\
+                      &= I_1 + I_2 + E_2E^*_1\cos\theta + E_1E^*_2\cos\theta\\
+                      &= I_1 + I_2 + E_{02}e^{-i(\omega_2t - \mathbf{k_2}\mathbf{r} + \phi_{02})}\cdot E_{01}e^{i(\omega_1t - \mathbf{k_1}\mathbf{r} + \phi_{01})}\cos\theta + E_{01}e^{-i(\omega_1t - \mathbf{k_1}\mathbf{r} + \phi_{01})}\cdot E_{02}e^{i(\omega_2t - \mathbf{k_2}\mathbf{r} + \phi_{02})}\cos\theta\\
+                      &= I_1 + I_2 + E_{01}E_{02}\cos\theta\{e^{i[(\omega_1 - \omega_2)t - (\mathbf{k_1} - \mathbf{k_2})\mathbf{r} + (\phi_{01}-\phi_{02})]} + e^{-i[(\omega_1 - \omega_2)t - (\mathbf{k_1} - \mathbf{k_2})\mathbf{r} + (\phi_{01}-\phi_{02})]}\}\\
+                      &= I_1 + I_2 + 2\sqrt{I_1I_2}\cos\theta\cos\phi
+                    \end{align}$$
+                    $$\phi = (\omega_1 - \omega_2)t - (\mathbf{k_1} - \mathbf{k_2})\mathbf{r} + (\phi_{01}-\phi_{02})$$
+                </div>
+            </div>
+            <p>\(I_1, I_2\)分别为两束光的光强，\(\phi\)为两束光的相位差.</p>
+            <p>\(I_{12} = \sqrt{I_1I_2}\cos\theta\cos\phi\)称为干涉项.</p>
+
+            <p>当\(\cos\phi = 1\)时，光强最大；当\(\cos\phi = -1\)时，光强最小.</p>
+            <table>
+                <tr>
+                    <td>$$\phi$$</td>
+                    <td>$$I$$</td>
+                </tr>
+                <tr>
+                    <td>$$\phi = 2m\pi~m = 0, \pm1, \pm2, \cdots$$</td>
+                    <td>$$I_{max} = I_1 + I_2 + 2\sqrt{I_1I_2}\cos\theta$$</td>
+                </tr>
+                <tr>
+                    <td>$$\phi = 2(m+1)\pi~m=0,\pm1 , \pm2, \cdots$$</td>
+                    <td>$$I_{min} = I_1 + I_2 - 2\sqrt{I_1I_2}\cos\theta$$</td>
+                </tr>
+            </table>
+            <p>\(m\)称为<b>干涉级次</b>.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>干涉条纹可见度</b>
+            <p>用于表征干涉效应程度的量.</p>
+            $$V = \frac{I_{max} - I_{min}}{I_{max} + I_{min}}$$
+
+            <p>\(I_{min} = 0\)时，\(V = 1\)，两束光完全相干，条纹最清晰.</p>
+            <p>\(I_{max} = I_{min}\)时，\(V = 0\)，两束光完全不相干，无干涉条纹.</p>
+            <p>\(0\lt V\lt 1\)时，两束光部分相干，条纹清晰度一般.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h3>干涉条件分析</h3>
+            <p>1、两光束频率相同（\(\omega_1 = \omega_2\)）</p>
+            <p>为了得到稳定的干涉条纹分布，干涉光强不应随时间变化，即\(\omega_1 - \omega_2 = 0\).</p>
+            <p>2、两光束振动方向相同（\(\theta = 0\)）</p>
+            <p>$$V = \frac{I_{max} - I_{min}}{I_{max} + I_{min}} = \frac{4\sqrt{I_1I_2}\cos\theta}{2I_1 + 2I_2}$$</p>
+            <p>\(I\)一定时，\(\theta\)越大，干涉条纹越清晰，当\(\theta = 0\)时，干涉条纹最清晰.</p>
+            <p>3、两光束初相位差恒定（\(\phi_2 - \phi_1\)恒定）</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h3>相干光的获得方法</h3>
+            <ul>
+                <li>分波面法</li>
+                <li>分振幅法</li>
+            </ul>
+        </div>
+
+        <div class="Card-Analysis">
+            <h3>杨氏双缝干涉</h3>
+            <img src="Img/Yang.jpg" width="400">
+            <p>\(d\ll D, R_1 = R_2\)时：</p>
+            $$\Delta = d\sin\beta$$
+            $$\sin \beta \approx \tan \beta = \frac{y}{D}$$
+            $$\Delta = \frac{dy}{D}$$
+            <p>相位差为：</p>
+            $$\phi = kr = \frac{2\pi}{\lambda}\Delta = \frac{2\pi}{\lambda}\frac{dy}{D}$$
+            <table>
+                <tr>
+                    <td></td>
+                    <td>$$\phi$$</td>
+                    <td>$$y$$</td>
+                </tr>
+                <tr>
+                    <td>亮条纹</td>
+                    <td>$$\phi = 2m\pi(m=0,\pm1,\pm2,\cdots)$$</td>
+                    <td>$$y = m\frac{D\lambda}{d}$$</td>
+                </tr>
+                <tr>
+                    <td>暗条纹</td>
+                    <td>$$\phi=(2m + 1)\pi(m=0,\pm1,\pm2,\cdots)$$</td>
+                    <td>$$y = (m+1)\frac{D\lambda}{d}$$</td>
+                </tr>
+            </table>
+
+            <b>光束汇聚角</b>
+            $$w = \frac{d}{D}$$
+
+            <b>条纹间距\(\epsilon\)</b>
+            $$\epsilon = y_{m+1} - y_m = \frac{D\lambda}{d} = \frac{\lambda}{w}$$
+        </div>
+
+        <div class="Card-Definition">
+            <b>非定域干涉</b>
+            <p>在整个光波叠加区内随处可见干涉条纹的干涉.</p>
+
+            <b>定域干涉</b>
+            <p>在整个光波叠加区内干涉条纹不随处可见的干涉.</p>
+        </div>
+
+        <div class="Card-Supplement">
+            <b>补充</b>
+            <p>当用白光进行干涉实验时，除\(m=0\)的条纹仍是白光外，其他级次的干涉条纹均为不同颜色分离的彩色条纹.</p>
+            $$\phi = \frac{2\pi}{\lambda}\frac{dy}{D} = 2m\pi$$
+            <p>当\(m=0\)时，\(\phi=0\)与\(\lambda\)无关.</p>
+            <p>当\(m\neq 0\)时，由于\(\phi=2m\pi\)一定，\(y\)越大的位置\(\lambda\)越大.</p>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h3>平行平板干涉（薄膜干涉）分析</h3>
+            <img src="Img/Interference_Plate.jpg" width="300">
+            <div class="Formula">
+                $$\Delta = n(AB + BC) - n_0AN = 2nh\cos\theta_2$$
+                <div class="Derivation">
+                    $$AB = BC = \frac{h}{\cos\theta_2}$$
+                    $$AN = AC\sin\theta_1 = 2h\tan\theta_2\sin\theta_1$$
+                    $$\begin{align}
+                    \Delta &= \frac{2nh}{\cos\theta_2} - 2n_0h\tan\theta_2\sin\theta_1\\
+                           &= 2h(\frac{n}{\cos\theta_2} - \frac{n_0\sin\theta_1\sin\theta_2}{\cos\theta_2})
+                    \end{align}$$
+                    $$\because n_0\sin\theta_1 = n\sin\theta_2$$
+                    $$\begin{align}
+                    \Delta &= 2h(\frac{n - n\sin^2\theta_2}{\cos\theta_2})\\
+                           &= 2nh\cos\theta_2
+                    \end{align}$$
+                </div>
+            </div>
+        </div>
+
+
 
         <h2>牛顿环</h2>
-        <img src="./img/NewtonRing.png"><br>
+        <img src="./Img/NewtonRing.png"><br>
         <b>相干条件</b>
         $$2d + \frac{\lambda}{2} = \begin{cases}k\lambda, k=1,2,\cdots 明条纹\\(2k + 1)\frac{\lambda}{2},k=0,1,2,\cdots 暗条纹\end{cases}$$
         $$r^2 = R^2 - (R-d)^2 = 2dR - d^2$$
@@ -39,6 +194,7 @@
         $$\Delta d = d_{k+1} - d{k} = \frac{\lambda}{2}$$
         
 
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
     

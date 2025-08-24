@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>高等数学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>第七章 微分方程</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#FirstOrder">一阶微分方程</a></li>
+                <li><a href="#HigherOrder">高阶微分方程</a></li>
+            </ul>
+        </div>
+
+        <div class="Card-Definition">
+            <b>微分方程</b>
+            <p>含有未知函数</p>
+            <ul>
+                <li>显式：\(y^{(n)} = f(x,y,y',\cdots y^{(n-1)})\)</li>
+                <li>隐式：\(F(x,y,y',\cdots y^{(n)}) = 0\)</li>
+            </ul>
+        </div>
+
+        <div class="Card-Definition">
+            <b>微分方程的阶</b>
+            <p>微分方程中未知函数最高导数的阶数。</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>微分方程的解</b>
+            <p>满足微分方程的函数。</p>
+    
+            <b>微分方程的通解</b>
+            <p>若\(n\)阶微分方程中含有\(n\)个任意常数，称为通解。</p>
+    
+            <b>微分方程的特解</b>
+            <p>不含有任意常数的解。</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>微分方程的初始条件</b>
+            <p>\(y(x_0) = y_0, y'(x_0) = y'_0, \cdots y^{(n-1)}(x_0) = y_0^{(n-1)}\)</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>积分曲线</b>
+            <p>微分方程的一个解对应平面上的一条曲线。</p>
+        </div>
+
+
+        <div class="Card-Method" id="FirstOrder">
+            <h2>求解一阶微分方程的方法</h2>
+            <details open>
+                <summary><b>变量可分离微分方程</b></summary>
+                $$\frac{\mathrm{d}y}{\mathrm{d}x}=f(x)g(y)\Rightarrow \int\frac{1}{g(y)}\mathrm{d}y = \int f(x)\mathrm{d}x$$
+            </details>
+            
+            <details open>
+                <summary><b>齐次微分方程</b></summary>
+                $$\frac{\mathrm{d}y}{\mathrm{d}x} = \phi(\frac{y}{x})$$
+                <p>令\(\frac{y}{x} = t\)</p>
+                $$\therefore y = tx \Rightarrow \frac{\mathrm{d}y}{\mathrm{d}x} = t + x\frac{\mathrm{d}t}{\mathrm{d}x} = \phi(t)$$
+                $$\therefore \int \frac{1}{\phi(t)-t  }\mathrm{d}t = \int \frac{1}{x}\mathrm{d}x$$            
+            </details>
+            
+            <details open>
+                <summary><b>一阶线性微分方程</b></summary>
+                $$y'(x) + p(x)y(x) = q(x)$$
+                <p>通解为：</p>
+                $$y = e^{-\int p(x)\mathrm{d}x}\int e^{\int p(x)\mathrm{d}x}q(x)\mathrm{d}x$$
+                <div class="Prove">
+                    $$e^{\int p(x)\mathrm{d}x}y'(x) + e^{\int p(x)\mathrm{d}x}p(x)y(x) = e^{\int p(x)\mathrm{d}x}q(x)$$
+                    $$[e^{\int p(x)\mathrm{d}x}y(x)]' = e^{\int p(x)\mathrm{d}x}q(x)$$
+                    $$y = e^{-\int p(x)\mathrm{d}x}\int e^{\int p(x)\mathrm{d}x}q(x)\mathrm{d}x$$
+                </div>
+                <p>[注]：\(\int p(x) \mathrm{d}x = P(x)\)</p>
+            </details>
+
+            <details open>
+                <summary><b>伯努利方程</b></summary>
+                
+                <p>形如\(y'(x) + p(x)y(x) = q(x) y^\alpha(x)(\alpha \neq 0,1)\)的方程。</p>
+                <p>转化为一阶线性微分方程\(\frac{\mathrm{d}u}{\mathrm{d}x} +(1-\alpha)p(x)u = (1-\alpha)q(x)\)的形式。</p>
+                <div class="Prove">
+                    <p>令\(u = y^{1-\alpha}\)</p>
+                    $$\therefore \frac{\mathrm{d}u}{\mathrm{d}x} = (1-\alpha)y^{-\alpha}\frac{\mathrm{d}y}{\mathrm{d}x}$$
+                    $$(1-\alpha)y^{-\alpha}y'(x) + (1-\alpha)y^{-\alpha}p(x)y(x) = (1-\alpha)y^{-\alpha}q(x) y^\alpha(x)$$
+                    $$\frac{\mathrm{d}u}{\mathrm{d}x} +(1-\alpha)p(x)u = (1-\alpha)q(x)$$
+                </div>
+            </details>
+            
+        </div>
+        <p>[注]求解微分方程时，\(\int \frac{1}{x}\mathrm{d}x = \ln x + C\)，原因如下：</p>
+        $$\int \frac{1}{x}\mathrm{d}x = \ln|x| + C = \ln|x| + \ln C = \ln C|x|$$
+        <p>由于\(C\)可以取任意常数，故</p>
+        $$\int \frac{1}{x} \mathrm{d}x = \ln x + C$$
+        <p>[注]通解计算过程中出现反三角函数时，计算\(C\)值用带有反三角函数的式子计算，因为其范围更小.</p>
+        <p>[注]在微分方程中，\(y\)可以是\(x\)的函数，\(x\)也可以是\(y\)的函数.</p>
+        
+
+
+
+        <b>全微分方程</b>
+        $$p(x,y)\mathrm{d}x + q(x,y)\mathrm{d}y = \mathrm{d}u(x,y) = 0$$
+        $$u(x,y) = C$$
+
+        <h2>可降阶微分方程</h2>
+        <b>\(y^{(n)}=f(x)\)型</b>
+        $$y^{(n-1)} = \int f(x)\mathrm{d}x$$
+        <hr>
+
+        <b>\(y''(x) = f(x)\)型</b>
+        <p>令\(y' = p(x)\)</p>
+        $$y'' = \frac{\mathrm{d}^2y}{\mathrm{d}x^2} = \frac{\mathrm{d}}{\mathrm{d}x}\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}p}{\mathrm{d}x}$$
+        $$\frac{\mathrm{d}p}{\mathrm{d}x} = f(x, p(x))$$
+        <hr>
+
+        <b>\(y'' = f(y,y')\)型</b>
+        <p>令\(y' = p(y)\)</p>
+        $$y'' = \frac{\mathrm{d}^2y}{\mathrm{d}x^2} = \frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}y}{\mathrm{d}x}) = \frac{\mathrm{d}y}{\mathrm{d}x} \cdot \frac{\mathrm{d}}{\mathrm{d}y}(\frac{\mathrm{d}y}{\mathrm{d}x}) = p\frac{\mathrm{d}p}{\mathrm{d}x}$$
+        $$p\frac{\mathrm{d}p}{\mathrm{d}x} = f(y, p(y))$$
+        <p>[注1]：求特解时，当即解出对应的常数值，而不是等到最后一起解。</p>
+
+
+        <h2 id="HigherOrder">高阶线性微分方程</h2>
+
+        <b>线性微分方程解的结构</b>
+        <ul>
+            <li>齐次线性微分方程：\(y'' + p(x)y' + q(x)y = 0\)</li>
+            <li>非齐次线性微分方程：\(y'' + p(x)y' + q(x)y = f(x)\)</li>
+        </ul>
+        <p>设\(y_1(x), y_2(x)\)是齐次方程的两个线性无关解</p>
+        <p>设\(y_1^*(x), y_2^*(x)\)是非齐次方程的两个线性无关解</p>
+
+        <p>[注]：\(\frac{y_1(x)}{y_2(x)}\neq c \Rightarrow y_1(x),y_2(x)\)线性无关</p>
+
+        <b>齐次线性微分方程解的结构：</b>
+        $$y = C_1y_1(x) + C_2y_2(x)~~ C_1,C_2\in \mathbb{R}$$
+
+        <b>非齐次线性微分方程解的结构：</b>
+        $$y = C_1y_1(x) + C_2y_2(x) + y_1^*(x)~~ C_1,C_2\in \mathbb{R}$$
+
+
+        <div class="Card-Method">
+            <h2>常系数齐次线性微分方程的解法</h2>
+
+            <details open>
+                <summary><b>二阶齐次微分方程</b></summary>
+                $$y'' + py' + q = 0，其中p,q是确定实数$$
+                <p>特征方程：</p>
+                $$r^2 + pr + q = 0$$
+                <p>设\(r_1, r_2\)是特征方程的两个解：</p>
+                <table>
+                    <tr>
+                        <td>\(\Delta\)</td>
+                        <td>\(r\)</td>
+                        <td>通解</td>
+                    </tr>
+                    <tr>
+                        <td>$$\Delta \gt 0$$</td>
+                        <td>$$r_1 \neq r_2$$</td>
+                        <td>$$y = C_1 e^{r_1x} + C_2e^{r_2 x}$$</td>
+                    </tr>
+                    <tr>
+                        <td>$$\Delta = 0$$</td>
+                        <td>$$r_1 = r_2 = r$$</td>
+                        <td>$$y = (C_1 + C_2 x) e^{r x}$$</td>
+                    </tr>
+                    <tr>
+                        <td>$$\Delta \lt 0$$</td>
+                        <td>$$r_{1,2} = \alpha \pm i\beta$$</td>
+                        <td>$$y = e^{\alpha x}(C_1\cos \beta x + C_2\sin \beta x)$$</td>
+                    </tr>
+                </table>
+            </details>
+    
+            <details open>
+                <summary><b>三阶齐次微分方程</b></summary>
+                $$y''' + ay'' + by + c = 0，其中a,b,c为确定实数$$
+                <p>特征方程：</p>
+                $$r^3 + ar^2 + br + c$$
+                <p>\(r_1 = r, r_{2,3} = \alpha \pm i\beta\)：通解为：\(y = C_1 e^{r x} + e^{\alpha x}(C_1\cos \beta x + C_2\sin \beta x)\)</p>
+            </details>
+
+            <details open>
+                <summary><b>\(n\)阶齐次微分方程</b></summary>
+                $$y^{(n)} + p_1y^{(n-1)} + \cdots + p_{n-1}y' + p_ny = 0$$
+                <p>其中\(p_1, p_2, \cdots, p_n\)为常数.</p>
+                <p>特征方程：</p>
+                $$r^n + p_1r^{n-1} + p_2r^{n-2} + \cdots + p_{n-1}r + p_n = 0$$
+                <table>
+                    <tr>
+                        <td>根中包含</td>
+                        <td>通解中增加项</td>
+                    </tr>
+                    <tr>
+                        <td>单实根\(r\)</td>
+                        <td>$$Ce^{rx}$$</td>
+                    </tr>
+                    <tr>
+                        <td>\(k\)重实根</td>
+                        <td>$$(C_1 + C_2x + \cdots + C_kx)e^{rx}$$</td>
+                    </tr>
+                    <tr>
+                        <td>一对单复根\(r_{1,2} = \alpha \pm \beta i\)</td>
+                        <td>$$e^{\alpha x}(C_1 \cos\beta x + C_2 \sin\beta x)$$</td>
+                    </tr>
+                    <tr>
+                        <td>一对\(k\)重复根\(r_{1,2} = \alpha \pm \beta i\)</td>
+                        <td>$$e^{\alpha x}[(C_{11} + C_{12}x + \cdots + C_{1k}x^{k-1})\cos\beta x + (C_{21} + C_{22}x + \cdots + C_{2k}x^{k-1})\sin\beta x]$$</td>
+                    </tr>
+                </table>
+
+
+            </details>
+        </div>    
+
+        <div class="Card-Method">
+            <h2>常系数非齐次线性微分方程</h2>
+            $$y'' + py' + qy = f(x)，其中p,q为确定实数$$
+            <p>1、求解齐次方程\(y'' + py' + q = 0\)的通解</p>
+            <p>2、求解非齐次方程\(y'' + py' + q = f(x)\)的特解</p>
+            <p>用待定系数法求特解，将与\(f(x)\)结构一致的\(y^*\)代入非齐次方程</p>
+
+            <details open>
+                <summary>\(f(x) = e^{\lambda x} P_m(x)\)</summary>
+                $$y'' + py' + qy = e^{\lambda x}P_m(x)$$
+                <p>\(\lambda\)为常数.</p>
+                <p>\(P_m(x)\)为\(x\)的一个\(m\)次多项式，\(P_m(x) = a_0x^m + a_1x^{m-1} + \cdots + a_{m-1}x + a_m\).</p>
+
+                <div class="Formula">
+                    <table>
+                        <tr>
+                            <td><b>\(\lambda\)不为特征方程\(r^2 + pr + q = 0\)的根</b></td>
+                            <td>$$y^* = R_m(x)e^{\lambda x}$$</td>
+                        </tr>
+                        <tr>
+                            <td><b>\(\lambda\)为特征方程\(r^2 + pr + q = 0\)的单根</b></td>
+                            <td>$$y^* = xR_m(x)e^{\lambda x}$$</td>
+                        </tr>
+                        <tr>
+                            <td><b>\(\lambda\)为特征方程\(r^2 + pr + q = 0\)的重根</b></td>
+                            <td>$$y^* = x^2R_m(x)e^{\lambda x}$$</td>
+                        </tr>
+                    </table>
+                    <div class="Derivation">
+                        <p>令\(y^* = e^{\lambda x}R(x)\)</p>
+                        $$\begin{cases}
+                        y^* = e^{\lambda x}R(x)\\
+                        {y^*}' = \lambda e^{\lambda x}R(x) + e^{\lambda x}R'(x) = e^{\lambda x}[\lambda R(x) + R'(x)]\\
+                        {y^*}'' = \lambda e^{\lambda x}[\lambda R(x) - R'(x)] + e^{\lambda x}[\lambda R'(x) + R''(x)] = e^{\lambda x}[\lambda^2 R(x) + 2\lambda R'(x) + R''(x)]
+                        \end{cases}$$
+                        <p>代入非齐次方程，并消去\(e^{\lambda x}\)，得：</p>
+                        $$[\lambda^2 R(x) + 2\lambda R'(x) + R''(x)] + p[\lambda R(x) + R'(x)] + qR(x) = P_m(x)$$
+                        $$(\lambda^2 + p\lambda + q)R(x) + (2\lambda + p)R'(x) + R''(x) = P_m(x)$$
+                        <p>在这个式子中，\(R(x)\)为左侧式的最高次多项式.</p>
+        
+                        <b>若\(\lambda\)不为特征方程\(r^2 + pr + q = 0\)的根</b>：
+                        $$\lambda^2 + p\lambda + q \neq 0 \Rightarrow (\lambda^2 + p\lambda + q)R(x) + (2\lambda + p)R'(x) + R''(x) = P_m(x)$$
+                        <p>要使上式恒成立，\(R(x)\)必须为\(x\)的\(m\)次多项式：</p>
+                        $$R(x) = R_m(x) = b_0x^m + b_1x^{m-1} + \cdots + b_{m-1}x + b_m$$
+                        <p>通过左右两式同次幂相等，可以解出\(b_i(i=0,1,\cdots,m)\)的值.</p>
+                        $$y^* = R_m(x)e^{\lambda x}$$
+        
+                        <b>若\(\lambda\)为特征方程\(r^2 + pr + q = 0\)的单根</b>：
+                        $$
+                        \begin{cases}\lambda^2 + p\lambda + q = 0\\
+                        \lambda \neq -\frac{p}{2} \Rightarrow 2\lambda + p\neq 0\end{cases}
+                        \Rightarrow (2\lambda + p)R'(x) + R''(x) = P_m(x)
+                        $$
+                        <p>要使上式恒成立，\(R'(x)\)必须为\(x\)的\(m\)次多项式：</p>
+                        $$R(x) = xR_m(x)$$
+                        <p>通过左右两式同次幂相等，可以解出\(b_i(i=0,1,\cdots,m)\)的值.</p>
+                        $$y^* = xR_m(x)e^{\lambda x}$$
+        
+                        <b>若\(\lambda\)为特征方程\(r^2 + pr + q = 0\)的重根</b>：
+                        $$
+                        \begin{cases}\lambda^2 + p\lambda + q = 0\\
+                        \lambda = -\frac{p}{2} \Rightarrow 2\lambda + p = 0\end{cases}
+                        \Rightarrow R''(x) = P_m(x)
+                        $$
+                        <p>要使上式恒成立，\(R''(x)\)必须为\(x\)的\(m\)次多项式：</p>
+                        $$R(x) = x^2R_m(x)$$
+                        <p>通过左右两式同次幂相等，可以解出\(b_i(i=0,1,\cdots,m)\)的值.</p>
+                        $$y^* = x^2R_m(x)e^{\lambda x}$$
+                    </div>
+                </div>
+
+
+            </details>
+
+        </div>
+
+        <h2>欧拉方程</h2>
+        <p>形如\(x^2y'' + pxy' + qy = f(x)\)的方程。</p>
+        <p>令\(x = e^t\Rightarrow \frac{\mathrm{d}x}{\mathrm{d}t} = e^t\)</p>
+        $$\begin{align}
+        \frac{\mathrm{d}y}{\mathrm{d}x} &= \frac{\mathrm{d}y}{\mathrm{d}t}\frac{\mathrm{d}t}{\mathrm{d}x}\\
+                                        & = e^{-t}\frac{\mathrm{d}y}{\mathrm{d}t}
+        \end{align}$$
+        $$\begin{align}
+        \frac{\mathrm{d}^2y}{\mathrm{d}x^2} &= \frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}y}{\mathrm{d}x})\\
+                                            &= \frac{\mathrm{d}t}{\mathrm{d}x}\frac{\mathrm{d}}{\mathrm{d}t}(e^{-t}\frac{\mathrm{d}y}{\mathrm{d}t})\\
+                                            &= e^{-t}(-e^{-t}\frac{\mathrm{d}y}{\mathrm{d}t} + e^{-t}\frac{\mathrm{d}^2y}{\mathrm{d}t^2})\\
+                                            &= e^{-2t}(\frac{\mathrm{d}^2y}{\mathrm{d}t^2} - \frac{\mathrm{d}y}{\mathrm{d}t})
+        \end{align}$$
+
+        $$x^2y'' + pxy' + qy = f(x)$$
+        $$e^{2t}e^{-2t}(\frac{\mathrm{d}^2y}{\mathrm{d}t^2} - \frac{\mathrm{d}y}{\mathrm{d}t}) + pe^te^{-t}\frac{\mathrm{d}y}{\mathrm{d}t} + qy = f(e^t)$$
+        $$\frac{\mathrm{d}^2y}{\mathrm{d}t^2} + (p-1)\frac{\mathrm{d}y}{\mathrm{d}t} + qy = f(e^t)$$
+    
+        <ul class="navibar">
+            <li><a href="chapter6.html">上一页</a></li>
+            <li class="catalog"><a href="Mathematic.html">主页</a></li>
+            <li class="next"><a href="chapter8.html">下一页</a></li>
+        </ul>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+</html>

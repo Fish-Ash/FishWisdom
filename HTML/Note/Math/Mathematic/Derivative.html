@@ -20,7 +20,16 @@
         </ul>
 
         <h1>导数</h1>
-        <div class="Card-Formula">
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#DefinitionFormula">导数的定义式</a></li>
+                <li><a href="#GeometricMeaning">导数的几何意义</a></li>
+                <li><a href="#CommonFormula">常用导数公式</a></li>
+            </ul>
+        </div>
+
+        <div class="Card-Formula" id="DefinitionFormula">
             <b>导数</b>
             $$f'(x_0) = \lim\limits_{\Delta x\rightarrow 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} = \lim\limits_{x\rightarrow x_0}\frac{f(x)-f(x_0)}{x-x_0}$$
             <ul>
@@ -29,14 +38,22 @@
             </ul>
             $$f'(x_0)\Leftrightarrow f'_-(x_0) = f'_+(x_0)$$
             <p>[注]可导一定连续，连续不一定可导。</p>
-        </div>
-
-        <div class="Card-Formula">
             <b>二阶导数</b>
             $$f''(x_0) = \lim\limits_{x\rightarrow x_0}\frac{f'(x) - f'(x_0)}{x - x_0}$$
         </div>
+        
+        <div class="Card-Method" id="GeometricMeaning">
+            <h2>求曲线的切线方程或法线方程</h2>
+            <h3>过曲线上一点</h3>
+            <p><b>切线方程</b>：\(y - f(x_0) = f'(x_0)(x-x_0)\)</p>
+            <p><b>法线方程</b>：\(y - f(x_0) = -\frac{1}{f'(x_0)}(x-x_0)\)</p>
 
-        <div class="Card-Formula">
+            <h3>过曲线外一点</h3>
+            <p>设切线或法线经过曲线上\((x_0, f(x_0))\)，求出切线方程或法线方程.</p>
+            <p>将曲线外点带入方程求出\(x_0\).</p>
+        </div>
+        
+        <div class="Card-Formula" id="CommonFormula">
             <b>常用导数公式</b>
         <table>
             <tr>
@@ -66,7 +83,7 @@
                 <td colspan="2"><b>指对函数导数</b></td>
             </tr>
             <tr>
-                <td>$$(a^x)' = a^x\ln x(a\gt 0, a\neq 1)$$</td>
+                <td>$$(a^x)' = a^x\ln a(a\gt 0, a\neq 1)$$</td>
                 <td>$$(e^x)' = e^x$$</td>
             </tr>
             <tr>
@@ -83,19 +100,6 @@
         </table>
         </div>
 
-        <h3>导数的几何意义</h3>
-        <p>\(f'(x_0)\)表示曲线\(y=f(x)\)在点\((x_0, f(x_0))\)处切线的斜率。</p>
-
-        <div class="Card-Method">
-            <h2>求曲线的切线方程或法线方程</h2>
-            <h3>过曲线上一点</h3>
-            <p><b>切线方程</b>：\(y - f(x_0) = f'(x_0)(x-x_0)\)</p>
-            <p><b>法线方程</b>：\(y - f(x_0) = -\frac{1}{f'(x_0)}(x-x_0)\)</p>
-
-            <h3>过曲线外一点</h3>
-            <p>设切线或法线经过曲线上\((x_0, f(x_0))\)，求出切线方程或法线方程.</p>
-            <p>将曲线外点带入方程求出\(x_0\).</p>
-        </div>
 
         <div class="Card-Method">
             <h2>求隐函数的导数</h2>

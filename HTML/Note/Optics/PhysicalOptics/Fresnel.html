@@ -35,7 +35,21 @@
                 <td>振幅反射系数\(r_s\)</td>
                 <td>$$r_s = \frac{E_{0rs}}{E_{0is}} = \frac{\frac{n_1}{\mu_1}\cos\theta_1 - \frac{n_2}{\mu_2}\cos\theta_2}{\frac{n_1}{\mu_1}\cos\theta_1 + \frac{n_2}{\mu_2}\cos\theta_2}$$</td>
                 <td>$$r_s = \frac{n_1\cos\theta_1 - n_2\cos\theta_2}{n_1\cos\theta_1 + n_2\cos\theta_2}$$</td>
-                <td>$$r_s = -\frac{\sin(\theta_1 - \theta_2)}{\sin(\theta_1 + \theta_2)} = -\frac{\tan \theta_1 - \tan \theta_2}{\tan \theta_1 + \tan \theta_2}$$</td>
+                <td>
+                    <div class="Formula">
+                        $$r_s = \frac{\tan\theta_2 - \tan\theta_1}{\tan\theta_2 + \tan\theta_1} = \frac{\sin(\theta_2 - \theta_1)}{\sin(\theta_2 + \theta_1)}$$
+                        <div class="Derivation">
+                            $$n_1\sin\theta_1 = n_2\sin\theta_2\Rightarrow n = \frac{n_2}{n_1} = \frac{\sin\theta_1}{\sin\theta_2}$$
+                            $$\begin{align}
+                            r_s &= \frac{n_1\cos\theta_1 - n_2\cos\theta_2}{n_1\cos\theta_1 + n_2\cos\theta_2}\\
+                                &= \frac{\cos\theta_1 - \frac{\sin\theta_1}{\sin\theta_2}\cos\theta_2}{\cos\theta_1 + \cos\theta_2}\\
+                                &= \frac{\sin\theta_2\cos\theta_1 - \sin\theta_1\cos\theta_2}{\sin\theta_2\cos\theta_1 + \sin\theta_1\cos\theta_2}\\
+                                &= \frac{\tan\theta_2 - \tan\theta_1}{\tan\theta_2 + \tan\theta_1}\\
+                                &= \frac{\sin(\theta_2 - \theta_1)}{\sin(\theta_2 + \theta_1)}
+                            \end{align}$$
+                        </div>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td>振幅透射系数\(t_s\)</td>   
@@ -170,7 +184,7 @@
         </details>
         
 
-        <script src="/JavaScript/Capacity.js"></script>
+        <script src="../../../..//JavaScript/Capacity.js"></script>
     </body>
 
 

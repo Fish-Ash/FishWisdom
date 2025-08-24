@@ -6,7 +6,7 @@
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>概率论</title>
-        <link rel="stylesheet" type="text/css" href="/CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
     </head>
 
@@ -33,7 +33,12 @@
             <b>离散型随机变量</b>
             <p>可能的取值只有有限个或可列无限多个的随机变量\(X\).</p>
         </div>
-        <p>离散型随机变量\(X\)的<b>概率分布（概率函数、分布律（列））</b>：\(X\)取所有可能值的概率，即\(P\{X = x_k\} = p_k,~k =1,2,\cdots\)</p>
+        <div class="Card-Definition">
+            离散型随机变量\(X\)的<b>概率分布（概率函数、分布律、分布列）</b>
+            <p>\(X\)取所有可能值的概率，即\(P\{X = x_k\} = p_k,~k =1,2,\cdots\)</p>
+            <p>也可以用表格表示</p>
+            <img src="Img/DistributionTable.png" width="500">
+        </div>
 
         <div class="Card-Property">
             <b>概率的性质</b>
@@ -43,33 +48,10 @@
 
         <p><b>二项分布的泊松近似</b>：当\(n\rightarrow \infty\)而\(p\rightarrow 0\)时，\(b(n,p)\)可以近似看作\(P(np)\)</p>
         
-        <table>
-            <tr>
-                <td>\(X\)服从<b>退化分布</b>（<b>单点分布</b>）</td>
-                <td>$$P\{X = C\} = 1,~C\in \mathbb{R}$$</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>\(X\)服从参数为\(p\)的<b>\((0-1)\)分布（<b>两点分布</b>）</b></td>
-                <td></td>
-                <td>$$X\sim b(1,p)$$</td>
-            </tr>
-            <tr>
-                <td>\(X\)服从参数为\(n,p\)的<b>二项分布</b></td>
-                <td></td>
-                <td>$$X \sim b(n,p)$$</td>
-            </tr>
-            <tr>
-                <td>\(X\)服从参数为\(p\)的<b>几何分布</b></td>
-                <td></td>
-                <td>$$X \sim G(p)$$</td>
-            </tr>
-            <tr>
-                <td>\(X\)服从参数为\(\lambda\)的<b>泊松分布</b></td>
-                <td>$$P\{X = k\} = \frac{\lambda^k e^{-\lambda}}{k!},~\lambda \gt 0,~k=0,1,2,\cdots$$</td>
-                <td>$$X \sim P(\lambda)$$</td>
-            </tr>
-        </table>
+        <b>帕斯卡分布</b>
+        $$P\{x = k\} = C_{k-1}^np^n(1-p)^{k-n}$$
+
+
 
         <h2>第三节 随机变量的分布函数</h2>
         <h3>一、随机变量的分布函数</h3>
@@ -81,52 +63,83 @@
             $$P\{x_1 \lt X \leq x_2\} = P\{X \leq x_2\} - P\{X \leq x_1\} = F(x_2) - F(x_1)$$
         </div>
         
-        <p><b>分布函数的性质</b>：
-        <ul>
-            <li>非负性：\(0\leq F(x)\leq 1,~x\in (-\infty, +\infty)\)</li>
-            <li>单调不减性：当\(x_1 \lt x_2\)时，有\(F(x_1)\leq F(x_2)\)</li>
-            <li>规范性：\(F(+\infty) = \mathop{lim}\limits_{x\rightarrow +\infty}F(x)=1\)，\(F(-\infty) = \mathop{lim}\limits_{x\rightarrow -\infty}F(x)=0\)</li>
-            <li>对于连续型随机变量：\(F(x) = F(x\pm 0)\)</li>
-        </ul></p>
+        <div class="Card-Property">
+            <b>分布函数的性质</b>
+            <ul>
+                <li>非负性：\(0\leq F(x)\leq 1,~x\in (-\infty, +\infty)\)</li>
+                <li>单调不减性：当\(x_1 \lt x_2\)时，有\(F(x_1)\leq F(x_2)\)</li>
+                <li>规范性：\(F(+\infty) = \mathop{lim}\limits_{x\rightarrow +\infty}F(x)=1\)，\(F(-\infty) = \mathop{lim}\limits_{x\rightarrow -\infty}F(x)=0\)</li>
+                <li>对于连续型随机变量：\(F(x) = F(x\pm 0)\)</li>
+            </ul>
+        </div>
 
         <h2>第四节 连续型随机变量及其概率密度</h2>
         <div class="Card-Definition">
-            <b>连续型随机变量及其概率密度</b>
+            <b>连续型随机变量</b>
+            <p>在连续区间上取值的随机变量\(X\).</p>
+
+            <b>连续型随机变量的概率密度</b>
             <p>若对随机变量\(X\)的分布函数\(F(x)\)存在非负的可积函数\(f(x)\)，使得对于任意实数\(x\)有：</p>
             $$F(x) = \int^x_{-\infty}f(t)dt$$
-            <p>称\(X\)为<b>连续型随机变量.</b></p>
+            <p>则\(X\)为连续型随机变量.</p>
             <p>称\(f(x)\)为\(X\)的概率密度函数，简称为概率密度或密度函数.</p>
         
             <b>几何意义</b>
             <p>\(F(x)\)为\((-\infty, x)\)区间上\(f(x)\)围成的面积.</p>
         </div>
 
-        <div>
+        <div class="Card-Property">
             <b>概率密度的性质</b>
             <ul>
                 <li>非负性：\(f(x) \geq 0, x\in \mathbb{R}\)</li>
                 <li>规范性：\(\int_{-\infty}^{+\infty}f(x)\mathrm{d}x = 1\)</li>
             </ul>
-        </div>
-        <p>$$f(x)为概率密度 \Leftrightarrow 
+            $$f(x)为概率密度 \Leftrightarrow 
             \begin{cases}
             f(x) \geq 0, x \in \mathbb{R}\\
             \int_{-\infty}^{+\infty}f(x)dx = 1
-            \end{cases}$$</p>
-        <p><b>标准正态分布</b>：</p>
+            \end{cases}$$
+        </div>
+
+        <div class="Card-Property">
+            <p>设\(X_1, X_2\)为两个连续型随机变量，其密度函数分别为\(f_1(x), f_2(x)\)，分布函数为\(F_1(x), F_2(x)\)，有以下结论成立：</p>
+
+            <div class="Formula">
+                <p>\(f_1(x)f_2(x)\)不一定为某随机变量的密度函数.</p>
+                <div class="Derivation">
+                    <p>反例：</p>
+                    $$X_1\sim e(2) \Rightarrow f_1(x) = \begin{cases}2e^{-2x}, x\gt 0\\ 0, others\end{cases}$$
+                    $$X_1\sim e(3) \Rightarrow f_1(x) = \begin{cases}3e^{-3x}, x\gt 0\\ 0, others\end{cases}$$
+                    $$\int_{-\infty}^{+\infty}f_1(x)f_2(x)\mathrm{d}x = \int_0^{+\infty}6e^{-5x}\mathrm{d}x = -\frac{6}{5}e^{-5x}|_0^{+\infty} = \frac{6}{5} \gt 1$$
+                    <p>故\(f_1(x)f_2(x)\)不为某随机变量的密度函数.</p>
+                </div>
+            </div>
+
+            <div class="Formula">
+                <p>\(f_1(x)F_2(x) + f_2(x)F_1(x)\)一定为某随机变量的密度函数.</p>
+                <div class="Derivation">
+                    $$f_1(x)\geq 0, f_2(x)\geq 0, F_1(x)\geq 0, F_2(x)\geq 0 \Rightarrow f_1(x)F_2(x) + f_2(x)F_1(x) \geq 0$$
+                    $$\int_{-\infty}^{+\infty}f_1(x)F_2(x) + f_2(x)F_1(x)\mathrm{d}x = [F_1(x)F_2(x)]|_{-\infty}^{+\infty} = 1$$
+                    <p>故\(f_1(x)F_2(x) + f_2(x)F_1(x)\)为某随机变量的密度函数.</p>
+                </div>
+            </div>
+        </div>
 
         <h2>第五节 随机变量函数的分布</h2>
         <h3>连续型随机变量函数分布</h3>
-        <p>设随机变量\(X\)具有概率密度\(f_X(x), -\infty < x < +\infty\)，且\(g(x)\)处处可导且单调，则\(Y = g(X)\)的概率密度为
+        <p>设随机变量\(X\)具有概率密度\(f_X(x), -\infty \lt x \lt +\infty\)，且\(g(x)\)处处可导且单调，则\(Y = g(X)\)的概率密度为
             $$f_Y(y) = 
             \begin{align}
             \begin{cases}
-            f_X[h(y)]|h'(y)|,~&\alpha < y < \beta\\
+            f_X[h(y)]|h'(y)|,~&\alpha \lt y \lt \beta\\
             0,~&others
             \end{cases}
             \end{align}$$
             其中，\(h(y)\)为\(g(x)\)的反函数，\(\alpha = min\{g(-\infty), g(+\infty)\}, \beta = max\{g(-\infty), g(+\infty)\}\)
         </p>
+
+
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
 </html>

@@ -43,13 +43,28 @@
             $$\begin{align}
             &\int \frac 1x \mathrm{d}x = \ln |x| + C\\\\
             &\int \sec x\mathrm{d}x = \ln|\sec x + \tan x| + C\\\\
-            &\int \csc x\mathrm{d}x = -\ln|\csc x + \cot x| + C = \ln|\csc x - \cot x| + C\\\\
             &\int \frac{1}{\sqrt{a^2 - x^2}}\mathrm{d}x = \arcsin\frac{x}{a} + C\\\\
             &\int \frac{1}{a^2 + x^2}\mathrm{d}x = \frac{1}{a}\arctan\frac{x}{a} + C\\\\
             \end{align}$$
+            <div class="Formula">
+                $$\begin{align}
+                \int \csc x\mathrm{d}x &= \frac{1}{2}\ln|\tan\frac{x}{2}| + C\\
+                                       &= \ln|\csc x - \cot x| + C\\
+                                       &= -\ln|\csc x + \cot x| + C
+                \end{align}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \int \csc x\mathrm{d}x &= \int\frac{1}{\sin x}\mathrm{d}x\\
+                                           &= \int\frac{1}{2\sin\frac{x}{2}\cos\frac{x}{2}}\mathrm{d}x\\
+                                           &= \int\frac{\cos\frac{x}{2}\sec^2\frac{x}{2}}{2\sin\frac{x}{2}}\\
+                                           &= \int\frac{1}{2\tan\frac{x}{2}}\mathrm{d}\tan\frac{x}{2}\\
+                                           &= \frac{1}{2}\ln|\tan\frac{x}{2}| + C
+                    \end{align}$$
+                </div>
+            </div>
             
             <div class="Formula">
-                \(\int \tan x\mathrm{d}x = -\ln|\cos x| + C\)
+                $$\int \tan x\mathrm{d}x = -\ln|\cos x| + C$$
                 <div class="Derivation">
                     $$\begin{align}
                     \int \tan x \mathrm{d}x &= -\int \frac{1}{\cos x}\mathrm{d}\cos x\\
@@ -58,7 +73,7 @@
                 </div>
             </div>
             <div class="Formula">
-                \(\int \cot x\mathrm{d}x = \ln|\sin x| + C\)
+                $$\int \cot x\mathrm{d}x = \ln|\sin x| + C$$
                 <div class="Derivation">
                     
                 </div>

@@ -11,7 +11,7 @@
 
 
     <body>
-        <div class="header"><h1>不惑</h1></div>
+        <div class="header" id="PageHead"><h1>不惑</h1></div>
 
         
         <ul class="navibar">
@@ -20,6 +20,14 @@
         </ul>
 
         <h1>反常积分</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#Method">求解反常积分</a></li>
+                <li><a href="#GammaFormula">\(\Gamma\)函数</a></li>
+            </ul>
+        </div>
+        <a href="#PageHead" class="BackToTop">Top</a>
 
         <p>设\(f(x)\)在\([a,+\infty)\)上连续，若\(\lim\limits_{t\rightarrow +\infty}\int_a^t f(x) \mathrm{d}x\)存在，则称此极限为\(f(x)\)在\([a,+\infty)\)上的反常积分，记作：</p>
         $$\int_a^{+\infty}f(x)\mathrm{d}x = \lim\limits_{t\rightarrow +\infty}\int_a^t f(x) \mathrm{d}x$$
@@ -116,11 +124,19 @@
         \end{cases}
         $$
 
-        <h2>反常积分判敛</h2>
+        <div class="Card-Method">
+            <h2>反常积分判敛法</h2>
+            <h3>无界函数的反常积分</h3>
+            <b>极限审敛法</b>
+            <p>条件：\(f(x)\)在\((a,b]\)上连续，\(f(x)\geq 0\)，\(x = a\)为\(f(x)\)瑕点.</p>
+            $$\lim\limits_{x\rightarrow a^+}(x-a)f(x) \gt 0$$
+            <p>则反常积分\(\int_a^b f(x) \mathrm{d}x\)发散.</p>
+        </div>
+        <h2>反常积分判敛法</h2>
         <p>1、找出瑕点与\(x\rightarrow \infty\)的点。</p>
 
 
-        <div class="Card-Method">
+        <div class="Card-Method" id="Method">
             <h2>求解反常积分</h2>
             $$\int_{-\infty}^b f(x) \mathrm{d}x = F(b) - \lim\limits_{x\rightarrow -\infty}F(x)$$
             $$\int_a^{+\infty} f(x) \mathrm{d}x = \lim\limits_{x\rightarrow +\infty}F(x) - F(b)$$
@@ -129,12 +145,26 @@
             <b>多项式的反常积分</b>
             <p>\(\int f(x) \mathrm{d}x\)发散，\(\int g(x) \mathrm{d}x\)发散，但\(\int f(x) + g(x) \mathrm{d}x\)可能收敛.</p>
         </div>
+
+
+        <div class="Card-Formula" id="GammaFormula">
+            <b>\(\Gamma\)函数</b>
+            $$\Gamma(\alpha) = \int_0^{+\infty}x^{\alpha-1}e^{-x}\mathrm{d}x$$
+            <p>初始值</p>
+            $$\Gamma(1) = 1$$
+            $$\Gamma(\frac{1}{2}) = \sqrt{\pi}$$
+            <p>递推公式</p>
+            $$\Gamma(\alpha) = (\alpha-1)\Gamma(\alpha - 1)$$
+            $$\Gamma(n) = (n-1)!$$
+        </div>
+
+
         <ul class="navibar">
             <li><a href="Integral_Definite.html">上一页</a></li>
             <li class="catalog"><a href="Catalog.html">主页</a></li>
             <li class="next"><a href="Integral_UpperLimitFunction.html">下一页</a></li>
         </ul>
 
-        <script src="/JavaScript/Capacity.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 </html>

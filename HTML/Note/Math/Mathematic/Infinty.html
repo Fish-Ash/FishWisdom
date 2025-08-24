@@ -23,22 +23,32 @@
         <h2>无穷小量</h2>
         <p>若\(\lim\limits_{x\rightarrow x_0}f(x) = 0\)，则称\(f(x)\)为\(x\rightarrow x_0\)时的无穷小量。</p>
 
-        <b>无穷小量阶的比较</b>
-        <p>\(\lim\alpha = 0, \lim\beta = 0, \beta(x)\neq 0\).</p>
-        <p>\(\alpha(x)\)为\(\beta(x)\)的：</p>
-        <ul>
-            <li>高阶无穷小：\(\lim \frac{\alpha(x)}{\beta(x)} = 0\)，记作\(\alpha(x) = o[\beta(x)]\)</li>
-            <li>低阶无穷小：\(\lim \frac{\alpha(x)}{\beta(x)} = \infty\)</li>
-            <li>同阶无穷小：\(\lim \frac{\alpha(x)}{\beta(x)} = c\neq 0\)</li>
-            <li>等价无穷小：\(\lim \frac{\alpha(x)}{\beta(x)} = 1\)，记作\(\alpha(x)\sim \beta(x)\)</li>
-            <li>\(k\)阶无穷小：\(\lim \frac{\alpha(x)}{\beta^k(x)} = c\neq 0\)</li>
-        </ul>
+        <div class="Card-Definition">
+            <b>无穷小量阶的比较</b>
+            <p>\(\lim\alpha = 0, \lim\beta = 0, \beta(x)\neq 0\).</p>
+            <p>\(\alpha(x)\)为\(\beta(x)\)的：</p>
+            <ul>
+                <li>高阶无穷小：\(\lim \frac{\alpha(x)}{\beta(x)} = 0\)，记作\(\alpha(x) = o[\beta(x)]\)</li>
+                <li>低阶无穷小：\(\lim \frac{\alpha(x)}{\beta(x)} = \infty\)</li>
+                <li>同阶无穷小：\(\lim \frac{\alpha(x)}{\beta(x)} = c\neq 0\)</li>
+                <li>等价无穷小：\(\lim \frac{\alpha(x)}{\beta(x)} = 1\)，记作\(\alpha(x)\sim \beta(x)\)</li>
+                <li>\(k\)阶无穷小：\(\lim \frac{\alpha(x)}{\beta^k(x)} = c\neq 0\)</li>
+            </ul>
+        </div>
 
-        <b>无穷小的运算</b>
-        $$o(x^m) + o(x^n) = o(x^k), k = \min\{m,n\}$$
-        $$o(x^m)\cdot o(x^n) = o(x^{m+n})$$
-        $$x^m\cdot o(x^n) = o(x^{m+n})$$
-        $$o(kx^n) = k\cdot o(x^n) = o(x^n), k\neq 0$$
+        <div class="Card-Method">
+            <h2>比较无穷小的阶数</h2>
+            <p>构造\(\lim \frac{f(x)}{x^k} = c \neq 0\)</p>
+            <p>则\(f(x)\)是\(x\)的\(k\)阶无穷小.</p>
+        </div>
+
+        <div class="Card-Formula">
+            <b>无穷小的运算</b>
+            $$o(x^m) + o(x^n) = o(x^k), k = \min\{m,n\}$$
+            $$o(x^m)\cdot o(x^n) = o(x^{m+n})$$
+            $$x^m\cdot o(x^n) = o(x^{m+n})$$
+            $$o(kx^n) = k\cdot o(x^n) = o(x^n), k\neq 0$$
+        </div>
 
         <div class="Card-Property">
             <b>无穷小的性质</b>
