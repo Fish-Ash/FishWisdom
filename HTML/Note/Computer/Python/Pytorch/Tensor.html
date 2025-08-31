@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pandas</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+
+<body>
+    <div class="header"><h1>不惑</h1></div>
+    <ul class="navibar">
+        <li><a href="../Home.html">主页</a></li>
+        <li><a href="../Navigation.html">导航</a></li>
+    </ul>
+
+    <h1>Tensor</h1>
+    <p>[注]张量可以是\(n\)维的.</p>
+
+
+    <div class="Card-Analysis">
+        <h2>创建Tensor</h2>
+        <pre><code>
+            import torch
+        </code></pre>
+    
+        <details>
+            <summary><b>全0张量</b></summary>
+            <pre><code>
+                tensor = torch.zeros(h,w)
+                tensor = torch.zeros((h,w))
+            </code></pre>
+            <p>[注]以上两种创建张量的书写格式是等价的.</p>
+        </details>
+        
+        <details>
+            <summary><b>全1张量</b></summary>
+            <pre><code>
+                tensor = ones(h,w)
+            </code></pre>
+        </details>
+
+        <details>
+            <summary><b>空张量</b></summary>
+            <pre><code>
+                tensor = empty(h,w)
+            </code></pre>
+            <p>[注]空张量未经初始化操作，其初始值为随机数.</p>
+        </details>
+
+        <details>
+            <summary><b>服从\(U[0,1)\)的随机张量</b></summary>
+            <pre><code>
+               tensor = torch.rand(h,w) 
+            </code></pre>
+        </details>
+
+        <details>
+            <summary><b>服从\(N(0,1)\)的随机张量</b></summary>
+            <pre><code>
+                tensor = torch.randn(h,w)
+            </code></pre>
+        </details>
+
+        <details>
+            <summary><b>从Python列表或Numpy数组创建张量</b></summary>
+            <pre><code>
+                tensor = torch.tensor(data)
+
+                # 仅适用于从Numpy数组转化为Tensor
+                # 用这种方法创建的tensor张量会随data改变而改变
+                tensor = torch.from_numpy(data)
+            </code></pre>
+        </details>
+        
+        <p>创建张量时，可以使用dtype参数控制张量内部元素的数据类型.</p>
+        <pre><code>
+            tensor = torch.zeros(h,w,dtype=...)
+        </code></pre>
+        <p>常见的数据类型有：</p>
+        <ul>
+            <li>torch.float(torch.float32)(default)</li>
+            <li>torch.int(torch.int32)</li>
+            <li>torch.double(torch.float64)</li>
+        </ul>
+
+        <b>在GPU上创建tensor/将tensor转移到GPU</b>
+        <pre><code>
+            if torch.cuda.is_avaiable():
+                device = torch.device("cuda")
+                x = torch.zeros(h, w, device=device)
+                y = torch.zeros(h, w)
+                y = y.to(device)
+        </code></pre>
+
+
+    </div>
+
+    <div class="Card-Analysis">
+        <h2>Tensor的属性</h2>
+        <b>张量的形状</b>
+        <pre><code>
+            # 张量整体形状
+            print(tensor.shape)
+            print(tensor.size())
+
+            # 张量某维度的形状
+            print(tensor.shape[0])
+            print(tensor.size()[0])
+        </code></pre>
+
+        <b>张量元素的类型</b>
+        <pre><code>
+            print(tensor.dtype)
+        </code></pre>
+    </div>
+
+    <div class="Card-Analysis">
+        <h2>张量运算</h2>
+
+        <details>
+            <summary><b>元素加法</b></summary>
+            <pre><code>
+                z = x + y
+                z = torch.add(x,y)
+    
+                # y加上x
+                y.add_(x)
+            </code></pre>
+        </details>
+        
+        <details>
+            <summary><b>元素减法</b></summary>
+            <pre><code>
+                z = y - x
+                z = sub(y, x)
+    
+                # y减去x
+                y.sub_(x)
+            </code></pre>
+        </details>
+        
+        <details>
+            <summary><b>元素乘法</b></summary>
+            <pre><code>
+                z = x * y
+                z = torch.mul(x,y)
+    
+                # y乘上x
+                y.mul_(x)
+            </code></pre>
+        </details>
+        
+        <details>
+            <summary><b>元素除法</b></summary>
+            <pre><code>
+                z = y/x
+                z = torch.div(y,x)
+    
+                # x除以y
+                y.div_(x)
+            </code></pre>
+        </details>
+    </div>
+
+    <div class="Card-Analysis">
+        <h2>张量切片</h2>
+        <pre><code>
+            tensor[i:j,:]
+        </code></pre>
+
+        <b>当切片为一个元素时，可以直接获取它的值</b>
+        <pre><code>
+            tensor[i,j].item()
+        </code></pre>
+
+        <b>更改tensor形状</b>
+        <pre><code>
+            x = torch.rand(4,4)
+
+            # 将形状更改为[1,n], n = h*w
+            y = x.view(16)
+
+            # 将形状更改为[a,b], a*b = h*w
+            y = x.view(a,b)
+            y = x.view(-1,b)
+            y = x.view(a,-1)
+        </code></pre>
+
+    </div>
+
+    
+
+
+</body>
+
+</html>

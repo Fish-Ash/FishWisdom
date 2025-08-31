@@ -11,8 +11,8 @@
 
 
     <body>
-        <div class="header"><h1>不惑</h1></div>
-
+        <div class="header" id="PageHead"><h1>不惑</h1></div>
+        <a class="BackToTop" href="#PageHead">Top</a>
         
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
@@ -30,7 +30,7 @@
 
         <div class="Card-Definition">
             <b>微分方程</b>
-            <p>含有未知函数</p>
+            <p>含有未知函数的导数或微分的方程.</p>
             <ul>
                 <li>显式：\(y^{(n)} = f(x,y,y',\cdots y^{(n-1)})\)</li>
                 <li>隐式：\(F(x,y,y',\cdots y^{(n)}) = 0\)</li>
@@ -39,7 +39,7 @@
 
         <div class="Card-Definition">
             <b>微分方程的阶</b>
-            <p>微分方程中未知函数最高导数的阶数。</p>
+            <p>微分方程中未知函数最高阶导数的阶数。</p>
         </div>
 
         <div class="Card-Definition">
@@ -104,37 +104,45 @@
                     $$\frac{\mathrm{d}u}{\mathrm{d}x} +(1-\alpha)p(x)u = (1-\alpha)q(x)$$
                 </div>
             </details>
+
+            <details open>
+                <summary><b>全微分方程</b></summary>
+                $$\frac{\partial u}{\partial x}\mathrm{d}x + \frac{\partial u}{\partial y}\mathrm{d}y = \mathrm{d}u(x,y) = 0$$
+                $$u(x,y) = C$$
+            </details>
+            
+            <p>[注]求解微分方程时，经过积分步骤一定要加常数\(C\).</p>
+            <p>[注]求解微分方程时，绝对值通常可以被\(C\)吸收，即\(\pm C = C\).</p>
+            <p>[注]在微分方程中，\(y\)可以是\(x\)的函数，\(x\)也可以是\(y\)的函数.</p>
+            <p>[注]求解微分方程时，\(\int \frac{1}{x}\mathrm{d}x = \ln x + C\)，原因如下：</p>
+            $$\int \frac{1}{x}\mathrm{d}x = \ln|x| + C = \ln|x| + \ln C = \ln C|x|$$
+            <p>由于\(C\)可以取任意常数，故</p>
+            $$\int \frac{1}{x} \mathrm{d}x = \ln x + C$$
+            <p>[注]通解计算过程中出现反三角函数时，计算\(C\)值用带有反三角函数的式子计算，因为其范围更小.</p>
             
         </div>
-        <p>[注]求解微分方程时，\(\int \frac{1}{x}\mathrm{d}x = \ln x + C\)，原因如下：</p>
-        $$\int \frac{1}{x}\mathrm{d}x = \ln|x| + C = \ln|x| + \ln C = \ln C|x|$$
-        <p>由于\(C\)可以取任意常数，故</p>
-        $$\int \frac{1}{x} \mathrm{d}x = \ln x + C$$
-        <p>[注]通解计算过程中出现反三角函数时，计算\(C\)值用带有反三角函数的式子计算，因为其范围更小.</p>
-        <p>[注]在微分方程中，\(y\)可以是\(x\)的函数，\(x\)也可以是\(y\)的函数.</p>
-        
 
 
 
         <b>全微分方程</b>
-        $$p(x,y)\mathrm{d}x + q(x,y)\mathrm{d}y = \mathrm{d}u(x,y) = 0$$
-        $$u(x,y) = C$$
 
-        <h2>可降阶微分方程</h2>
-        <b>\(y^{(n)}=f(x)\)型</b>
-        $$y^{(n-1)} = \int f(x)\mathrm{d}x$$
-        <hr>
-
-        <b>\(y''(x) = f(x)\)型</b>
-        <p>令\(y' = p(x)\)</p>
-        $$y'' = \frac{\mathrm{d}^2y}{\mathrm{d}x^2} = \frac{\mathrm{d}}{\mathrm{d}x}\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}p}{\mathrm{d}x}$$
-        $$\frac{\mathrm{d}p}{\mathrm{d}x} = f(x, p(x))$$
-        <hr>
-
-        <b>\(y'' = f(y,y')\)型</b>
-        <p>令\(y' = p(y)\)</p>
-        $$y'' = \frac{\mathrm{d}^2y}{\mathrm{d}x^2} = \frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}y}{\mathrm{d}x}) = \frac{\mathrm{d}y}{\mathrm{d}x} \cdot \frac{\mathrm{d}}{\mathrm{d}y}(\frac{\mathrm{d}y}{\mathrm{d}x}) = p\frac{\mathrm{d}p}{\mathrm{d}x}$$
-        $$p\frac{\mathrm{d}p}{\mathrm{d}x} = f(y, p(y))$$
+        <div class="Card-Method">
+            <h2>可降阶微分方程</h2>
+            <b>\(y^{(n)}=f(x)\)型</b>
+            $$\int y^{(n)} \mathrm{d}x = \int f(x)\mathrm{d}x$$
+            <hr>
+    
+            <b>\(y''(x) = f(x)\)型</b>
+            <p>令\(y' = p(x)\)</p>
+            $$y'' = \frac{\mathrm{d}^2y}{\mathrm{d}x^2} = \frac{\mathrm{d}}{\mathrm{d}x}\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}p}{\mathrm{d}x}$$
+            $$\frac{\mathrm{d}p}{\mathrm{d}x} = f(x, p(x))$$
+            <hr>
+    
+            <b>\(y'' = f(y,y')\)型</b>
+            <p>令\(y' = p(y)\)</p>
+            $$y'' = \frac{\mathrm{d}^2y}{\mathrm{d}x^2} = \frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}y}{\mathrm{d}x}) = \frac{\mathrm{d}y}{\mathrm{d}x} \cdot \frac{\mathrm{d}}{\mathrm{d}y}(\frac{\mathrm{d}y}{\mathrm{d}x}) = p\frac{\mathrm{d}p}{\mathrm{d}x}$$
+            $$p\frac{\mathrm{d}p}{\mathrm{d}x} = f(y, p(y))$$
+        </div>
         <p>[注1]：求特解时，当即解出对应的常数值，而不是等到最后一起解。</p>
 
 
@@ -162,7 +170,7 @@
 
             <details open>
                 <summary><b>二阶齐次微分方程</b></summary>
-                $$y'' + py' + q = 0，其中p,q是确定实数$$
+                $$y'' + py' + qy = 0，其中p,q是确定实数$$
                 <p>特征方程：</p>
                 $$r^2 + pr + q = 0$$
                 <p>设\(r_1, r_2\)是特征方程的两个解：</p>
@@ -189,14 +197,6 @@
                     </tr>
                 </table>
             </details>
-    
-            <details open>
-                <summary><b>三阶齐次微分方程</b></summary>
-                $$y''' + ay'' + by + c = 0，其中a,b,c为确定实数$$
-                <p>特征方程：</p>
-                $$r^3 + ar^2 + br + c$$
-                <p>\(r_1 = r, r_{2,3} = \alpha \pm i\beta\)：通解为：\(y = C_1 e^{r x} + e^{\alpha x}(C_1\cos \beta x + C_2\sin \beta x)\)</p>
-            </details>
 
             <details open>
                 <summary><b>\(n\)阶齐次微分方程</b></summary>
@@ -215,7 +215,7 @@
                     </tr>
                     <tr>
                         <td>\(k\)重实根</td>
-                        <td>$$(C_1 + C_2x + \cdots + C_kx)e^{rx}$$</td>
+                        <td>$$(C_1 + C_2x + \cdots + C_kx^{k-1})e^{rx}$$</td>
                     </tr>
                     <tr>
                         <td>一对单复根\(r_{1,2} = \alpha \pm \beta i\)</td>
@@ -229,7 +229,22 @@
 
 
             </details>
-        </div>    
+        </div>
+
+        <div class="Card-Property">
+            <b>常系数齐次线性微分方程\(f(y)\)的性质</b>
+            <p>若\(y_1(x), y_2(x)\)为\(f(y) = 0\)的两个不同特解，则通解为：</p>
+            $$y = C[y_1(x) - y_2(x)]$$
+            $$\begin{align}f(y_1) = 0\\f(y_2) = 0\end{align}\Rightarrow f(y_1) - f(y_2) = f(y_1 - y_2) = 0$$
+            <p>\(y_1 - y_2\)一定为\(f(x)\)的非零解.</p>
+            <p>故\(f(x)\)通解为\(C(f_1 - f_2)\)</p>
+
+            <b>齐次方程的叠加原理</b>
+            <p>\(L(y) = f_1(x)\)的解为\(y_1(x)\).</p>
+            <p>\(L(y) = f_2(x)\)的解为\(y_2(x)\).</p>
+            <p>则\(L(y) = f_1(x) + f_2(x)\)的解为\(y_1(x) + y_2(x)\).</p>
+            $$L(y_1 + y_2) = L(y_1) + L(y_2) = f_1(x) + f_2(x)$$
+        </div>
 
         <div class="Card-Method">
             <h2>常系数非齐次线性微分方程</h2>
@@ -241,23 +256,15 @@
             <details open>
                 <summary>\(f(x) = e^{\lambda x} P_m(x)\)</summary>
                 $$y'' + py' + qy = e^{\lambda x}P_m(x)$$
-                <p>\(\lambda\)为常数.</p>
-                <p>\(P_m(x)\)为\(x\)的一个\(m\)次多项式，\(P_m(x) = a_0x^m + a_1x^{m-1} + \cdots + a_{m-1}x + a_m\).</p>
 
                 <div class="Formula">
                     <table>
-                        <tr>
-                            <td><b>\(\lambda\)不为特征方程\(r^2 + pr + q = 0\)的根</b></td>
-                            <td>$$y^* = R_m(x)e^{\lambda x}$$</td>
-                        </tr>
-                        <tr>
-                            <td><b>\(\lambda\)为特征方程\(r^2 + pr + q = 0\)的单根</b></td>
-                            <td>$$y^* = xR_m(x)e^{\lambda x}$$</td>
-                        </tr>
-                        <tr>
-                            <td><b>\(\lambda\)为特征方程\(r^2 + pr + q = 0\)的重根</b></td>
-                            <td>$$y^* = x^2R_m(x)e^{\lambda x}$$</td>
-                        </tr>
+                        $$y^* = x^tR_m(x)e^{\lambda x}$$
+                        $$t = \begin{cases}
+                        0,~\lambda不为特征方程的根\\
+                        1,~\lambda为特征方程的单根\\
+                        2,~\lambda为特征方程的重根
+                        \end{cases}$$
                     </table>
                     <div class="Derivation">
                         <p>令\(y^* = e^{\lambda x}R(x)\)</p>
@@ -301,35 +308,94 @@
                         $$y^* = x^2R_m(x)e^{\lambda x}$$
                     </div>
                 </div>
+            </details>
+
+            <details open>
+                <summary>\(f(x) = e^{\lambda x}[P_m(x)\cos\omega x + Q_n(x)\sin\omega x]\)</summary>
+
+                $$y'' + py' + qy = e^{\lambda x}P_m(x)$$
+
+                <div class="Formula">
+                    $$y^* = x^t e^{\lambda x}[R_{1k}(x)\cos\omega x + R_{2k}(x)\sin\omega x]$$
+                    $$\begin{cases}
+                    t=0,~\lambda + \omega i或\lambda - \omega i不为特征方程的根\\
+                    t=1,~\lambda + \omega i或\lambda - \omega i
+                    \end{cases}$$
+                    $$k = \max\{m,n\}$$
+                    <div class="Derivation">
+                        $$ e^{ix} = \cos x + i\sin x\Rightarrow \begin{cases}
+                        \cos x = \frac{1}{2}(e^{ix} + e^{-ix})\\
+                        \sin x = \frac{1}{2i}({e^{ix} - e^{-ix}}) = -\frac{1}{2}(e^{ix} - e^{-ix})i
+                        \end{cases}$$
+                        $$\begin{align}
+                        f(x) &= e^{\lambda x}[P_m\cos\omega x + Q_n\sin\omega x]\\
+                             &= e^{\lambda x}[\frac{1}{2}P_m(e^{\omega xi} + e^{-\omega xi}) - \frac{1}{2}Q_n(e^{\omega ix} - e^{-\omega xi})]i\\
+                             &= (\frac{P_m}{2} - \frac{Q_n}{2}i)e^{(\lambda + \omega i)x} + (\frac{P_m}{2} + \frac{Q_n}{2}i)e^{(\lambda - \omega i)x}\\
+                             &= P(x)e^{(\lambda + \omega t)x} + \overline{P}(x)e^{(\lambda - \omega t)x}
+                        \end{align}$$
+                        <p>对于方程\(y'' + py' + qy = P(x)e^{(\lambda + \omega i)x}\)，可以求得一特解：</p>
+                        $$y_1^* = x^tR_ke^{(\lambda + \omega i)x}$$
+                        <p>对于方程\(y'' + py' + qy = \overline{P}(x)e^{(\lambda - \omega i)x}\)，可以求得一特解：</p>
+                        $$y_2^* = x^t\overline{R}_ke^{(\lambda -\omega i)x}$$
+                        $$y^* = x^t e^{\lambda x}[R_{1k}(x)\cos\omega x + R_{2k}(x)\sin\omega x]$$
+                        <p>其中</p>
+                        $$\begin{cases}
+                        t=0,~\lambda + \omega i或\lambda - \omega i不为特征方程的根\\
+                        t=1,~\lambda + \omega i或\lambda - \omega i为特征方程的单根
+                        \end{cases}$$
+                        $$k = \max\{m,n\}$$
+                    </div>
+                </div>
+
+                <p>\(f(x) = e^x(\cos \omega x + \sin\omega x), y^* = xe^x(a\cos\omega x + b\sin\omega x)\)情况下的化简：</p>
+                <p>令\(y_1 = e^x\cos\omega x, y_2 = e^x\sin\omega x\)</p>
+                $$\begin{align}
+                &y = x(ay_1 + by_2)\\
+                &y' = (ay_1 + by_2) + x(ay_1' + by_2')\\
+                &y'' = (ay_1' + by_2') + (ay_1' + by_2') + x(ay_1'' + by_2'') = (2ay_1' + 2by_2') + x(ay_1'' + by_2'')
+                \end{align}$$
+                $$\begin{align}
+                y'' + py' + qy &= x(ay_1'' + by_2'') + (2ay_1' + 2by_2') + xp(ay_1' + by_2') + p(ay_1 + by_2) + xq(ay_1 + by_2)\\
+                               &= x[a(y_1'' + py_1' + qy_1) + b(y_2' + py_2' + qy_2)] + a(2y_1' + py_1) + b(2y_2' + py_2)\\
+                               &= a(2y_1' + y_1) + b(2y_2' + y_2)
+                \end{align}$$
 
 
             </details>
 
+            <p>[注]\(\lambda\)为常数.</p>
+            <p>[注]\(P_m(x)\)为\(x\)的一个\(m\)次多项式，\(P_m(x) = a_0x^m + a_1x^{m-1} + \cdots + a_{m-1}x + a_m\).</p>
         </div>
 
-        <h2>欧拉方程</h2>
-        <p>形如\(x^2y'' + pxy' + qy = f(x)\)的方程。</p>
-        <p>令\(x = e^t\Rightarrow \frac{\mathrm{d}x}{\mathrm{d}t} = e^t\)</p>
-        $$\begin{align}
-        \frac{\mathrm{d}y}{\mathrm{d}x} &= \frac{\mathrm{d}y}{\mathrm{d}t}\frac{\mathrm{d}t}{\mathrm{d}x}\\
-                                        & = e^{-t}\frac{\mathrm{d}y}{\mathrm{d}t}
-        \end{align}$$
-        $$\begin{align}
-        \frac{\mathrm{d}^2y}{\mathrm{d}x^2} &= \frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}y}{\mathrm{d}x})\\
-                                            &= \frac{\mathrm{d}t}{\mathrm{d}x}\frac{\mathrm{d}}{\mathrm{d}t}(e^{-t}\frac{\mathrm{d}y}{\mathrm{d}t})\\
-                                            &= e^{-t}(-e^{-t}\frac{\mathrm{d}y}{\mathrm{d}t} + e^{-t}\frac{\mathrm{d}^2y}{\mathrm{d}t^2})\\
-                                            &= e^{-2t}(\frac{\mathrm{d}^2y}{\mathrm{d}t^2} - \frac{\mathrm{d}y}{\mathrm{d}t})
-        \end{align}$$
-
-        $$x^2y'' + pxy' + qy = f(x)$$
-        $$e^{2t}e^{-2t}(\frac{\mathrm{d}^2y}{\mathrm{d}t^2} - \frac{\mathrm{d}y}{\mathrm{d}t}) + pe^te^{-t}\frac{\mathrm{d}y}{\mathrm{d}t} + qy = f(e^t)$$
-        $$\frac{\mathrm{d}^2y}{\mathrm{d}t^2} + (p-1)\frac{\mathrm{d}y}{\mathrm{d}t} + qy = f(e^t)$$
+        <div class="Card-Method">
+            <h2>欧拉方程</h2>
+            <p>形如\(x^2y'' + pxy' + qy = f(x)\)的方程。</p>
+            <p>令\(x = e^t\Rightarrow \frac{\mathrm{d}x}{\mathrm{d}t} = e^t\)</p>
+            $$\begin{align}
+            \frac{\mathrm{d}y}{\mathrm{d}x} &= \frac{\mathrm{d}y}{\mathrm{d}t}\frac{\mathrm{d}t}{\mathrm{d}x}\\
+                                            & = e^{-t}\frac{\mathrm{d}y}{\mathrm{d}t}
+            \end{align}$$
+            $$\begin{align}
+            \frac{\mathrm{d}^2y}{\mathrm{d}x^2} &= \frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}y}{\mathrm{d}x})\\
+                                                &= \frac{\mathrm{d}t}{\mathrm{d}x}\frac{\mathrm{d}}{\mathrm{d}t}(e^{-t}\frac{\mathrm{d}y}{\mathrm{d}t})\\
+                                                &= e^{-t}(-e^{-t}\frac{\mathrm{d}y}{\mathrm{d}t} + e^{-t}\frac{\mathrm{d}^2y}{\mathrm{d}t^2})\\
+                                                &= e^{-2t}(\frac{\mathrm{d}^2y}{\mathrm{d}t^2} - \frac{\mathrm{d}y}{\mathrm{d}t})
+            \end{align}$$
     
+            $$x^2y'' + pxy' + qy = f(x)$$
+            $$e^{2t}e^{-2t}(\frac{\mathrm{d}^2y}{\mathrm{d}t^2} - \frac{\mathrm{d}y}{\mathrm{d}t}) + pe^te^{-t}\frac{\mathrm{d}y}{\mathrm{d}t} + qy = f(e^t)$$
+            $$\frac{\mathrm{d}^2y}{\mathrm{d}t^2} + (p-1)\frac{\mathrm{d}y}{\mathrm{d}t} + qy = f(e^t)$$
+        
+        </div>
         <ul class="navibar">
             <li><a href="chapter6.html">上一页</a></li>
             <li class="catalog"><a href="Mathematic.html">主页</a></li>
             <li class="next"><a href="chapter8.html">下一页</a></li>
         </ul>
+
+        <div id="PageEnd"></div>
+        <a class="GoToBottom" href="#PageEnd">Bottom</a>
+
         <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 </html>

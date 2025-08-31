@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pandas</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+
+<body>
+    <div class="header"><h1>不惑</h1></div>
+    <ul class="navibar">
+        <li><a href="../Home.html">主页</a></li>
+        <li><a href="../Navigation.html">导航</a></li>
+    </ul>
+
+    <h1>Gradient</h1>
+    
+    <div class="Card-Definition">
+        <b>叶子节点（叶子张量，leaf tensor）</b>
+        <p>由用户直接创建的，requires_grad=True的张量，其会在优化中计算梯度.</p>
+    </div>
+    
+    <b>创建叶子节点</b>
+    <pre><code>
+        x = torch.zeros(h, w, requires_grad=True)
+    </code></pre>    
+
+    <b>grad_fn</b>
+    <p>当requires_grad=True的张量被计算时，会自动生成一个grad_fn</p>
+    <table>
+        <tr>
+            <td>Operation</td>
+            <td>grad_fn</td>
+        </tr>
+        <tr>
+            <td>+</td>
+            <td>&lt;AddBackward0&gt;</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>&lt;SubBackward0&gt;</td>
+        </tr>
+        <tr>
+            <td>*</td>
+            <td>&lt;MulBackward0&gt;</td>
+        </tr>
+        <tr>
+            <td>/</td>
+            <td>&lt;DivBackward0&gt;</td>
+        </tr>
+        <tr>
+            <td>mean</td>
+            <td>&lt;MeanBackward0&gt;</td>
+        </tr>
+    </table>
+    
+
+
+</body>
+
+</html>

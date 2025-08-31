@@ -62,13 +62,18 @@
             <p>若\(g\)与\(k\)的取值有关，则说明极限不存在.</p>
             <p>[注]预设\(kf(x)\)时，尽量将原函数中的\(x\)消去.</p>
         </div>
-        
+
         <div class="Card-Method">
             <h2>求二元极限的方法</h2>
             <b>夹逼定理</b>
             $$\lim f(x) = 0 \Leftrightarrow \lim |f(x)| = 0$$
         </div>
 
+        <div class="Card-Method">
+            <h2>判断\(f(x,y)\)在点\((x_0,y_0)\)处是否连续</h2>
+            <p>判断\(\lim\limits_{(x,y)\rightarrow(x_0,y_0)}f(x,y)\)是否等于\(f(x_0, y_0)\)</p>
+        </div>
+        
         <b>二元函数的性质</b>
         <ul>
             <li>有界性</li>
@@ -82,11 +87,6 @@
             <b>多元函数连续性</b>
             <p>设多元函数\(z = f(x,y)\)在区域\(D\)上有定义，点\(P_0(x_0, y_0) \in D\)，若\(\lim\limits_{(x,y)\rightarrow (x_0, y_0)}f(x,y) = f(x_0,y_0)\)，称\(f(x,y)\)在\(P_0(x_0, y_0)\)处连续。</p>
             <p>若\(f(x,y)\)在区域\(D\)上每个点\((x,y)\)都连续，称\(z = f(x,y)\)在区域\(D\)上连续。</p>
-        </div>
-
-        <div class="Card-Method">
-            <h2>判断\(f(x,y)\)在点\(x_0, y_0\)处是否连续</h2>
-            <p>\(f(x,y)\)连续\(\Leftrightarrow \lim\limits_{(x,y)\rightarrow(x_0,y_0)}f(x,y) = f(x_0, y_0)\)</p>
         </div>
 
 
@@ -168,6 +168,11 @@
         <p>可微\(\Rightarrow\)偏导数存在</p>
         
         <p>对比一元函数：可导\(\Leftrightarrow\)可微\(\Rightarrow\)连续\(\Rightarrow\)极限存在</p>
+
+        <div class="Card-Method">
+            <h2>判断是否可微</h2>
+            <p>不连续\(\Rightarrow\)不可微</p>
+        </div>
         
         <div class="Card-Method">
             <h2>全微分求法</h2>
@@ -305,10 +310,41 @@
             <p>比较极值大小，得出最大值与最小值.</p>
         </div>
 
+        <h2>方向导数</h2>
+        <div class="Card-Definition">
+            <b>方向导数</b>
+            <p>设\(l\)为\(xOy\)平面上以\(P_0(x_0,y_0)\)为始点的一条射线，\(\mathbf{e}_l = (\cos\alpha, \cos\beta)\)为与\(l\)同方向的单位向量.</p>
+            <p>射线\(l\)的参数方程为：</p>
+            $$\begin{cases}
+            x = x_0 + t\cos\alpha\\
+            y = y_0 + t\cos\beta
+            \end{cases}(t\geq 0)$$
+            <p>函数\(f(x,y)\)在点\((x_0, y_0)\)处沿方向\(l\)的方向导数为：</p>
+            $$\frac{\partial f}{\partial l}\bigg|_{(x_0, y_0)} = \lim\limits_{t\rightarrow 0^+}\frac{f(x_0 + t\cos\alpha, y_0 + t\cos\beta) - f(x_0, y_0)}{t}$$
+            <p>方向导数\(\frac{\partial f}{\partial l}\bigg|_{(x_0, y_0)}\)就是函数\(f(x,y)\)在点\(P_0(x_0, y_0)\)沿方向\(l\)的变化率.</p>
+        </div>
+
+        <div class="Card-Method">
+            <h2>判断方向导数是否存在及方向导数的计算</h2>
+            <p>若\(f(x,y)\)在点\(P_0(x_0, y_0)\)可微分，则该函数在该点沿任一方向\(l\)的方向导数存在，且</p>
+            $$\frac{\partial f}{\partial l}\bigg|_{(x_0, y_0)} = f_x(x_0,y_0)\cos\alpha + f_y(x_0,y_0)\cos\beta$$
+            <p>其中\(\cos\alpha\)与\(\cos\beta\)为方向\(l\)的方向余弦.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>梯度</b>
+            $$\nabla f = \mathbf{grad} f = \frac{\partial f}{\partial x_1}\mathbf{i}_1 + \frac{\partial f}{\partial x_2}\mathbf{i}_2 + \cdots + \frac{\partial f}{\partial x_n}\mathbf{i}_n$$
+
+            <p>\(\nabla\)称为Nabla算子（向量微分算子）</p>
+        </div>
+
         <ul class="navibar">
             <li><a href="chapter7.html">上一页</a></li>
             <li class="catalog"><a href="Mathematic.html">主页</a></li>
             <li class="next"><a href="chapter9.html">下一页</a></li>
         </ul>
+
+        <div id="PageEnd"></div>
+        <a class="GoToBottom" href="#PageEnd">Bottom</a>
     </body>
 </html>

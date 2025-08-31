@@ -28,15 +28,16 @@
         </div>
 
         <div class="Card-Analysis">
-            <h3>干涉光光强分析</h3>
-            <p>两列单色平面线偏振光：</p>
-            $$\mathbf{E_1} = \mathbf{E_{01}}e^{-i(\omega_1 t - \mathbf{k_1}\mathbf{r} + \phi_{01})}$$
-            $$\mathbf{E_2} = \mathbf{E_{02}}e^{-i(\omega_2 t - \mathbf{k_2}\mathbf{r} + \phi_{02})}$$
-            <p>在空间P点相遇，其振动方向夹角为\(\theta\)，则在P点处的总光强为：</p>
+            <h3>干涉光光强</h3>
             <div class="Formula">
                 $$I = I_1 + I_2 + 2\sqrt{I_1I_2}\cos\theta\cos\phi$$
                 $$\phi = (\omega_1 - \omega_2)t - (\mathbf{k_1} - \mathbf{k_2})\mathbf{r} + (\phi_{01}-\phi_{02})$$
+                <p>\(I_1, I_2\)分别为两束光的光强，\(\theta\)为两束光的振动方向夹角，\(\phi\)为两束光的相位差.</p>
+                <p>\(I_{12} = \sqrt{I_1I_2}\cos\theta\cos\phi\)称为干涉项.</p>
                 <div class="Derivation">
+                    <p>设两列单色平面线偏振光在空间P点相遇，其振动方向夹角为\(\theta\)：</p>
+                    $$\mathbf{E_1} = \mathbf{E_{01}}e^{-i(\omega_1 t - \mathbf{k_1}\mathbf{r} + \phi_{01})}$$
+                    $$\mathbf{E_2} = \mathbf{E_{02}}e^{-i(\omega_2 t - \mathbf{k_2}\mathbf{r} + \phi_{02})}$$
                     <img src="Img/E1E2.jpg">
                     $$\mathbf{E_1} = \mathbf{i}E_1\cos\theta + \mathbf{j}E_1\sin\theta$$
                     $$\mathbf{E_2} = \mathbf{i}E_2$$
@@ -54,8 +55,6 @@
                     $$\phi = (\omega_1 - \omega_2)t - (\mathbf{k_1} - \mathbf{k_2})\mathbf{r} + (\phi_{01}-\phi_{02})$$
                 </div>
             </div>
-            <p>\(I_1, I_2\)分别为两束光的光强，\(\phi\)为两束光的相位差.</p>
-            <p>\(I_{12} = \sqrt{I_1I_2}\cos\theta\cos\phi\)称为干涉项.</p>
 
             <p>当\(\cos\phi = 1\)时，光强最大；当\(\cos\phi = -1\)时，光强最小.</p>
             <table>
@@ -86,13 +85,24 @@
         </div>
 
         <div class="Card-Analysis">
-            <h3>干涉条件分析</h3>
+            <h3>相干条件分析</h3>
             <p>1、两光束频率相同（\(\omega_1 = \omega_2\)）</p>
             <p>为了得到稳定的干涉条纹分布，干涉光强不应随时间变化，即\(\omega_1 - \omega_2 = 0\).</p>
             <p>2、两光束振动方向相同（\(\theta = 0\)）</p>
             <p>$$V = \frac{I_{max} - I_{min}}{I_{max} + I_{min}} = \frac{4\sqrt{I_1I_2}\cos\theta}{2I_1 + 2I_2}$$</p>
             <p>\(I\)一定时，\(\theta\)越大，干涉条纹越清晰，当\(\theta = 0\)时，干涉条纹最清晰.</p>
             <p>3、两光束初相位差恒定（\(\phi_2 - \phi_1\)恒定）</p>
+            <p>为了保证光强\(I\)不发生变化.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>相干光波</b>
+            <p>满足相干条件的光波.</p>
+
+            <b>相干光源</b>
+            <p>能够产生相干光波的光源.</p>
+            <p>普通光源是非相干光源.</p>
+            <p>激光器是相干光源.</p>
         </div>
 
         <div class="Card-Analysis">
@@ -106,11 +116,17 @@
         <div class="Card-Analysis">
             <h3>杨氏双缝干涉</h3>
             <img src="Img/Yang.jpg" width="400">
+            <b>光程差</b>
             <p>\(d\ll D, R_1 = R_2\)时：</p>
-            $$\Delta = d\sin\beta$$
-            $$\sin \beta \approx \tan \beta = \frac{y}{D}$$
-            $$\Delta = \frac{dy}{D}$$
-            <p>相位差为：</p>
+            <div class="Formula">
+                $$\Delta = \frac{dy}{D}$$
+                <div class="Derivation">
+                    $$\Delta = d\sin\beta$$
+                    $$\sin \beta \approx \tan \beta = \frac{y + \frac{d}{2}}{D} \approx \frac{y}{D}$$
+                    $$\Delta = \frac{dy}{D}$$
+                </div>
+            </div>
+            <b>相位差</b>
             $$\phi = kr = \frac{2\pi}{\lambda}\Delta = \frac{2\pi}{\lambda}\frac{dy}{D}$$
             <table>
                 <tr>
@@ -121,12 +137,12 @@
                 <tr>
                     <td>亮条纹</td>
                     <td>$$\phi = 2m\pi(m=0,\pm1,\pm2,\cdots)$$</td>
-                    <td>$$y = m\frac{D\lambda}{d}$$</td>
+                    <td>$$y = m\frac{D\lambda}{d}(m=0,\pm1,\pm2,\cdots)$$</td>
                 </tr>
                 <tr>
                     <td>暗条纹</td>
                     <td>$$\phi=(2m + 1)\pi(m=0,\pm1,\pm2,\cdots)$$</td>
-                    <td>$$y = (m+1)\frac{D\lambda}{d}$$</td>
+                    <td>$$y = (m+1)\frac{D\lambda}{d}(m=0,\pm1,\pm2,\cdots)$$</td>
                 </tr>
             </table>
 
@@ -155,10 +171,43 @@
         </div>
 
         <div class="Card-Analysis">
-            <h3>平行平板干涉（薄膜干涉）分析</h3>
+            <h2>平行平板干涉（薄膜干涉）分析</h2>
             <img src="Img/Interference_Plate.jpg" width="300">
+
+            <b>半波损失分析</b>
+            <p>设平行平板上方介质折射率为\(n_1\)，下方介质折射率为\(n_2\).</p>
+            <table>
+                <tr>
+                    <td>情况</td>
+                    <td>分析</td>
+                    <td>结论</td>
+                    <td>$$\Delta$$</td>
+                </tr>
+                <tr>
+                    <td>$$n_1 \lt n \gt n_2$$</td>
+                    <td rowspan="2" class="tbtext">两束反射光中总有一支发生<a href="ReflectionAndTransmission.html#HalfWaveLoss">半波损失</a>.</td>
+                    <td rowspan="2" class="tbtext">存在半波损失，即存在附件光程差.</td>
+                    <td rowspan="2">$$\Delta = 2nh\cos\theta_2 + \frac{\lambda}{2}$$</td>
+                </tr>
+                <tr>
+                    <td>$$n_1 \gt n \lt n_2$$</td>
+                </tr>
+                <tr>
+                    <td>$$n_1 \lt n \lt n_2$$</td>
+                    <td rowspan="2" class="tbtext">两束反射光均不发生半波损失.</td>
+                    <td rowspan="2" class="tbtext">不存在半波损失，即不存在附加光程差.</td>
+                    <td rowspan="2">$$\Delta = 2nh\cos\theta_2$$</td>
+                </tr>
+                <tr>
+                    <td>$$n_1 \gt n \gt n_2$$</td>
+                </tr>
+            </table>
+
+            <b>光程差</b>
+            <p>考虑常见的\(n_0 \lt n \gt n_0\)模型</p>
+
             <div class="Formula">
-                $$\Delta = n(AB + BC) - n_0AN = 2nh\cos\theta_2$$
+                $$\Delta = n(AB + BC) - n_0AN + \frac{\pi}{2} = 2nh\cos\theta_2 + \frac{\pi}{2}$$
                 <div class="Derivation">
                     $$AB = BC = \frac{h}{\cos\theta_2}$$
                     $$AN = AC\sin\theta_1 = 2h\tan\theta_2\sin\theta_1$$
@@ -171,28 +220,292 @@
                     \Delta &= 2h(\frac{n - n\sin^2\theta_2}{\cos\theta_2})\\
                            &= 2nh\cos\theta_2
                     \end{align}$$
+                    <p>考虑附加光程差：</p>
+                    $$\Dleta = 2nh\cos\theta_2 + \frac{\pi}{2}$$
                 </div>
             </div>
+            
+
+            <b>相位差</b>
+            $$\phi = kr = \frac{2\pi}{\lambda}\Delta = \frac{2\pi}{\lambda}(2nh\cos\theta_2 + \frac{\lambda}{2})$$
+
+            <table>
+                <tr>
+                    <td></td>
+                    <td>$$\phi$$</td>
+                    <td>$$\Delta$$</td>
+                </tr>
+                <tr>
+                    <td>亮条纹</td>
+                    <td>$$\phi = 2m\pi(m = 0, \pm1, \pm2, \cdots)$$</td>
+                    <td>$$\Delta = m\lambda(m = 0, \pm1, \pm2, \cdots)$$</td>
+                </tr>
+                <tr>
+                    <td>暗条纹</td>
+                    <td>$$\phi = 2(m + 1)\pi(m = 0, \pm1, \pm2, \cdots)$$</td>
+                    <td>$$\Delta = (m + 1)\lambda(m = 0, \pm1, \pm2, \cdots)$$</td>
+                </tr>
+            </table>
+
+            <p>一般情况下，平行平板的折射率\(n\)与厚度\(h\)以及光波长\(\lambda\)均为常数，故光程差仅取决于折射角\(\theta_2\)，而其又由入射角\(\theta_1\)所决定，故：</p>
+            <p>具有相同入射角的光经平板两表面反射所形成的反射光在其相遇点处具有相同的光程差，即位于同一条纹上，为等倾干涉条纹.</p>
+
         </div>
 
+        <div class="Card-Definition">
+            <b>等倾干涉</b>
+            <p>凡入射角相同的光处于同一干涉条纹上，称这种干涉为等倾干涉，对应的干涉条纹为等倾干涉条纹.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>反射光的等倾干涉圆条纹</h2>
+            <h3>实验装置</h3>
+            <img src="Img/EqualInclinationInterference_Reflection.jpg" width="600">
+            <p>透镜光轴垂直于平行平板G，S为一扩展光源，其发出的光线经半反射镜M后，以各种角度入射到平行平板G上.</p>
+
+            <h3>等倾圆环的特点</h3>
+            <b>等倾圆环的干涉级数</b>
+            <p>愈接近等倾圆环中心的条纹，其对应的入射角越小，从而对应的折射角\(\theta_2\)越小，由平行平板干涉的光程差公式：\(\Delta = 2nh\cos\theta_2 (+ \frac{\lambda}{2})\)，相对应的光程差\(\Delta\)越大，干涉条纹级数也越高；距离圆环中心越远的条纹，干涉级数越小.</p>
+            <p>设中心点的干涉级数为\(m_0\)：</p>
+            $$\Delta_0 = 2nh(+\frac{\lambda}{2}) = m_0\lambda$$
+            $$m_0 = \frac{2nh}{\lambda}(+\frac{1}{2})$$
+            <p>\(m_0\)不一定为整数，即中心未必时是最亮点，故常将\(m_0\)写作：</p>
+            $$m_0 = m_1 + \epsilon(0\lt \epsilon\lt 1)$$
+
+            <b>等倾亮圆环对应的入射角及半径</b>
+            <p>第\(N\)个亮环对应的入射角\(\theta_{1N}\)为：</p>
+            <div class="Formula">
+                $$\theta_{1N} = \frac{1}{n_0}\sqrt{\frac{n\lambda}{h}}\sqrt{N - 1 + \epsilon}$$
+                <div class="Derivation">
+                    <p>由中心向外计算，第\(N\)个亮环的干涉级数\(m_N = m_1 - (N-1)\)，该亮环的张角为\(\theta_{1N}\)</p>
+                    $$\begin{cases}
+                    2nh\cos\theta_{2N}  + \frac{\lambda}{2} = [m_1 - (N - 1)]\lambda\\
+                    2nh + \frac{\lambda}{2} = m_0\lambda = (m_1 + \epsilon)\lambda
+                    \end{cases}\Rightarrow
+                    2nh(1 - \cos\theta_{2N}) = (N - 1 + \epsilon)\lambda$$
+                    <p>通常\(\theta_1,\theta_2 \rightarrow 0\)</p>
+                    $$1 - \cos\theta_{2N} \approx \frac{1}{2}\theta^2_{2N}\approx \frac{1}{2}\sin^2\theta_{2N}$$
+                    $$\because n_0\sin\theta_{1N} = n\sin\theta_{2N}$$
+                    $$\therefore \sin^2\theta_{2N} = \frac{n_0^2}{n^2}\sin^2\theta_{1N} \approx \frac{n_0^2}{n^2}\theta_{1N}^2$$
+                    $$1 - \cos\theta_{2N} \approx \frac{1}{2}\frac{n_0^2}{n^2}\theta_{1N}^2$$
+                    $$\therefore 2nh\cdot \frac{1}{2}\frac{n_0^2}{n^2}\theta_{1N}^2 \approx (N - 1 + \epsilon)\lambda$$
+                    $$\theta_{1N} \approx \frac{1}{n_0}\sqrt{\frac{n\lambda}{h}}\sqrt{N - 1 + \epsilon}$$                    
+                </div>
+            </div>
+
+            <p>由中心向外计算，第\(N\)个亮环的半径为：</p>
+            <div class="Formula">
+                $$r_N = f\frac{1}{n_0}\sqrt{\frac{n\lambda}{h}}\sqrt{N - 1 + \epsilon}$$
+                <div class="Derivation">
+                    <img src="Img/EqualInclinationInterference_Reflection_01.jpg" width="200">
+                    $$r_N = f\tan\theta_{1N} \approx f\theta_{1N} \approx \frac{f}{n_0}\sqrt{\frac{n\lambda}{h}}\sqrt{N-1+\epsilon}$$
+                </div>
+            </div>
+            <p>该式说明，平行平板越厚，等面积内的圆环数量越多.</p>
+
+            <b>等倾圆环相邻亮条纹的间距</b>
+            $$e_N = \frac{f}{2n_0}\sqrt{\frac{n\lambda}{h(N-1+\epsilon)}}$$
+            $$\begin{align}
+            e_N &= r_{N+1} - r_N\\
+            \end{align}$$
+            <p>该式说明，越靠近边缘（即\(N\)越大），条纹越密集（间距越小）.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>透射光的等倾干涉圆条纹</h2>
+            <div class="Formula">
+                $$\Delta = 2nh\cos\theta_2$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \Delta &= \frac{2nh}{\cos\theta_2} - 2n_0h\tan\theta_2\sin\theta_1\\
+                            &= 2h(\frac{n}{\cos\theta_2} - \frac{n_0\sin\theta_1\sin\theta_2}{\cos\theta_2})
+                    \end{align}$$
+                    $$\because n_0\sin\theta_1 = n\sin\theta_2$$
+                    $$\begin{align}
+                    \Delta &= 2h(\frac{n - n\sin^2\theta_2}{\cos\theta_2})\\
+                            &= 2nh\cos\theta_2
+                    \end{align}$$
+                </div>
+            </div>
+            <p>透射光的等倾干涉不存在半波损失.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>楔形平板</b>
+            <p>上下平面具有微小夹角的平板.</p>
+
+            <b>劈尖</b>
+            <p>一种特殊的楔形平板，厚度可以在某处为0.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>等厚干涉</b>
+            <p>干涉条纹与楔形平板厚度一一对应的干涉，相应的干涉条纹称为等厚条纹.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>等厚干涉（楔形平板干涉）</h2>
+            <p>楔形平板的光程差精确值一般很难计算，通常来说，楔形平板厚度不大，楔角也很小，因此可以近似利用平行平板光程差公式表示：</p>
+            $$\Delta = 2nh\cos\theta_2$$
+            <p>考虑常见的\(n_0-n-n_0\)情况，光束在楔形平板表面产生半波损失，两表面反射光光程差为：</p>
+            $$\Delta = 2nh\cos\theta_2 + \frac{\lambda}{2}$$
+
+            <b>条纹亮度分析</b>
+            $$\phi = kr = \frac{2\pi}{\lambda}\Delta$$
+            <table>
+                <tr>
+                    <td></td>
+                    <td>$$\phi$$</td>
+                </tr>
+                <tr>
+                    <td>亮条纹</td>
+                    <td>$$\phi = 2m\pi(m = 0,\pm1, \pm2, \cdots)$$</td>
+                </tr>
+                <tr>
+                    <td>暗条纹</td>
+                    <td>$$\phi = 2(m+1)\pi(m=0,\pm1,\pm2,\cdots)$$</td>
+                </tr>
+            </table>
+
+            <h3>垂直入射楔形板产生干涉的系统</h3>
+            <b>相邻亮条纹间厚度差</b>
+            <div class="Formula">
+                $$\Delta h = \frac{\lambda}{2n}$$
+                <div class="Derivation">
+                    <p>光线垂直入射\(\Rightarrow \theta_2 = \theta_1 = 0\)</p>
+                    <p>对于亮条纹：</p>
+                    $$\begin{cases}
+                    2nh + \frac{\lambda}{2} = m\lambda\\
+                    2nh' + \frac{\lambda}{2} = (m+1)\lambda
+                    \end{cases}\Rightarrow
+                    \Delta h = \frac{\lambda}{2n}$$
+                </div>
+            </div>
+
+            <h3>垂直入射劈尖形成的干涉</h3>
+            <p>垂直入射\(Rightarrow \theta_2 = \theta_1 = 0\)</p>
+            <b>亮线位置：</b>
+            $$2nh + \frac{\lambda}{2} = m\lambda(m=1,2,\cdots)$$
+            <b>暗线位置：</b>
+            $$2nh + \frac{\lambda}{2} = (m + \frac{1}{2})\lambda(m=0,1,2,\cdots)$$
+            <p>棱线总位于暗条纹的位置.</p>
+            <p>若劈尖上有\(N\)个条纹，则对应的总厚度为：</p>
+            $$d = N\frac{\lambda}{2n}$$
+            <p>其中，\(N\)可以为整数，也可以为小数.</p>
+            <p>劈尖表面上的亮条纹是等距离的，条纹间距\(\Delta L\)为：</p>
+            $$\Delta L = \frac{\Delta h}{\sin\alpha} = \frac{\lambda}{2n\sin\alpha}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>牛顿环</h2>
+            <img src="./Img/NewtonRing.png"><br>
+
+            <b>形状特点</b>
+            <p>在空气层上形成一组以接触点O为中心的中间疏、边缘密的圆环条纹.</p>
+            <p>内圈干涉级数小、外圈干涉级数大.</p>
+
+            <b>相干条件</b>
+            $$2d + \frac{\lambda}{2} = \begin{cases}k\lambda, k=1,2,\cdots 明条纹\\(2k + 1)\frac{\lambda}{2},k=0,1,2,\cdots 暗条纹\end{cases}$$
+            $$r^2 = R^2 - (R-d)^2 = 2dR - d^2$$
+            $$\because R \gg d$$
+            $$\therefore r^2 = 2dR \Rightarrow d = \frac{r^2}{2R}$$
+            明条纹半径：
+            $$2\cdot\frac{r^2}{2R} + \frac{\lambda}{2} = k\lambda \Rightarrow r = \sqrt{\frac{(2k-1)R\lambda}{2}}, k=1,2,\cdots$$
+            暗条纹半径： 
+            $$2\cdot\frac{r^2}{2R} + \frac{\lambda}{2} = (2k + 1)\frac{\lambda}{2} \Rightarrow r = \sqrt{kR\lambda}, k=0,1,2,\cdots$$
+    
+            <b>相邻明条纹厚度差</b>
+            $$2d + \frac{\lambda}{2} = k\lambda \Rightarrow d_k = \frac{1}{2}(k\lambda - \frac{\lambda}{2})$$
+            $$\Delta d = d_{k+1} - d{k} = \frac{\lambda}{2}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>平行平板的多光束干涉</h2>
+
+            <h3>平行平板多光束干涉的强度分布</h3>
+            <b>光程差</b>
+            <p>相邻两反射光或透射光间的光程差为：</p>
+            $$\Delta = 2nh\cos\theta$$
+            <p>其中\(\theta\)为光线从空气到平板的折射角.</p>
+
+            <b>相位差</b>
+            $$\phi = kr = \frac{2\pi}{\lambda}\Delta = \frac{4\pi}{\lambda}nh\cos\theta$$
 
 
-        <h2>牛顿环</h2>
-        <img src="./Img/NewtonRing.png"><br>
-        <b>相干条件</b>
-        $$2d + \frac{\lambda}{2} = \begin{cases}k\lambda, k=1,2,\cdots 明条纹\\(2k + 1)\frac{\lambda}{2},k=0,1,2,\cdots 暗条纹\end{cases}$$
-        $$r^2 = R^2 - (R-d)^2 = 2dR - d^2$$
-        $$\because R \gg d$$
-        $$\therefore r^2 = 2dR \Rightarrow d = \frac{r^2}{2R}$$
-        明条纹半径：
-        $$2\cdot\frac{r^2}{2R} + \frac{\lambda}{2} = k\lambda \Rightarrow r = \sqrt{\frac{(2k-1)R\lambda}{2}}, k=1,2,\cdots$$
-        暗条纹半径： 
-        $$2\cdot\frac{r^2}{2R} + \frac{\lambda}{2} = (2k + 1)\frac{\lambda}{2} \Rightarrow r = \sqrt{kR\lambda}, k=0,1,2,\cdots$$
+            <b>爱里公式</b>
+            $$F = \frac{4R}{(1-R)^2} \propto R$$
+            $$I_r = \frac{F\sin^2\frac{\phi}{2}}{1 + F\sin^2\frac{\phi}{2}}I_i$$
+            $$I_t = \frac{1}{1 + F\sin^2\frac{\phi}{2}}I_i$$
 
-        <b>相邻明条纹厚度差</b>
-        $$2d + \frac{\lambda}{2} = k\lambda \Rightarrow d_k = \frac{1}{2}(k\lambda - \frac{\lambda}{2})$$
-        $$\Delta d = d_{k+1} - d{k} = \frac{\lambda}{2}$$
+            <h3>平行平板多光束干涉图样的特点</h3>
+            <b>互补性</b>
+            <p>不考虑吸收和其他损耗的情况下，由于能量守恒定律：</p>
+            $$I_r + I_t = I_i$$
+            <b>等倾性</b>
+            <p>平行平板在透镜焦平面上产生的多光束干涉条纹是等倾干涉条纹.</p>
+            <b>光强分布</b>
+            <table>
+                <tr>
+                    <td rowspan="2"></td>
+                    <td colspan="2">反射光</td>
+                    <td colspan="2">折射光</td>
+                </tr>
+                <tr>
+                    <td>$$\phi$$</td>
+                    <td>$$I$$</td>
+                    <td>$$\phi$$</td>
+                    <td>$$I$$</td>
+                </tr>
+                <tr>
+                    <td>亮条纹</td>
+                    <td>
+                        <div class="Formula">
+                            $$\phi = (2m+1)\pi,~m = 0,1,2,\cdots$$
+                            <div class="Derivation">
+                                $$I_r = \frac{F\sin^2\frac{\phi}{2}}{1 + F\sin^2\frac{\phi}{2}}I_i$$
+                                <p>由<a href="../../Math/Mathematic/Inequation.html#Concentration" class="goto">分数的浓度不等式</a>：</p>
+                                <p>当\(F\sin^2\frac{\phi}{2}\)最大时，\(I_r\)最大.</p>
+                                $$\sin^2\frac{\phi}{2} = 1\Rightarrow \frac{\phi}{2} = (m+\frac{1}{2})\pi \Rightarrow \phi = (2m+1)\pi(m=0,1,2,\cdots)$$
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="Formula">
+                            $$I_r = \frac{F}{1+F}I_i$$
+                            <div class="Derivation">
+                                $$I_r = \frac{F\sin^2\frac{\phi}{2}}{1+F\sin^2\frac{\phi}{2}}I_i$$
+                                $$\phi = 2m\pi(m=0,\pm1,\pm2,\cdots)$$
+                                $$I_r = \frac{F}{1+F}I_i$$
+                            </div>
+                        </div>
+                    </td>
+                    <td>$$\phi = 2m\pi,~m=0,1,2,\cdots$$</td>
+                    <td>$$I_t = I_i$$</td>
+                </tr>
+                <tr>
+                    <td>暗条纹</td>
+                    <td>$$\phi = 2m\pi,~m=0,1,2,\cdots$$</td>
+                    <td>$$I_r = 0$$</td>
+                    <td>$$\phi = (2m+1)\pi,~m=0,1,2,\cdots$$</td>
+                    <td>$$I_t = \frac{1}{1+F}I_i$$</td>
+                </tr>
+            </table>
+
+
+            <h3>透射光的特点</h3>
+            <ul>
+                <li><b>光强分布与反射率\(R\)有关</b></li>
+                <li><b>条纹锐度与反射率\(R\)有关</b></li>
+            </ul>
+
+            <h3>锐度</h3>
+            <p>用条纹的半峰值全宽度\(\epsilon = \Delta\phi\)表征干涉条纹的锐度.</p>
+            
+        </div>
         
+
+        <div id="PageEnd"></div>
+        <a class="GoToBottom" href="#PageEnd">Bottom</a>
 
         <script src="../../../../JavaScript/Capacity.js"></script>
     </body>

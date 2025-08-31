@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pandas</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+
+<body>
+    <div class="header"><h1>不惑</h1></div>
+    <ul class="navibar">
+        <li><a href="../Home.html">主页</a></li>
+        <li><a href="../Navigation.html">导航</a></li>
+    </ul>
+
+    <h1>Pytorch</h1>
+
+    <h2>Transform</h2>
+    <b>ToTenser</b>
+    <p>Function：将数据类型转化为tensor.</p>
+    <pre><code>
+        from torchvision import transform
+        tool = transform.ToTensor()
+        output = tool(input)
+    </code></pre>
+
+    <b>Normalize</b>
+    <p>Function：归一化</p>
+
+    <b>Resize</b>
+    <p></p>
+    <pre><code>
+        from torchvision import transform
+        tool = transform.Resize((h2,w2))
+        output = tool(input)
+
+        # input:tensor[c, h1, w1]
+        # output:tensor[c, h2, w2]
+    </code></pre>
+
+
+
+
+</body>
+
+</html>

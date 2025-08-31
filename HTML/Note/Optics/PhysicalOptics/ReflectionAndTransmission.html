@@ -12,7 +12,7 @@
 
     <body>
         <div class="header" id="PageHead"><h1>不惑</h1></div>
-
+        <a class="BackToTop" href="#PageHead">Top</a>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
@@ -26,9 +26,10 @@
                 <li><a href="#Fresnel">菲涅尔公式</a></li>
                 <li><a href="#TotalPolarization">全偏振</a></li>
                 <li><a href="#TotalReflection">全反射</a></li>
+                <li><a href="#HalfWaveLoss">半波损失</a></li>
             </ul>
         </div>
-        <a class="BackToTop" href="#PageHead">Top</a>
+       
         
         <div class="Card-Definition">
             <b>垂直入射</b>
@@ -51,12 +52,27 @@
         \end{align}
         $$
 
-        任一方位振动的光矢量\(\mathbf{E}\)，都可分解为互相垂直的两个分量
-        <ul>
-            <li>\(p\)偏振波（\(E_p\)）：\(\mathbf{E}\)平行于入射面振动的分量，又称<span lang="en">TM</span>波（<span class="tip">横磁波<span class="tiptext">\(\mathbf{H}\)沿界面切线方向</span></span>）</li>
-            <li>\(s\)偏振波（\(E_s\)）：\(\mathbf{E}\)垂直于入射面振动的分量，又称<span lang="en">TE</span>波（<span class="tip">横电波<span class="tiptext">\(\mathbf{E}\)沿界面切线方向</span></span>）</li>
-        </ul>
-        
+        <div class="Card-Definition">
+            <b>\(p\)分量与\(s\)分量</b>
+            <p>任一方位振动的光矢量\(\mathbf{E}\)，都可分解为互相垂直的两个分量：</p>
+            <ul>
+                <li>\(p\)偏振波（\(E_p\)）：\(\mathbf{E}\)平行于入射面振动的分量，又称<span lang="en">TM</span>波（<span class="tip">横磁波<span class="tiptext">\(\mathbf{H}\)沿界面切线方向</span></span>）</li>
+                <li>\(s\)偏振波（\(E_s\)）：\(\mathbf{E}\)垂直于入射面振动的分量，又称<span lang="en">TE</span>波（<span class="tip">横电波<span class="tiptext">\(\mathbf{E}\)沿界面切线方向</span></span>）</li>
+            </ul>
+        </div>
+
+        <div class="Card-Property">
+            <div class="Formula">
+                <p>\(p\)分量与\(s\)分量均与波矢量\(\mathbf{k}\)垂直.</p>
+                <div class="Derivation">
+                    $$\begin{cases}s\perp Plane_i\\\mathbf{k} \subset Plane_i\end{cases} \Rightarrow \mathbf{k}\perp s$$
+                    $$\begin{cases}\mathbf{k} \perp \mathbf{E}\\ \mathbf{k} \perp s\end{cases}\Rightarrow k\perp Plane_{\mathbf{E},s}$$
+                    <p>由于\(p\)分量与\(s\)分量合成\(\mathbf{E}\)，故\(p, s, \mathbf{E}\)共面.</p>
+                    $$\therefore \mathbf{k}\perp p$$
+                </div>
+            </div>
+        </div>
+
         
         <h2><a href="Fresnel.html" id="Fresnel">菲涅尔公式</a></h2>
 
@@ -168,8 +184,8 @@
             <p>全反射时发生相位的变化。</p>
         </div>
 
-        <div class="Card-Analysis">
-            <h2>由菲涅尔系数推断相位变化</h2>
+        <div class="Card-Analysis" id="HalfWaveLoss">
+            <h2>由菲涅尔系数推断相位变化（半波损失）</h2>
     
             $$E_{i} = E_{0i}\cos(\omega t - kr + \phi_0)$$
     
@@ -212,6 +228,25 @@
 
 
             <p>相位改变\(\pi\)的物理意义是光的振动方向反向，表现在图上时均以迎着光传播的方向观察.</p>
+
+            <b>三层介质情况的半波损失：</b>
+            <p>设光线\(n_1\rightarrow n_2\rightarrow n_3\)</p>
+            <table>
+                <tr>
+                    <td>$$n_1 \gt n_2 \gt n_3$$</td>
+                    <td rowspan="2">无半波损失</td>
+                </tr>
+                <tr>
+                    <td>$$n_1 \lt n_2 \lt n_3$$</td>
+                </tr>
+                <tr>
+                    <td>$$n_1 \gt n_2 \lt n_3$$</td>
+                    <td rowspan="2">有半波损失</td>
+                </tr>
+                <tr>
+                    <td>$$n_1 \lt n_2 \gt n_3$$</td>
+                </tr>
+            </table>
         </div>
 
 
