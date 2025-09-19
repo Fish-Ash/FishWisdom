@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>复变函数</title>
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead"><h1>不惑</h1></div>
+        <a class="BackToTop" href="#PageHead">Top</a>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>复数</h1>
+        <div class="Card-Definition">
+            <b>复数</b>
+            <p>设\(x,y\in \mathbb{R}\)，则形如：</p>
+            $$z = x + iy$$
+            <p>的数称为复数.</p>
+            <p>\(i\)为虚单位，有性质\(i^2 = -1\).</p>
+            <p>\(x\)为复数的实部，记作\(x = \mathrm{Re}z\).</p>
+            <p>\(y\)为复数的虚部，记作\(x = \mathrm{Im}z\).</p>
+            <p>[注]一般情况下，复数无法比较大小.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>实数</b>
+            <p>虚部为\(0\)的复数，即\(\mathbb{R}\subset \mathbb{C}\).</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>纯虚数</b>
+            <p>实部为\(0\)且虚部不为\(0\)的复数.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>共轭复数</b>
+            <p>实部相等，虚部互为相反数的两个复数称为共轭复数.</p>
+            <p>若一个复数记为\(z\)，则其共轭复数记为\(\overline{z}\)</p>
+            $$\overline{x + iy} = x - iy$$
+        </div>
+
+        <div class="Card-Property">
+            <b>共轭复数的性质</b>
+            $$\overline{\overline{z}} = z$$
+            $$\overline{z_1 \pm z_2} = \overline{z_1} \pm \overline{z_2}$$
+            $$\overline{z_1\cdot z_2} = \overline{z_1}\cdot \overline{z_2}$$
+            $$\overline{\left(\frac{z_1}{z_2}\right)} = \frac{\overline{z_1}}{\overline{z_2}},~z_2\neq0$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>复数的几何表示</h2>
+            <p>对于\(\forall z = x+iy\)，总有平面直角坐标系上一点\(P(x,y)\)与之对应.</p>
+        </div>
+
+        <div class="Card-Formula" id="EulerFormula">
+            <b>欧拉公式</b>
+            $$e^{ix} = \cos{x} + i\sin{x}$$
+            
+            <b>推导式</b>
+            <div class="Formula">
+                $$\cos x = \frac{e^{ix} + e^{-ix}}{2}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \frac{e^{ix} + e^{-ix}}{2} &= \frac{\cos x + i\sin x + \cos x - i\sin x}{2}\\
+                                               &= \cos x
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\sin x = \frac{e^{ix} - e^{-ix}}{2i}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \frac{e^{ix} - e^{-ix}}{2i} &= \frac{\cos x + i\sin x - \cos x + i\sin x}{2i}\\
+                                                &= \sin x
+                    \end{align}$$
+                </div>
+            </div>
+        </div>
+
+
+        <div id="PageEnd"></div>
+        <a class="GoToBottom" href="#PageEnd">Bottom</a>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

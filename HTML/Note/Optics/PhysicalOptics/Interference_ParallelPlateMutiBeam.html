@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>物理光学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>平行平板的多光束干涉</h1>
+
+        <h3>平行平板多光束干涉的强度分布</h3>
+        <b>光程差</b>
+        <p>相邻两反射光或透射光间的光程差为：</p>
+        $$\Delta = 2nh\cos\theta$$
+        <p>其中\(\theta\)为光线从空气到平板的折射角.</p>
+
+        <b>相位差</b>
+        $$\phi = kr = \frac{2\pi}{\lambda}\Delta = \frac{4\pi}{\lambda}nh\cos\theta$$
+
+
+        <b>爱里公式</b>
+        $$F = \frac{4R}{(1-R)^2} \propto R$$
+        $$I_r = \frac{F\sin^2\frac{\phi}{2}}{1 + F\sin^2\frac{\phi}{2}}I_i$$
+        $$I_t = \frac{1}{1 + F\sin^2\frac{\phi}{2}}I_i$$
+
+        <h3>平行平板多光束干涉图样的特点</h3>
+        <b>互补性</b>
+        <p>不考虑吸收和其他损耗的情况下，由于能量守恒定律：</p>
+        $$I_r + I_t = I_i$$
+        <b>等倾性</b>
+        <p>平行平板在透镜焦平面上产生的多光束干涉条纹是等倾干涉条纹.</p>
+        <b>光强分布</b>
+        <table>
+            <tr>
+                <td rowspan="2"></td>
+                <td colspan="2">反射光</td>
+                <td colspan="2">折射光</td>
+            </tr>
+            <tr>
+                <td>$$\phi$$</td>
+                <td>$$I$$</td>
+                <td>$$\phi$$</td>
+                <td>$$I$$</td>
+            </tr>
+            <tr>
+                <td>亮条纹</td>
+                <td>
+                    <div class="Formula">
+                        $$\phi = (2m+1)\pi,~m = 0,1,2,\cdots$$
+                        <div class="Derivation">
+                            $$I_r = \frac{F\sin^2\frac{\phi}{2}}{1 + F\sin^2\frac{\phi}{2}}I_i$$
+                            <p>由<a href="../../Math/Mathematic/Inequation.html#Concentration" class="goto">分数的浓度不等式</a>：</p>
+                            <p>当\(F\sin^2\frac{\phi}{2}\)最大时，\(I_r\)最大.</p>
+                            $$\sin^2\frac{\phi}{2} = 1\Rightarrow \frac{\phi}{2} = (m+\frac{1}{2})\pi \Rightarrow \phi = (2m+1)\pi(m=0,1,2,\cdots)$$
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="Formula">
+                        $$I_r = \frac{F}{1+F}I_i$$
+                        <div class="Derivation">
+                            $$I_r = \frac{F\sin^2\frac{\phi}{2}}{1+F\sin^2\frac{\phi}{2}}I_i$$
+                            $$\phi = 2m\pi(m=0,\pm1,\pm2,\cdots)$$
+                            $$I_r = \frac{F}{1+F}I_i$$
+                        </div>
+                    </div>
+                </td>
+                <td>$$\phi = 2m\pi,~m=0,1,2,\cdots$$</td>
+                <td>$$I_t = I_i$$</td>
+            </tr>
+            <tr>
+                <td>暗条纹</td>
+                <td>$$\phi = 2m\pi,~m=0,1,2,\cdots$$</td>
+                <td>$$I_r = 0$$</td>
+                <td>$$\phi = (2m+1)\pi,~m=0,1,2,\cdots$$</td>
+                <td>$$I_t = \frac{1}{1+F}I_i$$</td>
+            </tr>
+        </table>
+
+
+        <h3>透射光的特点</h3>
+        <ul>
+            <li><b>光强分布与反射率\(R\)有关</b></li>
+            <li><b>条纹锐度与反射率\(R\)有关</b></li>
+        </ul>
+
+        <h3>锐度</h3>
+        <p>用条纹的半峰值全宽度\(\epsilon = \Delta\phi\)表征干涉条纹的锐度.</p>
+        <img src="Img/StripeHalfWidth.jpg" width="300">
+        <p>\(\phi = 2m\pi\pm\frac{\Delta\phi}{2}\)时：</p>
+        $$I = \frac{1}{1 + F\sin^2(m\pi \pm \frac{\Delta\phi}{4})}I_i = \frac{1}{2}I_i$$
+        $$F\sin^2\frac{\phi}{4} = F\sin^2\frac{\epsilon}{4} = 1$$
+        <p>当\(F\)很大（即\(R\)很大）时，\(\epsilon\)一定很小，有\(\sin\frac{\epsilon}{4} \approx \frac{\epsilon}{4}\).</p>
+        $$F\frac{\epsilon^2}{16} = 1$$
+        $$\epsilon = \frac{4}{\sqrt{F}} = \frac{2(1-R)}{\sqrt{R}}$$
+        <p>\(R\)越大，\(\epsilon\)越小，条纹越尖锐.</p>
+
+        <h3>条纹精细度</h3>
+        <p>用相邻两条纹间的相位差\(2\pi\)与条纹半宽度\(\epsilon\)之比\(N\)表征条纹的锐度.</p>
+        $$N = \frac{2\pi}{\epsilon} = \frac{\pi\sqrt{F}}{2} = \frac{\pi\sqrt{R}}{1-R}$$
+        <p>\(R\)越大，\(N\)越大，条纹越尖锐.</p>
+
+        <h2>频率特性</h2>
+        $$\phi = \frac{4\pi}{\lambda}nh\cos\theta$$
+        <b>平行平板的滤波特性</b>
+        <p>在平行平板的结构\((n,h)\)确定，入射光方向一定的情况下，相位差\(\phi\)仅与波长\(\lambda\)有关，只有使\(\phi = 2m\pi\)的光波长才能最大地透过该平行平板.</p>
+
+        $$\phi = \frac{4\pi}{c}nh\nu\cos\theta$$
+        <b>滤波带宽</b>
+        <p>相应于条纹半宽度\(\Delta\phi\)的频率范围\(\Delta \nu_{1/2}\)称为滤波带宽：</p>
+        $$\Delta\nu_{1/2} = \frac{\Delta\phi}{\frac{4\pi}{c}nh\cos\theta} = \frac{c(1-R)}{2\pi nh\sqrt{R}\cos\theta}$$
+        $$\nu_m = c/\lambda_m$$
+        $$\mathrm{d}\nu_m = -\frac{c}{\lambda^2_m}\mathrm{d}\lambda_m$$
+        $$|\Delta \nu_m| = \frac{c}{\lambda^2_m}\Delta\lambda_m$$
+        $$m\lambda_m = 2nh\cos\theta$$
+        $$\lambda_m = \frac{2nh\cos\theta}{m}$$
+
+        <b>透射带的波长宽度</b>
+        $$(\Delta\lambda_m)_{1/2} = \frac{2(1-R)nh\cos\theta}{m^2\pi\sqrt{R}} = \frac{\Delta}{m^2N} = \frac{\lambda_m}{mN}$$
+        <p>\(R\)越大，\(N\)越大，\((\Delta \lambda_{1/2})\)越小.</p>
+        
+
+        <div id="PageEnd"></div>
+        <a class="GoToBottom" href="#PageEnd">Bottom</a>
+
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+    
+</html>

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>Pandas</title>
     <link rel="stylesheet" href="../../../../../CSS/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
@@ -27,6 +27,12 @@
         import pandas as pd
     </code></pre>
 
+    <h2>创建Dataframe</h2>
+    <b>创建空的Dataframe</b>
+    <pre><code>
+        
+    </code></pre>
+
     <b>读取<span lang="en">excel</span>文件</b>
     <pre><code>
         df = pd.read_excel(path)
@@ -40,7 +46,12 @@
 
     <b>获取列名</b>
     <pre><code>
-        columns = df.columns.tolist()
+        cols = df.columns.tolist()
+    </code></pre>
+
+    <b>按某列相同元素合并</b>
+    <pre><code>
+        data = df.groupby(col).sum()
     </code></pre>
 
 </body>

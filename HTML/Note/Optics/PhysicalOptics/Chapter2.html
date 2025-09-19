@@ -221,7 +221,7 @@
                            &= 2nh\cos\theta_2
                     \end{align}$$
                     <p>考虑附加光程差：</p>
-                    $$\Dleta = 2nh\cos\theta_2 + \frac{\pi}{2}$$
+                    $$\Delta = 2nh\cos\theta_2 + \frac{\pi}{2}$$
                 </div>
             </div>
             
@@ -420,88 +420,32 @@
         </div>
 
         <div class="Card-Analysis">
-            <h2>平行平板的多光束干涉</h2>
+            <h2>光学薄膜</h2>
+            <b>单层膜的反射率</b>
+            $$R = \left|\frac{E_{0r}}{E_{0i}}\right|^2 = \frac{r_1^2 + r_2^2 + 2r_1r_2\cos\phi}{1 + r_1^2r_2^2 + 2r_1r_2\cos\phi}$$
+            <p>其中\(r_1\)为薄膜上表面反射系数，\(r_2\)为薄膜下表面反射系数，\(\phi\)为相邻两个出射光束间的相位差.</p>
+            $$\phi = \frac{4\pi}{\lambda}n_1h\cos\theta_1$$
 
-            <h3>平行平板多光束干涉的强度分布</h3>
-            <b>光程差</b>
-            <p>相邻两反射光或透射光间的光程差为：</p>
-            $$\Delta = 2nh\cos\theta$$
-            <p>其中\(\theta\)为光线从空气到平板的折射角.</p>
+            <p>当光正入射到薄膜上时，薄膜两表面的反射系数分别为：</p>
+            $$r_1 = \frac{n_0 - n_1}{n_0 + n_1}$$
+            $$r_2 = \frac{n_1 + n_2}{n_1 - n_2}$$
 
-            <b>相位差</b>
-            $$\phi = kr = \frac{2\pi}{\lambda}\Delta = \frac{4\pi}{\lambda}nh\cos\theta$$
+            <p>对于给定的基片和介质膜，\(n_0, n_2\)为常数，因此可以得到\(R\)随\(\phi\)即随\(n_1h\)变化的规律.</p>
+            <p>\(n_1 = n_0\)或\(n_1 = n_2\)时，\(R\)与未镀膜时的反射率\(R_0\)一致.</p>
+            <p>\(n_1\gt n_2\)时：</p>
+            $$r_1 = \frac{n_0 - n_1}{n_0 + n_1} \lt 0$$
+            $$r_2 = \frac{n_1 - n_2}{n_1 + n_2} \gt 0$$
+            <p>由分式的浓度不等式：</p>
+            $$R = \frac{r_1^2 + r_2^2 + 2r_1r_2\cos\phi}{1 + r_1^2r_2^2 + 2r_1r_2\cos\phi}$$
+            <p>\(\cos\phi = -1\)时，R有最大值.</p>
+            $$\phi = \frac{4\pi}{\lambda}n_1h\cos\theta_1 = (2m+1)\pi$$
+            $$n_1h = \frac{(2m+1)}{4}\lambda$$
+            <p>\(\cos\phi = 1\)时，\(R\)有最小值：</p>
+            $$\phi = \frac{4\pi}{\lambda}n_1h\cos\theta_1 = 2m\pi$$
+            $$n_1h = \frac{m}{2}\lambda$$
 
-
-            <b>爱里公式</b>
-            $$F = \frac{4R}{(1-R)^2} \propto R$$
-            $$I_r = \frac{F\sin^2\frac{\phi}{2}}{1 + F\sin^2\frac{\phi}{2}}I_i$$
-            $$I_t = \frac{1}{1 + F\sin^2\frac{\phi}{2}}I_i$$
-
-            <h3>平行平板多光束干涉图样的特点</h3>
-            <b>互补性</b>
-            <p>不考虑吸收和其他损耗的情况下，由于能量守恒定律：</p>
-            $$I_r + I_t = I_i$$
-            <b>等倾性</b>
-            <p>平行平板在透镜焦平面上产生的多光束干涉条纹是等倾干涉条纹.</p>
-            <b>光强分布</b>
-            <table>
-                <tr>
-                    <td rowspan="2"></td>
-                    <td colspan="2">反射光</td>
-                    <td colspan="2">折射光</td>
-                </tr>
-                <tr>
-                    <td>$$\phi$$</td>
-                    <td>$$I$$</td>
-                    <td>$$\phi$$</td>
-                    <td>$$I$$</td>
-                </tr>
-                <tr>
-                    <td>亮条纹</td>
-                    <td>
-                        <div class="Formula">
-                            $$\phi = (2m+1)\pi,~m = 0,1,2,\cdots$$
-                            <div class="Derivation">
-                                $$I_r = \frac{F\sin^2\frac{\phi}{2}}{1 + F\sin^2\frac{\phi}{2}}I_i$$
-                                <p>由<a href="../../Math/Mathematic/Inequation.html#Concentration" class="goto">分数的浓度不等式</a>：</p>
-                                <p>当\(F\sin^2\frac{\phi}{2}\)最大时，\(I_r\)最大.</p>
-                                $$\sin^2\frac{\phi}{2} = 1\Rightarrow \frac{\phi}{2} = (m+\frac{1}{2})\pi \Rightarrow \phi = (2m+1)\pi(m=0,1,2,\cdots)$$
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="Formula">
-                            $$I_r = \frac{F}{1+F}I_i$$
-                            <div class="Derivation">
-                                $$I_r = \frac{F\sin^2\frac{\phi}{2}}{1+F\sin^2\frac{\phi}{2}}I_i$$
-                                $$\phi = 2m\pi(m=0,\pm1,\pm2,\cdots)$$
-                                $$I_r = \frac{F}{1+F}I_i$$
-                            </div>
-                        </div>
-                    </td>
-                    <td>$$\phi = 2m\pi,~m=0,1,2,\cdots$$</td>
-                    <td>$$I_t = I_i$$</td>
-                </tr>
-                <tr>
-                    <td>暗条纹</td>
-                    <td>$$\phi = 2m\pi,~m=0,1,2,\cdots$$</td>
-                    <td>$$I_r = 0$$</td>
-                    <td>$$\phi = (2m+1)\pi,~m=0,1,2,\cdots$$</td>
-                    <td>$$I_t = \frac{1}{1+F}I_i$$</td>
-                </tr>
-            </table>
-
-
-            <h3>透射光的特点</h3>
-            <ul>
-                <li><b>光强分布与反射率\(R\)有关</b></li>
-                <li><b>条纹锐度与反射率\(R\)有关</b></li>
-            </ul>
-
-            <h3>锐度</h3>
-            <p>用条纹的半峰值全宽度\(\epsilon = \Delta\phi\)表征干涉条纹的锐度.</p>
-            
         </div>
+ 
         
 
         <div id="PageEnd"></div>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Pandas</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>Electron入门</h1>
+        
+        <h2>环境配置</h2>
+        <b>Node.js</b>
+        <p>一个基于Chrome V8引擎的JavaScript运行环境.</p>
+        <p>开发者使用Node.js创建Electron项目.</p>
+        <p><a href="https://nodejs.org/en/download">下载地址</a></p>
+        <p>下载完成后，若VSCode无法调用npm指令，需要使用管理员身份打开VSCode.</p>
+        <p>若无法执行 npm install 指令，将node.js所在文件夹的权限修改为不需要管理员身份.</p>
+
+        <b>yarn</b>
+        <p>依赖包管理工具.</p>
+        <p>下载方式：</p>
+        <pre><code>
+            # 命令
+            npm install -g yarn
+        </code></pre>
+
+        <b>创建第一个Electron应用</b>
+        <pre><code>
+            # 命令
+            yarn init
+        </code></pre>
+        <p>该命令执行完成后，会有一系列提示，要求用户输入项目名称、项目版本、作者等信息，若按默认设置全部回车即可.</p>
+        <p>执行这条命令将会生成一个package.js文件.</p>
+
+        <b>安装Electron依赖包</b>
+        <p><a href="https://github.com/electron/electron/releases">下载地址</a></p>
+        <pre><code>
+            yarn config set ELECTRON_MIRROR https://github.com/electron/electron/releases
+        </code></pre>
+
+
+        <b>创建界面窗口</b>
+        <p>创建一个index.html文件</p>
+
+
+    </body>
+
+</html>

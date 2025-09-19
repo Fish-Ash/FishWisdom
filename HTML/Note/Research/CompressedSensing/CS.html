@@ -1,0 +1,41 @@
+<!DOCTYPE>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset = "utf-8">
+        <title>拉曼光谱</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>压缩感知理论（Compressed Sensing, CS）</h1>
+
+        <h2>基本理论</h2>
+        <p>一种超越传统Nyquist-Shannon采样定理的信号采集与重构框架.</p>
+        <p>只要信号是可压缩的或在某个变换域是稀疏的，那么就可以用一个与变换基不相关的观测矩阵将变换所得高维信号投影到一个低维空间上，那么通过求解一个优化问题就可以从这些少量的投影中以高概率重构出原信号.</p>
+
+        <h2>问题描述</h2>
+        <p>对于一个有限长的实值一维离散时间信号\(\mathbf{X}\)，可以看作一个\(\mathbf{R}^n\)空间中\(n\times 1\)的列向量.</p>
+        $$\mathbf{X} = \left[\begin{matrix}x_1\\x_2\\\vdots\\x_n\end{matrix}\right]$$
+        <p>\(R^N\)空间的任何信号都可以用一组\(N\times1\)维的基向量\(\mathbf{\Psi}_1, \mathbf{\Psi}_2, \cdots, \mathbf{\Psi}_n\)线性表示为：</p>
+        $$\mathbf{X} = \mathbf{\Phi}\mathbf{\Theta}$$
+        <p>其中\(\mathbf{\Theta}_{n\times1}\)被称为投影系数.</p>
+        <p>\(\mathbf{X}\)和\(\mathbf{\Theta}\)是同一个信号的等价表示，\(\mathbf{X}\)是信号在时域的表示，\(\Theta\)是信号在\(\mathbf{\Psi}\)域的表示</p>
+        <p>若\(\mathbf{\Theta}\)的非零个数比\(n\)小很多，则说明该信号是可压缩的.</p>
+
+
+        <h2>压缩感知理论聚焦的问题</h2>
+        <p>1、信号的稀疏表示问题：对于信号\(\mathbf{X}\in \mathbb{R}^n\)，如何找到某个正交基或紧框架\(\mathbf{\Psi}\)，使\(\mathbf{X}\)在\(\mathbf{\Psi}\)上的表示是稀疏的.</p>
+        <p>2、信号的低速采样问题：如何设计一个平稳的、与变换基\(\Psi\)不相关的\(M\times N\)维观测矩阵\(\mathbf{\Phi}\)，保证稀疏向量\(\mathbf{\Theta}\)从\(N\)维降维至\(M\)维时重要信息不被破坏.</p>
+        <p>3、信号的重构问题：如何设计快速重构算法，从线性观测\(\mathbf{Y} = \mathbf{A}^{CS}\mathbf{X}\)中恢复信号.</p>
+    </body>
+</html>

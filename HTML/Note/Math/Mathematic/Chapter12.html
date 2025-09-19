@@ -21,21 +21,42 @@
 
         <h1>第十二章 无穷级数</h1>
 
-        <h2>常数项级数</h2>
-        <b>级数（无穷级数）</b>
-        $$\sum\limits_{n=1}^\infty u_n = u_1 + u_2 + \cdots + u_n + \cdots$$
-        无穷级数的前\(n\)项
-        $$u_1 + u_2 + \cdots + u_n + \cdots$$
-        <b>部分和</b>
-        $$S_n = \sum\limits_{k=1}^n u_k$$
-        $$u_n = S_n - S_{n-1}$$
-        $$\sum\limits_{n=1}^\infty = \lim\limits_{n\rightarrow \infty}S_n$$
+        <div class="Card-Analysis">
+            <h2>常数项级数</h2>
+            <div class="Card-Definition">
+                <b>级数（常数项无穷级数）</b>
+                $$\sum\limits_{n=1}^\infty u_n = u_1 + u_2 + \cdots + u_n + \cdots$$
+                <p>其中\(u_n\)称为级数的一般项.</p>
+            </div>
 
-        <ul>
-            <li>\(\lim\limits_{n\rightarrow\infty}S_n\)存在\(\Rightarrow \sum\limits_{n=1}^\infty u_n\)收敛</li>
-            <li>\(\lim\limits_{n\rightarrow\infty}S_n\)不存在\(\Rightarrow \sum\limits_{n=1}^\infty u_n\)发散</li>
-        </ul>
-        <p></p>
+            <div class="Card-Definition">
+                <b>无穷级数的前\(n\)项</b>
+                $$u_1 + u_2 + \cdots + u_n + \cdots$$
+            </div>
+
+            <div class="Card-Definition">
+                <b>级数的部分和</b>
+                $$s_n = \sum\limits_{k=1}^n u_k = u_1 + u_2 + \cdots + u_n$$
+
+                <b>推导公式</b>
+                $$u_n = s_n - s_{n-1}$$
+            </div>
+    
+
+        </div>
+        
+        <div class="Card-Analysis">
+            <h2>级数的敛散性</h2>
+            
+            <div class="Card-Definition">
+                <b>级数的收敛与发散</b>
+                <p>若\(\lim\limits_{n\rightarrow\infty}s_n = s\)，称\(\sum\limits_{n=1}^\infty u_n\)收敛.</p>
+                <p>\(s\)称为级数的和：</p>
+                $$s = u_1 + u_2 + \cdots +$$
+    
+                <p>若\(\lim\limits_{n\rightarrow\infty}S_n\)不存在，称\(\sum\limits_{n=1}^\infty u_n\)发散.</p>
+            </div>
+        </div>
 
         <b>级数的性质</b>
         <p>\(\sum\limits_{n=1}^\infty u_n\)收敛于\(s \Rightarrow \sum\limits_{n=1}^\infty ku_n\)收敛于\(ks\).</p>
@@ -161,13 +182,20 @@
         </table>
 
         <b id="series1">等比级数（几何级数）</b>
+        $$\sum\limits_{n=1}^\infty aq^n = a + aq + aq^2 + \cdots + aq^n + \cdots,~a\neq0$$
+        <p>\(q\)称为级数的公比.</p>
+
         <div class="Prove">
-            $$q \neq 1: S_n = \frac{aq(1-q^n)}{1-q}$$
-            $$|q| \gt 1 \Rightarrow\lim\limits_{n\rightarrow \infty}S_n = \infty$$
-            $$|q| \lt 1 \Rightarrow\lim\limits_{n\rightarrow \infty}S_n = \frac{aq}{1-q}$$
-            $$q = -1\Rightarrow \lim\limits_{n\rightarrow \infty}S_n = \infty$$
-            $$q = 1: S_n = na$$
-            $$\lim\limits_{n\rightarrow \infty}S_n = \infty$$
+            <p>\(q \neq 1\)时：</p>
+            $$S_n = \frac{aq(1-q^n)}{1-q}$$
+            $$|q| \gt 1 \Rightarrow\lim\limits_{n\rightarrow \infty}S_n = \infty \Rightarrow 级数发散$$
+            $$|q| \lt 1 \Rightarrow\lim\limits_{n\rightarrow \infty}S_n = \frac{aq}{1-q} \Rightarrow 级数收敛$$
+            $$q = -1\Rightarrow \lim\limits_{n\rightarrow \infty}S_n不存在\Rightarrow 级数发散$$
+            <p>\(q=1\)时：</p>
+            $$S_n = na$$
+            $$\lim\limits_{n\rightarrow \infty}S_n = \infty \Rightarrow 级数发散$$
+            <p>综上：</p>
+            <p>\(|q|\lt1\)时，级数收敛；\(|q|\neq 1\)时，级数发散.</p>
         </div>
 
         <b><span lang="en">p</span>级数</b>

@@ -20,60 +20,95 @@
         </ul>
 
         <h1>向量</h1>
-        <b>\(n\)维向量</b>
-        <p>由\(n\)个数\(a_1, a_2, \cdots a_n\)组成的有序数组</p>
-        $$(a_1, a_2, \cdots, a_n)~or~ \left(\begin{matrix}a_1\\a_2\\\vdots\\a_n\end{matrix}\right)$$
-        <p>其中第\(i\)个数\(a_i(i=1,2,\cdots,n)\)称为\(n\)维向量的第\(i\)个分量.</p>
-        
+        <div class="Card-Definition">
+            <b>\(n\)维向量</b>
+            <p>由\(n\)个数\(a_1, a_2, \cdots a_n\)组成的有序数组</p>
+            $$(a_1, a_2, \cdots, a_n)~or~ \left(\begin{matrix}a_1\\a_2\\\vdots\\a_n\end{matrix}\right)$$
+            <p>其中第\(i\)个数\(a_i(i=1,2,\cdots,n)\)称为\(n\)维向量的第\(i\)个分量.</p>
+            
+            <table>
+                <tr>
+                    <td rowspan="2">按元素类型分</td>
+                    <td><b>\(n\)维实向量</b></td>
+                    <td>分量全为实数的向量</td>
+                </tr>
+                <tr>
+                    <td><b>\(n\)维复向量</b></td>
+                    <td>含有复数的向量</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">按向量形状分</td>
+                    <td><b>\(n\)维行向量</b></td>
+                    <td>\(1\times n\)矩阵</td>
+                </tr>
+                <tr>
+                    <td><b>\(n\)维列向量</b></td>
+                    <td>\(n\times1\)矩阵</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>零向量</b></td>
+                    <td>$$\mathbf{0} = (0,0,\cdots 0)^T$$</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>负向量</b></td>
+                    <td>$$-\mathbf{\alpha} = (-a_1, -a_2, \cdots, -a_n)^T$$</td>
+                </tr>
+            </table>
+            <p>[注]行（列）向量的转置即为列（行）向量.</p>
+            <p>[注]\(\alpha\)与\(\alpha^T\)常被视为不同向量.</p>
+        </div>
+
+        <h2>向量运算</h2>
+        $$\vec\alpha = (a_1, a_2, \cdots, a_n)^T$$
+        $$\vec\beta = (b_1, b_2, \cdots, b_n)^T$$
         <table>
             <tr>
-                <td><b>\(n\)维实向量</b></td>
-                <td>分量全为实数的向量</td>
+                <td width="64">运算</td>
+                <td colspan="2" width="50">公式</td>
+                <td>运算规律</td>
             </tr>
             <tr>
-                <td><b>\(n\)维复向量</b></td>
-                <td>含有复数的向量</td>
+                <td rowspan="4"><b>向量加法</b></td>
+                <td rowspan="4" colspan="2">$$\vec\alpha + \vec\beta = (a_1 + b_1, a_2 + b_2, \cdots, a_n + b_n)^T$$</td>
+                <td class="tbtext">$$\alpha + \beta = \beta + \alpha$$</td>
             </tr>
-        </table>
 
-        <table>
             <tr>
-                <td><b>\(n\)维行向量</b></td>
-                <td>\(1\times n\)矩阵</td>
+                <td class="tbtext">$$\alpha + (\beta + \gamma) = (\alpha + \beta) + \gamma$$</td>
             </tr>
             <tr>
-                <td><b>\(n\)维列向量</b></td>
-                <td>\(n\times1\)矩阵</td>
+                <td class="tbtext">$$\alpha + \mathbf{0} = \mathbf{0} + \alpha = \alpha$$</td>
             </tr>
-        </table>
-        <p>[注]行（列）向量的转置即为列（行）向量.</p>
-        <p>[注]\(\alpha\)与\(\alpha^T\)常被视为不同向量.</p>
-
-        <b>零向量</b>
-        $$\mathbf{0} = (0,0,\cdots 0)^T$$
-        
-        <b>负向量</b>
-        $$-\alpha = (-a_1, -a_2, \cdots, -a_n)^T$$
-
-        <h2>\(n\)维向量的线性运算</h2>
-        $$\alpha = (a_1, a_2, \cdots, a_n)^T$$
-        $$\beta = (b_1, b_2, \cdots, b_n)^T$$
-
-        <b>向量加法</b>
-        $$\alpha + \beta = (a_1 + b_1, a_2 + b_2, \cdots, a_n + b_n)^T$$
-        <b>运算规律</b>
-        <p>交换律：\(\alpha + \beta = \beta + \alpha\)</p>
-        <p>结合律：\(\alpha + (\beta + \gamma) = (\alpha + \beta) + \gamma\)</p>
-        <p>\(\alpha + \mathbf{0} = \mathbf{0} + \alpha = \alpha\)</p>
-        <p>\(\alpha + (-\alpha) = 0\)</p>
-
-        <b>向量数乘</b>
-        $$k\alpha = (ka_1, ka_2, \cdots, ka_n)^T$$
-        <b>运算规律</b>
-        <p>结合律：\(k(l\alpha) = (kl)\alpha\)</p>
-        <p>分配律：\(k(\alpha + \beta) = k\alpha + k\beta\)</p>
-        <p>分配律：\((k+l)\alpha = k\alpha + l\alpha\)</p>
-
+            <tr>
+                <td class="tbtext"><p>\(\alpha + (-\alpha) = 0\)</p></td>
+            </tr>      
+            <tr>
+                <td rowspan="3"><b>向量数乘</b></td>
+                <td rowspan="3" colspan="2">$$k\alpha = (ka_1, ka_2, \cdots, ka_n)^T$$</td>
+                <td>$$k(l\alpha) = (kl)\alpha$$</td>
+            </tr>
+            <tr>
+                <td>$$k(\alpha + \beta) = k\alpha + k\beta$$</td>
+            </tr>
+            <tr>
+                <td>$$(k+l)\alpha = k\alpha + l\alpha$$</td>
+            </tr>
+            <tr>
+                <td><b>点乘</b><br>（标量）</td>
+                <td colspan="2">$$\vec\alpha\cdot\vec\beta = \sum\limits_{i=1}^n a_ib_i = |\vec a||\vec b|\cos\theta$$</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="2"><b>叉乘</b><br>（矢量）</td>
+                <td>方向</td>
+                <td class="tbtext">由右手法则决定，右手四指指向\(\vec\alpha\)，向\(\vec\beta\)弯曲，拇指所指方向即为结果方向。</td>
+                <td rowspan="2"></td>
+            </tr>
+            <tr>
+                <td>大小</td>
+                <td>$$\vec\alpha \times \vec \beta = |\vec a||\vec b|\sin\theta$$</td>
+            </tr>
+        </table>        
 
         <h2>向量组的线性组合</h2>
         <p>给定一组向量\(\alpha_1, \alpha_2, \cdots, \alpha_s\)以及一个向量\(\beta\)，若存在一组数\(\lambda_1, \lambda_2, \cdots, \lambda_s\)，使得</p>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pandas</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+
+<body>
+    <div class="header"><h1>不惑</h1></div>
+    <ul class="navibar">
+        <li><a href="../Home.html">主页</a></li>
+        <li><a href="../Navigation.html">导航</a></li>
+    </ul>
+
+    <h1>NeuralNetwork</h1>
+
+    <h2>Data</h2>
+    <p>在监督学习中，输入数据由batch_size组样本\(x\)与标签\(y\)对应组成，每一个样本\(x\)中又含有\(n\)个特征.</p>
+
+
+    <h2>Neuron</h2>
+    <ul>
+        <li>input</li>
+        <li>output</li>
+    </ul>
+
+    <h2>Layer</h2>
+    <ul>
+        <li>Input Layer：接收原始输入数据.</li>
+        <li>Hidden Layer：对输入数据进行处理，可以有多个隐藏层.</li>
+        <li>Output Layer：产生最终输出的结果.</li>
+    </ul>
+
+    <p>Layer可以改变特征的数量，而激活函数不能.</p>
+
+    <h2>FNN（Feedfroward Neural Network）</h2>
+    <p>数据从输入层开始，经过一个或多个隐藏层，最终达到输出层，全程没有任何循环或反馈.</p>
+
+    <h2>RNN（Recurrent Neural Network）</h2>
+
+    <h2>模型构建</h2>
+    <h3>顺序模型</h3>
+    <pre><code>
+        import torch.nn as nn
+
+        model = nn.Sequential(
+            Layer_1
+            Layer_2
+            ...
+            Layer_n
+        )
+    </code></pre>
+    <p>nn.Sequential是Pytoorch中用于搭建顺序模型的容器，数据会按照在nn.Sequential中定义各个层的顺序，从第一层输入，经过每一层的操作后，输出传递到下一层，直到最后一层输出最终结果.</p>
+    <b>观察模型结构</b>
+    <pre><code>
+        # 观察模型整体结构
+        print(model)
+
+        # 观察模型第i层
+        print(model[i])
+    </code></pre>
+
+    <h3>层</h3>
+    <b>线性层</b>
+    <pre><code>
+        Layer = nn.Linear(n,m)
+        print(Layer.weight)
+        print(Layer.bias)
+    </code></pre>
+    <p>其中\(n\)为线性层输入特征数，\(m\)为线性层输出特征数.</p>
+    $$\left[\begin{matrix}x_1\\x_2\\\vdots\\x_n\end{matrix}\right] \rightarrow nn.Linear(n,m) \rightarrow \left[\begin{matrix}y_1\\y_2\\\vdots\\y_m\end{matrix}\right]$$
+    $$\left[\begin{matrix}y_1\\y_2\\\vdots\\y_m\end{matrix}\right] = \left[\begin{matrix}w_{11}&w_{12}&\cdots&w_{1n}\\w_{21}&w_{22}&\cdots&w_{2n}\\\vdots&\vdots&&\vdots\\w_{m1}&w_{m2}&\cdots&w_{mx}\end{matrix}\right]\left[\begin{matrix}x_1\\x_2\\\vdots\\x_n\end{matrix}\right] + \left[\begin{matrix}b_1\\b_2\\\vdots\\b_m\end{matrix}\right]$$
+    $$\mathbf{y} = \mathbf{w}\mathbf{x} + \mathbf{b}$$
+
+    <h3>激活函数</h3>
+    <b>ReLU函数</b>
+    <pre><code>
+        nn.ReLU()
+    </code></pre>
+    $$ReLU(x) = \max\{x, 0\}$$
+    $$\left[\begin{matrix}x_1\\x_2\\\vdots\\x_n\end{matrix}\right] \rightarrow nn.ReLU() \rightarrow \left[\begin{matrix}y_1 = \max\{x_1, 0\}\\y_2 = \max\{x_2, 0\}\\\vdots\\y_n = \max\{x_n, 0\}\end{matrix}\right]$$
+
+    <b>Sigmoid函数</b>
+    <pre><code>
+        nn.Sigmoid()
+    </code></pre>
+    $$Sigmoid(x) = \frac{1}{1 + e^{-x}}$$
+    $$\left[\begin{matrix}x_1\\x_2\\\vdots\\x_n\end{matrix}\right] \rightarrow nn.Sigmoid() \rightarrow \left[\begin{matrix}y_1 = \frac{1}{1 + e^{-x_1}}\\y_2 = \frac{1}{1 + e^{-x_2}}\\\vdots\\y_n = \frac{1}{1 + e^{-x_n}}\end{matrix}\right]$$
+
+    <h3>损失函数</h3>
+    <p>用于衡量模型预测值\(y_pred\)与目标真实值间的差异性.</p>
+
+    <h3>优化器</h3>
+    <p>根据损失函数计算出的梯度调整模型的参数，使得损失函数的值朝着减小的方向变化.</p>
+
+    <h3>训练模型</h3>
+    <pre><code>
+        # 训练迭代，循环epochs次
+        for epoch in range(epochs)：
+            y_pred = model(x) # 前向传播，按定义的模型model计算y_pred
+            loss = criterion(y_pred, y) # 损失计算，按定义的损失函数criterion计算loss
+
+            optimizer.zero_grad()  # 清零梯度
+            loss.backward()  # 反向传播，计算梯度
+            optimizer.step()  # 更新模型参数
+    </code></pre>
+
+    <p>调用loss.backward()时，将计算模型中所有可训练参数的梯度（偏导数），并存储在对应可训练参数自身的grad属性中.</p>
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>激光原理</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header"><h1>不惑</h1></div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>共轴球面腔的稳定性条件</h1>
+
+        <h2>腔内光线往返传播的矩阵表示</h2>
+        <p>分析傍轴光线在共轴球面腔内往返传播的情况.</p>
+        <p>腔内任一傍轴光线在某一给定横截面内都可以用两个坐标参数来表征：</p>
+        <ul>
+            <li>\(r\)：光线离轴线的距离.</li>
+            <li>\(\theta\)：光线与轴线的夹角.</li>
+        </ul>
+
+        <img src="Img/PropagationMatrix.png" width="500">
+
+        <h3>光线在介质中传播</h3>
+        <p>\((r_1, \theta_1)\)：光线自球面镜1出发时的初始坐标.</p>
+        <p>\((r_2, \theta_2)\)：光线入射到球面镜2上的坐标.</p>
+        $$\begin{cases}
+        r_2 = r_1 + L\theta_1\\
+        \theta_2 = \theta_1 
+        \end{cases}\Rightarrow
+        \left[\begin{matrix}r_2\\\theta_2\end{matrix}\right] = \left[\begin{matrix}1 & L\\0 & 1\end{matrix}\right]\left[\begin{matrix}r_1\\\theta_1\end{matrix}\right]$$
+
+        <h3>光线在球面镜表面发生反射</h3>
+        <p>\((r_i, \theta_i)\)：光线入射到球面镜上的坐标.</p>
+        <p>\((r_o, \theta_o)\)：光线在球面镜上发生反射后的坐标.</p>
+        <div class="Formula">
+            <img src="Img/theta_o.png" width="500">
+            $$\begin{cases}
+            r_o = r_i\\
+            \theta_o = -\frac{2}{R}r_i + \theta_i       
+            \end{cases}\Rightarrow
+            \left[\begin{matrix}r_o\\\theta_o\end{matrix}\right] = \left[\begin{matrix}1&0\\-\frac{2}{R}&1\end{matrix}\right]$$
+            <div class="Derivation">
+                $$\theta_o = -(\theta_i + 2\alpha)$$
+                $$\beta = \theta_i + \alpha \Rightarrow \alpha = \beta - \theta_i$$
+                $$\because \beta \approx \tan\beta \approx \frac{r_i}{R}$$
+                $$\therefore \theta_o = -[\theta_i + 2(\frac{r_i}{R} - \theta_i)] = -\frac{2}{R}r_i + \theta_i$$
+            </div>
+        </div>
+
+        <h3>光线在腔内完成一次往返，总的坐标变换为：</h3>
+        $$\begin{align}
+        \left[\begin{matrix}r_5\\\theta_5\end{matrix}\right] &= \left[\begin{matrix}1&0\\-\frac{2}{R_1}&1\end{matrix}\right]\left[\begin{matrix}1&L\\0&1\end{matrix}\right]\left[\begin{matrix}1&0\\-\frac{2}{R_1}&1\end{matrix}\right]\left[\begin{matrix}1&L\\0&1\end{matrix}\right]\left[\begin{matrix}r_1\\\theta_1\end{matrix}\right]\\
+                                                             &= \mathbf{T}\left[\begin{matrix}r_1\\\theta_1\end{matrix}\right]
+        \end{align}$$
+        <p>\(\mathbf{T}\)为傍轴光线在腔内往返一次的总变换矩阵，称为<b>往返矩阵</b>.</p>
+        $$\begin{align}
+        \mathbf{T} &= \left[\begin{matrix}A&B\\C&D\end{matrix}\right]\\
+                   &= \left[\begin{matrix}1&0\\-\frac{2}{R_1}&1\end{matrix}\right]\left[\begin{matrix}1&L\\0&1\end{matrix}\right]\left[\begin{matrix}1&0\\-\frac{2}{R_1}&1\end{matrix}\right]\left[\begin{matrix}1&L\\0&1\end{matrix}\right]\\
+                   &= \left[\begin{matrix}1&L\\-\frac{2}{R_1}&-\frac{2L}{R_1}+1\end{matrix}\right]\left[\begin{matrix}1&L\\-\frac{2}{R_2}&-\frac{2L}{R_2} + 1\end{matrix}\right]\\
+                   &= \left[\begin{matrix}1-\frac{2L}{R_2} & 2L(1-\frac{L}{R_2})\\\frac{2}{R_2}(\frac{2L}{R_1}-1)-\frac{2}{R_1} & (\frac{2L}{R_1}-1)(\frac{2L}{R_2}-1) - \frac{2L}{R_1}\end{matrix}\right]
+        \end{align}$$
+
+        <h3>光线在腔内完成\(n\)次往返，总的坐标矩阵：</h3>
+        $$\begin{align}
+        \mathbf{T}_n &= \left[\begin{matrix}A_n&B_n\\C_n&D_n\end{matrix}\right]\\
+                     &= \left[\begin{matrix}A&B\\C&D\end{matrix}\right]^n\\
+                     &= \frac{1}{\sin\phi}\left[\begin{matrix}A\sin n\phi-\sin(n-1)\phi & B\sin n\phi \\ C\sin n\phi & D\sin n\phi - \sin(n-1)\phi\end{matrix}\right]
+        \end{align}$$
+        <p>其中，\(\phi = \arccos\frac{1}{2}(A+D)\)</p>
+        $$\begin{cases}
+        r_n = A_nr_1 + B_n\theta_1\\
+        \theta_n = C_nr_1 + D_n\theta_1
+        \end{cases}$$
+
+        <h2>共轴球面腔的稳定性条件</h2>
+        <p>要求\(\phi \in \mathbb{R}\)且\(\phi \neq k\pi,~k\in \mathbb{Z}(\sin \phi \neq 0)\)，即：</p>
+        $$|\frac{1}{2}(A + D)| \lt 1$$
+        <div class="Formula">
+            $$0 \lt (1 - \frac{L}{R_1})(1 - \frac{L}{R_2}) \lt 1$$
+            <div class="Derivation">
+                $$-1 \lt \frac{1}{2}[1 - \frac{2L}{R_2} + (\frac{2L}{R_1}-1)(\frac{2L}{R_2}-1) - \frac{2L}{R_1}] \lt 1$$
+                $$-1 \lt \frac{1}{2}(1 - \frac{2L}{R_1} - \frac{2L}{R_2} + \frac{4L^2}{R_1R_2} - \frac{2L}{R_1} - \frac{2L}{R_2} + 1) \lt 1$$
+                $$-1 \lt 1 + \frac{2L^2}{R_1R_2} - \frac{2L}{R_1} - \frac{2L}{R_2} \lt 1$$
+                $$-\frac{1}{2} - \frac{1}{2} + 1 \lt 1 + \frac{L^2}{R_1R_2} - \frac{L}{R_1} - \frac{L}{R_2} \lt \frac{1}{2} - \frac{1}{2} + 1$$
+                $$0 \lt (1 - \frac{L}{R_1})(1 - \frac{L}{R_2}) \lt 1$$
+            </div>
+        </div>
+        <p>引入\(g\)参数：</p>
+        $$\begin{cases}
+        g_1 = 1 - \frac{L}{R_1}\\
+        g_2 = 1 - \frac{L}{R_2}
+        \end{cases} \Rightarrow
+        0 \lt g_1g_2 \lt 1$$
+
+
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -27,6 +27,7 @@
                 <li><a href="#Continuity">二元函数连续性</a></li>
                 <li><a href="#PartialDerivative">二元函数偏导数</a></li>
                 <li><a href="#CompleteDifferential">全微分</a></li>
+                <li><a href="#ImplicitFun">隐函数求偏导</a></li>
                 <li><a href="#Extreme">极值</a></li>
             </ul>
         </div>
@@ -153,25 +154,26 @@
             $$\mathrm{d}z = A\Delta x + B\Delta y = = \frac{\partial z}{\partial x}\mathrm{d}x + \frac{\partial z}{\partial y}\mathrm{d}y$$
         </div>
         
-        <b>可微的等价条件</b>
-        <p>对于\(z = f(x,y)\)，记</p>
-        $$\Delta f = f(x_0 + \Delta x, y_0 + \Delta y) - f(x_0, y_0)$$
-        $$\mathrm{d}f = f'_x(x_0, y_0)\Delta x + f'_y(x_0, y_0)\Delta y$$
-        $$\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$$
-        <p>若\(\lim\limits_{\rho \rightarrow 0}\frac{\Delta f - \mathrm{d}f}{\rho} = 0\)，则称\(z = f(x,y)\)在\((x_0, y_0)\)处可微.</p>
+        <div class="Card-Analysis">
+            <h2>多元函数性质间的关系</h2>
+            <p>偏导数连续\(\Rightarrow\)可微</p>
+            <p>可微\(\Rightarrow\)连续\(\Rightarrow\)极限存在</p>
+            <p>可微\(\Rightarrow\)偏导数存在</p>
+        </div>
         
-        <b>可微的充分条件</b>
-        <p>若\(z = f(x,y)\)的偏导数\(\frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}\)在\((x_0, y_0)\)处连续，则\(z = f(x, y)\)在\((x_0, y_0)\)处可微.</p>
-        
-        <p>偏导数连续\(\Rightarrow\)可微</p>
-        <p>可微\(\Rightarrow\)连续\(\Rightarrow\)极限存在</p>
-        <p>可微\(\Rightarrow\)偏导数存在</p>
-        
-        <p>对比一元函数：可导\(\Leftrightarrow\)可微\(\Rightarrow\)连续\(\Rightarrow\)极限存在</p>
 
         <div class="Card-Method">
             <h2>判断是否可微</h2>
-            <p>不连续\(\Rightarrow\)不可微</p>
+            <div class="Formula">
+                <p>对于\(z = f(x,y)\)，若\(\lim\limits_{(\Delta x, \Delta y) \rightarrow (0,0)}\frac{f(\Delta x, \Delta y) - [f_x'(x_0,y_0)\Delta x + f_y'(x_0,y_0)\Delta y]}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0\)，则称\(z = f(x,y)\)在\((x_0, y_0)\)处可微.</p>
+                <div class="Derivation">
+                    <p>由可微的定义：</p>
+                    $$\Delta z = f_x'\Delta x + f_y'\Delta y + o(\rho)$$
+                    $$\Delta z - f_x'\Delta x - f_y'\Delta y = o(\rho)$$
+                    $$\lim\limits_{(\Delta x, \Delta y) \rightarrow (0,0)} \frac{\Delta z - f_x'\Delta x - f_y'\Delta y}{\rho} = 0$$
+                    $$\lim\limits_{(\Delta x, \Delta y) \rightarrow (0,0)}\frac{f(\Delta x, \Delta y) - [f_x'(x_0,y_0)\Delta x + f_y'(x_0,y_0)\Delta y]}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0$$
+                </div>
+            </div>
         </div>
         
         <div class="Card-Method">
@@ -186,6 +188,17 @@
         </div>
 
         <h2>复合函数微分法</h2>
+
+        <details open>
+            <summary>\(z = f[x(t), y(t)]\)</summary>
+            $$\frac{\partial z}{\partial t} = \frac{\partial z}{\partial x}\frac{\partial x}{\partial t} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial t}$$
+        </details>
+
+        <details open>
+            <summary>\(z = f[u(x,y), v(x,y)]\)</summary>
+            $$\frac{\partial z}{\partial x} = \frac{\partial z}{\partial u}\frac{\partial u}{\partial x} + \frac{\partial z}{\partial v}\frac{\partial v}{\partial x}$$
+            $$\frac{\partial z}{\partial y} = \frac{\partial z}{\partial u}\frac{\partial u}{\partial y} + \frac{\partial z}{\partial v}\frac{\partial v}{\partial y}$$
+        </details>
         
         <b>全微分形式不变性</b>
         <p>设\(z = f(u,v), u = u(x,y), v = v(x,y)\)都有连续的一阶偏导数，则\(z = f[u(x,y), v(x,y)]\)的全微分为：</p>
@@ -203,24 +216,48 @@
         $$u = f(x,y,z), y = y(x), z = z(x)$$
         $$\frac{\mathrm{d}u}{\mathrm{d}x} = \frac{\partial f}{\partial x} + \frac{\partial f}{\partial y}\frac{\mathrm{d}y}{\mathrm{d}x} + \frac{\partial f}{\partial z}\frac{\mathrm{d}z}{\mathrm{d}x}$$
 
-        <h2>隐函数求导法</h2>
-        <p>\(F(x,y) = 0\Rightarrow y(x)\)</p>
-        $$\frac{\mathrm{d}y}{\mathrm{d}x} = -\frac{F'_x}{F'_y}$$
+        <div class="Card-Method" id="ImplicitFun">
+            <h2>隐函数求导法</h2>
+            <details open>
+                <summary>\(F(x,y) = 0\Rightarrow y = y(x)\)</summary>
+                <div class="Formula">
+                    $$\frac{\mathrm{d}y}{\mathrm{d}x} = -\frac{F'_x}{F'_y}$$
+                    <div class="Derivation">
+                        <p>由于\(y = y(x)\)是由\(F(x,y)=0\)得出的抽象函数，故：</p>
+                        $$F[x,y(x)] \equiv 0$$
+                        $$\frac{\mathrm{d}F}{\mathrm{d}x} = \frac{\partial F}{\partial x} + \frac{\partial F}{\partial y}\frac{\mathrm{d}y}{\mathrm{d}x } = 0$$
+                        $$\frac{\mathrm{d}y}{\mathrm{d}x} = -\frac{F'_x}{F'_y}$$
+                    </div>               
+                </div>
+            </details>
+    
 
-        <p>\(F(x,y,z)\Rightarrow z = z(x,y)\)</p>
-        $$\frac{\partial z}{\partial x} = -\frac{F'_x}{F'_z}$$
-        $$\frac{\partial z}{\partial y} = -\frac{F'_y}{F'_z}$$
-
-        <p>\(\begin{cases}F(x,y,u,v)\\G(x,y,u,v)\end{cases}\Rightarrow u(x,y), v(x,y)\)</p>
-        $$\begin{cases}
-        F'_x + F'_u\frac{\partial u}{\partial x} + F'_v\frac{\partial v}{\partial x} = 0\\
-        G'_x + G'_u\frac{\partial u}{\partial x} + G'_v\frac{\partial v}{\partial x} = 0\\
-        \end{cases}\Rightarrow \frac{\partial u}{\partial x}, \frac{\partial v}{\partial x}$$
-
-        $$\begin{cases}
-        F'_y + F'_u\frac{\partial u}{\partial y} + F'_v\frac{\partial v}{\partial y} = 0\\
-        G'_y + G'_u\frac{\partial u}{\partial y} + G'_v\frac{\partial v}{\partial y} = 0\\
-        \end{cases}\Rightarrow \frac{\partial u}{\partial y}, \frac{\partial v}{\partial y}$$
+            <details open>
+                <summary>\(F(x,y,z)\Rightarrow z = z(x,y)\)</summary>
+                <div class="Formula">
+                    $$\frac{\partial z}{\partial x} = -\frac{F_x'}{F_z'}$$
+                    $$\frac{\partial z}{\partial y} = -\frac{F_y'}{F_z'}$$
+                    <div class="Derivation">
+                        <p>由于\(z = z(x,y)\)是由\(F(x,y,z) = 0\)得出的抽象函数，故：</p>
+                        $$F[x,y,z(x,y)] \equiv 0$$
+                        $$\frac{\mathrm{d}F}{\mathrm{d}x} = \frac{\partial F}{\partial x} + \frac{\partial F}{\partial z}\frac{\partial z}{\partial x} = 0$$
+                        $$\frac{\partial z}{\partial x} = -\frac{F_x'}{F_z'}$$
+                        <p>由\(x,y\)的轮换对称性：</p>
+                        $$\frac{\partial z}{\partial y} = -\frac{F_y'}{F_z'}$$
+                    </div>
+                </div>
+            </details>
+            <p>\(\begin{cases}F(x,y,u,v)\\G(x,y,u,v)\end{cases}\Rightarrow u(x,y), v(x,y)\)</p>
+            $$\begin{cases}
+            F'_x + F'_u\frac{\partial u}{\partial x} + F'_v\frac{\partial v}{\partial x} = 0\\
+            G'_x + G'_u\frac{\partial u}{\partial x} + G'_v\frac{\partial v}{\partial x} = 0\\
+            \end{cases}\Rightarrow \frac{\partial u}{\partial x}, \frac{\partial v}{\partial x}$$
+    
+            $$\begin{cases}
+            F'_y + F'_u\frac{\partial u}{\partial y} + F'_v\frac{\partial v}{\partial y} = 0\\
+            G'_y + G'_u\frac{\partial u}{\partial y} + G'_v\frac{\partial v}{\partial y} = 0\\
+            \end{cases}\Rightarrow \frac{\partial u}{\partial y}, \frac{\partial v}{\partial y}$$
+        </div>
 
         <h2>多元函数的极值与最值</h2>
         <h3>无约束条件极值</h3>
@@ -346,5 +383,7 @@
 
         <div id="PageEnd"></div>
         <a class="GoToBottom" href="#PageEnd">Bottom</a>
+
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 </html>

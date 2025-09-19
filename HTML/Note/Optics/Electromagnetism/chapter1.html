@@ -30,26 +30,17 @@
         </ul>
 
         <h2>库伦定律</h2>
-        $$
-        \mathbf{F} = k\frac{Q_1Q_2}{r^2}\mathbf{r}\\
-        E = k\frac{Q}{r^2}\\
-        k = \frac{1}{4\pi\epsilon_0}
-        $$
-        适用条件：
-        <ul>
-            <li>真空（非必要）</li>
-            <li>静止</li>
-            <li>点电荷</li>
-        </ul>
-
-        
+        <p>真空中，两个静止的点电荷\(Q_1\)与\(Q_2\)间的相互作用力大小由同\(Q_1\)与\(Q_2\)的乘积成正比，同它们间的距离\(r\)的平方成反比.</p>
+        <p>作用力方向沿它们的连线，同号电荷相互排斥、异号电荷相互吸引.</p>
+        $$\mathbf{F}_{12} = k\frac{Q_1Q_2}{r^2}\mathbf{r}_{12}$$
+        $$k = \frac{1}{4\pi\epsilon_0} \approx 8.99\times 10^9 N\cdot m^2/C^2$$
         <table>
             <tr>
                 <td colspan="2"><b>介电常数（电容率）\(\epsilon\)</b></td>
             </tr>
             <tr>
                 <td>真空中</td>
-                <td>$$\epsilon_0 = 8.8542\times 10^{-12} C^2/N\cdot m^2$$</td>
+                <td>$$\epsilon_0 \approx 8.8542\times 10^{-12} C^2/N\cdot m^2$$</td>
             </tr>
             <tr>
                 <td>各向同性均匀介质中</td>
@@ -60,13 +51,58 @@
                 <td>$$\epsilon_r = \epsilon/\epsilon_0$$</td>
             </tr>
         </table>
-
+        <p>\(\mathbf{F}_{12}\)表示\(Q_1\)给\(Q_2\)的力，\(\mathbf{r}_{12}\)表示由\(Q_1\)指向\(Q_2\)的单位矢量.</p>
+        适用条件：
+        <ul>
+            <li>真空（非必要）</li>
+            <li>静止</li>
+            <li>点电荷</li>
+        </ul>
+        
+        
+        
         静止条件的推广：
         <ul>
             <li>适用于静止电荷对运动电荷的作用</li>
             <li>不适用于运动电荷对静止电荷的作用</li>
         </ul>
         <p>这一情况说明电力不遵循牛顿第三定律（动量守恒），但系统遵循动量守恒，说明有一动量变化的第三者介入（场）</p>
+        
+        
+        
+        <h2>电场</h2>
+        
+        <div class="Card-Definition">
+            <b>电场强度（场强）</b>
+            <p>场强是一个矢量，其大小等于单位电荷在该处所受电场力的大小，方向与正电荷在该处所受电场力的方向一致.</p>
+            $$\mathbf{E} = \frac{\mathbf{F}}{Q_0}$$
+            <p>单位：\(V/m\)或\(N/C\)</p>
+            <p>一般来说，电场中空间各点的场强，其大小与方向均能不同.</p>
+
+            <p>点电荷\(Q\)产生的电场中各点的场强：</p>
+            $$E = k\frac{Q}{r^2}$$
+        </div>
+
+        <div class="Card-Definition">
+            <b>均匀电场</b>
+            <p>电场中空间各点的场强，其大小和方向都相同.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <b>电场强度叠加原理</b>
+            <p>点电荷组所产生的电场在某点的场强等于各点电荷单独存在时所产生的电场在该点处场强的矢量叠加.</p>
+            <div class="Formula">
+                $$\mathbf{E} = \mathbf{E}_1 + \mathbf{E}_2 + \cdots + \mathbf{E}_n$$
+                <div class="Derivation">
+                    <p>电场力是矢量，服从矢量叠加原理.</p>
+                    <p>以\(\mathbf{F}_1, \mathbf{F}_2, \cdots, \mathbf{F}_n\)分别表示点电荷\(q_1, q_2, \cdots, q_n\)单独存在时电场施加在空间中同一点上试探点电荷\(q_0\)的力.</p>
+                    <p>\(q_1, q_2, \cdots, q_n\)同时存在时，电场施加在试探点电荷\(q_0\)上的力\(\mathbf{F}\)为\(\mathbf{F}_1, \mathbf{F}_2, \cdots, \mathbf{F}_n\)的矢量和，即：</p>
+                    $$\mathbf{F} = \mathbf{F}_1 + \mathbf{F}_2 + \cdots + \mathbf{F}_n$$
+                    $$\mathbf{E} = \frac{\mathbf{F}}{q_0} = \mathbf{E}_1 + \mathbf{E}_2 + \cdots + \mathbf{E}_n$$
+                </div>
+            </div>
+
+        </div>
 
         <b>非接触作用力</b>
         <ul>
@@ -156,6 +192,7 @@
             <li>P2 20min-22min</li>
         </ul>
         
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
 </html>

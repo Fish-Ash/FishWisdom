@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>复变函数</title>
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead"><h1>不惑</h1></div>
+        <a class="BackToTop" href="#PageHead">Top</a>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>傅里叶变换</h1>
+
+        <div class="Card-Definition">
+            <b>\(f(x)\)的傅里叶变换式</b>
+            <p>设函数\(f(t)\)满足傅里叶积分定理条件，则表达式：</p>
+            $$F(\omega) = \int_{-\infty}^{+\infty}f(t)e^{-i\omega t}\mathrm{d}t$$
+            <p>为\(f(t)\)的傅里叶变换式，记为\(F(\omega) = F[f(t)]\)，称函数\(F(\omega)\)为\(f(t)\)的傅里叶变换.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>\(F(\omega)\)的傅里叶逆变换式</b>
+            $$f(t) = \frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega)e^{i\omega t}\mathrm{d}\omega$$
+            <p>该表达式为\(F(\omega)\)的傅里叶逆变换式，记作\(f(t) = F^{-1}[F(\omega)]\)，称函数\(f(t)\)为\(F(\omega)\)的傅里叶逆变换.</p>
+        </div>
+
+        <h2>傅里叶变换的性质</h2>
+        <h3>线性性质</h3>
+        $$F[k_1f_1(t) + k_2f_2(t)] = k_1F[f_1(t)] + k_2F[f_2(t)]$$
+        $$F^{-1}[k_1F_1(\omega) + k_2F_2(\omega)] = k_1F^{-1}[F_1(\omega)] + k_2F^{-1}[F_2(\omega)]$$
+
+        <h3>对称性质</h3>
+        <div class="Formula">
+            $$F(\omega) = F[f(t)]\Rightarrow F[F(t)] = 2\pi f(-\omega)$$
+            <div class="Derivation">
+                $$\because F[f(t)] = \int_{-\infty}^{+\infty}f(t)e^{-i\omega t}\mathrm{d}t$$
+                $$\therefore F[F(t)] = \int_{-\infty}^{+\infty}F(t)e^{i\omega t}\mathrm{d}t$$
+                $$\because f(t) = \int_{-\infty}^{+\infty}F(\omega)e^{i\omega t}\mathrm{d}\omega$$
+                $$\begin{align}
+                \therefore f(-\omega) &= \frac{1}{2\pi}\int_{-\infty}^{+\infty}F(x)e^{ix(-\omega)}\mathrm{d}x\\
+                                      &= \frac{1}{2\pi}\int_{-\infty}^{+\infty}F(t)e^{-i\omega t}\mathrm{d}t\\
+                                      &= \frac{1}{2\pi}F[F(t)]
+                \end{align}$$
+                $$\therefore F[F(t)] = 2\pi f(-\omega)$$
+            </div>
+        </div>
+
+        <div class="Card-Definition">
+            <b>卷积</b>
+            <p>给定定义在\((-\infty, +\infty)\)上的函数\(f_1(t)\)与\(f_2(t)\)，称</p>
+            $$g(t) = \int_{-\infty}^{+\infty}f_1(\tau)f_2(t-\tau)\mathrm{d}\tau$$
+            <p>为函数\(f_1(t)\)与\(f_2(t)\)的卷积，记作</p>
+            $$g(t) = f_1(t) * f_2(t)$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>卷积的性质</h2>
+            <h3>交换性质</h3>
+            $$f_1(t)*f_2(t) = f_2(t)*f_1(t)$$
+
+            <h3>结合性质</h3>
+            $$f_1(t)*[f_2(t)*f_3(t)] = [f_1(t)*f_2(t)]*f_3(t)$$
+
+            <h3>线性性质</h3>
+            $$[k_1f_1(t) + k_2f_2(t)]*g(t) = k_1f_1(t)g(t) + k_2f_2(t)g(t),~k_1,k_2\in \mathbb{C}$$
+
+            <h3>平移不变性质</h3>
+            $$f_1(t)*f_2(t) = g(t) \Rightarrow f_1(t-\alpha)*f_2(t-\beta) = g(t-\alpha-\beta)$$
+
+            <h3>坐标放缩性质</h3>
+            $$f_1(t)*f_2(t) = g(t) \Rightarrow f_1(at)*f_2(at) = \frac{1}{|a|}g(at),~a\neq 0$$
+        </div>
+
+        
+        <div id="PageEnd"></div>
+        <a class="GoToBottom" href="#PageEnd">Bottom</a>
+        <script src="/JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

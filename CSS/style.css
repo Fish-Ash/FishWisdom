@@ -92,9 +92,14 @@ td, th {
     border: 1px solid black;
 }
 
-.tbtitle{
+td p{
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+thead{
     background:#e9faff;
-    }
+}
 
 .tbtext{
     text-align:left;

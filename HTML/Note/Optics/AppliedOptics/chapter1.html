@@ -19,26 +19,47 @@
             <li><a href="../Navigation.html">导航</a></li>
         </ul>
 
+        
+        
+        
         <h1>第一章 几何光学基本定律与成像概念</h1>
-        <ul>
-            <li><a>第一节 几何光学的基本定律和原理</a></li>
-            <ul>
-                <li><a>一、光波与光线</a></li>
-                <li><a>二、几何光学的基本定律</a></li>
-                <li><a>三、费马原理</a></li>
-                <li><a>四、马吕斯定律</a></li>
-            </ul>
-            <li><a>第二节 成像的基本概念与完善成像条件</a></li>
-            <ul>
-                <li><a>一、光学系统与成像概念</a></li>
-                <li><a>二、完善成像条件</a></li>
-                <li><a>三、物、像的虚实</a></li>
-            </ul>
-            <li><a>第三节 光路计算与近轴光学系统</a></li>
-        </ul>
 
-        <h2>第一节 几何光学的基本定律和原理</h2>
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#FundamentalLaw">几何光学基本定律</a></li>
+                <li><a href="#Rule">符号规则</a></li>
+                <li><a href="#Actual">实际光线光路计算</a></li>
+            </ul>
+        </div>
 
+        <div class="Card-Analysis" id="FundamentalLaw">
+            <h2>几何光学的基本定律</h2>
+
+            <div class="Card-Definition">
+                <b>光的直线传播定律</b>
+                <p>各向同性均匀介质中，光沿直线传播.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>光的独立传播定律</b>
+                <p>不同光源发出的光在空间某点相遇时，彼此互不影响，各光束独立传播.</p>
+            </div>
+
+            <b>折射定律（斯涅尔定律）</b>
+            $$n_1\sin\theta_1 = n_2\sin\theta_2$$
+
+            <b>反射定律</b>
+            $$\theta' = -\theta$$
+            
+            <b>费马原理</b>
+            <div class="Card-Definition">
+                <b>马吕斯定律</b>
+                <p>光在各向同性均匀介质中传播时，始终保持着与波面的正交性，且入射波面与出射波面对应点之间的光程均为定值.</p>
+            </div>
+            <i>折反射定律、费马原理、马吕斯定律中的任意一个，均可视作几何光学的一个基本定律，而另外两个视为该定律的推论。</i>
+
+        </div>
+        
         <h3>一、光波与光线</h3>
 
         <p>在各向同性均匀介质中，光线为光波的法线，光束对应波面的法线束</p>
@@ -57,182 +78,313 @@
             </ul>
         </p>
 
-        <h3>二、几何光学的基本定律</h3>
-        <b>折射定律（斯涅尔定律）</b>
-        $$n_1\sin\theta_1 = n_2\sin\theta_2$$
-
-        <b>反射定律</b>
-        $$\theta' = -\theta$$
-        
-        <h3>三、费马原理</h3>
-        
-        <h3>四、马吕斯定律</h3>
-        <p><b>马吕斯定律</b>：光线在各向同性的均匀介质中传播时，始终保持着与波面的正交性，且入射波面与出射波面对应点之间的光程均为定值</p>
-        <i>折反射定律、费马原理、马吕斯定律中的任意一个，均可视作几何光学的一个基本定律，而另外两个视为该定律的推论。</i>
-
 
 
 
         <h2>第二节 成像的基本概念与完善成像条件</h2>
         <h3>一、光学系统与成像概念</h3>
-        <p><b>光学系统</b>：由若干（球面、平面或非球面）光学元件（透镜、棱镜、反射镜和分划板等）组成的系统。</p>
-        <i>现代光学元件还有光栅、光纤、干涉/衍射元件、二元光学元件等。</i>
-        <p>分类：
-            <ul>
-                <li><b>共轴光学系统</b>：组成光学系统的各个光学元件表面曲率中心都在同一个直线上。</li>
-            </ul>
-            <ul>
-                <li><b>球面光学系统</b></li>
-                <li><b>非球面光学系统</b>：含有非球面元件的光学系统。</li>
-            </ul>
-        </p>
-        <p>光学系统的主要用途之一就是对物体成像。</p>
-        <p>
-        <ul>
-            <li><b>物</b>：发出入射光的物质。</li>
-            <li><b>像</b>：由出射光形成的物质。</li>
-            <i>物像的概念不是绝对的。</i>
-        </ul>
-        <ul>
-            <li><b>物空间</b>：物所在的空间。</li>
-            <li><b>像空间</b>：像所在的空间。</li>
-            <i>物像空间的范围均为\((-\infty, +\infty)\)</i>
-        </ul>
-        </p>
+        <div class="Card-Definition">
+            <b>光学系统</b>
+            <p>由若干（球面、平面或非球面）光学元件（透镜、棱镜、反射镜和分划板等）组成的系统.</p>
+            <i>现代光学元件还有光栅、光纤、干涉/衍射元件、二元光学元件等。</i>
+            <table>
+                <tr>
+                    <td rowspan="4" width="2">光学系统</td>
+                    <td rowspan="2"></td>
+                    <td><b>共轴光学系统</b></td>
+                    <td class="tbtext">组成光学系统的各个光学元件表面曲率中心都在同一个直线上.</td>
+                </tr>
+                <tr>
+                    <td><b>非共轴光学系统</b></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"></td>
+                    <td><b>球面光学系统</b></td>
+                    <td class="tbtext">光学元件全为球面的光学系统.</td>
+                </tr>
+                <tr>
+                    <td><b>非球面光学系统</b></td>
+                    <td class="tbtext">含有非球面元件的光学系统.</td>
+                </tr>
+            </table>
+            <p>光学系统的主要用途之一就是对物体成像.</p>
+        </div>
+        
+        <div class="Card-Definition">
+            <table>
+                <tr>
+                    <td width="16"><b>物</b></td>
+                    <td class="tbtext">
+                        <p>发出入射光的物质.</p>
+                        <p>可以是光源、被光源照明的物体或其他光学系统的像.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="16"><b>像</b></td>
+                    <td class="tbtext">由出射光形成的物质.</td>
+                </tr>
+            </table>
+            <p>[注]物像的概念不是绝对的.</p>
+
+            <table>
+                <tr>
+                    <td width="48"><b>物空间</b></td>
+                    <td class="tbtext">物所在的空间，即光学系统成像前的整个空间.</td>
+                </tr>
+                <tr>
+                    <td width="48"><b>像空间</b></td>
+                    <td class="tbtext">像所在的空间，即光学系统成像后的整个空间.</td>
+                </tr>
+            </table>
+            <p>[注]物空间和像空间没有严格的位置界限，其范围均为\((-\infty, +\infty)\)</p>
+
+            <table>
+                <tr>
+                    <td width="96"><b>实物（像）点</b></td>
+                    <td class="tbtext">由实际光线相交所形成的点。既能被人眼观察，又能用屏幕、胶片或光电成像器件（数码相机中的CCD、CMOS等）记录.</td>
+                </tr>
+                <tr>
+                    <td width="96"><b>虚物（像）点</b></td>
+                    <td class="tbtext">由光线延长线相交所形成的点。只能被人眼观察，不能被记录.</td>
+                </tr>
+            </table>
+        </div>
+
         <p><b>完善像点</b>：如果一球面波经过一光学系统以后仍为一球面波，那么对应的光束仍为同心光束，则称该同心光束的中心为物点经过光学系统所成的完善像点。</p>
         <p><b>完善像</b>：物体上每个点经过光学系统后所成完善像的集合。</p>
         <h3>二、完善成像条件</h3>
         <p><b>完善成像的条件</b>：入射波面为球面波时，出射球面也为球面波。</p>
-        <h3>三、物、像的虚实</h3>
-        <p>
-            <ul>
-                <li><b>实物（像）点</b>：由实际光线相交所形成的点。既能被人眼观察，又能用屏幕、胶片或光电成像器件（数码相机中的CCD、CMOS等）记录。</li>
-                <li><b>虚物（像）点</b>：由光线延长线相交所形成的点。只能被人眼观察，不能被记录。</li>
-            </ul>
-        </p>
-
 
 
         <h2>第三节 光路计算与近轴光学系统</h2>
         
-        <h3>一、符号规则（GB/T 1224-1999）</h3>
-        <img src="./img/RayTracing.png" width="350">
-        <p><b>参量</b>：
-        <ul>
-            <li><b>折射球面</b>：nn'两种介质的分界面</li>
-            <li><b>折射面球心（C）</b></li>
-            <li><b>光轴</b>：通过C的直线</li>
-            <li><b>顶点（O）</b>：光轴与折射球面的交点</li>
-            <li><b>球面曲率半径（r）</b>：\(r=OC\)</li>
-            <br>
-            <li><b>物点（A）</b>：入射光线与光轴的交点</li>
-            <li><b>像点（A'）</b>：出射光线与光轴的交点</li>
-            <li><b>子午面</b>：通过物点和光轴的截面<br>
-            <i>轴上A的子午面有无数多个，轴外A的子午面只有一个</i>
-            </li>
-            <br>
-            <li><b>物方截距（物距，L）</b>：\(L=OA\)</li>
-            <li><b>像方截距（像距，L'）</b>：\(L'=OA'\)</li>
-            <br>
+        <div class="Card-Analysis" id="Rule">
+            <h2>符号规则（GB/T 1224-1999）</h2>
+            <img src="./img/RayTracing.png" width="350">
 
-            <li><b>入射角（I）</b>：入射光线转向法线的夹角</li>
-            <li><b>反射角（I'）</b>：反射光线转向法线的夹角</li>
-            <li><b>折射角（I"）</b>：折射光线转向法线的夹角</li>
-            <br>
+            <h3>参数符号</h3>
+            <p>
+            <ul>
+                <li><b>折射球面</b>：nn'两种介质的分界面</li>
+                <li><b>折射面球心（C）</b></li>
+                <li><b>光轴</b>：通过C的直线</li>
+                <li><b>顶点（O）</b>：光轴与折射球面的交点</li>
+                <li><b>球面曲率半径（r）</b>：\(r=OC\)</li>
+                <br>
+                <li><b>子午面</b>：通过物点和光轴的截面<br>
+                <i>轴上A的子午面有无数多个，轴外A的子午面只有一个</i>
+                </li>
+                <br>
+    
+                <li><b>光线在折射面上的投射高度（h）</b></li>
+                <li><b>光轴转向法线的夹角（φ）</b></li>
+            </ul></p>
+            <i>注：作图中的物理量均为绝对值</i>
+            <table>
+                <thead>
+                    <tr>
+                      <td>参数</td>
+                      <td>符号</td>
+                      <td>定义</td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>物点/像点</td>
+                    <td>A/A'</td>
+                    <td>入射光线/出射光线与光轴的交点</td>
+                </tr>
+                <tr>
+                  <td>物高/像高</td>
+                  <td>\(y\)/\(y'\)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                    <td>物方截距（物距）/像方截距（像距）</td>
+                    <td>L/L'</td>
+                    <td>
+                        $$L = OA$$
+                        $$L' = OA'$$
+                    </td>
+                </tr>
+                <tr>
+                    <td>物方/像方孔径角</td>
+                    <td>\(u\)/\(u'\)</td>
+                    <td>光轴转向入射光线/出射光线的夹角</td>
+                </tr>
+                <tr>
+                    <td>物方/像方半视场角</td>
+                    <td>\(\omega\)/\(\omega'\)</td>
+                    <td>光轴转向物/像边缘与入瞳/出瞳中心连线的夹角</td>
+                </tr>
+                <tr>
+                    <td>入射/反射/折射角</td>
+                    <td>\(I\)/\(I'\)/\(I''\)</td>
+                    <td>入射/反射/折射光线转向法线的夹角</td>
+                </tr>
+            </table>
 
-            <li><b>光线在折射面上的投射高度（h）</b></li>
-            <li><b>光轴转向法线的夹角（φ）</b></li>
-        </ul></p>
-        <p><b>假设光自左向右传播为正</b>：</p>
-        <ul>
-            <li><b>垂轴线段</b>：光轴以上为正，以下为负</li>
-            <li><b>沿轴线段</b>：O以右为负，以左为正</li>
-            <li><b>角度</b>：顺时针为正，逆时针为负</li>
-        </ul>
-        <i>注：作图中的物理量均为绝对值</i>
-        <table>
-            <tr>
-              <td class="tbgrid">参数</td>
-              <td class="tbgrid">符号</td>
-              <td class="tbgrid">定义</td>
-            </tr>
-            <tr>
-              <td>物高/像高</td>
-              <td>\(y\)/\(y'\)</td>
-              <td></td>
-            </tr>
-            <tr>
-                <td>物方/像方孔径角</td>
-                <td>\(u\)/\(u'\)</td>
-                <td>光轴转向入射光线/出射光线的夹角</td>
-            </tr>
-            <tr>
-                <td>物方/像方半视场角</td>
-                <td>\(\omega\)/\(\omega'\)</td>
-                <td>光轴转向物/像边缘与入瞳/出瞳中心连线的夹角</td>
-            </tr>
-        </table>
+            <h3>正方向的规定</h3>
+            <b>线量</b>
+            <table>
+                <tr>
+                    <td rowspan="2">线量</td>
+                    <td>轴线线量（沿光轴方向的线量）</td>
+                </tr>
+                <tr>
+                    <td>垂轴线量（垂直光轴方向的线量）</td>
+                </tr>
+            </table>
+            <p>沿轴线量：以球面顶点为参考点，参考点以右的点相对参考点的沿轴线度为正；参考点以左的点相对参考点沿轴线度为负.</p>
+            <p>垂轴线量：光轴以上的点到光轴的垂轴线度为正；光轴以下的点到光轴的垂轴线度为负.</p>
 
+            <b>角量</b>
+            <p>几何光学中直线有三种，即光轴、光线与界面的法线，它们两两间可以夹角.</p>
+            <p>光轴-光线：光轴按锐角转向光线，顺时针为正、逆时针为负.</p>
+            <p>光轴-法线：光轴按锐角转向法线，顺时针为正、逆时针为负.</p>
+            <p>光线-法线：光线按锐角转向法线，顺时针为正、逆时针为负.</p>
 
-        <h3>三、近轴光线光路计算</h3>
-        <p><b>近轴区</b>：当U很小时，I、I'、U'都很小。光线在光轴附近很小的区域内，这个区域即为近轴区。近轴区内的光线即为近轴光线。
-        <br>此时有：\(\sin\theta=\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\frac{\theta^7}{7!}+\dots\)，
-        <br>故\(sin\theta\approx b\)</p>
-        <i>近轴区的划定：所谓近轴区并没有明确的界限，其受所允许的相对误差大小制约，误差不同近轴区的界定值也不同。
-        $$ \frac{\sin U-U}{\sin U} \leq \pm 0.001 \Rightarrow U\leq \pm 5^\circ $$
-        $$ \frac{\sin U-U}{\sin U} \leq \pm 0.0001 \Rightarrow U\leq \pm 1.5^\circ $$
-        </i>
-        <p><b>阿贝不变量</b>：
-        $$ Q = n'(\frac{1}{r}-\frac{1}{l'}) = n(\frac{1}{r}-\frac{1}{l}) $$</p>
+        </div>
+
+        <div class="Card-Analysis" id="Actual">
+            <h2>实际光线光路计算</h2>
+            <img src="./img/RayTracing.png" width="350">
+            <p>光线经单个折射球面的光路计算，是指在给定单个折射球面的结构参量\(n,n',r\)时，由已知入射光线参数\(L\)与\(U\)计算其他参数的过程.</p>
+            <b>入射角\(I\)</b>
+            <div class="Formula">
+                $$\sin I = \frac{L-r}{r}\sin U$$
+                <div class="Derivation">
+                    <p>在\(\triangle AEC\)中，由正弦定理：</p>
+                    $$\frac{\sin(-U)}{r} = \frac{\sin(\pi - I)}{r - L}$$
+                    $$\frac{-\sin U}{r} = \frac{\sin I}{r-L}$$
+                    $$\sin I = \frac{L-r}{r}\sin U$$
+                </div>
+            </div>
+
+            <b>折射角\(I'\)</b>
+            <div class="Formula">
+                $$\sin I' = \frac{n}{n'}\sin I$$
+                <div class="Derivation">
+                    <p>由折射定律：</p>
+                    $$n\sin I = n'\sin I'$$
+                    $$\sin I' = \frac{n}{n'}\sin I$$
+                </div>
+            </div>
+
+            <b>像方孔径角\(U'\)</b>
+            <div class="Formula">
+                $$U' = U + I - I'$$
+                <div class="Derivation">
+                    <p>在\(\triangle AEC\)中：</p>
+                    $$I = -U + \phi$$
+                    <p>在\(\triangle A'EC\)中：</p>
+                    $$\phi = U' + I'$$
+                    $$\therefore U' = \phi - I' = U + I - I'$$
+                </div>
+            </div>
+
+            <b>像方截距\(L'\)</b>
+            <div class="Formula">
+                $$L' = r(1 + \frac{\sin I'}{\sin U'})$$
+                <div class="Derivation">
+                    <p>在\(\triangle A'EC\)中，由正弦定理：</p>
+                    $$\frac{\sin U'}{r} = \frac{\sin I'}{L' - r}$$
+                    $$L' = r(1 + \frac{\sin I'}{\sin U'})$$
+                </div>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>单个折射球面近轴区光路计算公式</h2>
+            $$\begin{cases}
+            i = \frac{l-r}{r}u\\
+            i' = \frac{n}{n'}i\\
+            u' = u + i - i'\\
+            l' = r(1 + \frac{i'}{u'})
+            \end{cases}$$
+
+            <p><b>近轴区</b>：当U很小时，I、I'、U'都很小。光线在光轴附近很小的区域内，这个区域即为近轴区。近轴区内的光线即为近轴光线。
+            <br>此时有：\(\sin\theta=\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\frac{\theta^7}{7!}+\dots\)，
+            <br>故\(sin\theta\approx b\)</p>
+            <i>近轴区的划定：所谓近轴区并没有明确的界限，其受所允许的相对误差大小制约，误差不同近轴区的界定值也不同。
+            $$ \frac{\sin U-U}{\sin U} \leq \pm 0.001 \Rightarrow U\leq \pm 5^\circ $$
+            $$ \frac{\sin U-U}{\sin U} \leq \pm 0.0001 \Rightarrow U\leq \pm 1.5^\circ $$
+            </i>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>单个折射球面近轴区成像</h2>
+            <h3>物像公式</h3>
+            $$\frac{n'}{l'} - \frac{n}{l} = \frac{n'-n}{r}$$
+
+            <div class="Card-Definition">
+                <b>阿贝不变量\(Q\)</b>
+                $$Q = n'(\frac{1}{r}-\frac{1}{l'}) = n(\frac{1}{r}-\frac{1}{l})$$
+            </div>
+        </div>
 
 
 
         <h2>第四节 球面光学成像系统</h2>
         <p><b>单个折射面成像</b>：</p>
-        <p><b>垂轴放大率（β）</b>：像的大小与物的大小之比</p>
-        <p>$$ \beta = \frac{y'}{y} $$</p>
-        <p>由于\(\triangle ABC \sim \triangle A'B'C\)：
-            $$ \frac{-y'}{y} = \frac{l'-r}{r-l} $$
-            引入阿贝不变量Q，有：
-            $$ Q  = n'(\frac{1}{r}-\frac{1}{l'}) = n(\frac{1}{r}-\frac{1}{l}) $$
-            $$ \frac{n'(l'-r)}{l'} = \frac{n(l-r)}{l} $$
-            $$ \frac{l'-r}{l-r} = \frac{nl'}{n'l} $$
-            $$ \beta = \frac{y'}{y} = \frac{l'-r}{l-r} = \frac{nl'}{n'l} $$
-        </p>
-        <table>
-            <tr>
-              <td class="tbgrid">&nbsp;</td>
-              <td class="tbgrid">\(\beta > 0\)</td>
-              <td class="tbgrid">\(\beta < 0\)</td>
-            </tr>
-            <tr>
-              <td class="tbgrid">成像正倒</td>
-              <td>正像</td>
-              <td>倒像</td>
-            </tr>
-            <tr>
-                <td class="tbgrid">成像虚实</td>
-                <td>物像虚实相反</td>
-                <td>物像虚实相同</td>
-            </tr>
-        </table>
-        <br>
-        <table>
-            <tr>
-                <td class="tbgrid">&nbsp;</td>
-                <td class="tbgrid">\(|\beta| > 1\)</td>
-                <td class="tbgrid">\(|\beta| = 1\)</td>
-                <td class="tbgrid">\(|\beta| < 1\)</td>
-            </tr>
-            <tr>
-                <td class="tbgrid">成像大小</td>
-                <td>成放大β倍的像</td>
-                <td>成等大的像</td>
-                <td>成缩小1/β倍的像</td>
-            </tr>
-        </table>
-        <p><b>轴向放大率（α）</b>：物点沿光轴做微小移动dl时，所引起的像点移动量dl'与物点移动量dl之比</p>
-        <p>$$ \alpha = \frac{dl'}{dl} $$</p>
+
+        <div class="Card-Definition">
+            <b>垂轴放大率（横向放大率）\(\beta\)</b>
+            <p>像的大小与物的大小之比.</p>
+            <div class="Formula">
+                $$\beta = \frac{y'}{y} = \frac{nl'}{n'l}$$
+                <div class="Derivation">
+                    $$\because\triangle ABC \sim \triangle A'B'C$$
+                    $$\therefore\frac{-y'}{y} = \frac{l'-r}{r-l}$$
+                    $$\because Q  = n'(\frac{1}{r}-\frac{1}{l'}) = n(\frac{1}{r}-\frac{1}{l})$$
+                    $$\frac{n'(l'-r)}{l'} = \frac{n(l-r)}{l}$$
+                    $$\frac{l'-r}{l-r} = \frac{nl'}{n'l}$$
+                    $$\beta = \frac{y'}{y} = \frac{l'-r}{l-r} = \frac{nl'}{n'l}$$
+                </div>
+            </div>
+            <table>
+                <tr>
+                  <td></td>
+                  <td>$$\beta\gt0$$</td>
+                  <td>$$\beta\lt0$$</td>
+                </tr>
+                <tr>
+                  <td>成像正倒</td>
+                  <td>正像</td>
+                  <td>倒像</td>
+                </tr>
+                <tr>
+                    <td>成像虚实</td>
+                    <td>物像虚实相反</td>
+                    <td>物像虚实相同</td>
+                </tr>
+            </table>
+            <br>
+            <table>
+                <tr>
+                    <td></td>
+                    <td>$$\beta|\gt1$$</td>
+                    <td>$$|\beta|=1$$</td>
+                    <td>$$|\beta|\lt1$$</td>
+                </tr>
+                <tr>
+                    <td>成像大小</td>
+                    <td>成放大β倍的像</td>
+                    <td>成等大的像</td>
+                    <td>成缩小1/β倍的像</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="Card-Definition">
+            <b>轴向放大率\(\alpha\)</b>
+            <p>物点沿光轴做微小移动\(\mathrm{d}l\)时，所引起的像点移动量\(\mathrm{d}l'\)与物点移动量\(\mathrm{d}l\)之比.</p>
+            $$\alpha = \frac{\mathrm{d}l'}{\mathrm{d}l}$$
+
+        </div>
+
+
         <p>引入阿贝不变量Q，有：
             $$ Q  = n'(\frac{1}{r}-\frac{1}{l'}) = n(\frac{1}{r}-\frac{1}{l}) $$
             两边求微分，有：
@@ -264,9 +416,20 @@
             </ol>
         </p>
         <p>垂轴放大率、轴向放大率与角放大率之间的关系：\(\alpha \gamma = \beta\)</p>
-        <p><b>拉赫不变量（拉格朗日=赫姆霍兹不变量，\(J\)）</b>：
+        <div class="Card-Definition">
+            <b>拉赫不变量（拉格朗日-赫姆霍兹不变量）\(J\)</b>
+            $$J = nuy = n'u'y'$$
+            $$\because \begin{cases}
+            \beta = \frac{y'}{y} = \frac{nl'}{n'l}\\
+            \gamma = \frac{u'}{u} = \frac{l}{l'}
+            \end{cases}$$
+            $$\therefore \frac{y'}{y} = \frac{nl'}{n'l} = \frac{nu}{n'u'}$$
+            $$\therefore nuy = n'u'y'$$
+            <p>上式称为拉格朗日-赫姆霍兹恒等式.</p>
+        </div>
+        <p>
         <br>由$$ \beta = \frac{y'}{y} = \frac{nu}{nu'y'} $$
-            得$$ J = nuy = n'u'y'$$
+            得
             <i>拉赫不变量仅适用于光学系统在近轴区成像时</i>
         </p>
         <h2>补充知识点</h2>
@@ -278,6 +441,7 @@
         </ul>
 
 
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
 </html>

@@ -61,7 +61,34 @@
             <td>&lt;MeanBackward0&gt;</td>
         </tr>
     </table>
+
+    <b>计算梯度</b>
+    <pre><code>
+        y.backward()
+        grad = x.grad
+    </code></pre>
+
+    <p>当在循环中计算梯度时，梯度会累计，消除梯度累计的方法为：</p>
+    <pre><code>
+        for i in range(length):
+            y.backward()
+            
+            # 清除梯度
+            x.grad_zero_()
+    </code></pre>
     
+    <b>取消张量梯度属性的三种方法</b>
+    <pre><code>
+        # 直接消除
+        x.requires_grad_(False)
+
+        # 定义一个等同于x但无需梯度的新变量y
+        y = x.detach()
+
+        # x仍有梯度属性，但x的运算结果y没有
+        with torch.no_grad():
+            y = fun(x)
+    </code></pre>
 
 
 </body>
