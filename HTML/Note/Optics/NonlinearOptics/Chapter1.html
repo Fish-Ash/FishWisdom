@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>非线性光学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <h1>第一章 非线性介质响应特性的经典描述</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#Flag1">因果性原理</a></li>
+            </ul>
+        </div>
+
+        <h2>第一节 极化率的色散特性</h2>
+
+        <p>光在介质中传播时，由于光电场的作用，将产生极化强度.</p>
+        <p>一般情况下，<a href="../Electromagnetism/Chapter1.html#Polarization" class="goto">极化强度</a>包含线性极化强度与非线性极化强度.</p>
+        $$\mathbf{P} = \mathbf{P}_{L} + \mathbf{P}_{NL}$$
+
+        <p>光电场强度很弱时：可以忽略\(\mathbf{P}_{NL}\)，此时\(\mathbf{P} = \mathbf{P}_{L}\)，即为线性光学问题.</p>
+        <p>光电场强度较强时：不可忽略\(\mathbf{P}_{NL}\)，且：</p>
+        $$\begin{align}
+        &\mathbf{P}_{L} = \mathbf{P}^{(1)}\\
+        &\mathbf{P}_{NL} = \mathbf{P}^{(2)} + \mathbf{P}^{(3)} + \cdots + \mathbf{P}^{(r)} + \cdots
+        \end{align}$$
+
+        <div class="Card-Analysis" id="Flag1">
+            <h2>因果性原理</h2>
+            <p>光在介质中传播时，\(t\)时刻介质所感应的线性极化强度\(\mathbf{P}(t)\)不仅与\(t\)时刻的光电场\(\mathbf{E}(t)\)有关，还与\(t\)时刻前所有的光电场有关.</p>
+            <div class="Formula">
+                $$\mathbf{P}(t) = \int_0^{+\infty}\epsilon_0 \mathbf{R}(\tau)\mathbf{E}(t-\tau)\mathrm{d}\tau$$
+                <div class="Derivation">
+                    <p>设时刻\(t\)前任一时刻\(\tau\)的光电场强度为\(\mathbf{E}(\tau)\)，它对\(t\)时刻时的极化强度的贡献为\(\mathrm{d}\mathbf{P}(t)\)，且：</p>
+                    $$\mathrm{d}\mathbf{P}(t) = \epsilon_0\mathbf{R}(t-\tau)\mathbf{E}(\tau)\mathrm{d}\tau$$
+                    $$\begin{align}\therefore 
+                    \mathbf{P}(t) &= \int_{-\infty}^t \mathrm{d}\mathbf{P}\\
+                                  &= \int_{-\infty}^t \epsilon_0\mathbf{R}(t-\tau)\mathbf{E}(\tau)\mathrm{d}\tau
+                    \end{align}$$
+                    $$令\tau' = t - \tau \Rightarrow \tau = t - \tau'$$
+                    $$\tau = -\infty时\rightarrow \tau' = +\infty$$
+                    $$\tau = t时\rightarrow \tau'=0$$
+                    $$\begin{align}\therefore
+                    \mathbf{P}(t) &= \int_{+\infty}^0\epsilon_0\mathbf{R}(\tau')\mathbf{E}(t-\tau')\mathrm{d}(t-\tau')\\
+                                  &= \int_0^{+\infty}\epsilon_0\mathbf{R}(\tau)\mathbf{E}(t-\tau)\mathrm{d}\mathbf{\tau}
+                    \end{align}$$
+                </div>
+            </div>
+        </div>
+
+        <div class="Card-Definition">
+            <b>线性极化率</b>
+            $$\begin{align}
+            \chi^{(1)}(\omega) &= \int_{-\infty}^{+\infty}\mathbf{R}^{(1)}(\tau)e^{i\omega\tau}\mathrm{d}\tau\\
+                               &= \chi'(\omega) + i\chi''(\omega)
+            \end{align}$$
+        </div>
+
+        <div class="Card-Definition">
+            <b>克雷默斯-克朗尼（Kramers-Kroning）函数</b>
+            <p>给出了\(\chi^{(1)}(\omega)\)实部与虚部之间的关系.</p>
+        </div>
+
+        <h2>第二节 非线性光学极化率的经典描述</h2>
+        <p>振子的非线性响应可以用于描述非线性光学现象.</p>
+        <b>频率为\(\omega\)的光电场：</b>
+        $$E = E(\omega)e^{-i\omega t} + E^*(\omega)e^{i\omega t}$$
+
+
+        <h2>第三节 极化率的一般性质</h2>
+        <div class="Card-Definition">
+            <b>极化率张量的真实性条件</b>
+            $$[\chi^{(r)}(\omega_1 , \omega_2, \cdots, \omega_r)]^* = \chi^{(r)}(-\omega_1^*, -\omega_2^*, \cdots, -\omega_r^*)$$
+        </div>
+        <b>本征对易对称性</b>
+        <b>完全对易对称性</b>
+        <b>空间对称性</b>
+
+
+
+
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

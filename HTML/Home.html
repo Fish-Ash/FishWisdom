@@ -7,12 +7,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>不惑</title>
         <link rel="stylesheet" href="../CSS/style.css">
+        <link rel="stylesheet" href="../CSS/SearchBox.css">
+        <script src="../JavaScript/SearchBox.js"></script>
     </head>
-
-
+    
+    
     <body>
-        <div class="header"><h1>不惑</h1></div>
-
+        <div class="header">不惑</div>
+        
         
         <ul class="navibar">
             <li><a class="active" href="#Home.html">主页</a></li>
@@ -20,9 +22,14 @@
             <li><a href="HomePage/homepage.html">个人主页</a></li>
             <li><a href="clock.html">时钟</a></li>
         </ul>
-
+        
+        <div class="SearchBox" id="SearchBox">
+            <input type="text" placeholder="搜索" id="SearchText">
+            <i class="fa-solid fa-magnifying-glass SearchGlass" id="SearchGlass"></i>
+        </div>
+        
         <h1>目录</h1>
-
+        
         <a href = "Note/Signals_and_LinearSystems/Signals_and_LinearSystems.html" class="book">信号与线性系统分析</a>
         <a href = "Note/analog_electronics_technique/analog_electronics_technique.html" class="book"> 模拟电路 </a>
         <a href="Note/digital_eletronic_technique/catalog.html" class="book">数字电路</a>
@@ -40,11 +47,13 @@
         <a href = "Note/Math/Mathematic/Catalog.html" class="book">高等数学</a>
         <a href = "Note/Math/Probability/Catalog.html" class="book">概率论</a>
         <a href = "Note/Math/LinearAlgebra/Catalog.html" class="book">线性代数</a>
-
+        
         <br>
         <h2>哲学</h2>
         <a href="Note/Politics/Marxism/Chpater0.html" class="book">马克思主义</a>
-
+        
+        <script src="https://kit.fontawesome.com/f23451c27c.js" crossorigin="anonymous"></script>
+        <script src="../JavaScript/SearchBox.js"></script>
     </body>
-
-</html>
+    
+    </html>

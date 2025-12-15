@@ -11,7 +11,7 @@
 
 
     <body>
-        <div class="header"><h1>不惑</h1></div>
+        <div class="header">不惑</div>
 
         
         <ul class="navibar">
@@ -21,171 +21,164 @@
 
 
         <h1>第一章 激光概论</h1>
-        激光原理：
-        <p>光和物质相互作用产生激光的过程。</p>
-        激光技术：
-        <p>光和物质相互作用光特性变化的过程。</p>
 
-        <div class="Card-Definition">
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#Laser">激光的概念</a></li>
+                <li><a href="#LaserProperty">激光的性质</a></li>
+            </ul>
+        </div>
+
+        <div class="Card-Definition" id="Laser">
             <b>激光（LASER，Light Amplification by Stimulated Emission of Radiation）</b>：
             <p>受激辐射光放大.</p>
         </div>
 
-        <table>
-            <tr>
-                <td>光电效应——光的粒子性</td>
-                <td rowspan="2">光具有波粒二象性</td>
-            </tr>
-            <tr>
-                <td>电子衍射——光的波动性</td>
-            </tr>
-        </table>
+        <div class="Card-Property" id="LaserProperty">
+            <h2>激光的性质</h2>
+            <ul>
+                <li>高相干性</li>
+                <li>高单色性</li>
+                <li>高方向性</li>
+                <li>高亮度</li>
+            </ul>
+        </div>
 
-        <h2>激光的特性</h2>
-        <table>
-            <tr>
-                <td class="tbtitle" colspan="3">激光特性</td>
-            </tr>
-            <tr>
-                <td rowspan="4">高光子简并度</td>
-                <td colspan="2">高方向性</td>
-            </tr>
-            <tr>
-                <td colspan="2">高亮度</td>
-            </tr>
-            <tr>
-                <td rowspan="2">窄线宽</td>
-                <td>高单色性</td>
-            </tr>
-            <tr>
-                <td>高相干性</td>
-            </tr>
-        </table>
+        <div class="Card-Definition">
+            <b>激光器的组成</b>
+            <ul>
+                <li>泵浦源</li>
+                <li>工作物质</li>
+                <li>光学谐振腔</li>
+            </ul>
+        </div>
 
-        <p>对于中心波长为\(\lambda\)（中心频率为\(\nu\)）的激光器，发出谱线的线宽为\(\Delta\lambda\)（或\(\Delta\nu\)）</p>
-
-        <h3>高单色性</h3>
-        单色性表征方式：
-        $$\Delta \nu/\nu = \Delta \lambda/\lambda$$
-        $$$$
-        线宽\(\Delta \nu\)和\(\Delta \lambda\)越窄，激光单色性越好。
-        
-        <h3>高相干性</h3>
-        <b>光的相干性</b>
-        <p>不同时刻、不同空间点上两个光波场的相关程度。</p>
-        <p>不同空间点上、不同时刻的光波场某些特性的相关性</p>
-        <table>
- 
-            <tr>
-                <td rowspan="2">相干性</td>
-                <td>空间相干性：描述垂直于光束传播方向上各点的相位关系。</td>
-            </tr>
-            <tr>
-                <td>时间相干性：描述光束传播方向上各点的相位关系。</td>
-            </tr>
-        </table><br><br>
-        <table>
-            <tr>
-                <td><b>相干体积\(V_c\)</b></td>
-                <td>光波场都具有明显相干性的空间体积。</td>
-                <td>$$V_c = A_c L_c = A_c \tau_c c$$</td>
-            </tr>
-            <tr>
-                <td><b>相干面积\(A_c\)</b></td>
-                <td>垂直于光传播方向的截面。</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><b>相干长度\(L_c\)</b></td>
-                <td>沿光的传播方向。</td>
-                <td>$$L = \lambda^2/\Delta\lambda$$</td>
-            </tr>
-            <tr>
-                <td><b>相干时间\(\tau_c\)</b></td>
-                <td>光沿传播方向通过相干长度\(L_c\)所需的时间。</td>
-                <td></td>
-            </tr>
-        </table>
-
-        <b>横模\(TEM_{mn}\)</b>
-        <p>用于表示激光器的横向光场分布。</p>
+        <h2>光（辐射）与物质（原子）的相互作用</h2>
+        <b>光与物质的相互作用过程：</b>
         <ul>
-            <li>只有一个基膜\(TEM_{00}\)时，激光的相干性非常好。</li>
-            <li>存在多个横膜（不同横膜间非相干时），相干性会降低。</li>
-        </ul>
-    
-        <b lang="en">Conclusion</b>
-        <p>相格空间体积以及一个光波模或光子态占有的空间体积都等于相干体积。</p>
-        <p>属于同一状态的光子或同一模式的光波是相干的，不同状态的光子或不同模式的光波是不相干的。</p>
-        
-
-        <h3>高方向性</h3>
-        <p>光束发散角越小，方向性越高。</p>
-        <p>激光束的发散角主要由激光器受激辐射的机理和光学谐振腔对输出光束方向的限制所决定。</p>
-        <p>激光束所能达到的最小光束发散角不能小于激光通过输出孔径的衍射极限。光腔的输出孔径为\(D\)时，衍射极限角度为：</p>
-        $$\theta_m\approx \lambda/D$$
-
-
-        <h3>高亮度</h3>
-        <b>光源亮度</b>
-        <p>单位截面积单位立体角内包络的光功率，用于表征光源定向发光能力强弱。</p>
-        $$B = \frac{\Delta P}{\Delta S\Delta \Omega}$$
-        <ul>
-            <li>\(\Delta P\)：光功率</li>
-            <li>\(\Delta S\)：光束的截面积</li>
-            <li>\(\Delta \Omega\)：光束的立体角</li>
-            <li>单位：\(W/(cm^2\cdot Sr)\)</li>
+            <li>自发辐射跃迁</li>
+            <li>受激辐射跃迁</li>
+            <li>受激吸收跃迁</li>
         </ul>
 
+        <p>以上三种过程是同时存在的.</p>
 
-        <h2>第三节 激光产生的条件</h2>
-
-        <table>
-            <tr>
-                <td class="tbtitle">条件</td>
-                <td class="tbtitle">解释</td>
-            </tr>
-            <tr>
-                <td><b>增益介质（工作物质、激光介质、激活介质）</b></td>
-                <td class="tbtext">为激光提供增益放大的作用，是激光产生的<b>核心条件</b>。</td>
-            </tr>
-            <tr>
-                <td><b>外界激励（抽运或泵浦）源</b></td>
-                <td class="tbtext">向增益介质提供激励（抽运或泵浦）的能量，用于破坏增益介质内部的热平衡态，使增益介质内部的激光上能级和下能级粒子数出现反转分布。</td>
-            </tr>
-            <tr>
-                <td><b>光学谐振（共振）腔</b></td>
-                <td></td>
-            </tr>
-        </table>
+        <div class="Card-Definition">
+            <b>二能级系统模型</b>
+            <p>考虑原子的两个能级\(E_2 \gt E_1\)，且满足：</p>
+            $$E_2 - E_1 = h\nu$$
+            <p>单位体积内处于两能级的原子数密度分别为\(n_1\)和\(n_2\).</p>
+        </div>
 
 
-        <h3>第四节 激光器的分类</h3>
-        <table>
-            <tr>
-                <td rowspan="7">按工作物质的物态分类</td>
-                <td rowspan="4">气体激光器</td>
-            </tr>
-            <tr>
-                <td>原子气体激光器</td>
-                
-            </tr>
-            <tr>
-                <td>分子气体激光器</td>
-            </tr>
-            <tr>
-                <td>离子气体激光器</td>
-            </tr>
-            <tr>
-                <td>液体激光器</td>
-            </tr>
-            <tr>
-                <td>半导体激光器</td>
-            </tr>
-            <tr>
-                <td>固体激光器</td>
-            </tr>
-        </table>
-    </body>
+        <div class="Card-Analysis">
+            <h2>自发辐射跃迁</h2>
+            
+            <div class="Card-Definition">
+                <b>自发辐射跃迁</b>
+                <p>处于高能级的原子，自发向低能级跃迁，并辐射出一个能量为\(h\nu\)的光子的过程.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>自发辐射光</b>
+                <p>由自发辐射跃迁产生的光波.</p>
+            </div>
+
+            <div class="Card-Formula">
+                <b>自发跃迁概率</b>
+                $$A_{21} = \left(\frac{\mathrm{d}n_{21}}{\mathrm{d}t}\right)_{sp}\frac{1}{n_2}$$
+                <ul>
+                    <li>\(\left(\frac{\mathrm{d}n_{21}}{\mathrm{d}t}\right)_{sp}\)：单位体积内在\(\mathrm{d}t\)时间中由于自发辐射跃迁引起的由\(E_2\)向\(E_1\)跃迁的原子数.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>受激辐射跃迁</h2>
+
+            <div class="Card-Definition">
+                <b>受激辐射跃迁</b>
+                <p>处于高能级的原子，在频率为\(\nu\)的辐射场作用下，向低能级跃迁，并辐射出一个能量为\(h\nu\)的光子的过程.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>受激辐射光</b>
+                <p>由受激辐射跃迁产生的光波.</p>
+            </div>
+
+            <div class="Card-Formula">
+                <b>受激辐射概率</b>
+                $$W_{21} = \left(\frac{\mathrm{d}n_{21}}{\mathrm{d}t}\right)_{st}\frac{1}{n_2}$$
+                <ul>
+                    <li>\(\left(\frac{\mathrm{d}n_{21}}{\mathrm{d}t}\right)_{st}\)：单位体积内在\(\mathrm{d}t\)时间中由于受激辐射跃迁引起的由\(E_2\)向\(E_1\)跃迁的原子数.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>受激吸收跃迁</h2>
+            
+            <div class="Card-Definition">
+                <b>受激吸收跃迁</b>
+                <p>处于低能态的原子，在频率为\(\nu\)的辐射场作用下，吸收一个能量为\(h\nu\)的光子，并向高能级跃迁的过程.</p>
+            </div>
+
+            <div class="Card-Formula">
+                <b>受激吸收跃迁概率</b>
+                $$W_{12} = \left(\frac{\mathrm{d}n_{12}}{\mathrm{d}t}\right)_{st}\frac{1}{n_1}$$
+                <ul>
+                    <li>\(\left(\frac{\mathrm{d}n_{12}}{\mathrm{d}t}\right)_{st}\)：单位体积内在\(\mathrm{d}t\)时间中由于受激吸收跃迁引起的由\(E_1\)向\(E_2\)跃迁的原子数.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光放大的条件</h2>
+            <img src="Img/PhotonFlux.png" width="400">
+
+            <p>\(F\)：光子通量，即通过单位面积的光子量.</p>
+            <p>\(S\)：材料截面积.</p>
+            <p>令\(\mathrm{d}F\)为通过\(\mathrm{d}z\)段材料后单位面积上的光子通量变化量.</p>
+            <p>则\(S\mathrm{d}F\)为通过\(\mathrm{d}z\)段材料后总的光子通量变化量.</p>
+            $$\therefore S\mathrm{d}F = (W_{21}n_2 - W_{12}n_1)S\mathrm{d}z$$
+            $$\therefore \mathrm{d}F = (W_{21}n_2 - W_{12}n_1)\mathrm{d}z$$
+            <p>则实现光放大的条件为：</p>
+            $$\mathrm{d}F = (W_{21}n_2 - W_{12}n_1)\mathrm{d}z \gt 0$$
+            <p>即：</p>
+            $$\frac{n_2}{n_1} \gt \frac{W_{12}}{W_{21}}$$
+            <p>这里只考虑受激辐射跃迁于受激吸收跃迁，因为其辐射与吸收的光子是相干的.</p>
+
+            <p>腔内物质原子数按能级分布应服从热平衡状态下的玻尔兹曼分布：</p>
+            $$\frac{n_2}{n_1} = \frac{g_2}{g_1}\exp{\left(-\frac{E_2-E_1}{kT}\right)}$$
+            <p>式中，\(g_1\)和\(g_2\)分别为能级\(E_1\)和\(E_2\)的统计权重.</p>
+            <p>能量密度：</p>
+            $$\rho_v = \frac{8\pi h\nu^3}{c^3}\frac{1}{\exp{\left(\frac{h\nu}{kT}\right) - 1}}$$
+            <p>热平衡状态下，各能级上的粒子数应该保持动态平衡，即：</p>
+            $$A_{21}n_2 + W_{21}n_2 = W_{12}n_1$$
+            $$A_{21}n_2 + B_{21}\rho_vn_2 = B_{12}\rho_vn_1$$
+            <p>上三式对于\(T\rightarrow \infty\)的情况也应成立，则：</p>
+            $$\lim\limits_{T\rightarrow \infty}\frac{n_2}{n_1} = \frac{g_2}{g_1}$$
+            $$\lim\limits_{T\rightarrow \infty}\rho_v = \infty$$
+
+            $$\because A_21n_2 + B_{21}\rho_vn_2 = B_{12}\rho_vn_1$$
+            $$\therefore \frac{1}{\rho_1}A_{21}\frac{n_2}{n_1} + B_{21}\frac{n_2}{n_1} = B_{12}$$
+            $$\therefore B_{21}\frac{g_2}{g_1} = B_{12}$$
+            $$\therefore \frac{B_{12}}{B_{21}} = \frac{g_2}{g_1}$$
+            $$\therefore \frac{W_{12}}{W_{21}} = \frac{g_2}{g_1}$$
+
+            <p>代入：</p>
+            $$\frac{n_2}{n_1} \gt \frac{W_{12}}{W_{21}}$$
+            <p>得：</p>
+            $$\frac{n_2}{n_1} \gt \frac{g_2}{g_1}$$
+            <p>又因玻尔兹曼分布：</p>
+            $$\frac{n_2}{n_1} = \frac{g_2}{g_1}\exp\left(-\frac{E_2-E_1}{kT}\right)$$
+
+            <p>当\(g_1 = g_2\)时，\(n_2 \lt n_1\)，即：在热平衡状态下，高能级粒子数恒小于低能级粒子数.</p>
+            <p>此时光放大条件为：\(n_2\gt n_1\)，即粒子数反转.</p>
+
+        </div>
+
+        <div id="PageEnd"></div>
+        <a class="GoToBottom" href="#PageEnd">Bottom</a>
 
 </html>

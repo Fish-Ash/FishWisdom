@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML</title>
+        <link rel="stylesheet" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>HTML</h1>
+
+        <h2>文档声明</h2>
+        <pre><code>
+            &lt;!DOCTYPE&gt;    #H5标准
+        </code></pre>
+
+        <h2>HTML基本结构</h2>
+        <pre><code>
+            &lt;html&gt;
+                &lt;head&gt;
+                &lt;\head&gt;
+
+                &lt;body&gt;
+                &lt;\body&gt;
+            &lt;\html&gt;
+
+            &lt;!--
+            HTML基本属性：
+            lang="zh-CN"    # 语言：简体中文
+            --&gt;
+        </code></pre>
+
+        <h2>标签（元素）</h2>
+        <h3>head</h3>
+        <b>页面标签</b>
+        <pre><code>
+            &lt;title&gt;Title&lt;\title&gt;
+        </code></pre>
+
+        <b>解码方式</b>
+        <pre><code>
+            &lt;meta charset="UTF-8"&gt;
+        </code></pre>
+
+        <h3>body</h3>
+        <b>走马灯</b>
+        <pre><code>
+            &lt;marquee&gt;text&lt;/marquee&gt;
+            """
+            属性：
+            id = "Str."        # ID
+            loop = "Num."      # 循环次数
+            bgcolor = "Color." # 背景颜色
+            """
+        </code></pre>
+        <marquee>text</marquee>
+
+        <b>输入框</b>
+        <pre><code>
+            &lt;input&gt;
+            """
+            属性：
+            type = "password" # 密码模式（隐藏输入）
+            disable           # 禁用
+            """
+        </code></pre>
+        <input>
+        
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

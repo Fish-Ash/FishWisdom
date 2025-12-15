@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>激光原理</title>
+    <link rel="stylesheet" href="../../../../CSS/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+</head>
+
+
+<body>
+    <div class="header" id="PageHead">不惑</div>
+    <a class="BackToTop" href="#PageHead">Top</a>
+
+
+    <ul class="navibar">
+        <li><a href="../../../Home.html">主页</a></li>
+        <li><a href="../../../Navigation.html">导航</a></li>
+    </ul>
+
+    <h1>高斯光束</h1>
+
+    <div class="PageCatalog">
+        <ul>
+            <li><a href="#Flag1">波动方程</a></li>
+            <li><a href="#Flag2">波动方程在类透镜介质中的解</a></li>
+            <li><a href="#Flag3">均匀介质中的高斯光束</a></li>
+            <li><a href="#GaussBeamProperty">高斯光束基本特性</a></li>
+            <li><a href="#Flag4">高斯光束通过薄透镜的传输</a></li>
+        </ul>
+    </div>
+
+
+    <div class="Card-Analysis" id="Flag1">
+        <h2>波动方程</h2>
+
+        <p>各向同性（物质方程适用）、无电荷分布（\(\rho=0\)）的介质中，<a
+                href="../Electromagnetism/Maxwell.html#DifferentialForm">Maxwell方程组的微分形式</a>为：</p>
+        $$\begin{cases}
+        \nabla\cdot(\epsilon \mathbf{E}) = 0\\
+        \nabla\times\mathbf{E} = -\mu\frac{\partial\mathbf{H}}{\partial t}\\
+        \nabla\times\mathbf{H} = \epsilon \frac{\partial \mathbf{E}}{\partial t}
+        \end{cases}$$
+        <p>此处只考虑电场与物质相互作用的情况，不考虑磁场与物质相互作用（非常微弱、忽略不计）的情况.</p>
+        <p>由此可得<b>波动方程（亥姆霍兹方程）</b>：</p>
+        $$\mu\epsilon \frac{\partial^2\mathbf{E}}{\partial t^2} = \nabla^2\mathbf{E}$$
+
+        <div class="Card-Question">
+            <p>怎么推导的？（旋度）</p>
+        </div>
+    </div>
+
+    <div class="Card-Analysis">
+        <h2 id="Flag2">波动方程在类透镜介质中的解</h2>
+
+        <p>考虑波数表示为：\(k^2(r) = k_0^2 - k_0k_2r^2,~k_0,k_2\in\mathbb{Z}\)</p>
+        <ul>
+            <li>\(k_0\)：轴线上的波数.</li>
+            <li>\(k_2\)：与介质性质、工作条件、泵浦特性相关的常数.</li>
+            <li>\(r\)：离轴距离.</li>
+        </ul>
+        <p>类透镜介质的折射率公式：</p>
+        <div class="Formula">
+            $$n(r) = n_0(1 - \frac{k_2}{2k_0}r^2)$$
+            <div class="Derivation">
+                $$\because k(r) = \frac{2\pi}{\lambda}n(r)$$
+                $$\begin{align}
+                \therefore n(r) &= \frac{\lambda}{2\pi}k(r)\\
+                &= \frac{\lambda}{2\pi}k_0\sqrt{1 - \frac{k_2}{k_0}r^2}
+                \end{align}$$
+                $$\because(1-x)^\alpha = 1 - \alpha x + o(x)$$
+                $$\therefore \sqrt{1-\frac{k_2}{k_0}r^2} \approx 1 - \frac{k_2}{2k_0}r^2$$
+                $$\therefore n(r) = \frac{\lambda}{2\pi}k_0(1 - \frac{k_2}{2k_0}r^2)$$
+                <p>令\(n_0 = \frac{\lambda}{2\pi}k_0\)，表示轴线上介质的折射率.</p>
+                $$\therefore n(r) = n_0(1 - \frac{k_2}{2k_0}r^2)$$
+            </div>
+        </div>
+
+        $$\because r=\sqrt{x^2 + y^2}$$
+        $$\therefore \nabla^2 = \nabla_r^2 +\frac{\partial^2}{\partial z^2} = \frac{\partial^2}{\partial r^2} +
+        \frac{1}{r}\frac{\partial}{\partial r} + \frac{\partial^2}{\partial z^2}$$
+
+        <p>类透镜介质中传播的是一种近似平面波.</p>
+        <p>近似平面波的表达式为：</p>
+        $$E = \phi(x,y,z)e^{-ikz}$$
+        <p>其中\(\phi(x,y,z)\)为修正因子，包含了相位修正与振幅修正两部分，并满足慢变近似.</p>
+        <p>代入波动方程得：</p>
+        $$\nabla^2\phi - 2ik\phi' -kk_2\phi r^2 = 0$$
+        <p>令</p>
+        $$\phi = E_0\exp\left\{-i\left[p(z) + \frac{k}{2q(z)}r^2\right]\right\}$$
+        <p>代入波动方程得：</p>
+        $$-\left[\frac{k}{q(z)}\right]^2r^2 - 2i\left[\frac{k}{q(z)}\right] - k^2\left[\frac{1}{q(z)}\right]'r^2 - 2kp'
+        -kk_2r^2 = 0$$
+        <p>由于方程对任意\(r\)均成立，因此\(r\)的不同次幂的系数均为\(0\)，则：</p>
+        $$\left\{\left[\frac{k}{q(z)}\right]^2 + k^2\left[\frac{1}{q(z)}\right]' + kk_2\right\}r^2 +
+        2i\left[\frac{k}{q(z)}\right] + 2kp' = 0$$
+        <p>对于\(r^2\)项：</p>
+        $$\left[\frac{k}{q(z)}\right]^2 + k^2\left[\frac{1}{q(z)}\right]' + kk_2 = 0 \Rightarrow
+        \left[\frac{1}{q(z)}\right]^2 + \left[\frac{1}{q(z)}\right]' + \frac{k_2}{k} = 0$$
+        <p>对于\(r^0\)项：</p>
+        $$2i\left[\frac{k}{q(z)}\right] + 2kp' = 0 \Rightarrow \therefore p'(z) = -\frac{i}{q(z)}$$
+        <b>类透镜介质中的简化波动方程：</b>
+        $$\begin{cases}
+        \left[\frac{1}{q(z)}\right]^2 + \left[\frac{1}{q(z)}\right]' + \frac{k_2}{k} = 0\\
+        p'(z) = -\frac{i}{q(z)}
+        \end{cases}$$
+        <p>第一个方程可以求出\(q(z)\).</p>
+        <p>第二个方程可以求出\(p(z)\).</p>
+        <p>由\(q(z)\)与\(p(z)\)可以求出\(\phi\).</p>
+    </div>
+
+    <div class="Card-Analysis">
+        <h2 id="Flag3">均匀介质中的高斯光束</h2>
+        <p>均匀介质可以视为\(k_2 = 0\)时的类透镜介质.</p>
+
+        <p>因此，均匀介质中求解简化波动方程，得：</p>
+        <div class="Formula">
+            $$\begin{cases}
+            q(z) = z + q_0\\
+            p(z) = -i\ln(1+\frac{z}{q_0})
+            \end{cases},~q_0\in\mathbb{Z}$$
+            <div class="Derivation">
+                $$\because k_2 = 0$$
+                $$\therefore [\frac{1}{q(z)}]^2 + [\frac{1}{q(z)}]' + \frac{k_2}{k} = 0 \Rightarrow [\frac{1}{q(z)}]^2 +
+                [\frac{1}{q(z)}]' = 0$$
+                $$令\frac{1}{q(z)} = \frac{S'(z)}{S(z)},~S(z)\neq0$$
+                $$\frac{S'^2(z)}{S^2(z)} + \frac{S''(z)S(z) - S'^2(z)}{S^2(z)} = 0$$
+                $$\therefore S''(z)S(z) = 0$$
+                $$\because S(z) \neq 0$$
+                $$\therefore S''(z) = 0$$
+                $$\therefore S(z) = az + b,~a,b\in\mathbb{Z}$$
+                $$\therefore \frac{1}{q(z)} = \frac{a}{az + b}$$
+                $$\therefore q(z) = \frac{az + b}{a} = z + \frac{b}{a} = z + q_0,~q_0\in\mathbb{Z}$$
+                $$\because p'(z) = -\frac{i}{q(z)} = -\frac{i}{z+q_0}$$
+                $$\therefore p(z) = -i\ln(1 + \frac{z}{q_0}) + C_1, ~ C_1\in \mathbb{Z}$$
+                <p>\(C_1\)不影响振幅与相位的分布，不妨设\(C_1 = 0\).</p>
+                $$\therefore p(z) = -i\ln(1 + \frac{z}{q_0})$$
+            </div>
+        </div>
+
+        <p>带入\(\phi\)，得：</p>
+        $$\begin{align}
+        \phi &= E_0\exp\left\{-i\left[p(z) + \frac{k}{2q(z)}r^2\right]\right\}\\
+        &= E_0\exp\left\{-i\left[-i\ln(1 + \frac{z}{q_0}) + \frac{k}{2(z+q_0)}r^2\right]\right\}
+        \end{align}$$
+
+
+    </div>
+
+    <p>设：</p>
+    $$q_0 = i\frac{\pi\omega_0^2\eta}{\lambda}$$
+    <p>人为定义以下参数：</p>
+    $$\omega^2(z) = \omega_0^2\left[1+\left(\frac{\lambda z}{\pi\omega_0^2\eta}\right)^2\right] = \omega_0^2(1 +
+    \frac{z^2}{z_0^2})$$
+    $$\kappa(z) = \tan^{-1}\left(\frac{\lambda z}{\pi\omega_0^2\eta}\right) = \tan^{-1}\left(\frac{z}{z_0}\right)$$
+
+    <div class="Card-Definition">
+        <b>准直距离（瑞利长度）</b>
+        $$z_0 = \frac{\pi\omega_0^2\eta}{\lambda}$$
+        <p>在准直距离内，高斯光束可以近似认为是平行的.</p>
+    </div>
+
+    <div class="Card-Definition" id="Gauss_R">
+        <b>高斯光束等相位面的曲率半径</b>
+        $$R(z) = z\left[1 + \left(\frac{\pi\omega_0^2\eta}{\lambda z}\right)^2\right] = z\left(1 +
+        \frac{z_0^2}{z^2}\right)$$
+    </div>
+
+    <div class="Card-Definition">
+        <b>基本高斯光束解</b>
+        <p>均匀介质中波动方程的一个解.</p>
+        $$\begin{align}
+        E(x,y,z) &= \phi(x,y,z)e^{-ikz}\\
+        &=
+        \left\{E_0\frac{\omega_0}{\omega(z)}\exp\left[-\frac{r^2}{\omega^2(z)}\right]\right\}\exp\left\{-i\left[kz-\kappa(z)+\frac{kr^2}{2R(z)}\right]\right\}
+        \end{align}$$
+        <p>前一项为振幅项，后一项为相位项.</p>
+    </div>
+
+    <div class="Card-Analysis" id="GaussBeamProperty">
+        <h2>均匀介质中高斯光束的基本特性</h2>
+        <h3>振幅分布特性</h3>
+        <p>基本高斯光束的振幅为：</p>
+        $$|\mathbf{E}| = E_0\frac{\omega_0}{\omega(z)}\exp\left[-\frac{r^2}{\omega^2(z)}\right]$$
+        <p>\(z\)为定值时，振幅随\(r\)按\(\mu = 0\)的<a
+                href="../../Math/Probability/Distribution.html#ContinuousDistribution">高斯函数</a>规律变化.</p>
+
+        <b>最大振幅</b>
+        <p>由高斯函数，在光轴上具有最大的振幅.</p>
+        $$|\mathbf{E}|_{max} = E_0\frac{\omega_0}{\omega(z)}$$
+
+        <b>光斑半径</b>
+        <p>\(z\)截面内，振幅下降到最大值的\(1/e\)时的离轴距离\(r\).</p>
+        $$r=\omega(z)$$
+        $$\because \omega^2(z) = \omega_0^2(1 + \frac{z^2}{z_0^2})$$
+        $$\therefore \frac{\omega^2(z)}{\omega_0^2} - \frac{z^2}{z_0^2} = 1$$
+        <p>即光斑半径随传播距离的变化规律为双曲线.</p>
+        <p>\(z=0\)时\(\omega(z)\)有最小值\(\omega_0\)，\(z=0\)的位置称为高斯光束的<b>束腰位置</b>，\(\omega_0\)称为高斯光束的<b>束腰半径</b>.</p>
+
+        <hr>
+
+        <h3 id="Gauss_R_Property">相移特性</h3>
+        <p>基本高斯光束的相移特性由相位因子决定：</p>
+        $$\Phi(r,z) = k\left[z + \frac{r^2}{2R(z)}\right] - \tan^{-1}\kappa (z)$$
+
+        <p>将高斯光束在传输过程中的总相移与标准球面波的总相移比较.</p>
+        <p>均匀球面波的等相位面曲率中心是一个固定的点，故等相位面是一系列同心球面.</p>
+        <p>高斯光束的等相位面曲率中心不是固定点，随光束传播而移动.</p>
+
+        $$R(z) = z\left[1 + \left(\frac{\pi\omega_0^2\eta}{\lambda z}\right)^2\right] = z\left(1 +
+        \frac{z_0^2}{z^2}\right)$$
+
+        <table>
+            <thead>
+                <td>$$z$$</td>
+                <td>$$R(z)$$</td>
+                <td>描述</td>
+            </thead>
+            <tr>
+                <td>$$z=0$$</td>
+                <td>$$R(z)\rightarrow \infty$$</td>
+                <td class="tbtext">束腰处，等相位面为平面.</td>
+            </tr>
+            <tr>
+                <td>$$z\rightarrow \infty$$</td>
+                <td>$$R(z)\approx z \rightarrow \infty$$</td>
+                <td class="tbtext">离束腰无限远处，等相位面为平面，且曲率半径中心位于束腰处.</td>
+            </tr>
+            <tr>
+                <td>$$z = \pm z_0$$</td>
+                <td>$$R_{\min}(z) = 2z_0$$</td>
+                <td class="tbtext">\(z=z_0\)处，等相位面曲率半径最小.</td>
+            </tr>
+            <tr>
+                <td>$$z\gg z_0$$</td>
+                <td>$$R(z) \approx z$$</td>
+                <td class="tbtext">远场处的高斯光束可以看作为一个由\(z=0\)发出，半径为\(z\)的球面波.</td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h3>高斯光束的孔径</h3>
+        <p>考虑开孔半径为\(a\)的圆孔，高斯光束通过半径为\(a\)的圆孔的功率\(P_a\)与总功率\(P_\infty\)之比为：</p>
+        $$T = \frac{\int_{0}^a\int_0^{2\pi}I(r)2\pi r\mathrm{d}r\mathrm{d}\theta}{\int_{0}^\infty\int_0^{2\pi}I(r)2\pi
+        r\mathrm{d}r\mathrm{d}\theta} = 1 - \exp\left(-\frac{2a^2}{\omega^2}\right)$$
+
+        <div class="Card-Question">
+            <p>功率的公式为什么是这个</p>
+        </div>
+
+        <table>
+            <tr>
+                <td>孔径半径\(a\)</td>
+                <td>\(1.5\omega\)</td>
+                <td>\(2\omega\)</td>
+            </tr>
+            <tr>
+                <td>功率透过比\(\%\)</td>
+                <td>\(98.89\)</td>
+                <td>\(99.99\)</td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h3 id="Gauss_theta">远场发散角</h3>
+        <p>瑞利范围外，高斯光束迅速发散，用<b>远场发散角</b>表征这一特性.</p>
+        <p>高斯光束远场发散角\(\theta\)（半角）一般定义为：\(z\rightarrow\infty\)（远场时）高斯光束振幅减小到中心最大值的\(1/e\)处与\(z\)轴的夹角.</p>
+        <p>实际上就是双曲线过原点的渐近线与\(z\)轴的夹角.</p>
+        $$\theta_{1/e} = \lim{\frac{\omega(z)}{z}} = \frac{\lambda}{\pi \omega_0} = \sqrt{\frac{\lambda}{\pi f}}$$
+        <p>包含在发散全角\(2\theta_{1/e}\)范围内的功率占高斯光束基模光束总功率的\(86.5\%\).</p>
+    </div>
+
+    <div class="Card-Analysis">
+        <h2>均匀介质中的高阶高斯光束</h2>
+        <p>考虑方位角的变化，即\(\frac{\partial}{\partial \phi}\neq 0\)，则：</p>
+        $$\nabla^2 = \left[\left(\frac{\partial^2}{\partial r^2} + \frac{1}{r}\frac{\partial}{\partial
+        \phi}\right)\right] + \frac{\partial^2}{\partial z^2}$$
+        <p>设波动方程的特解为：</p>
+        $$E(x,y,z) =
+        \alpha\left(\frac{\sqrt{2}x}{\omega}\right)\beta\left(\frac{\sqrt{2}y}{\omega}\right)\phi(x,y,z)e^{-ikz}$$
+        <p>解得：</p>
+        $$\begin{cases}
+        \alpha\left(\frac{\sqrt{2}x}{\omega}\right) = H_m\left(\frac{x}{\omega}\right)\\
+        \beta\left(\frac{\sqrt{2}y}{\omega}\right) = H_n\left(\frac{y}{\omega}\right)\\
+        \end{cases}$$
+        <p>其中，\(H_m\)与\(H_n\)分别是\(m\)次与\(n\)次的厄米多项式.</p>
+        <p>最初几项厄米多项式为：</p>
+        $$\begin{cases}
+        H_0(x) = 1\\
+        H_1(x) = 2x\\
+        H_2(x) = 4x^2 - 2\\
+        H_3(x) = 8x^3 - 12x
+        \end{cases}$$
+        <p>最终求得：</p>
+        $$E_{m,n}(x,y,z) =
+        E_0\frac{\omega_0}{\omega(z)}H_m\left[\sqrt{2}\frac{x}{\omega(z)}\right]H_n\left[\sqrt{2}\frac{y}{\omega(z)}\right]\exp\left\{-\frac{x^2+y^2}{\omega^2(z)}
+        - i\left[\frac{k(x^2+y^2)}{2R(z)} + kz + (m+n+1)\kappa(z)\right]\right\}$$
+
+        <div class="Card-Question">
+            <p>为什么这里的\(\kappa(z)\)前是正号，我觉得应该是负号，这样\(m=n=0\)的时候才符合基模高斯光束解的情况.</p>
+        </div>
+    </div>
+
+
+    <div class="Card-Analysis">
+        <h2>类透镜介质中的高斯光束</h2>
+        $$q(z) = \frac{q_0\cos\left(\sqrt{\frac{k_2}{k}}z\right) +
+        \sqrt{\frac{k}{k_2}}\sin\left(\sqrt{\frac{k_2}{k}}z\right)}{-q_0\sqrt{\frac{k_2}{k}}\sin\left(\sqrt{\frac{k_2}{k}}z\right)+\cos\left(\sqrt{\frac{k_2}{k}}z\right)}$$
+
+        <div class="Card-Question">
+            <p>这个东西不知道有什么意义，没写完.</p>
+        </div>
+    </div>
+
+    <div class="Card-Analysis">
+        <h2>高斯光束的特征参数</h2>
+        <p>1、用参数\(\omega_0\)（或\(z_0\)）及束腰位置表征高斯光束.</p>
+        <p>2、用参数\(\omega(z)\)与\(R(z)\)表征高斯光束.</p>
+        <p>3、\(q\)参数</p>
+
+        <div class="Card-Definition" id="Gauss_q">
+            <b>\(q\)参数</b>
+            $$\frac{1}{q(z)} = \frac{1}{R(z)} - i\frac{\lambda}{\pi\omega^2(z)}$$
+        </div>
+
+        $$\begin{cases}
+        \frac{1}{R(z)} = \mathrm{Re}\{\frac{1}{q(z)}\}\\
+        \frac{1}{\omega^2(z)} = -\frac{\pi}{\lambda}\mathrm{Im}\{\frac{1}{q(z)}\}
+        \end{cases}$$
+    </div>
+
+    <div class="Card-Analysis">
+        <h2>光束传播的ABCD定律</h2>
+        <p>高斯光束在一段类透镜介质中传输一段距离后的光束参数\(q_2\)与入射介质处的参数\(q_1\)存在以下关系：</p>
+        $$q_2 = \frac{Aq_1 + B}{Cq_1 + D}$$
+
+        <p>对于长度为\(L\)的一段均匀介质：</p>
+        $$q_2 = \frac{1\cdot q_1 + L}{0\cdot q_1 + 1} = q_1 + L$$
+
+        <p>薄透镜：</p>
+        $$q_2 = \frac{1\cdot q_1 + 0}{-\frac{1}{f}\cdot q_1 + 1} = \frac{fq_1}{f-q_1}$$
+    </div>
+
+    <div class="Card-Analysis" id="Flag4">
+        <h2>高斯光束通过薄透镜的传输</h2>
+        <p>已知：入射高斯光束腰斑半径为\(\omega_0\)，束腰与透镜的距离为\(l\)，透镜的焦距为\(F\).</p>
+        <p>求：通过透镜后在与透镜相距\(l_c\)处的高斯光束参数\(\omega\)和\(R\).</p>
+
+        <img src="Img/GaussBeamTran.png" width="400">
+
+        <table>
+            <tr><td colspan="2"><a href="#Gauss_q" class="goto">\(q\)参数</a></td></tr>
+            <tr>
+                <td>入射高斯光束束腰处</td>
+                <td>$$q_0 = i\frac{\pi \omega_0^2}{\lambda}$$</td>
+            </tr>
+            <tr>
+                <td>出射高斯光束\(c\)处</td>
+                <td>$$\frac{1}{q_c} = \frac{1}{R_c} - i\frac{\lambda}{\pi\omega_c^2}$$</td>
+            </tr>
+        </table>
+        
+        <p>从\(q_0\)到\(q_c\)经历了三个过程：</p>
+        <ul>
+            <li>在自由空间中传输距离为\(l\).</li>
+            <li>通过焦距为\(F\)的单透镜.</li>
+            <li>在自由空间中传输距离为\(l_c\).</li>
+        </ul>
+        
+        <p>光学变换矩阵：</p>
+        <div class="Formula">
+            $$\begin{align}
+            \mathbf{T} &= \left[\begin{matrix}1&l_c\\0&1\end{matrix}\right]\left[\begin{matrix}1&0\\-\frac{1}{F}&1\end{matrix}\right]\left[\begin{matrix}1&l\\0&1\end{matrix}\right]\\
+                       &= \left[\begin{matrix}1-\frac{l_c}{F} & \frac{Fl + Fl_c - ll_c}{F}\\-\frac{1}{F}&1 - \frac{l}{F}\end{matrix}\right]
+            \end{align}$$
+            <div class="Derivation">
+                $$\begin{align}
+                \mathbf{T} &= \left[\begin{matrix}1&l_c\\0&1\end{matrix}\right]\left[\begin{matrix}1&0\\-\frac{1}{F}&1\end{matrix}\right]\left[\begin{matrix}1&l\\0&1\end{matrix}\right]\\
+                           &= \left[\begin{matrix}1 - \frac{l_c}{F}&l_c\\-\frac{1}{F}&1\end{matrix}\right]\left[\begin{matrix}1&l\\0&1\end{matrix}\right]\\
+                           &= \left[\begin{matrix}1-\frac{l_c}{F} & \frac{Fl + Fl_c - ll_c}{F}\\-\frac{1}{F}&1 - \frac{l}{F}\end{matrix}\right]
+                \end{align}$$
+            </div>
+        </div>
+
+        <div class="Formula">
+            $$q_c = l_c - F + \frac{F^2(F-l)}{(F-l^2) + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2} + i\frac{F^2\left(\frac{\pi\omega_0^2}{\lambda}\right)}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}$$
+            <div class="Derivation">
+                $$\begin{align}
+                q_c &= \frac{Aq_0 + B}{Cq_0 + D}\\
+                    & = \frac{\left(1 - \frac{l_c}{F}\right)\left(\frac{\pi\omega_0^2}{\lambda}\right)i + \frac{Fl + Fl_c - ll_c}{F}}{-\frac{1}{F}\left(\frac{\pi\omega_0^2}{\lambda}\right)i + 1 - \frac{l}{F}}
+                \end{align}$$
+                $$\because (F-l)(F-l_c) = F^2 - Fl - Fl_c + ll_c$$
+                $$\therefore Fl + Fl_c - ll_c = F^2 - (F-l)(F-l_c)$$
+                <p>上下同乘\(F\)，得：</p>
+                $$q_c = \frac{\left(F - l_c\right)\left(\frac{\pi\omega_0^2}{\lambda}\right)i + F^2 - (F-l)(F-l_c)}{-\left(\frac{\pi\omega_0^2}{\lambda}\right)i + F - l}$$
+                <p>上下同乘\((F-l) + \left(\frac{\pi\omega_0^2}{\lambda}\right)i\)，得：</p>
+                $$\begin{align}
+                q_c &= \frac{-(F-l_c)\left(\frac{\pi\omega_0^2}{\lambda}\right) + (F-l)[F^2 - (F-l)(F-l_c)]}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2} + \frac{(F-l)(F-l_c)\left(\frac{\pi\omega_0^2}{\lambda}\right)i + [F^2 - (F-l)(F-l_c)]\left(\frac{\pi\omega_0^2}{\lambda}\right)i}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}\\
+                    &= \frac{-(F-l_c)\left(\frac{\pi\omega_0^2}{\lambda}\right) + F^2(F-l) - (F-l_c)(F-l)^2}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2} + i\frac{F^2\left(\frac{\pi\omega_0^2}{\lambda}\right)}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}\\
+                    &= l_c - F + \frac{F^2(F-l)}{(F-l^2) + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2} + i\frac{F^2\left(\frac{\pi\omega_0^2}{\lambda}\right)}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}
+                \end{align}$$
+            </div>
+        </div>
+
+        <h3 id="Gauss_omega0_trans">高斯光束束腰传播规律</h3>
+        <p>此时令\(c\)点取在像方束腰上，则：</p>
+        $$\begin{cases}
+        l_c = l'\\
+        \omega_c = \omega'
+        \end{cases}$$
+        <p>由<a href="#Gauss_R_Property" class="goto">高斯光束的束腰特点</a>，有：</p>
+        $$R_c\rightarrow\infty$$
+        <div class="Formula">
+            $$l_c = F - \frac{F^2(F-l)}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}$$
+            <div class="Derivation">
+                $$\because \frac{1}{R_c} = \mathrm{Re}\{\frac{1}{q_c}\} = 0$$
+                $$\therefore \mathrm{Re}\{q_c\} = l_c - F + \frac{F^2(F-l)}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2} = 0$$
+                $$\therefore l_c = F - \frac{F^2(F-l)}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}$$
+            </div>
+        </div>
+        <div class="Formula">
+            $$\frac{1}{\omega_c^2} = \frac{1}{\omega_0^2}\left(1 - \frac{l}{F}\right)^2 + \frac{1}{F^2}\left(\frac{\pi\omega_0}{\lambda}\right)^2$$
+            <div class="Derivation">
+                $$\because \frac{1}{q_c} = \frac{1}{R_c} - i\frac{\lambda}{\pi\omega_c^2} = -i\frac{\lambda}{\pi\omega_c^2}$$
+                $$\therefore \frac{1}{\omega_c^2} = -\frac{\pi}{\lambda}\mathrm{Im}\{\frac{1}{q_c}\}$$
+                $$\because q_c = i\frac{F^2\left(\frac{\pi\omega_0^2}{\lambda}\right)}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}$$
+                $$\therefore \frac{1}{q_c} = -i\frac{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}{F^2\cdot\frac{\pi\omega_0^2}{\lambda}}$$
+                $$\begin{align}\therefore \frac{1}{\omega_c^2} &= \frac{\pi}{\lambda}\cdot\frac{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}{F^2\cdot\frac{\pi\omega_0^2}{\lambda}}\\
+                                                               &= \frac{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}{F^2\cdot\omega_0^2}\\
+                                                               &= \frac{1}{\omega_0^2}\left(1 - \frac{l}{F}\right)^2 + \frac{1}{F^2}\left(\frac{\pi\omega_0}{\lambda}\right)^2
+                \end{align}$$
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2>高斯光束的聚焦</h2>
+        <b>聚焦的目的</b>
+        <p>缩小光斑半径，将激光束聚焦成极小的光斑，从而得到极高的功率密度与空间分辨率.</p>
+    </div>
+
+    <div class="Card-Analysis">
+        <h2>高斯光束的匹配</h2>
+        <b>问题的导出</b>
+        <p>实践过程中，通常需要把一个激光器谐振腔所产生的高斯光束，注入到另一个谐振腔或其他光学系统中.这就涉及到了高斯光束匹配的问题.</p>
+
+        <p>一般来讲，高斯光束注入的光学系统相当于一个稳定腔，具有确定的本征模式.</p>
+
+        <b>不匹配的缺点</b>
+        <ul>
+            <li>耦合效率的降低</li>
+            <li>能量的损失</li>
+        </ul>
+
+        <b>利用单透镜实现模式匹配</b>
+        <p>当一个谐振腔产生的单模高斯光束入射到另一个谐振腔内时，在两腔之间适当位置插入一个适当焦距的单透镜.</p>
+
+        <div class="Card-Question">
+            <p>为什么插一个透镜就能光束匹配了？</p>
+            <p>高斯光束的模的概念是什么？</p>
+            <p>怎么判断两个高斯光束的模一致？</p>
+        </div>
+
+        $$l' = F + \frac{F^2(l-F)}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}$$
+        $$\therefore \frac{l' - F}{l - F} = \frac{F^2}{(F - l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}$$
+        $$\frac{1}{\omega_0'^2} = \frac{1}{\omega_0^2}\left(1 - \frac{l}{F}\right)^2 + \frac{1}{F^2}\left(\frac{\pi\omega_0}{\lambda}\right)^2$$
+        $$\therefore \frac{\omega_0^2}{\omega_0'^2} = \frac{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}{F^2}$$
+        $$\therefore \frac{\omega_0'^2}{\omega_0^2} = \frac{F^2}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}$$
+        $$\therefore \frac{\omega_0'^2}{\omega_0^2} = \frac{l'-F}{l - F}$$
+        $$又\because \frac{1}{\omega_0'^2} = \frac{1}{\omega_0^2}\left(1 - \frac{l}{F}\right)^2 + \frac{1}{F^2}\left(\frac{\pi\omega_0}{\lambda}\right)^2$$
+        <p>两边同乘\(\omega_0'\)，得：</p>
+        $$1 = \frac{l'-F}{l-F}\cdot\frac{(F-l)^2}{F^2} + \frac{1}{F^2}\left(\frac{\pi\omega_0\omega_0'}{\lambda}\right)^2$$
+        $$F^2 = (l'-F)(l-F) + \left(\frac{\pi\omega_0\omega_0'}{\lambda}\right)^2$$
+        <p>令\(f_0 = \left(\frac{\pi\omega_0\omega_0'}{\lambda}\right)^2\)，则：</p>
+        $$F^2 - f_0^2 = (l'-F)(l-F)$$
+        $$又\because \frac{\omega_0'^2}{\omega_0^2} = \frac{l'-F}{l - F}$$
+        $$\therefore\begin{cases}
+        l'-F = \pm\frac{\omega_0'}{\omega_0}\sqrt{F^2 - f_0^2}\\
+        l-F = \pm\frac{\omega_0}{\omega_0'}\sqrt{F^2 - f_0^2}
+        \end{cases}$$
+
+        <b>case 1</b>
+        <p>给定一个焦距为\(F\)的透镜：</p>
+        <p>此时可以解出一组\(l,l'\).</p>
+        <p>求出实数解的条件为：</p>
+        $$F\geq f_0$$
+
+        <b>case 2</b>
+        <p>两个腔的相对位置固定：</p>
+        $$l_0 = l + l'$$
+        <p>两式相加即可解出\(F\).</p>
+        <p>再代回两式即可解出\(l,l'\).</p>
+    </div>
+
+    <div class="Card-Analysis">
+        <h2>高斯光束的自再现变换</h2>
+        
+        <div class="Card-Definition">
+            <b>高斯光束的自再现变换</b>
+            <p>高斯光束通过透镜后，参数\(\omega_0\)或\(f\)不发生改变.</p>
+            <p>即高斯光束的结构不发生改变，仅光束束腰位置沿光轴平移一段距离.</p>
+            $$\begin{cases}
+            \omega_0' = \omega_0\\
+            l'=l
+            \end{cases}$$
+        </div>
+
+        <h3>利用薄透镜实现自再现变换</h3>
+        <p>由<a href="#Gauss_omega0_trans" class="goto">高斯光束束腰传播规律</a>，有：</p>
+        $$\frac{1}{\omega_0'^2} = \frac{1}{\omega_0^2}\left(1 - \frac{l}{F}\right)^2 + \frac{1}{F^2}\left(\frac{\pi\omega_0}{\lambda}\right)^2$$
+        $$\because \omega_0' = \omega_0$$
+        $$\therefore \frac{1}{\omega_0^2}\left[1 - \left(1 - \frac{l}{F}\right)^2\right] = \frac{1}{F^2}\left(\frac{\pi\omega_0}{\lambda}\right)^2$$
+        $$\therefore \frac{1}{\omega_0^2}\frac{l}{F}\left(2 - \frac{l}{F}\right) = \frac{1}{F^2}\left(\frac{\pi\omega_0}{\lambda}\right)^2$$
+        $$\therefore \frac{1}{\omega_0^2}\left(2Fl - l^2\right) = \left(\frac{\pi\omega_0}{\lambda}\right)^2$$
+        $$2Fl = \left(\frac{\pi\omega_0^2}{\lambda}\right)^2 + l^2$$
+        $$\begin{align}
+        F &= \frac{1}{2l}\cdot l^2\left[1 + \left(\frac{\pi\omega_0^2}{\lambda l}\right)^2\right]\\
+          &= \frac{1}{2}l\left[1 + \left(\frac{\pi\omega_0^2}{\lambda l}\right)^2\right]
+        \end{align}$$
+
+        <p><a href="#Gauss_R" class="goto">高斯光束等相位面的曲率半径</a>为：</p>
+        $$R(z) = z\left[1 + \left(\frac{\pi\omega_0^2\eta}{\lambda z}\right)^2\right]$$
+        $$\begin{align}\because
+        z &= l\\
+        \eta &= 1
+        \end{align}$$
+        $$\therefore R(l) = l\left[1 + \left(\frac{\pi\omega_0^2}{\lambda l}\right)^2\right]$$
+        $$\therefore F = \frac{1}{2}R$$
+        <p>当透镜焦距为入射高斯光束再透镜表面的波面曲率半径的一半时，透镜对高斯光束做自再现变换.</p>
+
+        <h3>球面反射镜对高斯光束的自再现变换</h3>
+        <p>曲率半径为\(R\)的球面反射镜对近轴光线的反射变换与焦距为\(R/2\)的薄透镜对统一近轴光电的变换等效.</p>
+        <div class="Card-Definition">
+            <b>波前相匹配</b>
+            <p>当入射在球面镜的高斯光束波前曲率半径正好等于球面镜曲率半径时，反射后高斯光束将不发生任何变化，即物方高斯光束与像方高斯光束完全重合.</p>
+        </div>
+    </div>
+
+    <div class="Card-Analysis">
+        <h2>光束质量因子</h2>
+        <div class="Card-Definition">
+            <b>\(M^2\)因子（光束质量因子，光束衍射倍率因子）</b>
+            $$M^2 = \frac{\omega_{R0}\theta_R}{\omega_0\theta}$$
+            <ul>
+                <li>\(\omega_{R0}\)：实际高斯光束的束腰半径.</li>
+                <li>\(\theta_R\)：实际远场发散角.</li>
+                <li>\(\omega_0\)：理想基模高斯光束的束腰半径.</li>
+                <li>\(\theta\)：理想基模高斯光束的<a href="#Gauss_theta">远场发散角</a>.</li>
+            </ul>
+            <p>用于描述实际光束偏离基模高斯光束的程度.</p>
+        </div>
+
+        <p>通常情况下，有：</p>
+        $$M^2 \geq 1$$
+        <p>[注]也存在\(M^2 \lt 1\)的情况.</p>
+        
+        <p>对于基模高斯光束：</p>
+        $$\omega_0\theta = \frac{\lambda}{\pi}$$
+        $$\therefore M^2 = \frac{\pi\omega_{R0}\theta_R}{\lambda}$$
+    </div>
+
+    <div id="PageEnd"></div>
+    <a class="GoToBottom" href="#PageEnd">Bottom</a>
+    <script src="../../../../JavaScript/Capacity.js"></script>
+</body>
+
+</html>

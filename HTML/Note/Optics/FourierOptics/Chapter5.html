@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>傅里叶光学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <h1>第五章 光学成像系统的频率特性</h1>
+        <p>光学成像系统是信息传递的系统.</p>
+        <p>传统光学系统像质评价方法有<b>星点法</b>和<b>鉴别率法</b>.</p>
+
+        <div class="Card-Definition">
+            <b>CTF</b>
+            <p>描述一个成像系统采用相干照明时的传递函数.</p>
+            $$H_c(f_x, f_y) = \mathcal{F}|\widetilde{h}|$$
+        </div>
+
+
+        <div class="Card-Definition">
+            <b>OTF</b>
+            <p>描述一个成像系统采用非相干照明时的传递函数.</p>
+            $$\mathcal{H} = \frac{\mathcal{F}\{h_I\}}{\mathcal{F}\{h_I\}_{f_x = f_y = 0}}$$
+            $$\mathcal{H}(f_x,f_y) = m(f_x, f_y)\exp[j\phi(f_x,f_y)]$$
+        </div>
+
+        <div class="Card-Definition">
+            <b>MTF</b>
+            <p>调制传递函数.</p>
+            <p>描述系统对各频率分量对比度的传递特性.</p>
+            $$m(f_x, f_y) = \frac{|H_I(f_x,f_y)|}{H_I(0,0)}$$
+        </div>
+
+        <div class="Card-Definition">
+            <b>PTF</b>
+            <p>相位传递函数.</p>
+            <p>描述系统对各频率分量施加的相移.</p>
+        </div>
+
+        <b>像差对CTF的影响</b>
+        <p>在通频带内引入与频率有关的相位畸变，使像质变坏.</p>
+
+        <b>像差对OTF的影响</b>
+        <p>有像差的系统不仅影响输入各频率成分的对比度，也对相位产生影响.</p>
+        $$\because|\mathcal{H}(f_x,f_y)|_{有像差}\leq |\mathcal{H}(f_x,f_y)|_{无像差}$$
+        <p>像差会进一步降低成像质量.</p>
+    </body>
+
+</html>

@@ -11,7 +11,7 @@
 
 
     <body>
-        <div class="header"><h1>不惑</h1></div>
+        <div class="header">不惑</div>
 
         
         <ul class="navibar">
@@ -22,35 +22,62 @@
         <h1>电</h1>
 
         <h2>电荷</h2>
-        <b>电荷的性质</b>
-        <ul>
-            <li><b>电荷守恒定律</b>：一孤立系统内的电荷的代数和始终保持不变。</li>
-            <li><b>电荷量子化</b>：任何带电体所带电量都是基本电量\(e=1.602\times 10^{-19}\)<span lang="en">C</span>的整数倍。</li>
-            <li><b>相对论不变性</b>：电荷的电量与其运动状态无关</li>
-        </ul>
+        <div class="Card-Property">
+            <b>电荷的性质</b>
+            <ul>
+                <li><b>电荷守恒定律</b>：孤立系统内电荷的代数和保持不变。</li>
+                <li><b>电荷量子化</b>：任何带电体所带电量都是基本电量\(e=1.602\times 10^{-19}\)<span lang="en">C</span>的整数倍。</li>
+                <li><b>相对论不变性</b>：电荷的电量与其运动状态无关</li>
+            </ul>
+        </div>
 
         <h2>库伦定律</h2>
         <p>真空中，两个静止的点电荷\(Q_1\)与\(Q_2\)间的相互作用力大小由同\(Q_1\)与\(Q_2\)的乘积成正比，同它们间的距离\(r\)的平方成反比.</p>
         <p>作用力方向沿它们的连线，同号电荷相互排斥、异号电荷相互吸引.</p>
         $$\mathbf{F}_{12} = k\frac{Q_1Q_2}{r^2}\mathbf{r}_{12}$$
         $$k = \frac{1}{4\pi\epsilon_0} \approx 8.99\times 10^9 N\cdot m^2/C^2$$
-        <table>
-            <tr>
-                <td colspan="2"><b>介电常数（电容率）\(\epsilon\)</b></td>
-            </tr>
-            <tr>
-                <td>真空中</td>
-                <td>$$\epsilon_0 \approx 8.8542\times 10^{-12} C^2/N\cdot m^2$$</td>
-            </tr>
-            <tr>
-                <td>各向同性均匀介质中</td>
-                <td>\(\epsilon\)为常数</td>
-            </tr>
-            <tr>
-                <td>相对介电常数</td>
-                <td>$$\epsilon_r = \epsilon/\epsilon_0$$</td>
-            </tr>
-        </table>
+
+        <div class="Card-Definition" id="epsilon">
+            <table>
+                <tr>
+                    <td colspan="2"><b>介电常数（电容率）\(\epsilon\)</b></td>
+                </tr>
+                <tr>
+                    <td>真空中</td>
+                    <td>$$\epsilon_0 \approx 8.8542\times 10^{-12} C^2/N\cdot m^2$$</td>
+                </tr>
+                <tr>
+                    <td>各向同性均匀介质中</td>
+                    <td>\(\epsilon\)为常数</td>
+                </tr>
+                <tr>
+                    <td>相对介电常数</td>
+                    <td>$$\epsilon_r = \epsilon/\epsilon_0$$</td>
+                </tr>
+            </table>
+            <p>用于描述介质电学性质的量.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <table id="mu">
+                <tr><td colspan="2"><b>磁导率</b></td></tr>
+                <tr>
+                    <td>真空中</td>
+                    <td>$$\mu_0$$</td>
+                </tr>
+                <tr>
+                    <td>介质中</td>
+                    <td>$\mu$</td>
+                </tr>
+                <tr>
+                    <td>相对磁导率</td>
+                    <td>$$\mu_r = \mu/\mu_0$$</td>
+                </tr>
+            </table>
+            <p>用于描述介质磁学性质的量.</p>
+        </div>
+
+
         <p>\(\mathbf{F}_{12}\)表示\(Q_1\)给\(Q_2\)的力，\(\mathbf{r}_{12}\)表示由\(Q_1\)指向\(Q_2\)的单位矢量.</p>
         适用条件：
         <ul>
@@ -162,9 +189,11 @@
         <b>介质极化率\(\chi\)</b>
         <p>对于同一点，\(\chi\)为一个常数，但不同点的\(\chi\)可以不同。若电介质中各点的\(\chi\)相同，则该电介质为均匀电介质。</p>
 
-        <b>极化强度\(\mathbf{P}\)</b>
-        <p>各向同性介质中：</p>
-        $$\mathbf{P} = \epsilon_0\chi\mathbf{E}$$
+        <div class="Card-Definition" id="Polarization">
+            <b>极化强度\(\mathbf{P}\)</b>
+            <p>各向同性介质中：</p>
+            $$\mathbf{P} = \epsilon_0\chi\mathbf{E}$$
+        </div>
 
         <b>极化强度与极化电荷的关系式</b>
         $$\oint_S\mathbf{P}\mathrm{d}\mathbf{S} = -\sum q_i'$$

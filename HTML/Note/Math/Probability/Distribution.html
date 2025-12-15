@@ -12,7 +12,7 @@
 
     <body>
         <a class="BackToTop" href="#PageHead">Top</a>
-        <div class="header" id="PageHead"><h1>不惑</h1></div>
+        <div class="header" id="PageHead">不惑</div>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
@@ -145,19 +145,16 @@
             <b>最大似然估计</b>：
             $$L(\theta) = \prod\limits_{i=1}^nf(x_i;\theta)$$
         </p>
-
-
-        <table>
+        <table id="ContinuousDistribution">
+            <caption>连续型随机变量的分布</caption>
             <tr>
                 <td>分布</td>
-                <td>概率密度</td>
-                <td>分布函数</td>
-                <td>符号</td>
-                <td>数学期望</td>
-                <td>方差</td>
+                <td>\(X\)在区间\([a,b]\)上服从<b>均匀分布</b></td>
+                <td>\(X\)服从参数为\(\lambda\)的<b>指数分布</b></td>
+                <td>\(X\)服从参数为\(\mu,\sigma\)的<b>正态分布</b>（<b>高斯分布</b>）</td>
             </tr>
             <tr>
-                <td>\(X\)在区间\([a,b]\)上服从<b>均匀分布</b></td>
+                <td>概率密度</td>
                 <td>
                     $$f(x) = 
                     \begin{align}\begin{cases}
@@ -166,6 +163,19 @@
                     \end{cases}\end{align}$$
                 </td>
                 <td>
+                    $$
+                    f(x)=
+                    \begin{align}\begin{cases}
+                    0,~&x\leq 0\\
+                    \lambda e^{-\lambda x},~&x>0
+                    \end{cases}\end{align},~\lambda > 0
+                    $$
+                </td>
+                <td>$$f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},~-\infty \lt x \lt +\infty$$</td>
+            </tr>
+            <tr>
+                <td>分布函数</td>
+                <td>
                     $$F(x)=
                     \begin{align}\begin{cases}
                     0,~&x\lt a\\
@@ -173,7 +183,25 @@
                     1,~&x\gt b
                     \end{cases}\end{align}$$
                 </td>
+                <td>
+                    $$
+                    F(x)=
+                    \begin{align}\begin{cases}
+                    0,~&x\leq 0\\
+                    1-e^{-\lambda x},~&x>0
+                    \end{cases}\end{align}
+                    $$
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>符号</td>
                 <td>$$X\sim U[a,b]$$</td>
+                <td>$$X\sim e(\lambda)$$</td>
+                <td>$$X\sim N(\mu, \sigma^2)$$</td>
+            </tr>
+            <tr>
+                <td>数学期望</td>
                 <td>
                     <div class="Formula">
                         $$E(X) = \frac{a + b}{2}$$
@@ -186,38 +214,13 @@
                         </div>
                     </div>
                 </td>
-                <td>$$D(X) = \frac{(b-a)^2}{12}$$ </td>
-            </tr>
-            <tr>
-                <td>\(X\)服从参数为\(\lambda\)的<b>指数分布</b></td>
-                <td>
-                    $$
-                    f(x)=
-                    \begin{align}\begin{cases}
-                    0,~&x\leq 0\\
-                    \lambda e^{-\lambda x},~&x>0
-                    \end{cases}\end{align},~\lambda > 0
-                    $$
-                </td>
-                <td>
-                    $$
-                    F(x)=
-                    \begin{align}\begin{cases}
-                    0,~&x\leq 0\\
-                    1-e^{-\lambda x},~&x>0
-                    \end{cases}\end{align}
-                    $$
-                </td>
-                <td>$$X\sim e(\lambda)$$</td>
                 <td>$$E(X) = \frac 1\lambda$$</td>
-                <td>$$D(X) = \frac{1}{\lambda^2}$$</td>
+                <td>$$E(X) = \mu$$</td>
             </tr>
             <tr>
-                <td>\(X\)服从参数为\(\mu,\sigma\)的<b>正态分布</b></td>
-                <td>$$f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},~-\infty \lt x \lt +\infty$$</td>
-                <td></td>
-                <td>$$X\sim N(\mu, \sigma^2)$$</td>
-                <td>$$E(X) = \mu$$</td>
+                <td>方差</td>
+                <td>$$D(X) = \frac{(b-a)^2}{12}$$ </td>
+                <td>$$D(X) = \frac{1}{\lambda^2}$$</td>
                 <td>$$D(X) = \sigma$$</td>
             </tr>
         </table>

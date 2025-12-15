@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>激光原理</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <h1>光学谐振腔（光腔）</h1>
+
+        <div class="Card-Definition">
+            <b>开放式光学谐振腔（开腔）</b>
+            <p>侧面没有光学边界，且其轴向尺寸（腔长）远大于产生振荡的光波波长，一般也远大于光腔的横向尺寸（反射镜的尺度）.</p>
+        </div>
+
+        <table>
+            <tr>
+                <td rowspan="8">光腔分类</td>
+                <td rowspan="5">开腔</td>
+                <td rowspan="3">根据几何偏折损耗的高低分</td>
+                <td>稳定腔</td>
+            </tr>
+            <tr><td>非稳腔</td></tr>
+            <tr><td>临界腔</td></tr>
+            <tr>
+                <td rowspan="2">根据结构分</td>
+                <td>共轴腔</td>
+            </tr>
+            <tr><td>非共轴腔</td></tr>
+            <tr>
+                <td colspan="3">半封闭腔</td>
+            </tr>
+        </table>
+
+        <div class="Card-Definition">
+            <b>平行平面腔（法布里-珀罗干涉仪，<span lang="en">F-P</span>腔）</b>
+            <p>由两块平行平面反射镜组成.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>共轴球面腔</b>
+            <p>由两块具有公共轴线的球面反射镜组成.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光学谐振腔的稳定性判别方法</h2>
+
+            <h3>稳区图</h3>
+            <ul>
+                <li>阴影部分表示稳定腔</li>
+                <li>坐标轴与曲线\(g_1g_2 = 1\)上表示临界腔</li>
+                <li>其他区域表示非稳腔</li>
+            </ul>
+            <img src="Img/StableRegionDiagram.jpg" alt="稳区图" width="400">
+            
+            <h3>\(\sigma\)圆法</h3>
+            
+    
+        </div>
+        
+        <div class="Card-Analysis">
+            <h2>光腔的损耗</h2>
+            <table>
+                <tr>
+                    <td rowspan="2">选择损耗</td>
+                    <td>几何偏折损耗</td>
+                </tr>
+                <tr>
+                    <td>衍射损耗</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">非选择损耗</td>
+                    <td>腔镜反射不完全引起的损耗</td>
+                </tr>
+                <tr>
+                    <td>材料中的非激活吸收、散射；腔内插入物（布儒斯特窗、调Q元件、调制器等）引起的损耗；其他损耗</td>
+                </tr>
+            </table>
+    
+            <div class="Card-Definition">
+                <b>选择损耗</b>
+                <p>随腔内自再现模式的横模特性变化的损耗.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>非选择性损耗</b>
+                <p>与光波模式无关的损耗.</p>
+            </div>
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>光学谐振腔的作用</h2>
+            <b>1、提供光学正反馈</b>
+            <p></p>
+            <b>2、控制腔内振荡光束的特性</b>
+            <p>控制腔内光束的纵向分布特性，使大量光子集结在谐振腔所限制的少数几个模式中，从而提高光子的简并度，获得单色性好，方向性腔的相干光。</p>
+            <p>控制激光束的横向分布特性，影响光束的光斑尺寸，横模及光束的发散角等。</p>
+            <p>改变腔内光束的损耗（不同的腔镜几何结构还能改变腔内的几何偏折损耗），在增益一定的情况下通过改变输出耦合率来实现对激光器的控制。</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>谐振腔的评价标准</h2>
+            <p>1、谐振腔应该具有较小的能量损耗，能够提供足够的正反馈，使激光器能够达到预期的能量输出.</p>
+            <p>2、谐振腔应该具有好的模式鉴别能力，能够提供单色性、相干性和方向性均能达到预期要求的激光束，并能通过调整腔的几何参数有效控制光束特性.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>谐振腔的选择</h2>
+            <p>对于增益较低的中、小功率激光器：为了易于产生振荡，选择低损耗的稳定腔.</p>
+            <p>对于高增益、高功率激光器：为了实现有效的能量提取和获得高质量的输出光束，选择非稳腔.</p>
+        </div>
+    
+        <h2>第四节 光学谐振腔的几何光学分析</h2>
+        <h3>一、光线传播矩阵</h3>
+
+        <b>自由空间的光线矩阵</b>
+
+        
+        
+        
+        <b>光腔的自行闭合</b>
+        <p>指的是光在光学谐振腔内传播时，由于谐振腔结构和反射镜的配置，光束能够在腔内沿特定路径反射多次后回到初始位置，形成一个闭合的路径。这一现象确保了光能够在谐振腔内来回反射，并不断与增益介质相互作用，从而维持激光振荡。</p>
+        
+        <div class="Card-Analysis">
+            <h2>光学谐振腔的模式</h2>
+            <p>电磁场理论表明，当存在一定边界条件约束时，电磁场只能稳定存在于一系列分立的本征态中，这些本征态的振荡频率、空间频率各不相同.</p>
+            <p>光腔的模式，可以分为纵向模式（纵模）与横向模式（横模）两种.</p>
+            <p>纵模描述：本征态模式在光腔纵向方向（光轴方向）上的分布，以不同的振荡频率来区分不同的纵模.</p>
+            <p>横模描述：本征态模式在横向平面（垂直于光轴的平面）上的分布，以电磁场不同的空间分布特性来区分不同的横模.</p>
+        </div>
+        
+    </body>
+
+</html>

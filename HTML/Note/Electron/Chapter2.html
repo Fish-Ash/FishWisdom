@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Electron</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">不惑</div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>主进程与渲染进程</h1>
+
+        <table>
+            <tr>
+                <td rowspan="8">Electron</td>
+                <td rowspan="5">主进程</td>
+                <td>监听应用程序的生命周期事件</td>
+            </tr>
+            <tr><td>启动第一个窗口</td></tr>
+            <tr><td>加载index.html页面</td></tr>
+            <tr><td>应用程序关闭后回收资源</td></tr>
+            <tr><td>退出程序</td></tr>
+            <tr>
+                <td rowspan="3">渲染进程</td>
+                <td>m渲染界面</td>
+            </tr>
+            <tr><td>接收用户输入</td></tr>
+            <tr><td>响应用户交互</td></tr>
+        </table>
+
+        <p>一个Electron应用只有一个主进程，但可以有多个渲染进程.</p>
+        <p>主进程与渲染进程之间可以互相访问.</p>
+
+    </body>
+
+</html>

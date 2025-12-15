@@ -10,83 +10,90 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
     </head>
 
-    <div class="header"><h1>不惑</h1></div>
+    <div class="header">不惑</div>
     <ul class="navibar">
         <li><a href="../../Home.html">主页</a></li>
         <li><a href="../../Navigation.html">导航</a></li>
     </ul>
 
-<body>
+    <h1>随机变量的数字特征</h1>
 
-<p>
-    <b>数学期望（\(\mu\)）</b>
-    <br>
-    <br>性质：
-    <ul>
-        <li>\(E(C) = C\)</li>
-        <li>\(E(CX) = CE(X)\)</li>
-        <li>\(E(X+Y) = E(X) + E(Y)\)</li>
-        <li>当\(X\)与\(Y\)为两相互独立的随机变量时：\(E(XY) = E(X)E(Y)\)</li>
-        <li>\(E[g(x)] = \int_{-\infty}^{+\infty}g(x)f(x)dx\)</li>
-        <li>\(E[g(x,y)] = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}g(x,y)f(x,y)dxdy\)</li>
-    </ul>
-</p>
+    <body>
+        <div class="Card-Definition">
+            <b>期望（数学期望、均值）\(E(x)\)</b>
+            <p>设连续型随机变量\(X\)的概率密度为\(f(x)\)，若\(\int_{-\infty}^{+\infty}xf(x)\mathrm{d}x\)绝对收敛，即\(\int_{-\infty}^{+\infty}xf(x)\mathrm{d}x \lt +\infty\)，则：</p>
+            $$E(x) = \int_{-\infty}^{+\infty}xf(x)\mathrm{d}x$$
+        </div>
 
-<p>
-    <b>方差（\(\sigma^2\)）</b>：
-    $$\begin{align}
-    D(X) = Var(X) &= E\{[X-E(X)]^2\}\\
-    &= E[X^2-2XE(X)+E^2(X)]\\
-    &= E(X^2) - 2E(X)E(X) + E^2(X)\\
-    &= E(X^2) - E^2(X)
-    \end{align}$$
-    性质：
-    <ul>
-        <li>\(D(C) = 0\)</li>
-        <li>\(D(aX+b) = a^2D(X)\)</li>
-        <li>\(D(X\pm Y) = D(X) + D(Y) \pm 2Cov(X,Y)\)
-            <br>若\(X\)与\(Y\)相互独立，则\(D(X\pm Y) = D(X) + D(Y)\)
-        </li>
-    </ul>
-</p>
+        <p>
+            <b>数学期望（\(\mu\)）</b>
+            <br>
+            <br>性质：
+            <ul>
+                <li>\(E(C) = C\)</li>
+                <li>\(E(CX) = CE(X)\)</li>
+                <li>\(E(X+Y) = E(X) + E(Y)\)</li>
+                <li>当\(X\)与\(Y\)为两相互独立的随机变量时：\(E(XY) = E(X)E(Y)\)</li>
+                <li>\(E[g(x)] = \int_{-\infty}^{+\infty}g(x)f(x)dx\)</li>
+                <li>\(E[g(x,y)] = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}g(x,y)f(x,y)dxdy\)</li>
+            </ul>
+        </p>
 
-<p>
-    <b>标准差（均方差）(\(\sigma\))</b>：
-    $$\sigma(X) = \sqrt{D(X)}$$
-    <br>&nbsp;&nbsp;&nbsp;&nbsp;方差和标准差均用于刻画\(X\)的取值与数学期望\(E(X)\)的偏离程度。\(D(X)\)越小，\(X\)取值越集中。
-<br>&nbsp;&nbsp;&nbsp;&nbsp;标准差的优点是其与数学期望具有相同的量纲。
-</p>
+        <p>
+            <b>方差（\(\sigma^2\)）</b>：
+            $$\begin{align}
+            D(X) = Var(X) &= E\{[X-E(X)]^2\}\\
+            &= E[X^2-2XE(X)+E^2(X)]\\
+            &= E(X^2) - 2E(X)E(X) + E^2(X)\\
+            &= E(X^2) - E^2(X)
+            \end{align}$$
+            性质：
+            <ul>
+                <li>\(D(C) = 0\)</li>
+                <li>\(D(aX+b) = a^2D(X)\)</li>
+                <li>\(D(X\pm Y) = D(X) + D(Y) \pm 2Cov(X,Y)\)
+                    <br>若\(X\)与\(Y\)相互独立，则\(D(X\pm Y) = D(X) + D(Y)\)
+                </li>
+            </ul>
+        </p>
 
-<p>
-    <b>协方差</b>：
-    $$\begin{align}
-    Cov(X,Y) &= E\{[X-E(X)][Y-E(Y)]\}\\
-    &= E(XY) - E(X)E(Y)
-    \end{align}$$
-    性质：
-    <ul>
-        <li>\(Cov(X,X) = D(X)\)</li>
-        <li>\(Cov(X,Y) = Cov(Y,X)\)</li>
-        <li>\(Cov(C,X) = Cov(X,C) = 0\)</li>
-        <li>\(Cov(aX, bY) = abCov(X,Y)\)</li>
-        <li>\(Cov(X_1+X_2, Y) = Cov(X_1,Y) + Cov(X_2, Y)\)</li>
-        <li>若\(X\)与\(Y\)相互独立，则\(Cov(X,Y) = 0\)</li>
-    </ul>
-</p>
+        <p>
+            <b>标准差（均方差）(\(\sigma\))</b>：
+            $$\sigma(X) = \sqrt{D(X)}$$
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;方差和标准差均用于刻画\(X\)的取值与数学期望\(E(X)\)的偏离程度。\(D(X)\)越小，\(X\)取值越集中。
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;标准差的优点是其与数学期望具有相同的量纲。
+        </p>
 
-<p>
-    <b>相关系数</b>：
-    $$\rho_{XY} = \frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(X)}}$$
-    <br>&nbsp;&nbsp;&nbsp;&nbsp;若\(\rho_{XY} = 0\)，此时\(Cov(X,Y) = 0\)称\(X\)与\(Y\)<b>不相关</b>
-</p>
+        <p>
+            <b>协方差</b>：
+            $$\begin{align}
+            Cov(X,Y) &= E\{[X-E(X)][Y-E(Y)]\}\\
+            &= E(XY) - E(X)E(Y)
+            \end{align}$$
+            性质：
+            <ul>
+                <li>\(Cov(X,X) = D(X)\)</li>
+                <li>\(Cov(X,Y) = Cov(Y,X)\)</li>
+                <li>\(Cov(C,X) = Cov(X,C) = 0\)</li>
+                <li>\(Cov(aX, bY) = abCov(X,Y)\)</li>
+                <li>\(Cov(X_1+X_2, Y) = Cov(X_1,Y) + Cov(X_2, Y)\)</li>
+                <li>若\(X\)与\(Y\)相互独立，则\(Cov(X,Y) = 0\)</li>
+            </ul>
+        </p>
 
-<p>
-    <b>切比雪夫不等式</b>：
-    $$P\{|X-\mu|\geq\epsilon\}\leq\frac{\sigma^2}{\epsilon^2}$$
-</p>
-<hr>
-<hr>
+        <p>
+            <b>相关系数</b>：
+            $$\rho_{XY} = \frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(X)}}$$
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;若\(\rho_{XY} = 0\)，此时\(Cov(X,Y) = 0\)称\(X\)与\(Y\)<b>不相关</b>
+        </p>
 
-</body>
+        <p>
+            <b>切比雪夫不等式</b>：
+            $$P\{|X-\mu|\geq\epsilon\}\leq\frac{\sigma^2}{\epsilon^2}$$
+        </p>
+        <hr>
+        <hr>
+
+    </body>
 
 </html>

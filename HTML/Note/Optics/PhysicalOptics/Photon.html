@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>物理光学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <a class="BackToTop" href="#PageHead">Top</a>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>光子</h1>
+
+        <p>光的量子学说（光子说）认为，光是一种以光速\(c\)运动的光子流.</p>
+
+        <h2>光子的粒子属性</h2>
+        <div class="Card-Definition">
+            <b>光子的能量\(\epsilon\)</b>
+            $$\epsilon = h\nu$$
+            <ul>
+                <li>\(h = 6.626\times 10^{-34}\mathrm{J}\cdot \mathrm{s}\)：普朗克常数</li>
+                <li>\(\nu\)：光波频率</li>
+                <p>光的能量就是所有光子的能量的总和.</p>
+            </ul>
+        </div>
+
+        <div class="Card-Definition">
+            <b>光子的运动质量\(m\)</b>
+            $$m = \frac{\epsilon}{c^2} = \frac{h\nu}{c^2}$$
+            <p>光子的静止质量为\(0\).</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>光子的动量\(\mathbf{P}\)</b>
+            <p>光子运动方向即平面光波传播方向.</p>
+            <div class="Formula">
+                $$\mathbf{P} = mc\mathbf{k}_0 = \hbar \mathbf{k}$$
+                <div class="Derivation">
+                    $$\mathbf{P} = mc\mathbf{k}_0$$
+                    $$\because m = \frac{h\nu}{c^2}$$
+                    $$\mathbf{P} = \frac{h\nu}{c}\mathbf{k}_0$$
+                    $$\because \begin{cases}
+                    \nu = \frac{1}{T}\\
+                    c = \frac{\lambda}{T}
+                    \end{cases}$$
+                    $$\begin{align}
+                    \mathbf{P} &= \frac{h}{\lambda}\mathbf{k}_0\\
+                               &= \frac{h}{2\pi}\frac{2\pi}{\lambda}\mathbf{k}_0\\
+                               &= \hbar\mathbf{k}
+                    \end{align}$$
+                </div>
+            </div>
+            <ul>
+                <li>\(\hbar = \frac{h}{2\pi}\)：约化普朗克常数</li>
+                <li>\(\mathbf{k}\)为<a href="Chapter1.html#k" class="goto">波矢量</a></li>
+            </ul>
+        </div>
+        
+        <div class="Card-Definition">
+            <b>光子的偏振</b>
+            <p>光子具有两种可能的独立偏振状态，对应于光波场的两个独立偏振方向。</p>
+        </div>
+
+        <p>光子属于<a href="#Boson" class="goto">玻色子</a>，处于同一状态的光子数目是没有限制的。</p>
+
+        <table>
+            <tr>
+                <td>粒子属性</td>
+                <td>表达公式</td>
+                <td>波动属性</td>
+            </tr>
+            <tr>
+                <td>能量</td>
+                <td>$$\epsilon = h \nu$$</td>
+                <td>频率</td>
+            </tr>
+            <tr>
+                <td>动量</td>
+                <td>$$\mathbf{P} = \hbar \mathbf{k}$$</td>
+                <td>波矢</td>
+            </tr>
+        </table>
+        <p>量子电动力学从理论上将光的电磁（波动）理论和光子（微粒）理论在电磁场量子化描述的基础上统一起来，在理论上阐明了光的波粒二象性。</p>
+
+        <b id="Boson">玻色子</b>
+        <p>自旋为整数的粒子</p>
+        <p>玻色子服从玻色-爱因斯坦统计规律</p>
+
+
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+</html>

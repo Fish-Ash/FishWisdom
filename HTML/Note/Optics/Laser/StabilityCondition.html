@@ -11,7 +11,7 @@
 
 
     <body>
-        <div class="header"><h1>不惑</h1></div>
+        <div class="header">不惑</div>
 
         
         <ul class="navibar">
@@ -39,6 +39,8 @@
         \theta_2 = \theta_1 
         \end{cases}\Rightarrow
         \left[\begin{matrix}r_2\\\theta_2\end{matrix}\right] = \left[\begin{matrix}1 & L\\0 & 1\end{matrix}\right]\left[\begin{matrix}r_1\\\theta_1\end{matrix}\right]$$
+
+        $$\left[\begin{matrix}r_2\\\theta_2\end{matrix}\right] = \left[\begin{matrix}A&B\\C&D\end{matrix}\right]\left[\begin{matrix}r_1\\\theta_1\end{matrix}\right]$$
 
         <h3>光线在球面镜表面发生反射</h3>
         <p>\((r_i, \theta_i)\)：光线入射到球面镜上的坐标.</p>
@@ -102,6 +104,42 @@
         g_2 = 1 - \frac{L}{R_2}
         \end{cases} \Rightarrow
         0 \lt g_1g_2 \lt 1$$
+
+        <h2>谐振腔的分类</h2>
+
+        <div class="Card-Definition">
+            <h2>非稳腔</h2>
+            <b>条件</b>
+            $$g_1g_2 \lt 0~or~g_1g_2\gt 1$$
+
+            <b>特点</b>
+            <p>傍轴光线在腔内经有限次往返后必从侧面逸出腔外，具有较高的几何损耗.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <h2>临界腔</h2>
+            <b>条件</b>
+            $$g_1g_2 = 0~or~g_1g_2 = 1$$
+
+            <h3>平行平面腔</h3>
+            $$R_1 = R_2 = \infty \Rightarrow g_1g_2 = 1$$
+
+            <h3>共心腔</h3>
+            $$R_1 + R_2 = L \Rightarrow g_1g_2 = 1$$
+            <p>腔的两个镜面曲率半径相互重合.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <h2>稳定腔</h2>
+            <b>条件</b>
+            $$0\lt g_1g_2 \lt 1$$
+            
+            <h3>对称共焦腔（特例）</h3>
+            <b>条件</b>
+            $$R_1 = R_2 = L$$
+        </div>
+
+
 
 
         <script src="../../../../JavaScript/Capacity.js"></script>

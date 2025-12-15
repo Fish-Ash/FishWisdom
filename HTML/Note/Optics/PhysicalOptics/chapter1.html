@@ -11,7 +11,7 @@
 
 
     <body>
-        <div class="header" id="PageHead"><h1>不惑</h1></div>
+        <div class="header" id="PageHead">不惑</div>
         <a class="BackToTop" href="#PageHead">Top</a>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
@@ -31,33 +31,28 @@
         <h2><a href="../Electromagnetism/Maxwell.html"><span lang="en">Maxwell</span>方程组</a></h2>
         <h2><a href="../Electromagnetism/OpticalBasis.html">光的电磁理论基础<a></a></h2>
 
+        <div class="Card-Definition">
+            <b>光波电磁场的波动方程</b>
+            $$\begin{cases}
+            \nabla^2\mathbf{E} - \frac{1}{v^2}\frac{\partial^2 \mathbf{E}}{\partial t^2} = 0\\
+            \nabla^2\mathbf{H} - \frac{1}{v^2}\frac{\partial^2 \mathbf{H}}{\partial t^2} = 0
+            \end{cases}$$
+        </div>
 
-        <h3>物质方程</h3>
-        <p>静止的各向同性（物质每一点的物理性质不随方向而改变）介质中，有：</p>
-        $$\mathbf{j} = \sigma\mathbf{E}$$
-        $$\mathbf{D} = \epsilon\mathbf{E}$$
-        $$\mathbf{B} = \mu\mathbf{H}$$
-
-        <ul>
-            <li>\(\sigma\)：电导率，各向同性均匀介质中\(\sigma = 0\)</li>
-            <li>\(\mu\)：磁导率，各项同性均匀介质中为常数。\(\mu_0 = 4\pi\times 10^{-7}N\cdot s^2/C^2\)。非磁性物质\(\mu = \mu_0\)</li>
-        </ul>
-
-
-        
         <br><br>
         <div class="Card-Definition">
             <b>等相面（等相位面，波面）</b>
             <p>某一时刻相位相同的点的空间位置.</p>
+            <p>等相面的法线方向即为波的传播方向.</p>
             <p>相邻等相面间的相位差为\(2\pi\).</p>
         </div>
 
         <div class="Card-Definition" id="k">
             <b>波矢量\(\mathbf{k}\)</b>
             $$\mathbf{k} = k\mathbf{k_0}$$
-            <p>\(\mathbf{k}_0\)为单位矢量，沿波的传播方向，即等相面的法线方向。</p>
-            <p>\(k = \sqrt{k_x^2 + k_y^2 + k_z^2} =  2\pi/\lambda = \omega/\nu\)为<b>空间角频率</b>或<b>波数</b>。</p>
-            <p>\(k = 0 \Leftrightarrow\)沿\(\mathbf{k}\)方向相位不发生改变.</p>
+            <p>\(\mathbf{k}_0\)为单位矢量，沿波的传播方向.</p>
+            <p>\(k =  2\pi/\lambda = \sqrt{k_x^2 + k_y^2 + k_z^2}\)为<b>空间角频率</b>或<b>波数</b>.</p>
+            <p>\(k_r = 0 \Leftrightarrow\)沿\(r\)方向相位不发生改变.</p>
         </div>
 
         <div class="Card-Formula">
@@ -142,6 +137,8 @@
         </div>
 
 
+        <p>球面波、平面波都是波动方程的基本解.</p>
+        <p>由波动方程的线性性质，任何复杂的波都能用球面波或平面波的线性组合表示.</p>
         <h2 id="PlaneWave">单色平面电磁波</h2>
         <h3>表达式</h3>
         $$\mathbf{E} = \mathbf{E_0}\exp[i\omega(t - \frac{r}{v})] = \mathbf{E_0}\exp[i(\omega t + \alpha)]$$
@@ -149,18 +146,19 @@
 
         <p>[注]光波中包含电场矢量\(\mathbf{E}\)与磁场矢量\(\mathbf{H}\)，从波的传播特性来看，其具有相同的地位；但从光与介质的相互作用来看，磁场的作用远比电场弱，甚至不起作用.因此，在讨论光的波动特性时，常常只考虑电场矢量\(\mathbf{E}\).通常称\(\mathbf{E}\)为光矢量，\(\mathbf{E}\)的振动称为光振动.</p>
         <b>三角函数表示</b>
-        <p>设平面波沿直角坐标系\(xyz\)的\(z\)方向传播.</p>
         <div class="Formula">
-            $$\mathbf{E} = \mathbf{E}_0\cos(\omega t - kz) = \mathbf{E}_0\cos[\omega(t - \frac{z}{v})] = \mathbf{E}_0\cos[2\pi(\frac{t}{T} - \frac{z}{\lambda})]$$
+            $$\mathbf{E} = \mathbf{E}_0\cos(\omega t - kr) = \mathbf{E}_0\cos[\omega(t - \frac{r}{v})] = \mathbf{E}_0\cos[2\pi(\frac{t}{T} - \frac{r}{\lambda})]$$
             <div class="Derivation">
                 $$
                 \begin{align}
-                \mathbf{E} &= \mathbf{E}_0\cos(\omega t - kz)\\
-                           &= \mathbf{E}_0\cos[\omega(t - \frac{k}{w}z)]\\\\
-                           &\because k = \frac{2\pi}{\lambda}, \omega = \frac{2\pi}{T}\\\\
-                \mathbf{E} &= \mathbf{E}_0\cos[\omega(t - \frac{T}{\lambda}z)]\\
-                           &= \mathbf{E}_0\cos[\omega(t - \frac{z}{v})]\\
-                           &= \mathbf{E}_0\cos[2\pi(\frac{t}{T} - \frac{z}{\lambda})]
+                \mathbf{E} &= \mathbf{E}_0\cos(\omega t - kr)\\
+                           &= \mathbf{E}_0\cos[\omega(t - \frac{k}{w}r)]\\
+                           &\because k = \omega/v\\
+                \therefore \mathbf{E} &= \mathbf{E}_0\cos[\omega(t-\frac{r}{v})]\\\\
+                \mathbf{E} &= \mathbf{E}_0\cos(\omega t - kr)\\
+                           &= \mathbf{E}_0\cos[2\pi(\frac{\omega}{2\pi}t - \frac{k}{2\pi}r)]\\
+                           &\because k=2\pi/\lambda,~\omega = 2\pi/T\\
+                \therefore \mathbf{E} &= \mathbf{E}_0\cos[2\pi(\frac{t}{T} - \frac{r}{\lambda})]
                 \end{align}
                 $$
             </div>
@@ -206,16 +204,21 @@
         <b>\(\mathbf{E}, \mathbf{B}\)同相位</b>
         
         <div class="Card-Formula">
-            <b>单色平面电磁波的一般方程</b>
-            $$E = E_0\cos(\omega t - kr + \phi_0) = E_0e^{-i(\omega t - kr+ + \phi_0)}$$
+            <h2>单色平面电磁波的一般方程</h2>
+            <b>三角函数形式</b>
+            $$\mathbf{E} = \mathbf{E}_0\cos(\omega t - \mathbf{k}\mathbf{r} + \phi_0)$$
+
+            <b>复数形式</b>
+            $$\mathbf{E} = \mathbf{E}_0e^{-i(\omega t - \mathbf{k}\mathbf{r}+ + \phi_0)}$$
             <ul>
                 <li>振动方向：\(\mathbf{E}_0\)的方向</li>
                 <li>传播方向：\(\mathbf{k}_0\)的方向</li>
                 <li>相位速度：\(v = \frac{\omega}{k}\)，单位为\(m/s\)，方向沿\(\mathbf{k}_0\)</li>
                 <li>振幅：\(E_0\)，单位为\(V/m\)</li>
-                <li>频率：\(\nu = 2\pi/\omega\)，单位为\(Hz\)</li>
+                <li>频率：\(\nu = \omega/2\pi\)，单位为\(Hz\)</li>
                 <li>波长：\(\lambda = 2\pi/k\)，单位为\(m\)</li>
             </ul>
+            <p>[注]复数形式是为了简便计算而取的，虚部无物理意义.此处取\(\mathbf{E} = \mathbf{E}_0e^{-i(\omega t - kr + \phi_0)}\)与\(\mathbf{E} = \mathbf{E}_0e^{i(\omega t - kr + \phi_0)}\)都是可行的，取其实部均为\(\mathbf{E}_0\cos(\omega t - kr + \phi_0)\)，约定取\(-i\)形式.</p>
         </div>
 
 
@@ -229,17 +232,22 @@
         <p>\(A_1\)为离开点光源单位距离外的振幅值.</p>
 
 
-        <h2 id="SpatialFrequency">光波场的空间频率域表示</h2>
-        <p>在空间域内，波数\(k\)可称为<b>空间圆频率</b>，波长\(\lambda\)可称为<b>光波场的空间周期</b>.</p>
-        <div class="Card-Definition">
-            <b>光波场在光波传播方向上的空间频率\(f_k\)</b>
-            <p>表示光波场沿波矢\(\mathbf{k}\)方向每增加单位长度，光波场增加的周期数.</p>
-            $$f_k = \frac{1}{\lambda}$$
-        </div>
-        <p>[注]光波场的空间周期与空间频率随观察方向不同而不同.</p>
-        <b>三维空间表示式</b>
-        $$E = E_0  e^{i(k_xx + k_yy + k_zz + \phi_0)}$$
-        <p>[注]三维空间表示式即为省略时间相位因子的表示式.</p>
+        <div class="Card-Analysis">
+            <h2 id="SpatialFrequency">光波场的空间频率域表示</h2>
+            <p>在空间域内，波数\(k\)可称为<b>空间圆频率</b>，波长\(\lambda\)可称为<b>光波场的空间周期</b>.</p>
+            <div class="Card-Definition">
+                <b>光波场在光波传播方向上的空间频率\(f_k\)</b>
+                <p>表示光波场沿波矢\(\mathbf{k}\)方向每增加单位长度，光波场增加的周期数.</p>
+                $$f_k = \frac{1}{\lambda}$$
+            </div>
+            <p>[注]光波场的空间周期与空间频率随观察方向不同而不同.</p>
+
+            <div class="Card-Definition">
+                <b>三维空间表示式</b>
+                $$E = E_0  e^{i(k_xx + k_yy + k_zz + \phi_0)}$$
+                <p>[注]三维空间表示式即为省略时间相位因子的表示式.</p>
+            </div>
+        </div> 
 
 
         <h2>光波的速度</h2>

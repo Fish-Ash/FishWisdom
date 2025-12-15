@@ -12,7 +12,7 @@
 
 
 <body>
-    <div class="header"><h1>不惑</h1></div>
+    <div class="header">不惑</div>
 
 
     <ul class="navibar">
@@ -50,24 +50,45 @@
         <li>\(\frac{\partial \mathbf{D}}{\partial t}\)：位移电流密度</li>
         <li>\(\iint\frac{\partial \mathbf{D}}{\partial t}\mathrm{d}\sigma\)：位移电流</li>
     </ul>
-    微分形式
-    $$
-    \begin{cases}
-    \nabla\cdot\mathbf{D} = \rho\\
-    \nabla\cdot\mathbf{B} = 0\\
-    \nabla\times\mathbf{E} = -\frac{\partial \mathbf{B}}{\partial{t}}\\
-    \nabla\times\mathbf{H} = \mathbf{j} + \frac{\partial \mathbf{D}}{\partial t}
-    \end{cases}
-    $$
 
-    $$
-    \begin{cases}
-    \nabla\cdot E  =\frac{\rho}{\epsilon_0}\\
-    \nabla\times E = -\frac{\partial B}{\partial t}\\
-    \nabla\cdot B = 0\\
-    \nabla\times B = \mu_0j_0+\epsilon_0\mu_0\frac{\partial E}{\partial t}
-    \end{cases}
-    $$
+    <div class="Card-Formula" id="DifferentialForm">
+        <b>Maxwell方程组的微分形式</b>
+        $$
+        \begin{cases}
+        \nabla\cdot\mathbf{D} = \rho\\
+        \nabla\cdot\mathbf{B} = 0\\
+        \nabla\times\mathbf{E} = -\frac{\partial \mathbf{B}}{\partial{t}}\\
+        \nabla\times\mathbf{H} = \mathbf{j} + \frac{\partial \mathbf{D}}{\partial t}
+        \end{cases}
+        $$
+    </div>
+
+    <div class="Card-Formula">
+        <b>物质方程</b>
+        <p>静止的各向同性（物质每一点的物理性质不随方向而改变）介质中，有：</p>
+        $$\begin{cases}
+        \mathbf{j} = \sigma\mathbf{E}\\
+        \mathbf{D} = \epsilon\mathbf{E}\\
+        \mathbf{B} = \mu\mathbf{H}
+        \end{cases}$$
+
+        <ul>
+            <li>\(\sigma\)：电导率，各向同性均匀介质中\(\sigma = 0\)</li>
+            <li>\(\epsilon\)：介电常数</li>
+            <li>\(\mu\)：磁导率，各项同性均匀介质中为常数。\(\mu_0 = 4\pi\times 10^{-7}N\cdot s^2/C^2\)。非磁性物质\(\mu = \mu_0\)</li>
+        </ul>
+    </div>
+
+    <div class="Card-Formula">
+        <b>简化Maxwell方程组</b>
+        $$\begin{cases}
+        \nabla\cdot E  =\frac{\rho}{\epsilon_0}\\
+        \nabla\times E = -\frac{\partial B}{\partial t}\\
+        \nabla\cdot B = 0\\
+        \nabla\times B = \mu_0j_0+\epsilon_0\mu_0\frac{\partial E}{\partial t}
+        \end{cases}$$
+    </div>
+    
 </body>
 
 </html>

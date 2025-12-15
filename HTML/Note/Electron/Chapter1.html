@@ -4,7 +4,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Pandas</title>
+        <title>Electron</title>
         <link rel="stylesheet" href="../../../CSS/style.css">
         <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
         <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
@@ -14,7 +14,7 @@
 
 
     <body>
-        <div class="header"><h1>不惑</h1></div>
+        <div class="header">不惑</div>
         <ul class="navibar">
             <li><a href="../Home.html">主页</a></li>
             <li><a href="../Navigation.html">导航</a></li>
@@ -23,12 +23,14 @@
         <h1>Electron入门</h1>
         
         <h2>环境配置</h2>
+        <b>VSCode</b>
+        <p><a href="../Computer/Hardware/Power.html">以管理员身份运行</a>.</p>
+        <p>每次使用npm安装完一个包后，都需要关闭VSCode的全部窗口再重新打开.</p>
+
         <b>Node.js</b>
         <p>一个基于Chrome V8引擎的JavaScript运行环境.</p>
         <p>开发者使用Node.js创建Electron项目.</p>
         <p><a href="https://nodejs.org/en/download">下载地址</a></p>
-        <p>下载完成后，若VSCode无法调用npm指令，需要使用管理员身份打开VSCode.</p>
-        <p>若无法执行 npm install 指令，将node.js所在文件夹的权限修改为不需要管理员身份.</p>
 
         <b>yarn</b>
         <p>依赖包管理工具.</p>
@@ -37,6 +39,7 @@
             # 命令
             npm install -g yarn
         </code></pre>
+        <p>[注]-g即为全局安装.</p>
 
         <b>创建第一个Electron应用</b>
         <pre><code>
@@ -57,6 +60,10 @@
         <p>创建一个index.html文件</p>
 
 
+        <b>运行界面</b>
+        <pre><code>
+            yarn start
+        </code></pre>
     </body>
 
 </html>

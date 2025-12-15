@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Electron</title>
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">不惑</div>
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>窗口</h1>
+
+        <h2>标题栏</h2>
+        <b>禁用默认边框</b>
+        <pre><code>
+            # index.js
+            win = new BrowserWindow({
+                frame: flase,
+                webPreferences: {nodeIntegration: true}
+            });f 
+        </code></pre>
+        <p>禁用默认边框后，无法对窗口进行：拖拽、最大化、最小化、关闭的操作.</p>
+
+    </body>
+
+</html>
