@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>激光原理</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <h1>调Q技术</h1>
+
+        <div class="Card-Definition">
+            <b>Q值（品质因数）</b>
+            $$Q = 2\pi\frac{W}{\Delta W}$$
+            <ul>
+                <li>\(W\)：谐振腔内储存的能量</li>
+                <li>\(\Delta W\)：每振荡周期损耗的能量</li>
+            </ul>
+        </div>
+        <p>Q值越高，腔内损耗越小；Q值越低，腔内损耗越大.</p>
+
+        <div class="Card-Definition">
+            <b>调Q原理</b>
+            <p>采用某种办法使谐振腔在泵浦开始时处于高损耗低Q值的状态，此时激光振荡的阈值很高，粒子密度反转数即使积累到很高水平也不会产生振荡；</p>
+            <p>当粒子密度反转数达到其峰值时，突然使腔的Q值增大，导致激光介质的增益大大超过阈值，及其快速地产生振荡；</p>
+            <p>此时储存在亚稳态上的粒子所具有的能量会很快转换为光子的能量，光子像雪崩一样以极高的速率增长，激光器便可输出一个峰值功率高、宽度窄的激光巨脉冲.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>激光调Q技术</b>
+            <p>用调节谐振腔的Q值获得激光巨脉冲的技术.</p>
+        </div>
+
+        <table>
+            <tr>
+                <td rowspan="2">控制反射损耗</td>
+                <td>机械转镜调Q</td>
+            </tr>
+            <tr>
+                <td>电光调Q</td>
+            </tr>
+            <tr>
+                <td>控制吸收损耗</td>
+                <td>可饱和吸收染料调Q</td>
+            </tr>
+            <tr>
+                <td>控制衍射损耗</td>
+                <td>声光调Q</td>
+            </tr>
+        </table>
+
+        <div class="Card-Analysis">
+            <h2>电光调Q</h2>
+            <p>利用晶体的电光效应作为Q开关的元件.</p>
+
+            <p>在激光谐振腔中插入起振片作为Q开关的KD*P晶体.</p>
+
+            <div class="Card-Question">
+                <p>什么是晶体的电光效应？</p>
+                <div class="Card-AI">
+                    <p>当向晶体施加电场时，其折射率椭球的形状与方位会发生改变，导致沿特定方向传播的光的折射率n发生变化.</p>
+                </div>
+                <p>什么是Q开关？</p>
+                <div class="Card-AI">
+                    <p>通常情况下与调Q等同，但是侧重于“用于调Q的器件”.</p>
+                </div>
+                <p>什么是起振片？</p>
+                <div class="Card-AI">
+                    <p>一种只允许特定振动方向的光通过的光学元件.</p>
+                </div>
+                <p>什么是KD*P晶体？</p>
+                <div class="Card-AI">
+                    <p>磷酸二氚钾.</p>
+                </div>
+            </div>
+
+            <p>当在晶体上加半波电压后，往返通过晶体的线偏振光，其振动方向相对改变90°.</p>
+            <p>对于未加电压的晶体，往返通过晶体的线偏振光振动方向不变.</p>
+            <p>当晶体在z轴方向加电压后，由于感应双折射，沿x方向振动的偏振光进入晶体后将分解为沿x'方向和y'方向振动的二线偏振光.</p>
+            <p>适当调整电压大小，使通过晶体后的两者相位差为\(\pi/2\)（相应电压大小为\(V_{\pi/2}\)），因而合成光为圆偏振光.</p>
+            <p>再次经过反射镜反射，圆偏振光再次通过晶体，相位差再次增加\(\pi/2\)，则出射光又成一线偏振光，但其振动方向为y方向，恰遇原入射偏振光的振动方向x垂直.</p>
+
+            <div class="Card-Question">
+                <p>晶体的感应双折射？</p>
+                <p>光的偏振？</p>
+            </div>
+
+            
+
+
+        </div>
+
+
+        <div id="PageEnd"></div>
+        <a href="#PageEnd" class="GoToBottom">Bottom</a>
+
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>激光原理</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>光谱线增宽</h1>
+
+        <div class="Card-Definition">
+            <b>光谱线</b>
+            <p>用于描述相对光强在不同频率上的分布.</p>
+
+            <img src="Img/SpectralLine.jpg" alt="" width="400">
+
+            <p>设某条光谱线总光强为\(I_0\)，频率\(\nu\)附近单位频率间隔\(\mathrm{d}\nu\)内的光强为\(I(\nu)\).</p>
+            <p>则在频率\(\nu\)附近单位频率间隔\(\mathrm{d}\nu\)内的相对光强为：</p>
+            $$f(\nu) = I(\nu)/I_0$$
+
+            <p>\(f(\nu)\)表示某一谱线在单位频率间隔内的相对光强分布，称为<b>光谱线的线型函数</b>.</p>
+        </div>
+
+        <p>光谱的线型和宽度与光的时间相干性直接相关.</p>
+        <p>光谱的线型和宽度对许多激光器的输出特性（激光的增益、模式、功率等）都有影响.</p>
+
+        <p>原子发光是有限波列的单频光，因此仍有一定的频带宽度.</p>
+        <div class="Card-AI">
+            <p>有限波列\(\Rightarrow\)有一定带宽</p>
+        </div>
+
+        <p>这意味着原子发射的不是恰好为某一频率\(\nu_0\)（满足\(h\nu_0 = E_2 - E_1\)）的光，而是发射频率在\(\nu_0\)附近某段范围内的光.</p>
+
+        <div class="Card-AI">
+            <p>判定同一条谱线：</p>
+            <p>同一对能级上发生的辐射跃迁辐射出的光对应同一条谱线</p>
+            <p>e.g.从\(E_x\)自发辐射与受激辐射到\(E_n\)所发出的光对应同一谱线.</p>
+        </div>
+
+        <p>不同谱线的带宽不一定相同.</p>
+
+        <p>对于同一个谱线而言，不同频率对应的光强相对强度不一样.</p>
+
+        <div class="Card-Analysis">
+            <h2>光谱线的性质</h2>
+            <b>线型函数的归一化条件</b>
+            $$\int_{0}^{+\infty}I(\nu)\mathrm{d}\nu = I_0$$
+            $$\int_{0}^{+\infty}f(\nu)\mathrm{d}\nu = 1$$
+
+            <b>光谱线宽度（光谱线半宽度、光谱线半值宽度）</b>
+            <p>线型函数在\(\nu_0\)处达到最大值，而在\(\nu_1\)及\(\nu_2\)处，有：</p>
+            $$f(\nu_1) = f(\nu_2) = \frac{1}{2}f(\nu_0)$$
+            <p>定义\(\Delta\nu = \nu_2 - \nu_1\)，即相对光强为最大值\(1/2\)处的频率间隔，为光谱线半宽度.</p>
+        </div>
+
+        
+        <div class="Ending" id="PageEnd"></div>
+        <a class="GoToBottom" href="#PageEnd">Bottom</a>
+        
+    </body>
+
+</html>

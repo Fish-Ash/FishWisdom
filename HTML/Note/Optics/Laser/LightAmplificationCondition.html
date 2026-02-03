@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>激光原理</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <h1>光放大条件</h1>
+
+        <img src="Img/PhotonFlux.png" width="400">
+
+        <p>\(F\)：光子通量，即通过单位面积的光子量.</p>
+        <p>\(S\)：材料截面积.</p>
+        <p>令\(\mathrm{d}F\)为通过\(\mathrm{d}z\)段材料后单位面积上的光子通量变化量.</p>
+        <p>则\(S\mathrm{d}F\)为通过\(\mathrm{d}z\)段材料后总的光子通量变化量.</p>
+        $$\therefore S\mathrm{d}F = (W_{21}n_2 - W_{12}n_1)S\mathrm{d}z$$
+        $$\therefore \mathrm{d}F = (W_{21}n_2 - W_{12}n_1)\mathrm{d}z$$
+        <p>则实现光放大的条件为：</p>
+        $$\mathrm{d}F = (W_{21}n_2 - W_{12}n_1)\mathrm{d}z \gt 0$$
+        <p>即：</p>
+        $$\frac{n_2}{n_1} \gt \frac{W_{12}}{W_{21}}$$
+        <p>这里只考虑受激辐射跃迁于受激吸收跃迁，因为其辐射与吸收的光子是相干的.</p>
+
+        <p>腔内物质原子数按能级分布应服从热平衡状态下的玻尔兹曼分布：</p>
+        $$\frac{n_2}{n_1} = \frac{g_2}{g_1}\exp{\left(-\frac{E_2-E_1}{kT}\right)}$$
+        <p>式中，\(g_1\)和\(g_2\)分别为能级\(E_1\)和\(E_2\)的统计权重.</p>
+        <p>能量密度：</p>
+        $$\rho_v = \frac{8\pi h\nu^3}{c^3}\frac{1}{\exp{\left(\frac{h\nu}{kT}\right) - 1}}$$
+        <p>热平衡状态下，各能级上的粒子数应该保持动态平衡，即：</p>
+        $$A_{21}n_2 + W_{21}n_2 = W_{12}n_1$$
+        $$A_{21}n_2 + B_{21}\rho_vn_2 = B_{12}\rho_vn_1$$
+        <p>上三式对于\(T\rightarrow \infty\)的情况也应成立，则：</p>
+        $$\lim\limits_{T\rightarrow \infty}\frac{n_2}{n_1} = \frac{g_2}{g_1}$$
+        $$\lim\limits_{T\rightarrow \infty}\rho_v = \infty$$
+
+        $$\because A_21n_2 + B_{21}\rho_vn_2 = B_{12}\rho_vn_1$$
+        $$\therefore \frac{1}{\rho_1}A_{21}\frac{n_2}{n_1} + B_{21}\frac{n_2}{n_1} = B_{12}$$
+        $$\therefore B_{21}\frac{g_2}{g_1} = B_{12}$$
+        $$\therefore \frac{B_{12}}{B_{21}} = \frac{g_2}{g_1}$$
+        $$\therefore \frac{W_{12}}{W_{21}} = \frac{g_2}{g_1}$$
+
+        <p>代入：</p>
+        $$\frac{n_2}{n_1} \gt \frac{W_{12}}{W_{21}}$$
+        <p>得：</p>
+        $$\frac{n_2}{n_1} \gt \frac{g_2}{g_1}$$
+        <p>又因玻尔兹曼分布：</p>
+        $$\frac{n_2}{n_1} = \frac{g_2}{g_1}\exp\left(-\frac{E_2-E_1}{kT}\right)$$
+
+        <p>当\(g_1 = g_2\)时，\(n_2 \lt n_1\)，即：在热平衡状态下，高能级粒子数恒小于低能级粒子数.</p>
+        <p>此时光放大条件为：\(n_2\gt n_1\)，即粒子数反转.</p>
+
+
+        <div id="PageEnd"></div>
+        <a class="GoToBottom" href="#PageEnd">Bottom</a>
+
+</html>

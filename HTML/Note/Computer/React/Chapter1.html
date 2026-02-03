@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>React</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>引入React环境</h1>
+
+        <h2>导入JavaScript库</h2>
+        
+        <pre class="Code"><code><textarea>
+            <!-- React核心 -->
+            <script type="text/javascript" src="react.development.js"></script>
+
+            <!-- React-DOM，用于支持React操作DOM -->
+            <script type="text/javascript" src="react-dom.development.js"></script>
+
+            <!-- Babel，用于将jsx转换为js -->
+            <script type="text/javascript" src="babel.min.development.js"></script>
+        </textarea></code></pre>
+
+        <h2>React JavaScript</h2>
+        <pre class="Code"><code><textarea>
+            <script type = "text/babel"></script>
+        </textarea></code></pre>
+
+        <h2>具体实例</h2>
+        <pre class="Code"><code><textarea>
+            <!-- 创建虚拟DOM -->
+            const VDOM = <h1 id="title">Title</h1>
+
+            <!-- 创建多行虚拟DOM -->
+            const VDOM = (
+                <h1 id="title">
+                    <span>Title</span>
+                </h1>
+            )
+
+            <!-- 在虚拟DOM中应用JavaScript变量 -->
+            const vId = "title"
+            const VDOM = <h1 id="{vId}">Title</h1>
+
+            <!-- 在虚拟DOM中应用样式 -->
+            const VDOM = <h1 className="myStyle">Title</h1>
+
+            <!-- 渲染虚拟DOM到页面 -->
+            ReactDOM.render(VDOM, document.getElementById(id))
+        </textarea></code></pre>
+        <p>[注]创建虚拟DOM时无需加引号.</p>
+        <p>[注]多次使用ReactDOM.render()时，先前的渲染会被覆盖.</p>
+        <p>[注]样式的类名不使用class而是className.</p>
+        <p>[注]创建虚拟DOM时只能有一个根标签.</p>
+        <p>[注]标签必须闭合.</p>
+        <p>[注]创建标签时，遵循以下原则：</p>
+        <ul>
+            <li>若标签的首字母为小写，则将该标签转换为html中的同名元素；若html中无对应的同名元素，则报错.</li>
+            <li>若标签的首字母大写，React将渲染对应的组件；若该组件未定义，则报错.</li>
+        </ul>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

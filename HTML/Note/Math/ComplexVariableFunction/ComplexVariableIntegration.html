@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>复变函数</title>
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>复变积分</h1>
+
+        <div class="Card-Definition">
+            <b>复变积分</b>
+            <p>复变积分是复平面\(\mathbb{C}\)上的线积分.</p>
+            <p>设\(C\)是\(\mathbb{C}\)内一条由\(A\)点至\(B\)点的曲线，函数\(f(z)\)在\(C\)上有定义.</p>
+            <p>将\(C\)任意分割为\(n\)段，分点为\(z_0(A), z_1, z_2, \cdots, z_n(B)\)，\(\zeta_k\)是\(z_{k-1}-z_k\)段上任意一点，左和数：</p>
+            $$\sum_{k=1}^nf(\zeta_k)(z_k-z_{k-1}) = \sum_{k=1}^{n}f(\zeta_k)\Delta z_k$$
+            <p>若当\(n\rightarrow \infty\)，即\(\max{|\Delta z_k|}\rightarrow 0\)时，此和数的极限存在，且极限值与\(\zeta_k\)的选取无关，则称此极限值为函数\(f(z)\)沿曲线\(C\)的积分，记为：</p>
+            $$\int_C f(z)\mathrm{d}z = \lim_{n\rightarrow\infty}f(\zeta_k)\Delta z_k$$
+            <p>曲线\(C\)称为积分路径.</p>
+            <p>闭合的积分路径称为（积分）围道.</p>
+
+            <p>一个复变积分实则为两个实变积分的有序组合：</p>
+            $$\begin{align}
+            \int_C f(z)\mathrm{d}z &= \int_C (u+iv)(\mathrm{d}x + i\mathrm{d}y)\\
+                                   &= \int_C (u\mathrm{d}x - v\mathrm{d}y) + i\int_C (v\mathrm{d}x + u\mathrm{d}y)
+            \end{align}$$
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

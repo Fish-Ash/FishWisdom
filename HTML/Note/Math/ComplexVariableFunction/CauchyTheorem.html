@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>复变函数</title>
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>Cauchy定理</h1>
+
+        <div class="Card-Definition">
+            <b>Cauchy定理</b>
+            <p>若复变函数\(f(z)\)在有界闭区域\(\overline{G}\)中解析，则沿\(\overline{G}\)的边界\(C\)，有：</p>
+            $$\oint_C f(z)\mathrm{d}z = 0$$
+
+            <p>对于单连通区域：</p>
+            <p>设\(f'(z)\)在\(\overline{G}\)中连续，则：</p>
+            $$\oint_Cf(z)\mathrm{d}z = \oint_C(u\mathrm{d}x - v\mathrm{d}y) + i\oint_C(v\mathrm{d}x + v\mathrm{d}y)$$
+            <p>应用Green公式：</p>
+            $$\oint_C\left[P(x,y)\mathrm{d}x + Q(x,y)\mathrm{d}y\right] = \iint_S\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\mathrm{d}x\mathrm{d}y$$
+            <p>从而将闭合围道积分化为面积分：</p>
+            $$\oint_C(u\mathrm{d}x - v\mathrm{d}y) = -\iint_S\left(\frac{\partial v}{\partial x} + \frac{\partial u}{\partial y}\right)$$
+            $$\oint_C(v\mathrm{d}x + u\mathrm{d}y) = \iint_S\left(\frac{\partial u}{\partial x} - \frac{\partial v}{\partial y}\right)$$
+            <p>由Cauchy-Riemann方程，右端两个积分中的被积函数均为0，故：</p>
+            $$\oint_Cf(z)\mathrm{d}z = 0$$
+
+
+
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

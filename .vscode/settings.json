@@ -1,3 +1,6 @@
 {
-    "livePreview.defaultPreviewPath": "/HTML/Note/Optics/Laser/Resonator.html"
+    "livePreview.defaultPreviewPath": "/HTML/Note/Optics/Laser/SolidLaser.html",
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.defaultPackageManager": "ms-python.python:pip",
+    "python-envs.pythonProjects": []
 }

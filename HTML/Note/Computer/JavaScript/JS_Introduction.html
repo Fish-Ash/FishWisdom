@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Pandas</title>
-    <link rel="stylesheet" href="../../../../../CSS/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="../../../../CSS/style.css">
+    <link rel="stylesheet" href="../../../../CSS/Code.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
@@ -23,12 +24,26 @@
         <h2>简介</h2>
 
         <p><span lang="en">JavaScript</span>是一种<b>面向对象</b>的语言。</p>
+        <p>JS区分大小写.</p>
+        <p>语句间用英文分号（;）分隔.</p>
         <p>对象具有<b>属性</b>，有些属性本身也是对象，因此对象可以拥有子对象</p>
         <p>对象可以做的事情叫<b>方法</b>。</p>
         <p><b>内部脚本</b>：写于HTML文件内，仅供当前页面使用</p>
-        <pre class="Code"><code class="html">
-            &lt;script&gt;&lt;/script&gt
-        </code></pre>
+
+        <pre class="Code"><code><textarea>
+            <script></script>
+
+            <!-- 标准JavaScript代码，通常可省略type -->
+            <script type="text/javascript"></script>
+
+            <!-- 常用作HTML模板 -->
+            <script type="text/html"></script>
+
+            <!-- 常用于React -->
+            <script type="text/babel"></script>
+        </textarea></code></pre>
+
+
         <p><b>外部脚本</b>：只包含<span lang="en">JavaScript</span>的单独文件，称为.js文件，可以让多个HTML共享一个脚本。</p>
         <pre class="Code"><code class="html">
             &lt;script src=""&gt;&lt;/script&gt
@@ -51,6 +66,33 @@
 
         <pre class="code"><code class="cpp">
         const 
+        </code></pre>
+
+        <h2>输出</h2>
+        <pre><code>
+            console.log()
+        </code></pre>
+
+        <b>浮点数显示n位小数</b>
+        <pre><code>
+            x.toFixed(n)
+        </code></pre>
+        
+
+        <h2>循环语句</h2>
+        <h3>for循环</h3>
+        <pre><code>
+            for(i=0;i&lt;x;i++){
+
+            }
+        </code></pre>
+
+
+        <b>遍历数组</b>
+        <pre><code>
+            for(const user of Users){
+                
+            }
         </code></pre>
     </body>
 

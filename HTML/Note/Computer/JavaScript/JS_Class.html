@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>JavaScript</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
+        <!-- React -->
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+
+    <body>
+        <div id="Page-Header"></div>
+
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>类</h1>
+
+        <h2>创建类</h2>
+        <pre class="Code"><code><textarea>
+            <!-- 创建基本类 -->
+            class Person{
+
+            }
+
+            <!-- 带参数的类 -->
+            class Person{
+                // 构造器（this指代实例对象）
+                constructor(name, age){
+                    this.name = name
+                    this.age = age
+                }
+
+                // 一般方法（在类的原型对象上）
+                say_hi(){
+                    console.log(`My name is {this.name}, I'm {this.age} years old.`)
+                }
+            }
+        </textarea></code></pre>
+
+        <h2>创建类的实例对象</h2>
+        <pre class="Code"><code><textarea>
+            const p1 = Person()
+
+            const me = Person("Lux Yu", 18)
+            me.say_hello()
+        </textarea></code></pre>
+
+        <h2>类的继承</h2>
+        <pre class="Code"><code><textarea>
+            class User extends Person{
+
+            }
+
+            const p1 = Person("Lux Yu", 18)
+
+            class User extends Person{
+                constructor(name, age, id){
+                    super(name, age) // 接收共有属性（必须在构造器方法的最开始调用）
+                    this.id = id
+                }
+            }
+        </textarea></code></pre>
+
+        
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+
+        <script type="text/babel" src="../../../../components/page-template/PageTemplate.jsx"></script>
+        <script type="text/babel">
+            ReactDOM.render(<Header/>, document.getElementById("Page-Header"))
+        </script>
+    </body>
+
+</html>

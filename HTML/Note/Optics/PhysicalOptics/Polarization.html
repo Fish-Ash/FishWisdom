@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>物理光学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <a class="BackToTop" href="#PageHead">Top</a>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <h1>光的偏振</h1>
+
+        <h2>平面光波的偏振特性</h2>
+
+        <p>平面电磁波是横电磁波，其光场矢量的振动方向与光波传播方向垂直.</p>
+
+        <div class="Card-Definition" id="Polarization">
+            <b>光波的偏振特性</b>
+            <p>光振动方向相对光传播方向不对称的性质.</p>
+        </div>
+
+        <p>光波的偏振特性是横波区别于纵波的最明显标志.</p>
+
+        <div class="Card-AI">
+            <p>单色平面波必是偏振光.</p>
+        </div>
+
+        <p>设光波沿\(z\)方向传播，电场矢量为</p>
+        $$\mathbf{E} = \mathbf{E}_0 \cos(\omega t - kz + \phi_0)$$
+        <p>为表征光波的偏振特性，将其表示为沿\(x, y\)方向上振动的两个独立分量的线性组合</p>
+        $$\mathbf{E} = \mathbf{i}\mathbf{E}_x + \mathbf{j}\mathbf{E}_y$$
+        $$E_x = E_{0x}\cos(\omega t - kz + \phi_x) = E_{0x}e^{-i(\omega t - kz + \phi_x)}$$
+        $$E_y = E_{0y}\cos(\omega t - kz + \phi_y) = E_{0y}e^{-i(\omega t - kz + \phi_y)}$$
+
+        <div class="Formula">
+            $$(\frac{E_x}{E_{0x}})^2 + (\frac{E_y}{E_{0y}})^2 - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos \phi = \sin^2 \phi(\phi = \phi_y - \phi_x)$$
+            <div class="Derivation">
+                <p>令\(\phi = \phi_y - \phi_x, \omega t - kz + \phi_x = \theta\)</p>
+                $$E_x = E_{0x}\cos\theta \Rightarrow \cos\theta = \frac{E_x}{E_{0x}}$$
+                $$\sin\theta = \sqrt{1 - (\frac{E_x}{E_{0x}})^2}$$
+                $$E_y = E_{0y}\cos(\theta + \phi) = E_{0y}(\cos\theta\cos\phi - \sin\theta\sin\phi)$$
+                $$(\frac{E_y}{E_{0y}}) = \frac{E_x}{E_{0x}}\cos\phi - \sqrt{1 - (\frac{E_x}{E_{0x}})^2}\sin \phi$$
+                $$[1 - (\frac{E_x}{E_{0x}})]\sin^2\phi = (\frac{E_x}{E_{0x}})^2\cos^2\phi - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos\phi + (\frac{E_y}{E_{0y}})^2$$
+                $$\sin^2\phi = (\frac{E_x}{E_{0x}})^2 - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos\phi + (\frac{E_y}{E_{0y}})^2$$
+            </div>
+        </div>
+
+        <div class="Card-Definition">
+            <b>旋向</b>
+            <p>迎着光传播方向看：</p>
+            <p>\(\mathbf{E}\)顺时针旋转，称为<b>右旋</b>偏振光.</p>
+            <p>\(\mathbf{E}\)逆时针旋转，称为<b>左旋</b>偏振光.</p>
+        </div>
+
+        <b>线偏振光</b>
+        <p>条件：\(\phi = m\pi(m = 0, \pm 1, \pm 2, \cdots)\)</p>
+        <div class="Formula">
+            $$\frac{1}{E_{0x}}E_x \pm \frac{1}{E_{0y}}E_y = 0$$
+            <div class="Derivation">
+                $$\phi = m\pi(m = 0, \pm 1, \pm 2, \cdots) \Rightarrow \begin{cases}\sin \phi = 0\\ \cos\phi = \pm 1\end{cases}$$
+                $$(\frac{E_x}{E_{0x}})^2 + (\frac{E_y}{E_{0y}})^2 - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos \phi = \sin^2 \phi$$
+                $$(\frac{E_x}{E_{0x}})^2 \pm 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}}) + (\frac{E_y}{E_{0y}})^2 = 0$$
+                $$(\frac{E_x}{E_{0x}} \pm \frac{E_y}{E_{0y}})^2 = 0$$
+                $$\frac{1}{E_{0x}}E_x \pm \frac{1}{E_{0y}}E_y = 0$$                
+            </div>
+        </div>
+        $$\frac{E_y}{E_x} = \frac{E_{0y}}{E_{0x}}e^{-i\phi} = \frac{E_{0y}}{E_{0x}}e^{-im\pi}$$
+
+        <p>当\(m\)为偶数时，光场在\(Ⅰ,Ⅲ\)象限内振动.</p>
+        <p>当\(m\)为奇数时，光场在\(Ⅱ,Ⅳ\)象限内振动.</p>
+
+        <b>圆偏振光</b>
+        <p>条件：\(E_{0x} = E_{0y} = E'_0, \phi = m\pi/2(m = \pm 1, \pm 3, \pm 5\cdots)\)</p>
+        <div class="Formula">
+            $$E^2_x + E^2_y = E'^2_0$$
+            <div class="Derivation">
+                $$\phi = m\pi/2(m = \pm 1, \pm 3, \pm 5\cdots) Rightarrow \begin{cases}\sin \phi = \pm 1 \\ \cos\phi = 0\end{cases}$$
+                $$E_{0x} = E_{0y} = E'_0$$
+                $$(\frac{E_x}{E_{0x}})^2 + (\frac{E_y}{E_{0y}})^2 - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos \phi = \sin^2 \phi$$
+                $$(\frac{E_x}{E'_0})^2 + (\frac{E_y}{E'_0})^2 = 1$$
+                $$E^2_x + E^2_y = E'^2_0$$                
+            </div>
+        </div>
+        $$\frac{E_y}{E_x} = \frac{E_{0y}}{E_{0x}}e^{-i\phi} = e^{\mp i\frac{\pi}{2}} = \mp i$$
+        <div class="Formula">
+            <p>\(\phi = \frac{\pi}{2}\)时，为右旋偏振光.</p>
+            <div class="Derivation">
+                <p>取：</p>
+                $$\begin{cases}
+                x = \cos\theta \gt 0\\
+                y = \cos(\theta + \phi) \gt 0 
+                \end{cases}$$
+                <p>当\(\phi = \frac{\pi}{2} + 2k\pi,~k = \pm1,\pm2,\cdots\)时，令：</p>
+                $$\theta \in (-\frac{\pi}{2},0)$$
+                $$\therefore \theta + \phi \in (0,\frac{\pi}{2})$$
+                <p>故：</p>
+                $$\begin{cases}
+                x' = \cos(\theta + \omega\Delta t) \gt x\\
+                y' = \cos(\theta + \phi + \omega\Delta t) \lt y
+                \end{cases}$$
+            </div>
+        </div>
+        <p>\(\phi=-\frac{\pi}{2}\)时，为左旋偏振光.</p>
+
+        <b>椭圆偏振光</b>
+        <p>\(2m\pi \lt \phi \lt (2m+1)\pi\)：右旋椭圆偏振光.</p>
+        <p>\((2m-1)\pi \lt \phi \lt 2m\pi\)：左旋椭圆偏振光.</p>
+        
+
+        <h3>琼斯矩阵法表示偏振态</h3>
+        <b>琼斯矩阵</b>
+        $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}E_{0x}e^{-i\phi_x}\\E_{0y}e^{-i\phi_y}\end{matrix}\right]$$
+
+        <b>\(Ⅰ，Ⅲ\)象限内的线偏振光</b>
+        <p>此时\(\phi_x = \phi_y = \phi_0\)</p>
+        $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}E_{0x}\\E_{0y}\end{matrix}\right]e^{-i\phi_0}$$
+
+        <b>右旋、左旋圆偏振光</b>
+        <p>此时\(\phi_y - \phi_x = \pm \frac{\pi}{2}, E_{0x} = E_{0y} = E_0\)</p>
+        $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}1\\\mp i\end{matrix}\right]E_0e^{-i\phi_x}$$
+        
+
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+</html>

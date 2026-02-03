@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8">
     <title>JavaScript</title>
-    <link rel="stylesheet" href="../../../../../CSS/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <link rel="stylesheet" href="../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
@@ -18,6 +18,64 @@
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
+
+        <h1>DOM</h1>
+
+        <h2>获取元素</h2>
+        <b>通过id获取某个元素</b>
+        <pre><code>
+            const element = document.getElementById("id")
+        </code></pre>
+
+        <b>通过class获取元素</b>
+        <pre>
+            const element = document.getElementByClassName("class");
+        </pre>
+        <p>[注]即使只有一个该class的元素，使用这种方法返回的也是一个数组.</p>
+
+        <b>通过id或class获取元素</b>
+        <pre><code>
+            const element = document.querySelector(".class")
+            const element = document.querySelector("#id")
+        </code></pre>
+        <hr>
+
+        <h2>元素属性</h2>
+        <b>位置与尺寸属性</b>
+        <pre><code>
+            const rect = el.getBoundingClientRect()
+
+        </code></pre>
+        <hr>
+
+        <h2>事件监听</h2>
+        <b>对于某个元素进行事件监听</b>
+        <pre class="Code"><code class="JavaScript">
+            el.addEventListener(Event, Function)
+            /*
+            Event列表
+            点击-'click'
+            鼠标按下-'mousedown'
+            鼠标拖动-'mousemove'
+            */
+        </code></pre>
+
+        <pre><code>
+            el.addEventListener(Event, function(){
+                
+            })
+        </code></pre>
+        <hr>
+
+                <b>获取输入框中的值</b>
+        <pre><code>
+            element.value
+        </code></pre>
+
+        <b>更改某个元素中的内容</b>
+        <pre><code>
+            
+        </code></pre>
 
         <b>获取<span lang="en">html</span>文件中所有指定类型的元素</b>
         <pre class="Code"><code class="JavaScript">
@@ -32,14 +90,45 @@
             });
         </code></pre>
 
-        <b>对于某个元素进行事件监听</b>
-        <pre class="Code"><code class="JavaScript">
-            el.addEventListener(Event, Function)
-            /*
-            Event列表
-            点击-'click'
-            */
+        <b>事件列表</b>
+
+        <table>
+            <tr>
+                <td colspan="2">event.button</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>左键</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>中键</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>右键</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>侧键1</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>侧键2</td>
+            </tr>
+        </table>
+
+        <b>鼠标相对于窗口的坐标（左上角为(0,0)）</b>
+        <pre><code>
+            event.clientX # 鼠标的x坐标
+            event.clientY # 鼠标的y坐标
         </code></pre>
+
+        <b>获取当前页面路径</b>
+        <pre><code>
+            window.location.pathname
+        </code></pre>
+
 
     </body>
 

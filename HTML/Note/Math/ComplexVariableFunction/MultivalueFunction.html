@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>复变函数</title>
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>多值函数</h1>
+        
+        <div class="Card-Definition">
+            <b>多值函数</b>
+            <p>设有复数平面上的一个区域G，若给定G内的\(z\)值，有多个复数值\(w\)与之对应，则称\(w = f(z)\)为\(z\)的多值函数.</p>
+            <p>[注]根式函数、对数函数、反三角函数均为多值函数.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>根式函数\(\sqrt{z-a}\)</h2>
+            <p>令</p>
+            $$w = \rho e^{i\phi}$$
+            $$z - a = re^{i\theta}$$
+            $$\because w^2 = z - a$$
+            $$\therefore \rho^2e^{2i\phi} = re^{i\theta}$$
+            $$\therefore \begin{cases} \rho^2 = r\\ 2\phi = \theta + 2n\pi \end{cases}\Rightarrow \begin{cases}\rho = \sqrt{r}\\\phi = \frac{\theta}{2} + n\pi\end{cases},~n = 0,\pm1,\pm2,\cdots$$
+            <p>故对于一个给定的\(z\)值。有两个\(w\)值与之对应：</p>
+            $$w_1(z) = \sqrt{r}e^{i\theta/2},~n = 0, \pm2, \cdots$$
+            $$w_2(z) = \sqrt{r}e^{i(\pi + \theta/2)} = -\sqrt{r}e^{i\theta/2},~n= \pm1,\pm3,\cdots$$
+
+            <p>可见：</p>
+            <p>\(w\)的多值性来源于\(z-a\)辐角的多值性.</p>
+
+            <div class="Card-Definition">
+                <b>宗量</b>
+                <p>引起多值性的\(z-a\).</p>
+            </div>
+
+            <p>\(w = \sqrt{z-a}\)可以表示为：</p>
+            $$|w| = \sqrt{|z-a|}$$
+            $$\arg w = \frac{1}{2}\arg(z-a)$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>分支点</h2>
+            <p>在\(z\)复平面画一个不经过\(a\)点的简单闭合曲线，即自身不相交的闭合曲线.</p>
+            <p>研究自变量\(z\)从闭合曲线上某一点\(z_0\)出发，沿曲线逆时针连续运动一周回到\(z_0\)点时，\(w\)复平面内\(w\)值相应的连续变化情况.</p>
+            <b>Caes 1</b>
+            <p>当\(a\)在闭合曲线之外时：</p>
+            $$\arg'(z-a) = \arg(z-a)$$
+            $$\begin{align}
+            \arg' w &= \frac{1}{2}\arg'(z-a)\\
+                    &= \frac{1}{2}\arg(z-a)\\
+                    &= \arg w
+            \end{align}$$
+            <p>即\(w' = w\).</p>
+            <img src="Img/No1.gif" alt="" width="400"><br>
+
+            <b>Case 2</b>
+            <p>当\(a\)在闭合曲线之内时：</p>
+            $$\arg'(z-a) = \arg(z-a) + 2\pi$$
+            $$\begin{align}
+            \arg' w &= \frac{1}{2}\arg'(z-a)\\
+                    &= \frac{1}{2}\arg(z-a) + \pi\\
+                    &\neq \arg w
+            \end{align}$$
+            <p>即\(w'\neq w\).</p>
+            <img src="Img/No2.gif" alt="" width="300">
+
+            <div class="Card-Definition">
+                <b>分支点</b>
+                <p>设\(w(z)\)在\(z_0\)点的空心邻域内每一点均有对应值，若对于\(\forall r\gt 0\)，当\(z\)绕圆周\(|z-z_0 = r|\)一圈回到原处时，\(w\)值不还原，则称\(z_0\)点为多值函数\(w(0)\)的分支点.</p>
+                <p>[注]一个多值函数通常有多个分支点.</p>
+            </div>
+
+            <p>对于\(w(z) = \sqrt{z-a}\)：</p>
+            <p>\(z = a\)（Case 2）与\(z = \infty\)为\(w(z) = \sqrt{z-a}\)的分支点.</p>
+            <p>\(z = b \neq a\)均不是\(w(z) = \sqrt{z-a}\)的分支点（Case 1中\(b = O\)的情形）.</p>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>\(w = \sqrt{z-a}\)的单值化</h2>
+            <p>单值化的目的：研究解析性、连续性等性质.</p>
+            <p>单值化的方法：将宗量\(z-a\)的辐角限制在某个\(2\pi\)周期内.</p>
+
+            <p>宗量辐角变化的各个周期，给出多值函数的各个单值分支，每个单值分支都是单值函数，整个多值函数就是它的各个单值分支的总和.</p>
+            <p>e.g.多值函数\(\sqrt{z-a}\)有两个单值分支，可以是：</p>
+            <p>单值分支Ⅰ：</p>
+            $$0 \leq \arg(z-a) \lt 2\pi \Rightarrow 0\leq \arg w \lt \pi$$
+            <p>单值分支Ⅱ：</p>
+            $$2\pi \leq \arg(z-a) \lt 4\pi \Rightarrow \pi\leq \arg w\lt 2\pi$$
+            <p>[注]宗量辐角变化范围的规定不是唯一的.</p>
+
+
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

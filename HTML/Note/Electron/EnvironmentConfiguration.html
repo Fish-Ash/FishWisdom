@@ -20,18 +20,23 @@
             <li><a href="../Navigation.html">导航</a></li>
         </ul>
 
-        <h1>创建第一个文件</h1>
+        <h1>项目环境配置</h1>
 
         <p>1、创建一个文件夹，用VSCode打开，在Terminal中运行：</p>
         <p>npm init</p>
         <p>此时会生成一个package.json文件</p>
 
         <p>2、安装electron——在Terminal中运行：</p>
-        <p>npm install electron --save-dev</p>
+        <p>npm install -g cnpm --registry=https://registry.npmmirror.com</p>
+        <p>cnpm install --save-dev electron</p>
 
         <p>3、补充package.json中的author与description，并将main改为main.js</p>
-        <p>4、创建main.js文件</p>
-        <p>5、在终端运行：</p>
-        <p>npm run start</p>
+
+        <p>4、在"scripts"中添加：</p>
+        <p>"start": "electron ."</p>
+
+        <p>5、创建main.js文件</p>
+        <p>6、在终端运行：</p>
+        <p>npm start</p>
 
 </html>

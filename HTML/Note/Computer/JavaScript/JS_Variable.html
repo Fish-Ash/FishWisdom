@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8">
     <title>JavaScript</title>
-    <link rel="stylesheet" href="../../../../../CSS/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/silk-dark.min.css">
+    <link rel="stylesheet" href="../../../../CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
@@ -20,6 +20,12 @@
         </ul>
 
         <h1><span lang="en">JavaScript</span>变量</h1>
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#List">数组</a></li>
+            </ul>
+        </div>
+
         <p><span lang="en">JavaScript</span>提供以下三种声明变量的方法：</p>
         <pre class="Code"><code class="javascript">
             var x;
@@ -32,12 +38,21 @@
 
         <h2>数据类型</h2>
         <ul lang="en">
-            <li>String</li>
-            <li>Number</li>
-            <li>Boolean</li>
-            <li>null</li>
-            <li>undefined</li>
+            <li>String：字符串</li>
+            <li>Number：浮点数</li>
+            <li>BigInt：整数</li>
+            <li>Boolean：true或false</li>
+            <li>null：空值</li>
+            <li>undefined：未定义</li>
         </ul>
+
+        <div class="Card-Analysis">
+            <h2>类型转换</h2>
+            <b>转换为浮点数</b>
+            <pre><code>
+                parseFloat(value)
+            </code></pre>
+        </div>
 
         <b>字符串拼接</b>
         <pre class="Code"><code>
@@ -74,42 +89,44 @@
             S.split("");
         </code></pre>
 
-        <h3>数组</h3>
-        <b>定义数组</b>
-        <pre class="Code"><code>
-            const array = [];
-            const array = new Array();
-        </code></pre>
-
-        <b>索引</b>
-        <pre class="Code"><code>
-            Array[index];
-        </code></pre>
-
-        <b>数组头部增加元素</b>
-        <pre class="Code"><code>
-            array.unshift(element);
-        </code></pre>
-
-        <b>数组尾部增加元素</b>
-        <pre class="Code"><code>
-            array.push();
-        </code></pre>
-
-        <b>删除数组末尾元素</b>
-        <pre class="Code"><code>
-            array.pop();
-        </code></pre>
-
-        <b>判断变量是否为数组</b>
-        <pre class="Code"><code>
-            Array.isArray(Variable);
-        </code></pre>
-
-        <b>获取特定元素的索引</b>
-        <pre class="Code"><code>
-            array.indexOf(element);
-        </code></pre>
+        <div class="Card-Analysis" id="List">
+            <h3>数组</h3>
+            <b>定义数组</b>
+            <pre class="Code"><code>
+                let array = [];
+                let array = new Array();
+            </code></pre>
+    
+            <b>索引</b>
+            <pre class="Code"><code>
+                Array[index];
+            </code></pre>
+    
+            <b>数组头部增加元素</b>
+            <pre class="Code"><code>
+                array.unshift(element);
+            </code></pre>
+    
+            <b>数组尾部增加元素</b>
+            <pre class="Code"><code>
+                array.push();
+            </code></pre>
+    
+            <b>删除数组末尾元素</b>
+            <pre class="Code"><code>
+                array.pop();
+            </code></pre>
+    
+            <b>判断变量是否为数组</b>
+            <pre class="Code"><code>
+                Array.isArray(Variable);
+            </code></pre>
+    
+            <b>获取特定元素的索引</b>
+            <pre class="Code"><code>
+                array.indexOf(element);
+            </code></pre>
+        </div>
     </body>
 
 </html>

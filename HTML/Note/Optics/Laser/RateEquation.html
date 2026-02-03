@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>激光原理</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+
+
+        <h1>速率方程理论</h1>
+
+        <p>通过泵浦实现能级间粒子数反转所采用的能级结构可以归结为两种：</p>
+        <ul>
+            <li>三能级系统</li>
+            <li>四能级系统</li>
+        </ul>
+        <div class="Card-Analysis">
+            <h2>三能级系统</h2>
+            <p>参与激光产生过程的有三个能级.</p>
+            <ul>
+                <li>产生激光的下能级\(E_1\)是基态能级.</li>
+                <li>激光的上能级\(E_2\)是亚稳态能级.</li>
+                <li>\(E_3\)为抽运高能级.</li>
+            </ul>
+
+            <p>\(E_3\)实际上通常不是单一的能级，而是比\(E_2\)高的一些激发态能级.</p>
+            <p>在激励源的作用下，将下能级的粒子抽运到\(E_3\)能级，\(E_3\)能级上的粒子寿命很短，会通过非辐射跃迁转移到激光的上能级\(E_2\).</p>
+            <p>处于\(E_2\)能级的粒子比较稳定，寿命较长.</p>
+            <p>当下能级\(E_1\)的粒子多于一半被抽运到上能级\(E_2\)后，就在\(E_2,E_1\)之间产生粒子数反转.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>四能级系统</h2>
+            <img src="Img/RateEquation/Img1.jpg" alt="四能级系统" width="200">
+            <ul>
+                <li>基态能级\(E_0\)</li>
+                <li>激光下能级\(E_1\)</li>
+                <li>激光上能级\(E_2\)</li>
+                <li>\(E_3\)</li>
+            </ul>
+            <p>粒子从基态\(E_0\)抽运到吸收带\(E_3\)上后，由于非辐射跃迁转移到亚稳态的激光上能级\(E_2\)上.</p>
+            <p>激光的下能级\(E_1\)是一个激发态能级，在常温下基本是空的，粒子在能级\(E_1\)上寿命极短，很容易在\(E_2,E_1\)之间产生粒子数反转.</p>
+            <p>四能级系统（常用）所需的激励能量比三能级系统小得多，产生激光比三能级系统容易得多.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>四能级系统速率方程组</h2>
+            $$\begin{cases}
+            n = n_0 + n_1 + n_2\\
+            \frac{\mathrm{d}n_2}{\mathrm{d}t} = R_2 - n_2A_2 - (n_2B_{21} - n_1B_{12})\rho f(\nu)\\
+            \frac{\mathrm{d}n_1}{\mathrm{d}t} = R_1 + n_2A_{21} - n_1A_1 + (n_2B_21 - n_1B_{12})\rho f(\nu)
+            \end{cases}$$
+
+            <p>该微分方程组用于描述四能级系统上粒子数密度随时间变化的速率方程组.</p>
+            <p>原则上可以由此计算出任意时刻各个能级上的粒子数，因而可以用于研究上下能级间粒子数反转的问题.</p>
+            <table>
+                <tr>
+                    <td>能级</td>
+                    <td>粒子数密度</td>
+                </tr>
+                <tr>
+                    <td>基态\(E_0\)</td>
+                    <td>$$n_0$$</td>
+                </tr>
+                <tr>
+                    <td>下能级\(E_1\)</td>
+                    <td>$$n_1$$</td>
+                </tr>
+                <tr>
+                    <td>上能级\(E_2\)</td>
+                    <td>$$n_2$$</td>
+                </tr>
+            </table>
+
+            <ul>
+                <li>\(n = n_0 + n_1 + n_2\)：单位体积内增益介质的总粒子数.</li>
+                <li>\(\rho\)：在谐振腔中传播的准单色光能总密度.</li>
+            </ul>
+
+            <img src="Img/RateEquation/Img2.jpg" alt="四能级系统速率方程组" width="400">
+
+            <p>当激励能源开始工作后，以速率\(R_2\)将粒子由基态\(E_0\)抽运到\(E_2\)能级上，使\(E_2\)能级的粒子数密度以\(R_2\)速率增加.</p>
+            <p>同时它也以速率\(R_1\)将粒子由基态\(E_0\)抽运到\(E_1\)能级上.</p>
+            <p>[注]对\(E_1\)能级的抽运是不希望却无法避免的.</p>
+
+            <p>\(E_2\)能级在单位时间内粒子数密度的增加可由下式表示：</p>
+            $$\frac{\mathrm{d}n_2}{\mathrm{d}t} = R_2 - n_2A_2 - (n_2B_{21} - n_1B_{12})\rho f(\nu)$$
+            <p>\(E_1\)能级在单位时间内粒子数密度的增加可由下式表示：</p>
+            $$\frac{\mathrm{d}n_1}{\mathrm{d}t} = R_1 + n_2A_{21} - n_1A_1 + (n_2B_21 - n_1B_{12})\rho f(\nu)$$
+        </div>
+
+        <div id="PageEnd"></div>
+        <a href="#PageEnd" class="GoToBottom">Bottom</a>
+
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

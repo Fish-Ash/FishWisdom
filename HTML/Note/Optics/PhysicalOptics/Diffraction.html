@@ -63,8 +63,12 @@
 
         <div class="Card-Definition">
             <b>Babinet原理</b>
-            <p>两个互补屏在衍射场中某点单独产生的光场复振幅之和等于无衍射屏、光波自由传播时在该店产生的光场复振幅.</p>
+            <p>两个互补屏在衍射场中某点单独产生的光场复振幅之和等于无衍射屏、光波自由传播时在该点产生的光场复振幅.</p>
             $$\tilde{E}_0(P) = \tilde{E}_1(P) + \tilde{E}_2(P)$$
+            <ul>
+                <li>\(\tilde{E}_1(P) = 0\Rightarrow \tilde{E}_0(P) = \tilde{E}_2(P) = 0\)：放置一个屏时光场为0的点，在换上互补屏时，光场与没有屏时一样.</li>
+                <li>\(\tilde{E}_0(P) = 0\Rightarrow \tilde{E}_1(P) = -\tilde{E}_2(P)\)：没有屏时光场为0的那些点，\(\tilde{E}_1(P)\)与\(\tilde{E}_2(P)\)的相位相差\(\pi\)，而光强度\(I_1(P) = |\tilde{E}_1(P)|^2\)与\(I_2(P) = |\tilde{E}_2(P)|^2\)相等.</li>
+            </ul>
         </div>
 
         <div class="Card-Analysis">
@@ -75,31 +79,186 @@
             <p>2、在稍远距离K<sub>2</sub>上观察时，将看到一个边缘模糊的稍大光斑，光斑内有一圈圈的亮暗环，此时不能将其视为圆孔的投影.</p>
             <p>3、距离从K<sub>2</sub>增加到K<sub>3</sub>时，光斑范围不断扩大，但光斑中圆环数逐渐减少，且环纹中心表现出从亮到暗，又从暗到亮的变化.</p>
             <p>4、当观察平面位于距离很远的K<sub>4</sub>位置时，将看到一个较大的中间亮、边缘暗，且在边缘外有较弱的亮、暗圆环的光斑。此后，观察距离再增大，只是光斑扩大，但光斑形状不变<div class=""></div></p>
+
+            <b>近似方法1</b>
+            <p>将衍射区划分为：</p>
+            <ul>
+                <li>衍射效应可以忽略的几何投影区.</li>
+                <li>衍射效应不能忽略的近场衍射区：衍射图样形状随距离变化，如K<sub>2</sub>、K<sub>3</sub>及其前后范围.</li>
+                <li>衍射效应不能忽略的远场衍射区：衍射图样基本形状保持不变，如K<sub>4</sub>面所在区域.</li>
+            </ul>
+
+            <b>近似方法2</b>
+            <ul>
+                <li>衍射效应可以忽略的几何投影区.</li>
+                <li>衍射效应不能忽略的菲涅尔投影区：包括几何投影区以后的所有区域.</li>
+                <li>衍射图样基本形状保持不变的夫琅禾费区：夫琅禾费衍射为菲涅尔衍射的特殊情况.</li>
+            </ul>
+
+            <b>菲涅尔近似</b>
+            $$\frac{k}{8}\frac{[(x-x_1)^2 + (y-y_1)^2]^2_{\max}}{z_1^3}\ll \pi$$
+
+            <b>夫琅禾费近似</b>
+            $$k\frac{(x_1^2 + y_1^2)_{\max}}{2z_1}\ll \pi$$
         </div>
 
+        <div class="Card-Analysis">
+            <h2>夫琅禾费衍射</h2>
+            <p>观察屏必须放置在远离衍射屏的地方.</p>
+
+            <h3>夫琅禾费矩形孔衍射</h3>
+            $$\tilde{E}(x,y) = \tilde{E}_0\frac{\sin\alpha}{\alpha}\frac{\sin\beta}{\beta}$$
+            <ul>
+                <li>\(\tilde{E}_0 = \tilde{E}(0,0) = Cab\)：观察屏中心点\(P_0\)处的光场复振幅.</li>
+                <li>\(a,b\)：分别为矩形孔沿\(x_1,y_1\)轴方向的宽度.</li>
+                <li>\(\alpha = \frac{kax}{2f}\)</li>
+                <li>\(\beta = \frac{kby}{2f}\)</li>
+            </ul>
+            $$I(x,y) = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2\left(\frac{\sin\beta}{\beta}\right)^2$$
+            <ul>
+                <li>\(I_0 = |Cab|^2\)：\(P_0\)点的光强度.</li>
+            </ul>
+
+            <b>衍射光强沿\(x\)轴分布</b>
+            $$\because y = 0$$
+            $$\therefore I = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2$$
+
+            <h3>夫琅禾费圆孔衍射</h3>
+            <b>实用性</b> 
+            <p>光学仪器的光曈通常都是圆形的，因此讨论圆孔衍射现象对于光学仪器的应有，具有重要的实际意义.</p>
+
+            <b>分析</b>
+            <p>在极坐标下分析夫琅禾费圆孔衍射.</p>
+            <p>设圆孔半径为\(a\)，圆孔中心\(O_1\)位于光轴上.</p>
+            <p>则圆孔上任意一点\(Q\)的位置坐标\((\rho_1,\phi_1)\)与相应的直角坐标\((x_1,y_1)\)的关系为：</p>
+            $$x_1 = \rho_1\cos\phi_1$$
+            $$y_1 = \rho_1\sin+\phi_1$$
+
+            <div class="Card-Definition">
+                <b>艾里斑</b>
+                <p>圆孔夫琅禾费衍射的中心亮斑.</p>
+                <p>艾里斑集中了入射在圆孔上能量的83.78%.</p>
+
+                <b>半径</b>
+                <p>艾里斑的半径\(\rho_0\)由第一光强极小值处的\(\Phi\)值决定：</p>
+                $$\Phi_{10} = \frac{ka\rho_0}{f} = 1.22\pi$$
+                $$\therefore \rho_0 = 0.61f\frac{\lambda}{a}$$
+
+                <b>角半径</b>
+                $$\theta_0 = \frac{\rho_0}{f} = 0.61\frac{\lambda}{a}$$
+
+                <b>面积</b>
+                <div class="Formula">
+                    $$S_0 = \frac{(0.61\pi f\lambda)^2}{S}$$
+                    <div class="Derivation">
+                        $$\begin{align}
+                        S_0 &= \pi\rho_0^2\\
+                            &= \pi\cdot\left(0.61f\frac{\lambda}{a}\right)^2
+                        \end{align}$$
+                        $$\because S = \pi a^2$$
+                        $$\begin{align}\therefore
+                        S_0 &= \frac{(0.61\pi f\lambda)^2}{\pi a^2}\\
+                            &= \frac{(0.61\pi f\lambda)^2}{S}
+                        \end{align}$$
+                    </div>
+                </div>
+                <ul>
+                    <li>\(S\)：圆孔面积.</li>
+                </ul>
+                <p>圆孔面积越小，艾里斑面积越大，衍射现象越明显.</p>
+            </div>
+        </div>
+
+        <div class="Card-Definition">
+            <b>光学成像系统的分辨本领</b>
+            <p>能够分辨开两个靠近的点物或物体细节的能力.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>瑞利判据</h2>
+            <div class="Card-Definition" id="RayleighCriterion">
+                <b>瑞利判据</b>
+                <p>将一个点物衍射图样的中央极大位置，与另一个点物衍射图样的第一个极小位置恰好重合的状态，作为光学成像系统的分辨极限.</p>
+                <p>认为此时光学系统恰好能分辨开这两个点物.</p>
+            </div>
+
+            <img src="Img/Diffraction/RayleighCriterion.jpg" alt="RayleighCriterion" width="400">
+            <p>设有\(S_1\)和\(S_2\)两个非相干点光源，间距为\(\epsilon\)，它们到直径为\(D\)的圆孔距离为\(R\)，则\(S_1, S_2\)对圆孔的张角\(\alpha\)为：</p>
+            $$\alpha = \frac{\epsilon}{R}$$
+            <p>由于圆孔的衍射效应，\(S_1,S_2\)将分别在观察屏上形成各自的衍射图样，设其艾里斑关于圆孔张角为\(\theta_0\)，则：</p>
+            $$\theta_0 = 1.22\frac{\lambda}{D}$$
+            <ul>
+                <li>\(\alpha \gt \theta_0\)时：两个艾里斑能完全分开，即\(S_1\)与\(S_2\)可以分辨.</li>
+                <li>\(\alpha \lt \theta_0\)时：两个艾里斑分不开，即\(S_1\)与\(S_2\)不可分辨.</li>
+                <li>\(\alpha \approx \theta_0\)时：不同系统对艾里斑重叠之分辨有不同的感觉.</li>
+            </ul>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>单缝夫琅禾费衍射</h2>
+            <img src="Img/Diffraction/SingleSlitFD.jpg" alt="单缝夫琅禾费衍射" width="400">
+            <p>P点光强为：</p>
+            $$I = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2$$
+            <p>称\(\left(\frac{\sin\alpha}{\alpha}\right)^2\)为单缝衍射因子.</p>
+            <p>因此，矩孔夫琅禾费颜色和的相对强度分布是两个单缝衍射因子的乘积.</p>
+
+            <b>单色光照明时的衍射光强分布</b>
+            $$\alpha = \frac{kax}{2f} = \frac{\pi a}{\lambda}\frac{x}{f} \approx \frac{\pi a\sin\theta}{\lambda}$$
+            <p>\(\alpha = 0\)时：对应于\(\theta = 0\)的衍射位置，为光强中央主极大值（亮条纹）.</p>
+            <p>\(\alpha = m\pi\)时：对应于满足：</p>
+            $$\sin\theta = m\frac{\lambda}{a},~m=\pm1,\pm2,\cdots$$
+            <p>的衍射角方向为光强极小值（暗条纹方向）.</p>
+            <p>相邻暗条纹角宽度为：</p>
+            <div class="Formula">
+                $$\Delta \theta = \frac{\lambda}{a\cos\theta}$$
+                <div class="Derivation">
+                    $$\because \sin\theta = m\frac{\lambda}{a}$$
+                    $$\therefore \cos\theta\mathrm{d}\theta = \frac{\lambda}{a}\mathrm{d}m$$
+                    $$\therefore \cos\theta\Delta\theta = \frac{\lambda}{a}\Delta m$$
+                    $$\because \Delta m = 1$$
+                    $$\therefore \Delta\theta = \frac{\lambda}{a\cos\theta}$$
+                </div>
+            </div>
+            <p>衍射角很小时，相邻暗条纹的角宽度为：</p>
+            $$\Delta\theta \approx \frac{\lambda}{a}$$
+            <p>对于中央亮条纹，其角宽度\(\Delta\theta_0\)为：</p>
+            $$\Delta\theta_0 = 2\Delta\theta = \frac{2\lambda}{a}$$
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>多缝夫琅禾费衍射</h2>
+            <b>多缝</b>
+            <p>在一块不透光的屏上，刻有\(N\)条等间距、等宽度的通光狭缝.</p>
+            <p>其每条狭缝均平行于\(y_1\)方向，沿\(x_1\)方向缝宽为\(a\)，相邻狭缝间距为\(d\).</p>
+            $$\begin{align}
+            \phi &= k\cdot\Delta\\
+                 &= \frac{2\pi}{\lambda}d\sin\theta
+            \end{align}$$
+            <p>P点的光强度为：</p>
+            $$I(P) = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2\left(\frac{\sin\frac{N\phi}{2}}{\sin\frac{\phi}{2}}\right)^2$$
+            <ul>
+                <li>\(I_0\)：单缝衍射下P<sub>0</sub>点的光强.</li>
+            </ul>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>夫琅禾费衍射与菲涅尔衍射的应用</h2>
+            <ul>
+                <li>光栅</li>
+                <li>波带片</li>
+            </ul>
+        </div>
+
+        
         <ul>
             <li><b>菲涅尔衍射</b>：光源和接收屏（或其中之一）与衍射屏距离为有限远时的衍射。</li>
             <li><b>夫琅禾费衍射</b>：</li>
         </ul>
 
-
-
-        <h2>第三节 衍射光栅</h2>
-        <b>衍射光栅</b>
-        <p>由大量等间距、等宽度的平行狭缝所组成的光学元件。</p>
-        <ul>
-            <li><b>透射光栅</b>：用于透射光衍射的光栅。</li>
-            <li><b>反射光栅</b>：用于反射光衍射的光栅。</li>
-        </ul>
-
-        <p><b>缝</b>是光栅的透光部分，宽度为\(a\)；<b>刻痕</b>是光栅的不透光部分，宽度为\(b\)。</p>
-        <p>\(a+b\)称为<b>光栅常数</b>。</p>
-
-
-        <b>光栅公式</b>
-        $$(a+b)\sin\phi = k\lambda, ~~ k = 0,\pm1,\pm2,\cdots$$
-        <p>此为光栅衍射明条纹位置满足的公式。</p>
-
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
     

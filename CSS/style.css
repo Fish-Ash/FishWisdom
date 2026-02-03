@@ -72,10 +72,6 @@ img{
     color: rgb(66, 162, 246);
 }
 
-
-
-
-
 /* 表格 */
 table{
     border-collapse:collapse;
@@ -183,9 +179,56 @@ ul.pagination li a {
 
 
 /* 目录 */
-.catalog{
-    background-color: #f3f3f3;
-}
+        .Catalog{
+            background-color: #e6f7ff;
+            border: 1px solid #a0c4ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        /* 第一级 ul：保持原样式（无列表标记、无内边距） */
+        .Catalog > ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* 第二级 ul：显示实心点 + 缩进20px */
+        .Catalog > ul > li > ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        /* 第三级 ul：显示空心点 + 更深缩进（30px） */
+        .Catalog > ul > li > ul > li > ul {
+            list-style-type: circle;
+            padding-left: 30px;
+            margin: 5px 0;
+        }
+
+        .Catalog li{
+            margin-bottom: 5px;
+        }
+
+        .Catalog a{
+            text-decoration: none;
+            font-size: larger;
+            color: #1890ff;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border:1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .Catalog a:hover{
+            background-color: #ffffff;
+            border:1px solid #1890ff;
+            transform: scale(1.05);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
 
 
 
@@ -497,6 +540,14 @@ border-bottom: 1px solid #ccc;
 .Card-Question{
     border: 2px solid gray;
     color:gray;
+    padding:20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.Card-AI{
+    border: 2px solid violet;
+    color: violet;
     padding:20px;
     border-radius: 5px;
     margin-bottom: 20px;

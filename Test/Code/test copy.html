@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python代码展示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        .code-container {
+            background-color: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+        
+        .code-header {
+            padding: 15px 20px;
+            background-color: #0f172a;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .code-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: #cbd5e1;
+        }
+        
+        .language {
+            background-color: #6ee7b7;
+            color: #0f172a;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .code-content {
+            position: relative;
+            padding: 20px 0;
+            /* 移除 overflow-x: auto; 并添加 word-wrap */
+            font-size: 0.95rem;
+        }
+        
+        pre {
+            margin: 0;
+            padding: 0 20px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            line-height: 1.5;
+            /* 修改 white-space 为 pre-wrap 允许换行 */
+            white-space: pre-wrap;
+            /* 确保长单词和URL也会换行 */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .line-numbers {
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 40px;
+            text-align: right;
+            padding-right: 15px;
+            color: #64748b;
+            border-right: 1px solid #334155;
+            user-select: none;
+        }
+        
+        .line-number {
+            padding: 0 5px;
+        }
+        
+        .code {
+            margin-left: 60px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .code-content {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="code-container">
+            <div class="code-header">
+                <div class="code-title">
+                    <span>data_processor.py</span>
+                    <span class="language">Python</span>
+                </div>
+            </div>
+            <div class="code-content">
+                <div class="line-numbers" id="python-line-numbers"></div>
+                <pre><code class="code" id="python-code"><span class="keyword">class</span> <span class="class-name">DataProcessor</span>:
+    <span class="string">"""处理和分析数据集的类"""</span>
+    
+    <span class="function">def</span> <span class="function">__init__</span>(<span class="parameter">self</span>, <span class="parameter">data</span>):
+        <span class="parameter">self</span>.<span class="parameter">data</span> = data
+        <span class="parameter">self</span>.<span class="parameter">processed</span> = <span class="keyword">False</span>
+    
+    <span class="function">def</span> <span class="function">process_data</span>(<span class="parameter">self</span>):
+        <span class="string">"""清洗和预处理数据"""</span>
+        <span class="keyword">if</span> <span class="keyword">not</span> <span class="parameter">self</span>.<span class="parameter">data</span>:
+            <span class="keyword">raise</span> <span class="class-name">ValueError</span>(<span class="string">"数据不能为空"</span>)
+        
+        <span class="comment"># 移除缺失值</span>
+        <span class="parameter">self</span>.<span class="parameter">data</span> = [<span class="parameter">item</span> <span class="keyword">for</span> <span class="parameter">item</span> <span class="keyword">in</span> <span class="parameter">self</span>.<span class="parameter">data</span> <span class="keyword">if</span> <span class="parameter">item</span> <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>]
+        
+        <span class="comment"># 标准化数据</span>
+        <span class="parameter">self</span>.<span class="parameter">normalize_data</span>()
+        
+        <span class="parameter">self</span>.<span class="parameter">processed</span> = <span class="keyword">True</span>
+        <span class="keyword">return</span> <span class="parameter">self</span>.<span class="parameter">data</span>
+    
+    <span class="function">def</span> <span class="function">normalize_data</span>(<span class="parameter">self</span>):
+        <span class="string">"""将数据标准化到0-1范围"""</span>
+        <span class="keyword">if</span> <span class="keyword">not</span> <span class="parameter">self</span>.<span class="parameter">data</span>:
+            <span class="keyword">return</span>
+        
+        <span class="parameter">min_val</span> = <span class="function">min</span>(<span class="parameter">self</span>.<span class="parameter">data</span>)
+        <span class="parameter">max_val</span> = <span class="function">max</span>(<span class="parameter">self</span>.<span class="parameter">data</span>)
+        
+        <span class="keyword">if</span> <span class="parameter">max_val</span> == <span class="parameter">min_val</span>:
+            <span class="parameter">self</span>.<span class="parameter">data</span> = [<span class="number">0.5</span>] * <span class="function">len</span>(<span class="parameter">self</span>.<span class="parameter">data</span>)
+        <span class="keyword">else</span>:
+            <span class="parameter">self</span>.<span class="parameter">data</span> = [(<span class="parameter">x</span> - <span class="parameter">min_val</span>) / (<span class="parameter">max_val</span> - <span class="parameter">min_val</span>) 
+                          <span class="keyword">for</span> <span class="parameter">x</span> <span class="keyword">in</span> <span class="parameter">self</span>.<span class="parameter">data</span>]</code></pre>
+            </div>
+        </div>
+        
+        <div class="footer">
+            简洁的Python代码展示样式 | 支持语法高亮和行号显示
+        </div>
+    </div>
+
+    <script>
+        // 生成行号
+        function generateLineNumbers() {
+            const codeElement = document.getElementById('python-code');
+            const lineNumbersElement = document.getElementById('python-line-numbers');
+            
+            if (!codeElement || !lineNumbersElement) return;
+            
+            const lines = codeElement.textContent.split('\n').length;
+            let lineNumbersHtml = '';
+            
+            for (let i = 1; i <= lines; i++) {
+                lineNumbersHtml += `<div class="line-number">${i}</div>`;
+            }
+            
+            lineNumbersElement.innerHTML = lineNumbersHtml;
+        }
+        
+        // 初始化行号
+        generateLineNumbers();
+    </script>
+</body>
+</html>

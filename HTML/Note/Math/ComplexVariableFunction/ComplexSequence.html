@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>复变函数</title>
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <a class="BackToTop" href="#PageHead">Top</a>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>复数序列</h1>
+
+        <div class="Card-Definition">
+            <b>复数序列</b>
+            <p>按一定顺序排列的无穷个复数\(\{z_n\}\)：</p>
+            $$z_n = x_n + iy_n,~n=1,2,3,\cdots$$
+            <p>[注]一个复数序列\(\{z_n\}\)完全等价于两个实数序列\(\{x_n\}\)和\(\{y_n\}\).</p>
+        </div>
+      
+        <div class="Card-Definition">
+            <b>聚点（极限点）</b>
+            <p>给定序列\(\{z_n\}\)，若\(\exists z,\forall \epsilon\gt 0\)，恒有无穷多\(n\)使得\(|z_n - z|\lt\epsilon\)，则称\(z\)为\(\{z_n\}\)的一个聚点.</p>
+            <p>[注]一个序列可以有不止一个聚点.</p>
+
+            <p>实数序列\(\{x_n\}\)的聚点必然也是实数.</p>
+            <p>其中数值最大的，称为\(\{x_n\}\)的上极限，记为\(\overline\lim\limits_{n\rightarrow \infty}x_n\)；</p>
+            <p>其中数值最小的，称为\(\{x_n\}\)的下极限，记为\(\underline\lim\limits_{n\rightarrow \infty}x_n\).</p>
+        </div>
+
+        <div class="Card-Property">
+            <p>\(x_n\gt 0\)时：</p>
+            $$\overline\lim\limits_{n\rightarrow \infty}\frac{1}{x_n} = \frac{1}{\underline\lim\limits_{n\rightarrow\infty}x_n}$$
+            $$\underline\lim\limits_{n\rightarrow \infty}\frac{1}{x_n} = \frac{1}{\overline\lim\limits_{n\rightarrow\infty}x_n}$$
+
+            <p>\(x_n\geq 0, y_n\geq 0\)时：</p>
+            $$\overline\lim\limits_{n\rightarrow\infty}(x_n\cdot y_n)\leq\overline\lim\limits_{n\rightarrow\infty}x_n\cdot\overline\lim\limits_{n\rightarrow\infty}y_n$$
+            $$\underline\lim\limits_{n\rightarrow\infty}(x_n\cdot y_n)\geq\underline\lim\limits_{n\rightarrow\infty}x_n\cdot\underline\lim\limits_{n\rightarrow\infty}y_n$$
+        </div>
+
+        <div class="Card-Definition">
+            <b>复数序列的有界性</b>
+            <p>给定序列\(\{z_n\}\)，若\(\exists M\gt 0\)，使得\(\forall n\)，都有\(|z_n|\lt M\)，则序列\(\{z_n\}\)为有界序列；否则为无界序列.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>Bolzano-Weierstrass定理</b>
+            <p>一个有界序列至少有一个聚点.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>极限</b>
+            <p>给定序列\(\{z_n\}\)，若存在复数\(z\)，\(\forall \epsilon \gt 0\)，\(\exists N(\epsilon) \gt 0\)，使得当\(n\gt N(\epsilon)\)时，有\(|z_n - z|\lt \epsilon\)，则称序列\(\{z_n\}\)收敛于\(z\)，记为：</p>
+            $$\lim\limits_{n\rightarrow \infty}z_n = z$$
+            <p>此时称序列\(\{z_n\}\)时收敛的.</p>
+            <p>\(z\)称为序列\(\{z_n\}\)的极限.</p>
+            <p>[注]一个序列的极限必然是此序列的聚点，而且是唯一的聚点.</p>
+            <p>[注]一个无界序列不可能是收敛的，不收敛的序列称为发散序列.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>序列收敛的Cauchy充要条件</b>
+            <p>\(\forall \epsilon \gt 0, \exists N(\epsilon)\gt 0\)，使得对于\(\forall p \in \mathbb{N}_+\)，有：</p>
+            $$|z_{N+p} - z_N| \lt \epsilon$$
+        </div>
+
+        <div id="PageEnd"></div>
+        <a class="GoToBottom" href="#PageEnd">Bottom</a>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

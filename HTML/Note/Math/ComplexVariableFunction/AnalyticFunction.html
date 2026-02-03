@@ -35,18 +35,31 @@
             <p>若\(f(z)\)在\(z_0\)处不解析，但在\(z_0\)的每一邻域内，总有若干点使\(f(z)\)解析，则称\(z_0\)是\(f(z)\)的奇点.</p>
         </div>
 
-        <b>C-R条件（柯西-黎曼条件、柯西-黎曼方程）</b>
-        <p>设\(f(z) = u(x,y) + iv(x,y)\)在区域<span lang="en">D</span>内有定义，<span lang="en">D</span>内一点\(z = x+iy\)可导：</p>
+        <div class="Card-Analysis">
+            <b>C-R条件（柯西-黎曼条件、柯西-黎曼方程）</b>
+            <p>设\(f(z) = u(x,y) + iv(x,y)\)在区域<span lang="en">D</span>内有定义，<span lang="en">D</span>内一点\(z = x+iy\)可导：</p>
+    
+            $$\begin{cases}
+            \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}\\
+            \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}
+            \end{cases}$$
+            <p>C-R条件反应了解析函数实部与虚部的联系.</p>
+            <p>函数在\(D\)内解析的条件是在D内处处满足C-R条件.</p>
+        </div>
 
-        $$\begin{cases}
-        \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}\\
-        \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}
-        \end{cases}$$
+        <div class="Card-Definition">
+            <b>调和函数</b>
+            <p>满足二维Laplace方程的函数：</p>
+            $$\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} = 0$$
 
+            <p>[注]解析函数的实部与虚部都必须是调和函数.</p>
+        </div>
 
 
 
         <a class="BackToTop" href="#PageHead">Top</a>
+        <div class="PageEnd"></div>
+        
         <script src="/JavaScript/Capacity.js"></script>
     </body>
 

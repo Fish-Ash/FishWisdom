@@ -20,17 +20,172 @@
         </ul>
 
 
-        <h1>第四章 光在各项异性介质中的传播特性</h1>
+        <h1>第四章 光在各向异性介质中的传播特性</h1>
 
-        <p><b><a href="../OpticalFabrication/OpticalMaterial.html#Crystal">晶体</a></b>是典型的光学各项异性介质.</p>
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#WavePlate">波片</a></li>
+            </ul>
+        </div>
 
-        <p>对于各项异性介质，\(\mathbf{D}\)与\(\mathbf{E}\)的关系为：</p>
-        $$\mathbf{D} = \epsilon_0\mathbf{\epsilon}_r\mathbf{E}$$
-        <p>介电常数\(\mathbf{\epsilon} = \epsilon_0\mathbf{\epsilon}_r\)为二阶张量，\(\epsilon_0\)为标量.</p>
+        <p>光在各向同性介质中的传播特性是光在各向异性介质中传播特性的特殊情况.</p>
+        <p><b><a href="../OpticalFabrication/OpticalMaterial.html#Crystal">晶体</a></b>是典型的光学各向异性介质.</p>
+
+        <p>各向异性介质中：</p>
+        $$\mathbf{D} = \epsilon_0\boldsymbol{\epsilon}_r\mathbf{E}$$
+        <p>介电张量\(\boldsymbol{\epsilon} = \epsilon_0\boldsymbol{\epsilon}_r\)为二阶张量，\(\epsilon_0\)为标量.</p>
         <p>由光的电磁理论，晶体的介电张量\(\mathbf{\epsilon}\)为一个对称矩阵.</p>
 
+        <p>晶体的介电张量为对称张量，经主轴变换后的介电张量为对角张量.</p>
+        $$\epsilon_0\left[\begin{matrix}\epsilon_{11}&0&0\\0&\epsilon_{22}&0\\0&0&\epsilon_{33}\end{matrix}\right]$$
+        <p>\(\epsilon_{11},\epsilon_{22},\epsilon_{33}\)常表示为\(\epsilon_1,\epsilon_2,\epsilon_3\)，称为主相对介电常数.</p>
+        <p>由Maxwell关系式：</p>
+        $$n = \sqrt{\epsilon_r}$$
+        <p>可相应定义主折射率：\(n_1,n_2,n_3\).</p>
+
+        <b>晶体的分类</b>
+        <p>自然界中存在的晶体按其空间对称性的不同，可分为七大晶系：</p>
+        <table>
+            <tr>
+                <td>七大晶系</td>
+                <td>主轴坐标系介电张量</td>
+                <td>非主轴坐标系介电张量</td>
+                <td>光学分类</td>
+            </tr>
+            <tr>
+                <td>立方晶系</td>
+                <td>$$\left[\begin{matrix}\epsilon_{11}&0&0\\0&\epsilon_{11}&0\\0&0&\epsilon_{11}\end{matrix}\right]$$</td>
+                <td>$$\left[\begin{matrix}\epsilon_{11}&0&0\\0&\epsilon_{11}&0\\0&0&\epsilon_{11}\end{matrix}\right]$$</td>
+                <td>各向同性</td>
+            </tr>
+            <tr>
+                <td>三方晶系</td>
+                <td rowspan="3">$$\left[\begin{matrix}\epsilon_{11}&0&0\\0&\epsilon_{11}&0\\0&0&\epsilon_{33}\end{matrix}\right]$$</td>
+                <td rowspan="3">$$\left[\begin{matrix}\epsilon_{11}&0&0\\0&\epsilon_{11}&0\\0&0&\epsilon_{33}\end{matrix}\right]$$</td>
+                <td rowspan="3">单轴晶体<br>（各向异性）</td>
+            </tr>
+            <tr><td>四方晶系</td></tr>
+            <tr><td>六方晶系</td></tr>
+            <tr>
+                <td>正交晶系</td>
+                <td rowspan="3">$$\left[\begin{matrix}\epsilon_{11}&0&0\\0&\epsilon_{22}&0\\0&0&\epsilon_{33}\end{matrix}\right]$$</td>
+                <td>$$\left[\begin{matrix}\epsilon_{11}&\epsilon_{12}&\epsilon_{13}\\\epsilon_{12}&\epsilon_{22}&\epsilon_{23}\\\epsilon_{13}&\epsilon_{23}&\epsilon_{33}\end{matrix}\right]$$</td>
+                <td rowspan="3">双轴晶体<br>（各向异性）</td>
+            </tr>
+            <tr>
+                <td>单斜晶系</td>
+                <td>$$\left[\begin{matrix}\epsilon_{11}&0&\epsilon_{31}\\0&\epsilon_{22}&0\\\epsilon_{31}&0&\epsilon_{33}\end{matrix}\right]$$</td>
+            </tr>
+            <tr>
+                <td>三斜晶系</td>
+                <td>$$\left[\begin{matrix}\epsilon_{11}&0&0\\0&\epsilon_{22}&0\\0&0&\epsilon_{33}\end{matrix}\right]$$</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <div class="Card-Analysis">
+            <h2>光在晶体中传播特性的解析法描述</h2>
+            <p>光在晶体中的传播特性由Maxwell方程组描述.</p>
+
+            <p>在均匀、不导电、非磁性的各向异性介质中，若无自由电荷存在，Maxwell方程组表示为：</p>
+            $$\begin{cases}
+            \nabla\times\mathbf{H} = \frac{\partial\mathbf{D}}{\partial t}\\
+            \nabla\times\mathbf{E} = -\mu_0\frac{\partial\mathbf{H}}{\partial t}\\
+            \nabla\cdot\mathbf{B} = 0\\
+            \nabla\cdot\mathbf{D} = 0
+            \end{cases}$$
+
+            <p>物质方程为：</p>
+            $$\begin{cases}
+            \mathbf{B} = \mu_0\mathbf{H}\\
+            \mathbf{D} = \boldsymbol{\epsilon}\cdot\mathbf{E}
+            \end{cases}$$
+
+            <p>这里只讨论单色平面光波在晶体中的传播特性，这样可以不考虑介质的色散特性.</p>
+            <p>同时，对于任意复杂的光波，因光场可以通过傅里叶变换分解为不同频率的单色平面光波叠加，因此也不失普遍性.</p>
+
+            $$\begin{cases}
+            \mathbf{D}\perp\mathbf{H}\\
+            \mathbf{D}\perp\mathbf{k}\\
+            \mathbf{H}\perp\mathbf{E}\\
+            \mathbf{H}\perp\mathbf{k}
+            \end{cases}\Rightarrow
+            \mathbf{H}\perp\mathbf{D},\mathbf{E},\mathbf{k}
+            $$
+            <p>故\(\mathbf{E},\mathbf{D},\mathbf{k}\)在垂直于\(\mathbf{H}\)的同一平面内.</p>
+            <p>且\(\mathbf{E}\)与\(\mathbf{D}\)通常不在同一方向上.</p>
 
 
+            <p>各向异性介质中，光的能量传播方向通常与光波法线方向不同.</p>
+
+
+            <p>一般情况下，光在晶体中的<a href="Chapter1.html#vp" class="goto">相速度</a>和光线速度的大小和方向均不相同.</p>
+
+            <p>相速度：</p>
+            $$\mathbf{v}_p = v_p\mathbf{k}$$
+
+            <div class="Card-Definition">
+                <b>光线速度\(\mathbf{v}_r\)</b>
+                <p>单色光波能量的传播速度</p>
+                $$\mathbf{v}_r = v_r\mathbf{S}$$
+            </div>
+
+            <p>晶体中，有：</p>
+            $$v_p = v_r\cos\alpha$$
+
+
+            <p>一般情况下，对应于晶体中每一给定的波法线方向\(\mathbf{k}\)，只允许有两个特定振动方向的线偏振光传播，它们的\(\mathbf{D}\)矢量相互垂直（因而振动面相互垂直），具有不同的折射率和相速度.</p>
+
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>光波在具体晶体中的光学性质</h2>
+
+            <h3>各向同性介质（立方晶体）</h3>
+
+            <h3>单轴晶体</h3>
+            <p>单轴晶体的主相对介电常数为：</p>
+            $$\begin{cases}
+            \epsilon_1=\epsilon_2=n_o^2\\
+            \epsilon_3=n_e^2\neq n_o^2
+            \end{cases}$$
+            <p>\(n_e\gt n_o\)的晶体，称为正单轴晶体.</p>
+            <p>\(n_e\lt n_o\)的晶体，称为负单轴晶体.</p>
+
+            <h3>双轴晶体</h3>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光在晶体中传播特性的几何描述</h2>
+
+            <h3>折射率椭球</h3>
+            <p>主轴坐标系中，晶体的电场储能密度为：</p>
+            $$\omega_e = \frac{1}{2}\mathbf{E}\cdot\mathbf{D} = \frac{1}{2\epsilon_0}\left(\frac{D_1^2}{\epsilon_1} + \frac{D_2^2}{\epsilon_2} + \frac{D_3^2}{\epsilon_3}\right)$$
+            $$\therefore \frac{D_1^2}{\epsilon_1} + \frac{D_2^2}{\epsilon_2} + \frac{D_3^2}{\epsilon_3} = 2\epsilon_0\omega_e$$
+
+            <p>令</p>
+            $$x_1 = \frac{D_1}{\sqrt{2\epsilon_0\omega_e}},~x_2 = \frac{D_2}{\sqrt{2\epsilon_0\omega_e}},~x_3 = \frac{D_3}{\sqrt{2\epsilon_0\omega_e}}$$
+            <p>则有</p>
+            $$\frac{x_1^2}{\epsilon_1} + \frac{x_2^2}{\epsilon_2} + \frac{x_3^2}{\epsilon^3} = 1$$
+            <p>或</p>
+            $$\frac{x_1^2}{n_1^2} + \frac{x_2^2}{n_2^2} + \frac{x_3^2}{n_3^2} = 1$$
+
+            <b>单轴晶体折射率椭球方程为：</b>
+            $$\frac{x_1^2}{n_o^2} + \frac{x_2^2}{n_o^2} + \frac{x_3^2}{n_e^2} = 1$$
+        </div>
+
+        <div class="Card-Analysis" id="WavePlate">
+            <h2>波片</h2>
+            <div class="Card-Definition">
+                <b>波片</b>
+                <p>波片是一种对二垂直振动分量（光波场的两个独立振动方向）提供固定相位差的元件.</p>
+            </div>
+        </div>
+
+        <div id="PageEnd"></div>
+        <a href="#PageEnd" class="GoToBottom">Bottom</a>
     </body>
 
     

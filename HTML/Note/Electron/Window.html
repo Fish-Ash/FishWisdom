@@ -22,6 +22,24 @@
 
         <h1>窗口</h1>
 
+        <h2>空白窗口</h2>
+        <p>修改main.js为以下：</p>
+        <pre><code>
+            const { app, BrowserWindow } = require('electron');
+
+            app.whenReady().then(() => {
+                const win = new BrowserWindow({
+                    width: 800,
+                    height: 600
+                });
+            });
+
+            // 所有窗口关闭时退出
+            app.on('window-all-closed', () => {
+                if (process.platform !== 'darwin') app.quit();
+            });
+        </code></pre>
+
         <h2>标题栏</h2>
         <b>禁用默认边框</b>
         <pre><code>

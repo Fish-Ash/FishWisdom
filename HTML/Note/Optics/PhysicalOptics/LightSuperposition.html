@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>物理光学</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>光波的叠加</h1>
+        
+
+        <div class="Card-Analysis">
+            <h2>驻波</h2>
+            <p>两个频率相同，振动方向相同而传播方向相反的单色光波叠加形成驻波.</p>
+            <p>e.g.垂直入射到两种介质分界面的单色光波和反射波的叠加.</p>
+
+            <p>设界面反射比很高，即入射波与出射波振幅相等.</p>
+            <p>入射波：</p>
+            $$E_1 = E_0\cos(\omega t - kr + \phi_{1})$$
+            <p>出射波：</p>
+            $$E_2 = E_0\cos(\omega t + kr + \phi_{2})$$
+            <p>由<a href="../../Math/Mathematic/Function_Tri.html#SumToProduct" class="goto">和差化积公式</a>，有：</p>
+            $$\begin{align}
+            E &= E_1 + E_2\\
+              &= 2E_0\cos\left(\omega t + \frac{\phi_1 + \phi_2}{2}\right)\cos\left(-kr + \frac{\phi_1 - \phi_2}{2}\right)\\
+              &= 2E_0\cos\left(kr + \frac{\phi_2 - \phi_1}{2}\right)\cos\left(\omega t + \frac{\phi_1 + \phi_2}{2}\right)
+            \end{align}$$
+            $$\therefore |E| = \left|2E_0\cos\left(kr + \frac{\phi_2 - \phi_1}{2}\right)\right|$$
+
+            <div class="Card-Definition">
+                <b>波腹</b>
+                <p>振幅最大的位置.</p>
+                $$kr + \frac{\Delta\phi}{2} = n\pi,~n = 1,2,\cdots$$
+                $$|E|_{\max} = 2E_0$$
+            </div>
+
+            <div class="Card-Definition">
+                <b>波节</b>
+                <p>振幅最小的位置.</p>
+                $$kr + \frac{\Delta\phi}{2} = \left(n - \frac{1}{2}\right)\pi,~n = 1,2,\cdots$$
+                $$|E|_{\min} = 0$$
+            </div>
+
+            
+
+        </div>
+
+
+
+    </body>
+
+    
+</html>
