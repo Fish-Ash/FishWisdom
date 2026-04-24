@@ -19,7 +19,7 @@
             <li><a href="../Navigation.html">导航</a></li>
         </ul>
 
-        <h1>光场与物质的相互作用</h1>
+        <h1>激光工作物质的增益特性</h1>
 
         <div class="Card-Analysis">
             <h2>光场与物质的相互作用的理论体系</h2>
@@ -39,9 +39,136 @@
 
         <div class="Card-Analysis">
             <h2>谱线加宽与线型函数</h2>
-            <h3>均匀加宽</h3>
-            <h3>非均匀加宽</h3>
-            <h3>综合加宽</h3>
+
+            <h3>谱线加宽概述</h3>
+            <div class="Card-Definition">
+                <b>线型函数</b>
+                <p>若自发辐射的总功率为\(P\)，则频率分布在\(\nu\sim\nu + \mathrm{d}\nu\)内的功率为\(P(\nu)\mathrm{d}\nu\)，且：</p>
+                $$P = \int_{-\infty}^{+\infty}P(\nu)\mathrm{d}\nu$$
+                <p>则光谱线的线型函数定义为：</p>
+                $$g(\nu,\nu_0) = \frac{P(\nu)}{P}$$
+                <p>其量纲为秒.</p>
+                <p>显然，线型函数是归一化的，即：</p>
+                $$\int_{-\infty}^{+infty}g(\nu,\nu_0)\mathrm{d}\nu = 1$$
+            </div>
+
+            <div class="Card-Definition">
+                <b>线宽/半幅线宽（FWHM, Full Width at Half Maximum）</b>
+                <p>线型函数半极值点对应的频率宽度.</p>
+            </div>
+
+            <h3>谱线加宽的机理</h3>
+            <p>引起谱线加宽的物理原因：</p>
+            <ul>
+                <li>自然加宽</li>
+                <li>碰撞加宽</li>
+                <li>多普勒加宽</li>
+            </ul>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>自然加宽</h2>
+            <div class="Card-Definition">
+                <b>自然加宽</b>
+                <p>由于发光粒子的激发态能级具有有限寿命引起的自发辐射谱线加宽.</p>
+                <p>自然加宽线型函数与线宽分别用\(g_N(\nu, \nu_0)\)与\(\Delta \nu_N\)表示.</p>
+                <p>[注]自然加宽无法避免.</p>
+            </div>
+
+            <h3>经典理论解释</h3>
+
+            <div class="Card-Definition">
+                <b>洛伦兹型函数</b>
+                $$g(\nu, \nu_0) = \frac{\frac{\Delta \nu}{2\pi}}{(\nu-\nu_0)^2 + \left(\frac{\Delta\nu}{2}\right)^2}$$
+                <p>具有上述表达式的线型函数称为洛伦兹型函数，相应的光谱曲线称为洛伦兹型曲线.</p>
+            </div>
+            <p>自然加宽的线型函数为洛伦兹型函数，即：</p>
+            $$g_N(\nu, \nu_0) = \frac{\frac{\Delta \nu_N}{2\pi}}{(\nu-\nu_0)^2 + \left(\frac{\Delta\nu_N}{2}\right)^2}$$
+            
+            <div class="Card-Question">
+                <p>为什么等效能级寿命问题就可以采用洛伦兹型函数描述？</p>
+            </div>
+
+
+            <h3>量子理论解释</h3>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>碰撞加宽</h2>
+            <div class="Card-Definition">
+                <p>碰撞引起的光谱线加宽.</p>
+                <p>其线型函数与线宽分别用\(g_L(\nu, \nu_0)\)与\(\Delta nu_L\)表示.</p>
+            </div>
+
+            <p>碰撞加宽可以采用洛伦兹型函数描述：</p>
+            $$g_L(\nu, \nu_0) = \frac{\frac{\Delta \nu_L}{2\pi}}{(\nu-\nu_0)^2 + \left(\frac{\Delta\nu_L}{2}\right)^2}$$
+            
+        </div> 
+
+        <div class="Card-Analysis">
+            <h2>均匀加宽、非均匀加宽与综合加宽</h2>
+
+            <table>
+                <tr>
+                    <td rowspan="3">光谱线的加宽</td>
+                    <td rowspan="2">均匀加宽</td>
+                    <td>自然加宽</td>
+                </tr>
+                <tr>
+                    <td>碰撞加宽</td>
+                </tr>
+                <tr>
+                    <td>非均匀加宽</td>
+                    <td>多普勒加宽</td>
+                </tr>
+            </table>
+
+        </div>
+
+                <div class="Card-Definition">
+            <b>光谱线</b>
+            <p>用于描述相对光强在不同频率上的分布.</p>
+
+            <img src="Img/SpectralLine.jpg" alt="" width="400">
+
+            <p>设某条光谱线总光强为\(I_0\)，频率\(\nu\)附近单位频率间隔\(\mathrm{d}\nu\)内的光强为\(I(\nu)\).</p>
+            <p>则在频率\(\nu\)附近单位频率间隔\(\mathrm{d}\nu\)内的相对光强为：</p>
+            $$f(\nu) = I(\nu)/I_0$$
+
+            <p>\(f(\nu)\)表示某一谱线在单位频率间隔内的相对光强分布，称为<b>光谱线的线型函数</b>.</p>
+        </div>
+
+        <p>光谱的线型和宽度与光的时间相干性直接相关.</p>
+        <p>光谱的线型和宽度对许多激光器的输出特性（激光的增益、模式、功率等）都有影响.</p>
+
+        <p>原子发光是有限波列的单频光，因此仍有一定的频带宽度.</p>
+        <div class="Card-AI">
+            <p>有限波列\(\Rightarrow\)有一定带宽</p>
+        </div>
+
+        <p>这意味着原子发射的不是恰好为某一频率\(\nu_0\)（满足\(h\nu_0 = E_2 - E_1\)）的光，而是发射频率在\(\nu_0\)附近某段范围内的光.</p>
+
+        <div class="Card-AI">
+            <p>判定同一条谱线：</p>
+            <p>同一对能级上发生的辐射跃迁辐射出的光对应同一条谱线</p>
+            <p>e.g.从\(E_x\)自发辐射与受激辐射到\(E_n\)所发出的光对应同一谱线.</p>
+        </div>
+
+        <p>不同谱线的带宽不一定相同.</p>
+
+        <p>对于同一个谱线而言，不同频率对应的光强相对强度不一样.</p>
+
+        <div class="Card-Analysis">
+            <h2>光谱线的性质</h2>
+            <b>线型函数的归一化条件</b>
+            $$\int_{0}^{+\infty}I(\nu)\mathrm{d}\nu = I_0$$
+            $$\int_{0}^{+\infty}f(\nu)\mathrm{d}\nu = 1$$
+
+            <b>光谱线宽度（光谱线半宽度、光谱线半值宽度）</b>
+            <p>线型函数在\(\nu_0\)处达到最大值，而在\(\nu_1\)及\(\nu_2\)处，有：</p>
+            $$f(\nu_1) = f(\nu_2) = \frac{1}{2}f(\nu_0)$$
+            <p>定义\(\Delta\nu = \nu_2 - \nu_1\)，即相对光强为最大值\(1/2\)处的频率间隔，为光谱线半宽度.</p>
         </div>
 
         

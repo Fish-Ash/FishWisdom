@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>张量分析</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>坐标系</h1>
+        
+        <h2>平面斜角直线坐标系</h2>
+        <p>平面内直线坐标系\(x^1,x^2\)，坐标线互不相交，夹角为\(\phi \lt \pi\).</p>
+        <p>若沿\(x^1\)与\(x^2\)坐标线的参考矢量\(\mathbf{g}_1\)与\(\mathbf{g}_2\)（可以不是单位矢量），则任意矢量\(\mathbf{P}\)可以用它对\(\mathbf{g}_1\)与\(g_2\)分解的分矢量\(P^1\mathbf{g}_1\)与\(P^2\mathbf{g}_2\)之和表示：</p>
+        $$\mathbf{P} = P^1\mathbf{g}_1 + P^2\mathbf{g}_2$$
+
+        <p>引入一对与\(\mathbf{g}_\alpha(\alpha = 1,2)\)对偶的参考矢量\(\mathbf{g}^\alpha(\alpha=1,2)\)，满足：</p>
+        $$\mathbf{g}^1\cdot\mathbf{g}_2 = \mathbf{g}^2\cdot\mathbf{g}_1 = 0$$
+        $$\mathbf{g}^1\cdot\mathbf{g}_1 = \mathbf{g}^2\cdot\mathbf{g}_2 = 1$$
+        <p>1式表明\(\mathbf{g}^1, \mathbf{g}^2\)分别与\(\mathbf{g}_2, \mathbf{g}_1\)相互正交.</p>
+        <p>2式可推导出\(|\mathbf{g}^1|\)与\(|\mathbf{g}^2|\)：</p>
+        $$|\mathbf{g}^1| = \frac{1}{|\mathbf{g}_1|\sin\phi}$$
+        <div class="Prove">
+            <p>设\(<\mathbf{g}^1,\mathbf{g}_1> = \theta\)</p>
+            <p>当\(\phi\)为锐角时，\(\theta = \pi/2 - \phi\)；当\(\phi\)为钝角时，\(\theta = \phi - \pi/2\).</p>
+            $$\begin{align}
+            \therefore \mathbf{g}^1\cdot\mathbf{g}_1 &= |\mathbf{g}^1||\mathbf{g}_1|\cos\theta\\
+                                                     &= |\mathbf{g}^1||\mathbf{g}_1|\sin\phi\\
+                                                     &= 1
+            \end{align}$$
+            $$\therefore |\mathbf{g}^1| = \frac{1}{|\mathbf{g}_1|\sin\phi}$$
+        </div>
+        $$|\mathbf{g}^2| = \frac{1}{|\mathbf{g}_2|\sin\phi}$$
+
+        <p>称参考矢量\(\mathbf{g}_\alpha\)为<b>协变基矢量</b>.</p>
+        <P>与其对偶的参考矢量\(\mathbf{g}^\beta(\beta = 1,2)\)称为<b>逆变基矢量</b>.</P>
+        <p>它们之间所满足的关系式可统一写成<b>对偶条件</b>：</p>
+        $$\mathbf{g}^\beta\cdot\mathbf{g}_\alpha = \delta_\alpha^\beta~(\alpha, \beta = 1,2)$$
+        <p>式中\(\delta_\alpha^\beta\)称为Kronecker \(\delta\)，为：</p>
+        $$\delta_\alpha^\beta = \begin{cases}
+        1,~\alpha = \beta\\
+        0,~\alpha \neq \beta
+        \end{cases}$$
+
+        <p>由对偶条件可以从协变基矢量唯一地确定逆变基矢量，反之亦然.</p>
+
+        <div class="Card-Question">
+            <p>这后面做的一系列分解我不知道有什么意义？将一种未知形式改写成了另一种未知形式吗？</p>
+        </div>
+
+        <h2>空间斜角直角坐标系</h2>
+
+        <p>三维空间点的位置可以用坐标原点至该点的矢径\(\mathbf{r}(x_1, x_2, x_3)\)表示.</p>
+        $$\mathbf{r} = x^1\mathbf{g}_1 + x^2\mathbf{g}_2 + x^3\mathbf{g}_3 = x^i\mathbf{g}_i$$
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>非线性光学晶体</h1>
+
+        <div class="PageCatalog">
+            <ul>
+            </ul>
+        </div>
+
+        <h2>非线性介质中的三波和四波相互作用</h2>
+
+        <p>非线性光学晶体的折射率\(n\)式光波电场强度矢量\(\mathbf{E}\)的函数.</p>
+        $$n(\mathbf{E}) = n_0 + n_1\mathbf{E} + n_2\mathbf{E}^2 + \cdots$$
+        <ul>
+            <li>n_0是没有电场时的折射率（常用于传统的线性光学）.</li>
+        </ul>
+
+        <div class="Card-AI">
+            <p>介质的折射率会随电场而改变.</p>
+            <p>物理光学等学科研究的是弱光问题，通常将折射率近似为\(n_0\).</p>
+        </div>
+
+        <p>对于极化率：</p>
+        $$\chi^{(1)} = \frac{1}{4\pi}(\epsilon_0 - 1) = \frac{1}{4\pi}(n_0^2 - 1)$$
+        $$\chi^{(2)} \approx \frac{1}{2\pi}n_0n_1$$
+        $$\chi^{(3)} \approx \frac{1}{2\pi}n_0n_2$$
+        <ul>
+            <li>\(\epsilon_0\)：无电场情况下的介电常数.</li>
+        </ul>
+
+        <p>二阶非线性仅存在于非中心对称的晶体中（\(\chi^{(2)} = 0\)），即在不具有对称中心的晶体中存在.</p>
+        <p>在具有对称中心及各向同性的介质中：\(\chi^{(2)} \equiv 0\).</p>
+        <p>三阶非线性存在于所有晶体于各向同性介质中.</p>
+
+        <p>具有频率为\(\omega_1\)和\(\omega_2\)的两束单色波在具有二阶非线性的晶体中传播会产生具有\(\omega_3 = \omega_1 + \omega_2\)（和频）与\(\omega_4 = \omega_1 - \omega_2\)（差频）频率的混频波.</p>
+        <p>\(\omega_1 = \omega_2\)的情况下，将得到：</p>
+        <p>二次谐波发生（SHG）为和频发生（SFG）的特例，\(\omega_3 = 2\omega_1\).</p>
+        <p>光学整流（OR）为差频发生（DFG）的特例，\(\omega_4 = 0\).</p>
+
+
+        <h2>相位匹配条件</h2>
+        <p>通常情况下，所有光学介质的非线性都是弱的，即：</p>
+        $$\chi^{(3)}\mathbf{E}^2 \ll \chi^{(1)}\mathbf{E} \ll \chi^{(0)}$$
+        <p>只有当光波满足相位匹配条件,在相当长的晶体中传播时才能观察到显著的非线性效应.</p>
+        $$\mathbf{k}_3 = \mathbf{k}_2 + \mathbf{k}_1$$
+        $$\mathbf{k}_4 = \mathbf{k}_2 - \mathbf{k}_1$$
+
+        <div class="Card-AI">
+            <p>假设晶体长度为\(L\)，将其分成无数个薄片，每个薄片都产生一个微弱的非线性信号光</p>
+            <p>如果相位匹配条件不满足，则每个薄片产生的非线性信号光与前一个薄片产生的信号光相位不同，导致它们相互干涉，最终使得总的非线性信号光强度较弱.</p>
+            <p>满足相位匹配的条件时，会产生相长干涉.</p>
+        </div>
+
+        <div class="Card-AI">
+            <p>在所有波矢方向一致的情况下，矢量相位匹配可以简化为标量相位匹配.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2><a href="../CrystalOptics/UniaxialCrystal.html" class="goto">单轴晶体</a>的相位匹配类型</h2>
+            <p>在三频率相互作用中，必须要利用不同偏振的光波才能满足相位匹配.</p>
+            <b>SFG</b>：
+            <p>若两束混合波具有相同的偏振性，和频处的辐射将会在其垂直的方向上偏振.</p>
+            <p>这种情况下，可以实现<b>Ⅰ类相位匹配</b>.</p>
+            <p>负单轴晶体中：</p>
+            $$\mathbf{k}_{o1} + \mathbf{k}_{o2} = \mathbf{k}_3^e(\theta)$$
+            <p>这被称为<b>“ooe”相位匹配</b>或<b>“ooe”相互作用</b>或<b>\(Ⅰ^{(-)}\)类相位匹配</b>.</p>
+            <p>正单轴晶体中：</p>
+            $$\mathbf{k}_1^e(\theta) + \mathbf{k}_2^e(\theta) = \mathbf{k}_{o3}$$
+            <p>这被称为<b>“eeo”相位匹配</b>或<b>“eeo”相互作用</b>或<b>\(Ⅰ^{(+)}\)类相位匹配</b>.</p>
+            <p>[注]对于SFG，“ooe”等符号的含义为：第一个字母代表较低频率的波，第三个字母代表较高频率的波.</p>
+
+
+            <hr>
+
+            <p>若两束混合的波是正交偏振的，将产生<b>Ⅱ类相位匹配</b>.</p>
+            <p>负单轴晶体中相应于e光的SF波：</p>
+            $$\mathbf{k}_{o1} + \mathbf{k}_2^e(\theta) = \mathbf{k}_3^e(\theta)$$
+            <p>这被称为<b>“oee”相位匹配</b>或<b>“oee”相互作用</b>或<b>\(Ⅱ^{(-)}\)类相位匹配</b>.</p>
+            <p>或：</p>
+            $$\mathbf{k}_1^e(\theta) + \mathbf{k}_{o2} = \mathbf{k}_3^e(\theta)$$
+            <p>这被称为<b>“eoe”相位匹配</b>或<b>“eoe”相互作用</b>或<b>\(Ⅱ^{(-)}\)类相位匹配</b>.</p>
+            <p>对于正单轴晶体内的o光：</p>
+            $$\mathbf{k}_{o1}(\theta) + \mathbf{k}_2^e(\theta) = \mathbf{k}_{o3}$$
+            <p>这被称为<b>“oeo”相位匹配</b>或<b>“oeo”相互作用</b>或<b>\(Ⅱ^{(+)}\)类相位匹配</b>.</p>
+            <p>或：</p>
+            $$\mathbf{k}_1^e(\theta) + \mathbf{k}_{o2} = \mathbf{k}_{o3}$$
+            <p>这被称为<b>“eoo”相位匹配</b>或<b>“eoo”相互作用</b>或<b>\(Ⅱ^{(+)}\)类相位匹配</b>.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2><a href="../CrystalOptics/UniaxialCrystal.html" class="goto">单轴晶体</a>的相位匹配角</h2>
+            <p>单轴非线性晶体的色散特性仅由极角\(\theta\)决定.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>双轴晶体的相位匹配类型</h2>
+            <p>双轴晶体中，仅能实现三种普遍类型的相位匹配：</p>
+            <table>
+                <tr>
+                    <td>Ⅰ类相位匹配</td>
+                    <td>ss-f</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Ⅱ类相位匹配</td>
+                    <td>sf-f</td>
+                </tr>
+                <tr>
+                    <td>fs-f</td>
+                </tr>
+            </table>
+            <p>[注]第三个符号表示较高的频率\(\omega_3\).</p>
+            
+            <h3>SHG（\(\omega_3 = 2\omega_1\)）情况下</h3>
+            <p>双轴晶体所有主平面内，仅能实现两类共线相位匹配：</p>
+            <b>Ⅰ类相位匹配（ss-f）</b>
+            $$n_s(\omega_1) = n_{s1} = n_f(\omega_3) = n_{f3}$$
+            <b>Ⅱ类相位匹配（sf-f）</b>
+            $$n_{s1} + n_{f1} = 2n_{f3}$$
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

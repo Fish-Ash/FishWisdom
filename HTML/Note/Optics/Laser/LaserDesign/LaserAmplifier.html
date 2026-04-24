@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+        
+        <div>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+
+        <h1>激光放大器</h1>
+
+        <p>本章将讨论激光束通过光学激活材料时产生的能量增益.</p>
+        <p>在设计高能量、高亮度的光源时，以激光作为脉冲放大器是非常重要的.</p>
+        <p>高能量脉冲的产生基于主振荡器和多级功率放大器的共同作用.</p>
+
+        <p>振荡器-放大器系统中：</p>
+        <ul>
+            <li>脉宽、光束发散角和光谱宽度取决于谐振腔.</li>
+            <li>脉冲能量与功率由放大器决定.</li>
+        </ul>
+
+        <div class="Card-AI">
+            <p>MOPA系统与振荡器-放大器系统的关系是什么？</p>
+            <p>这里的谐振腔是？</p>
+        </div>
+
+        <p>设计激光放大器时，考虑以下因素：</p>
+        <ul>
+            <li>增益与提取的能量</li>
+            <li>放大器引起的波前畸变与脉冲形状畸变</li>
+            <li>放大器系统中光学元件的能量与功率密度</li>
+            <li>放大器内引起超辐射或前激射的反馈</li>
+        </ul>
+
+        <p>设计放大器时，主要考虑从放大器中所能获得的增益和提取的能量，放大器中棒的长度主要取决于所需的增益.</p>
+        <p>而考虑到损耗阈值，棒的直径主要取决于所需要的输出能量.</p>
+
+        <div class="Card-AI">
+            <p>为什么棒的长度取决于所需的增益？</p>
+            <p>为什么棒的直径取决于所需要的输出能量？</p>
+        </div>
+
+        <div class="Card-AI">
+            <p>激光放大级的分类：</p>
+            <ul>
+                <li>单程放大器</li>
+                <li>双程放大器</li>
+                <li>多程放大器</li>
+                <li>再生放大器</li>
+            </ul>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -29,23 +29,81 @@
         </div>
 
         <h2>第一节 极化率的色散特性</h2>
+        
+        <div class="Card-Analysis">
+            <h2>极化强度</h2>
 
-        <p>光在介质中传播时，由于光电场的作用，将产生极化强度.</p>
-        <p>一般情况下，<a href="../Electromagnetism/Chapter1.html#Polarization" class="goto">极化强度</a>包含线性极化强度与非线性极化强度.</p>
-        $$\mathbf{P} = \mathbf{P}_{L} + \mathbf{P}_{NL}$$
+            <p>光在介质中传播时，由于光电场的作用，将产生极化强度.</p>
+            <div class="Card-AI">
+                <p>这里是介质被光电场极化.</p>
+            </div>
+            <p>一般情况下，<a href="../Electromagnetism/Chapter1.html#Polarization" class="goto">极化强度</a>包含线性极化强度与非线性极化强度.</p>
+            $$\mathbf{P} = \mathbf{P}_{L} + \mathbf{P}_{NL}$$
+    
+            <p>光电场强度很弱时：可以忽略\(\mathbf{P}_{NL}\)，为线性光学问题，此时：</p>
+            $$\mathbf{P} = \mathbf{P}_{L} = \mathbf{P}^{(1)} = \epsilon_0\chi^{(1)}\mathbf{E}$$
+            <ul>
+                <li>\(\epsilon_0\)：真空介电常数</li>
+                <li>\(\chi^{(1)}\)：线性极化率</li>
+            </ul>
 
-        <p>光电场强度很弱时：可以忽略\(\mathbf{P}_{NL}\)，此时\(\mathbf{P} = \mathbf{P}_{L}\)，即为线性光学问题.</p>
-        <p>光电场强度较强时：不可忽略\(\mathbf{P}_{NL}\)，且：</p>
-        $$\begin{align}
-        &\mathbf{P}_{L} = \mathbf{P}^{(1)}\\
-        &\mathbf{P}_{NL} = \mathbf{P}^{(2)} + \mathbf{P}^{(3)} + \cdots + \mathbf{P}^{(r)} + \cdots
-        \end{align}$$
+
+            <p>光电场强度较强时：不可忽略\(\mathbf{P}_{NL}\)，将其表示为级数形式，有：</p>
+            $$\begin{align}
+            &\mathbf{P}_{L} = \mathbf{P}^{(1)}\\
+            &\mathbf{P}_{NL} = \mathbf{P}^{(2)} + \mathbf{P}^{(3)} + \cdots + \mathbf{P}^{(r)} + \cdots
+            \end{align}$$
+            <div class="Card-AI">
+                <p>级数形式即为：\(a_1 + a_2 + \cdots + a_r + \cdots\)或\(a_1 + a_2 + a_3\)的形式</p>
+            </div>
+            <ul>
+                <li>\(\mathbf{P}^{(r)}\)：\(r\)阶非线性极化强度，与光电场\(\mathbf{E}\)的\(r\)次方有关的非线性极化强度.</li>
+            </ul>
+
+            <p>在无损耗（lossless）、无色散（dispersionless）介质中：</p>
+            $$\begin{align}
+            \mathbf{P} &= \mathbf{P}^{(1)} + \mathbf{P}^{(2)} + \mathbf{P}^{(3)} + \cdots + \mathbf{P}^{(r)} + \cdots\\
+                       &= \epsilon_0\chi^{(1)}\mathbf{E} + \epsilon_0\chi^{(2)}\mathbf{E}^2 + \epsilon_0\chi^{(3)}\mathbf{E}^3 + \cdots + \epsilon_0\chi^{(r)}\mathbf{E}^r + \cdots
+            \end{align}$$
+
+            <p>[注]\(r=1\)时代表线性.</p>
+            <p>[注]\(\tilde{P}^{(r)}(t) = \epsilon_0\chi^{(r)}\tilde{E}^r(t)\).</p>
+            <p>[注]光电场过强时，上述非极化强度的级数形式将不再适用.</p>
+
+
+            
+            <div class="Card-AI">
+                <p>\(\chi\)不一定是常数，但是我们通常将其视作常数张量.</p>
+                <p>\(\chi^{(r)}\)是\(r\)阶极化率张量.</p>
+                $$\mathbf{P}^{(r)} \propto \mathbf{E}^r$$
+            </div>
+    
+            <div class="Card-Question">
+                <p>什么叫“电偶极矩近似”，什么叫“电四极矩及多极矩”？</p>
+            </div>
+
+            <p>随时间变化的极化可以作为电磁场新分量的源.</p>
+            <p>非线性光学介质中的波动方程为：</p>
+            $$\nabla^2\mathbf{E} - \frac{n^2}{c^2}\frac{\partial^2\mathbf{E}}{\partial t^2} = \frac{1}{\epsilon_0 c^2}\frac{\partial^2\mathbf{P}_{NL}}{\partial t^2}$$
+            <ul>
+                <li>\(n\)：线性折射率</li>
+                <li>\(c\)：真空中的光速</li>
+            </ul>
+            <div class="Card-AI">
+                <p>这个式子说明\(\mathbf{P}_{NL}\)是源项，可能会产生哪些频率的光，由其决定.</p>
+                <p>将\(\mathbf{P}_{NL}(t)\)按时间谐波展开后，其中每一个与\(e^{-i\omega t}\)成正比的分量，都表示可能产生一个频率为\(\omega\)的光.</p>
+            </div>
+            <p>这个方程与电磁学中的Larmor理论一致，描述了加速运动的电荷会产生电磁辐射.</p>
+        </div>
+
+
 
         <div class="Card-Analysis" id="Flag1">
             <h2>因果性原理</h2>
+            <h3>线性响应函数</h3>
             <p>光在介质中传播时，\(t\)时刻介质所感应的线性极化强度\(\mathbf{P}(t)\)不仅与\(t\)时刻的光电场\(\mathbf{E}(t)\)有关，还与\(t\)时刻前所有的光电场有关.</p>
             <div class="Formula">
-                $$\mathbf{P}(t) = \int_0^{+\infty}\epsilon_0 \mathbf{R}(\tau)\mathbf{E}(t-\tau)\mathrm{d}\tau$$
+                $$\mathbf{P}(t) = \int_{-\infty}^t \epsilon_0\mathbf{R}(t-\tau)\mathbf{E}(\tau)\mathrm{d}\tau$$
                 <div class="Derivation">
                     <p>设时刻\(t\)前任一时刻\(\tau\)的光电场强度为\(\mathbf{E}(\tau)\)，它对\(t\)时刻时的极化强度的贡献为\(\mathrm{d}\mathbf{P}(t)\)，且：</p>
                     $$\mathrm{d}\mathbf{P}(t) = \epsilon_0\mathbf{R}(t-\tau)\mathbf{E}(\tau)\mathrm{d}\tau$$
@@ -62,7 +120,27 @@
                     \end{align}$$
                 </div>
             </div>
+            <ul>
+                <li>\(\mathbf{R}(t-\tau)\)：介质的线性响应函数，是一个二阶张量.</li>
+            </ul>
+
+            <p>此外，\(t'\gt t\)时的光电场\(\mathbf{E}(t')\)对\(\mathbf{P}(t)\)是没有贡献的，即：</p>
+            $$\mathbf{R}(t-\tau) = 0,~\tau\gt t$$
+
+            <b>响应函数所满足的真实性条件</b>
+            <p>由于\(\mathbf{E}(t)\)与\(\mathbf{P}(t)\)均为实函数，故\(\mathbf{R}(\tau)\)也必须是实函数，才能保证上式成立.</p>
+
+            <div class="Card-AI">
+                <p>积分也是线性运算，所以线性响应函数体现了\(\mathbf{P}\)与\(\mathbf{E}\)之间的线性关系.</p>
+            </div>
+
+            <h3>非线性响应函数</h3>
         </div>
+
+        <div class="Card-Question">
+            <p>学到目前为止没明白为什么这节是“介质的色散特性”，“色散”到底是什么？</p>
+        </div>
+
 
         <div class="Card-Definition">
             <b>线性极化率</b>
@@ -77,20 +155,70 @@
             <p>给出了\(\chi^{(1)}(\omega)\)实部与虚部之间的关系.</p>
         </div>
 
+        <div class="Card-Analysis">
+            <h2>极化率的单位</h2>
+            <ul>
+                <li>宏观介质极化率：\(\chi^{(r)}\)</li>
+                <li>单个原子极化率：\(\chi^{(r)mic}\)</li>
+            </ul>
+            $$\chi^{(r)} = n\chi^{(r)mic}$$
+            <p>式中，\(n\)为介质的原子数密度.</p>
+            <p>国际单位制（SI）中：</p>
+            $$\chi^{(r)}:\left(\frac{m}{V}\right)^{r-1}$$
+            $$\chi^{(r)mic}:m^3\left(\frac{m}{V}\right)^{r-1}$$
+        </div>
+
         <h2>第二节 非线性光学极化率的经典描述</h2>
         <p>振子的非线性响应可以用于描述非线性光学现象.</p>
         <b>频率为\(\omega\)的光电场：</b>
         $$E = E(\omega)e^{-i\omega t} + E^*(\omega)e^{i\omega t}$$
 
-
-        <h2>第三节 极化率的一般性质</h2>
-        <div class="Card-Definition">
-            <b>极化率张量的真实性条件</b>
-            $$[\chi^{(r)}(\omega_1 , \omega_2, \cdots, \omega_r)]^* = \chi^{(r)}(-\omega_1^*, -\omega_2^*, \cdots, -\omega_r^*)$$
+        <b>包含多个频率分量光电场</b>
+        <p>设光电场包含多个频率分量，用复数表示时，可以写成以下形式：</p>
+        $$E = \sum_nE(\omega_n)e^{-i\omega_n t}$$
+        <ul>
+            <li>\(E(\omega_n)\)：频率为\(\omega_n\)的光场的复振幅.</li>
+        </ul>
+        <p>考虑到光场的真实性，有：</p>
+        $$E(-\omega_n) = E^*(\omega_n)$$
+        <div id="SecondOrderP">
+            $$P^{(2)}(t) = \epsilon_0\sum_{m,n}\chi^{(2)}(\omega_m,\omega_n)E(\omega_m)E(\omega_n)e^{-i(\omega_m + \omega_n)t}$$
         </div>
-        <b>本征对易对称性</b>
-        <b>完全对易对称性</b>
-        <b>空间对称性</b>
+        <p>设光电场包含\(x\)个频率，则：</p>
+        $$\omega_m, \omega_n \in \{\pm\omega_1, \pm\omega_2, \cdots, \pm\omega_x\}$$
+        <p>即\(\mathbf{P}^{(2)}\)的展开式中存在\(x^2\)项.</p>
+
+        <div class="Card-AI">
+            <p>\(-\omega\)是为了描述实际电场引入的分量.</p>
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>色散介质中的极化率</h2>
+            <p>当材料具有色散或损耗时，非线性极化率是一个复数量，它将电场与极化强度的复振幅联系起来.</p>
+            <p>将电场矢量表示为若干频率分量的离散和，即：</p>
+            $$\tilde{\mathbf{E}}(\mathbf{r}, t) = \sum_n'\tilde{\mathbf{E}}_n(\mathbf{r}, t)$$
+            <p>其中：</p>
+            $$\tilde{\mathbf{E}}_n(\mathbf{r}, t) = \mathbf{E}_n(\mathbf{r})e^{-i\omega_n t} + c.c.$$
+
+            $$P_i(\omega_n+\omega_m) = \epsilon_0\sum_{jk}\sum_{(nm)}\chi_{ijk}^{(2)}(\omega_n+\omega_m, \omega_m, \omega_n)E_j(\omega_n)E_k(\omega_m)$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>有效非线性极化率</h2>
+            <p>约定：</p>
+            $$d_{ijk} = \frac{1}{2}\chi_{ijk}^{(2)}$$
+            <p>对于固定的几何构型（即传播方向与偏振方向都确定），可以用如下标量关系表示引起和频的非线性极化：</p>
+            $$P(\omega_3) = 2\epsilon_0 d_{eff} E(\omega_1)E(\omega_2)$$
+            <p>类似的，对于二次谐波产生，有：</p>
+            $$P(2\omega) = 2\epsilon_0 d_{eff}E^2(\omega)$$
+            <p>其中：</p>
+            $$E(\omega) = |\mathbf{E}(\omega)|$$
+            $$P(\omega) = |\mathbf{P}(\omega)|$$
+        </div>
+
+        
+
 
 
 

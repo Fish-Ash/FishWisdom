@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+        
+        <div>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+
+        <h1>模式选择</h1>
+        <p>要保证激光束具有很高的光束质量（即方向性或单色性很好），理想情况下激光器的输出光束应该只有一个模式.</p>
+        <p>若不采取选模措施，一般激光器的工作状态往往是多模的.</p>
+
+        <b>不同模式的缺点：</b>
+        <ul>
+            <li>含有高阶模的激光束：光强分布不均匀，光束发散角大.</li>
+            <li>含有多纵模及多横模的激光束：单色性及相干性差.</li>
+        </ul>
+        <div class="Card-Question">
+            <p>为什么？</p>
+        </div>
+
+        <b>应用</b>
+        <ul>
+            <li>激光准直、激光加工、非线性光学研究、激光中远距离测距——基横模激光束</li>
+            <li>光通信及大面积全息照相、精密干涉计量——单横模、仅含一个纵模的激光束</li>
+        </ul>
+        <div class="Card-Question">
+            <p>为什么？</p>
+        </div>
+
+        <p>尽管谐振腔对横模与纵模都有限制作用，但在某些场合下仍需进一步对模式进行选择.</p>
+
+        <b>模式选择技术的分类：</b>
+        <p>横模选择技术：从振荡模式中选出基横模TEM<sub>00</sub>，并抑制其他高阶模振荡.</p>
+        <p>纵模选择技术：限制最多纵模中的振荡频率数目，选出单纵模振荡，改善激光的单色性.</p>
+
+        <div class="Card-Analysis">
+            <h2>横模选择</h2>
+            <div class="Card-Definition">
+                <b>横模选择</b>
+                <p>选择基横模振荡而抑制高阶横模的技术.</p>
+            </div>
+            
+            <p>物理基础：谐振腔中不同横模具有不同损耗.</p>
+            <p>稳定腔中，基模的衍射损耗最低，随着横模阶次的增高，衍射损耗将迅速增加.</p>
+            <p>降低TEM<sub>00</sub>模的衍射损耗使之满足阈值条件，TEM<sub>10</sub>模因损耗略高于基模而不能起振，则其他高阶模也都会被抑制.</p>
+
+            
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>纵模选择</h2>
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

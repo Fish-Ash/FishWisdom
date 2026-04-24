@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>二次谐波产生（SHG）</h1>
+        <p>二次谐波产生是和频产生的特殊情况.</p>
+
+        <div class="Card-Analysis">
+            <h2>1.2.1分析</h2>
+            <p>一束激光的电场强度表示为：</p>
+            $$\tilde{E}(t) = Ee^{-i\omega t} + c.c.$$
+            <p>其入射到一个二阶极化率不为0的晶体中.</p>
+            <p>这种晶体产生的二阶非线性极化强度为：</p>
+            $$\begin{align}
+            \tilde{P}^{(2)}(t) &= \epsilon_0\chi^{(2)}\tilde{E}^2(t)\\
+                               &= 2\epsilon_0\chi^{(2)}EE^* + (\epsilon_0\chi^{(2)}E^2e^{-i2\omega t} + c.c.)
+            \end{align}$$
+            <p>式中第一项\(2\epsilon_0\chi^{(2)}EE^*\)不会导致电磁辐射的产生（因为其对时间的二阶导数为0），它对应的是一种称为<b>光学整流（Optical Rectification）</b>的过程（通过非线性晶体产生静电场）.</p>
+            <p>由非线性光学介质中的波动方程，式中第二项\(\epsilon_0\chi^{(2)}E^2e^{-i2\omega t} + c.c.\)会导致频率为\(2\omega\)的电磁波的产生.</p>
+            <p>SHG过程可以看作是两个频率为\(\omega\)的光子湮灭，同时通过一个单一的量子力学过程产生一个频率为\(2\omega\)的光子.</p>
+        </div>
+
+
+
+
+
+        <p>假设介质在基频\(\omega_1\)与二次谐波频率\(2\omega_1\)是无损的，因此非线性极化率满足full permutation symmetry条件.</p>
+        <p>非线性介质中的总电场可以表示为：</p>
+        $$\tilde{E}(z,t) = \tilde{E}_1(z,t) + \tilde{E}_2(z,t)$$
+        <p>其中，各分量按复振幅\(E_j(z)\)与慢变振幅（slowly varying amplitude）\(A_j(z)\)可以表示为：</p>
+        $$\tilde{E}_j(z,t) = E_j(z)e^{-i\omega_j t} + c.c.$$
+        <p>其中：</p>
+        $$E_j(z) = A_j(z)e^{ik_j z}$$
+        <p>波数（propagation constant）为：</p>
+        $$k_j = \frac{n_j\omega_j}{c}$$
+        <p>折射率为：</p>
+        $$n_j = [\epsilon^{(1)}(\omega_j)]^{1/2}$$
+        <p>假设电场的每个频率分量都遵循受驱动的波动方程（driven wave equation）：</p>
+        $$\frac{\partial^2\tilde{E}_j}{\partial z^2} - \frac{\epsilon^{(1)}(\omega_j)}{c^2}\frac{\partial^2\tilde{E}_j}{\partial t^2} = \frac{1}{\epsilon_0c^2}\frac{\partial^2}{\partial t^2}\tilde{P}_j$$
+        <p>非线性极化可以表示为：</p>
+        $$\tilde{P}_{NL}(z, t) = \tilde{P}_1(z,t) + \tilde{P}_2(z,t)$$
+        <p>其中：</p>
+        $$\tilde{P}_j(z,t) = P_j(z)e^{-i\omega_j t} + c.c.$$
+        <p>非线性极化强度为：</p>
+        $$P_1(z) = 4\epsilon_0d_{eff}E_2E_1^* = 4\epsilon_0d_{eff}A_2A_1^*e^{i(k_2-k_1)z}$$
+        $$P_2(z) = 2\epsilon_0d_{eff}E_1^2 = 2\epsilon_0d_{eff}A_1^2e^{2ik_1z}$$
+
+        $$\frac{\mathrm{d}A_1}{\mathrm{d}z} = \frac{2i\omega_1^2d_{eff}}{k_1c^2}A_2A_1^*e^{-i\Delta kz}$$
+        $$\frac{\mathrm{d}A_2}{\mathrm{d}z} = \frac{i\omega_2^2d_{eff}}{k_2c^2}A_1^2e^{i\Delta kz}$$
+        <p>其中：</p>
+        $$\Delta k = 2k_1 - k_2$$
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

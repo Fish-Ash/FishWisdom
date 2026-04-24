@@ -20,41 +20,28 @@
         </ul>
 
 
-        <h1>第一章 激光概论</h1>
+        <h1>激光性质</h1>
 
         <div class="PageCatalog">
             <ul>
-                <li><a href="#Laser">激光的概念</a></li>
-                <li><a href="#LaserProperty">激光的性质</a></li>
             </ul>
         </div>
 
-        <table>
-            <thead><tr>
-                <td class="tbtitle" colspan="4"><b>激光特性</b></td>
-            </tr></thead>
-            <tr>
-                <td rowspan="7">高光子简并度</td>
-                <td colspan="3"><b>高方向性</b></td>
-            </tr>
-            <tr>
-                <td colspan="3"><b>高亮度</b></td>
-            </tr>
-            <tr>
-                <td rowspan="5">窄线宽</td>
-                <td colspan="2"><b>高单色性</b></td>
-            </tr>
-            <tr>
-                <td rowspan="3"><b>高相干性</b></td>
-                <td>空间相干性</td>
-            </tr>
-            <tr>
-                <td>时间相干性</td>
-            </tr>
-            <tr>
-                <td>相干光强</td>
-            </tr>
-            </table>
+        <div class="Card-Analysis">
+            <h2>高方向性</h2>
+
+            <b>平面发散角</b>
+            <p>光束的方向性用平面发散角\(\theta\)评价，平面发散角的含义如下图所示：</p>
+            <img src="Img/LaserProperties/Img1.jpg" alt="" width="400">
+            <p>\(\theta\)角越小，光束发散越小，方向性越好.</p>
+            <p>\(\theta\)角趋于0时，可以近似称为“平行光”.</p>
+
+            <p>激光束的发散角主要由激光器受激辐射的机理和光学谐振腔对输出光束方向的限制所决定。</p>
+            <p>激光束所能达到的最小光束发散角不能小于激光通过输出孔径的衍射极限。光腔的输出孔径为\(D\)时，衍射极限角度为：</p>
+            $$\theta_m\approx \lambda/D$$
+        </div>
+
+
 
         <h3>激光的空间相关性与方向性</h3>
         <p>理想平面波是完全空间相干光，其发散角为0.</p>
@@ -88,7 +75,17 @@
 
         <h2>激光的特性</h2>
 
+
+
         <p>对于中心波长为\(\lambda\)（中心频率为\(\nu\)）的激光器，发出谱线的线宽为\(\Delta\lambda\)（或\(\Delta\nu\)）</p>
+
+        <div class="Card-AI">
+            <p>虽然说\(\lambda\)反比于\(\nu\)，但这并不影响\(\Delta \nu\)小时\(\Delta \lambda\)也小.</p>
+            <p>从数学角度来看：</p>
+            $$\lambda = \frac{v}{\nu}$$
+            $$\mathrm{d}\lambda = -\frac{v}{\nu^2}\mathrm{d}\nu$$
+            <p>所以说\(\Delta \lambda\)是正比于\(\Delta \nu\)的.</p>
+        </div>
 
         <h3>高单色性</h3>
         单色性表征方式：
@@ -145,11 +142,6 @@
         <p>属于同一状态的光子或同一模式的光波是相干的，不同状态的光子或不同模式的光波是不相干的。</p>
         
 
-        <h3>高方向性</h3>
-        <p>光束发散角越小，方向性越高。</p>
-        <p>激光束的发散角主要由激光器受激辐射的机理和光学谐振腔对输出光束方向的限制所决定。</p>
-        <p>激光束所能达到的最小光束发散角不能小于激光通过输出孔径的衍射极限。光腔的输出孔径为\(D\)时，衍射极限角度为：</p>
-        $$\theta_m\approx \lambda/D$$
 
 
         <h3>高亮度</h3>
@@ -164,54 +156,6 @@
         </ul>
 
 
-        <h2>第三节 激光产生的条件</h2>
-
-        <table>
-            <tr>
-                <td class="tbtitle">条件</td>
-                <td class="tbtitle">解释</td>
-            </tr>
-            <tr>
-                <td><b>增益介质（工作物质、激光介质、激活介质）</b></td>
-                <td class="tbtext">为激光提供增益放大的作用，是激光产生的<b>核心条件</b>。</td>
-            </tr>
-            <tr>
-                <td><b>外界激励（抽运或泵浦）源</b></td>
-                <td class="tbtext">向增益介质提供激励（抽运或泵浦）的能量，用于破坏增益介质内部的热平衡态，使增益介质内部的激光上能级和下能级粒子数出现反转分布。</td>
-            </tr>
-            <tr>
-                <td><b>光学谐振（共振）腔</b></td>
-                <td></td>
-            </tr>
-        </table>
-
-
-        <h3>第四节 激光器的分类</h3>
-        <table>
-            <tr>
-                <td rowspan="7">按工作物质的物态分类</td>
-                <td rowspan="4">气体激光器</td>
-            </tr>
-            <tr>
-                <td>原子气体激光器</td>
-                
-            </tr>
-            <tr>
-                <td>分子气体激光器</td>
-            </tr>
-            <tr>
-                <td>离子气体激光器</td>
-            </tr>
-            <tr>
-                <td>液体激光器</td>
-            </tr>
-            <tr>
-                <td>半导体激光器</td>
-            </tr>
-            <tr>
-                <td>固体激光器</td>
-            </tr>
-        </table>
     </body>
 
 </html>

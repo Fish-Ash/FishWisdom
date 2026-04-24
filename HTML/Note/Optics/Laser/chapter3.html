@@ -3,68 +3,179 @@
 <html lang = "zh-cn">
 
     <head>
-        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>激光原理</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
     <body>
-        <div class="header">不惑</div>
-
-        
+        <div class="header" id="PageHead">不惑</div>
         <ul class="navibar">
-            <li><a href="../Home.html">主页</a></li>
-            <li><a href="../Navigation.html">导航</a></li>
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
 
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
 
         <h1>第三章 激光器的工作原理</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#Flag1">光放大物质的增益系数与增益曲线</a></li>
+                <li><a href="#SelfOscillation">自激振荡</a></li>
+            </ul>
+        </div>
+
+
         <p>普通光源在红外和可见光波段是非相干光源.</p>
-        
-        <h2>第一节 粒子数反转分布</h2>
-        <b>二能级系统</b>
-        <ul>
-            <li>\(E_1\)：低能级（基态）</li>
-            <li>\(E_2\)：高能级（激发态）</li>
-        </ul>
-        <p>假设两个原子分别处在简化而能及系统的低能级与高能级，若一个能量恰等于这两个能级能量差的光子\(h\nu = E_2 - E_1\)趋近于这两个原子，即光子的频率与原子系统的两个能级共振。</p>
-        <p>考虑受激辐射爱因斯坦系数与受激吸收爱因斯坦系数间的关系式</p>
-        $$\frac{g_2}{g_1}\frac{B_{12}}{B_{21}} = 1$$
-        <p>当\(g_2 = g_1\)时，有\(B_{12} = B_{21}\)，即发生受激辐射和受激吸收的概率是相同的。</p>
-        <p>当物质处于热平衡状态时，各能级上的粒子数（集居数）服从玻尔兹曼统计分布</p>
-        $$\frac{n_2}{n_1} = \frac{g_2}{g_1}e^{\frac{-(E_2-E_1)}{KT}}$$
-        <p>\(g_2 = g_1\)时，因\(E_2 > E_1\)，故\(n_2\lt n_1\).</p>
-        <p>即热平衡状态下，高能级集居数恒小于低能级集居数.</p>
-        <p>当物质处于热平衡状态（物质与外界处于能量平衡状态）时，集居数反转是不可能的，只有当外界向物质供给能量（激励/泵浦/抽运），从而使物质处于非热平衡状态时，才可能实现集居数反转.</p>
-        <p>泵浦是光放大的必要条件.</p>
 
-        <div class="Card-Definition">
-            <b>工作物质/激活物质/激光介质/增益介质</b>
-            <p>处于集居数反转状态的物质.</p>
-            <p>一段工作物质就是一个光放大器.</p>
+        <div class="Card-Analysis" id="Flag1">
+            <h2>光放大物质的增益系数与增益曲线</h2>
+
+            <div class="Card-Definition">
+                <b>工作物质/激活物质/激光介质/增益介质</b>
+                <p>处于集居数反转状态的物质.</p>
+                <p>一段工作物质就是一个光放大器.</p>
+            </div>
+    
+            <div class="Card-Definition">
+                <b>增益系数（\(g\)）</b>
+                <p>光通过单位长度的工作物质后光强增长的百分数.</p>
+                $$g = \frac{\mathrm{d}I(z)}{\mathrm{d}z}\frac{1}{I(z)}$$
+            </div>
+
+            <p>\(\mathrm{d}I(z)\)正比于单位体积激活物质的净受激辐射光子数：</p>
+            $$\mathrm{d}I(z)\propto [W_{21}n_2 - W_{12}n_1]h\nu\mathrm{d}z$$
+
+            <div class="Card-Question">
+                <p>这里不考虑自发辐射也是因为非相干吗？</p>
+                <p>为什么单位体积用dz？</p>
+            </div>
+
+            <p>当\(g_1 = g_2\)时，由爱因斯坦相对系数关系，可得：</p>
+            $$B_{21} = B_{12}$$
+            $$\therefore \mathrm{d}I(z) \propto B_{21}h\nu\rho(z)[n_2(z)-n_1(z)]\mathrm{d}z$$
+            $$\therefore \mathrm{d}I(z) \propto B_{21}h\nu I(z)[n_2(z)-n_1(z)]\mathrm{d}z$$
+            <div class="Card-Question">
+                <p>\(I(z)\)与\(\rho(z)\)有什么关系？</p>
+            </div>
+            $$\therefore g\propto B_{21}h\nu[n_2(z) - n_1(z)]$$
+            <p>若\(n_2-n_1\)不随\(z\)变化，则增益系数\(g\)为一常数\(g^0\).</p>
+            <p>此时有：</p>
+            <div class="Formula">
+                $$I(z) = I_0e^{g^0z}$$
+                <div class="Derivation">
+                    <p>由增益系数的定义：</p>
+                    $$g^0 = \frac{\mathrm{d}I(z)}{\mathrm{d}z}\frac{1}{I(z)}$$
+                    $$\therefore \int_0^z g^0\mathrm{d}z = \int_0^z \frac{1}{I(z)}\mathrm{d}z$$
+                    $$\therefore g^0z = \ln\frac{I(z)}{I(0)}$$
+                    $$\therefore I(z) = I_0e^{g^0z}$$
+                </div>
+            </div>
+            <ul>
+                <li>\(I_0\)：\(z=0\)处的初始光强.</li>
+            </ul>
+
+            <div class="Card-Definition">
+                <b>增益饱和效应</b>
+                <p>实际上光强\(I\)的增加正是由于高能级原子向低能级受激跃迁的结果，或者说光放大正是以单位体积内集居数差值\(n_2(z) - n_1(z)\)的减小为代价的.</p>
+                <p>并且，光强\(I\)越大，\(n_2(z) - n_1(z)\)减少得越多.</p>
+                <p>所以实际上\(n_2(z) - n_1(z)\)随\(z\)的增大而减少，增益系数\(g\)也随\(z\)的增加而减小，这一现象就称为增益饱和效应.</p>
+            </div>
+
+            $$n_2 - n_1 = \frac{n_2^0 - n_1^0}{1 + \frac{I}{I_s}}$$
+            <ul>
+                <li>\(I_s\)：饱和光强</li>
+                <li>\(n_2^0 - n_1^0\)：光强为\(I=0\)时单位体积内的初始集居数差值.</li>
+            </ul>
+            <div class="Card-Question">
+                <p>该式的推导见3.5节.</p>
+            </div>
+
+            $$g(I) \propto B_{21}h\nu\frac{n_2^0 - n_1^0}{1 + \frac{I}{I_s}}$$
+            $$g(I) = \frac{g^0}{1 + \frac{I}{I_s}}$$
+            <p>若放大器中光强始终满足\(I\ll I_s\)，则\(g(I) \approx g^0\).</p>
         </div>
 
-        <div class="Card-Definition">
-            <b>增益系数（\(g\)）</b>
-            <p>光通过单位长度的工作物质后光强增长的百分数.</p>
-            $$g = \frac{\mathrm{d}I(z)}{\mathrm{d}z}\frac{1}{I(z)}$$
+
+
+        <div class="Card-Analysis" id="SelfOscillation">
+            <h2>光的自激振荡</h2>
+            <p>在光放大的同时，通常还存在着光的损耗.</p>
+            <div class="Card-Definition">
+                <b>损耗系数（\(\alpha\)）</b>
+                $$\alpha = -\frac{\mathrm{d}I(z)}{\mathrm{d}z}\frac{1}{I(z)}$$
+                <p>光通过单位距离后光强衰减的百分数.</p>
+            </div>
+
+            <p>同时考虑增益与损耗，则：</p>
+            $$\mathrm{d}I(z) = [g(I) - \alpha]I(z)\mathrm{d}z$$
+            <p>假设有初始光强为\(I_0\)的微弱光进入一无限长放大器：</p>
+            <p>1、光强\(I(z)\)按小信号放大规律\(I(z) = I_0e^{(g^0-\alpha)z}\)增长.</p>
+            <p>2、随着\(I(z)\)的增加，\(g(I)\)将由饱和效应按\(g(I) = \frac{g^0}{1 + \frac{I}{I_s}}\)减小，因而\(I(z)\)的增长变得缓慢.</p>
+            <p>3、当\(g(I) = \alpha\)时，\(I(z)\)不再增加并达到一个稳定的极限值\(I_m\).</p>
+
+            <p>根据条件\(g(I) = \alpha\)可得：</p>
+            $$I_m = I_s(\frac{g^0}{\alpha} - 1)$$
         </div>
 
-        <div class="Card-Definition">
-            <b>损耗系数（\(\alpha\)）</b>
-            $$\alpha = -\frac{\mathrm{d}I(z)}{\mathrm{d}z}\frac{1}{I(z)}$$
-            <p>光通过单位距离后光强衰减的百分数.</p>
-        </div>
         
         <div class="Card-Definition">
             <b>激光器的振荡条件</b>
             $$g^0 \geq \alpha$$
         </div>
         
+        <div class="Card-Analysis">
+            <h2>阈值增益系数</h2>
+            <p>设光强\(I_0\)在腔内往返一周后变为\(I\)，则：</p>
+            $$I = I_0e^{2(G^0l-\delta)}$$
+            <ul>
+                <li>\(l\)：激光工作物质的长度</li>
+                <li>\(\delta\)：单程损耗因子</li>
+            </ul>
+            <p>显然，若要形成激光，必有\(I\neq I_0\)，即：</p>
+            $$2(G_0l - \delta)\neq 0$$
+            $$G^0 \neq \frac{\delta}{l}$$
+            <p>这便是形成激光的阈值条件.</p>
+            <div class="Card-Definition">
+                <b>阈值增益系数</b>
+                $$G_t = \frac{\delta}{t}$$
+            </div>
+            <p>一旦激光器中的损耗系数确定，则该激光器的增益系数也随之确定为一常数.</p>
+            <p>若谐振腔中某模式的小信号增益系数大于或等于阈值增益系数，则该模式就可以起振从而形成激光；反之则不能.</p>
+            <p>不同纵模具有相同的单程损耗\(\delta\)，因而具有相同的阈值增益系数\(G_1\).</p>
+            <p>不同横模因具有不同的横向光场分布，因此具有不同的单程衍射损耗，从而有不同的阈值增益系数.</p>
+            <p>高阶横模的衍射损耗大，阈值增益系数便比低阶模大.</p>
+        </div>
         
-        
+        <div class="Card-Analysis">
+            <h2>阈值反转集居数密度</h2>
+            <p>增益系数和反转集居数密度间的关系为：</p>
+            $$G(\nu) = \Delta n\sigma_{21}(\nu, \nu_0)$$
+
+            <div class="Card-Definition">
+                <b>阈值反转集居数密度</b>
+                $$\Delta n_t = \frac{G_t}{\sigma_{21}(\nu, \nu_0)} = \frac{\delta}{\sigma_{21}(\nu, \nu_0)l}$$
+            </div>
+        </div>
         
         
         
@@ -118,6 +229,11 @@
 
         \end{cases}
         $$
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
 </html>

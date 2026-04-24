@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>张量分析</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>矢量运算</h1>
+
+        <h2>叉乘</h2>
+        <div class="Card-Definition">
+            <b>叉乘（叉积、矢积、外积）</b>
+            $$\begin{align}
+            \mathbf{w} &= \mathbf{u}\times\mathbf{v} \\
+                       &= \left|\begin{matrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\u_x&u_y&u_z\\v_x&v_y&v_z\end{matrix}\right|
+            \end{align}$$
+        </div>
+
+        <h2>向量运算</h2>
+        $$\vec\alpha = (a_1, a_2, \cdots, a_n)^T$$
+        $$\vec\beta = (b_1, b_2, \cdots, b_n)^T$$
+        <table>
+            <tr>
+                <td width="64">运算</td>
+                <td colspan="2" width="50">公式</td>
+                <td colspan="3">运算规律</td>
+            </tr>
+            <tr>
+                <td rowspan="4"><b>向量加法</b></td>
+                <td rowspan="4" colspan="2">$$\vec\alpha + \vec\beta = (a_1 + b_1, a_2 + b_2, \cdots, a_n + b_n)^T$$</td>
+                <td width="16">交换律</td>
+                <td>$$\alpha + \beta = \beta + \alpha$$</td>
+            </tr>
+
+            <tr>
+                <td>结合律</td>
+                <td>$$\alpha + (\beta + \gamma) = (\alpha + \beta) + \gamma$$</td>
+            </tr>
+            <tr>
+                <td colspan="2">$$\alpha + \mathbf{0} = \mathbf{0} + \alpha = \alpha$$</td>
+            </tr>
+            <tr>
+                <td colspan="2"><p>\(\alpha + (-\alpha) = 0\)</p></td>
+            </tr>      
+            <tr>
+                <td rowspan="3"><b>向量数乘</b></td>
+                <td rowspan="3" colspan="2">$$k\alpha = (ka_1, ka_2, \cdots, ka_n)^T$$</td>
+                <td colspan="2">$$k(l\alpha) = (kl)\alpha$$</td>
+            </tr>
+            <tr>
+                <td colspan="2">$$k(\alpha + \beta) = k\alpha + k\beta$$</td>
+            </tr>
+            <tr>
+                <td colspan="2">$$(k+l)\alpha = k\alpha + l\alpha$$</td>
+            </tr>
+            <tr>
+                <td><b>点乘</b><br>（标量）</td>
+                <td colspan="2">$$\vec\alpha\cdot\vec\beta = \sum\limits_{i=1}^n a_ib_i = |\vec a||\vec b|\cos\theta$$</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td rowspan="2"><b>叉乘</b><br>（矢量）</td>
+                <td width="16">方向</td>
+                <td class="tbtext">由右手法则决定，右手四指指向\(\vec\alpha\)，向\(\vec\beta\)弯曲，拇指所指方向即为结果方向。</td>
+                <td rowspan="2" colspan="3"></td>
+            </tr>
+            <tr>
+                <td width="16">大小</td>
+                <td>$$\vec\alpha \times \vec \beta = |\vec a||\vec b|\sin\theta$$</td>
+            </tr>
+        </table>        
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

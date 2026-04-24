@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+        
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+
+        <h1>调Q技术</h1>
+        <div class="Card-Definition">
+            <b>激光调Q技术</b>
+            <p>用调节谐振腔的Q值获得激光巨脉冲的技术.</p>
+            <p>将激光能量压缩到宽度极窄的脉冲中发射，从而使光源的峰值功率可以提高几个数量级的技术.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>巨脉冲</b>
+            <p>高峰值功率的窄脉冲.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>Q值（品质因数）</b>
+            $$Q = 2\pi\frac{W}{\Delta W} = \frac{2\pi\nu\eta L}{\delta c}$$
+            <ul>
+                <li>\(W\)：谐振腔内储存的能量</li>
+                <li>\(\Delta W\)：每振荡周期损耗的能量</li>
+                <li>\(\nu\)：激光振荡频率</li>
+                <li>\(\eta\)：介质折射率</li>
+                <li>\(L\)：谐振腔腔长</li>
+                <li>\(\delta\)：光在腔内传播的单程损耗</li>
+                <li>\(c\)：光速</li>
+            </ul>
+            <p>Q值越高，腔内损耗越小；Q值越低，腔内损耗越大.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <b>普通激光器峰值功率不高的原因</b>
+            <p>一般情况下，激光器谐振腔的阈值始终保持不变，当光泵浦使反转粒子数达到或略超过阈值时，激光器便开始振荡.</p>
+            <p>于是激光上能级粒子数因受激辐射减少，致使上能级无法积累很大的反转粒子数，只能限制在阈值反转粒子数附近.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <b>提高激光器峰值功率的方法</b>
+            <p>当激光器泵浦初期，将其振荡阈值调至很高，抑制激光振荡的产生，使激光上能级的反转粒子数大量积累.</p>
+            <p>当反转粒子数积累到最大时，突然将阈值调至很低，此时积累在上能级的粒子便雪崩式跃迁至低能级，在极短时间内将能量释放出来，获得巨脉冲.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <b>改变激光器阈值的方法</b>
+            <p>激光器振荡的反转集居数密度为：</p>
+            $$\Delta n_t = \frac{\delta}{\sigma_{21}l}$$
+            <ul>
+                <li>\(l\)：激光工作物质的长度</li>
+            </ul>
+            $$\Delta n_t = \frac{2\pi\nu\eta L}{\sigma_{21}lc}\cdot\frac{1}{Q}$$
+            <p>即\(\Delta n_t\)反比于\(Q\)值.</p>
+            <p>由此可见，要改变激光器的阈值，可以通过突变谐振腔的Q值（或损耗\(\delta\)）实现.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>调Q原理</b>
+            <p>采用某种办法使谐振腔在泵浦开始时处于高损耗低Q值的状态，此时激光振荡的阈值很高，粒子密度反转数即使积累到很高水平也不会产生振荡；</p>
+            <p>当粒子密度反转数达到其峰值时，突然使腔的Q值增大，导致激光介质的增益大大超过阈值，及其快速地产生振荡；</p>
+            <p>此时储存在亚稳态上的粒子所具有的能量会很快转换为光子的能量，光子像雪崩一样以极高的速率增长，激光器便可输出一个峰值功率高、宽度窄的激光巨脉冲.</p>
+        </div>
+
+        <h2>Q调制方法</h2>
+
+        <div class="Card-Analysis">
+            <table>
+                <tr>
+                    <td colspan="3">分类</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">主动调Q</td>
+                    <td rowspan="2">控制反射损耗</td>
+                    <td>机械转镜调Q（最早发展，已很少使用）</td>
+                </tr>
+                <tr>
+                    <td>电光调Q</td>
+                </tr>
+                <tr>
+                    <td>控制衍射损耗</td>
+                    <td>声光调Q</td>
+                </tr>
+                <tr>
+                    <td>被动调Q</td>
+                    <td>控制吸收损耗</td>
+                    <td>可饱和吸收染料调Q</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="Card-Definition">
+            <b>Q开关</b>
+            <p>使Q值（谐振腔损耗）突变的装置或器件.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>电光调Q</h2>
+
+            <div class="Card-Definition">
+                <b>电光调Q</b>
+                <p>利用晶体的普克尔效应实现Q值突变的方法.</p>
+            </div>
+            <p>利用晶体的电光效应作为Q开关的元件.</p>
+
+            <b>以磷酸二氘钾（KD*P）为例：</b>
+            <p>KD*P晶体是最常用的电光晶体之一.</p>
+            <p>在激光谐振腔中插入起振片作为Q开关的KD*P晶体.</p>
+
+            <div class="Card-Question">
+                <p>什么是晶体的电光效应？</p>
+                <div class="Card-AI">
+                    <p>当向晶体施加电场时，其折射率椭球的形状与方位会发生改变，导致沿特定方向传播的光的折射率n发生变化.</p>
+                </div>
+                <p>什么是起振片？</p>
+                <div class="Card-AI">
+                    <p>一种只允许特定振动方向的光通过的光学元件.</p>
+                </div>
+            </div>
+
+            <p>当在晶体上加半波电压后，往返通过晶体的线偏振光，其振动方向相对改变90°.</p>
+            <p>对于未加电压的晶体，往返通过晶体的线偏振光振动方向不变.</p>
+            <p>当晶体在z轴方向加电压后，由于感应双折射，沿x方向振动的偏振光进入晶体后将分解为沿x'方向和y'方向振动的二线偏振光.</p>
+            <p>适当调整电压大小，使通过晶体后的两者相位差为\(\pi/2\)（相应电压大小为\(V_{\pi/2}\)），因而合成光为圆偏振光.</p>
+            <p>再次经过反射镜反射，圆偏振光再次通过晶体，相位差再次增加\(\pi/2\)，则出射光又成一线偏振光，但其振动方向为y方向，恰遇原入射偏振光的振动方向x垂直.</p>
+
+            <div class="Card-Question">
+                <p>晶体的感应双折射？</p>
+                <p>光的偏振？</p>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>声光调Q</h2>
+            <div class="Card-Definition">
+                <b>声光调Q</b>
+                <p>利用声光器件的衍射效应控制谐振腔损耗以实现Q值突变的方法.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>声光衍射效应</b>
+                <p>激光通过介质中的超声场时发生颜色，从而造成光束偏折.</p>
+            </div>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

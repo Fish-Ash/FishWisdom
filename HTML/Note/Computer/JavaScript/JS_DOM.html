@@ -2,15 +2,23 @@
 
 <html lang = "zh-cn">
 
-<head>
-    <meta charset="utf-8">
-    <title>JavaScript</title>
-    <link rel="stylesheet" href="../../../../CSS/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
-    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
 
     <body>
         <div class="header">不惑</div>
@@ -28,15 +36,20 @@
         </code></pre>
 
         <b>通过class获取元素</b>
-        <pre>
+        <pre><code class="Code">
             const element = document.getElementByClassName("class");
-        </pre>
+        </code></pre>
         <p>[注]即使只有一个该class的元素，使用这种方法返回的也是一个数组.</p>
 
-        <b>通过id或class获取元素</b>
-        <pre><code>
+        <b>获取元素</b>
+        <pre><code class="Code">
+            const element = document.querySelector("Tag")
             const element = document.querySelector(".class")
             const element = document.querySelector("#id")
+            const element = document.querySelector("Tag.class")
+
+            const element = document.querySelectorAll("Tag")
+            # 返回所有符合条件的元素为NodeList数据
         </code></pre>
         <hr>
 
@@ -85,9 +98,16 @@
 
         <b>对于数组中的每个元素</b>
         <pre class="Code"><code class="JavaScript">
-            arr.Each(el => {
+            arr.Each(item => {
 
             });
+        </code></pre>
+
+        <p>forEach()是数组或类数组（如NodeList）的方法，会对集合中的每一个元素调用回调函数.</p>
+        <pre><code class="Code">
+            element.forEach(item => {})
+            # item：数组或非数组中当前遍历到的元素
+            # {}中的内容为回调函数
         </code></pre>
 
         <b>事件列表</b>
@@ -130,6 +150,7 @@
         </code></pre>
 
 
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
 </html>

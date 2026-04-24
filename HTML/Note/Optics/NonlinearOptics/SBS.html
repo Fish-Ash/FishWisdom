@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>受激布里渊散射</h1>
+
+        <div class="PageCatalog">
+            <ul>
+
+            </ul>
+        </div>
+
+        <div class="Card-Definition">
+            <b>布里渊散射</b>
+            <p>入射到介质的光波与介质内的弹性声波发生相互作用而产生的光散射现象.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>受激布里渊散射（Sitimulated Brillouin Scattering, SBS）</b>
+            <p>频率为\(\omega\)的强激光束通过某种介质时，会在介质内产生频率为\(\omega_s\)的相干声波（介质在强入射激光作用下产生电致伸缩效应的结果），同时产生频率为\(\omega-\omega_s\)的散射光波.</p>
+            <p>声波与散射光波沿着特定的方向传播，且仅有入射光强度超过一定值时才能发生上述现象.</p>
+            <p>这种具有受激发射特性的布里渊散射称为受激布里渊散射.</p>
+        </div>
+
+        <div class="Card-AI">
+            <p>当强光在介质中传播时，由于<b>电致伸缩效应</b>，会激发出<b>声波</b>，也就是介质的密度波，这个声波又会调制介质的折射率，形成一个会运动的折射率<b>光栅</b>，从而将入射光散射出去.</p>
+            <p>受激布里渊散射中的散射主要是由运动折射率光栅导致的.</p>
+            <p>散射就是原来的运动方向改变了.</p>
+        </div>
+
+        <div class="Card-AI">
+            <p>抑制SBS，归根结底是降低入射激光的谱功率密度，而对入射激光进行线宽展宽可以有效降低谱功率密度.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>受激布里渊散射</h2>
+            <p>自发布里渊散射是由入射光在热激发声波上的散射所产生的.</p>
+
+            <div class="Card-AI">
+                <b>热激发声波</b>
+                <p>由材料内部热运动自发产生的声波.</p>
+            </div>
+            
+            <p>[注]受激布里渊散射也可以由吸收效应引起.</p>
+            
+            <p>当入射激光场的强度足够高时，即使是自发散射光本身也可能变得相当强.</p>
+            <p>此时，入射光场与散射光场会发生拍频，并通过电致伸缩产生密度与压强起伏.</p>
+            <div class="Card-AI">
+                <b>拍频</b>
+                <p>两个频率相近的振动叠加后，出现的振幅周期性忽大忽小的现象.</p>
+
+                <b>电致伸缩</b>
+                <p>介质在电场作用下发生机械形变或压力变化的现象.</p>
+            </div>
+
+            <p>随后，入射激光场又会在伴随这些密度起伏而出现的折射率变化上发生散射.</p>
+            <p>散射光将处于斯托克斯频率，并于最初产生该声学扰动的斯托克斯辐射发生相长叠加.</p>
+            <p>如此一来，声波与斯托克斯波便能相互促进对方增长，且二者均能增长到很大的振幅.</p>
+
+            <b>示例</b>
+            <p>入射光：</p>
+            <ul>
+                <li>振幅：\(E_1\)</li>
+                <li>角频率：\(\omega_1\)</li>
+                <li>波矢：\(\mathbf{k}_1\)</li>
+            </ul>
+            <p>声波：</p>
+            <ul>
+                <li>振幅：\(\rho\)</li>
+                <li>频率：\(\Omega\)</li>
+                <li>波矢：\(\mathbf{q}\)</li>
+            </ul>
+
+            <p>入射光在一个后退传播的声波上发生散射：</p>
+            <p>散射波：</p>
+            <ul>
+                <li>振幅：\(E_2\)</li>
+                <li>角频率：\(\omega_2\)</li>
+                <li>波矢：\(\mathbf{k}_2\)</li>
+            </ul>
+
+            $$\omega_2 = \omega_1 - \Omega_B$$
+            <ul>
+                <li>\(\Omega_B\) ：Brillouin频率</li>
+            </ul>
+
+            <p>Brillouin频率与声学波矢\(\mathbf{q}_B\)的关系由声子色散关系给出：</p>
+            $$\Omega_B = v |\mathbf{q}_B|$$
+            <ul>
+                <li>\(v\)：声速</li>
+            </ul>
+
+            <p>按照假设，该声波是由激光场与Stokes场的拍频决定，因此声波波矢为：</p>
+            $$\mathbf{q}_B = \mathbf{k}_1 - \mathbf{k}_2$$
+
+            <p>由于光波的波矢与频率满足通常关系，即：</p>
+            $$|\mathbf{k}_i| = \frac{n\omega_i}{c}$$
+
+            <p>由于激光波与Stokes波是反向传播，有：</p>
+            $$\Omega_B = \frac{n v}{c}(\omega_1 + \omega_2)$$
+            <p>化简得只用外加场频率\(\omega_1\)表示的Brillouin频率：</p>
+            <div class="Formula">
+                $$\Omega_B = \frac{\frac{2 n v}{c}\omega_1}{1 + \frac{n v}{c}}$$
+                <div class="Derivation">
+                    $$\because \omega_2 = \omega_1 - \Omega_B$$
+                    $$\therefore \Omega_B = \frac{2 n v}{c}\omega_1 - \frac{n v}{c}\Omega_B$$
+                    $$\therefore \Omega_B = \frac{\frac{2 n v}{c}\omega_1}{1 + \frac{n v}{c}}$$
+                </div>
+            </div>
+
+            
+
+        </div>
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

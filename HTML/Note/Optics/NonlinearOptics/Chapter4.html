@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>第四章 二阶非线性光学效应</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#SHG">二次谐波产生（SHG）</a></li>
+                <li><a href="#PocklerEffect">线性电光效应</a></li>
+            </ul>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>二阶非线性光学</h2>
+
+            <b>二阶非线性光学效应</b>
+            <ul>
+                <li>线性电光效应</li>
+                <li>光整流效应</li>
+                <li>和频和差频产生</li>
+                <li>二次谐波产生</li>
+                <li>参量变换</li>
+                <li>参量放大</li>
+                <li>振荡</li>
+            </ul>
+
+            <b>假设</b>
+            <p>1、介质：无反演对称.</p>
+            <p>2、所讨论的效应都远离共振区\(\rightarrow \chi^{(1)},\chi^{(2)}\)均为实数，具有完全对易对称性与时间反演对称性.</p>
+
+            $$\mathbf{P}^{(2)} = \epsilon_0\chi^{(2)}\mathbf{E}^2$$
+            $$\therefore \mathbf{P}^{(2)} \propto \mathbf{E}^2$$
+            $$\mathbf{E} = E_0\cos(\omega t - \mathbf{k}\cdot\mathbf{r} + \phi_0)$$
+            $$\begin{align}
+            \mathbf{E}^2 &= E_0^2\cos^2(\omega t - \mathbf{k}\cdot\mathbf{r} + \phi_0)\\
+                         &= \frac{E_0^2}{2}[1 + \cos(2\omega t - 2\mathbf{k}\cdot\mathbf{r} + 2\phi_0)]
+            \end{align}$$
+            $$\therefore \mathbf{P}^{(2)} \propto C + \cos(2\omega t - 2\mathbf{k}\cdot\mathbf{r} + 2\phi_0)$$
+
+            <div class="Card-AI">
+                <p>之所以说\(\mathbf{P}^{(2)} \propto C + \cos(2\omega t - 2\mathbf{k}\cdot\mathbf{r} + 2\phi_0)\)就产生了一个频率为\(2\omega\)的光波，是因为\(\mathbf{P}\)是Maxwell方程中的源项，其振荡频率为\(2\omega\)，因此会辐射出频率为\(2\omega\)的电磁波.</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>二阶非线性极化强度的一般形式为：</p>
+                $$\mathbf{P}^{(2)} = \epsilon_0\chi^{(2)}:\mathbf{E}_1\mathbf{E}_2$$
+                <p>故考虑二阶非线性时，最多考虑两个电场矢量的相互作用.</p>
+                <p>这里需要考虑的是：<a href="../../Math/TensorAnalysis/Dyad.html" class="goto">并矢</a>与<a href="../../Math/TensorAnalysis/Dyad.html#DoubleDotProduct" class="goto">双点积</a></p>
+                <p>当仅存在一个电场矢量时，才会有：</p>
+                $$\mathbf{P}^{(2)} = \epsilon_0\chi^{(2)}\mathbf{E}^2$$
+
+                $$\mathbf{P}^{(2)}\propto \mathbf{E}_1\mathbf{E}_2$$
+                $$\mathbf{E}_1\mathbf{E}_2 = \mathbf{E}_{01}\mathbf{E}_{02}\cos(\omega_1 t - \mathbf{k}_1\cdot\mathbf{r} + \phi_{01})\cos(\omega_2 t - \mathbf{k}_2\cdot\mathbf{r} + \phi_{02})$$
+                $$\mathbf{P}^{(2)}\propto \mathbf{E}_{01}\mathbf{E}_{02}\cos(\omega_1 t - \mathbf{k}_1\cdot\mathbf{r} + \phi_{01})\cos(\omega_2 t - \mathbf{k}_2\cdot\mathbf{r} + \phi_{02})$$
+                $$\mathbf{P}^{(2)}\propto \cos[(\omega_1 + \omega_2) t - (\mathbf{k}_1 + \mathbf{k}_2)\cdot\mathbf{r} + (\phi_{01} + \phi_{02})] + \cos[(\omega_1 - \omega_2) t - (\mathbf{k}_1 - \mathbf{k}_2)\cdot\mathbf{r} + (\phi_{01} - \phi_{02})]$$
+                <p>前者为和频，后者为差频.</p>
+                <p>此处没有非线性电光效应与光整流效应，是因为为考虑DC项.</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>当我们希望某束光在某特定介质中以某固定角频率传播时，其波矢量是确定的（\(\mathbf{k} = \frac{\omega}{c}n(\omega)\)），所以只有当入射光的波矢量满足相位匹配条件时，才能实现有效的非线性光学过程.</p>
+            </div>
+
+        </div>
+
+
+        <h2 id="PocklerEffect">第一节 线性电光效应</h2>
+
+        <b>预备知识</b>
+        <ul>
+            <li>折射率椭球</li>
+        </ul>
+
+        <div class="Card-Definition">
+            <b>线性电光效应（Pockler效应）</b>
+            <p>当没有反演中心的晶体受到直流电场或低频电场作用时，其折射率发生与外加电场成线性关系的变化.</p>
+            <p>[注]此处所指“低频电场”是相较于光频而言，故微波频率也包含在内.</p>
+        </div>
+
+        <div class="Card-AI">
+            <p>线性电光效应发生时，变化的本质对象是折射率椭球，因此晶体的主轴方向可能改变，主折射率也可能变化.</p>
+
+
+            <b>反演中心</b>
+            <p>反演中心是晶体中的一种对称中心.</p>
+        </div>
+        
+        <p>介质在光电场、低频电场或直流电场 两个电场的作用下，产生二阶非线性极化.</p>
+
+        <div class="Card-AI">
+            <p>低频电场或直流电场引起介质折射率的线性变化，进而影响光电场的传播.</p>
+        </div>
+
+        <p>设直流电场为\(\mathbf{E}_0\)，光电场为\(\mathbf{E}\exp{(-i\omega)t} + c.c.\)，则根据极化强度的一般表示式，有：</p>
+        $$\mathbf{P}^{(1)}(t) = \epsilon_0 \chi^{(1)}(0)\cdot \mathbf{E}_0 + \epsilon_0[\chi^{(1)}(\omega)\cdot \mathbf{E}e^{-i\omega t} + c.c.]$$
+
+        <h2>第二节 光整流效应</h2>
+        <div class="Card-Definition">
+            <b>光整流效应</b>
+            <p>一个高强度单色激光通过非线性介质，由于二阶非线性差频过程产生一个直流极化场\(\mathbf{P}_0\)，并在介质中建立一个直流电场的现象.</p>
+        </div>
+
+        <h2>第三节 三波混频</h2>
+        <div class="Card-Definition">
+            <b>三波混频现象</b>
+            <p>两个频率不同的单色光同时入射到非线性介质中，产生和频与差频的效应.</p>
+        </div>
+        
+        <div class="Card-AI">
+            <p>在非线性介质中，同时入射两束强光电场，由于介质存在二阶非线性极化，介质内部会产生一个随时间振荡的新的极化源.</p>
+            <p>介质中的极化，本质上是正负电荷发生相对位移，当极化随时间振荡时，意味着电荷在加速运动.</p>
+            <p>加速运动的电荷会辐射出电磁波.</p>
+        </div>
+
+        <p>由<a class="goto" href="./Chapter1.html#SecondOrderP">二阶非线性极化强度的一般表示式</a>，可以得到三波混频中任何一对光波所感应的非线性极化强度复振幅：</p>
+        $$\mathbf{P}^{(2)}(\omega_1) = 2\epsilon_0\chi^{(2)}(\omega_3, -\omega_2):\mathbf{E}(\omega_3, z)\mathbf{E}^*(\omega_2, z)$$
+        $$\mathbf{P}^{(2)}(\omega_2) = 2\epsilon_0\chi^{(2)}(\omega_3, -\omega_1):\mathbf{E}(\omega_3, z)\mathbf{E}^*(\omega_1, z)$$
+        $$\mathbf{P}^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1, \omega_2):\mathbf{E}(\omega_1, z)\mathbf{E}(\omega_2, z)$$
+        <div class="Prove">
+            <p>考虑到\(\omega_3 = \omega_1 + \omega_2\)，因此仅计算：</p>
+            $$\begin{cases}
+            \omega_m, \omega_n = \omega_1, \omega_2\\
+            \omega_m, \omega_n = \omega_2, \omega_1\\
+            \end{cases}$$
+            <p>两项.</p>
+            $$\begin{align}
+            P^{(2)}(t) &= \epsilon_0\sum_{m,n}\chi^{(2)}(\omega_m,\omega_n)E(\omega_m)E(\omega_n)e^{-i(\omega_m + \omega_n)t}\\
+                       &= \epsilon_0\chi^{(2)}(\omega_1,\omega_2)E(\omega_1)E(\omega_2)e^{-i\omega_3t} + \epsilon_0\chi^{(2)}(\omega_2,\omega_1)E(\omega_2)E(\omega_1)e^{-i\omega_3t}
+            \end{align}$$
+            <p>考虑到二阶极化率的<a class="goto" href="./Chapter1.html#Properties1">本征对易对称性</a>，有：</p>
+            $$\chi^{(2)}(\omega_1, \omega_2) = \chi^{(2)}(\omega_2, \omega_1)$$
+            $$\therefore P^{(2)}(t) = 2\epsilon_0\chi^{(2)}(\omega_1,\omega_2)E(\omega_1)E(\omega_2)e^{-i\omega_3t}$$
+            <p>省略时间相位因子，得到非线性极化强度复振幅为：</p>
+            $$P^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1,\omega_2)E(\omega_1)E(\omega_2)$$
+            <p>考虑张量形式，才会引入<a class="goto" href="../../Math/TensorAnalysis/Dyad.html#DoubleDotProduct">并联式双点积</a>，得到：</p>
+            $$\mathbf{P}^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1, \omega_2):\mathbf{E}(\omega_1, z)\mathbf{E}(\omega_2, z)$$
+        </div>
+
+        <div class="Card-AI">
+            <p>光波的角频率由时间相位因子的\(\omega\)决定，当只关注频率为\(\omega_n\)的光波时，就只用计算能构成\(\omega_n\)的频率的排列组合即可.</p>
+        </div>
+
+        <div class="Card-AI">
+            <p>在推导特定频率（如ω₁）的耦合方程时，只考虑能产生该频率极化的频率组合项。对于ω₁ = ω₃ - ω₂的过程，仅此项满足频率匹配条件并对P⁽²⁾(ω₁)有贡献，其他项不参与该相互作用，故忽略.</p>
+        </div>
+
+        <p>非线性介质中，三波（\(\omega_1, \omega_2, \omega_3 = \omega_1 + \omega_2\)）混频的基本耦合波方程组：</p>
+        $$\frac{\mathrm{d}E(\omega_1, z)}{\mathrm{d}z} = \frac{i\omega_1^2}{k_1c^2}\chi_{eff}^{(2)}E(\omega_3, z)E^*(\omega_2, z)e^{-i\Delta kz}$$
+        $$\frac{\mathrm{d}E(\omega_2, z)}{\mathrm{d}z} = \frac{i\omega_2^2}{k_2c^2}\chi_{eff}^{(2)}E(\omega_3, z)E^*(\omega_1, z)e^{-i\Delta kz}$$
+        $$\frac{\mathrm{d}E(\omega_3, z)}{\mathrm{d}z} = \frac{i\omega_3^2}{k_3c^2}\chi_{eff}^{(2)}E(\omega_1, z)E^*(\omega_2, z)e^{i\Delta kz}$$
+        <ul>
+            <li>\(\chi_{eff}^{(2)}\in \mathbb{R}\)：有效非线性极化率，标量.</li>
+        </ul>
+
+        <div class="Card-AI">
+            <b>仿真</b>
+            $$y = u + iv$$
+            $$\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}u}{\mathrm{d}x} + i\frac{\mathrm{d}v}{\mathrm{d}x}$$
+            $$\frac{\mathrm{d} \Re(y)}{\mathrm{d}x} = \frac{\mathrm{d}u}{\mathrm{d}x} = \Re(\frac{\mathrm{d}y}{\mathrm{d}x})$$
+            $$\frac{\mathrm{d} \Im(y)}{\mathrm{d}x} = \frac{\mathrm{d}v}{\mathrm{d}x} = \Im(\frac{\mathrm{d}y}{\mathrm{d}x})$$
+
+            <p>求解该方程组，代入的数值是\(E_n(\omega_n, 0)\)，求解的是\(E_n(\omega_n, z)\)</p>
+        </div>
+
+        <div class="Card-AI">
+            <p>这三个方程描述的是同一个非线性过程的不同投影.</p>
+            <p>方程左边指复振幅随z的变化.</p>
+            <p>方程右边如果都是复振幅，那就是正比于；如果存在复振幅的复共轭，类似于反比的味道，比如说w_1 = w_3 - w_2，复共轭体现的就是那个“-”.</p>
+        </div>
+
+        <div class="Card-Question">
+            <p>1、什么是SVEA（慢变近似包络）？</p>
+            <p>2、什么是归一化包络？</p>
+        </div>
+
+        <h3>曼利-罗关系</h3>
+        <p>进行三波混频的光波所携带的总能量通量在介质内处处相等，光场与介质间无能量交换.</p>
+        $$S_{\omega_1} + S_{\omega_2} + S_{\omega_3} = C$$
+        <div class="Prove">
+            $$\begin{align}
+            &\frac{k_1}{\omega_1}E^*_1\frac{\mathrm{d}E_1}{\mathrm{d}z} + \frac{k_2}{\omega_2}E^*_2\frac{\mathrm{d}E_2}{\mathrm{d}z} + \frac{k_3}{\omega_3}E_3\frac{\mathrm{d}E^*_3}{\mathrm{d}z}\\
+            =& \frac{i}{c^2}\chi_{eff}^{(2)}(\omega_1E_1^*E_2^*E_3e^{-i\Delta kz} + \omega_2 E_1^*E_2^*E_3e^{-i\Delta kz} - \omega_3E_1^*E_2^*E_3e^{-i\Delta kz})\\
+            =& 0
+            \end{align}$$
+            <p>对上式取复共轭并相加，因为：</p>
+            $$x^*\frac{\mathrm{d}x}{\mathrm{d}t} + x\frac{\mathrm{d}x^*}{\mathrm{d}t} = \frac{\mathrm{d}}{\mathrm{d}t}(x\cdot x^*) = \frac{\mathrm{d}|x|^2}{\mathrm{d}t}$$
+            <p>故有：</p>
+            $$\frac{k_1}{\omega_1}\frac{\mathrm{d}|E_1|^2}{\mathrm{d}z} + \frac{k_2}{\omega_2}\frac{\mathrm{d}|E_2|^2}{\mathrm{d}z} + \frac{k_3}{\omega_3}\frac{\mathrm{d}|E_3|^2}{\mathrm{d}z} = 0$$
+            <p>积分得：</p>
+            $$\frac{k_1}{\omega_1}|E_1|^2 + \frac{k_2}{\omega_2}|E_2|^2 + \frac{k_3}{\omega_3}|E_3|^2 = C$$
+            <p>由<a class="goto" href="../PhysicalOptics/ReflectionAndTransmission.html#PoyntingVector">能流密度</a>表达式：</p>
+            $$S = \frac{1}{2}\epsilon|2E|^2v = \frac{2}{\mu_0}\frac{k}{\omega}|E|^2$$
+            <p>故：</p>
+            $$S_{\omega_1} + S_{\omega_2} + S_{\omega_3} = C$$
+        </div>
+
+        <div class="Card-Definition">
+            <b>曼利-罗关系</b>
+            $$\frac{S_{\omega_1}}{\omega_1} - \frac{S_{\omega_2}}{\omega_2} = C_1$$
+            $$\frac{S_{\omega_1}}{\omega_1} + \frac{S_{\omega_3}}{\omega_3} = C_2$$
+            $$\frac{S_{\omega_2}}{\omega_3} + \frac{S_{\omega_3}}{\omega_3} = C_3$$
+        </div>
+
+        <h3>和频产生</h3>
+        <p>假设非线性介质中，开始时并无频率为\(\omega_3\)的光波分量，该分量是由入射频率为\(\omega_1\)和\(\omega_2\)的光波混合产生的.</p>
+        <p>因此，称\(\omega_1\)和\(\omega_2\)光波为泵浦光，称\(\omega_3\)为信号光.</p>
+        <p>为确定所产生的频率为\(\omega_3\)的信号光波电场的变化规律，需要在给定入射光电场\(E(\omega_1, 0)\)和\(E(\omega_2, 0)\)的条件下，求解基本耦合波方程组.</p>
+        <p>有两种可供选择的求解方法：<b>小信号近似理论</b>与<b>大信号理论</b>.</p>
+
+        <b>小信号近似理论</b>
+        <p>认为在光混频过程中，频率\(\omega_1\)和\(\omega_2\)的泵浦光波强度改变很小，故可认为其强度在光波耦合过程中是不变的，此时将基本耦合波方程组中的\(E(\omega_1, z)\)与\(E(\omega_2, z)\)视为常数，只需求解\(E(\omega_3, z)\)式.</p>
+
+        <p>在满足相位匹配的条件下，即\(\Delta k=0\)时，方程</p>
+        $$\frac{\mathrm{d}E(\omega_3, z)}{\mathrm{d}z} = \frac{i\omega_3^2}{k_3c^2}\chi_{eff}^{(2)}E(\omega_1, z)E^*(\omega_2, z)e^{i\Delta kz}$$
+        <p>的解为：</p>
+        $$E(\omega_3, z) = \frac{i\omega_3^2}{k_3c^2}\chi_{eff}^{(2)}E(\omega_1,0)E(\omega_2,0)z$$
+
+        <div class="Card-Question">
+            <p>什么是相位匹配，什么是相位匹配条件，为什么要相位匹配？</p>
+        </div>
+
+        <b>大信号理论</b>
+        <p>认为在光混频过程中，需考虑泵浦抽空效应，\(\omega_1\)、\(\omega_2\)和\(\omega_3\)的光波强度都在变化，需要同时求解基本耦合波方程组中的三个方程.</p>
+
+        <div class="Card-AI">
+            <b>泵浦抽空效应</b>
+            <p>在三波混频（或二阶非线性）过程中，泵浦光因强度向信号光与闲置光转换能量而显著减弱的现象.</p>
+        </div>
+
+        <h2>谐波的产生</h2>
+        <p>一个频率为\(\omega_1\)的入射波产生谐波的过程：</p>
+        <p>1、产生频率为\(2\omega_1\)的二次谐波的极化波.</p>
+        <p>2、能量从极化波转移到频率为\(2\nu_1\)的电磁波.</p>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

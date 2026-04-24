@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>并矢</h1>
+
+        <div class="PageCatalog">
+            <ul>
+            </ul>
+        </div>
+
+        <div class="Card-Definition">
+            <b>并矢</b>
+            <p>任意两个矢量\(\mathbf{a}\)和\(\mathbf{b}\)并写在一起，称为并矢，也称为两个矢量的<b>张量积</b>.</p>
+            <p>记为\(\mathbf{a}\mathbf{b} = \mathbf{a}\otimes\mathbf{b}\).</p>
+            <p>[注]对于一维或二维张量，实则是求矩阵乘法.</p>
+        </div>
+
+        <div class="Card-AI">
+            $$(X\otimes Y)_{ij} = X_iY_j$$
+            <p>e.g.</p>
+            $$\mathbf{a} = \begin{bmatrix}
+                a_1\\
+                a_2\\
+                a_3
+            \end{bmatrix},\quad
+            \mathbf{b} = \begin{bmatrix}
+                b_1\\
+                b_2\\
+                b_3
+            \end{bmatrix}$$
+            $$\mathbf{a}\otimes\mathbf{b} = \begin{bmatrix}
+                a_1b_1 & a_1b_2 & a_1b_3 \\
+                a_2b_1 & a_2b_2 & a_2b_3 \\
+                a_3b_1 & a_3b_2 & a_3b_3
+            \end{bmatrix}$$
+        </div>
+
+        <div class="Card-Definition">
+            <b>多并矢（\(n\)阶并矢）</b>
+            <p>多于两个矢量的并矢.</p>
+        </div>
+
+        <div class="Card-Definition" id="DoubleDotProduct">
+            <b>双点积——并联式</b>
+            $$\mathbf{a}\mathbf{b}:\mathbf{c}\mathbf{d} = (\mathbf{a}\cdot\mathbf{c})(\mathbf{b}\cdot\mathbf{d})$$
+            <p>按照\((前\cdot前)(后\cdot后)\)的形式进行两两缩并.</p>
+
+            <b>双点积——串联式</b>
+            $$\mathbf{a}\mathbf{b}\cdot\cdot\mathbf{c}\mathbf{d} = (\mathbf{b}\cdot\mathbf{c})(\mathbf{a}\cdot\mathbf{d})$$
+            <p>按照\((内\cdot内)(外\cdot外)\)的形式进行两两缩并.</p>
+        </div>
+
+        <div class="Card-AI">
+            <p>并矢的运算优先级高于双点积.</p>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

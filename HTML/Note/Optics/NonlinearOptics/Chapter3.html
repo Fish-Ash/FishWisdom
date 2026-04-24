@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>光在非线性介质中传播时的波动方程</h1>
+        <p>[注]波浪号\(\sim\)表示随时间快速变化的量.</p>
+        <p>Maxwell方程祖为：</p>
+        $$\begin{align}
+        \nabla \cdot \tilde{\mathbf{D}} &= \tilde{\rho}\\
+        \nabla \cdot \tilde{\mathbf{B}} &= 0\\
+        \nabla \times \tilde{\mathbf{E}} &= -\frac{\partial \tilde{\mathbf{B}}}{\partial t}\\
+        \nabla \times \tilde{\mathbf{H}} &= \frac{\partial \tilde{\mathbf{D}}}{\partial t} + \tilde{\mathbf{J}}
+        \end{align}$$
+
+        <p>我们只关注其在无自由电荷区域内的解，因此：</p>
+        $$\tilde{\rho} = 0$$
+        <p>且其中不包含自由电流，因此：</p>
+        $$\tilde{\mathbf{J}} = 0$$
+        <p>假设介质是非磁性的，因此：</p>
+        $$\tilde{\mathbf{B}} = \mu_0 \tilde{\mathbf{H}}$$
+        <p>允许材料在满足以下条件时是非线性的：</p>
+        $$\tilde{\mathbf{D}} = \epsilon_0\tilde{\mathbf{E}} + \tilde{\mathbf{P}}$$
+        <p>其中，一般来说，极化强度矢量\(\tilde{\mathbf{P}}\)以非线性方式依赖于局域电场强度\(\tilde{\mathbf{E}}\).</p>
+        <div class="Card-AI">
+            <p>这句话的意思是，\(P = f(E)\)</p>
+        </div>
+
+        $$\begin{align}
+        \because \nabla\times\tilde{\mathbf{E}} &= -\frac{\partial \tilde{\mathbf{B}}}{\partial t}\\
+                                                &= -\mu_0\frac{\partial \tilde{\mathbf{H}}}{\partial t}
+        \end{align}$$
+        $$\begin{align}
+        \therefore \nabla\times\nabla\times\tilde{\mathbf{E}} &= -\mu_0\frac{\partial}{\partial t}(\nabla\times\tilde{\mathbf{H}})\\
+                                                        &= -\mu_0\frac{\partial}{\partial t}\left(\frac{\partial \tilde{\mathbf{D}}}{\partial t}\right)\\
+                                                        &= -\mu_0\frac{\partial^2\tilde{\mathbf{D}}}{\partial t^2}
+        \end{align}$$
+        $$\therefore\nabla\times\nabla\times\tilde{\mathbf{E}} + \mu_0\frac{\partial^2\tilde{\mathbf{D}}}{\partial t^2} = 0$$
+        $$\because\tilde{\mathbf{D}} = \epsilon_0\tilde{\mathbf{E}} + \tilde{\mathbf{P}}$$
+        $$\therefore\nabla\times\nabla\times\tilde{\mathbf{E}} + \epsilon_0\mu_0\frac{\partial^2\tilde{\mathbf{E}}}{\partial t^2} +\mu_0\frac{\partial^2\tilde{\mathbf{P}}}{\partial t^2} = 0$$
+        $$\because c = 1/\sqrt{\epsilon_0\mu_0}$$
+        $$\therefore\nabla\times\nabla\times\tilde{\mathbf{E}} + \frac{1}{c^2}\frac{\partial^2\tilde{\mathbf{E}}}{\partial t^2} = -\frac{1}{\epsilon_0 c^2}\frac{\partial^2\tilde{\mathbf{P}}}{\partial t^2}$$
+        <p>这是非线性光学中最普遍形式的波动方程.</p>
+        <p>在特定条件下该方程可以进一步简化，例如使用矢量分析（vector calculus）中的恒等式，有：</p>
+        $$\nabla\times\nabla\times\tilde{\mathbf{E}} = \nabla(\nabla\cdot\tilde{\mathbf{E}}) - \nabla^2\tilde{\mathbf{E}}$$
+
+        <p>在线性光学的各向同性无源介质中，有：</p>
+        $$\because \nabla\cdot\tilde{\mathbf{D}} = 0$$
+        $$\therefore \nabla\cdot\tilde{\mathbf{E}} = 0$$
+
+        <p>在非线性光学：</p>
+        $$\because\tilde{\mathbf{D}} = \epsilon_0\tilde{\mathbf{E}} + \tilde{\mathbf{P}}$$
+        $$\therefore \nabla\cdot\tilde{\mathbf{E}} \neq 0$$
+
+        <p>但对于通常关心的情形，例如\(\tilde{\mathbf{E}}\)具有横向无限平面波的形式，则：</p>
+        $$\nabla \cdot \tilde{\mathbf{E}} = 0$$
+        <p>更一般地，即使其不为零，也常可以证明其很小，尤其是在缓变振幅近似（slowly varying amplitude approximation）成立的情况下.</p>
+        <p>因此，在非线性光学中，波动方程通常可以简化为：</p>
+        $$\nabla^2\tilde{\mathbf{E}} - \frac{1}{c^2}\frac{\partial^2\tilde{\mathbf{E}}}{\partial t^2} = \frac{1}{\epsilon_0 c^2}\frac{\partial^2\tilde{\mathbf{P}}}{\partial t^2}$$
+        <p>亦即（\(\tilde{\mathbf{D}} = \epsilon_0\tilde{\mathbf{E}} + \tilde{\mathbf{P}}\)）：</p>
+        $$\nabla^2\tilde{\mathbf{E}} - \frac{1}{\epsilon_0 c^2}\frac{\partial^2\tilde{\mathbf{D}}}{\partial t^2} = 0$$
+
+        <div class="Card-Analysis">
+            <h2>区分线性部分与非线性部分</h2>
+            $$\because \tilde{\mathbf{P}} = \tilde{\mathbf{P}}^{(1)} + \tilde{\mathbf{P}}_{NL}$$
+            $$\begin{align}
+            \therefore \tilde{\mathbf{D}} &= \epsilon_0\tilde{\mathbf{E}} + \tilde{\mathbf{P}}^{(1)} + \tilde{\mathbf{P}}_{NL}\\
+                                          &= \tilde{\mathbf{D}}^{(1)} + \tilde{\mathbf{P}}_{NL}
+            \end{align}$$
+            <p>其中\(\tilde{\mathbf{D}}^{(1)}\)为\(\tilde{\mathbf{D}}\)的线性部分.</p>
+            $$\therefore \nabla^2\tilde{\mathbf{E}} - \frac{1}{\epsilon_0c^2}\frac{\partial^2\tilde{\mathbf{D}}^{(1)}}{\partial t^2} = \frac{1}{\epsilon_0 c^2}\frac{\partial^2\tilde{\mathbf{P}}_{NL}}{\partial t^2}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>无损、无色散介质的情况</h2>
+            <p>考虑无损、无色散介质的情况：</p>
+            $$\tilde{\mathbf{D}}^{(1)} = \epsilon_0\boldsymbol{\epsilon}^{(1)}\cdot\tilde{\mathbf{E}}$$
+            <ul>
+                <li>\(\boldsymbol{\epsilon}^{(1)}\)：实的、与频率无关的介电常数张量</li>
+            </ul>
+            <p>对于各向同性材料，上述关系可以进一步简化为：</p>
+            $$\tilde{\mathbf{D}}^{(1)} = \epsilon_0\epsilon^{(1)}\tilde{\mathbf{E}}$$
+            <ul>
+                <li>\(\epsilon_0 = 8.854 \times 10^{-12}\text{F/m}\)：真空介电常数</li>
+                <li>\(\epsilon^{(1)}\)：相对介电常数，无量纲标量，其值与介质种类有关</li>
+            </ul>
+            <p>波动方程进一步简化为：</p>
+            $$\nabla^2\tilde{\mathbf{E}} - \frac{\epsilon^{(1)}}{c^2}\frac{\partial^2\tilde{\mathbf{E}}}{\partial t^2} = \frac{1}{\epsilon_0 c^2}\frac{\partial^2\tilde{\mathbf{P}}_{NL}}{\partial t^2}$$
+            <div class="Card-AI">
+                $$L[\mathbf{E}] = \nabla^2\tilde{\mathbf{E}} - \frac{\epsilon^{(1)}}{c^2}\frac{\partial^2\tilde{\mathbf{E}}}{\partial t^2}$$
+                <p>具有这种形式的方程被称为驱动波动方程.</p>
+                $$L[\mathbf{E}] = S$$
+                <p>\(S\)被称为源项</p>
+            </div>
+            <p>这个方程具有受驱动波动方程（driven wave equation）（非齐次）的形式.</p>
+            <p>介质的非线性响应作为源项出现在方程的右侧，若无这个源项，上式的解就是以速度\(c/n\)传播的自由波.</p>
+            <p>其中：</p>
+            $$n = \sqrt{\epsilon^{(1)}}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>色散介质的情况</h2>
+            <p>对于色散介质，必须分别考虑每个频率分量：</p>
+            $$\tilde{\mathbf{E}}(\mathbf{r}, t) = \sum_n' \tilde{\mathbf{E}}_n(\mathbf{r}, t)$$
+            $$\tilde{\mathbf{P}}_{NL}(\mathbf{r}, t) = \sum_n' \tilde{\mathbf{P}}_{NL, n}(\mathbf{r}, t)$$
+            $$\tilde{\mathbf{D}}^{(1)}(\mathbf{r}, t) = \sum_n' \tilde{\mathbf{D}}_n^{(1)}(\mathbf{r}, t)$$
+            <div class="Card-AI">
+                <p>其中，每一个\(n\)对应一个频率分量.</p>
+            </div>
+            <p>求和仅对正的场分量进行</p>
+            <div class="Card-AI">
+                <p>就是不考虑\(-\omega\)的情况.</p>
+            </div>
+            <p>每一个频率分量可以写成复振幅的形式：</p>
+            $$\tilde{\mathbf{E}}_n(\mathbf{r}, t) = \mathbf{E}_n(\mathbf{r})e^{-i\omega_n t} + c.c.$$
+            $$\tilde{\mathbf{P}}_{NL, n}(\mathbf{r}, t) = \mathbf{P}_{NL, n}(\mathbf{r})e^{-i\omega_n t} + c.c.$$
+            $$\tilde{\mathbf{D}}_n^{(1)}(\mathbf{r}, t) = \mathbf{D}_n^{(1)}(\mathbf{r})e^{-i\omega_n t} + c.c.$$
+            <p>若损耗（dissipation）可以忽略，则：</p>
+            $$\mathbf{D}_n^{(1)}(\mathbf{r}) = \epsilon_0\boldsymbol{\epsilon}^{(1)}(\omega_n)\cdot\tilde{\mathbf{E}}_n(\mathbf{r}, t)$$
+            <ul>
+                <li>\(\boldsymbol{\epsilon}^{(1)}(\omega_n)\)：实的、频率相关的介电张量</li>
+            </ul>
+            $$\therefore \nabla^2\tilde{\mathbf{E}}_n - \frac{\boldsymbol{\epsilon}^{(1)}(\omega_n)}{c^2}\frac{\partial^2\tilde{\mathbf{E}}_n}{\partial t^2} = \frac{1}{\epsilon_0 c^2}\frac{\partial^2\tilde{\mathbf{P}}_{NL,n}}{\partial t^2}$$
+            <p>该方程对各个频率分量均成立.</p>
+        </div>
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

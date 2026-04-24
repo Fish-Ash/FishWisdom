@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>电光调制器（electro-optic modulator, EOM）</h1>
+
+        <b>预备知识</b>
+        <ul>
+            <li>晶体双折射</li>
+            <li>折射率椭球</li>
+            <li><a href="../NonlinearOptics/Chapter4.html#PocklerEffect">线性电光效应</a></li>
+        </ul>
+
+        <div class="Card-Definition">
+            <b>线性电光效应（普克尔效应）</b>
+            <p>某些缺乏中心对称晶格结构的晶体在外电场作用下，其折射率会发生变化.</p>
+            <p>当折射率的变化量与电场强度成正比时，这种效应就称为线性电光效应.</p>
+        </div>
+        <p>利用线性电光效应可以制成电光调制器，对光波的幅度或相位进行调制.</p>
+        <div class="Card-AI">
+            <p>所谓调制就是改变.</p>
+        </div>
+        <p>当存在外加电场时，折射率椭球各轴的方向和长度会发生变化，感应的折射率椭球在原主轴坐标系x,y,z中的一般形式表示为：</p>
+        $$(\frac{1}{\eta_x^2} + \Delta b_1)x^2 + (\frac{1}{\eta_y^2} + \Delta b_2)y^2 + (\frac{1}{\eta_z^2}+\Delta b_3)z^2 + 2\Delta b_4 yz + 2\Delta b_5xz + 2\Delta b_6xy = 1$$
+        <p>对于该式，总可以找到一个新的坐标系x'y'z'，使得感应的折射率椭球在这个坐标系中有形式简单的表达：</p>
+        $$\frac{x'^2}{\eta_{x'}^2} + \frac{y'}{\eta_{y'}^2} + \frac{z'}{\eta_{z'}^2} = 1$$
+        <div class="Card-AI">
+            <p>这是椭球面的广义写法.</p>
+            <p>式子中\(2\Delta b_4 yz\)等三项说明x,y,z坐标轴已不是主轴.</p>
+        </div>
+        <p>Pockler效应中，折射率椭球系数变化量与外加电场之间满足线性关系：</p>
+        $$\left[\begin{matrix}\Delta b_1\\\Delta b_2\\\Delta b_3\\\Delta b_4\\\Delta b_5\\\Delta b_6\end{matrix}\right]
+        =\left[\begin{matrix}
+        \gamma_{11}&\gamma_{12}&\gamma_{13}\\
+        \gamma_{21}&\gamma_{22}&\gamma_{23}\\
+        \gamma_{31}&\gamma_{32}&\gamma_{33}\\
+        \gamma_{41}&\gamma_{42}&\gamma_{43}\\
+        \gamma_{51}&\gamma_{52}&\gamma_{53}\\
+        \gamma_{61}&\gamma_{62}&\gamma_{63}
+        \end{matrix}\right]\left[\begin{matrix}
+        E_x\\E_y\\E_z
+        \end{matrix}\right]$$
+        <p>矩阵元\(\gamma_{ij}\)为线性电光系数，是由材料决定的常数.</p>
+
+        <b>磷酸二氘钾（KDP）晶体的纵向应用</b>
+        <p>KDP（KH<sub>2</sub>PO<sub>4</sub>）属于\(\overline{4}2m\)点群，该点群的电光系数矩阵为：</p>
+        $$\gamma = \left[\begin{matrix}
+        0&0&0\\0&0&0\\0&0&0\\
+        \gamma_{41}&0&0\\0&\gamma_{41}&0\\0&0&\gamma_{63}
+        \end{matrix}\right]$$
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

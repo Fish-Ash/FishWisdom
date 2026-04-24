@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>相位匹配与准相位匹配</h1>
+
+        <div class="PageCatalog">
+            <ul>
+            </ul>
+        </div>
+
+        <p>讨论非线性光学相位匹配与相位匹配条件.</p>
+        <p>这直接决定了某个非线性光学过程的效率，或者说使需要的非线性光学在众多可能发生的非线性光学过程中占优势.</p>
+
+        <div class="Card-Analysis">
+            <h2>引入</h2>
+            <p>简单起见，假设耦合方程</p>
+            $$\frac{\mathrm{d}A_3}{\mathrm{d}z}= \frac{2id_{eff}\omega_3^2}{k_3c^2}A_1A_2e^{i\Delta kz}$$
+            <p>右端的输入场振幅\(A_1\)与\(A_2\)为常数.</p>
+            <p>当处输入场向和频场的转换不太大，这一假设就是成立的.</p>
+            <p>当\(\Delta k = 0\)时，和频场的振幅\(A_3\)将随\(z\)线性增长，因此其强度随\(z\)二次增长.</p>
+            <div class="Card-AI">
+                <p>这里的强度指\(I\propto|A_3|^2\)</p>
+            </div>
+            <p>\(\Delta k = 0\)称为<b>完全相位匹配条件</b>.</p>
+            <p>当完全相位匹配条件满足时，所产生的波与非线性极化保持固定的相位关系，且能最有效地从入射波中提取能量.</p>
+            <div class="Card-Question">
+                <p>为什么？</p>
+            </div>
+            <p>从微观角度看，完全相位匹配条件满足时，构成材料体系的各个原子偶极子具有合适的相位，从而每个偶极子所辐射出的场在前向方向上相干叠加.</p>
+            <p>因此，由这些偶极子整体辐射出的总功率，与参与作用的原子数平方成正比.</p>
+
+            <div class="Card-AI">
+                <p>原子偶极子是指原子内部正、负电荷中心发生相对偏移后形成的电偶极矩.</p>
+                <p>原子偶极子的相位，是指原子偶极矩随时间振荡时的相位角，表示该原子在振荡周期中“振荡到哪一步了”.</p>
+            </div>
+
+            <p>当完全相位匹配条件不被满足时，辐射出的光强将会相对于\(\Delta k = 0\)的情形有所减弱.</p>
+            <p>这种情况下，非线性介质出口面处的和频场振幅可由积分得到：</p>
+            $$\begin{align}
+            A_3 &= \int_{0}^{L} \frac{2id_{eff}\omega_3^2}{k_3c^2}A_1A_2e^{i\Delta kz} dz\\
+                &= \frac{2id_{eff}\omega_3^2}{k_3c^2}A_1A_2\int_{0}^{L} e^{i\Delta kz} dz\\
+                &= \frac{2id_{eff}\omega_3^2A_1A_2}{k_3c^2}\left(\frac{e^{i\Delta kL}-1}{i\Delta k}\right)\\
+            \end{align}$$
+            <p>\(\omega_3\)波的强度由时间平均poyting矢量的大小给出，按照场振幅的定义，有：</p>
+            $$I_i = 2n_i\epsilon_0|A_i|^2,\quad i=1,2,3$$
+            $$\therefore I_3 = \frac{8n_3\epsilon_0d_{eff}^2\omega_3^4|A_1|^2|A_2|^2}{k_3c^2}\left|\frac{e^{i\Delta kL}-1}{\Delta k}\right|^2$$
+
+            <div class="Formula">
+                $$\because (e^{ix} - 1)^2 = 2-2\cos x$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    (e^{ix} - 1)^2 &= (\cos x + i\sin x - 1)^2\\
+                                    &= (\cos x - 1)^2 + \sin^2 x\\
+                                    &= \cos^2 x - 2\cos x + 1 + \sin^2 x\\
+                                    &= 2-2\cos x
+                    \end{align}$$
+                </div>
+            </div>
+
+            <p>出现在这个方程中的模平方项可以写成：</p>
+            $$\begin{align}
+            \left|\frac{e^{i\Delta kL}-1}{\Delta k}\right|^2 &= 2\frac{1-\cos(\Delta kL)}{(\Delta k)^2}\\
+                                                             &= L^2\frac{\sin^2(\Delta kL/2)}{(\Delta kL)^2}\\
+                                                             &= L^2\mathrm{sinc}^2\left(\frac{\Delta kL}{2}\right)
+            \end{align}$$
+            <p>[注]\(\mathrm{sinc}(x) = \frac{\sin x}{x}\)</p>
+            <div class="Formula">
+                $$\therefore I_3 = \frac{8d_{eff}^2\omega_3^2I_1I_2}{n_1n_2n_3\epsilon_0c^2}L^2\mathrm{sinc}^2\left(\frac{\Delta kL}{2}\right)$$
+                <div class="Derivation">
+                    $$\because k_3 = \frac{n_3\omega_3}{c}$$
+                    $$|A_1|^2 = \frac{I_1}{2n_1\epsilon_0}$$
+                    $$|A_2|^2 = \frac{I_2}{2n_2\epsilon_0}$$
+                    $$\begin{align}\therefore
+                    I_3 &= \frac{c^2}{n_3^2\omega_3^2}\cdot\frac{8n_3\epsilon_0d_{eff}^2\omega_3^2}{c^3}\cdot\frac{I_1}{2n_1\epsilon_0c}\cdot\frac{I_2}{2n_2\epsilon_0c}\cdot L^2\mathrm{sinc}^2\left(\frac{\Delta kL}{2}\right)\\
+                        &= \frac{8d_{eff}^2\omega_3^2I_1I_2}{n_1n_2n_3\epsilon_0c^2}L^2\mathrm{sinc}^2\left(\frac{\Delta kL}{2}\right)
+                    \end{align}$$
+                </div>
+            </div>
+            <ul>
+                <li>\(\mathrm{sinc}^2\left(\frac{\Delta kL}{2}\right)\)：<b>相位失配因子</b></li>
+            </ul>
+            <p>[注]波矢失配的影响已完全包含在相位失配因子中.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>相位失配因子</b>
+            $$\mathrm{sinc}^2\left(\frac{\Delta kL}{2}\right)$$
+            <img src="Img/PhaseMismatchFactor.png" alt="" width="400">
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>相位失配因子分析</h2>
+            <p>可以看到，随着\(|\Delta k|L\)的增大，三波混频过程的效率会下降，且会出现一定程度的振荡行为.</p>
+            <p>产生这种现象的原因是：若\(L\)大于约\(1/\Delta k\)，输出波就可能与其驱动极化失相，从而功率会从\(\omega_3\)波回流到\(\omega_1\)和\(\omega_2\)波中.</p>
+            <p>基于此，有时将</p>
+            $$L_{c} = \frac{2}{\Delta k}$$
+            <p>定义为相互作用的相干积累长度，于是相位失配因子可以写为：</p>
+            $$\mathrm{sinc}^2\left(\frac{L}{L_c}\right)$$
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>相位匹配的概念</h2>
+            <p>以二次谐波产生过程为例，从辐射的相干叠加观点引入并说明相位匹配的概念.</p>
+            <p>设基波光电场表达式为：</p>
+            $$\mathbf{E}_\omega = \mathbf{E}_1\cos(\omega t - k_1z) = \mathbf{E}(\omega)e^{-i\omega t}+c.c.$$
+            <div class="Card-AI">
+                $$c.c. = \mathbf{E}^*(\omega)e^{i\omega t}$$
+            </div>
+            <p>其中：</p>
+            $$E(\omega) = \frac{1}{2}E_1e^{ik_1z}$$
+            $$k_1 = \frac{2\pi}{\lambda} = \frac{n_1\omega}{c}$$
+
+            <b>相位匹配方法</b>
+            <ul>
+                <li>利用晶体的双折射特性补偿晶体的色散效应，实现相位匹配</li>
+                <li>在气体工作物质中，利用缓冲气体提供必要的色散，实现相位匹配</li>
+            </ul>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>晶体中的相位匹配</h2>
+            <h3>角度相位匹配——临界相位匹配</h3>
+
+            <p>在二次谐波过程中，如果取基波（波长为\(0.6943\mu m\)）为寻常光偏振，二次谐波（波长为\(0.3472\mu 1\)）为非常光偏振，则基波折射率\(n_o^\omega\)介于二次谐波的两个主折射率\(n_o^{2\omega}\)与\(n_e^{2\omega}\)之间.</p>
+
+            <div class="Card-AI">
+                <p>这里的“取”是指可以随意控制吗？</p>
+            </div>
+            
+
+
+
+            <h3>温度相位匹配——非临界相位匹配</h3>
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

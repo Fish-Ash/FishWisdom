@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>电磁学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+
+        <h1>电介质</h1>
+
+        <div class="Card-Definition" id="Dielectric">
+            <b>电介质</b>
+            <p>不导电的绝缘介质，内部无可以自由移动的电荷（自由电子）.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>电介质与静电场的相互作用</h2>
+            <p>导体与电场相互作用的特点：</p>
+            <p>即导体上的电荷与空间中的电场相互影响，最后达到平衡状态.</p>
+            <p>电场可以改变导体上的电荷分布，产生感应电荷；反过来，导体上的电荷又改变着电场上的分布.</p>
+
+            <p>将电介质板插入平行板电容器中间，可增大电容器的电容.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>极化</h2>
+            <p>任何物质的分子或原子，都是由带负电的电子与带正电的原子核组成，整个分子中电荷的代数和为0.</p>
+            <p>正、负电荷在分子中都不是集中于一点的，但在离开分子的距离比分子的线度大得多的地方，分子中全部负电荷对于这些地方的影响将和一个单独的负电荷等效.</p>
+            <div class="Card-AI">
+                <p>就是说把一堆分布在分子或原子中的负电荷当成一个整体来看待，这里只讲的是负电荷，没有提正电荷的.</p>
+            </div>
+            <p>这个等效负电荷的位置称为这个分子的负电荷“重心”.</p>
+            <p>同样，每个分子的正电荷也有一个正电荷“重心”.</p>
+            <div class="Card-Definition">
+                <b>无极分子</b>
+                <p>外电场不存在时，电介质分子的正负电荷“重心”重合.</p>
+                <p>[注]H<sub>2</sub>、N<sub>2</sub>、CCl<sub>4</sub>等分子是无极分子.</p>
+            </div>
+            <div class="Card-Definition">
+                <b>有极分子</b>
+                <p>外电场不存在时，电介质分子的正负电荷“重心”不重合，形成电偶极矩，称为分子的<b>固有电矩</b>.</p>
+                <p>[注]H<sub>2</sub>O等分子是有极分子.</p>
+            </div>
+            
+            <div class="Card-Definition">
+                <b>极化电荷\(q'\)（束缚电荷）</b>
+                <p>电介质极化出现的电荷。</p>
+                <p>极化电荷不能离开电介质转移到其他带电体上，也不能在电介质内部自由移动.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>电介质的极化</b>
+                <p>在外电场的作用下，电介质内的正、负电荷仍可作微观的相对移动，从而使电介质内部或表面出现带电现象。</p>
+                <p>此时，总电场\(\mathbf{E}\)是自由电荷电场强度\(\mathbf{E}_0\)和极化电荷电场强度\(\mathbf{E}'\)的叠加。</p>
+            </div>
+
+            <h3>无极分子的电子位移极化</h3>
+            <div class="Card-Definition">
+                <b>感生电矩</b>
+                <p>在外电场作用下产生的电偶极矩.</p>
+            </div>
+    
+            <p>给无极分子施加一个外电场，分子内的正电荷“重心”会沿外电场方向移动；负电荷“重心”会沿外电场的反方向移动，从而形成感生电矩.</p>
+            <p>在和外电场垂直的两个介质端面上，一端出现负电荷，一端出现正电荷，这就是极化电荷.</p>
+
+            <div class="Card-Definition">
+                <b>电子位移极化</b>
+                <p>由于电子的质量比原子核小得多，所以在外电场作用下主要是电子位移产生极化，这种极化机制叫做<b>电子位移极化</b>.</p>
+            </div>
+
+            <p>无极分子构成的电介质中，极化机制为电子位移极化.</p>
+
+
+            <h3>有极分子的取向极化</h3>
+            <p>在没有外电场时，虽然每一分子具有固有电矩，但由于分子的不规则热运动，在任何一块电介质中，所有分子的固有电矩的矢量和平均来说相互抵消，即电矩的矢量和\(\sum\mathbf{p}_i = 0\)，宏观上不产生电场.</p>
+            <p>加上外电场\(\mathbf{E}\)后，每个分子电矩受力矩作用，时分子电矩方向转向外电场方向，于是\(\sum\mathbf{p}_i \neq 0\).</p>
+            <p>但由于分子热运动，这种转向并不完全，即所有分子偶极子并不是很整齐地依电场方向排列.</p>
+            <p>外电场越强，分子偶极子排列越整齐.</p>
+            <p>对于整个电介质来说，不管排列的整齐程度如何，在垂直于电场方向的两端面上也产生了极化电荷.</p>
+
+            <div class="Card-Definition">
+                <b>取向极化</b>
+                <p>在外电场作用下，由于绝大多数分子电矩的方向都不同程度指向右方，所以会使一端出现未被抵消的负束缚电荷，另一端出现正束缚电荷，这种极化机制叫做<b>取向极化</b>.</p>
+            </div>
+
+            <p>有极分子构成的电介质中，极化机制主要为取向极化，也存在电子位移极化.</p>
+        </div>
+
+
+        <div class="Card-Definition">
+            <b>介质极化率\(\chi\)</b>
+            <p>对于同一点，\(\chi\)为一个常数，但不同点的\(\chi\)可以不同。若电介质中各点的\(\chi\)相同，则该电介质为均匀电介质。</p>
+            <p>\(\chi\)是电介质材料的属性.</p>
+        </div>
+
+        <div class="Card-Definition" id="Polarization">
+            <b>极化强度\(\mathbf{P}\)</b>
+            <p>大多数各向同性介质中：</p>
+            $$\mathbf{P} = \epsilon_0\chi\mathbf{E}$$
+            <div class="Card-AI">
+                <p>非线性介质、色散介质等各向同性介质不满足.</p>
+            </div>
+        </div>
+
+        <b>极化强度与极化电荷的关系式</b>
+        $$\oint_S\mathbf{P}\mathrm{d}\mathbf{S} = -\sum q_i'$$
+
+
+        <b>电介质的击穿</b>
+        <p>当外电场不太强时，只是引起电介质的极化，不会破坏电解质的绝缘性能。</p>
+        <p>当外电场过强时，电介质分子中的正负电荷有可能被拉开而形成可自由移动的电荷，由于大量自由电荷的产生，电介质的绝缘性能就会遭到明显破坏而变成导体，这种现象就叫做电介质的击穿。</p>
+
+
+        <b>击穿电场强度</b>
+        <p>一种电介质材料能承受的不被击穿的最大电场强度。</p>
+
+
+        <div class="Card-Analysis">
+            <b>电位移矢量\(\mathbf{D}\)</b>
+            $$\mathbf{D} = \epsilon_0\mathbf{E} + \mathbf{P}$$
+            <span class="tip">各向同性介质<span class="tiptext">$$\mathbf{P} = \epsilon_0\chi\mathbf{E}$$</span></span>中：令\(\epsilon_r = 1 + \chi\)为<b>介质的相对介电常数</b>有：
+            $$\mathbf{D} = \epsilon_0(1 + \chi)\mathbf{E} = \epsilon_0\epsilon_r\mathbf{E} = \epsilon\mathbf{E}$$
+
+            <p>各向同性介质中：</p>
+            $$\mathbf{D} = \epsilon\mathbf{E} = \epsilon_0\epsilon_r\mathbf{E}$$
+            <ul>
+                <li>\(\epsilon = \epsilon_0\epsilon_r\)：介电常数，标量</li>
+            </ul>
+            <p>\(\epsilon\)为标量\(\Rightarrow \mathbf{D}\)与\(\mathbf{E}\)同方向.</p>
+            
+            <hr>
+
+            <p>各向异性介质中：</p>
+            $$\mathbf{D} =\boldsymbol{\epsilon}\cdot\mathbf{E} = \epsilon_0\boldsymbol\cdot{\epsilon}_r\mathbf{E}$$
+            <ul>
+                <li>\(\boldsymbol{\epsilon} = \epsilon_0\boldsymbol{\epsilon}_r\)：介电张量，二阶张量</li>
+                <li>\(\epsilon_0\)：真空介电常数，标量</li>
+            </ul>
+            <p>分量形式为：</p>
+            <div class="Formula">
+                $$D_i = \epsilon_0\epsilon_{ij}E_j,\quad i,j=x,y,z$$
+                <div class="Derivation">
+                    <p>此处使用了Einstein求和约定，展开为：</p>
+                    $$D_x = \epsilon_0(\epsilon_{xx}E_x + \epsilon_{xy}E_y + \epsilon_{xz}E_z)$$
+                    $$D_y = \epsilon_0(\epsilon_{yx}E_x + \epsilon_{yy}E_y + \epsilon_{yz}E_z)$$
+                    $$D_z = \epsilon_0(\epsilon_{zx}E_x + \epsilon_{zy}E_y + \epsilon_{zz}E_z)$$
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

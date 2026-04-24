@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>物理光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>单轴晶体的光学特性</h1>
+
+        <div class="Card-Definition">
+            <b>光轴</b>
+            <p>单轴晶体中的一个特别方向.</p>
+            <p>通常记为\(Z\)方向.</p>
+        </div>
+
+        <div class="Card-AI">
+            <p>注意，光轴是一个特殊“方向”，而不是一个位置.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>主平面</b>
+            <p>包含光轴和光波波矢量\(\mathbf{k}\)的平面.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>寻常光束（o光）</b>
+            <p>偏振方向（即\(\mathbf{E}\)的振动方向）垂直于主平面的光束.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>异常光束（e光）</b>
+            <p>偏振方向平行于主平面的光束.</p>
+        </div>
+
+        <div class="Card-AI">
+            <p>o光与e光的传播方向可以任意.</p>
+        </div>
+
+        <p>o光的折射率与其传播方向无关；</p>
+        <p>e光的折射率随传播方向而变化.</p>
+
+        <p>[注]各向异性晶体中，折射率通常与光的偏振及其传播方向有关.</p>
+
+        <div class="Card-AI">
+            <p>不管沿哪个方向传播的o光折射率都是\(n_o\).</p>
+            <p>各向异性介质通常对不同传播方向、不同偏振方向的光，展现出不同的折射率.</p>
+        </div>
+
+
+        <div class="Card-Definition">
+            <b>双折射率\(\Delta n\)</b>
+            <p>o光与e光的折射率之差.</p>
+            <p>\(\Delta n\)的值沿光轴方向为\(0\)，而在垂直于光轴方向达到极大.</p>
+        </div>
+
+        <div class="Card-AI">
+            <p>这里沿光轴方向指的是o光和e光的传播方向均平行于光轴方向的情况.</p>
+            <p>事实上，当光的传播方向与光轴方向一致时，将无法确定主平面，因此也就无法区别o光与e光了.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>主折射率</b>
+            <p>在垂直于光轴方向上，o光和e光的折射率，分别记为\(n_o\)与\(n_e\).</p>
+        </div>
+
+        $$\begin{align}
+        n^e(\theta) &= n_o\sqrt{\frac{n_e^2}{n_o^2\sin^2\theta + n_e^2\cos^2\theta}}\\
+                    &= n_o\sqrt{\frac{1 + \tan^2\theta}{1 + (n_o/n_e)^2\tan^2\theta}}
+        \end{align}$$
+
+        <ul>
+            <li>\(\theta\)：极角，光传播方向与光轴方向的夹角</li>
+        </ul>
+        <ul>
+            <li>\(n^o(\theta) \equiv n_o\)</li>
+            <li>\(n^e(\theta = 90°) = n_e\)</li>
+            <li>\(n^e(\theta = 0°) = n_o\)</li>
+            <li>\(\Delta n(\theta) = n^e(\theta) - n_o\)</li>
+            <li>\(\Delta n(\theta = 0°) = 0\)</li>
+            <li>\(\Delta n(\theta = 90°) = n_e - n_o\)</li>
+        </ul>
+
+        <p>\(n_e\gt n_o\)的晶体，称为正单轴晶体.</p>
+        <p>\(n_e\lt n_o\)的晶体，称为负单轴晶体.</p>
+
+        <div class="Card-Definition" id="theta">
+            <b>极角\(\theta\)</b>
+            <p>光传播方向与光轴方向的夹角.</p>
+        </div>
+
+        <div class="Card-Definition" id="phi">
+            <b>方位角\(\phi\)</b>
+            <p>\(\mathbf{k}\)在\(XY\)面的投影与\(X\)轴的夹角.</p>
+            <img src="Img/UniaxialCrystal/theta&phi.png" alt="" width="200">
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>晶体的折射率椭球</h2>
+            <p>单轴晶体内，折射率与传播方向的关系既取决于半径为\(n_o\)的球（对o光），也取决于\(n_o\)与\(n_e\)为半轴旋转形成的椭球（对e光，椭球的旋转轴为光轴）.</p>
+            <p>在光轴方向上，圆球与椭球相交.</p>
+
+            <p>负晶体中，椭球体内切于球体；</p>
+            <p>正晶体中，椭球体外接于球体.</p>
+
+            <img src="Img/UniaxialCrystal/UniaxialCrystal1.jpg" alt="" width="400">
+
+            <p>当一束平面光波在单轴晶体中传播时，<a href="Chapter1.html#k" class="goto">波矢量\(\mathbf{k}\)</a>的方向通常与<a href="../PhysicalOptics/ReflectionAndTransmission.html#PoyntingVector" class="goto">能流密度\(\mathbf{S}\)</a>的方向不一致.</p>
+
+
+            <p>\(\mathbf{S}\)的方向可以定义为垂直于矢量\(\mathbf{k}\)和\(n(\theta)\)曲线交点处所作的正切线方向.</p>
+            <p>对于o光，\(n(\theta)\)函数是半径为\(n_o\)的球体，因此，垂直于其正切线则与波矢量\(\mathbf{k}\)重合.</p>
+            <img src="Img/UniaxialCrystal/UniaxialCrystal2.1.jpg" alt="" width="200">
+            <p>对于e光垂直于正切线方向（除了\(0°\)和\(90°\)）并不与波矢量\(\mathbf{k}\)重合，而是转开一个<b>双折射</b>或<b>走离角</b>.</p>
+            <img src="Img/UniaxialCrystal/UniaxialCrystal2.2.jpg" alt="" width="200">
+            <center>负单轴晶体</center>
+            $$\rho(\theta) = \arctan[(n_o/n_e)^2\tan\theta]-\theta$$
+            <img src="Img/UniaxialCrystal/UniaxialCrystal2.3.jpg" alt="" width="200">
+            <center>正单轴晶体</center>
+            $$\rho(\theta) = -\arctan[(n_o/n_e)^2\tan\theta]+\theta$$
+
+            <div class="Card-AI">
+                <p>走离角其实就是各向异性介质中\(\mathbf{S}\)与\(\mathbf{k}\)之间的夹角.</p>
+            </div>
+
+            <p>\(\rho\)与\(\theta\)的相互关系可以作为单轴晶体定向简单方法的基础.</p>
+            
+        </div>
+
+        <div class="Card-AI">
+            <table>
+                <tr>
+                    <td></td>
+                    <td>正晶体</td>
+                    <td>负晶体</td>
+                </tr>
+                <tr>
+                    <td>快轴</td>
+                    <td>o光方向</td>
+                    <td>e光方向</td>
+                </tr>
+                <tr>
+                    <td>慢轴</td>
+                    <tr>e光方向</tr>
+                    <tr>o光方向</tr>
+                </tr>
+            </table>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

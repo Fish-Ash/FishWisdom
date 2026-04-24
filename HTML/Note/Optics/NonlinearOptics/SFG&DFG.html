@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>和频与差频产生</h1>
+
+        <div class="Card-Analysis">
+            <h2>和频与差频产生</h2>
+            <p>入射到二阶非线性光学介质上的光场由两个不同频率的分量组成：</p>
+            $$\tilde{E}(t) = E_1e^{-i\omega_1t} + E_2e^{-i\omega_2t} + c.c.$$
+            $$\begin{align}
+            \tilde{P}^{(2)}(t) &= \epsilon_0\chi^{(2)}\tilde{E}^2(t)\\
+                               &= \epsilon_0\chi^{(2)}[E_1^2e^{-i2\omega_1t} + E_2^2e^{-i2\omega_2t} + 2E_1E_2e^{-i(\omega_1 + \omega_2)t} + 2E_1E_2^*e^{-i(\omega_1 - \omega_2)t} + c.c.]\\
+                               &\quad~ +\epsilon_0\chi^{(2)}[2E_1E_1^* + 2E_2E_2^*]\\
+                               &= \sum_nP(\omega_n)e^{-i\omega_nt}
+            \end{align}$$
+
+            $$P(2\omega_1) = \epsilon_0\chi^{(2)}E_1^2\quad(SHG)$$
+            $$P(2\omega_2) = \epsilon_0\chi^{(2)}E_2^2\quad(SHG)$$
+            $$P(\omega_1 + \omega_2) = 2\epsilon_0\chi^{(2)}E_1E_2\quad(SFG)$$
+            $$P(\omega_1 - \omega_2) = 2\epsilon_0\chi^{(2)}E_1E_2^*\quad(DFG)$$
+            $$P(0) = 2\epsilon_0\chi^{(2)}(E_1E_1^* + E_2E_2^*)\quad(OR)$$
+
+            <p>在上述四种现象中，至多只有一种现象可以展示出可观的强度.</p>
+            <p>原因在于，只有当满足相位匹配条件时，才能实现有效的非线性光学过程，通常情况下相位匹配条件不能对多个频率分量都成立.</p>
+            <p>可以通过改变入射光的偏振态与非线性晶体的取向来实现相位匹配.</p>
+
+            <hr>
+            <p>表面上看，差频产生与和频产生是相似的过程，但是通过光子能级图描述差频产生过程，可以看出二者具有一个重要区别.</p>
+            <p>由能量守恒定律，对于每一个在差频\(\omega_3 = \omega_1 - \omega_2\)处产生的光子，必然有一个处于较高输入频率（\(\omega_1\)）的光子被湮灭，产生一个频率为\(\omega_3\)的光子的同时伴随产生一个频率为\(\omega_2\)的光子.</p>
+            <p>因此，低频输入场\(\omega_2\)在差频产生过程中会得到放大.</p>
+            <p>因此，差频产生过程也被称为<b>光参量放大（Optical Parametric Amplification）</b>.</p>
+
+            <div class="Card-AI">
+                <p>一个频率为\(\omega_1\)的光子湮灭，必定伴随着一个频率为\(\omega_2\)和\(\omega_3\)的光子的产生.</p>
+                <p>\(\omega_3\)的光子成为差频的结果.</p>
+                <p>原本存在的\(\omega_2\)场被放大.</p>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>参量荧光（Parametric Fluorescence）</h2>
+            <p>按照差频产生的光子能级描述，原子首先吸收一个频率为\(\omega_1\)的光子，并跃迁到最高的虚能级。</p>
+            <p>随后，这个能级通过一个二光子发射过程衰减，而这一过程受到已存在的\(\omega_2\)场的刺激.</p>
+            <p>即使不外加\(\omega_2\)场，二光子发射仍可能发生，不过在这种情况下所产生的场会弱很多，因为它们是由虚能级的自发二光子发射产生的.</p>
+
+            <div class="Card-AI">
+                <p>原子吸收光子吸收的是外场的光子.</p>
+                <p>发生跃迁的是原子而非原子吸收的光子.</p>
+            </div>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光学参量振荡（Optical Parametric Oscillation）</h2>
+            <p>差频产生过程中，频率为\(\omega_2\)或\(\omega_3\)的辐射存在时，可以刺激在这些频率上发射出更多的光子.</p>
+            <p>若将用于这一过程的非线性晶体放置于光学谐振腔中，那么\(\omega_2\)和/或\(\omega_3\)的光场就可以积累到很大的强度，这样的器件成为<b>光学参量振荡器</b>.</p>
+
+            <b>参数</b>
+            <ul>
+                <li>泵浦频率：外加场频率\(\omega_1\)</li>
+                <li>信号频率：希望得到的输出频率</li>
+                <li>闲频频率：不希望得到的频率</li>
+            </ul>
+
+            <b>特点——可调谐</b>
+            <p>光学参量振荡器之所以时可调谐的，是因为任何小于\(\omega_1\)的频率\(\omega_2\)，总可以找到一个与之对应的频率\(\omega_3\)：</p>
+            $$\omega_3 = \omega_1 - \omega_2$$
+            <p>实际上，常通过调节相位匹配条件来控制光学参量振荡器的输出频率.</p>
+
+            <b>应用</b>
+            <p>光学参量振荡器常用于红外波段，因为在这一波段中，其他可调谐辐射源常不易获得.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>和频产生的耦合波方程</h2>
+            <p>色散介质中的波动方程</p>
+            $$\nabla^2\tilde{\mathbf{E}}_n - \frac{\boldsymbol{\epsilon}^{(1)}(\omega_n)}{c^2}\frac{\partial^2\tilde{\mathbf{E}}_n}{\partial t^2} = \frac{1}{\epsilon_0 c^2}\frac{\partial^2\tilde{\mathbf{P}}_{NL,n}}{\partial t^2}$$
+            <p>对每个频率分量均成立.</p>
+            <p>在没有非线性源项时，对于沿+z方向传播、频率为\(\omega_3\)的平面波，波动方程的解为：</p>
+            $$\tilde{E}_3(z, t) = A_3e^{-i(\omega_3 t - k_3z)} + c.c.$$
+            <p>其中：</p>
+            $$k_3 = \frac{n_3\omega_3}{c}$$
+            $$n_3^2 = \epsilon^{(1)}(\omega_3)$$
+            <p>[注]方便其间，这里采用标量场近似，\(n_3\)表示与\(\omega_3\)波偏振态对应的折射率.</p>
+            <ul>
+                <li>\(A_3\)：波的振幅，常数</li>
+            </ul>
+            <p>当非线性源项不是很强时，其解依旧为该形式，但此时\(A_3\)会变成\(z\)的一个缓慢变化的函数.</p>
+            <p>因此，存在非线性源项时，我们仍采用上述解作为波动方程的试探解，只是将\(A_3\)看作\(z\)的函数.</p>
+            <p>将波动方程中的源项写作：</p>
+            $$\tilde{P}_3(z,t) = P_3e^{-i\omega_3 t} + c.c.$$
+            $$\because P(\omega_3) = 4\epsilon_0d_{eff}E(\omega_1)E(\omega_2)$$
+            $$\therefore P_3 = 4\epsilon_0d_{eff}E_1E_2$$
+            <p>将外加场表示为：</p>
+            $$\tilde{E}_i(z, t) = E_i e^{-i\omega_i t} + c.c.,\quad i = 1, 2$$
+            <p>其中：</p>
+            $$E_i = A_ie^{ik_iz}$$
+            $$\therefore P_3 = 4\epsilon_0d_{eff}A_1A_2e^{i(k_1 + k_2)z}$$
+            <p>令\(p_3 = 4\epsilon_0d_{eff}A_1A_2\)</p>
+
+            <p>由于各场仅依赖于纵向坐标\(z\)，因此可以将\(\nabla^2\)简化为\(\frac{\mathrm{d}^2}{\mathrm{d} z^2}\)</p>
+            <div class="Card-AI">
+                <p>此处\(A\)是\(z\)的函数，是因为取了慢变近似的结果.</p>
+            </div>
+            $$\begin{align}\therefore
+            \nabla^2\tilde{E}_3 &= \frac{\mathrm{d}^2}{\mathrm{d} z^2}\left[A_3e^{-i(\omega_3 t - k_3z)} + c.c.\right]\\
+                                &= \frac{\mathrm{d}}{\mathrm{d} z}\left[\frac{\mathrm{d}A_3}{\mathrm{d}z}e^{-i(\omega_3 t - k_3z)} + A_3e^{-i(\omega_3 t - k_3z)}\cdot ik_3\right] + c.c.\\
+                                &= \frac{\mathrm{d}}{\mathrm{d} z}\left[\left(\frac{\mathrm{d}A_3}{\mathrm{d}z} + ik_3A_3\right)e^{-i(\omega_3 t - k_3z)}\right] + c.c.\\
+                                &= \left(\frac{\mathrm{d}^2 A_3}{\mathrm{d}z^2} + ik_3\frac{\mathrm{d}A_3}{\mathrm{d}z}\right)e^{-i(\omega_3 t - k_3z)} + \left(\frac{\mathrm{d}A_3}{\mathrm{d}z} + ik_3A_3\right)e^{-i(\omega_3 t - k_3z)}\cdot ik_3 + c.c.\\
+                                &= \left(\frac{\mathrm{d}^2 A_3}{\mathrm{d}z^2} + 2ik_3\frac{\mathrm{d}A_3}{\mathrm{d}z} - k_3^2A_3\right)e^{-i(\omega_3 t - k_3z)} + c.c.
+            \end{align}$$
+            $$\frac{\partial^2\tilde{E}_3}{\partial t^2} = -\omega_3^2A_3e^{-i(\omega_3 t - k_3z)} + c.c.$$
+            $$\frac{\partial^2\tilde{P}_3}{\partial t^2} = -4\epsilon_0d_{eff}\omega_3^2A_1A_2e^{-i[\omega_3 t - (k_1 + k_2)z]} + c.c.$$
+            <p>因此有：</p>
+            $$\begin{align}
+            &\left(\frac{\mathrm{d}^2 A_3}{\mathrm{d}z^2} + 2ik_3\frac{\mathrm{d}A_3}{\mathrm{d}z} - k_3^2A_3\right)e^{-i(\omega_3 t - k_3z)} + \frac{\epsilon^{(1)}(\omega_3)}{c^2}\cdot -\omega_3^2A_3e^{-i(\omega_3 t - k_3z)} + c.c.\\
+            =& \frac{1}{\epsilon_0 c^2}\cdot -4\epsilon_0d_{eff}\omega_3^2A_1A_2e^{-i[\omega_3 t - (k_1 + k_2)z]} + c.c.
+            \end{align}$$
+
+            $$\begin{align}
+            &\left(\frac{\mathrm{d}^2 A_3}{\mathrm{d}z^2} + 2ik_3\frac{\mathrm{d}A_3}{\mathrm{d}z} - k_3^2A_3 + \frac{\epsilon^{(1)}(\omega_3)A_3}{c^2}\right)e^{-i(\omega_3 t - k_3z)} + c.c.\\
+            =& -\frac{4d_{eff}\omega_3^2}{c^2}A_1A_2e^{-i[\omega_3 t - (k_1 + k_2)z]} + c.c.
+            \end{align}$$
+
+            $$\because k_3^2 = \frac{\epsilon^{(1)}(\omega_3)\omega_3^2}{c^2}$$
+            <p>等式两边同时去除复共轭项，等式依然成立，同时两边约去\(e^{-i\omega_3 t}\)于是有：</p>
+            $$\frac{\mathrm{d}^2 A_3}{\mathrm{d}z^2} + 2ik_3\frac{\mathrm{d}A_3}{\mathrm{d}z}= -\frac{4d_{eff}\omega_3^2}{c^2}A_1A_2e^{-i[k_3 - (k_1 + k_2)]z}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>慢变包络近似下的耦合方程</h2>
+            <div class="Card-AI">
+                <b>慢变包络近似（Slowly Varying Envelope Approximation, SVEA）</b>
+                <p>包络在空间和时间上的变化，都远慢于载波本身的振荡.</p>
+                $$\left|\frac{\mathrm{d} A}{\mathrm{d} r}\right| \ll \left|k_0A\right|$$
+                $$\left|\frac{\partial A}{\partial t}\right| \ll \left|\omega_0A\right|$$
+                <p>此外，包络的二阶变化很小，可以忽略，仅保留一阶变化.</p>
+                $$\left|\frac{\mathrm{d}^2 A}{\mathrm{d} r^2}\right| \ll \left|k_0\frac{\mathrm{d} A}{\mathrm{d} r}\right|$$
+                $$\left|\frac{\partial^2 A}{\partial t^2}\right| \ll \left|\omega_0\frac{\partial A}{\partial t}\right|$$
+            </div>
+
+            <p>由SEVA，有：</p>
+            $$\left|\frac{\mathrm{d}^2 A_3}{\mathrm{d}z^2}\right| \ll \left|k_3\frac{\mathrm{d}A_3}{\mathrm{d}z}\right|$$
+            <p>该条件要求：在约一个光学波长距离内，\(A_3\)的相对变化必须小于1.</p>
+            <p>同时引入波矢失配：</p>
+            <div class="Card-Definition">
+                <b>波矢失配（Wavevector Mismatch）</b>
+                $$\Delta k = k_1 + k_2 - k_3$$
+                <p>别称：动量失配（Momentum Mismatch）</p>
+            </div>
+            <p>得到耦合波方程：</p>
+            $$\frac{\mathrm{d}A_3}{\mathrm{d}z}= \frac{2id_{eff}\omega_3^2}{k_3c^2}A_1A_2e^{i\Delta kz}$$
+            <p>还可以更一般地写成使用非线性极化的慢变振幅\(p_3\)表示的形式：</p>
+            $$\frac{\mathrm{d}A_3}{\mathrm{d}z}= \frac{i\omega_3}{2\epsilon_0n_3c}p^3e^{i\Delta kz}$$
+            <p>之所以被称为耦合波方程，是因为其表明\(\omega_3\)波振幅的变化是由它与\(\omega_1\)、\(\omega_2\)波耦合导致的.</p>
+            <p>同理可得\(\omega_1\)与\(\omega_2\)波的空间变化，耦合方程为：</p>
+            $$\frac{\mathrm{d}A_1}{\mathrm{d}z}= \frac{2id_{eff}\omega_1^2}{k_1c^2}A_2^*A_3e^{-i\Delta kz}$$
+            $$\frac{\mathrm{d}A_2}{\mathrm{d}z}= \frac{2id_{eff}\omega_2^2}{k_2c^2}A_1^*A_3e^{-i\Delta kz}$$
+            <p>注意，上述方程是在介质无损的条件下推导出的，对于无损介质，无需在方程中显式写出损耗项.</p>
+            <p>此外，通过全排列对称条件（full permutation symmetry），可以得出每个方程中的耦合系数取相同的\(d_{eff}\).</p>
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

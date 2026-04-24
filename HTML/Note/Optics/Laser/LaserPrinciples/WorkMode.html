@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+        
+        <div>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+
+        <h1>连续与脉冲工作方式</h1>
+
+        <p>激光器按器泵浦方式，可分为<b>连续（CW）激光器</b>与<b>脉冲激光器</b>.</p>
+
+        <p>激光器的工作方式主要由泵浦速率的时间决定：</p>
+        <ul>
+            <li>连续方式：时间无限延伸时泵浦速率原则上均不为0.</li>
+            <li>脉冲方式：泵浦速率仅在某一（些）时段取非0值.</li>
+            <ul>
+                <li>单脉冲方式：泵浦速率仅在某一时段取非0值.</li>
+                <li>相同周期重复频率：取非0值的时段周期性重复.</li>
+            </ul>
+        </ul>
+        <div class="Card-Question">
+            <p>什么叫“时间无限延伸时”？</p>
+            <p>什么叫“泵浦速率”？</p>
+        </div>
+
+        <div class="Card-AI">
+            <b>泵浦速率</b>
+            <p>单位时间内，泵浦过程把多少粒子从低能级激发到高能级.</p>
+        </div>
+        
+        <div class="Card-Analysis">
+            <h2>连续激光器讨论</h2>
+            <p>对于连续激光器，激光工作物质在连续泵浦时间内，各能级粒子数密度及腔内光子数密度保持稳定，即：</p>
+            $$\mathrm{d}n_i/\mathrm{d}t = 0$$
+            $$\mathrm{d}N/\mathrm{d}t = 0$$
+            <p>这种情况下，各能级粒子数密度即光子数密度速率方程由微分方程简化为代数方程来求得稳态解.</p>
+
+            <div class="Card-Definition">
+                <b>长脉冲激光器</b>
+                <p>脉冲泵浦持续时间远大于受激辐射跃迁上能级寿命（\(t_0\gg \tau_2\)）的激光器.</p>
+            </div>
+            <p>由于脉冲泵浦持续时间足够长，长脉冲激光器也达到稳定状态，因此长脉冲激光器也可以看成一个连续激光器，使用连续激光器的理论进行处理.</p>
+        </div>
+
+        <div>
+            <h2>脉冲激光器讨论</h2>
+            <p>在脉冲激光器中，由于泵浦时间较短，在泵浦持续时间内，各能级粒子数密度及光子数密度均处于剧烈的变化中，在尚未达到平衡状态前，泵浦作用就已终止，整个激光系统处于非稳态.</p>
+            <p>因此，用速率方程讨论脉冲激光器的特性就比较复杂，但可在适当近似条件下得到速率方程的瞬态解，对脉冲激光与介质的相互作用及脉冲激光器的输出特性作出定性的解释.</p>
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

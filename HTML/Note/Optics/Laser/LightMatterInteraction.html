@@ -29,6 +29,33 @@
             </ul>
         </div>
 
+                <table>
+            <tr class="tbtitle">
+                <td><b>光与物质的相互作用过程</b></td>
+                <td>跃迁概率</td>
+                <td>爱因斯坦系数</td>
+                <td>跃迁速率</td>
+            </tr>
+            <tr>
+                <td><b>自发辐射跃迁</b></td>
+                <td>$$A_{21} = (\frac{\mathrm{d}n_{21}}{\mathrm{d}t})_\mathrm{sp}\frac{1}{n_2}$$</td>
+                <td>$$A_{21}$$</td>
+                <td>$$n_2A_{21}$$</td>
+            </tr>
+            <tr>
+                <td><b>受激吸收跃迁</b></td>
+                <td>$$W_{12} = (\frac{\mathrm{d}n_{12}}{\mathrm{d}t}_\mathrm{st})\frac{1}{n_1}$$</td>
+                <td>$$B_{12} = \frac{W_{12}}{\rho_\nu}$$</td>
+                <td>$$n_1 W_{12} = n_1B_{12}\rho_\nu$$</td>
+            </tr>
+            <tr>
+                <td><b>受激辐射跃迁</b></td>
+                <td>$$W_{21} = (\frac{\mathrm{d}n_{21}}{\mathrm{d}t})_\mathrm{st}\frac{1}{n_2}$$</td>
+                <td>$$B_{21} = \frac{W_{21}}{\rho_\nu}$$</td>
+                <td>$$n_2 W_{21} = n_2 B_{21} \rho_\nu$$</td>
+            </tr>
+        </table><br>
+
         <div class="Card-Definition">
             <b>光与物质的相互作用过程</b>
             <ul>
@@ -43,6 +70,10 @@
         <div class="Card-Definition">
             <b>二能级系统模型</b>
             <p>考虑原子的两个能级\(E_2 \gt E_1\)，且满足：</p>
+            <ul>
+                <li>\(E_1\)：低能级（基态）</li>
+                <li>\(E_2\)：高能级（激发态）</li>
+            </ul>
             $$E_2 - E_1 = h\nu$$
             <p>单位体积内处于两能级的原子数密度分别为\(n_1\)和\(n_2\).</p>
         </div>
@@ -110,32 +141,30 @@
             </div>
         </div>
 
-        <table>
-            <tr class="tbtitle">
-                <td><b>光与物质的相互作用过程</b></td>
-                <td>跃迁概率</td>
-                <td>爱因斯坦系数</td>
-                <td>跃迁速率</td>
-            </tr>
-            <tr>
-                <td><b>自发辐射跃迁</b></td>
-                <td>$$A_{21} = (\frac{\mathrm{d}n_{21}}{\mathrm{d}t})_\mathrm{sp}\frac{1}{n_2}$$</td>
-                <td>$$A_{21}$$</td>
-                <td>$$n_2A_{21}$$</td>
-            </tr>
-            <tr>
-                <td><b>受激吸收跃迁</b></td>
-                <td>$$W_{12} = (\frac{\mathrm{d}n_{12}}{\mathrm{d}t}_\mathrm{st})\frac{1}{n_1}$$</td>
-                <td>$$B_{12} = \frac{W_{12}}{\rho_\nu}$$</td>
-                <td>$$n_1 W_{12} = n_1B_{12}\rho_\nu$$</td>
-            </tr>
-            <tr>
-                <td><b>受激辐射跃迁</b></td>
-                <td>$$W_{21} = (\frac{\mathrm{d}n_{21}}{\mathrm{d}t})_\mathrm{st}\frac{1}{n_2}$$</td>
-                <td>$$B_{21} = \frac{W_{21}}{\rho_\nu}$$</td>
-                <td>$$n_2 W_{21} = n_2 B_{21} \rho_\nu$$</td>
-            </tr>
-        </table>
+        <div class="Card-Analysis">
+            <h2>爱因斯坦系数的相互关系</h2>
+            <p>腔内物质原子数按能级分布应服从热平衡状态下的玻尔兹曼分布：</p>
+            $$\frac{n_2}{n_1} = \frac{g_2}{g_1}\exp{\left(-\frac{E_2-E_1}{kT}\right)}$$
+            <p>式中，\(g_1\)和\(g_2\)分别为能级\(E_1\)和\(E_2\)的统计权重.</p>
+            <p>能量密度：</p>
+            $$\rho_v = \frac{8\pi h\nu^3}{c^3}\frac{1}{\exp{\left(\frac{h\nu}{kT}\right) - 1}}$$
+            <p>热平衡状态下，各能级上的粒子数应该保持动态平衡，即：</p>
+            $$A_{21}n_2 + W_{21}n_2 = W_{12}n_1$$
+            $$A_{21}n_2 + B_{21}\rho_vn_2 = B_{12}\rho_vn_1$$
+            <p>上三式对于\(T\rightarrow \infty\)的情况也应成立，则：</p>
+            $$\lim\limits_{T\rightarrow \infty}\frac{n_2}{n_1} = \frac{g_2}{g_1}$$
+            $$\lim\limits_{T\rightarrow \infty}\rho_v = \infty$$
+
+            $$\because A_21n_2 + B_{21}\rho_vn_2 = B_{12}\rho_vn_1$$
+            $$\therefore \frac{1}{\rho_1}A_{21}\frac{n_2}{n_1} + B_{21}\frac{n_2}{n_1} = B_{12}$$
+            $$\therefore B_{21}\frac{g_2}{g_1} = B_{12}$$
+            $$\therefore \frac{B_{12}}{B_{21}} = \frac{g_2}{g_1}$$
+            $$\therefore \frac{W_{12}}{W_{21}} = \frac{g_2}{g_1}$$
+        </div>
+
+
+
+
 
         <ul class="navibar">
             <li><a href="LaserIntroduction.html">上一页</a></li>

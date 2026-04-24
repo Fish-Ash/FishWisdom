@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>非线性极化率的性质</h1>
+
+        <p>考虑频率为\(\omega_1\)、\(\omega_2\)与\(\omega_3 = \omega_1 + \omega_2\)三个光波在无损二阶非线性介质中的相互作用.</p>
+
+        <div class="Card-Definition">
+            <b>极化率张量的真实性条件</b>
+            $$[\chi^{(r)}(\omega_1 , \omega_2, \cdots, \omega_r)]^* = \chi^{(r)}(-\omega_1^*, -\omega_2^*, \cdots, -\omega_r^*)$$
+            <div class="Card-AI">
+                <p>\(^*\)是取复共轭的意思.</p>
+                $$-\omega^* = -(\omega^*)$$
+            </div>
+            <p>当频率为实数时：</p>
+            $$[\chi^{(r)}(\omega_1 , \omega_2, \cdots, \omega_r)]^* = \chi^{(r)}(-\omega_1, -\omega_2, \cdots, -\omega_r)$$
+            <div class="Card-AI">
+                <p>一般来说频率都是实数.</p>
+            </div>
+        </div>
+        
+        <div class="Card-Definition" id="Properties1">
+            <b>本征对易对称性</b>
+            $$\chi^{(2)}(\omega_1, \omega_2) = \chi^{(2)}(\omega_2, \omega_1)$$
+        </div>
+        
+        <div class="Card-Analysis">
+            <b>完全对易对称性</b>
+            <p>在\(\chi^{(1)}(\omega)\)的表达式中，用\(-\omega\)代替\(\omega\)时，其值不变，即：</p>
+            $$\chi^{(1)}(-\omega) = \chi^{(1)}(\omega)$$
+            <p>在\(\chi^{(2)}(\omega_1, \omega_2)\)的表达式中，用\(-(\omega_1 + \omega_2)\)代替\(\omega_1\)或\(\omega_2\)时，其值不变，即：</p>
+            $$\chi^{(2)}[-(\omega_1 + \omega_2), \omega_2] = \chi^{(2)}[\omega_1, -(\omega_1 + \omega_2)] = \chi^{(2)}(\omega_1, \omega_2)$$
+            <p>在\(\chi^{(3)}(\omega_1, \omega_2, \omega_3)\)的表达式中，用\(-(\omega_1 + \omega_2 + \omega_3)\)代替\(\omega_1\)或\(\omega_2\)或\(\omega_3\)时，其值不变，即：</p>
+            $$\begin{align}
+            &\chi^{(3)}[-(\omega_1 + \omega_2 + \omega_3), \omega_2, \omega_3]\\
+            =&\chi^{(3)}[\omega_1, -(\omega_1 + \omega_2 + \omega_3), \omega_3]\\  
+            =&\chi^{(3)}[\omega_1, \omega_2, -(\omega_1 + \omega_2 + \omega_3)]\\
+            =&\chi^{(3)}(\omega_1, \omega_2, \omega_3)  
+            \end{align}$$
+        </div>
+        
+        <div class="Card-Analysis">
+            <b>空间对称性</b>
+            <p>三维空间中，介质的极化率是张量.</p>
+            <p>线性极化率\(\chi^{(1)}\)是二阶张量，一般有9个元素；</p>
+            <p>二阶极化率\(\chi^{(2)}\)是三阶张量，一般有27个元素；</p>
+            <p>三阶极化率\(\chi^{(3)}\)是四阶张量，一般有91个元素；</p>
+            <p>……</p>
+            <p>\(r\)阶极化率\(\chi^{(r)}\)是\(r+1\)阶张量.</p>
+
+            <p>晶体的对称性越高，极化率张量中的非零元素、独立元素数目越少.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>Kleinman对称性</h2>
+            <p>很多情况下，非线性相互作用所涉及的光波频率\(\omega_i\)都远小于材料系统的最低共振频率.</p>
+            <div class="Card-AI">
+                <b>材料系统的最低共振频率</b>
+                <p>材料出现明显共振吸收或强响应的最低频率.</p>
+            </div>
+            <p>这种条件下，非线性极化率基本与频率无关.</p>
+            <p>此外，在低频激发条件下，系统对外场的响应基本上是瞬时的，在这种条件下，非线性极化可以在时域中写成：</p>
+            $$\tilde{P}(t) = \epsilon_0\chi^{(2)}\tilde{E}(t)$$
+            <p>其中，\(\chi^{(2)}\)可以看作是常数.</p>
+
+            <p>当外加场频率\(\omega_i\)远小于共振频率\(\omega_0\)时，介质必然是无损的.</p>
+            <p>在这种情况下，全排列（full permutation）对称条件应当成立</p>
+        </div>
+
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

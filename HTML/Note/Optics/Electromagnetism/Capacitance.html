@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>电磁学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+
+        <h1>电容</h1>
+        <div class="Card-Analysis">
+            <h2>孤立导体的电容</h2>
+            <div class="Card-Definition">
+                <b>孤立导体</b>
+                <p>附近无其他导体或带电体的导体.</p>
+            </div>
+
+            $$C = \frac{q}{U}$$
+            <p>C是与导体的尺寸与形状有关，与q、U无关的常量，称为孤立导体的电容.</p>
+            <p>其物理意义是使导体每升高单位电势所需的电荷量.</p>
+
+            <p>国际单位制中，电容的单位为法拉(法)，\(F = C/V\).</p>
+            <p>常用单位有：</p>
+            $$1\mu F = 10^{-6}F$$
+            $$1pF = 10^{-12}F$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>平行板电容器</h2>
+            <p>实际常用的绝大多数电容器可看作：两块彼此靠得很近的平行金属极板组成的平行板电容器.</p>
+            <p>设两块金属极板面积为\(S\)，内表面间距为\(d\).</p>
+            <p>在极板面的线度远大于其间距离（\(S\gg d^2\)）的情况下，除边缘部分外，情况与两极板为无限大时差不多.</p>
+            <p>此时两极板内表面均带电，极板间的电场是均匀的.</p>
+            <p>设两极板A、B的电荷量分别是\(\pm q\)，则电荷面密度分别为\(\pm\sigma_e = \pm q/S\)，故电场强度为\(E = \sigma_e/\epsilon_0\)，电势差为：</p>
+            $$U_{AB} = \int_A^B \mathbf{E}\cdot\mathrm{d}\mathbf{l} = Ed = \frac{\sigma_ed}{\epsilon_0} = \frac{qd}{\epsilon_0S}$$
+            $$\therefore C_{AB} = \frac{q}{U_{AB}} = \frac{\epsilon_0S}{d}$$
+            <p>对于电容器的电容，常略去下标AB不写，即：</p>
+            $$C = \frac{\epsilon_0S}{d}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>电容器的串并联</h2>
+            <p>电容器的性能规格有两个主要指标：</p>
+            <ul>
+                <li>电容量</li>
+                <li>耐压能力</li>
+            </ul>
+            <p>使用电容器时，两极板所加电压不能超过所规定的耐压值，否则电容器内的电介质有被击穿的风险，即电介质失去绝缘作用，电容器损坏.</p>
+            <p>实际工作中，当遇到单独一个电容器在电容的数值或耐压能力方面不满足要求时，可以通过串联或并联多个电容器来达到所需的性能.</p>
+            <h3>并联</h3>
+            <p>电容器并联时，总电容等于各电容器电容之和.</p>
+            $$C = C_1 + C_2 + \cdots + C_n$$
+            <h3>串联</h3>
+            <p>电容器串联时，总电容的倒数等于各电容器电容的倒数之和.</p>
+            $$\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + \cdots + \frac{1}{C_n}$$
+
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

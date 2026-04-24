@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+
+        <h1>第四章 光在各向异性介质中的传播特性</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#WavePlate">波片</a></li>
+                <li><a href="#Birefringence">晶体的双折射</a></li>
+            </ul>
+        </div>
+
+        <p>光在各向同性介质中的传播特性是光在各向异性介质中传播特性的特殊情况.</p>
+        <p><b><a href="../OpticalFabrication/OpticalMaterial.html#Crystal">晶体</a></b>是典型的光学各向异性介质.</p>
+
+        <div class="Card-Analysis">
+            <h2>介电张量的主轴变换</h2>
+
+            <div class="Card-AI">
+                <p>各向异性介质中，总存在三个一般情况下正交的方向，具有如下性质：</p>
+                <p>朝这三个方向的某个方向施加电场时，电位移矢量与电场矢量同方向.</p>
+                <p>反之，若沿其他方向\(\mathbf{r}\)施加电场，电位移矢量总沿另外的\(\mathbf{r}'\)方向.</p>
+                <p>这样三个方向称为各向异性介质的主轴（介电轴）.</p>
+            </div>
+
+            <p>由光的电磁理论，晶体的介电张量\(\mathbf{\epsilon}\)为一个对称矩阵.</p>
+    
+            <p>晶体的介电张量为对称张量，经主轴变换后的介电张量为对角张量.</p>
+            $$\boldsymbol{\epsilon} = \epsilon_0\left[\begin{matrix}\epsilon_{xx}&0&0\\0&\epsilon_{yy}&0\\0&0&\epsilon_{zz}\end{matrix}\right]$$
+    
+    
+            <p>\(\epsilon_{xx},\epsilon_{yy},\epsilon_{zz}\)常称为主相对介电常数.</p>
+
+            <p>主轴坐标系中，有：</p>
+            $$D_i = \epsilon_0\epsilon_{ii}E_i,\quad i=x,y,z$$
+    
+            <p>由Maxwell关系式：</p>
+            $$n = \sqrt{\epsilon_r}$$
+            <p>可相应定义主折射率：\(n_x,n_y,n_z\).</p>
+
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>晶体的分类</h2>
+            <p>自然界中存在的晶体按其空间对称性的不同，可分为七大晶系：</p>
+            <table>
+                <tr>
+                    <td>七大晶系</td>
+                    <td>主轴坐标系介电张量</td>
+                    <td>非主轴坐标系介电张量</td>
+                    <td>光学分类</td>
+                </tr>
+                <tr>
+                    <td>立方晶系</td>
+                    <td>$$\left[\begin{matrix}\epsilon_{xx}&0&0\\0&\epsilon_{xx}&0\\0&0&\epsilon_{xx}\end{matrix}\right]$$</td>
+                    <td>$$\left[\begin{matrix}\epsilon_{xx}&0&0\\0&\epsilon_{xx}&0\\0&0&\epsilon_{xx}\end{matrix}\right]$$</td>
+                    <td>各向同性</td>
+                </tr>
+                <tr>
+                    <td>三方晶系</td>
+                    <td rowspan="3">$$\left[\begin{matrix}\epsilon_{xx}&0&0\\0&\epsilon_{xx}&0\\0&0&\epsilon_{zz}\end{matrix}\right]$$</td>
+                    <td rowspan="3">$$\left[\begin{matrix}\epsilon_{xx}&0&0\\0&\epsilon_{xx}&0\\0&0&\epsilon_{zz}\end{matrix}\right]$$</td>
+                    <td rowspan="3">单轴晶体<br>（各向异性）</td>
+                </tr>
+                <tr><td>四方晶系</td></tr>
+                <tr><td>六方晶系</td></tr>
+                <tr>
+                    <td>正交晶系</td>
+                    <td rowspan="3">$$\left[\begin{matrix}\epsilon_{xx}&0&0\\0&\epsilon_{yy}&0\\0&0&\epsilon_{zz}\end{matrix}\right]$$</td>
+                    <td>$$\left[\begin{matrix}\epsilon_{xx}&\epsilon_{xy}&\epsilon_{xz}\\\epsilon_{xy}&\epsilon_{yy}&\epsilon_{yz}\\\epsilon_{xz}&\epsilon_{yz}&\epsilon_{zz}\end{matrix}\right]$$</td>
+                    <td rowspan="3">双轴晶体<br>（各向异性）</td>
+                </tr>
+                <tr>
+                    <td>单斜晶系</td>
+                    <td>$$\left[\begin{matrix}\epsilon_{xx}&0&\epsilon_{xz}\\0&\epsilon_{yy}&0\\\epsilon_{xz}&0&\epsilon_{zz}\end{matrix}\right]$$</td>
+                </tr>
+                <tr>
+                    <td>三斜晶系</td>
+                    <td>$$\left[\begin{matrix}\epsilon_{xx}&0&0\\0&\epsilon_{yy}&0\\0&0&\epsilon_{zz}\end{matrix}\right]$$</td>
+                </tr>
+            </table>
+
+            <div class="Card-AI">
+                <p>注意，主轴坐标系中的x,y,z与非主轴坐标系系中的x,y,z是不同的坐标系.</p>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="Card-Analysis">
+            <h2>光在晶体中传播特性的解析法描述</h2>
+            <p>光在晶体中的传播特性由Maxwell方程组描述.</p>
+
+            <p>在均匀、不导电、非磁性的各向异性介质中，若无自由电荷存在，Maxwell方程组表示为：</p>
+            $$\begin{cases}
+            \nabla\times\mathbf{H} = \frac{\partial\mathbf{D}}{\partial t}\\
+            \nabla\times\mathbf{E} = -\mu_0\frac{\partial\mathbf{H}}{\partial t}\\
+            \nabla\cdot\mathbf{B} = 0\\
+            \nabla\cdot\mathbf{D} = 0
+            \end{cases}$$
+
+            <p>物质方程为：</p>
+            $$\begin{cases}
+            \mathbf{B} = \mu_0\mathbf{H}\\
+            \mathbf{D} = \boldsymbol{\epsilon}\cdot\mathbf{E}
+            \end{cases}$$
+
+            <p>这里只讨论单色平面光波在晶体中的传播特性，这样可以不考虑介质的色散特性.</p>
+            <p>同时，对于任意复杂的光波，因光场可以通过傅里叶变换分解为不同频率的单色平面光波叠加，因此也不失普遍性.</p>
+
+            $$\begin{cases}
+            \mathbf{D}\perp\mathbf{H}\\
+            \mathbf{D}\perp\mathbf{k}\\
+            \mathbf{H}\perp\mathbf{E}\\
+            \mathbf{H}\perp\mathbf{k}
+            \end{cases}\Rightarrow
+            \mathbf{H}\perp\mathbf{D},\mathbf{E},\mathbf{k}
+            $$
+            <p>故\(\mathbf{E},\mathbf{D},\mathbf{k}\)在垂直于\(\mathbf{H}\)的同一平面内.</p>
+            <p>且\(\mathbf{E}\)与\(\mathbf{D}\)通常不在同一方向上.</p>
+
+
+            <p>各向异性介质中，光的能量传播方向通常与光波法线方向不同.</p>
+
+
+            <p>一般情况下，光在晶体中的<a href="Chapter1.html#vp" class="goto">相速度</a>和光线速度的大小和方向均不相同.</p>
+
+            <p>相速度：</p>
+            $$\mathbf{v}_p = v_p\mathbf{k}$$
+
+            <div class="Card-Definition">
+                <b>光线速度\(\mathbf{v}_r\)</b>
+                <p>单色光波能量的传播速度</p>
+                $$\mathbf{v}_r = v_r\mathbf{S}$$
+            </div>
+
+            <p>晶体中，有：</p>
+            $$v_p = v_r\cos\alpha$$
+
+
+            <p>一般情况下，对应于晶体中每一给定的波法线方向\(\mathbf{k}\)，只允许有两个特定振动方向的线偏振光传播，它们的\(\mathbf{D}\)矢量相互垂直（因而振动面相互垂直），具有不同的折射率和相速度.</p>
+
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>光波在具体晶体中的光学性质</h2>
+
+            <h3>各向同性介质（立方晶体）</h3>
+
+            <h3>单轴晶体</h3>
+            <p>单轴晶体的主相对介电常数为：</p>
+            $$\begin{cases}
+            \epsilon_1=\epsilon_2=n_o^2\\
+            \epsilon_3=n_e^2\neq n_o^2
+            \end{cases}$$
+
+
+            <h3>双轴晶体</h3>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光在晶体中传播特性的几何描述</h2>
+
+            <h3>折射率椭球</h3>
+            <p>主轴坐标系中，晶体的电场储能密度为：</p>
+            $$\omega_e = \frac{1}{2}\mathbf{E}\cdot\mathbf{D} = \frac{1}{2\epsilon_0}\left(\frac{D_1^2}{\epsilon_1} + \frac{D_2^2}{\epsilon_2} + \frac{D_3^2}{\epsilon_3}\right)$$
+            $$\therefore \frac{D_1^2}{\epsilon_1} + \frac{D_2^2}{\epsilon_2} + \frac{D_3^2}{\epsilon_3} = 2\epsilon_0\omega_e$$
+
+            <p>令</p>
+            $$x_1 = \frac{D_1}{\sqrt{2\epsilon_0\omega_e}},~x_2 = \frac{D_2}{\sqrt{2\epsilon_0\omega_e}},~x_3 = \frac{D_3}{\sqrt{2\epsilon_0\omega_e}}$$
+            <p>则有</p>
+            $$\frac{x_1^2}{\epsilon_1} + \frac{x_2^2}{\epsilon_2} + \frac{x_3^2}{\epsilon^3} = 1$$
+            <p>或</p>
+            $$\frac{x_1^2}{n_1^2} + \frac{x_2^2}{n_2^2} + \frac{x_3^2}{n_3^2} = 1$$
+
+            <div class="Card-AI">
+                <p>也就是说，椭球的三个轴的半轴长分别是\(n_1\)、\(n_2\)与\(n_3\).</p>
+            </div>
+
+            <b>单轴晶体折射率椭球方程为：</b>
+            $$\frac{x_1^2}{n_o^2} + \frac{x_2^2}{n_o^2} + \frac{x_3^2}{n_e^2} = 1$$
+        </div>
+
+        <div class="Card-Analysis" id="WavePlate">
+            <h2>波片</h2>
+            <div class="Card-Definition">
+                <b>波片</b>
+                <p>波片是一种对二垂直振动分量（光波场的两个独立振动方向）提供固定相位差的元件.</p>
+                <p>通常是从单轴晶体上按一定方式切割的、有一定厚度的平行平面薄片.</p>
+                <img src="Img/WavePlate.png" alt="" width="150">
+            </div>
+
+            <ul>
+                <li>全波片</li>
+                <li>半波片</li>
+                <li>1/4波片</li>
+            </ul>
+
+            <p>当一线偏振光垂直射入波片时，在入射表面产生的o光与e光分量同相位，振幅分别为\(A_o\)与\(A_e\)</p>
+            $$\mathbf{E_o} = \mathbf{A_o}\cos(\phi_0)$$
+            $$\mathbf{E_e} = \mathbf{A_e}\cos(\phi_0)$$
+            <p>当二光穿过波片射出时，附加了一个相位延迟差，即：</p>
+            $$\phi_o - \phi_e = \phi$$
+            <p>故合成光矢量端点的轨迹方程为：</p>
+            $$(\frac{E_o}{A_o})^2 + (\frac{E_e}{A_e})^2 - 2(\frac{E_o}{A_o})(\frac{E_e}{A_e})\cos \phi = \sin^2 \phi$$
+
+            <h3>全波片</h3>
+            <p>全波片的附加相位差为：</p>
+            $$\phi = \frac{2\pi}{\lambda}(n_o-n_e)d = 2m\pi\quad m = \pm1,\pm2,\cdots$$
+            <p>因此：</p>
+            $$\frac{E_o}{A_o} = \frac{E_e}{A_e}$$
+            <p>即：线偏振光通过全波片后，其偏振状态不变.</p>
+            <p>全波片的厚度为：</p>
+            $$d = |\frac{m}{n_o-n_e}|\lambda$$
+
+            <h3>半波片</h3>
+            <p>半波片的附加相位差为：</p>
+            $$\phi = \frac{2\pi}{\lambda}(n_o-n_e)d = (2m+1)\pi\quad m = 0,\pm1,\pm2,\cdots$$
+            <p>出射光仍为线偏振光，但振动面的方位较入射光转过了\(2\theta\)角.</p>
+            <p>半波片的厚度为：</p>
+            $$d = |\frac{2m+1}{n_o-n_e}|\frac{\lambda}{2}$$
+        </div>
+
+        <div class="Card-Analysis" id="Birefringence">
+            <h2>光在晶体界面上的双折射与双反射现象</h2>
+            <p>当一束单色平面光从空气入射到晶体界面时，会产生两束频率相同的折射光，发生双折射现象.</p>
+            <p>当一束单色平面光从晶体内部射向晶体-空气界面上时，会产生两束频率相同的反射光，发生双反射现象.</p>
+            <p>在界面上产生的两束折射光或两束反射光都是线偏振光，它们的振动方向相互垂直.</p>
+            <p>双折射和双反射现象都是晶体中光学各向异性的结果.</p>
+
+            <p>光在晶体界面上的双反射和双折射特性可以用解析法和几何作图法描述.</p>
+
+            <b>解析法描述</b>
+            <p>假设一束单色平面光波自空气射向晶体，\(\mathbf{k}_i, \mathbf{k}_r, \mathbf{k}_t\)分别为入射光、反射光、折射光的波矢，则由光的电磁场理论可得：</p>
+            $$(\mathbf{k}_r - \mathbf{k}_i)\cdot\mathbf{r} = 0$$
+            $$(\mathbf{k}_t - \mathbf{k}_i)\cdot\mathbf{r} = 0$$
+
+            <div class="Prove">
+                $$\begin{cases}
+                \mathbf{E}_i = \mathbf{E}_{i0}e^{i(\mathbf{k}_i\cdot\mathbf{r} - \omega t)}\\
+                \mathbf{E}_r = \mathbf{E}_{r0}e^{i(\mathbf{k}_r\cdot\mathbf{r} - \omega t)}\\
+                \mathbf{E}_t = \mathbf{E}_{t0}e^{i(\mathbf{k}_t\cdot\mathbf{r} - \omega t)}
+                \end{cases}$$
+                <p>[注]此处的\(\mathbf{E}_0\)实指\(\mathbf{E}_0e^{i\phi_0}\).</p>
+                <p>在晶体-空气分界面上，应用边界条件，有：</p>
+                $$\mathbf{E}_{i0,\tan}e^{i(\mathbf{k}_i\cdot\mathbf{r} - \omega t)} + \mathbf{E}_{r0,\tan}e^{i(\mathbf{k}_r\cdot\mathbf{r} - \omega t)} = \mathbf{E}_{t0,\tan}e^{i(\mathbf{k}_t\cdot\mathbf{r} - \omega t)}$$
+                <p>[注]\(\mathbf{E}_{\tan}\)为\(\mathbf{E}\)的切向分量，由于<a href="Chapter1.html#EMProperty" class="goto">\(\mathbf{E}\)的方向仅由\(\mathbf{E}_0\)决定而与\(\mathbf{r}\)的方向无关</a>，此处仍需标明分量.</p>
+                <p>由于上式对任意时刻分界面上的任意向量均成立，故：</p>
+                $$\mathbf{k}_i\cdot\mathbf{r} - \omega t = \mathbf{k}_r\cdot\mathbf{r} - \omega t = \mathbf{k}_t\cdot\mathbf{r} - \omega t$$
+                $$\therefore\mathbf{k}_i\cdot\mathbf{r} = \mathbf{k}_r\cdot\mathbf{r} = \mathbf{k}_t\cdot\mathbf{r}$$
+                $$\therefore\begin{cases}
+                (\mathbf{k}_r - \mathbf{k}_i)\cdot\mathbf{r} = 0\\
+                (\mathbf{k}_t - \mathbf{k}_i)\cdot\mathbf{r} = 0
+                \end{cases}$$
+            </div>
+
+            <p>1式是反射定律的矢量形式，可表述为：反射光和入射光的波矢差与界面垂直.</p>
+            <p>2式是折射定律的矢量形式，可表述为：折射光和入射光的波矢差与界面垂直.</p>
+            <p>由两式可知，\(\mathbf{k}_i, \mathbf{k}_r, \mathbf{k}_t\)与界面法线共面，或者说：反射光与折射光的波矢均在入射面内.</p>
+
+
+            <div class="Card-AI">
+                <p>Q：为什么双折射与双反射只定义一个k？</p>
+                <p>A：上述不是定义，而是假设；双折射、双反射的两个光波，都需满足上式.<p>
+                <br>
+
+                <p>Q：什么叫切向分量？</p>
+                <p>A：垂直于平面的叫法向分量，平行于平面的叫切向分量.</p>
+                <br>
+
+                <p>电磁场的边界条件：电场与磁场的切向分量连续（大小相等、方向相同）.</p>
+                <p>界面一侧的电场切向分量总和等于另一侧的电场切向分量总和.</p>
+            </div>
+
+            <p>设\(\theta_i, \theta_r, \theta_t\)分别为入射角、反射角、折射角，则：</p>
+            $$k_i\sin\theta_i = k_r\sin\theta_r = k_t\sin\theta_t$$
+            <div class="Prove">
+                $$\because \mathbf{k}_i\cdot\mathbf{r} = \mathbf{k}_r\cdot\mathbf{r} = \mathbf{k}_t\cdot\mathbf{r}$$
+                $$\therefore |k_i||r|\cos(\frac{\pi}{2} - \theta_i) = |k_r||r|\cos(\frac{\pi}{2} - \theta_r) = |k_t||r|\cos(\frac{\pi}{2} - \theta_t)$$
+                $$\therefore k_i\sin\theta_i = k_r\sin\theta_r = k_t\sin\theta_t$$
+            </div>
+            <p>亦即：</p>
+            $$n_i\sin\theta_i = n_r\sin\theta_r$$
+            $$n_i\sin\theta_i = n_t\sin\theta_t$$
+            <div class="Prove">
+                $$\because k = \frac{\omega n}{c}$$
+            </div>
+            <p>1式为光在晶体界面上的反射定律.</p>
+            <p>2式为光在晶体界面上的折射定律.</p>
+
+            <p>从形式上看，光在晶体界面上的反射定律和折射定律与光在各向同性介质界面上的反射定律和折射定律相同.</p>
+            <p>但是，由于晶体中的光学各向异性，晶体内存在两个特许的线偏振光（本征模式）.</p>
+            <div class="Card-Question">
+                <p>什么叫“特许的偏振光（本征模式）”？</p>
+            </div>
+            <p>所以，相应于一个入射光，在晶体界面内可能产生两个反射光或两个折射光，</p>
+
+            <p>当一束单色平面光从空气垂直入射到方解石单轴警惕上时，晶体中将产生两束折射光，分别为o光和e光，根据折射定律，两折射光的折射角\(\theta_{to} = \theta_{te} = 0\)，即晶体中二折射光的波矢方向相同、均垂直入射界面.</p>
+            <p>但是，由于单轴晶体中o光波矢方向与光线方向相同，e光波矢方向与光线方向离散，所以在晶体内可观测到两条离散方向传播的光线，分别为o光和e光的能流方向.</p>
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+    
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>React</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>solve_ivp</h1>
+
+        <h2>导入</h2>
+        <pre><code><textarea>
+            from scipy.integrate import solve_ivp
+        </textarea></code></pre>
+
+        <h2>使用</h2>
+        <b>定义求解函数</b>
+        <pre><code><textarea>
+            def fun(x,y):
+                return res
+        </textarea></code></pre>
+        <p>这样定义的函数为：</p>
+        $$\frac{\mathrm{d}y}{\mathrm{d}x} = res$$
+        <p>\(res\)是与\(y\)等长度的向量.</p>
+
+
+        <h2>实例</h2>
+        <p>求解\(\frac{\mathrm{d}y}{\mathrm{d}t} = 2t\)，\(y(0) = 1\)</p>
+        <pre><code><textarea>
+            from scipy.integrate import solve_ivp
+            import numpy as np
+
+            def fun(t, y):
+                return 2*t
+
+            sol = solve_ivp(fun, [0,10], [1], t_eval = np.linspace(0,10,100))
+            print(sol)
+
+            import matplotlib.pyplot as plt
+
+            y_num = sol.y[0]
+            y_exact = sol.t**2 + 1
+
+            plt.plot(sol.t, y_num, label="solve_ivp")
+            plt.plot(sol.t, y_exact, "--", label="exact")
+            plt.legend()
+            plt.xlabel("t")
+            plt.ylabel("y")
+            plt.show()
+        </textarea></code></pre>
+
+        <p>输出</p>
+        <pre><code><textarea>
+            message: The solver successfully reached the end of the integration interval.
+            success: True
+            status: 0
+                    t: [ 0.000e+00  1.010e-01 ...  9.899e+00  1.000e+01]
+                    y: [[ 1.000e+00  1.010e+00 ...  9.899e+01  1.010e+02]]
+                sol: None
+            t_events: None
+            y_events: None
+                nfev: 38
+                njev: 0
+                nlu: 0
+        </textarea></code></pre>
+        
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>热光效应与散热</h1>
+
+        <p>固体激光器激光材料的光泵浦过程中，由于以下原因产生热：</p>
+        <ul>
+            <li>泵浦带与上激光能级之间的光子能差以热的方式逸散到基质晶格中，造成量子亏损发热.</li>
+            <li>与此类似，下激光能级与基能态之间的能差转换为热能.</li>
+            <li>由于激光跃迁的荧光过程的量子效率小于1，所以除了产生激光能量外，其余能量由于激光猝灭产生热.</li>
+            <li>弧光灯或闪光灯的光谱分布宽，使得基质材料对光能有大的吸收而产生热，吸收主要发生在紫外带和红外带.</li>
+        </ul>
+
+        <p>高功率的散热和对激光介质激活区内温度差造成的热效应的降低，是设计高平均功率系统时考虑的重要因素之一.</p>
+
+        <b>二极管泵浦的优点</b>
+        <p>高效的泵浦过程极大减少了激光介质吸收的热量.</p>
+        
+        <h2>圆柱腔分布</h2>
+        <p>激光材料因吸收泵浦辐射而发热，而散热又要求对其表面进行冷却，二者使激光材料内部产生不均匀的温度分布.</p>
+        <p>由于温度和应力的改变，使折射率发生变化，而导致激光光束的畸变.</p>
+        <p>激光材料中发生的热效应有热透镜效应与热致双折射.</p>
+        <p>激光介质的应力裂纹是与热有关的.</p>
+        <p>在激光介质中，当温度梯度导致的应力超过其抗张强度时，就会产生应力裂纹.</p>
+        <p>应力裂纹的极限表示为单位商都激光材料中转换为热的最高功率.</p>
+
+        <p>激光介质中，特殊的温度分布在很大程度上取决于连续泵浦、单脉冲泵浦或重复脉冲泵浦等运转方式.</p>
+        <ul>
+            <li>连续运转时，圆柱形长激光棒内的发热均匀，表面温度恒定，具有二次方的径向温度关系，折射率与热应变也有相似的关系.</li>
+            <li>脉冲泵浦系统中，激光作用仅出现在泵浦脉冲期间，或紧随Q开关运转之后.</li>
+        </ul>
+
+        <h3>连续运转</h3>
+        <b>温度分布</b>
+        <p>激光棒因吸收泵浦光而产生的热是通过棒表面流过的冷却液冷却的.</p>
+        <p>假设棒内发热均匀，在光学无限长的圆柱棒表面的冷却也均匀，则热流限于径向，且可忽略轴向上冷却液温度的端面效应与小的变化.</p>
+        <p>根据一维热传导方程得出圆柱棒中的径向温度分布：</p>
+        $$\frac{\mathrm{d}^2T}{\mathrm{d}r^2} + \left(\frac{1}{r}\right)\left(\frac{\mathrm{d}T}{\mathrm{d}r}\right) + \frac{Q}{K} = 0$$
+        <ul>
+            <li>\(K\)：热导率</li>
+            <li>\(Q\)：单位体积的均匀发热量</li>
+        </ul>
+        <p>以\(r_0\)表示棒的半径、\(T(r_0)\)表示棒的表面温度，解此微分方程得：</p>
+        <div class="Formula">
+            $$T(r) = T(r_0) + \left(\frac{Q}{4K}\right)(r_0^2 - r^2)$$
+            <div class="Derivation">
+                $$\because\frac{\mathrm{d}^2T}{\mathrm{d}r^2} + \left(\frac{1}{r}\right)\left(\frac{\mathrm{d}T}{\mathrm{d}r}\right) + \frac{Q}{K} = 0$$
+                $$\therefore \frac{\mathrm{d}T'}{\mathrm{d}r} + \frac{T'}{r} + \frac{Q}{K} = 0$$
+                <p>令</p>
+                $$t = \frac{T'}{r}\Rightarrow T' = tr$$
+                $$\therefore \frac{\mathrm{d}T'}{\mathrm{d}r} = \frac{\mathrm{d}t}{\mathrm{d}r}r + t$$
+                $$\therefore \frac{\mathrm{d}t}{\mathrm{d}r}r + t + t + \frac{Q}{K} = 0$$
+                $$\therefore \frac{1}{2t + \frac{Q}{K}}\mathrm{d}t = -\frac{1}{r}\mathrm{d}r$$
+                $$\therefore \frac{1}{2}\ln|2t + \frac{Q}{K}| = \ln\frac{1}{r} + C_1$$
+                $$\therefore \ln|2\frac{T'}{r} + \frac{Q}{K}| = \ln C_1\frac{1}{r^2}$$
+                $$\therefore T' = C_1\frac{1}{r} - \frac{Q}{2K}r$$
+                $$\therefore T = C_1\ln r - \frac{Q}{4K}r^2 + C_2$$
+                $$\because T(0) \neq \infty$$
+                $$\therefore C_1 = 0$$
+                $$\because T(r_0) = T(r_0)$$
+                $$\therefore C_2 = T(r_0) + \frac{Q}{4K}r_0^2$$
+                $$\begin{align}
+                \therefore T(r) &= T(r_0) + \frac{Q}{4K}r_0^2 - \frac{Q}{4K}r^2\\
+                                &= T(r_0) + \frac{Q}{4K}(r_0^2 - r^2)
+                \end{align}$$
+            </div>
+        </div>
+        <p>此解给出了沿半径长度\(r\)内任一点的稳定态温度.</p>
+        <p>棒中心的温度最高，为\(T(r_0)\).</p>
+        <p>单位体积的发热可以表示为：</p>
+        $$Q = \frac{P_a}{\pi r_0^2 L}$$
+        <ul>
+            <li>\(P_a\)：棒吸收的总热量</li>
+            <li>\(L\)：棒的长度</li>
+        </ul>
+        <p>棒表面与棒中心的温差为：</p>
+        $$T(0) - T(r_0) = \frac{Q}{4K}r_0^2 = \frac{P_a}{4\pi KL}$$
+
+        <div class="Card-Analysis">
+            <h2>热应力</h2>
+
+            <p>由于激光棒较冷的外部制约着较热的内部的膨胀，于是温度梯度在棒内产生机械应力.</p>
+
+            <b>径向应力</b>
+            $$\sigma_r(r) = QS(r^2 - r_0^2)$$
+            <b>切向应力</b>
+            $$\sigma_\phi(r) = QS(3r^2 - r_0^2)$$
+            <b>轴向应力</b>
+            $$\sigma_z(r) = 2QS(2r^2 - r_0^2)$$
+
+            <p>因子\(S = aE[16K(1-\nu)]^{-1}\)包含有材料参量.</p>
+            <ul>
+                <li>\(a\)：热膨胀系数</li>
+                <li>\(E\)：杨氏模量</li>
+                <li>\(\nu\)：泊松比</li>
+            </ul>
+
+            <p>应力分量\(\sigma_{r}\)、\(\sigma_{\phi}\)与\(\sigma_{z}\)为负值时，表示材料正在收缩中.</p>
+            <p>为正值时，表示材料正在膨胀中.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>热透镜效应</h2>
+            <p>折射率的变化量可以分解为与温度、应力有关的变量：</p>
+            $$n(r) = n_0 + \Delta n(r)_T + \Delta n(r)_\epsilon$$
+            <ul>
+                <li>\(n(r)\)：折射率的径向变化</li>
+                <li>\(n_0\)：棒中心的折射率</li>
+                <li>\(\Delta n(r)_T\)：与温度有关的折射率变化量</li>
+                <li>\(\Delta n(r)_\epsilon\)：与应力有关的折射率变化量</li>
+            </ul>
+            $$\Delta n(r)_T = [T(r) - T(0)]\left(\frac{\mathrm{d}n}{\mathrm{d}T}\right)$$
+            $$\because T(r) = T(r_0) + \left(\frac{Q}{4K}\right)(r_0^2 - r^2)$$
+            $$\therefore \Delta n(r)_T = -\frac{Q}{4K}\frac{\mathrm{d}n}{\mathrm{d}T}r^2$$
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,9 @@
+.Code{
+    background-color: #ebf8ff;
+    padding-left: 50px;
+    font-size: large;
+}
+
+pre{
+    white-space: pre-line; /* 保留换行和空格，但是会自动换行 */
+}

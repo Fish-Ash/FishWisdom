@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>物理光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>双轴晶体的光学特性</h1>
+
+        <div class="Card-AI">
+            <b>折射率面（光率体）</b>
+            <p>晶体中不同传播方向对应折射率大小的几何图形</p>
+            <p>作图方式为：</p>
+            <p>在晶体中选取一个点，以该点为球心，以折射率为半径作椭球面.</p>
+            <p>因此光率体体现的是晶体内某点的性质.</p>
+        </div>
+
+        <p>对于双轴晶体，其折射率与光的传播方向及其偏振态（折射率面）的关系要比单轴晶体复杂得多.</p>
+        <p>双轴晶体构成的折射率面具有双层结构，两层间有四个点连接，由此，两根光轴从中穿出.</p>
+
+        <div class="Card-AI">
+            <p>双轴晶体的折射率面具有双层结构：</p>
+            <p>光在任意方向传播时，通常会分解成两个不同偏振的本征波，对应着两个折射率，也对应着两个不同的折射率面.</p>
+            <p>在两个特定的传播方向上（光轴方向），两个本征波的折射率恰好相同，但是两个方向分别有两端，因此有四个点相连.</p>
+        </div>
+
+        <div class="Card-AI">
+            <b>本征波</b>
+            <p>对于给定传播方向，其偏振态恰是晶体内所允许的两个特征偏振态之一.</p>
+            <p>非本征波需要分解成两个本征波.</p>
+            <p>所谓晶体允许的偏振态，即Maxwell方程组的两个本征解，可以理解为基底.</p>
+        </div>
+
+        <p>与单轴晶体类似，平面光波的传播方向由<a href="UniaxialCrystal.html#theta" class="goto">极角\(\theta\)</a>与<a href="UniaxialCrystal.html#phi" class="goto">方位角\(\phi\)</a>决定.</p>
+
+        <p>考虑<b>快（f）光（波）</b>与<b>慢（s）光（波）</b>（\(n_s\gt n_f,~ v_s\lt v_f\)）.</p>
+        <p>[注]o光与e光的概念仅在双轴晶体的主平面中有一定意义.</p>
+
+        <p>简单起见，限定研究范围为：光在主平面XY、YZ、XZ中传播.</p>
+
+        <div class="Card-AI">
+            <p>注意，此处的“主平面”与单轴晶体中的主平面应该不是同一个定义.</p>
+        </div>
+
+        <p>在这些主平面中，具有互相垂直偏振态的两束光，其折射率与传播方向间的关系可以用一个椭圆和一个圆来表示.</p>
+
+        <div class="Card-AI">
+            <p>将双轴晶体的三维折射率面，用主平面去截时，其中一个本征波在该平面内折射率随方向变化，另一个本征波折射率在该平面内保持不变.</p>
+
+            <p>“具有相互垂直偏振态的两束光”不一定是本征波，但此处强调的是本征波.</p>
+        </div>
+
+        <p>双轴晶体中，规定<b>介电轴（X，Y，Z）</b>与<b>晶体学轴（a，b，c）</b>间的关系为：</p>
+        <p>对于光轴来说，其方向由椭圆与圆的交点决定，总是位于主平面XZ中.</p>
+
+        <div class="Card-AI">
+            <p>这里的规定并非规定介电轴与晶体学轴的相对位置，而是规定XYZ的命名.</p>
+            <p>双轴晶体的两个光轴必然在介电坐标系下的某个主平面内.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>具体分析1</h2>
+            <b>case：\(n_X\lt n_Y\lt n_Z\)</b>
+            <p>[注]此处\(n_X, n_Y, n_Z\)表示主折射率的值.</p>
+
+            <p>\(V_z\)：一根光轴与Z轴间的夹角.</p>
+            <div class="Card-AI">
+                <p>光轴是两根中的任一.</p>
+                <p>Z轴是介电轴之一.</p>
+            </div>
+
+            <div class="Card-Formula">
+                $$\sin V_z = \frac{n_Z(n_Y^2 - n_X^2)^{1/2}}{n_Y(n_Z^2 - n_X^2)^{1/2}}$$
+            </div>
+
+            <p>在XZ平面中，两光轴间夹角为\(2V_Z\)</p>
+            <div class="Card-AI">
+                <p>双轴晶体中两光轴分别位于Z轴两侧且相对于Z轴对称.</p>
+            </div>
+
+            <p>垂直于XY平面偏振的光，其折射率不变，为\(n_Z\)</p>
+            <p>平行于XY平面偏振的光，其折射率从\(n_X\)变化到\(n_Y\)，且方位角\(\phi\)从\(0°\)变化到\(90°\).</p>
+
+            <div class="Card-AI">
+                <p>各向异性介质中，偏振方向不一定垂直于传播方向.</p>
+                <p>是否垂直与传播方向有关，有的传播方向偏振方向垂直，有的则不垂直.</p>
+                <p>传播方向在XY面上，偏振方向沿Z轴方向的光波，其折射率一定为\(n_Z\)</p>
+            </div>
+
+            <p>因此，对于双轴晶体，在XY面内，有：</p>
+            $$n_X\lt n_Y\lt n_Z$$
+            <p>这种情况类似于负单轴晶体，有：</p>
+            $$n_o = n_Z$$
+            $$n^e(\phi) = n_Y\frac{(1 + \tan^2\phi)^{1/2}}{[1 + (n_Y/n_X)^2\tan^2\phi]^{1/2}}$$
+
+
+        </div>
+
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Blender</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>blender入门</h1>
+
+        <h2>先导片</h2>
+
+        <p>建模->布光->材质->渲染</p>
+
+        <b>10常用建模操作</b>
+        <ul>
+            <li>挤出E</li>
+            <li>向内基础I</li>
+            <li>环切 Ctrl+R</li>
+            <li>倒角Ctrl + B</li>
+            <li>合并M</li>
+            <li>断开V</li>
+            <li>切刀K</li>
+            <li>填充F</li>
+            <li>桥接Ctrl+E</li>
+            <li>分离P</li>
+        </ul>
+
+        <b>5辅助工具</b>
+        <ul>
+            <li>衰减编辑</li>
+            <li>吸附工具</li>
+            <li>曲线建模</li>
+            <li>晶格形变</li>
+            <li>旋绕工具</li>
+        </ul>
+
+        <b>11常用修改器</b>
+        <ul>
+            <li>表面细分</li>
+            <li>实体化</li>
+            <li>阵列</li>
+            <li>简易形变</li>
+            <li>曲线</li>
+            <li>镜像</li>
+            <li>置换</li>
+            <li>蒙皮</li>
+            <li>缩裹</li>
+            <li>倒角</li>
+            <li>布尔</li>
+        </ul>
+
+        <h2>1.2让手听话</h2>
+        
+        <b>新建文件</b>
+        <p>新建文献-常规</p>
+
+        <b>初始要素</b>
+        <ul>
+            <li>模型</li>
+            <li>灯光</li>
+            <li>相机</li>
+        </ul>
+
+        <table>
+            <tr>
+                <td colspan="2">控制视图</td>
+            </tr>
+            <tr>
+                <td>按住鼠标中键并拖动鼠标</td>
+                <td>360°旋转视图</td>
+            </tr>
+            <tr>
+                <td>Shift+鼠标中键拖动</td>
+                <td>平移视图</td>
+            </tr>
+            <tr>
+                <td>滚动鼠标滚轮</td>
+                <td>放大/缩小视图</td>
+            </tr>
+        </table>
+        <img src="Img/image1.png" alt="">
+        <p>下面是相机视角</p>
+        <p>再下面是正交视图/透视视图转换</p>
+
+
+
+        <img src="Img/image2.png" alt="">
+        <p>第三个工具-移动</p>
+        <p>点击模型出现三个轴：蓝-z、绿-y、红-x</p>
+
+        <p>第四个工具-旋转</p>
+
+        <p>第五个工具-缩放</p>
+
+
+        <h2>物品操作</h2>
+        <table>
+            <tr>
+                <td>删除物品</td>
+                <td>Delete</td>
+            </tr>
+            <tr>
+                <td>新建物品</td>
+                <td>Shift + A</td>
+            </tr>
+            <tr>
+                <td>隐藏物品</td>
+                <td>H</td>
+            </tr>
+            <tr>
+                <td>隐藏物品（反选）</td>
+                <td>Shift + H</td>
+            </tr>
+            <tr>
+                <td>显示物品</td>
+                <td>Alt + H</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <table>
+            <tr>
+                <td>G</td>
+                <td>移动</td>
+            </tr>
+            <tr>
+                <td>S</td>
+                <td>缩放</td>
+            </tr>
+            <tr>
+                <td>R</td>
+                <td>旋转</td>
+            </tr>
+            <tr>
+                <td>Shift + D</td>
+                <td>移动并复制物体</td>
+            </tr>
+        </table>
+        
+        <br>
+
+        <table>
+            <tr>
+                <td>... + 鼠标中键</td>
+                <td>沿坐标轴...</td>
+            </tr>
+            <tr>
+                <td>... + X/Y/Z</td>
+                <td>沿X/Y/Z轴...</td>
+            </tr>
+            <tr>
+                <td>Alt + ...</td>
+                <td>撤销所有...</td>
+            </tr>
+        </table>
+
+        <h2>切换视图</h2>
+        <table>
+            <tr>
+                <td>1（小键盘）</td>
+                <td>正视图</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>顶视图</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>右视图</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>反转视图 </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>往下15°</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>往左15°</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>往右15°</td>
+            </tr>
+        </table>
+        
+        <h2>界面</h2>
+        <b>游标</b>
+        <ul>
+            <li>游标在哪新建的物体就会在哪</li>
+            <li>移动游标：</li>
+            <ul>
+                <li>工具栏第二项</li>
+                <li>shift + 右键</li>
+            </ul>
+            <li>恢复游标位置：Shift + C</li>
+        </ul>
+
+        <h2>资产库</h2>
+        <p>编辑->偏好设置->文件路径->资产库</p>
+
+        <h2>修改着色方式</h2>
+        <p>Z + 移动鼠标</p>
+
+        <h2>关联材质</h2>
+        <p>选中没有材质的物品->按住shift选中需要复制材质的物品->Ctrl + L->材质</p>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

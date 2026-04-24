@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>电磁学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+
+        <h1>静电场中的导体</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#Flag1">导体的静电平衡条件</a></li>
+                <li><a href="#Flag2">电荷分布</a></li>
+            </ul>
+        </div>
+
+        <div class="Card-Analysis" id="Flag1">
+            <h2>导体的静电平衡条件</h2>
+
+            <div class="Card-Definition">
+                <b>静电平衡</b>
+                <p>一带电体系中电荷静止不动，从而电场分布不随时间变化的现象.</p>
+            </div>
+    
+            <div class="Card-Definition">
+                <b>均匀导体</b>
+                <p>质料均匀、温度均匀的导体.</p>
+            </div>
+    
+            <div class="Card-Definition">
+                <b>均匀导体的静电平衡条件</b>
+                <p>其内场强处处为0.</p>
+                <div class="Prove">
+                    <p>若导体内电场不处处为0，在电场不为0处自由电荷将会移动，即导体未达静电平衡.</p>
+                </div>
+                <p>[推论]处于静电平衡状态的均匀导体为等势体，导体的表面是一个等势面.</p>
+                <p>[注]导体表面与导体内部电势相等.</p>
+                <div class="Prove">
+                    <p>导体内任意两点P、Q间的电势差为：</p>
+                    $$U_{PQ} = \int_P^Q \mathbf{E} \mathrm{d}\mathbf{l}$$
+                    <p>若\(\mathbf{E}\)处处为0，则导体内部所有各点电势相等，其为等势体.</p>
+                </div>
+
+
+                <p>[推论]导体外靠近其表面的地方的场强与导体表面处处垂直.</p>
+                <p class="Prove">由于电场线与等势面处处正交，所以导体外的场强必与它的表面垂直.</p>
+            </div>
+        </div>
+
+        <div class="Card-Analysis" id="Flag2">
+            <h2>电荷分布</h2>
+            <p>达到静电平衡时，导体内部不存在未抵消的净电荷（电荷体密度\(\rho_e = 0\)），电荷仅分布于导体表面.</p>
+
+            <div class="Card-AI">
+                <b>净电荷</b>
+                <p>一个带电体系存在的正负电荷的代数和.</p>
+
+                <p>达到静电平衡状态的导体，并不一定是电中性的，也许是带电的物体，但是其内部的电场强度在各个电荷的相互抵消下为0.</p>
+            </div>
+
+            <p>静电平衡状态下，导体表面之外的附近空间的场强\(\mathbf{E}\)与该处导体表面的电荷面密度\(\sigma_e\)有如下关系：</p>
+            <div class="Formula">
+                $$E = \frac{\sigma_e}{\epsilon_0}$$
+                <div class="Derivation">
+                    <p>取导体表面之外附近空间一点P，在P点附近的导体表面取一面元\(\Delta S\)，此面元充分小，使其电荷面密度\(\sigma_e\)可认为是均匀的.</p>
+                    <p>如图作扁圆柱形高斯面，使圆柱侧面与\(\Delta S\)垂直，圆柱上底通过P，下底在导体内部，两底均与\(\Delta S\)平行，并无限靠近它，因此其面积均为\(\Delta S\).</p>
+                    <img src="Img/Conductor1.1.jpg" alt="" width="200">
+                    <p>通过高斯面的电场强度通量为：</p>
+                    $$\begin{aligned}
+                    \Phi_E &= \unicode{x222F}_S E\cos\theta\mathrm{d}S\\
+                           &= \iint_{上底} E\cos\theta_1\mathrm{d}S + \iint_{下底} E\cos\theta_1\mathrm{d}S + \iint_{侧面} E\cos\theta_2\mathrm{d}S\
+                    \end{aligned}$$
+                    <p>由于导体内部场强处处为0，因此第二项积分为0.</p>
+                    <p>由于导体表面附近场强与导体表面垂直，故第三项积分中\(\cos\theta_1 = 0\)，即第三项积分为0.</p>
+                    <p>第一项积分中，\(\cos\theta_1 = 1\)，且由于\(\Delta S\)充分小，其上场强可以近似认为与P处场强相等，因此有：</p>
+                    $$\Phi_e = E\Delta S$$
+                    <p>高斯面内包含的电荷量为\(\sigma_e\Delta S\).</p>
+                    <p>根据高斯定理：</p>
+                    $$\Phi_E = \frac{\sigma_e\Delta S}{\epsilon_0} = E\Delta S$$
+                    $$\therefore E = \frac{\sigma_e}{\epsilon_0}$$
+                </div>
+            </div>
+            <div class="Card-AI">
+                <p>这里的“附近”是指紧贴导体表面的区域.</p>
+            </div>
+            <p>由此公式可以看出：导体表面附近的电场强度与该处的电荷面密度成正比.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>尖端放电</h2>
+            <p>对于孤立的带电系统而言，电荷分布有如下定性规律：</p>
+            <ul>
+                <li>导体表面凸出而尖锐（曲率较大）的地方，电荷面密度\(\sigma_e\)较大，其附近场强更小.</li>
+                <li>导体表面较平坦（曲率较小）的地方，电荷面密度\(\sigma_e\)较小，其附近场强更小.</li>
+                <li>导体表面凹下去（曲率为负）的地方，电荷面密度\(\sigma_e\)更小，其附近场强也更小.</li>
+            </ul>
+            <p>[注]孤立导体表面的电荷面密度\(\sigma_e\)与曲率之间并不存在单一的函数关系.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>导体壳（腔内无带电体）</h2>
+            <p>导体壳内无带电体，且处于静电平衡时：</p>
+            <ul>
+                <li>导体壳内表面处处无电荷，电荷只能分布在外表面.</li>
+                <li>导体壳内的电场强度处处为0.</li>
+            </ul>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>静电屏蔽</h2>
+            <p>在静电平衡状态下，腔内无其他带电体的导体壳与实心导体一样，内部无电场.</p>
+            <p>只要达到静电平衡状态，无论导体壳本身带电还是导体处于外界电场中，此结论总是对的.</p>
+            <p>因此，导体壳的表面就“保护”了它所包围的区域，使之不受导体壳外表面上的电荷或外界电场的影响，这种现象称为“静电屏蔽”.</p>
+            
+        </div>
+
+        <b id="Dielectric">电介质</b>
+        <p>不导电的绝缘介质，内部无可以自由移动的电荷（自由电子）。</p>
+
+        <b>电介质的极化</b>
+        <p>在外电场的作用下，电介质内的正、负电荷仍可作微观的相对移动，从而使电介质内部或表面出现带电现象。</p>
+        <p>此时，总电场\(\mathbf{E}\)是自由电荷电场强度\(\mathbf{E}_0\)和极化电荷电场强度\(\mathbf{E}'\)的叠加。</p>
+
+        <b>极化电荷\(q'\)（束缚电荷）</b>
+        <p>电介质极化出现的电荷。</p>
+
+        <b>介质极化率\(\chi\)</b>
+        <p>对于同一点，\(\chi\)为一个常数，但不同点的\(\chi\)可以不同。若电介质中各点的\(\chi\)相同，则该电介质为均匀电介质。</p>
+
+        <div class="Card-Definition" id="Polarization">
+            <b>极化强度\(\mathbf{P}\)</b>
+            <p>各向同性介质中：</p>
+            $$\mathbf{P} = \epsilon_0\chi\mathbf{E}$$
+        </div>
+
+        <b>极化强度与极化电荷的关系式</b>
+        $$\oint_S\mathbf{P}\mathrm{d}\mathbf{S} = -\sum q_i'$$
+
+
+        <b>电介质的击穿</b>
+        <p>当外电场不太强时，只是引起电介质的极化，不会破坏电解质的绝缘性能。</p>
+        <p>当外电场过强时，电介质分子中的正负电荷有可能被拉开而形成可自由移动的电荷，由于大量自由电荷的产生，电介质的绝缘性能就会遭到明显破坏而变成导体，这种现象就叫做电介质的击穿。</p>
+
+
+        <b>击穿电场强度</b>
+        <p>一种电介质材料能承受的不被击穿的最大电场强度。</p>
+
+
+        <b>电位移矢量\(\mathbf{D}\)</b>
+        $$\mathbf{D} = \epsilon_0\mathbf{E} + \mathbf{P}$$
+        <span class="tip">各向同性介质<span class="tiptext">$$\mathbf{P} = \epsilon_0\chi\mathbf{E}$$</span></span>中：令\(\epsilon_r = 1 + \chi\)为<b>介质的相对介电常数</b>有：
+        $$\mathbf{D} = \epsilon_0(1 + \chi)\mathbf{E} = \epsilon_0\epsilon_r\mathbf{E} = \epsilon\mathbf{E}$$
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>
