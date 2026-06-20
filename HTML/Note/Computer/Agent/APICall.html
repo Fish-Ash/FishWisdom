@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Agent</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>大模型API调用——最简单的对话尝试</h1>
+
+        <h2>环境搭建</h2>
+        <b>openai库</b>
+        <pre><Code>pip install openai</Code></pre>
+        <p><i>openai库是用于调用api的，哪怕不适用chatgpt的api也可以使用这个库</i>.</p>
+        <pre><code class="Code">from openai import OpenAI</code></pre>
+
+        <h2>配置客户端</h2>
+        <pre><code class="Code">
+            client = OpenAI(
+                api_key = ... # 可用的API Key
+                base_url = ... # 所用模型的url
+            )
+        </code></pre>
+
+        <h2>发起一次最简单的对话</h2>
+        <pre><code class="Code">
+            response = client.chat.completions.create(
+                model = ... # 所使用的模型
+                message = [
+                    {"role": ..., "content": ...}
+                ]
+            )
+            """
+            .chat：调用聊天功能
+            客户端的功能包括：
+            - .chat：聊天
+            - .image：图像生成
+            - .audio：语音转文字
+            - .embedding：嵌入向量
+            - .fine_tuning：模型微调
+            """
+
+            """
+            .completions.create：发起一次对话请求
+            [注]completions其实另有含义，但是不纠结
+            """
+
+            """
+            "role"：用户身份，包括：
+                - system：系统指令（开发者）
+                - user：用户消息（用户）
+                - assistant：助手消息（模型）
+            """
+
+            """
+            "content"：内容
+            """
+        </code></pre>
+
+        <h2>获取模型回复</h2>
+        <pre><code class="Code">
+            print(response.choices[0].message.content)
+
+            """
+            .choices[0]
+            模型回复时会生成很多候选回复，[0]表示取第一个            
+            """
+
+            """
+            .message.content：内容
+            """
+        </code></pre>
+
+        <h2>完整代码示例</h2>
+        <pre><code class="Code">
+            from openai import OpenAI
+
+            # 1. 配置客户端（指向智谱，这就叫协议兼容）
+            client = OpenAI(
+                api_key="2e677758637d4c2f93f7ac92e34a3c78.b1r8aLUJSPX1d4fY",  # 替换为你刚才复制的Key
+                base_url="https://open.bigmodel.cn/api/paas/v4"  # 关键：把请求发送到智谱
+            )
+
+            # 2. 发起一次最简单的对话
+            response = client.chat.completions.create(
+                model="glm-4.7-flash",  # 智谱的模型名
+                messages=[
+                    {"role": "user", "content": "你好，请用一句话介绍你自己"}
+                ]
+            )
+
+            # 3. 打印模型的回复
+            print(response.choices[0].message.content)
+        </code></pre>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

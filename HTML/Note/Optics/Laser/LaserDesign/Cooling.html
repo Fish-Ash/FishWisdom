@@ -8,9 +8,9 @@
         <title>激光原理</title>
 
         <!-- 基本CSS库（基础、菜单） -->
-        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
-        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
-        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
 
         <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
@@ -24,15 +24,17 @@
 
     <body>
         <div class="header" id="PageHead">不惑</div>
-        <ul class="navibar">
-            <li><a href="../../../Home.html">主页</a></li>
-            <li><a href="../../../Navigation.html">导航</a></li>
-        </ul>
 
+        
+        <ul class="navibar">
+            <li><a href="../../../../Home.html">主页</a></li>
+            <li><a href="../../../../Navigation.html">导航</a></li>
+        </ul>
+        
         <div>
-            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
-            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
-            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
         </div>
         
         <h1>热光效应与散热</h1>
@@ -148,11 +150,38 @@
             $$\therefore \Delta n(r)_T = -\frac{Q}{4K}\frac{\mathrm{d}n}{\mathrm{d}T}r^2$$
         </div>
 
+        <div class="Card-Analysis">
+            <h2>热透镜效应的补偿</h2>
+            <p>完全补偿激光棒产生的热效应是难以实现的，原因如下：</p>
+            <p>1、焦距取决于激光器的工作条件，并随泵浦功率和重复率而变化.</p>
+            <p>2、折射率的的改变与应力有关，因而热透镜是双聚焦的.</p>
+            <p>3、不均匀泵浦导致非球面像差的产生，在很多闪光灯与二极管泵浦的结构中，棒中心的泵浦辐射比边缘的强.</p>
+
+            <p>对激光棒的正热透镜效应进行一级修正的方法有两种：</p>
+            <p>1、将单一元件负透镜插入谐振腔.</p>
+            <p>2、设计的谐振腔结构以激光棒作为厚的正透镜，并考虑其聚焦特性.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>液冷</h2>
+            <p>如果只考虑传热，水就是目前最好的冷却液.</p>
+            <p>与其他大部分冷却液相比，水的热导率与比热最高，黏度最低.</p>
+            <p>水的黏度低\(\rightarrow\)冷却管内的压降小.</p>
+            <div class="Card-AI">
+                <b>压降</b>
+                <p>流体力学中，上游与下游间的压力差.</p>
+            </div>
+
+            <p>水还有一种优点，即水受到强紫外辐射时化学性质稳定，水与酒精的混合物或氟化碳氢物具有C-H或F-H键，若紫外辐射能超过键能，键就被破坏，冷却液就成为酸性的，并出现混浊物沉淀，光学透过率随之降低.</p>
+
+
+
+        </div>
 
         <div id="PageEnd"></div>
 
-        <script src="../../../../JavaScript/MenuButton.js"></script>
-        <script src="../../../../JavaScript/Capacity.js"></script>
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../../JavaScript/Capacity.js"></script>
     </body>
 
 </html>

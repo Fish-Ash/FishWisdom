@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+        
+        <div>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+
+        <h1>激光器的振荡模式</h1>
+        <b>前置知识</b>
+        <ul>
+            <li><a href="LaserMode.html">激光模式</a></li>
+            <li><a href="LineBroadening.html">谱线加宽</a></li>
+        </ul>
+
+        <div class="Card-Analysis">
+            <h2>起振纵模数</h2>
+            <p>为使问题简化，做如下假设：</p>
+            <p>1、假设激光器以基横模TEM<sub>00</sub>运转.</p>
+            <p>这样，可以不用考虑各横模损耗的差异，各个可能振荡的纵模都具有相同的腔损耗\(\delta\).</p>
+            <p>2、假设谐振腔为F-P腔.</p>
+            <p>只有满足谐振腔驻波条件（谐振条件）的纵模才可能存在，这些纵模的频率间隔为：</p>
+            $$\Delta\nu_q = \frac{c}{2L'}$$
+
+            <div class="Card-Definition">
+                <b>振荡带宽\(\nu_{osc}\)</b>
+                <p>激光器小信号增益曲线\(G^0(\nu)\)中，大于阈值增益系数\(G_t\)的那部分曲线所对应的频率范围.</p>
+                <img src="Img/nuosc.png" alt="振荡带宽与起振纵模数" width="300">
+            </div>
+
+            <p>因此，腔内可能存在的纵模数为：</p>
+            $$N = \left[\frac{\Delta\nu_{osc}}{\Delta\nu_q} \right] + 1$$
+
+            <ul>
+                <li>\(\left[\frac{\Delta\nu_{osc}}{\Delta\nu_q} \right]\)：对\(\frac{\Delta\nu_{osc}}{\Delta\nu_q}\)的值取整.</li>
+            </ul>
+            <div class="Card-AI">
+                <p>此处为向下取整</p>
+                <p>估算的是理论上振荡的最大纵模数，因此+1</p>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>均匀加宽激光器的输出模式</h2>
+            <p>在均匀加宽激光器中，起振后的激光模式是否都能形成稳定的振荡模式而输出，这与均匀加宽激光器中模式间的竞争与空间烧孔效应有关.</p>
+
+            <h3>模式竞争</h3>
+            <p>观察均匀加宽介质激光器的纵模时发现：对于纯均匀加宽介质的激光器，无论有多少频率满足谐振条件并落在振荡带宽内，通常只有一个频率（纵模）获得大于损耗的增益而形成激光振荡.</p>
+            <p>这种现象可以用模式竞争加以解释.</p>
+            
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

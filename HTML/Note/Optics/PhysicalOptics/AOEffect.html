@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>声光效应</h1>
+
+        <b>预备知识</b>
+        <ul>
+            <li><a href="Grating.html">光栅</a></li>
+        </ul>
+
+        <div class="Card-Definition">
+            <b>弹光效应</b>
+            <p>介质在外力作用下发生形变，从而改变其光学性质的现象.</p>
+        </div>
+        <p>声波是一种弹性波.</p>
+        <p>超声波是一种纵向机械波.</p>
+        <div class="Card-AI">
+            <p>超声波在液体、气体中基本只能是纵向机械波.</p>
+            <p>但在固体中，超声波可以是多种形式的机械波.</p>
+        </div>
+        <p>声波在介质中传播时，由于应变缘故，使介质折射率随空间与时间周期性变化.</p>
+        <p>光通过这种介质时会发生衍射，这种现象称为<b>声光效应</b>.</p>
+
+        <p>声光效应是声场与光波场在声光介质中的相互作用，是弹光效应的一种表现形式.</p>
+
+        <div class="Card-Analysis">
+            <h2>弹光效应</h2>
+            <p>各向同性介质在受应力作用时，介质具有应力方向为光轴的<a href="../CrystalOptics/UniaxialCrystal.html" class="goto">单轴晶体</a>的性质.</p>
+            <p>在应力方向及与之垂直方向上产生的折射率之差为：</p>
+            $$\Delta \left(\frac{1}{n^2}\right) = ps$$
+
+            <div class="Card-AI">
+                $$\Delta \left(\frac{1}{n^2}\right) = \frac{1}{n_\parallel^2} - \frac{1}{n_\perp^2}$$
+                <ul>
+                    <li>\(n_{\parallel}\)：光偏振方向平行于应力方向时的折射率</li>
+                    <li>\(n_{\perp}\)：光偏振方向垂直于应力方向时的折射率</li>
+                </ul>
+            </div>
+
+            <ul>
+                <li>\(p\)：弹光系数</li>
+                <li>\(s\)：应变</li>
+            </ul>
+
+            <p>各向异性介质中：</p>
+            <ul>
+                <li>\(p\)：弹光系数张量</li>
+                <li>\(s\)：应变张量</li>
+            </ul>
+
+            <p>一个纵声波在声光介质中传播，介质只在纵声波传播方向受到压缩或伸长.</p>
+            <p>若介质中的纵声波沿z方向传播，则媒质粒子沿z方向的位移所引起的应变可表示为：</p>
+            $$s = s_0 \cos(k_s z - \omega_s t)$$
+            <ul>
+                <li>\(s_0\)：应变幅值</li>
+                <li>\(k_s = \frac{2\pi}{\lambda_s}\)：声波波数</li>
+                <li>\(\omega_s = \frac{2\pi}{T_s}\)：声波圆频率</li>
+            </ul>
+
+            $$\because \mathrm{d}\left(\frac{1}{n^2}\right) = -\frac{2}{n^3}\mathrm{d}n$$
+            $$\therefore \Delta \left(\frac{1}{n^2}\right) = -\frac{2}{n^3}\Delta n = ps$$
+            $$\begin{align}\therefore
+            \Delta n &= -\frac{1}{2}n^3ps\\
+                     &= -\frac{1}{2}n^3p s_0 \cos(k_s z - \omega_s t)
+            \end{align}$$
+            $$\therefore n(z,t) = n + \Delta n = n -\frac{1}{2}n^3p s_0 \cos(k_s z - \omega_s t)$$
+            <ul>
+                <li>\(n\)：无声波时介质的折射率</li>
+            </ul>
+            <p>因此，当纵声波在介质中传播时，介质折射率随空间位置和时间呈周期变化.</p>
+            <p>此时介质可视为一以声速运动的声光栅.</p>
+            <p>由于声速仅为光速的十万分之一，因此对于入射光波来说，运动的声光栅可以认为是静止的，不随时间变化的.</p>
+            <p>光波通过声光栅的衍射类似于一般的光学光栅的衍射，其光栅方程为：</p>
+            $$\lambda_s(\sin\theta - \sin\theta_i) = m\lambda$$
+            <ul>
+                <li>\(\theta_i\)：入射光波与光栅的平面夹角</li>
+                <li>\(\theta\)：衍射光波与光栅的平面夹角</li>
+                <li>\(m\)：衍射级次</li>
+                <li>\(\lambda\)：入射光波波长</li>
+            </ul>
+            <p>声光栅的光栅常数等于声波的波长\(\lambda_s\)（空间周期）.</p>
+            <p>根据超声波长\(\lambda_s\)、光波长\(\lambda\)与声光互作用长度\(L\)的大小，存在两种典型的声光衍射现象：</p>
+            <ul>
+                <li>Raman-Nath衍射：\(\theta_i\approx 0\)、超声频率较低（声波长\(\lambda_s\)较长）、声光相互作用长度较短、即\(2\pi L\lambda/(n\lambda_s^2)\ll 1\)时产生的声光衍射.</li>
+                <li>Bragg衍射：\(\theta_i\neq 0\)、超声频率较高（声波长\(\lambda_s\)较短）、声光相互作用长度较长、即\(2\pi L\lambda/(n\lambda_s^2)\gg 1\)时产生的声光衍射.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>Bragg声光衍射</h2>
+            <p>Bragg衍射时纵声波通过的声光介质可以看作是间距为声波波长的一排排反射层.</p>
+            <img src="Img/Bragg.png" alt="" width="400">
+            <p>根据相邻波面衍射光的光程差等于光波波长的整数倍的条件，结合：</p>
+            $$\lambda_s(\sin\theta - \sin\theta_i) = m\lambda$$
+            <p>可得Bragg衍射条件为：</p>
+            $$\theta_i = \theta = \theta_B$$
+            $$2k\sin\theta_B = mk_s$$
+            <p>由于声波是正弦波，声光介质折射率的空间分布也是正弦函数，因此，Bragg衍射条件应为：</p>
+            $$2k\sin\theta_B = k_s$$
+            <p>或</p>
+            $$2\lambda_s\sin\theta_B = \frac{\lambda}{n}$$
+            <p>表明出射波中仅有唯一的峰（衍射级次\(m = +1~or~-1\)），这就是Bragg衍射波.</p>
+        </div>
+
+
+
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

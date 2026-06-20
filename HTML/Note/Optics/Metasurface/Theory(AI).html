@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>超表面</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>基本理论（AI）</h1>
+
+        <p>传统天线与阵列不算超表面.</p>
+        <p>传统的相控阵天线是利用电路来控制每个天线单元的馈电相位（如移相器、T/R组件），让各个单元辐射的电磁波在空间干涉，形成定向波束.</p>
+
+        <div class="Card-AI">
+            <p>馈电相位：就是一种相位.</p>
+            <p>移相器：用于控制相位的器件.</p>
+            <p>T/R组件：</p>
+            <p>相控阵天线不是传统天线.</p>
+            <p></p>
+        </div>
+
+        <p>反射阵/透射阵天线是超表面的应用形态之一.</p>
+
+        <h2>设计理论</h2>
+        <h3>广义斯涅尔定律</h3>
+        <p>超表面的最基本理论.</p>
+
+        <h3>等效表面阻抗理论</h3>
+        <h3>等效媒质理论</h3>
+        <p>用于计算超表面的内部参数.</p>
+
+        <h2>设计方法</h2>
+        <h3>正向设计：局部周期性近似</h3>
+        <p>假设超表面上的某一个微结构，其周围相邻的结构都和它长得差不多，设计时直接根据需要的相位查表拼接.</p>
+        <p>极其高效、直观；但忽略了相邻不同单元之间复杂的电磁串扰（耦合效应），导致器件效率很难达到极限.</p>
+
+        <h3>逆向设计</h3>
+        <p>基于神经网络，输入要求使超表面自主生长.</p>
+        <p>能打破常规形状的限制，将效率逼近物理极限；但计算量极其恐怖，且生成的结构往往由于太过奇形怪状而极难加工.</p>
+
+        <h2>设计工具</h2>
+        <table>
+            <tr>
+                <td rowspan="5">主流全波仿真软件</td>
+                <td>设计工具</td>
+                <td>设计方法</td>
+                <td>适用范围</td>
+            </tr>
+            <tr>
+                <td>CST Studio Suite</td>
+                <td>FITD（时域有限积分）</td>
+                <td>宽频、时域仿真；微波、毫米波、太赫兹超表面（频率选择表面、反射阵天线）</td>
+            </tr>
+            <tr>
+                <td>Ansys HFSS</td>
+                <td>FEM（频域有限元）</td>
+                <td>频域、精细结构与高Q值；微波、毫米波天线、阵列</td>
+            </tr>
+            <tr>
+                <td>Ansys Lumerical</td>
+                <td>FDTD（时域有限差分）、MODE（模式法）</td>
+                <td>光学/光子学超表面（超透镜、几何相位单元）</td>
+            </tr>
+            <tr>
+                <td>COMSOL Multiphysics</td>
+                <td>FEM</td>
+                <td>多物理场耦合；声学超表面；需要耦合热、力、电的复合场景</td>
+            </tr>
+            <tr>
+                <td rowspan="2"">半解析与快速计算工具</td>
+                <td>Matlab-Reticolo；Python-S4；GD-Calc</td>
+                <td>RCWA（严格耦合波分析）工具</td>
+                <td>光学周期性超表面的快速迭代，通过扫描结构的长、宽、周期，快速建立单元特性库，适用于设计超透镜等</td>
+            </tr>
+            <tr>
+                <td>ADS等电路仿真软件</td>
+                <td>传输线/等效电路模型</td>
+                <td>微波段超表面，将单元结构等效为电容、电感，快速设计频率选择表面或电路型吸波器</td>
+            </tr>
+        </table>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

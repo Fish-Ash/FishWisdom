@@ -250,15 +250,31 @@
             <p>[注]复数形式是为了简便计算而取的，虚部无物理意义.此处取\(\mathbf{E} = \mathbf{E}_0e^{-i(\omega t - kr + \phi_0)}\)与\(\mathbf{E} = \mathbf{E}_0e^{i(\omega t - kr + \phi_0)}\)都是可行的，取其实部均为\(\mathbf{E}_0\cos(\omega t - kr + \phi_0)\)，约定取\(-i\)形式.</p>
         </div>
 
+        <div class="Card-Analysis" id="SphericalWave">
+            <h2>球面波</h2>
 
-        <h2>球面波</h2>
-        <b>最简单的简谐球面光波——单色球面光波的波函数</b>
-        $$E = \frac{A_1}{r}\cos(\omega t - kr)$$
-        <p>复数形式</p>
-        $$E = \frac{A_1}{r}e^{-i(\omega t - kr)}$$
-        <p>复振幅</p>
-        $$\tilde{E} = \frac{A_1}{r}e^{ikr}$$
-        <p>\(A_1\)为离开点光源单位距离外的振幅值.</p>
+            <div class="Card-Defnition">
+                <b>球面波</b>
+                <p>将一个点光源放置于各向同性介质中，从点光源发出的光波以相同的速度沿径向传播，某一时刻电磁波所到达的各点将构成一个以点光源为中心的球面，其等相面也为球面，这种光波称为球面波.</p>
+            </div>
+            <b>最简单的简谐球面光波——单色球面光波的波函数</b>
+            $$E = \frac{A_1}{r}\cos(\omega t - kr)$$
+            <p>复数形式</p>
+            $$E = \frac{A_1}{r}e^{-i(\omega t - kr)}$$
+
+            <ul>
+                <li>\(A_1\)：离开点源单位距离处的振幅值</li>
+                <li>\(r\)：考察点到点源的距离</li>
+            </ul>
+
+            <p>球面波振幅与\(r\)成反比.</p>
+            <p>等相面是\(r = \mathbb{C}\)的球面.</p>
+
+
+            <p>复振幅</p>
+            $$\tilde{E} = \frac{A_1}{r}e^{ikr}$$
+        </div>
+ 
 
 
         <div class="Card-Analysis">
@@ -280,12 +296,12 @@
 
 
         <h2>光波的速度</h2>
-        <div class="Card-Definition" id="vp">
+        <div class="Card-Definition" id="phase velocity">
             <b>相速度</b>
             <p>光波等相位面的传播速度.</p>
         </div>
 
-        <div class="Card-Definition">
+        <div class="Card-Definition" id="group velocity">
             <b>群速度（包络速度）</b>
             <p>等振幅面的传播速度.</p>
         </div>

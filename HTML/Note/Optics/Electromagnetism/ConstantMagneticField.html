@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>电磁学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>恒定磁场</h1>
+
+        <p>同号磁极相互排斥、异号磁极相互吸引.</p>
+        <p>地球是一个巨大的磁体，其N极位于地理南极附近、S极位于地理北极附近.</p>
+
+
+        <h2>奥斯特实验</h2>
+        <h3>实验装置</h3>
+        <p>导线AB沿南北方向放置，下方有一可在水平面内自由转动的磁针.</p>
+        <img src="Img/OerstedExperiment.png" alt="奥斯特实验" width="200">
+        <h3>实验现象</h3>
+        <p>导线中无电流通过时，磁针在地球磁场的作用下沿南北取向.</p>
+        <p>导线中通过电流时，磁针发生偏转：</p>
+        <p>电流方向由A指向B时，俯视磁针逆时针偏转.</p>
+        <p>电流方向由B指向A时，俯视磁针顺时针偏转.</p>
+        <h3>实验结论</h3>
+        <p>电流可以对磁铁施加作用力.</p>
+
+        <div class="Card-Definition">
+            <b>安培分子环流假说</b>
+            <p>组成磁铁的最小单元（磁分子）就是环形电流，这样一些分子环流定向排列，在宏观上就会显示出N、S极.</p>
+        </div>
+
+        <p>原子是由带正电的原子核与绕核旋转的负电子组成的.</p>
+        <p>电子不仅绕核旋转，还有自旋.</p>
+        <p>原子、分子等微观粒子内电子的这些运动形成了“分子环流”，这就是物质磁性的来源.</p>
+
+        <div class="Card-AI">
+            <p>安培分子环流假说并非完全准确，但物质的磁性确实来源于电子的“运动”，确切来说，是电子的两种量子行为.</p>
+        </div>
+
+        <h2>安培定律</h2>
+        <div class="Card-Definition">
+            <b>安培定律</b>
+            <p>电流之间的相互作用规律.</p>
+            <p>安培定律是磁场的基本规律.</p>
+        </div>
+
+        <p>设\(\mathrm{d}\mathbf{F}_{12}\)为电流元1给电流元2的力，\(I_1\)与\(I_2\)分别为它们的电流强度，\(\mathrm{d}l_1\)与\(\mathrm{d}l_2\)分别为两线元的长度，\(r_{12}\)为两电流元之间的距离.</p>
+        <p>则\(\mathrm{d}\mathbf{F}_{12}\)的大小\(\mathrm{d}F_{12}\)满足：</p>
+        $$\mathrm{d}F_{12} \propto \frac{I_1 I_2\mathrm{d}l_1\mathrm{d}l_2}{r_{12}^2}$$
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

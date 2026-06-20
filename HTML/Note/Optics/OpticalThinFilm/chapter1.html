@@ -3,21 +3,37 @@
 <html lang = "zh-cn">
 
     <head>
-        <meta charset="utf-8">
-        <title>应用光学</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>超表面</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
     <body>
-        <div class="header">不惑</div>
-
-        
+        <div class="header" id="PageHead">不惑</div>
         <ul class="navibar">
-            <li><a href="../Home.html">主页</a></li>
-            <li><a href="../Navigation.html">导航</a></li>
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
 
         <h1>第一章 光学薄膜特性的理论计算</h1>
 
@@ -61,10 +77,23 @@
 
         <h2>第一节 单色平面电磁波</h2>
 
-        <b>复折射率</b>
-        $$N = c/v = n - ik$$
-        其中，\(n\)为介质的折射率，\(k\)为消光系数。
-        <br><br>
+        <div class="Card-Analysis">
+            <h2>复折射率</h2>
+            <div class="Formula">
+                $$N = c/v = n - ik$$
+                <div class="Derivation">
+                    $$\frac{c^2}{v^2} = \frac{\epsilon\mu}{\epsilon_0\mu_0} - i\frac{\mu\sigma}{\omega\epsilon_0\mu_0}$$
+                    <p>\(c/v\)为介质固有的一个无量纲参数，将其记为N.</p>
+                    $$N^2 = \epsilon_r\mu_r - i\frac{\mu_r\sigma}{\omega\epsilon_0}$$
+                    <p>\(N\)有两个可能的解，但由于物理上的原因，应取\(n\)为正值的解.</p>
+                </div>
+            </div>
+            <ul>
+                <li>\(n\)：折射率的实部（或简单称为介质的折射率，因为在理想的介质材料中N为实数）</li>
+                <li>\(k\)：消光系数</li>
+            </ul>
+
+        </div>
 
         <b>沿给定方向余弦\((\alpha,\beta,\gamma)\)传播的平面波</b>
         $$\begin{align}
@@ -306,10 +335,10 @@
         \begin{bmatrix}1\\Y\end{bmatrix} = \begin{bmatrix}B\\C\end{bmatrix} = \left\{\prod_\limits{j=1}^K\begin{bmatrix}\cos\delta_j & \frac{i}{\eta_j}\sin\delta_j\\i\eta_j\sin\delta_j& \cos\delta_j \end{bmatrix}\right\}\begin{bmatrix}1\\\eta_{K+1}\end{bmatrix}
         $$
         
+        <div id="PageEnd"></div>
 
-        <ul class="navibar">
-            <li class="next"><a href="chapter2.html">下一页</a></li>
-        </ul>
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
 </html>

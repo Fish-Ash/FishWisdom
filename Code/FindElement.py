@@ -26,7 +26,7 @@ def find_html_with_content(folder_path, target_content, case_sensitive=False):
 # 使用示例
 if __name__ == "__main__":
     search_folder = r"D:\Code\Git\FishWisdom\HTML"  # 替换为目标文件夹路径
-    target_content = "二向色镜"  # 替换为要搜索的内容
+    target_content = "<b>波片"  # 替换为要搜索的内容
     matching_files = find_html_with_content(search_folder, target_content)
     
     print("\n搜索结果:")

@@ -154,19 +154,117 @@
 
         <div class="Card-Analysis">
             <h2>晶体中的相位匹配</h2>
+
+            <div class="Card-AI">
+                <p>物理条件允许的情况下，优先选择非临界相位匹配（近乎完美）.</p>
+            </div>
             <h3>角度相位匹配——临界相位匹配</h3>
+
+            <div class="Card-Definition">
+                <b>临界相位匹配</b>
+                <p>使基波与二次谐波有不同的偏振态，通过选择特定光传播方向实现相位匹配的方式.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>相位匹配角</b>
+                <p>能保证相位匹配的光传播方向的空间角度.</p>
+            </div>
 
             <p>在二次谐波过程中，如果取基波（波长为\(0.6943\mu m\)）为寻常光偏振，二次谐波（波长为\(0.3472\mu 1\)）为非常光偏振，则基波折射率\(n_o^\omega\)介于二次谐波的两个主折射率\(n_o^{2\omega}\)与\(n_e^{2\omega}\)之间.</p>
 
             <div class="Card-AI">
                 <p>这里的“取”是指可以随意控制吗？</p>
             </div>
+
+            <h3>共线相位匹配</h3>
+            <p>首先讨论单轴晶体相位匹配角的计算.</p>
+            <p>按照入射基波的不同偏振方式，可将临界相位匹配分为两类：</p>
+            <p>Ⅰ类相位匹配：入射的基波取单一的线偏振光（如o光），产生的二次谐波取另一种状态的线偏振光（如e光）.</p>
+            <p>Ⅱ类相位匹配：基波取两种偏振态（o光与e光），而二次谐波取单一偏振态（如e光）.</p>
+
+            <p>单轴晶体在正常色散区的两类相位匹配方式的相位匹配条件如下表所示：</p>
+            <table>
+                <tr>
+                    <td rowspan="2">晶体种类</td>
+                    <td colspan="2">Ⅰ类相位匹配</td>
+                    <td colspan="2">Ⅱ类相位匹配</td>
+                </tr>
+                <tr>
+                    <td>偏振性质</td>
+                    <td>相位匹配条件</td>
+                    <td>偏振性质</td>
+                    <td>相位匹配条件</td>
+                </tr>
+                <tr>
+                    <td>正单轴晶体</td>
+                    <td>$$e+e\rightarrow o$$</td>
+                    <td>$$n_e^\omega(\theta_m) = n_o^{2\omega}$$</td>
+                    <td>$$o+e\rightarrow o$$</td>
+                    <td>$$\frac{1}{2}[n_o^\omega + n_e^\omega(\theta_m)] = n_o^{2\omega}$$</td>
+                </tr>
+                <tr>
+                    <td>负单轴晶体</td>
+                    <td>$$o+o\rightarrow e$$</td>
+                    <td>$$n_o^{\omega} = n_e^{2\omega}(\theta_m)$$</td>
+                    <td>$$e+o\rightarrow e$$</td>
+                    <td>$$\frac{1}{2}[n_e^{\omega}(\theta_m) + n_o^{\omega}] = n_e^{2\omega}(\theta_m)$$</td>
+                </tr>
+            </table>
+
+            <p>两类临界相位匹配的相位匹配角\(\theta_m\)可以通过理论进行计算.</p>
+            <p>e光折射率\(n_e(\theta)\)与方向\(\theta\)的关系为：</p>
+            $$\frac{1}{n_e^2(\theta)} = \frac{\cos^2\theta}{n_o^2} + \frac{\sin^2\theta}{n_e^2}$$
+            <p>因此对于二次谐波有：</p>
+            $$\frac{1}{[n_e^{2\omega}]^2} = \frac{\cos^2\theta}{(n_o^{2\omega})^2} + \frac{\sin^2\theta}{(n_e^{2\omega})^2}$$
+            <p>对于负单轴晶体，满足Ⅰ类相位匹配条件时，有：</p>
+            $$\frac{1}{(n_o^\omega)^2} = \frac{\cos^2\theta_m}{(n_o^{2\omega})^2} + \frac{\sin^2\theta_m}{(n_e^{2\omega})^2}$$
+            <p>解得，负单轴晶体Ⅰ类相位匹配角为：</p>
+            $$(\theta_m^{Ⅰ})^{负} = \arcsin\left[\left(\frac{n_e^{2\omega}}{n_o^{\omega}}\right)^2\frac{(n_o^{2\omega})^2 - (n_o^\omega)^2}{(n_o^{2\omega})^2 - (n_e^{2\omega})^2}\right]^{1/2}$$
+
+            <p>同理，正单轴晶体Ⅰ类相位匹配角为：</p>
+            $$(\theta_m^Ⅰ)^{正} = \arcsin\left[\left(\frac{n_e^\omega}{n_o^{2\omega}}\right)^2\frac{(n_o^{\omega})^2 - (n_o^{2\omega})^2}{(n_o^\omega)^2 - (n_e^\omega)^2}\right]^{1/2}$$
+
+            <p>正单轴晶体Ⅱ类相位匹配角为：</p>
+            $$(\theta_m^Ⅱ)^正 = \arcsin\left\{\frac{[n_o^\omega/(2n_o^{2\omega} - n_o^\omega)]^2 - 1}{(n_o^\omega/n_e^\omega)^2-1}\right\}^{1/2}$$
+
+            <p>负单轴晶体Ⅱ类相位匹配角，无法得到显示解：</p>
+            $$\left[\frac{\cos^2(\theta_m^Ⅱ)^负}{(n_o^{2\omega})^2} + \frac{\sin^2(\theta_m^Ⅱ)^负}{(n_e^{2\omega})^2}\right]^{-1/2} = \frac{1}{2}\left\{n_o^\omega + \left[\frac{\cos^2(\theta_m^Ⅱ)^负}{(n_o^\omega)^2} + \frac{\sin^2(\theta_m^Ⅱ)^负}{(n_e^\omega)^2}\right]^{-1/2}\right\}$$
             
+            <h3>临界相位匹配存在的问题</h3>
+            <b>走离效应</b>
+            <p>通过调整光传播方向的角度实现相位匹配时，参与非线性作用的光束选取不同的偏振态，就使得有限孔径内的光束间产生分离.</p>
+            <p>在二次谐波产生过程中，当晶体内光传播方向与光轴夹角为\(\theta_m\)时，寻常光的波法线方向与光线方向一致，而非常光的波法线方向与光线方向不一致，在整个晶体长度中，使得不同偏振态的基波与二次谐波的光线方向逐渐分离，从而使得转换效率下降.</p>
+
+            <h3>负单轴晶体Ⅰ类相位匹配内的走离效应</h3>
+            <img src="Img/WalkOffEffect.png" alt="" width="300">
+            <p>图中表示了\(n_{2e}(\theta)\)与\(n_{1o}\)折射率曲面在x-z面内的截线，两截线相交于A.</p>
+            <p>基波（o光）进入晶体后，沿OA（z轴）方向传播.</p>
+            <p>二次谐波（e光）的波矢方向也是OA方向，但其光线方向沿\(n_{2e}(\theta)\)曲线在A点处的法线方向——\(\alpha\)方向传播，\(\alpha\)为走离角，且：</p>
+            $$\tan\alpha = \frac{1}{2}(n_o^{\omega})^2[(n_o^{2\omega})^{-2} - (n_e^{2\omega})^{-2}]\sin(2\theta_m)$$
+            <p>[注]大多数晶体的走离角在\(1°\sim 5°\)之间.</p>
 
 
 
-            <h3>温度相位匹配——非临界相位匹配</h3>
+            
+        </div>
+        
+        <div class="Card-Analysis">
+            <h2>非临界相位匹配——温度相位匹配</h2>
+            <div class="Card-Definition">
+                <b>非临界相位匹配</b>
+                <p>通过调节温度实现的相位匹配.</p>
+                <p>非临界相位匹配对角度偏离不敏感.</p>
+            </div>
 
+            <p>如果能够使得相位匹配角\(\theta_m=90°\)，即在垂直于光轴的方向上实现相位匹配，则光束走离效应的限制就可以消除，二次谐波接受角\(\delta\theta\)的限制也可以放宽.</p>
+            <p>此时，基波的寻常光折射率曲面恰与二次谐波非常光折射率曲面相切.</p>
+            <p>为实现这种90°相位匹配，可以利用有些晶体（如LiNbO<sub>3</sub>、KDP等）折射率的双折射量与色散是其温度敏感函数的特点，即\(n_e\)随温度改变量比\(n_o\)随温度改变量大得多，通过适当调节晶体温度，可以实现\(\theta_m = 90°\)的相位匹配.</p>
+
+            <p>负单轴晶体Ⅰ类相位匹配的温度带宽：</p>
+            $$\delta T \approx \left(\frac{\pi c}{\omega L}\right)\left|\frac{\partial}{\partial T}[n_o(\omega) - n_e(2\omega, \theta_m)]\right|^{-1}$$
+
+            <p>负单轴晶体Ⅱ类相位匹配的温度带宽：</p>
+            $$\delta T \approx \left(\frac{2\pi c}{\omega L}\right)\left|\frac{\partial}{\partial T}[n_e(\omega,\theta_m)+n_o(\omega)-n_e(2\omega,\theta_m)]\right|^{-1}$$
         </div>
 
         <div id="PageEnd"></div>

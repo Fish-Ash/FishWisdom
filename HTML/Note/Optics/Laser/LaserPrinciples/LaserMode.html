@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+        
+        <div>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+
+        <h1>激光模式</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#longitudinal mode">纵模</a></li>
+            </ul>
+        </div>
+
+        <b>前置知识</b>
+        <ul>
+            <li><a href="../../PhysicalOptics/LightSuperposition.html#StandingWave">驻波</a></li>
+            <li><a href="../../PhysicalOptics/Interference.html">干涉</a></li>
+        </ul>
+
+        <p>对于一个给定的光学谐振腔，并不是任意频率、任意形式的激光振荡都可以存在于其中，无论是对开腔还是闭腔，都对腔内的激光场产生约束作用.</p>
+        <p>电磁场理论表明，在具有一定边界条件的腔内，电磁场只能存在于一系列分立的本征状态.</p>
+        <p>激光场的每种本征状态具有一定的振荡频率与空间分布，称为一种激光模式.</p>
+        <p>从光子角度看，每一种激光模式就是腔内可以区分的一种光子态.</p>
+
+        <p>在讨论光波的传播时，通常将波的传播方向称为纵向，而与波传播方向垂直的方向称为横向.</p>
+        <p>相应地，激光模式分为纵模与横模，分别表示谐振腔内沿纵向的电磁场分布与在垂直于光轴的横截面上的电磁场分布.</p>
+
+        <p>腔内电磁场的本征态由Maxwell方程组与腔的边界条件决定.</p>
+        <p>不同类型何与结构的谐振腔的边界条件各不相同，因此在谐振腔内振荡的激光模式也各不相同.</p>
+        <p>一旦给定了腔的具体结构，就可以唯一确定在其中振荡的激光模式的特征，这就是模式与腔结构间的具体依赖关系.</p>
+
+        <div class="Card-Analysis">
+            <h2>驻波与谐振频率</h2>
+            <p>当激光器处于振荡状态，激光器内部的光为满足一定相位条件的驻波.</p>
+
+            <b>形成驻波的条件</b>
+            <p>根据波动理论，当两列频率、振动方向与振幅均相同的波在同一直线上沿相反方向传播时，就叠加形成驻波.</p>
+            <p>相邻两个波节与相邻两个波腹之间的距离都是原来两列行波波长的一半.</p>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>平行平面镜腔中的驻波</h2>
+            <p>激光技术中应用的谐振腔，其尺度一般大于工作波长，特别是腔的横向尺寸.</p>
+            <p>如，圆形反射镜盘的半径\(a\gg \lambda\).</p>
+            <p>这种情况下，对F-P腔而言，可以假设<b>均匀平面波是腔内电磁场的本征态</b>.</p>
+
+            <div class="Card-Question">
+                <p>什么叫电磁场的本征态？</p>
+                <p>为什么是F-P腔？</p>
+                <p>为什么均匀平面波不能作为有源F-P腔的本征模存在？</p>
+                <p>什么叫有源F-P腔？</p>
+
+                <div class="Card-AI">
+                    <p>有源腔就是包含增益介质的腔，无源腔就是不包含增益介质的腔.</p>
+                </div>
+            </div>
+
+
+
+            <p>严格的光腔模式理论表明：均匀平面波不能作为有源F-P腔的本征模存在.</p>
+            <p>但若满足条件：</p>
+            $$a \gg \lambda$$
+            <p>更确切地说满足条件：</p>
+            $$\frac{a^2}{L\lambda} \gg 1$$
+            <ul>
+                <li>\(a\)：圆形反射镜片半径.</li>
+                <li>\(L\)：腔长.</li>
+                <li>\(\lambda\)：激光波长.</li>
+                <li>\(\frac{a^2}{L\lambda}\)：F-P腔的菲涅尔系数.</li>
+            </ul>
+            <p>则腔内的最低损耗模式仍可以近似为平面波.</p>
+
+            <h3>均匀平面波在F-P腔中沿轴线方向往返传播的情形</h3>
+
+            <p>激光束在谐振腔中振荡时，一列光波从谐振腔的左端传播到右端，被右端的反射镜反射回来，又向左传播，直到被左端的反射镜反射回来，不断往返.</p>
+            <p>因此，谐振腔内满足形成驻波的条件.</p>
+            <p>当光波在腔镜上反射时，入射光波场与反射光波场将会发生干涉，多次往复反射就会发生多光束干涉.</p>
+            <p>为了能在腔内形成稳定振荡，要求入射光波与反射光波能因干涉而加强，即发生相长干涉.</p>
+
+            <div class="Card-AI">
+                <p>干涉相长说明光在谐振腔中越来越强，不会因逐渐减弱而消失.</p>
+            </div>
+
+
+            <p>多光束相长干涉条件：</p>
+            <p>光波从某一点出发，经腔内往返一周再回到原来位置时，与初始出发光波的相位差为\(2\pi\)的整数倍.</p>
+            <p>若设均匀平面波在腔内往返一周时的相位滞后为\(\Delta\phi\)，则相长干涉条件可表示为：</p>
+            <div class="Card-Definition">
+                <b>光腔的驻波条件（相长干涉条件）</b>
+                $$\Delta\phi = \frac{2\pi}{\lambda_0}2L' = 2q\pi,\quad q\in\mathbb{N}_+$$
+                <div class="Card-AI">
+                    <p>相位差 = 波数x光程差</p>
+                </div>
+                <ul>
+                    <li>\(\lambda_0\)：真空中的光波长.</li>
+                    <li>\(L'\)：腔的光学长度.</li>
+                </ul>
+            </div>
+
+            <div class="Card-Definition">
+                <b>谐振腔的光学长度\(L'\)</b>
+                <p>对于腔内介质沿轴线非均匀分布的一般情况：</p>
+                $$L' = \int_0^L \eta(z) dz$$
+                <ul>
+                    <li>\(z\)轴：腔轴</li>
+                    <li>\(\eta(z)\)：沿腔轴线方向的折射率分布</li>
+                </ul>
+            </div>
+
+
+
+
+            <p>当光波长与腔的光学长度满足上式时，将在腔内形成驻波.</p>
+            <p>\(L'\)一定的情况下，有：</p>
+            <div class="Card-Definition">
+                <b>腔的谐振波长</b>
+                $$\lambda_q = \frac{2L'}{q}$$
+            </div>
+            $$L' = q\frac{\lambda_q}{2}$$
+            <p>腔内驻波的特征：达到谐振时，腔的光学长度应为半波长的整数倍.</p>
+            <div class="Card-Definition">
+                <b>腔的谐振频率</b>
+                $$\nu_q = \frac{c}{\lambda_q} = q\frac{c}{2L'}$$
+            </div>
+            <p>上两式即为F-P腔中沿轴向传播的平面波谐振条件.</p>
+            <p>\(L'\)一定的谐振腔只对满足上式的光子才提供正反馈，使之达到谐振.</p>
+            <p>平行平面镜腔中的谐振频率只能随正整数\(q\)的不同取值而取一系列分立值.</p>
+        </div>
+
+        <div class="Card-Analysis" id="longitudinal mode">
+            <h2>F-P腔中的纵模</h2>
+
+            <p>干涉相长条件中不同的\(m\)值对应于不同的驻波，这些驻波的电磁场在沿轴线方向（纵向）上的分布是不同的.</p>
+            <p>由整数\(m\)表征的腔内纵向的稳定场分布称为激光的纵模.</p>
+            <p>\(m\)称为纵模序数，不同纵模相应于不同的\(m\)值，对应不同的谐振频率.</p>
+
+            <p>在平行平面镜腔中，满足腔的谐振频率的沿轴线方向（纵向）形成的驻波场构成腔内电磁场的本征模式.</p>
+            <b>特点</b>
+            <p>在腔的横截面内，场的振幅是均匀分布的，而沿腔的轴线方向（纵向）形成驻波，驻波的波节数由\(q\)决定.</p>
+
+            <div class="Card-Definition">
+                <b>纵模间隔\(\Delta\nu_q\)</b>
+                <p>腔内相邻两纵模频率之差.</p>
+                $$\Delta\nu_q = \nu_{q+1} - \nu_q = \frac{c}{2L'}$$
+            </div>
+
+            <img src="Img/Delta_nu_q.jpg" alt="" width="400">
+
+
+            <h3>腔的多纵模振荡</h3>
+
+            <div class="Card-Formula">
+                <b>振荡阈值条件</b>
+                $$G^0 \geq \frac{\delta}{l}$$
+
+                <ul>
+                    <li>\(G^0\)：激活介质的小信号增益系数.</li>
+                    <li>\(\delta\)：腔内的单程损耗.</li>
+                    <li>\(l\)：激活介质长度.</li>
+                </ul>
+            </div>
+
+            <p>既满足腔的谐振频率，又满足振荡阈值条件的模，才可能在腔内实际存在.</p>
+            
+            <img src="Img/Delta_nu_T.jpg" alt="" width="400">
+
+            <p>若以\(\Delta\nu_T\)表示增益曲线高于阈值部分的频带宽度，则可能同时振荡的纵模数为：</p>
+            $$N = \left[\frac{\Delta\nu_T}{\Delta\nu_q}\right] + 1$$
+            <p>物质的激发程度越高，\(\Delta\nu_T\)越大，能够同时振荡的纵模数越多.</p>
+            <p>腔越长，\(\Delta\nu_q\)越小，能够同时振荡的纵模数越多.</p>
+            <p>在利用锁模技术获得超短脉冲时，希望同时振荡的纵模数越多越好.</p>
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>孔阑传输线模型</h2>
+            <p>使光波沿一系列同轴圆孔单向传播，以模拟在平面开腔中的往复反射.</p>
+            <p>圆孔孔径等于腔镜直径.</p>
+            <p>相邻圆孔距离等于腔长.</p>
+        </div>
+        
+
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+        
+        <div>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+
+        <h1>LD泵浦</h1>
+
+        <div class="Card-Definition">
+            <p>LD泵浦固体激光器，DPSSL（Diode Pumped Solid-State Laser）</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>LD泵浦的优点</h2>
+            <p>可以针对某些固体工作物质的吸收光谱来选择与之匹配的LD作为泵浦源，这将大大提高激光器的效率，改善激光器的性能.</p>
+            <div>
+                <p>Nd:YAG在810nm附近约30nm范围内有多条吸收谱线，若采用波长为808nm的LD激励，可以准确对准该吸收带内带宽约2nm的808强吸收谱线.</p>
+            </div>
+        </div>
+
+        <p>泵浦用激光二极管基本上有四种类型，按输出功率 从低到高排列为：</p>
+        <ul>
+            <li>单条型（Single-stripe）</li>
+            <li>LD阵列（diode-array）</li>
+            <li>二极管条（diode-bar）</li>
+            <li>堆叠条（stacked-bars）</li>
+        </ul>
+
+        <p>LD泵浦固体激光器，根据泵浦的耦合方式不同，可以分为三种结构：</p>
+        <ul>
+            <li>直接端面泵浦</li>
+            <li>光纤耦合端面泵浦</li>
+            <li>侧面泵浦</li>
+        </ul>
+
+        <div class="Card-Analysis">
+            <h2>直接端面泵浦</h2>
+            <p>直接端面泵浦是小功率DPSSL常用的方式.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>侧面泵浦</h2>
+            <p>要得到大功率的激光输出，需采用功率更大的半导体激光器列阵作泵浦光源，由于列阵的发光面较大，采取侧面泵浦的方式更为有利.</p>
+
+        </div>
+
+
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

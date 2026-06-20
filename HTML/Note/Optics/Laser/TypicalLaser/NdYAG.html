@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+        
+        <div>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>Nd:YAG激光器</h1>
+        <div class="Card-Definition">
+            <b>掺钕钇铝石榴石（Nd<sup>3+</sup>:Y<sub>3</sub>Al<sub>5</sub>O<sub>12</sub>，Nd:YAG）</b>
+            <p>以钇铝石榴石晶体YAG为基质，掺杂约1%原子百分比的Nd<sup>3+</sup>离子.</p>
+            <p>晶体中部分Y<sup>3+</sup>离子被Nd<sup>3+</sup>离子替代，呈淡紫色.</p>
+            <p>其中激活离子为Nd<sup>3+</sup>.</p>
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>Nd:YAG激光器的发光机理</h2>
+
+            <p>Nd:YAG的吸收光谱中，对激光有贡献的主要有五个吸收光谱带，中心波长分别在525nm、585nm、750nm、810nm与870nm附近.</p>
+            <img src="Img/NdYAG.png" alt="" width="400">
+
+            <p>每个吸收带带宽约为30nm，其中以750nm与810nm为中心的两个吸收带最强.</p>
+
+            <div class="Card-AI">
+                <b>光谱吸收带</b>
+                <p>某种物质在某段连续或近似连续的波长范围内，对入射光有明显吸收.</p>
+            </div>
+
+            <div class="Card-AI">
+                <b>对激光有贡献的吸收光谱带</b>
+                <p>泵浦光被改吸收带吸收后，能够有效将粒子送至激光上能级，最终参与形成粒子数反转与激光输出的吸收带.</p>
+            </div>
+            
+            <p>在光泵激励下，处于基态<sup>4</sup>I<sub>9/2</sub>的Nd<sup>3+</sup>离子吸收相应波长的光子能量后，跃迁到<sup>4</sup>F<sub>5/2</sub>、<sup>2</sup>H<sub>9/2</sub>（对应810nm吸收带）和<sup>4</sup>F<sub>7/2</sub>、<sup>4</sup>F<sub>3/2</sub>（对应750nm吸收带）等能级.</p>
+            <p>在这些能级上的离子很不稳定，很快通过无辐射跃迁迅速落至<sup>4</sup>F<sub>3/2</sub>能级.</p>
+            <p><sup>4</sup>F<sub>3/2</sub>能级是寿命约为0.23ms的亚稳态能级，作为激光上能级.</p>
+
+            <p>处于<sup>4</sup>F<sub>3/2</sub>能级的Nd<sup>3+</sup>离子可以向多个终端能级跃迁并产生荧光辐射：</p>
+    
+            <div class="Card-AI">
+                <b>终端能级</b>
+                <p>激光下能级</p>
+            </div>
+    
+            <p>概率最大的是：<sup>4</sup>F<sub>3/2</sub> → <sup>4</sup>I<sub>11/2</sub>跃迁（波长为1064nm）.</p>
+            <p>其次是：<sup>4</sup>F<sub>3/2</sub> → <sup>4</sup>I<sub>9/2</sub>跃迁（波长为950nm）.</p>
+            <p>概率最小的是：<sup>4</sup>F<sub>3/2</sub> → <sup>4</sup>I<sub>13/2</sub>跃迁（波长为1350nm）.</p>
+    
+    
+            <hr>
+    
+            <div class="Card-AI">
+                <b>光谱项符号</b>
+                <p>类似<sup>4</sup>F<sub>3/2</sub>这种的.</p>
+                <p>用于表示原子、离子或分子的能级状态的.</p>
+            </div>
+            <p><sup>4</sup>F<sub>3/2</sub> → <sup>4</sup>I<sub>11/2</sub>与<sup>4</sup>F<sub>3/2</sub> → <sup>4</sup>I<sub>13/2</sub>属于四能级系统，阈值低，仅需很低的泵浦能量就能实现激光振荡.</p>
+            <p>其中，1064nm的荧光强度约为1350nm荧光光强的4倍，1064nm谱线首先起振，从而抑制1350nm谱线；</p>
+            <p>只有在有意抑制1064nm激光的情况下，才能产生1350nm的激光.</p>
+            <p><sup>4</sup>F<sub>3/2</sub> → <sup>4</sup>I<sub>9/2</sub>属于三能级系统，室温下难以产生激光.</p>
+    
+            <p>Nd:YAG激光器通常仅产生1064nm的激光振荡.</p>
+        </div>
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+</html>

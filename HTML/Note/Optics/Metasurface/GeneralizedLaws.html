@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>超表面</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+
+        <h1>广义折射与反射定律</h1>
+
+        <h2>广义斯涅尔定律（广义折射定律）</h2>
+
+        <p>超表面是一种二维材料，因此不宜采用描述体介质的参数去表征超表面，例如介电常数、磁导率等.</p>
+        <p>相比之下，采用超表面的等效表面阻抗更适合来研究其产生的异常反射和透射现象.</p>
+        <p>一个平面波斜入射至两个媒质\((\epsilon_1, \mu_1)\)和\((\epsilon_2, \mu_2)\)的分界面上，若在分界面上放置一个超表面，该超表面会对分别面处的反射波与折射波引入一个额外的相位偏移\(\Phi_r(x,y)\)与\(\Phi_t(x,y)\).</p>
+        <p>相位偏移是位置相关的函数.</p>
+
+        <p>不失一般性，考虑横电波（TE）以入射角\(\theta_i\)斜入射到超表面上，入射波的横向电场为\(\mathbf{E}_i\).</p>
+
+        <div class="Card-AI">
+            <b>横电波【电磁学】：电场矢量方向始终与波的传播方向垂直.</b>
+            <p>横向特指与波的传播方向垂直的方向.</p>
+            <p>横向电场就是指沿横向的电场分量.</p>
+        </div>
+
+        <p>设：反射波的横向电场为\(\mathbf{E}_r\)、反射角为\(\theta_r\)，透射波的横向电场为\(\mathbf{E}_t\)、透射角为\(\theta_t\).</p>
+        <p>设：入射波、反射波与透射波均位于xoz平面内.</p>
+        <p>此时，对于时谐因子为\(e^{i\omega t}\)的入射波，其电场和磁场可以分别表示为：</p>
+        <div class="Card-AI">
+            <p>时谐：稳定且周期性变化的状态.</p>
+        </div>
+        <div class="Formula">
+            $$\mathbf{E}_i = \hat{y}E_ie^{-ik_1(x\sin\theta_i + z\cos\theta_i)}$$
+            <div class="Derivation">
+                $$\mathbf{r} = x\hat x + z\hat z$$
+                $$\begin{align}
+                \mathbf{k} &= k_x\hat x + k_z\hat z\\
+                           &= k_1\sin\theta_i\hat x + k_1\cos\theta_i\hat z
+                \end{align}$$
+                $$\therefore \mathbf{k}\cdot\mathbf{r} = k_1(x\sin\theta_i + z\cos\theta_i)$$
+            </div>
+        </div>
+        $$\begin{align}
+        \mathbf{H}_i &= \frac{\hat x\sin\theta_i + \hat z\cos\theta_i}{\eta_1}\times [\hat y E_i e^{-ik_1(x\sin\theta_i + z\cos\theta_i)}]\\
+                     &= (\hat z\sin\theta_i - \hat x\cos\theta_i)\frac{E_i}{\eta_1}e^{-ik_1(x\sin\theta_i + z\cos\theta_i)}
+        \end{align}$$
+        <ul>
+            <li>\(k_1 = \omega\sqrt{\epsilon_1\mu_1}\)</li>
+            <li>\(\eta_1 = \sqrt{\mu_1/\epsilon_1}\)</li>
+        </ul>
+        <div class="Card-AI">
+            <ul>
+                <li>\(\hat r\)：r方向上的单位向量.</li>
+                <li>\(\eta\)：阻抗</li>
+            </ul>
+        </div>
+
+        <p>反射波、透射波的电场、磁场可以分别写为：</p>
+        $$\mathbf{E}_r = \hat{y}E_re^{-ik_1(x\sin\theta_r - z\cos\theta_r) + i\Phi_r}$$
+        $$\begin{align}
+        \mathbf{H}_r &= \frac{\hat x\sin\theta_r - \hat z\cos\theta_r}{\eta_1}\times [\hat y E_r e^{-ik_1(x\sin\theta_r - z\cos\theta_r) + i\Phi_r}]\\
+                     &= (\hat z\sin\theta_r + \hat x\cos\theta_r)\frac{E_r}{\eta_1}e^{-ik_1(x\sin\theta_r - z\cos\theta_r) + i\Phi_r}
+        \end{align}$$
+        $$\mathbf{E}_t = \hat{y}E_te^{-ik_2(x\sin\theta_t + z\cos\theta_t) + i\Phi_t}$$
+        $$\begin{align}
+        \mathbf{H}_t &= \frac{\hat x\sin\theta_t + \hat z\cos\theta_t}{\eta_2}\times [\hat y E_t e^{-ik_2(x\sin\theta_t + z\cos\theta_t) + i\Phi_t}]\\
+                     &= (\hat z\sin\theta_t - \hat x\cos\theta_t)\frac{E_t}{\eta_2}e^{-ik_2(x\sin\theta_t + z\cos\theta_t) + i\Phi_t}
+        \end{align}$$
+        
+
+
+
+        <div class="Card-Formula">
+            <div class="Formula">
+                $$n_t\sin\theta_t - n_i\sin\theta_i = \frac{\lambda_0}{2\pi}\frac{\mathrm{d}\Phi}{\mathrm{d}x}$$
+                <div class="Derivation">
+                    $$[k_0n_i\sin\theta_i\mathrm{d}x + \Phi + \mathrm{d}\Phi] - [k_0n_t\sin\theta_t\mathrm{d}x + \Phi] = 0$$
+                </div>
+            </div>
+        </div>
+
+        <div class="Card-Formula">
+            <b>广义斯涅尔反射定律</b>
+            $$\begin{cases}
+            \sin\theta_r\cos\phi_r - \sin\theta_i\cos\phi_i= \frac{\lambda_1}{2\pi}\frac{\partial\Phi_r}{\partial x}\\
+            \sin\theta_r\sin\phi_r - \sin\theta_i\sin\phi_i= \frac{\lambda_1}{2\pi}\frac{\partial\Phi_r}{\partial y}
+            \end{cases}$$
+            <div class="Card-AI"><p>[注]传统光学中没有斯涅尔反射定律，斯涅尔定律就是折射定律.</p></div>
+        </div>
+
+        <div class="Card-Formula">
+            <b>广义斯涅尔透射定律</b>
+            $$\begin{cases}
+            \frac{2\pi}{\lambda_1}\sin\theta_i\cos\phi_i - \frac{2\pi}{\lambda_2}\sin\theta_t\cos\phi_t = \frac{\partial\Phi_t}{\partial x}\\
+            \frac{2\pi}{\lambda_1}\sin\theta_i\sin\phi_i - \frac{2\pi}{\lambda_2}\sin\theta_t\sin\phi_t = \frac{\partial\Phi_t}{\partial y}
+            \end{cases}$$
+        </div>
+
+        <p>即入射波、反射波与透射波可以不位于同一平面内.</p>
+
+        <div class="Card-Question">
+            <p>这里的\(\phi_r\)和\(\phi_t\)表示的是相位还是空间角度？</p>
+        </div>
+
+        <h2>惠更斯表面</h2>
+        <div class="Card-Definition">
+            <b>惠更斯表面</b>
+            <p>具有零反射的理想透射情况的超表面.</p>
+        </div>
+
+        <h2>超镜面</h2>
+        <div class="Card-Definition">
+            <b>超镜面</b>
+            <p>具有零透射的理想反射情况的超表面.</p>
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        <h1>高斯光束准直</h1>
+        <p>对于准直应用，需要在相当长的范围内使光斑直径保持尽可能小.</p>
+
+        <p>高斯光束发散角为：</p>
+        $$\theta_0 = \frac{2\lambda}{\pi\omega_0}$$
+        <p>可见，高斯光束光斑大小与准直长度间存在着相反的关系：</p>
+        <img src="Img/GaussBeamColimation1.png" alt="高斯光束的腰斑与发散角" width="300">
+        <p>如图所示：腰斑小，发散角就大；腰斑大，发散角就小.</p>
+        <p>要减小发散角，必须扩大腰斑，因此，激光的准直总伴随着扩束.</p>
+
+        <div class="Card-Analysis">
+            <h2>单透镜准直</h2>
+            <p>设物高斯光束腰斑半径为\(\omega_0\)，其发散角为：</p>
+            $$\theta_0 = \frac{2\lambda}{\pi\omega_0}$$
+            <p>通过焦距为\(F\)的单透镜后，像高斯光束发散角为：</p>
+            $$\theta_0' = \frac{2\lambda}{\pi\omega_0'}$$
+
+            <p>由对高斯光束聚焦问题的讨论，可知：</p>
+            <p>\(l = F\)时，出射高斯光束腰斑半径\(\omega_0'\)达到极大值：</p>
+            $$\omega_{0max}' = \frac{\lambda}{\pi\omega_0}F$$
+            <p>相应的发散角为：</p>
+            $$\theta_0' = \frac{2\lambda}{\pi\omega_0'} = \frac{2\omega_0}{F}$$
+            $$\frac{\theta_0'}{\theta_0} = \frac{\pi\omega_0^2}{F\lambda} = \frac{f}{F}$$
+            <p>可见，对于焦距一定的薄透镜，当入射高斯光束的腰斑半径处于透镜后焦面（\(l=F\)），\(\omega_0'\)有极大值，因而发散角\(\theta'\)达到极小值.</p>
+            
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>望远镜准直</h2>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

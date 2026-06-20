@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Agent</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>开始</h1>
+        <h2>关键词</h2>
+        <p><b>平台架构：</b>Langchain、LangGraph、AutoGen</p>
+        <p><b>模型交互：</b>大模型API调用、Function Calling、自定义Tool</p>
+        <p><b>数据与记忆管理：</b>Vector DB、Retrieval</p>
+        <p><b>Prompt Engineering：</b>结构化提示词、Few-shot、Chain of Thought</p>
+
+        <h2>任务交付</h2>
+        <p><b>阶段1：</b>大模型API调用：实现命令行界面的一问一答</p>
+        <p><b>阶段2：</b>Functing Calling：实现调取时间与计算功能</p>
+        <p><b>阶段3：</b>Langchain重构、ReAct配置底层代码结构</p>
+        <p><b>阶段4：</b>搭建RAG架构，应用Vector DB与Retrival技术</p>
+
+        <h2>任务1</h2>
+        <h3>环境搭建</h3>
+        <p>openai库：pip install openai</p>
+        <p><i>openai库是用于调用api的，哪怕不适用chatgpt的api也可以使用这个库</i>.</p>
+        <h3>API调用</h3>
+        <pre><code class="Code">
+            from openai import OpenAI
+
+            # 1. 配置客户端（指向智谱，这就叫协议兼容）
+            client = OpenAI(
+                api_key="2e677758637d4c2f93f7ac92e34a3c78.b1r8aLUJSPX1d4fY",  # 替换为你刚才复制的Key
+                base_url="https://open.bigmodel.cn/api/paas/v4"  # 关键：把请求发送到智谱
+            )
+
+            # 2. 发起一次最简单的对话
+            response = client.chat.completions.create(
+                model="glm-4.7-flash",  # 智谱的模型名
+                messages=[
+                    {"role": "user", "content": "你好，请用一句话介绍你自己"}
+                ]
+            )
+
+            # 3. 打印模型的回复
+            print(response.choices[0].message.content)
+        </code></pre>
+
+        <h2>任务2</h2>
+        <h3>思路</h3>
+        <p>1、用Python编写一个函数作为Tool</p>
+        <p>2、向大模型声明这个Tool</p>
+        <p>3、交互时让大模型自行判断是否要使用这个Tool</p>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

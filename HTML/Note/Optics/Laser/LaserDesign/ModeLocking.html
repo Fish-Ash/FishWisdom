@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+        
+        <div>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+
+        <h1>锁模</h1>
+        <div class="Card-Analysis">
+            <h2>分类</h2>
+            <table>
+                <tr>
+                    <td rowspan="3">锁模</td>
+                    <td>纵模锁定（最具应用价值）</td>
+                </tr>
+                <tr><td>横模锁定</td></tr>
+                <tr><td>纵横模同时锁定</td></tr>
+            </table>
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>未锁模多纵模自由运转激光器的输出特性</h2>
+            <p>对于自由运转激光器，若不加选模措施，无论器谱线加宽类型为何，一般都是多纵模输出：</p>
+            <ul>
+                <li>非均匀加宽激光器：多纵模振荡</li>
+                <li>均匀加宽激光器：由于空间烧孔效应，其输出也具有多个纵模</li>
+            </ul>
+            <p>每个纵模输出的电场分量可表示为：</p>
+            $$E_q(z,t) = E_q e^{i[\omega_q(t-z/v)+\phi_q]}$$
+            <ul>
+                <li>\(E_q\)：第q个模式的振幅</li>
+                <li>\(\omega_q\)：第q个模式的角频率</li>
+                <li>\(\phi_q\)：第q个模式的初相位</li>
+            </ul>
+
+            <p>不同的振荡模都是由不同的自发辐射光子经工作物质的受激放大形成，因此，各个模式的振幅\(E_q\)与初相位\(\phi_q\)一般都没有确定的关系，它们之间互不相干.</p>
+            <p>因而多纵模输出的光强是各纵模的非相干叠加，输出光强随时间无规则起伏，是一种时间平均的统计值.</p>
+            <p>设激光器具有\(2N+1\)个纵模振荡，则其输出的光波电场为\(2N+1\)个纵模的电场之和，即：</p>
+            $$E(t) = \sum_{q=-N}^NE_q\cos(\omega_q+\phi_q)$$
+            <ul>
+                <li>\(E_q\)：第q个纵模的振幅</li>
+                <li>\(\omega_q\)：第q个纵模的角频率</li>
+                <li>\(\phi_q\)：第q个纵模的初相位</li>
+            </ul>
+
+            <p>多纵模自由振荡激光器的输出具有以下特点：</p>
+            <p>1、各纵模的初相位\(\phi_q\)间无确定关系，是完全独立、随机的；这一特点可表示为：\(\phi_{q+1} - \phi_q\neq\)常数，\(\phi_q\)在\(-\pi\sim\pi\)间随机分布.</p>
+            <p>2、由于激光器中存在频率牵引与推斥作用，各相邻纵模间的频率间隔并非严格相等，即\(\Delta \nu_q\)并不严格等于\(c/2\eta L\).</p>
+            <p>3、由于各纵模的非相干叠加，输出光强呈现出随机的无规则起伏，平均光强\(\bar I\)为各个纵模光强之和；若各纵模的振幅相等，都为\(E_0\)，则\(I\propto (2N+1)E_0^2\).</p>
+
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>纵模锁定</h2>
+
+            <p>本节所讨论的锁模均为纵模锁定.</p>
+
+            <p>若采取一定的措施，使各振荡模式的频率间隔保持一定，并具有特定的相位关系，则激光器将输出脉宽极窄、峰值功率很高的超短脉冲.</p>
+            <p>这种激光器叫做锁模激光器.</p>
+            <p>锁模包含两方面的内容：</p>
+            <p>1、各振荡纵模频率相位锁定，即\(\phi_{q+1} - \phi_q = \)常数.</p>
+            <p>2、各振荡纵模频率间隔相等并固定为\(\Delta\nu_q = c/2\eta L\).</p>
+            <p>由于是将各纵模的初相位锁定，故锁模也可称为锁相.</p>
+
+            <h3>激光输出与相位锁定的关系</h3>
+            <p>为运算方便，设各振荡纵模具有相等的振幅\(E_0\)，超过阈值的纵模共有\(2N+1\)个.</p>
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>脉冲的形成</h2>
+            <p>自由运转的激光器中，纵模与横模同时振荡，模式间无固定的振幅与相位关系，输出的激光是按时间平均的统计平均值.</p>
+            
+        </div>
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

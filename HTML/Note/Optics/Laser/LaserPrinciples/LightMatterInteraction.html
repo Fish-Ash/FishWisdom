@@ -3,21 +3,39 @@
 <html lang = "zh-cn">
 
     <head>
-        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>激光原理</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
     <body>
-        <div class="header">不惑</div>
+        <div class="header" id="PageHead">不惑</div>
 
         
         <ul class="navibar">
-            <li><a href="../../../Home.html">主页</a></li>
-            <li><a href="../../../Navigation.html">导航</a></li>
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
         </ul>
+        
+        <div>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
+        </div>
 
         <h1>光（辐射）与物质（原子）的相互作用</h1>
 
@@ -44,7 +62,7 @@
             </tr>
             <tr>
                 <td><b>受激吸收跃迁</b></td>
-                <td>$$W_{12} = (\frac{\mathrm{d}n_{12}}{\mathrm{d}t}_\mathrm{st})\frac{1}{n_1}$$</td>
+                <td>$$W_{12} = (\frac{\mathrm{d}n_{12}}{\mathrm{d}t})_\mathrm{st}\frac{1}{n_1}$$</td>
                 <td>$$B_{12} = \frac{W_{12}}{\rho_\nu}$$</td>
                 <td>$$n_1 W_{12} = n_1B_{12}\rho_\nu$$</td>
             </tr>
@@ -155,24 +173,29 @@
             $$\lim\limits_{T\rightarrow \infty}\frac{n_2}{n_1} = \frac{g_2}{g_1}$$
             $$\lim\limits_{T\rightarrow \infty}\rho_v = \infty$$
 
-            $$\because A_21n_2 + B_{21}\rho_vn_2 = B_{12}\rho_vn_1$$
+            $$\because A_{21}n_2 + B_{21}\rho_vn_2 = B_{12}\rho_vn_1$$
             $$\therefore \frac{1}{\rho_1}A_{21}\frac{n_2}{n_1} + B_{21}\frac{n_2}{n_1} = B_{12}$$
             $$\therefore B_{21}\frac{g_2}{g_1} = B_{12}$$
             $$\therefore \frac{B_{12}}{B_{21}} = \frac{g_2}{g_1}$$
             $$\therefore \frac{W_{12}}{W_{21}} = \frac{g_2}{g_1}$$
+
+
+            <hr>
+            $$\frac{A_{21}}{B_{21}} = \frac{8\pi h\nu^3}{c^3}$$
+            $$\because A_{21}n_2 + B_{21}\rho_vn_2 = B_{12}\rho_vn_1$$
+            $$\frac{n_2}{n_1} = \frac{g_2}{g_1}\exp{\left(-\frac{E_2-E_1}{kT}\right)}$$
+            $$\therefore (A_{21} + B_{21}\rho_\nu)\cdot\frac{g_2}{g_1}e^{−\frac{E_2−E_1}{kT}} = B_{12}\rho_\nu$$
+            <p>由此可得光场的单色辐射能量密度为：</p>
+            $$\rho_\nu = \frac{g_2A_{21}}{g_1B_{12}e^{h\nu/k_bT} - g_2B_{21}}$$
+            $$\because g_1B_{12} = g_2B_{21}$$
+            $$\therefore \rho_\nu = \frac{g_2A_{21}}{g_2B_{21}(e^{h\nu/k_bT} - 1)}$$
+            <p>根据黑体辐射的普朗克公式，热平衡状态下黑体单色辐射能量密度为：</p>
+            $$\rho_\nu = \frac{8\pi h\nu^3}{c^3}\frac{1}{e^{h\nu/k_bT} - 1}$$
+            $$\therefore \frac{A_{21}}{B_{21}} = \frac{8\pi h\nu^3}{c^3}$$
         </div>
 
-
-
-
-
-        <ul class="navibar">
-            <li><a href="LaserIntroduction.html">上一页</a></li>
-            <li class="catalog"><a href="Catalog.html">主页</a></li>
-            <li class="next"><a href="LightAmplificationCondition.html">下一页</a></li>
-        </ul>
-
         <div id="PageEnd"></div>
-        <a class="GoToBottom" href="#PageEnd">Bottom</a>
 
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
 </html>

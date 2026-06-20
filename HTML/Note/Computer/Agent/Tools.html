@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Agent</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>工具使用</h1>
+
+        <h2>向模型声明函数工具</h2>
+        <h3>声明模板</h3>
+        <pre><code class="Code">
+            tools = [
+                {
+                    "type": "function", # 此处恒为function
+                    "function": {
+                        # 此处包含function的具体信息
+                    }
+                }
+            ]
+        </code></pre>
+        <h3>function信息介绍</h3>
+        <pre><code class="Code">
+            "function": {
+                "name": ..., # 工具名称，不必须与函数同名
+                "description": ..., # 必须，向模型解释工具作用，决定了模型在何时调用此工具（非常重要）
+                "parameters":{
+                    "type": "object", # parameters类型恒为object
+                    "properties":{
+                        # 工具中包含的参数
+                    },
+                    "required": [] # 工具所必需的参数，其中元素为properties名称
+                }
+            }
+        </code></pre>
+
+        <h3>properties示例</h3>
+        <pre><code class="Code">
+            "properties": {
+                "file_path": {
+                    "type": "string",              # 参数类型
+                    "description": "PDF文件的路径" # 参数描述
+                }
+            },
+        </code></pre>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

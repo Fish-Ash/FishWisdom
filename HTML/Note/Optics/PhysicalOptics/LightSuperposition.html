@@ -3,27 +3,75 @@
 <html lang = "zh-cn">
 
     <head>
-        <meta charset="utf-8">
-        <title>物理光学</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
     <body>
-        <div class="header">不惑</div>
-
-        
+        <div class="header" id="PageHead">不惑</div>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
 
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
         <h1>光波的叠加</h1>
         
         <div class="Card-Definition">
             <b>波的叠加原理</b>
             <p>两个或多个波在相遇点产生的合振动是各个波单独在该点产生的振动的矢量和.</p>
+            <p>波的叠加原理是波动光学的基本原理.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>两个频率相同、振动方向相同的单色光波叠加</h2>
+            <p>设两个频率相同、振动方向相同的单色光波分别发自光源S<sub>1</sub>与S<sub>2</sub>.</p>
+            <p>它们在空间某点P相遇，P到S<sub>1</sub>与S<sub>2</sub>的距离分别为\(r_1\)与\(r_2\).</p>
+
+            <p>点光源\(\Rightarrow\)<a href="Chapter1.html#SphericalWave" class="goto">球面波</a>：</p>
+            $$E = \frac{A_1}{r}\cos(\omega t - kr)$$
+            <p>频率相同：</p>
+            $$\omega_1 = \omega_2 = \omega$$
+            $$k_1 = k_2 = \frac{\omega}{cn}$$
+            <p>振动方向相同\(\Rightarrow\)可线性叠加</p>
+
+
+
+            $$E_1 = E_{01}\cos(\omega t - kr_1)$$
+            $$E_2 = E_{02}\cos(\omega t - kr_2)$$
+            <p>其中，\(E_{01}\)和\(E_{02}\)分别为两个光波在P点处的振幅.</p>
+            <p>令</p>
+            $$\alpha_1 = kr_1$$
+            $$\alpha_2 = kr_2$$
+
+            $$\begin{align}
+            \therefore E &= E_1 + E_2\\
+                         &= E_{01}\cos(\omega t - \alpha_1) + E_{02}\cos(\omega t - \alpha_2)\\
+                         &= E_0\cos(\omega t - \alpha)
+            \end{align}$$
+            <p>其中：</p>
+            $$E_0^2 = E_{01}^2 + E_{02}^2 + 2E_{01}E_{02}\cos(\alpha_1 - \alpha_2)$$
+            $$\tan \alpha = \frac{E_{01}\sin\alpha_1 + E_{02}\sin\alpha_2}{E_{01}\cos(\alpha_1) + E_{02}\cos(\alpha_2)}$$
+            <p>可见，P点的合振动也是一个简谐运动，其振动频率于振动方向与两单色波相同.</p>
         </div>
 
         <div class="Card-Analysis" id="StandingWave">
@@ -42,7 +90,12 @@
               &= 2E_0\cos\left(\omega t + \frac{\phi_1 + \phi_2}{2}\right)\cos\left(-kr + \frac{\phi_1 - \phi_2}{2}\right)\\
               &= 2E_0\cos\left(kr + \frac{\phi_2 - \phi_1}{2}\right)\cos\left(\omega t + \frac{\phi_1 + \phi_2}{2}\right)
             \end{align}$$
-            $$\therefore |E| = \left|2E_0\cos\left(kr + \frac{\phi_2 - \phi_1}{2}\right)\right|$$
+
+            <p>同一位置\(r\)下，驻波振幅能达到的最大值为：</p>
+            $$|E|_r = \left|2E_0\cos\left(kr + \frac{\phi_2 - \phi_1}{2}\right)\right|$$
+            <p>时间\(t\)一定时，驻波振幅的最大值为：</p>
+            $$|E|_t = \left|2E_0\cos\left(\omega t + \frac{\phi_1 + \phi_2}{2}\right)\right|$$
+            <p>不同的\(r\)处有不同的振幅，但极大值与极小值的位置不随时间改变.</p>
 
             <div class="Card-Definition">
                 <b>波腹</b>
@@ -62,11 +115,41 @@
                 <p>驻波是干涉相长与干涉相消叠加的结果.</p>
             </div>
 
+            <p>相邻波腹或波节间的距离为：</p>
+            $$\Delta r = \lambda/2$$
+
+            <p>相邻波腹与波节间的距离为：</p>
+            $$\Delta r = \lambda/4$$
+
+
+            <p>若参与合成驻波的两个波振幅不相等，除合成驻波外还会产生一个行波，因此波节处振幅不为0，且由于行波的存在，通常伴随能量的传播.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>两个不同频率的单色波叠加</h2>
+            <p>两个振幅相同、振动方向相同、传播方向相同、频率相近的单色波的叠加，将产生光学上有意义的<b>拍</b>现象.</p>
+
+            <h3>光学拍</h3>
+            $$E_1 = E_0\cos(\omega_1 t - k_1r)$$
+            $$E_2 = E_0\cos(\omega_2 t - k_2r)$$
+            <p>由<a href="../../Math/Mathematic/Function_Tri.html#SumToProduct" class="goto">和差化积公式</a>：</p>
+            $$\begin{align}
+            E &= E_1 + E_2\\
+              &= E_0\cos(\omega_1 t - k_1r) + E_0\cos(\omega_2 t - k_2r)\\
+              &= 2E_0\cos\left(\omega_mt - k_mr\right)\cos\left(\bar{\omega}t - \bar{k}r\right)
+            \end{align}$$
+            <p>其中</p>
+            $$\omega_m = (\omega_1 - \omega_2)/2$$
+            $$k_m = (k_1 - k_2)/2$$
+            $$\bar{\omega} = (\omega_1 + \omega_2)/2$$
+            $$\bar{k} = (k_1 + k_2)/2$$
         </div>
 
 
-
+        <div id="PageEnd"></div>
+    
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
-    
 </html>

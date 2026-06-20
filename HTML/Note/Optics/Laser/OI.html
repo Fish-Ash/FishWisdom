@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>激光原理</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>光隔离器</h1>
+
+        <div class="Card-Definition">
+            <b>光隔离器</b>
+            <p>光只能沿输入端到输出端的方向通过隔离器，反方向传播时则不能通过.</p>
+            <p>光隔离器是一种非互易双端口器件.</p>
+            <p>原理为<a href="LaserPrinciples/FaradayEffect.html" class="goto">法拉第效应</a>.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>最简单的偏振相关型光隔离器结构</h2>
+    
+            <img src="Img/OI.png" alt="" width="300">
+
+            <p>该器件由起偏器P<sub>1</sub>、Faraday旋转器与检偏器P<sub>2</sub>组成.</p>
+            <p>起偏器与检偏器偏振方向之差为45°.</p>
+            <p>当光沿正方向传播时，经过起偏器P<sub>1</sub>的作用变成线偏振光.</p>
+            <p>Faraday旋转器中施加的磁场强度使之达到磁化饱和状态，磁光介质长度经过仔细调整，使之满足条件：</p>
+            $$V_RM_sd = \frac{\pi}{4}$$
+            <p>沿着光传播方向看去，光偏振方向顺时针旋转\(\frac{\pi}{4}\)，恰可完全透过检偏器P<sub>2</sub>.</p>
+            <p>反向传输的光，在经过检偏器P<sub>2</sub>的作用后形成线偏振光.</p>
+            <p>由于磁光介质中，磁场方向与光传播方向相反，根据式：</p>
+            $$V_R(-M_s)d = -\frac{\pi}{4}$$
+            <p>即，沿反向光传输的方向看去，偏振面方向将逆时针旋转\(\frac{\pi}{4}\)，恰与起偏器的偏振方向垂直，因此反向传输光无法通过.</p>
+        </div>
+
+
+        
+        <ul class="navibar">
+        </ul>
+        
+        <div class="Ending" id="PageEnd"></div>
+        <a class="GoToBottom" href="#PageEnd">Bottom</a>
+
+</html>

@@ -8,9 +8,9 @@
         <title>激光原理</title>
 
         <!-- 基本CSS库（基础、菜单） -->
-        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
-        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
-        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
 
         <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
@@ -32,9 +32,9 @@
         </ul>
         
         <div>
-            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
-            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
-            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
         </div>
 
 
@@ -67,12 +67,18 @@
 
         <div class="Card-Analysis">
             <b>普通激光器峰值功率不高的原因</b>
+
+            <p>脉冲自由运转激光器输出的光脉冲不是单一的光滑脉冲，而是由若干小尖峰脉冲构成的序列.</p>
+            <p>每个小尖峰脉冲均产生于阈值附近，而脉宽又非常短（仅微秒量级）.</p>
+            <p>激光器输出的能量分散在这样一串脉冲中，因而不能具有很高的峰值功率，增大泵浦能量仅能使尖峰脉冲的数目增多，而不能提高峰值功率.</p>
+
             <p>一般情况下，激光器谐振腔的阈值始终保持不变，当光泵浦使反转粒子数达到或略超过阈值时，激光器便开始振荡.</p>
             <p>于是激光上能级粒子数因受激辐射减少，致使上能级无法积累很大的反转粒子数，只能限制在阈值反转粒子数附近.</p>
         </div>
 
         <div class="Card-Analysis">
             <b>提高激光器峰值功率的方法</b>
+
             <p>当激光器泵浦初期，将其振荡阈值调至很高，抑制激光振荡的产生，使激光上能级的反转粒子数大量积累.</p>
             <p>当反转粒子数积累到最大时，突然将阈值调至很低，此时积累在上能级的粒子便雪崩式跃迁至低能级，在极短时间内将能量释放出来，获得巨脉冲.</p>
         </div>
@@ -166,6 +172,13 @@
 
         <div class="Card-Analysis">
             <h2>声光调Q</h2>
+
+            <b>前置知识</b>
+            <ul>
+                <li><a href="../../PhysicalOptics/AOEffect.html">声光效应</a></li>
+            </ul>
+
+
             <div class="Card-Definition">
                 <b>声光调Q</b>
                 <p>利用声光器件的衍射效应控制谐振腔损耗以实现Q值突变的方法.</p>
@@ -173,14 +186,68 @@
 
             <div class="Card-Definition">
                 <b>声光衍射效应</b>
-                <p>激光通过介质中的超声场时发生颜色，从而造成光束偏折.</p>
+                <p>激光通过介质中的超声场时发生衍射，从而造成光束偏折.</p>
             </div>
+
+            <div class="Card-AI">
+                <p>声光调Q适合高重复频率</p>
+            </div>
+
+            <p>当声波频率较高，声光作用长度\(L\)足够大，满足\(2\pi L\lambda/(n\lambda_s^2)\gg 1\)时（\(\lambda\)为光波波长，\(\lambda_s\)为声波波长），根据体光栅衍射的Bragg定律，光束以\(\theta_i\)角入射介质产生衍射极值应满足Bragg方程：</p>
+            $$2\lambda_s\sin\theta_B = \frac{\lambda}{\eta_0}$$
+            <ul>
+                <li>\(\eta_0\)：超声介质的折射率</li>
+            </ul>
+
+            <p>此时入射角\(\theta_i\)等于衍射角等于Bragg角\(\theta_B\)，即：</p>
+            $$\sin\theta_i = \sin\theta_B = \frac{\lambda}{2\eta_0\lambda_s}$$
+
+            <div class="Card-Question">
+                <p>1、这个条件是不是布拉格条件</p>
+                <p>2、什么是体光栅衍射的Bragg定律</p>
+                <p>3、什么是衍射角</p>
+                <p>尝试将声光调Q与声光效应结合起来</p>
+            </div>
+
+            <p>在此条件下，透射光束分裂为0级与+1级（或-1级）（视入射光方向而定）衍射光，+1级（或-1级）衍射光与声波波面的夹角为\(\theta_B\)，这种现象称为Bragg衍射.</p>
+            <p>一级衍射光强\(I_1\)（或\(I_{-1}\)）与入射光强\(I_i\)之比为：</p>
+            $$\frac{I_1}{I_i} = \sin^2\left(\frac{\Delta \phi}{2}\right)$$
+            <ul>
+                <li>\(\Delta \phi\)：经过长度为\(d\)的位相位光栅后光波相位变化的幅度.</li>
+            </ul>
+            <p>\(I_1/I_i\)为衍射效率，其值越大，说明越多的入射光集中到+1级（或-1级）衍射极上，使入射光束的能量得到充分利用.</p>
+            $$\Delta\phi = \frac{2\pi}{\lambda}\Delta\eta d = \frac{\pi}{\lambda}\sqrt{2\frac{d}{H}MP}$$
+            <ul>
+                <li>\(\Delta\eta\)：介质折射率变化的幅值</li>
+                <li>\(d\)：换能器的长度</li>
+                <li>\(H\)：换能器的宽度</li>
+                <li>\(M\)：声光介质的品质因数</li>
+                <li>\(P\)：超声驱动功率</li>
+            </ul>
+            <p>提高超声驱动功率可得到较高的衍射效率.</p>
+
+            <div class="Card-AI">
+                <p>换能器：产生声波的器件.</p>
+            </div>
+
+            <p>声光Q开关由一块对激光波长透明的声光介质及换能器（即超声波发生器）组成，换能器用一个高频振荡电源来驱动，以产生相应的机械振动，从那个人产生超声波耦合到声光介质中去.</p>
+
+            <p>声光器件在腔内按Bragg条件放置.</p>
+            <p>当加上超声波时，光束按Bragg条件决定的方向发生偏折，由于一级衍射光偏离谐振腔轴向而导致损耗增加.</p>
+            <p>此时腔的损耗严重，Q值很低，不能形成激光振荡.</p>
+            <p>在此阶段，增益介质在光泵激励下，激光高能级大量积累离子.</p>
+            <p>若此时突然撤除超声波，则衍射效应立即消失，光束顺利地通过均匀的声光介质，不发生偏折，腔的损耗突然下降，Q值升高，从而形成一个强的巨脉冲输出.</p>
+
+            <p>声光调Q开关时间一般小于脉冲建立时间，属于快开关类型.</p>
+            <p>由于开关的调制电压很低（\(\lt 200V\)），所以可以用于增益较低的连续激光器，对连续器件获得高重复率的脉冲输出.</p>
+            <p>但由于声光调Q开关对高能量激光器的开关能力差，不宜用于高能调Q激光器.</p>
+
         </div>
 
         <div id="PageEnd"></div>
 
-        <script src="../../../../JavaScript/MenuButton.js"></script>
-        <script src="../../../../JavaScript/Capacity.js"></script>
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../../JavaScript/Capacity.js"></script>
     </body>
 
 </html>

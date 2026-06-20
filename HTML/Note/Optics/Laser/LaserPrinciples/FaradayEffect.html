@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../Home.html">主页</a></li>
+            <li><a href="../Navigation.html">导航</a></li>
+        </ul>
+        
+        <div>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+
+        <h1>Faraday效应</h1>
+
+        <div class="Card-Definition">
+            <b>磁光效应</b>
+            <p>某些介质的光学特性会在外加磁场的作用下发生改变，从而影响经介质透射光或介质表明反射光的传播特性.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>磁光介质</b>
+            <p>具有磁光效应的介质.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>Faraday效应</b>
+            <p>一种透射式磁光效应.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>Faraday效应</h2>
+            <p>对磁光介质施加一个与光传播方向平行的外部磁场，当线偏振光经过该介质时，其偏振方向与原有偏振方向发生了相对旋转.</p>
+            <p>偏转角度\(\alpha\)为：</p>
+            $$\alpha = V_R Md$$
+            <ul>
+                <li>\(V_R\)：与材料有关的常数</li>
+                <li>\(M\)：材料的磁化强度，磁化方向与光传播方向相同时取正值，相反时取负值</li>
+                <li>\(d\)：磁光介质长度</li>
+            </ul>
+
+            <p>对于顺磁性或逆磁性这类非铁磁性介质，由于磁化强度与磁场强度\(H\)间满足线性关系：</p>
+            $$M = \chi_M H$$
+            <p>故上式可写为：</p>
+            $$\alpha = V_R \chi_M H d = VHd$$
+            <ul>
+                <li>\(V\)：材料的费尔德系数</li>
+            </ul>
+            <p>非铁磁性介质中，旋光角度会随所加磁场强度的增加而增加.</p>
+            <p>但因该类材料在普通磁场强度下磁化强度很小，因此Faraday效应对应的旋转角度也通常较小.</p>
+            <p>对于铁磁性或亚铁磁性材料，磁化强度与磁场间不存在线性关系，而呈现出磁滞回线形式.</p>
+            <p>通常铁磁性或亚铁磁性材料在不太高的磁场强度下，就容易达到磁化饱和状态，磁场强度达到饱和值\(M_s\).</p>
+            <p>继续增加磁场强度，磁化强度与磁致旋光角都将维持在饱和值上.</p>
+            <p>这种情况下，磁致旋光角应表示为：</p>
+            $$\alpha = V_RM_sd$$
+            <p>铁磁性和亚铁磁性介质中，磁化强度远高于非铁磁性介质，因此容易用于获得较大的法拉第偏转角度.</p>
+            
+        </div>
+
+
+
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

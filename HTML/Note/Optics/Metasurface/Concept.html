@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>超表面</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>基本概念</h1>
+
+        <h2>引言</h2>        
+        <p>几乎所有电磁现象都可以归因于电磁波与材料间的相互作用，因此可以通过调控材料中电磁波的行为来实现电磁功能.</p>
+        <p>天然材料由许多原子或分子组成，晶体材料的原子以规则的周期模式排列，而非晶体材料的原则则是以随机方式排列组成的.</p>
+
+        <div class="Card-Definition">
+            <b>布拉格反射</b>
+            <p>具有固定波长的光束以一定的角度照射晶体时，相长干涉导致反射光增强.</p>
+            <p>布拉格反射是晶体中X射线衍射的基础.</p>
+        </div>
+
+        <div class="Card-Analysis" id="MaterialClassification">
+            <h2>\(\epsilon-\mu\)参数域下各种均匀材料的分类</h2>
+            <p>类似于天然材料，三维超材料的电磁特性可以通过等效媒质参数，即等效介电常数\(\epsilon\)与磁导率\(\mu\)（或折射率\(n\)与阻抗\(\eta\)）来表征.</p>
+            <p>包括天然材料与超材料在内的所有材料均可以根据材料参数域中的等效介电常数与磁导率进行分类.</p>
+            <img src="Img/MaterialClassification.png" width="400" alt="材料分类">
+            <ul>
+                <li>\(\epsilon\lt 0, \mu\gt 0\)：电等离子体</li>
+                <li>\(\epsilon\gt 0, \mu\lt 0\)：磁等离子体</li>
+                <li>\(\epsilon\lt 0, \mu\lt 0\)：左手媒质（左手材料，LHM）</li>
+                <li>\(\epsilon = 0\)附近：\(\epsilon\)近零材料.</li>
+                <li>\(\mu = 0\)附近：\(\mu\)近零材料.</li>
+            </ul>
+            <p>单负（\(\epsilon\)、\(\mu\)其中之一小于0）材料参数会导致倏逝波的产生.</p>
+            <p>双负材料参数会产生后向波、负折射等物理现象.</p>
+            <p>\(\mu=0\)，\(\epsilon=0\)的材料可以实现完美的隧穿效应.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>左手材料</h2>
+            <p>根据左手法则，LHM中电磁波的<a href="../PhysicalOptics/Chapter1.html#phase velocity" class="goto">相速度</a>与群速度相反，从而导致在LHM中传播的电磁波相位是超前的，即产生<b>后向波效应</b>.</p>
+
+            <div class="Card-AI">
+                <b>后向波效应</b>
+                <p>群速度方向（能量流动方向）不变，相速度方向（波的传播方向）相反.</p>
+            </div>
+
+            <p>[注]后向波的概念在机械波邻域很早就被提出了.</p>
+
+
+
+            <p>当平面波照射到LHM与天然材料的交界面时，会发生负折射现象，这是由于同时为负的介电常数与磁导率会导致媒质的折射率小于0.</p>
+
+            <div class="Card-AI">
+                <p>从数学角度来看：</p>
+                $$\epsilon_r = |\epsilon_r|\cdot e^{i\theta_\epsilon}$$
+                $$\mu_r = |\mu_r|\cdot e^{i\theta_\mu}$$
+                $$\theta_\epsilon, \theta_\mu \approx \pi$$
+                $$n = \sqrt{\epsilon_r \mu_r} = \sqrt{|\epsilon_r||\mu_r|}e^{i\pi} = -\sqrt{|\epsilon_r||\mu_r|}$$
+            </div>
+
+            <p>LHM还具有逆多普勒效应、逆切伦科夫辐射等电磁特性.</p>
+        </div>
+
+        <h2>超材料与超表面</h2>
+
+        <div class="Card-Definition">
+            <b>超材料</b>
+            <p>超材料是人造复合结构材料，其电磁特性超越了天然材料所具有的电磁特性.</p>
+            <p>不同于天然材料，超材料通常由周期性或非周期性排列的亚波长“人造原子”组成.</p>
+
+            <div class="Card-AI">
+                <b>亚波长</b>
+                <p>用于描述长度，指远小于工作波长的长度，超表面是用于调控入射光的，所以通常情况下工作波长就是入射光的波长.</p>
+            </div>
+
+            <p>通过对人造原子的设计与排列，所得到的超材料在理论上可以在材料参数域中实现任意的材料性质，包括现有材料无法实现的新的物理上可实现的性质，如负<a href="../Electromagnetism/Chapter1.html#epsilon" class="goto">介电常数</a>、磁导率、零折射率等.</p>
+
+            <div class="Card-AI">
+                <p>[注]这里疑似为“负磁导率”而非“磁导率”.</p>
+            </div>
+        </div>
+
+
+
+        <div class="Card-Definition">
+            <b>超表面</b>
+            <p>通过将一组人造原子按照一定的排列方式组成的二维平面结构.</p>
+        </div>
+
+        <p>与三维超材料相比，超表面由于具有亚波长厚度，其剖面低且损耗小.</p>
+        <p>类似于三维超材料，超表面可以视为具有等效材料参数的均匀薄板.</p>
+        <p>考虑其电厚度很小，为了简化可以将其近似视为零厚度的表面.</p>
+        <p>这种情况下，电磁波于超表面间的相互作用可以通过边界条件加以建模.</p>
+        <p>表面的边界条件为：</p>
+        $$\begin{cases}
+        Z\mathbf{J} = \hat{n}\times \mathbf{E}_{av} \\
+        Y\mathbf{K} = \hat{n}\times \mathbf{H}_{av}
+        \end{cases}$$
+        <ul>
+            <li>\(Z\)：表面等效电阻抗</li>
+            <li>\(Y\)：表面等效磁导纳</li>
+            <li>\(\mathbf{J}\)：表面等效电流密度</li>
+            <li>\(\mathbf{K}\)：表面等效磁流密度</li>
+            <li>\(\hat{n}\)：表面外法方向单位矢量</li>
+            <li>\(\mathbf{E}_{av}\)：表面平均电场</li>
+            <li>\(\mathbf{H}_{av}\)：表面平均磁场</li>
+        </ul>
+
+        <div class="Card-AI">
+            <b>等效阻抗\(Z\)</b>
+            $$Z = R_s + jX_s$$
+            <ul>
+                <li>\(R_s\)：等效电阻</li>
+                <li>\(X_s\)：等效电抗</li>
+            </ul>
+            <p>单位：欧姆（\(\Omega\)）</p>
+            <p>此概念来源于电磁学中的传输线理论.</p>
+            <p>电阻描述的是电磁能量的纯消耗（不可逆地变成热能）.</p>
+            <p>阻抗描述的是电磁能量的综合行为（既包含变成热的“消耗”，又包含引起相位改变的“动态储存”）.</p>
+        </div>
+
+        <p>设薄板厚度为\(d\)，相应的波数为\(k\).</p>
+        <p>\(\mathbf{E}_{av}\)和\(\mathbf{H}_{av}\)可以用薄板两侧的电场与磁场切向分量近似表示为：</p>
+        $$\begin{cases}
+        \mathbf{E}_{av} \approx \frac{\mathbf{E}_t^+ + \mathbf{E}_t^-}{kd}\tan\left(\frac{kd}{2}\right)\\
+        \mathbf{H}_{av} \approx \frac{\mathbf{H}_t^+ + \mathbf{H}_t^-}{kd}\tan\left(\frac{kd}{2}\right)
+        \end{cases}$$
+
+        <p>其中上标“+”与“-”分别表示薄板的上侧与下侧.</p>
+        <p>\(kd\rightarrow 0\)时，上式可化简为：</p>
+        $$\begin{cases}
+        \mathbf{E}_{av} \approx \frac{\mathbf{E}_t^+ + \mathbf{E}_t^-}{2}\\
+        \mathbf{H}_{av} \approx \frac{\mathbf{H}_t^+ + \mathbf{H}_t^-}{2}
+        \end{cases}$$
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

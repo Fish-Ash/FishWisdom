@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>超表面</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>基本理论</h1>
+
+        <h2>左手媒质中的电动力学</h2>
+        <p>自然界中的材料是由众多微观粒子组成的，例如原子和分子.</p>
+        <p>固体材料可以分为晶体材料与非晶体材料.</p>
+        <p>晶体材料是由粒子周期排列而成，非晶体材料中粒子是随机排列的.</p>
+
+        <p>在经典物理学框架下考虑电磁波与人造晶体材料间的相互作用：</p>
+        <p>假设人造晶体材料是由排列在规则晶格中的小颗粒组成的，晶格的周期为\(d\).</p>
+        <p>考虑波长为\(\lambda\)的一个平面波入射到晶体材料上.</p>
+        <p>当\(d\)与\(\lambda\)可比拟，即\(d\approx \lambda\)时，平面波与晶格上的粒相互作用而出现相长干涉，即产生布拉格效应.</p>
+        <p>若\(d\ll \lambda\)，则粒子的散射就变得微不足道，此时，晶体材料对平面波产生的影响就来源于材料的宏观特性，这种情况下，基于晶格的人造晶体材料可以认为是均匀、连续的材料.</p>
+
+        <p>最典型的超材料之一就是<a href="Concept.html#MaterialClassification" class="goto">左手媒质</a>.</p>
+        
+        <p>各向同性介质中<a href="../Electromagnetism/Maxwell.html#DifferentialForm" class="goto">Maxwell方程组的微分形式</a>为：</p>
+        $$\begin{cases}
+        \nabla\cdot\mathbf{D} = \rho\\
+        \nabla\cdot\mathbf{B} = 0\\
+        \nabla\times\mathbf{E} = -\frac{\partial \mathbf{B}}{\partial{t}}\\
+        \nabla\times\mathbf{H} = \mathbf{j} + \frac{\partial \mathbf{D}}{\partial t}
+        \end{cases}$$
+
+        <p>考虑一个时谐因子为\(e^{-\omega t}\)的平面电磁波，当它在均匀的、线性各向同性介质中传播时，Maxwell方程组可简化为：</p>
+        $$\begin{cases}
+        \mathbf{k}\times\mathbf{E} = \omega\mu\mathbf{H}\\
+        \mathbf{k}\times\mathbf{H} = -\omega\epsilon\mathbf{E}
+        \end{cases}$$
+        <ul>
+            <li>\(\mathbf{k} = k\mathbf{k}_0\)</li>
+        </ul>
+
+        <p>简单起见，此处仅考虑无损的媒质.</p>
+        <p>若\(\epsilon\lt 0\)且\(\mu\lt 0\)，则从上式可以看出\(\mathbf{E}\)、\(\mathbf{H}\)与\(\mathbf{k}\)成左手螺旋关系，这就是左手媒质名字的由来.</p>
+        <p>进一步，平面电磁波的相速度与平均的<a href="../PhysicalOptics/ReflectionAndTransmission.html#PoyntingVector" class="goto">Poynting矢量</a>可分别表示为：</p>
+        $$\mathbf{v}_p = \frac{\omega}{k}\mathbf{k}_0$$
+        $$\mathbf{S}_{av} = \frac{1}{2}\Re\left(\mathbf{E}\times\mathbf{H}^*\right)$$
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

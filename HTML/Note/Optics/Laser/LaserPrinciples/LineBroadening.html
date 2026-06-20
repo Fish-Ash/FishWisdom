@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 
 <html lang = "zh-cn">
-
     <head>
-        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>激光原理</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
     <body>
-        <div class="header">不惑</div>
+        <div class="header" id="PageHead">不惑</div>
 
         
         <ul class="navibar">
             <li><a href="../Home.html">主页</a></li>
             <li><a href="../Navigation.html">导航</a></li>
         </ul>
-
-        <h1>激光工作物质的增益特性</h1>
-
-        <div class="Card-Analysis">
-            <h2>光场与物质的相互作用的理论体系</h2>
-
-            <h3>经典理论</h3>
-            <p>解释物质对光的吸收、色散；以及原子自发辐射及其谱线展宽等现象.</p>
-
-            <h3>半经典理论（兰姆理论）</h3>
-            <p>对光场：采用经典理论体系的Maxwell方程组描述.</p>
-            <p>对原子体系：采用量子力学描述.</p>
-
-            <h3>量子理论</h3>
-            <p>在半经典理论的基础上，将光场也量子化.</p>
-
-            <h3>速率方程理论</h3>
+        
+        <div>
+            <button class="menu-button"><img src="../../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../../SVG/down.svg" width="30"></button></a>
         </div>
 
-        <div class="Card-Analysis">
-            <h2>谱线加宽与线型函数</h2>
+        <h1>谱线加宽与线型函数</h1>
 
-            <h3>谱线加宽概述</h3>
+        <div class="Card-Analysis">
+            <h2>谱线加宽概述</h2>
+            <p>实际上，自发辐射所释放的光谱线并非严格的单色光（即单一频率），而是具有一定的频率宽度.</p>
+            <img src="Img/IdealLinetype.png" alt="理想线型" width="200">
+            <img src="Img/RealLinetype.png" alt="实际线型" width="200">
+            <p>由于种种因素的影响，该自发辐射的功率（或光强）分布在以其跃迁波尔频率\(\nu = \frac{E_2-E_1}{h}\)为中心的小频率范围内，\(\nu_0\)称为中心频率.</p>
+            <p>可以用单色辐射功率\(P(\nu)\)来描述这一分布规律.</p>
+            <div class="Card-Definition">
+                <b>单色辐射功率\(P(\nu)\)</b>
+                <p>发光粒子在频率\(\nu\)处，单位频率间隔内的自发辐射功率.</p>
+            </div>
+            <p>在中心频率\(\nu_0\)处，单色辐射功率最大；偏离中心频率时，单色辐射功率便按一定规律衰减.</p>
+            <p>为定量描述光谱线的加宽特性，引入线型函数与线宽的概念.</p>
+
+
+            <p>光谱线的线型函数与线宽对激光器输出激光的相干性及增益、模式、功率等均有影响.</p>
             <div class="Card-Definition">
                 <b>线型函数</b>
                 <p>若自发辐射的总功率为\(P\)，则频率分布在\(\nu\sim\nu + \mathrm{d}\nu\)内的功率为\(P(\nu)\mathrm{d}\nu\)，且：</p>
@@ -49,12 +62,13 @@
                 $$g(\nu,\nu_0) = \frac{P(\nu)}{P}$$
                 <p>其量纲为秒.</p>
                 <p>显然，线型函数是归一化的，即：</p>
-                $$\int_{-\infty}^{+infty}g(\nu,\nu_0)\mathrm{d}\nu = 1$$
+                $$\int_{-\infty}^{+\infty}g(\nu,\nu_0)\mathrm{d}\nu = 1$$
             </div>
 
             <div class="Card-Definition">
                 <b>线宽/半幅线宽（FWHM, Full Width at Half Maximum）</b>
                 <p>线型函数半极值点对应的频率宽度.</p>
+                <img src="Img/FWHM.png" alt="" width="300">
             </div>
 
             <h3>谱线加宽的机理</h3>
@@ -124,9 +138,21 @@
                 </tr>
             </table>
 
+            <h3>均匀加宽</h3>
+            <b>自然加宽与碰撞加宽的共同特点</b>
+            <p>引起加宽的物理因素对每个粒子都是等同的，自然加宽机制中大量粒子中的每一个都有相同的平均寿命；碰撞加宽中，大量粒子中的每一个都有相同的受到其他粒子碰撞的机会.</p>
+            <p>光源中每个发光粒子由于某种物理因素的影响而使光谱线加宽，但中心频率保持不变，且所有发光粒子的谱线加宽完全一样.</p>
+            <p>这样，整个光源的光谱线中心频率仍与单个发光粒子的中心频率一致，而且整个光源的光谱线的线型函数和线宽与单个发光粒子的线型函数和线宽相同.</p>
+            <p>二者都是光辐射偏离简谐波，这种偏离引起了谱线的加宽.</p>
+            <p>在自然加宽机制中，粒子发射电磁波的振幅不断衰减而偏离简谐波；在碰撞加宽机制中，粒子间的碰撞使得粒子的发射电磁波突然中断，从而偏离简谐波.</p>
+            <p>在这类加宽中，每一粒子的一次发光对谱线内的所有频率均有贡献.</p>
+            <p>在均匀加宽中，不能将某一特定发光粒子与\(g(\nu,\nu_0)\)中某一频率联系起来.</p>
+
+
+
         </div>
 
-                <div class="Card-Definition">
+        <div class="Card-Definition">
             <b>光谱线</b>
             <p>用于描述相对光强在不同频率上的分布.</p>
 
@@ -172,9 +198,11 @@
         </div>
 
         
-        <div class="Ending" id="PageEnd"></div>
-        <a class="GoToBottom" href="#PageEnd">Bottom</a>
-        
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
 </html>
