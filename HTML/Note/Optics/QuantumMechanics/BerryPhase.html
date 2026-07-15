@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>量子力学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>Berry相位</h1>
+
+        <div class="Card-Analysis">
+            <h2>Berry相位简介</h2>
+            <p>Berry相位，全称Pancharatnam-Berry相位，是量子力学中众多几何相位的一种.</p>
+            <p>Berry相位是量子系统在做周期性绝热演化时，波函数所获得的几何相位，是量子绝热定理的一个特例.</p>
+            <div class="Card-AI">
+                <b>绝热演化</b>
+                <p>绝热演化是指量子系统的 Hamiltonian 变化得足够缓慢，使系统始终跟随初始本征态所对应的瞬时本征态演化，而不跃迁到其他能级.</p>
+            </div>
+            <p>具体而言，若量子系统处于自身的某一本征态，那么Hamiltonian量在参数空间中缓慢（绝热）演变一周后，本征波函数除获得动力学相因子外，还会获得一个额外的几何相因子.</p>
+            <div class="Card-AI">
+                <p>量子系统的本征态：量子系统的本征态是指某个算符作用后只改变整体倍数、而不改变状态方向的量子态.</p>
+                <p>量子系统的Hamiltonian量：<a href="Chapter2.html#HamiltonianOperator" class="goto">Hamiltonian算符</a></p>
+                <p>动力学相因子：量子态因能量随时间演化而获得的复指数因子.</p>
+            </div>
+
+            <p><b>绝热</b>：系统与环境不存在能量交换.</p>
+            <p>[注]若系统是孤立的，自然也是绝热的.</p>
+
+            <p>系统的瞬时本征解\(\lvert n(t)\rangle \equiv \lvert n(\boldsymbol{R}(t))\rangle\)满足定态Schrödinger方程：</p>
+            $$\hat{H}(t)\lvert n(t)\rangle = E_n(t)\lvert n(t)\rangle$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>量子态间的平行性与正交性</h2>
+            
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

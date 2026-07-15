@@ -41,7 +41,7 @@
         </div>
 
         <b id="BoundaryCondition">电磁场的连续条件</b>
-        <p>在没有传导电流和自由电荷的介质中，磁感强度\(\mathbf{B}\)与电感强度\(\mathbf{D}\)的法向分量在界面上连续；电场强度\(\mathbf{E}\)和磁场强度\(\mathbf{H}\)的切向分量在界面上连续。</p>
+        <p>在没有传导电流和自由电荷的介质中，磁感强度\(\boldsymbol{B}\)与电感强度\(\boldsymbol{D}\)的法向分量在界面上连续；电场强度\(\boldsymbol{E}\)和磁场强度\(\boldsymbol{H}\)的切向分量在界面上连续。</p>
         $$
         \begin{align}
         \begin{cases}
@@ -55,21 +55,21 @@
 
         <div class="Card-Definition">
             <b>\(p\)分量与\(s\)分量</b>
-            <p>任一方位振动的光矢量\(\mathbf{E}\)，都可分解为互相垂直的两个分量：</p>
+            <p>任一方位振动的光矢量\(\boldsymbol{E}\)，都可分解为互相垂直的两个分量：</p>
             <ul>
-                <li>\(p\)偏振波（\(E_p\)）：\(\mathbf{E}\)平行于入射面振动的分量，又称<span lang="en">TM</span>波（<span class="tip">横磁波<span class="tiptext">\(\mathbf{H}\)沿界面切线方向</span></span>）</li>
-                <li>\(s\)偏振波（\(E_s\)）：\(\mathbf{E}\)垂直于入射面振动的分量，又称<span lang="en">TE</span>波（<span class="tip">横电波<span class="tiptext">\(\mathbf{E}\)沿界面切线方向</span></span>）</li>
+                <li>\(p\)偏振波（\(E_p\)）：\(\boldsymbol{E}\)平行于入射面振动的分量，又称<span lang="en">TM</span>波（<span class="tip">横磁波<span class="tiptext">\(\boldsymbol{H}\)沿界面切线方向</span></span>）</li>
+                <li>\(s\)偏振波（\(E_s\)）：\(\boldsymbol{E}\)垂直于入射面振动的分量，又称<span lang="en">TE</span>波（<span class="tip">横电波<span class="tiptext">\(\boldsymbol{E}\)沿界面切线方向</span></span>）</li>
             </ul>
         </div>
 
         <div class="Card-Property">
             <div class="Formula">
-                <p>\(p\)分量与\(s\)分量均与波矢量\(\mathbf{k}\)垂直.</p>
+                <p>\(p\)分量与\(s\)分量均与波矢量\(\boldsymbol{k}\)垂直.</p>
                 <div class="Derivation">
-                    $$\begin{cases}s\perp Plane_i\\\mathbf{k} \subset Plane_i\end{cases} \Rightarrow \mathbf{k}\perp s$$
-                    $$\begin{cases}\mathbf{k} \perp \mathbf{E}\\ \mathbf{k} \perp s\end{cases}\Rightarrow k\perp Plane_{\mathbf{E},s}$$
-                    <p>由于\(p\)分量与\(s\)分量合成\(\mathbf{E}\)，故\(p, s, \mathbf{E}\)共面.</p>
-                    $$\therefore \mathbf{k}\perp p$$
+                    $$\begin{cases}s\perp Plane_i\\\boldsymbol{k} \subset Plane_i\end{cases} \Rightarrow \boldsymbol{k}\perp s$$
+                    $$\begin{cases}\boldsymbol{k} \perp \boldsymbol{E}\\ \boldsymbol{k} \perp s\end{cases}\Rightarrow k\perp Plane_{\boldsymbol{E},s}$$
+                    <p>由于\(p\)分量与\(s\)分量合成\(\boldsymbol{E}\)，故\(p, s, \boldsymbol{E}\)共面.</p>
+                    $$\therefore \boldsymbol{k}\perp p$$
                 </div>
             </div>
         </div>
@@ -78,8 +78,8 @@
         <h2><a href="Fresnel.html" id="Fresnel">菲涅尔公式</a></h2>
 
         <div class="Card-Definition" id="PoyntingVector">
-            <b>Poynting矢量（辐射强度矢量、能流密度）\(\mathbf{S}\)</b>
-            $$\mathbf{S} = \mathbf{E} \times \mathbf{H}$$
+            <b>Poynting矢量（辐射强度矢量、能流密度）\(\boldsymbol{S}\)</b>
+            $$\boldsymbol{S} = \boldsymbol{E} \times \boldsymbol{H}$$
             <p>用于描述电磁能量的传播。</p>
             <p>其方向表示能量流动的方向。各向同性介质中，亦为波的传播方向。</p>
             <p>其大小等于单位时间内垂直通过传播方向上单位面积的能量。</p>
@@ -92,20 +92,20 @@
             <p>考虑同种介质内的光强时，只关心光强的相对值，比例系数可以省略：</p>
             $$I = E^2_0$$
             <p>对于复数形式：</p>
-            $$I = \mathbf{E} \cdot \mathbf{E}^* = E \cdot E^*$$
+            $$I = \boldsymbol{E} \cdot \boldsymbol{E}^* = E \cdot E^*$$
             $$\begin{align}
-            I &= \mathbf{E}_0e^{-i(\omega t -kr + \phi)} \cdot \mathbf{E}_0e^{i(\omega t -kr + \phi)}\\
-              &= \mathbf{E}^2_0\\
+            I &= \boldsymbol{E}_0e^{-i(\omega t -kr + \phi)} \cdot \boldsymbol{E}_0e^{i(\omega t -kr + \phi)}\\
+              &= \boldsymbol{E}^2_0\\
               &= E^2_0
             \end{align}$$
         </div>
 
-        <p>取\(\mathbf{E}\)与\(\mathbf{H}\)的实数部分，有：</p>
-        $$\mathbf{E} = \mathbf{E_0}\cos(\omega t + \alpha)$$
-        $$\mathbf{H} = \mathbf{H_0}\cos(\omega t + \beta)$$
+        <p>取\(\boldsymbol{E}\)与\(\boldsymbol{H}\)的实数部分，有：</p>
+        $$\boldsymbol{E} = \boldsymbol{E_0}\cos(\omega t + \alpha)$$
+        $$\boldsymbol{H} = \boldsymbol{H_0}\cos(\omega t + \beta)$$
         $$\begin{align}
         I &= \frac{1}{T}\int_0^{T}S\mathrm{d}t\\
-          &= \frac{1}{T}\int_0^{T}|\mathbf{E}||\mathbf{H}|\sin\frac{\pi}{2}\mathrm{d}t\\
+          &= \frac{1}{T}\int_0^{T}|\boldsymbol{E}||\boldsymbol{H}|\sin\frac{\pi}{2}\mathrm{d}t\\
           &= \frac{1}{T}\int_{0}^TE_0H_0\cos(\omega t + \alpha)\cos(\omega t + \beta)\mathrm{d}t\\
           &= \frac{1}{2}E_0H_0\cos(\alpha - \beta)
         \end{align}$$

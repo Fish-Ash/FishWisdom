@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>线性代数</title>
+        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    </head>
+
+
+    <body>
+        <div class="header">不惑</div>
+
+        
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <h1>向量运算</h1>
+        
+        <div class="PageCatalog">
+            <ul>
+                <li><a>向量加减</a></li>
+                <li><a>向量数乘</a></li>
+                <li><a href="#dot product">向量点积</a></li>
+                <li><a href="#cross product">向量叉积</a></li>
+                <li><a>向量混合积</a></li>
+            </ul>
+        </div>
+
+        $$\boldsymbol{a} = (a_x, a_y, a_z), \boldsymbol{b} = (b_x, b_y, b_z)$$
+        <div class="Card-Analysis">
+            <h2>向量加减</h2>
+            $$\boldsymbol{a}\pm \boldsymbol{b}$$
+            <img src="Img/vectorpm.png" width="200">
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>向量数乘</h2>
+            <table>
+                <tr><td colspan="2">运算规律</td></tr>
+                <tr>
+                    <td>结合律</td>
+                    <td>$$\lambda(\mu \boldsymbol{a}) = \mu(\lambda \boldsymbol{a}) = (\lambda\mu)\boldsymbol{a}$$</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">分配律</td>
+                    <td>$$(\lambda + \mu)\boldsymbol{a} = \lambda\boldsymbol{a} + \mu\boldsymbol{a}$$</td>
+                </tr>
+                <tr>
+                    <td>$$\lambda(\boldsymbol{a} + \boldsymbol{b}) = \lambda \boldsymbol{a} + \lambda \boldsymbol{b}$$</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="Card-Analysis" id="dot product">
+            <h2>向量点积</h2>
+            <table>
+                <tr>
+                    <td colspan="2"><b>向量的数量积（点乘）</b></td>
+                </tr>
+                <tr>
+                    <td>几何表示</td>
+                    <td>$$\boldsymbol{a}\cdot\boldsymbol{b} = |\boldsymbol{a}|\cdot|\boldsymbol{b}|\cdot\cos\lt\boldsymbol{a}, \boldsymbol{b}\gt$$</td>
+                </tr>
+                <tr>
+                    <td>代数表示</td>
+                    <td>$$\boldsymbol{a}\cdot \boldsymbol{b} = a_xb_x + a_yb_y + a_zb_z$$</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">运算规律</td>
+                    <td>交换律</td>
+                </tr>
+                <tr>
+                    <td>结合律</td>
+                </tr>
+                <tr>
+                    <td>分配律</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">几何应用</td>
+                    <td>向量的模：\(|\boldsymbol{a}| = \sqrt{a^2}\)</td>
+                </tr>
+                <tr>
+                    <td>向量夹角：\(\cos \lt\boldsymbol{a},\boldsymbol{b}\gt \frac{\boldsymbol{a}\cdot\boldsymbol{b}}{|\boldsymbol{a}|\cdot|\boldsymbol{b}|}\)</td>
+                </tr>
+                <tr>
+                    <td>$$\boldsymbol{a}\perp\boldsymbol{b} \Rightarrow \boldsymbol{a}\cdot \boldsymbol{b} = 0$$</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="Card-Analysis" id="cross product">
+            <h2>向量叉积</h2>
+            <table>
+                <tr><td colspan="2"><b>向量的向量积（叉乘）</b></td></tr>
+                <tr>
+                    <td>几何表示</td>
+                    <td>
+                        $$\boldsymbol{a} \times \boldsymbol{b}$$
+                        <p>大小：\(|\boldsymbol{a}|\cdot|\boldsymbol{b}|\cdot\sin\lt\boldsymbol{a}, \boldsymbol{b}\gt\)</p>
+                        <p>方向：垂直于\(\boldsymbol{a}\)与\(\boldsymbol{b}\)，满足右手法则.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>代数表示</td>
+                    <td>$$\boldsymbol{a}\times \boldsymbol{b} =\left |\begin{matrix}i & j & k\\a_x & a_y & a_z\\b_x & b_y & b_z\end{matrix}\right |$$</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">运算规律</td>
+                    <td>反交换律：\(\boldsymbol{a}\times\boldsymbol{b} = -\boldsymbol{b}\times \boldsymbol{a}\)</td>
+                </tr>
+                <tr>
+                    <td>分配律</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">几何应用</td>
+                    <td>同时垂直于\(\boldsymbol{a}\)和\(\boldsymbol{b}\)的向量：\(\boldsymbol{a}\times\boldsymbol{b}\)</td>
+                </tr>
+                <tr>
+                    <td>以\(\boldsymbol{a}\)与\(\boldsymbol{b}\)为边的平行四边形面积：\(S = |\boldsymbol{a}\times\boldsymbol{b}| = |\boldsymbol{a}|\cdot|\boldsymbol{b}|\cdot\sin\lt \boldsymbol{a}, \boldsymbol{b}\gt\)</td>
+                </tr>
+                <tr>
+                    <td>$$\boldsymbol{a} // \boldsymbol{b} \Rightarrow \boldsymbol{a}\times\boldsymbol{b} = 0$$</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>向量混合积</h2>
+            <table>
+                <tr><td colspan="2"><b>混合积</b></td></tr>
+                <tr>
+                    <td>几何表示</td>
+                    <td>$$[a,b,c] = (a\times b)\cdot c$$</td>
+                </tr>
+                <tr>
+                    <td>代数表示</td>
+                    <td>$$[a,b,c] = \left |\begin{matrix}a_x & a_y & a_z\\b_x & b_y & b_z\\c_x & c_y & c_z\end{matrix}\right |$$</td>
+                </tr>
+                <tr>
+                    <td>运算规律</td>
+                    <td>交换变号：\([a,b,c] = -[b,a,c] = -[a,c,b]\)</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">几何应用</td>
+                    <td>以\(\boldsymbol{a}, \boldsymbol{b}, \boldsymbol{c}\)为棱的平行六面体的体积：\(V = |[a,b,c]|\)</td>
+                </tr>
+                <tr>
+                    <td>向量\(\boldsymbol{a}, \boldsymbol{b}, \boldsymbol{c}\)共面：\([a,b,c] = 0\)</td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+</html>

@@ -66,16 +66,92 @@
             <p>安培分子环流假说并非完全准确，但物质的磁性确实来源于电子的“运动”，确切来说，是电子的两种量子行为.</p>
         </div>
 
-        <h2>安培定律</h2>
-        <div class="Card-Definition">
-            <b>安培定律</b>
-            <p>电流之间的相互作用规律.</p>
-            <p>安培定律是磁场的基本规律.</p>
+        <div class="Card-Analysis">
+            <h2>安培定律</h2>
+            <div class="Card-Definition">
+                <b>安培定律</b>
+                <p>电流之间的相互作用规律.</p>
+                <p>安培定律是磁场的基本规律.</p>
+            </div>
+    
+            <p>设\(\mathrm{d}\boldsymbol{F}_{12}\)为电流元1给电流元2的力，\(I_1\)与\(I_2\)分别为它们的电流强度，\(\mathrm{d}l_1\)与\(\mathrm{d}l_2\)分别为两线元的长度，\(r_{12}\)为两电流元之间的距离.</p>
+            <p>则\(\mathrm{d}\boldsymbol{F}_{12}\)的大小\(\mathrm{d}F_{12}\)满足：</p>
+            $$\mathrm{d}F_{12} \propto \frac{I_1 I_2\mathrm{d}l_1\mathrm{d}l_2}{r_{12}^2}$$
         </div>
 
-        <p>设\(\mathrm{d}\mathbf{F}_{12}\)为电流元1给电流元2的力，\(I_1\)与\(I_2\)分别为它们的电流强度，\(\mathrm{d}l_1\)与\(\mathrm{d}l_2\)分别为两线元的长度，\(r_{12}\)为两电流元之间的距离.</p>
-        <p>则\(\mathrm{d}\mathbf{F}_{12}\)的大小\(\mathrm{d}F_{12}\)满足：</p>
-        $$\mathrm{d}F_{12} \propto \frac{I_1 I_2\mathrm{d}l_1\mathrm{d}l_2}{r_{12}^2}$$
+        <div class="Card-Analysis">
+            <h2>电流强度单位——安培的定义与绝对测量</h2>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>磁感应强度矢量</h2>
+            <p>为定量描述磁场的分布，引入磁感应强度矢量\(\boldsymbol{B}\).</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>毕奥-萨伐尔定律</h2>
+            <p>载流导线产生磁场的基本规律.</p>
+            <b>微分形式</b>
+            $$\mathrm{d}\boldsymbol{B} = \frac{\mu_0}{4\pi}\frac{I\mathrm{d}\boldsymbol{l}\times\boldsymbol{e}_r}{r^2}$$
+            <ul>
+                <li>\(\boldsymbol{e}_r\)：从源点（电流元）指向场点P的单位矢量.</li>
+            </ul>
+            <p>整个闭合回路产生的磁场是各电流元产生的元磁场\(\mathrm{d}\boldsymbol{B}\)的叠加.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>载流直导线的磁场</h2>
+            <img src="Img/StraightWire.png">
+            <p>对于有限长直导线A<sub>1</sub>A<sub>2</sub>：</p>
+            $$\begin{align}
+            B &= \int_{A_1}^{A_2}\mathrm{d}B\\
+              &= \frac{\mu_0}{4\pi}\int_{A_1}^{A_2}\frac{I\mathrm{d}l\sin\theta}{r^2}
+            \end{align}$$
+            $$r = \frac{r_0}{\sin(\pi-\theta)} = \frac{r_0}{\sin\theta}$$
+            $$l = r\cos(\pi-\theta) = -r\cos\theta = -r_0\cot\theta$$
+            $$\therefore \mathrm{d}l = r_0\csc^2\theta\mathrm{d}\theta$$
+            $$\begin{align}
+            B &= \frac{\mu_0}{4\pi}\int_{\theta_1}^{\theta_2}\frac{\sin^2\theta}{r_0^2}\cdot I\sin\theta\cdot r_0\csc^2\theta\mathrm{d}\theta\\
+              &= \frac{\mu_0I}{4\pi r_0}\int_{\theta_1}^{\theta_2}\sin\theta\mathrm{d}\theta\\
+              &= \frac{\mu_0I}{4\pi r_0}(\cos\theta_1 - \cos\theta_2)
+            \end{align}$$
+            <ul>
+                <li>\(\theta_1,\theta_2\)：在\(A_1,A_2\)两端的角度值</li>
+            </ul>
+            <p>对于无限长导线，有：</p>
+            $$\begin{cases}
+            \theta_1 = 0\\
+            \theta_2 = \pi
+            \end{cases}$$
+            $$\therefore B = \frac{\mu_0I}{2\pi r_0}$$
+            <p>无限长载流直导线周围的磁感应强度\(\boldsymbol{B}\)与距离\(r_0\)成反比.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>磁场“高斯定理”</h2>
+            <div class="Card-Definition">
+                <b>磁感应通量（磁通量，\(\Phi_B\)）</b>
+                $$\Phi_B = \iint_SB\cos\theta\mathrm{d}S = \iint_S\boldsymbol{B}\cdot\mathrm{d}\boldsymbol{S}$$
+                <ul>
+                    <li>\(\theta\)：磁感强度\(\boldsymbol{B}\)与面元\(\mathrm{d}\boldsymbol{S}\)的法线矢量\(\boldsymbol{e}_n\)间的夹角</li>
+                    <li>\(\mathrm{d}\boldsymbol{S} = \boldsymbol{e}_n\mathrm{d}S\)：面元矢量</li>
+                </ul>
+                <p>单位[MKSA单位制]：\(T\cdot m^2\)</p>
+                <p>韦伯（\(Wb\)）</p>
+                $$1Wb = 1T\times 1m^2$$
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>安培环路定理</h2>
+            <p>恒磁场中，磁感应强度沿任何闭合环路\(L\)的线积分，等于穿过这个环路所有电流强度的代数和的\(\mu_0\)倍.</p>
+            $$\oint_L\boldsymbol{B}\mathrm{d}\boldsymbol{l} = \mu_0\sum_{\mathrm{in}~L} I$$
+            <ul>
+                <li>闭合积分回路\(L\)：安培环路</li>
+            </ul>
+            <p>其中电流\(I\)的正负规定如下：</p>
+            <p>当电流方向与回路环绕方向服从右手法则时，\(I\gt0\)；反之\(I\lt0\).</p>
+        </div>
 
 
         <div id="PageEnd"></div>

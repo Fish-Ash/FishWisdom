@@ -47,11 +47,11 @@
                 </tr>
                 <tr>
                     <td colspan="2"><b>零向量</b></td>
-                    <td>$$\mathbf{0} = (0,0,\cdots 0)^T$$</td>
+                    <td>$$\boldsymbol{0} = (0,0,\cdots 0)^T$$</td>
                 </tr>
                 <tr>
                     <td colspan="2"><b>负向量</b></td>
-                    <td>$$-\mathbf{\alpha} = (-a_1, -a_2, \cdots, -a_n)^T$$</td>
+                    <td>$$-\boldsymbol{\alpha} = (-a_1, -a_2, \cdots, -a_n)^T$$</td>
                 </tr>
             </table>
             <p>[注]行（列）向量的转置即为列（行）向量.</p>
@@ -69,7 +69,7 @@
         <p>[注]零向量可以表示为任一向量组的线性组合，因为可以取其组合系数均为\(0\).</p>
 
         <b>定理</b>
-        <p>向量\(\beta\)可由向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性表示\(\Leftrightarrow \mathbf{A} = (\alpha_1, \alpha_2, \cdots, \alpha_n)\)的秩与\(\bar{\mathbf{A}} = (\alpha_1, \alpha_2, \cdots, \alpha_n, \beta)\)的秩相等.</p>
+        <p>向量\(\beta\)可由向量组\(\alpha_1, \alpha_2, \cdots, \alpha_n\)线性表示\(\Leftrightarrow \boldsymbol{A} = (\alpha_1, \alpha_2, \cdots, \alpha_n)\)的秩与\(\bar{\boldsymbol{A}} = (\alpha_1, \alpha_2, \cdots, \alpha_n, \beta)\)的秩相等.</p>
 
         <p>任一\(n\)维向量\(\alpha = (a_1, a_2, \cdots, a_n)^T\)是\(n\)维向量组\(\epsilon_1 = (1,0,\cdots,0)^T, \epsilon_2 = (0,1,\cdots,0)^T, \cdots, \epsilon_n = (0,0,\cdots, 1)^T\)的线性组合.</p>
         <div class="Prove">
@@ -83,9 +83,9 @@
 
         <h3>题型</h3>
         <b>判断向量\(\beta\)是否为\(\alpha_1, \alpha_2, \cdots, \alpha_n\)的线性组合，若是，写出表达式.</b>
-        <p>对矩阵\(\bar{\mathbf{A}} = (\alpha_1, \cdots, \alpha_n, \beta)\)实施初等行变换，化为行最简形矩阵.</p>
-        <p>若\(R(\mathbf{A}) \neq R(\bar{\mathbf{A}})\)，则向量\(\beta\)不是\(\alpha_1, \alpha_2, \cdots, \alpha_n\)的线性组合.</p>
-        <p>若\(R(\mathbf{A}) = R(\bar{\mathbf{A}})\)，则增广矩阵的解即为系数.</p>
+        <p>对矩阵\(\bar{\boldsymbol{A}} = (\alpha_1, \cdots, \alpha_n, \beta)\)实施初等行变换，化为行最简形矩阵.</p>
+        <p>若\(R(\boldsymbol{A}) \neq R(\bar{\boldsymbol{A}})\)，则向量\(\beta\)不是\(\alpha_1, \alpha_2, \cdots, \alpha_n\)的线性组合.</p>
+        <p>若\(R(\boldsymbol{A}) = R(\bar{\boldsymbol{A}})\)，则增广矩阵的解即为系数.</p>
 
 
         <b>向量组的等价</b>
@@ -107,10 +107,10 @@
         (\alpha_1, \alpha_2, \cdots, \alpha_r) = (\beta_1, \beta_2, \cdots, \beta_s)\left(\begin{matrix}p_{11}&p_{12}&\cdots&p_{1r}\\p_{21}&p_{22}&\cdots&p_{2r}\\\vdots&\vdots&&\vdots\\p_{s1}&p_{s2}&\cdots&p_{sr}\end{matrix}\right)
         $$
         <p>记</p>
-        $$\mathbf{P} = \left(\begin{matrix}p_{11}&p_{12}&\cdots&p_{1r}\\p_{21}&p_{22}&\cdots&p_{2r}\\\vdots&\vdots&&\vdots\\p_{s1}&p_{s2}&\cdots&p_{sr}\end{matrix}\right)$$
+        $$\boldsymbol{P} = \left(\begin{matrix}p_{11}&p_{12}&\cdots&p_{1r}\\p_{21}&p_{22}&\cdots&p_{2r}\\\vdots&\vdots&&\vdots\\p_{s1}&p_{s2}&\cdots&p_{sr}\end{matrix}\right)$$
         则
-        $$(\alpha_1, \alpha_2, \cdots, \alpha_r) = (\beta_1, \beta_2, \cdots, \beta_s)\mathbf{P}$$
-        <p>称\(\mathbf{P}\)为向量组\(\alpha_1, \alpha_2, \cdots, \alpha_r\)关于向量组\(\beta_1, \beta_2, \cdots, \beta_s\)的<b>表示矩阵</b>.</p>
+        $$(\alpha_1, \alpha_2, \cdots, \alpha_r) = (\beta_1, \beta_2, \cdots, \beta_s)\boldsymbol{P}$$
+        <p>称\(\boldsymbol{P}\)为向量组\(\alpha_1, \alpha_2, \cdots, \alpha_r\)关于向量组\(\beta_1, \beta_2, \cdots, \beta_s\)的<b>表示矩阵</b>.</p>
 
         <div class="Card-Definition">
             <b>等价</b>
@@ -148,7 +148,7 @@
             $$(\alpha, \beta) = (\beta, \alpha)$$
             $$(\lambda\alpha, \beta) = \lambda(\alpha, \beta)$$
             $$(\alpha + \beta, \gamma) = (\alpha, \gamma) + (\beta, \gamma)$$
-            $$\alpha=\mathbf{0}\Rightarrow(\alpha, \alpha) = 0, \alpha\neq \mathbf{0} \Rightarrow (\alpha, \alpha)\gt 0$$
+            $$\alpha=\boldsymbol{0}\Rightarrow(\alpha, \alpha) = 0, \alpha\neq \boldsymbol{0} \Rightarrow (\alpha, \alpha)\gt 0$$
         </div>
 
         <b>柯西-施瓦茨不等式</b>
@@ -176,7 +176,7 @@
 
         <div class="Card-Definition">
             <b>向量的夹角</b>
-            <p>\(\alpha \neq \mathbf{0}, \beta \neq \mathbf{0}\)时</p>
+            <p>\(\alpha \neq \boldsymbol{0}, \beta \neq \boldsymbol{0}\)时</p>
             $$\cos \theta = \frac{(\alpha, \beta)}{\|\alpha\|\|\beta\|}(0\leq \theta\leq \pi)$$
             <p>称\(\theta\)为\(\alpha\)与\(\beta\)的夹角.</p>
         </div>
@@ -185,7 +185,7 @@
             <b>正交</b>
             <p>\((\alpha,\beta) = 0\)时，称\(\alpha\)与\(\beta\)正交，记作\(\alpha \perp \beta\).</p>
         </div>
-        <p>[注]对于任意向量\(\alpha\)，总有\((\alpha, \mathbf{0}) = \mathbf{0}\)，故零向量与任何向量都正交.</p>
+        <p>[注]对于任意向量\(\alpha\)，总有\((\alpha, \boldsymbol{0}) = \boldsymbol{0}\)，故零向量与任何向量都正交.</p>
 
         <div class="Card-Definition">
             <b>正交向量组</b>
@@ -202,30 +202,30 @@
 
         <div class="Card-Definition">
             <b>特征值与特征向量</b>
-            <p>设\(\mathbf{A}\)为\(n\)阶矩阵，若数\(\lambda\)和\(n\)维非零列向量\(\alpha\)满足</p>
-            $$\mathbf{A}\alpha = \lambda\alpha$$
-            <p>称数\(\lambda\)为方阵\(\mathbf{A}\)的特征值.</p>
-            <p>非零列向量\(\alpha\)为\(\mathbf{A}\)对应于特征值\(\lambda\)的特征向量.</p>
+            <p>设\(\boldsymbol{A}\)为\(n\)阶矩阵，若数\(\lambda\)和\(n\)维非零列向量\(\alpha\)满足</p>
+            $$\boldsymbol{A}\alpha = \lambda\alpha$$
+            <p>称数\(\lambda\)为方阵\(\boldsymbol{A}\)的特征值.</p>
+            <p>非零列向量\(\alpha\)为\(\boldsymbol{A}\)对应于特征值\(\lambda\)的特征向量.</p>
         </div>
         <p>上式也可写成</p>
-        $$(\lambda\mathbf{E} - \mathbf{A})\alpha = \mathbf{0}$$
-        <p>这说明\(\alpha\)是齐次线性方程组\((\lambda\mathbf{E} - \mathbf{A})\mathbf{x} = \mathbf{0}\)的非零解.</p>
-        <p>方程组\((\lambda\mathbf{E} - \mathbf{A})\mathbf{x} = \mathbf{0}\)有非零解的充分必要条件为\(|\lambda\mathbf{E} - \mathbf{A}| = 0\)</p>
+        $$(\lambda\boldsymbol{E} - \boldsymbol{A})\alpha = \boldsymbol{0}$$
+        <p>这说明\(\alpha\)是齐次线性方程组\((\lambda\boldsymbol{E} - \boldsymbol{A})\boldsymbol{x} = \boldsymbol{0}\)的非零解.</p>
+        <p>方程组\((\lambda\boldsymbol{E} - \boldsymbol{A})\boldsymbol{x} = \boldsymbol{0}\)有非零解的充分必要条件为\(|\lambda\boldsymbol{E} - \boldsymbol{A}| = 0\)</p>
         
         <div class="Card-Definition">
-            <b>矩阵\(\mathbf{A}\)的特征多项式</b>
-            $$f(\lambda) = |\lambda\mathbf{E} = \mathbf{A}|$$
+            <b>矩阵\(\boldsymbol{A}\)的特征多项式</b>
+            $$f(\lambda) = |\lambda\boldsymbol{E} = \boldsymbol{A}|$$
             
-            <b>矩阵\(\mathbf{A}\)的特征方程</b>
-            $$f(\lambda) = |\lambda\mathbf{E} = \mathbf{A}| = 0$$
+            <b>矩阵\(\boldsymbol{A}\)的特征方程</b>
+            $$f(\lambda) = |\lambda\boldsymbol{E} = \boldsymbol{A}| = 0$$
         </div>
         
         <div class="Card-Method">
             <h2>求矩阵特征值与特征向量的方法</h2>
             <b>特征值</b>
-            $$f(\lambda) = |\lambda \mathbf{E} - \mathbf{A}| = 0 \Rightarrow \lambda_i$$
+            $$f(\lambda) = |\lambda \boldsymbol{E} - \boldsymbol{A}| = 0 \Rightarrow \lambda_i$$
             <b>特征向量</b>
-            $$(\lambda_i \mathbf{E} - \mathbf{A})\alpha = 0 \Rightarrow \alpha$$
+            $$(\lambda_i \boldsymbol{E} - \boldsymbol{A})\alpha = 0 \Rightarrow \alpha$$
         </div>
         <p>[注]\(\lambda\)需标注（\(k\)重），一重可以省略不写.</p>
         <p>[注]\(\alpha\)的通解中\(k_i\)不同时为\(0\).</p>
@@ -233,14 +233,14 @@
         <div class="Card-Definition">
             <b>方阵的迹</b>
             <p>方阵主对角线上的元素之和</p>
-            $$Tr(\mathbf{A}) = a_{11} + a_{22} + \cdots + a_{nn}$$
+            $$Tr(\boldsymbol{A}) = a_{11} + a_{22} + \cdots + a_{nn}$$
         </div>
 
         <div class="Card-Property">
             <b>方阵特征值的性质</b>
-            <p>\(n\)阶方阵\(\mathbf{A}\)的特征值为\(\lambda_1, \lambda_2, \cdots, \lambda_n\)（包含重根）.</p>
-            $$\sum\limits_{i=1}^n\lambda_i = Tr(\mathbf{A})$$
-            $$\lambda_1\lambda_2\cdots\lambda_n = |\mathbf{A}|$$
+            <p>\(n\)阶方阵\(\boldsymbol{A}\)的特征值为\(\lambda_1, \lambda_2, \cdots, \lambda_n\)（包含重根）.</p>
+            $$\sum\limits_{i=1}^n\lambda_i = Tr(\boldsymbol{A})$$
+            $$\lambda_1\lambda_2\cdots\lambda_n = |\boldsymbol{A}|$$
         </div>
 
         <div class="Card-Theorem">
@@ -248,23 +248,23 @@
         </div>
 
         <div class="Card-Theorem">
-            <p>\(n\)阶方阵\(\mathbf{A}\)与\(\mathbf{A}^T\)具有相同的特征值.</p>
+            <p>\(n\)阶方阵\(\boldsymbol{A}\)与\(\boldsymbol{A}^T\)具有相同的特征值.</p>
         </div>
 
         <div class="Card-Theorem">
-            <p>\(\lambda\)为\(n\)阶方阵\(\mathbf{A}\)的特征值，\(k,m\in \mathbb{N}^+\)，则</p>
-            <p>\(\lambda^k\)为\(\mathbf{A}^k\)的特征值.</p>
-            <p>\(f(\lambda) = a_0\lambda^m + a_1\lambda^{m-1} + \cdots + a_{m-1}\lambda + a_m\)是\(f(\mathbf{A}) = a_0\mathbf{A}^m + a_1\mathbf{A}^{m-1}+\cdots+a_{m-1}\mathbf{A} + a_m\mathbf{E}\)的特征值.</p>
+            <p>\(\lambda\)为\(n\)阶方阵\(\boldsymbol{A}\)的特征值，\(k,m\in \mathbb{N}^+\)，则</p>
+            <p>\(\lambda^k\)为\(\boldsymbol{A}^k\)的特征值.</p>
+            <p>\(f(\lambda) = a_0\lambda^m + a_1\lambda^{m-1} + \cdots + a_{m-1}\lambda + a_m\)是\(f(\boldsymbol{A}) = a_0\boldsymbol{A}^m + a_1\boldsymbol{A}^{m-1}+\cdots+a_{m-1}\boldsymbol{A} + a_m\boldsymbol{E}\)的特征值.</p>
         </div>
 
         <div class="Card-Theorem">
-            <p>\(\lambda\)为可逆方阵\(\mathbf{A}\)的特征值，则</p>
-            <p>\(1/\lambda\)为\(\mathbf{A}^{-1}\)的特征值.</p>
-            <p>\(|\mathbf{A}|/\lambda\)为\(\mathbf{A}^*\)的特征值.</p>
+            <p>\(\lambda\)为可逆方阵\(\boldsymbol{A}\)的特征值，则</p>
+            <p>\(1/\lambda\)为\(\boldsymbol{A}^{-1}\)的特征值.</p>
+            <p>\(|\boldsymbol{A}|/\lambda\)为\(\boldsymbol{A}^*\)的特征值.</p>
         </div>
 
         <div class="Card-Theorem">
-            <p>若\(\mathbf{p}_1, \mathbf{p}_2, \cdots, \mathbf{p}_m\)是\(n\)阶方阵\(\mathbf{A}\)属于互不相同特征值\(\lambda_1, \lambda_2, \cdots, \lambda_m\)的特征向量，则\(\mathbf{p}_1, \mathbf{p}_2, \cdots, \mathbf{p}_m\)线性无关.</p>
+            <p>若\(\boldsymbol{p}_1, \boldsymbol{p}_2, \cdots, \boldsymbol{p}_m\)是\(n\)阶方阵\(\boldsymbol{A}\)属于互不相同特征值\(\lambda_1, \lambda_2, \cdots, \lambda_m\)的特征向量，则\(\boldsymbol{p}_1, \boldsymbol{p}_2, \cdots, \boldsymbol{p}_m\)线性无关.</p>
         </div>
 
 

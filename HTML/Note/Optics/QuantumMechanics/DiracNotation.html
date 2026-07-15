@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>量子力学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>Dirac符号</h1>
+        <p>量子力学中的态可以由Hilbert空间中的\(\lvert\psi\rangle\)矢量描述，但是我们可以用不同的基来表示它.</p>
+        <div class="Card-AI">
+            <p>态用抽象矢量|\psi>描述，但是这个抽象矢量在不同的基下可以用不同的向量来表示.</p>
+            <p>\(\lvert\psi\rangle\)是Hilbert空间中满足特定条件的一组矢量中的一个.</p>
+        </div>
+        <p>波函数\(\Psi(x,t)\)为\(\lvert\psi\rangle\)当用坐标的本征函数展开时的展开系数：</p>
+        $$\Psi(x,t) = \left\langle x\middle|\psi(t)\right\rangle$$
+        <ul>
+            <li>\(\lvert x\rangle\)：基矢量，对应于属于本征值\(x\)的\(\hat{x}\)本征函数</li>
+        </ul>
+        <div class="Card-AI">
+            <p>基矢量也可以是抽象矢量.</p>
+            <p>系数就是指：</p>
+            $$\left|\psi(t)\right\rangle = \int\Psi(x,t)\left|x\right\rangle\mathrm{d}x$$
+        </div>
+
+        <p>动量空间波函数\(\Phi(p,t)\)为\(\lvert\psi\rangle\)用动量本征函数的基展开时的展开系数：</p>
+        $$\Phi(p, t) = \left\langle p\middle|\psi(t)\right\rangle$$
+        <ul>
+            <li>\(\lvert p\rangle\)：基矢量，对应于本征值\(p\)的\(\hat{p}\)的本征函数</li>
+        </ul>
+
+        <p>将\(\left|\psi\right\rangle\)用能量本征函数的基展开（简单起见，假设谱是分立的）：</p>
+        $$c_n(t) = \left\langle n\middle|\psi(t)\right\rangle$$
+        <ul>
+            <li>\(\lvert n\rangle\)：基矢量，对应属于\(\hat{H}\)的第\(n\)个本征函数</li>
+        </ul>
+
+        <p>\(\Psi, \Phi\)及系数的集合\(c_n\)精确包含相同的信息，它们是描述同一矢量的三种不同途径，表示同一个态.</p>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -99,17 +99,17 @@
         <p>类比于二维晶体中原子排列的周期性，对周期的光子晶体结构也能用空间点阵理论加以描述.</p>
         <p>在点阵中任选一点为坐标原点，平面光子晶体周期结构可以通过将原点平移至任意点阵位置获得.</p>
         <p>选择不同的原点位置，最终得到的点阵都是相同的.</p>
-        <p>点阵平移的矢量\(\mathbf{R}\)可以通过两个基矢量\(\mathbf{a}_1\)与\(\mathbf{a}_2\)的组合表示：</p>
-        $$\mathbf{R} = m_1\mathbf{a}_1 + m_2\mathbf{a}_2,\quad m_1,m_2\in \mathbb{Z}$$
+        <p>点阵平移的矢量\(\boldsymbol{R}\)可以通过两个基矢量\(\boldsymbol{a}_1\)与\(\boldsymbol{a}_2\)的组合表示：</p>
+        $$\boldsymbol{R} = m_1\boldsymbol{a}_1 + m_2\boldsymbol{a}_2,\quad m_1,m_2\in \mathbb{Z}$$
         <ul>
-            <li>\(\mathbf{R}\)：晶格矢量</li>
-            <li>\(\mathbf{a}_1, \mathbf{a}_2\)：初基平移矢量</li>
+            <li>\(\boldsymbol{R}\)：晶格矢量</li>
+            <li>\(\boldsymbol{a}_1, \boldsymbol{a}_2\)：初基平移矢量</li>
         </ul>
-        <p>由\(\mathbf{a}_1\)与\(\mathbf{a}_2\)构成的图形称为<b>初基晶胞</b>或<b>原胞</b>，其包含了周期结构中的最小重复单元.</p>
-        <p>周期结构中，任一点的位置矢量\(\mathbf{r}'\)可以写为：</p>
-        $$\mathbf{r}' = \mathbf{r} + m_1\mathbf{a}_1 + m_2\mathbf{a}_2 = \mathbf{r} + \mathbf{R}$$
+        <p>由\(\boldsymbol{a}_1\)与\(\boldsymbol{a}_2\)构成的图形称为<b>初基晶胞</b>或<b>原胞</b>，其包含了周期结构中的最小重复单元.</p>
+        <p>周期结构中，任一点的位置矢量\(\boldsymbol{r}'\)可以写为：</p>
+        $$\boldsymbol{r}' = \boldsymbol{r} + m_1\boldsymbol{a}_1 + m_2\boldsymbol{a}_2 = \boldsymbol{r} + \boldsymbol{R}$$
         <ul>
-            <li>\(\mathbf{r}\)：初基晶胞中对应的位置矢量</li>
+            <li>\(\boldsymbol{r}\)：初基晶胞中对应的位置矢量</li>
         </ul>
 
         <p>由于初基平移矢量的选择不是唯一的，因此初基晶胞也不是唯一的，只要其为晶体的最小重复单元即可.</p>
@@ -128,18 +128,18 @@
             <h2>互易空间</h2>
             <p>根据晶体的周期性，可以将晶体结构变换至傅里叶域.</p>
             <p>对于一个描述晶格的周期函数\(f\)，其傅里叶分解可以表示为：</p>
-            $$f(\mathbf{r}) = \sum_{\mathbf{G}}f(\mathbf{G})e^{i\mathbf{G}\cdot\mathbf{r}}$$
+            $$f(\boldsymbol{r}) = \sum_{\boldsymbol{G}}f(\boldsymbol{G})e^{i\boldsymbol{G}\cdot\boldsymbol{r}}$$
             <ul>
-                <li>\(\mathbf{G}\)：描述空间频率的\(k\)空间中的无限矢量集</li>
+                <li>\(\boldsymbol{G}\)：描述空间频率的\(k\)空间中的无限矢量集</li>
             </ul>
             <p>因此，傅里叶分解就是一种平面波的展开形式.</p>
             <p>根据晶体的周期性，上式必须满足：</p>
-            $$f(\mathbf{r} + \mathbf{R}) = \sum_{\mathbf{G}}f(\mathbf{G})e^{i\mathbf{G}\cdot\mathbf{r}}e^{i\mathbf{G}\cdot\mathbf{R}} = f(\mathbf{r})$$
+            $$f(\boldsymbol{r} + \boldsymbol{R}) = \sum_{\boldsymbol{G}}f(\boldsymbol{G})e^{i\boldsymbol{G}\cdot\boldsymbol{r}}e^{i\boldsymbol{G}\cdot\boldsymbol{R}} = f(\boldsymbol{r})$$
             <p>为了满足上述等式，有：</p>
-            $$e^{i\mathbf{G}\cdot\mathbf{R}} = 1$$
+            $$e^{i\boldsymbol{G}\cdot\boldsymbol{R}} = 1$$
             <p>即：</p>
-            $$\mathbf{G}\cdot\mathbf{R} = 2m\pi,\quad m\in\mathbb{Z}$$
-            <p>根据初基平移矢量\(\mathbf{a}_1, \mathbf{a}_2\)，可以定义矢量\(\mathbf{b}_1,\mathbf{b}_2\)：</p>
+            $$\boldsymbol{G}\cdot\boldsymbol{R} = 2m\pi,\quad m\in\mathbb{Z}$$
+            <p>根据初基平移矢量\(\boldsymbol{a}_1, \boldsymbol{a}_2\)，可以定义矢量\(\boldsymbol{b}_1,\boldsymbol{b}_2\)：</p>
             $$$$
         </div>
 

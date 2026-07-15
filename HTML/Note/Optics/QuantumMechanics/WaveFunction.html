@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>量子力学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>波函数</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#Time-Dependent Schrödinger Equation">含时Schrödinger方程</a></li>
+            </ul>
+        </div>
+
+        <p>一个动力学体系的状态可以用一个归一化的波函数\(\Psi\)描述.</p>
+
+        <p>求解Schrödinger方程可以得到粒子的波函数\(\Psi(x,t)\).</p>
+        <p>给定适当的初始条件，Schrödinger方程可以决定以后所有时刻的波函数.</p>
+
+        <div class="Card-Formula" id="Time-Dependent Schrödinger Equation">
+            <b>含时Schrödinger方程</b>
+            $$i\hbar\frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m}\frac{\partial^2\Psi}{\partial x^2}+V\Psi$$
+            <ul>
+                <li>\(\hbar = \frac{h}{2\pi} = 1.054572\times 10^{-34}J\cdot s\)</li>
+            </ul>
+        </div>
+
+        <div class="Card-Definition">
+            <b>Born定则</b>
+            <p>在\(t\)时刻发现粒子在\(x\)处的概率为\(|\Psi(x,t)|^2\).</p>
+
+            <p>[推论]</p>
+            $$\int_{-\infty}^{+\infty}|\Psi(x,t)|^2\mathrm{d}x = 1$$
+        </div>
+        
+        <p>Schrödinger方程具有自动保持波函数归一化的性质.</p>
+        <p>若\(\Psi(x,0)\)是归一化的，则\(\Psi(x,t)\)恒为归一化的，即：</p>
+        <div class="Formula">
+            $$\int_{-\infty}^{+\infty}|\Psi(x,0)|^2\mathrm{d}x = 1 \Rightarrow \int_{-\infty}^{+\infty}|\Psi(x,t)|^2\mathrm{d}x = 1$$
+            <div class="Derivation">
+                <p>要证：</p>
+                $$\int_{-\infty}^{+\infty}|\Psi(x,0)|^2\mathrm{d}x = 1 \Rightarrow \int_{-\infty}^{+\infty}|\Psi(x,t)|^2\mathrm{d}x = 1$$
+                <p>即证：</p>
+                <p>\(\int_{-\infty}^{+\infty}|\Psi(x,t)|^2\mathrm{d}x\)是一个不随时间变化的常数.</p>
+                <p>即：</p>
+                $$\frac{\mathrm{d}}{\mathrm{d}t}\int_{-\infty}^{+\infty}|\Psi(x,t)|^2\mathrm{d}x = 0$$
+                $$\begin{align}
+                \frac{\mathrm{d}}{\mathrm{d}t}\int_{-\infty}^{+\infty}|\Psi(x,t)|^2\mathrm{d}x &= \int_{-\infty}^{+\infty}\frac{\partial}{\partial t}|\Psi(x,t)|^2\mathrm{d}x\\
+                                                                                               &= \int_{-\infty}^{+\infty}\frac{\partial}{\partial t}(\Psi\cdot\Psi^*)\mathrm{d}x\\
+                                                                                               &= \int_{-\infty}^{+\infty}\frac{\partial \Psi}{\partial t}\Psi^* + \frac{\partial \Psi^*}{\partial t}\Psi\mathrm{d}x
+                \end{align}$$
+                <p>由Schrödinger方程：</p>
+                $$i\hbar \frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m}\frac{\partial^2 \Psi}{\partial x^2} + V\Psi$$
+                <p>得：</p>
+                $$\frac{\partial \Psi}{\partial t} = \frac{i\hbar}{2m}\frac{\partial^2 \Psi}{\partial x^2} - \frac{i}{h}V\Psi$$
+                $$\frac{\partial \Psi^*}{\partial t} = -\frac{i\hbar}{2m}\frac{\partial^2 \Psi^*}{\partial x^2} + \frac{i}{h}V\Psi^*$$
+                $$\therefore \frac{\mathrm{d}}{\mathrm{d}t}\int_{-\infty}^{+\infty} |\Psi(x,t)|^2 \mathrm{d}x = 0$$
+                $$\therefore \int_{-\infty}^{+\infty}|\Psi(x,0)|^2\mathrm{d}x = 1 \Rightarrow \int_{-\infty}^{+\infty}|\Psi(x,t)|^2\mathrm{d}x = 1$$
+            </div>
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>算符</h2>
+            <p>量子力学中，期望不是对同一个体系重复测量的平均值，而是对含有相同体系的一个系综中不同体系的重复测量的平均值.</p>
+            <b>\(t\)时刻粒子位置的期望\(\left\lt x\right\gt\)</b>
+            $$\left\lt  x\right \gt = \int_{-\infty}^{+\infty}x|\Psi(x,t)|^2\mathrm{d}x$$
+    
+            <b>粒子速度的期望\(\left\lt  v\right\gt\)</b>
+    
+            <div class="Formula">
+                $$\left\lt  v\right\gt = \frac{\mathrm{d}\left\lt  x\right\gt}{\mathrm{d}t} = -\frac{i\hbar}{m}\int_{-\infty}^{+\infty}\frac{\partial \Psi}{\partial x}\Psi^*\mathrm{d}x$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \left\lt  v\right\gt &= \frac{\mathrm{d}\left\lt  x\right\gt}{\mathrm{d}t}\\
+                                          &= \frac{\mathrm{d}}{\mathrm{d}t}\int_{-\infty}^{+\infty}x|\Psi|^2\mathrm{d}x\\
+                                          &= \int_{-\infty}^{+\infty}x\frac{\partial}{\partial t}(\Psi\cdot\Psi^*)\mathrm{d}x\\
+                                          &= \int_{-\infty}^{+\infty}x(\frac{\partial \Psi}{\partial t}\Psi^* + \frac{\partial \Psi^*}{\partial t}\Psi)\mathrm{d}x
+                    \end{align}$$
+                    $$\because\begin{cases}
+                    \frac{\partial \Psi}{\partial t} = \frac{i\hbar}{2m}\frac{\partial^2 \Psi}{\partial x^2} - \frac{i}{\hbar}V\Psi\\
+                    \frac{\partial \Psi^*}{\partial t} = -\frac{i\hbar}{2m}\frac{\partial^2 \Psi^*}{\partial x^2} + \frac{i}{\hbar}V\Psi^*
+                    \end{cases}$$
+                    $$\begin{align}\therefore
+                    \left\lt v\right\gt &= \int_{-\infty}^{+\infty}x\cdot\frac{i\hbar}{2m}(\frac{\partial^2 \Psi}{\partial x^2}\Psi^* - \frac{\partial^2 \Psi^*}{\partial x^2}\Psi)\mathrm{d}x\\
+                                         &= \frac{i\hbar}{2m}\int_{-\infty}^{+\infty}x\cdot\frac{\partial}{\partial x}(\frac{\partial \Psi}{\partial x}\Psi^* - \frac{\partial \Psi^*}{\partial x}\Psi)\mathrm{d}x
+                    \end{align}$$
+                    <p>由分部积分法：</p>
+                    $$\left\lt v \right\gt = \frac{i\hbar}{2m}\left[x(\frac{\partial \Psi}{\partial x}\Psi^* - \frac{\partial \Psi^*}{\partial x}\Psi)\Big|_{-\infty}^{+\infty} - \int_{-\infty}^{+\infty}\frac{\partial \Psi}{\partial x}\Psi^* - \frac{\partial \Psi^*}{\partial x}\Psi\mathrm{d}x\right]$$
+                    $$\because \lim\limits_{x\rightarrow\infty}\Psi(x,t) = 0$$
+                    $$\therefore \left\lt v\right\gt = -\frac{i\hbar}{2m}\int_{-\infty}^{+\infty}\frac{\partial \Psi}{\partial x}\Psi^* - \frac{\partial \Psi^*}{\partial x}\Psi\mathrm{d}x$$
+                    <p>由分部积分法：</p>
+                    $$\begin{align}
+                    \int_{-\infty}^{+\infty}\frac{\partial\Psi^*}{\partial x}\Psi\mathrm{d}x &= \Psi\Psi^*\Big|_{-\infty}^{+\infty} - \int_{-\infty}^{+\infty}\frac{\partial \Psi}{\partial t}\Psi^*\mathrm{d}x\\
+                                                                                             &= -\int_{-\infty}^{+\infty}\frac{\partial \Psi}{\partial t}\Psi^*\mathrm{d}x
+                    \end{align}$$
+                    $$\therefore \left\lt v\right\gt = \frac{-i\hbar}{m}\int_{-\infty}^{+\infty}\frac{\partial \Psi}{\partial t}\Psi^*\mathrm{d}x$$
+                </div>
+            </div>
+    
+            <b>粒子动量的期望\(\left\lt p\right\gt\)</b>
+            $$\left\lt p\right\gt = m\left\lt v\right\gt = -i\hbar\int_{-\infty}^{+\infty}\frac{\partial \Psi}{\partial x}\Psi^*\mathrm{d}x$$
+    
+    
+            <table>
+                <tr>
+                    <td>公式</td>
+                    <td>算符</td>
+                    <td>物理意义</td>
+                </tr>
+                <tr>
+                    <td>$$\left\lt x\right\gt = \int_{-\infty}^{+\infty} \Psi^*\cdot (x)\cdot \Psi\mathrm{d}x$$</td>
+                    <td>$$x$$</td>
+                    <td>位置</td>
+                </tr>
+                <tr>
+                    <td>$$\left\lt p\right\gt = \int_{-\infty}^{+\infty} \Psi^* \cdot (\frac{\hbar}{i}\frac{\partial}{\partial x}) \cdot \Psi\mathrm{d}x$$</td>
+                    <td>$$\frac{\hbar}{i}\frac{\partial}{\partial x}$$</td>
+                    <td>动量</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="Card-Definition">
+            <b>de Broglie公式</b>
+            $$p = \frac{h}{\lambda} = \frac{2\pi\hbar}{\lambda}$$
+            <p>给出了粒子动量与\(\Psi\)波长的联系.</p>
+        </div>
+
+        <div class="Card-Definition">
+            <b>Heisenberg不确定原理</b>
+            <p>粒子位置确定得越精确，其动量就越不精确.</p>
+            $$\sigma_x\sigma_p \geq \frac{\hbar}{2}$$
+            <ul>
+                <li>\(\sigma_x\)：\(x\)的标准差</li>
+                <li>\(\sigma_p\)：\(p\)的标准差</li>
+            </ul>
+        </div>
+
+        <ul class="navibar">
+            <li class="catalog"><a href="Catalog.html">主页</a></li>
+            <li class="next"><a href="Chapter2.html">下一页</a></li>
+        </ul>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

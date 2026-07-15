@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>量子力学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>第二章 定态Schrödinger方程</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#one-dimensional infinite square well">一维无限深方势阱</a></li>
+            </ul>
+        </div>
+
+        <p>给定特定的势函数\(V(x,t)\)，可以通过Schrödinger方程求解出波函数\(\Psi(x,t)\).</p>
+
+
+        <div class="Card-Analysis">
+            <h2>含时Schrödinger方程的分离变量解</h2>
+            <a href="WaveFunction.html#Time-Dependent Schrödinger Equation" class="goto">$$i\hbar\frac{\partial \Psi}{\partial t} = -\frac{\hbar}{2m}\frac{\partial^2 \Psi}{\partial x^2} + V\Psi$$</a>
+            
+            <p>假设：</p>
+            <p>[设]势函数不依赖时间，即\(V(x,t) = V(x)\).</p>
+            <p>[设]\(\Psi(x,t) = \psi(x)\phi(t)\)</p>
+            <p>[注]由于\(\Psi(x,t)\)是归一化的，因此\(\psi(x)\)也是归一化的.</p>
+            
+            $$\begin{align}
+            \therefore&\frac{\partial \Psi}{\partial t} = \psi\frac{\mathrm{d} \phi}{\mathrm{d} t}\\
+                      &\frac{\partial^2 \Psi}{\partial x^2} = \phi\frac{\mathrm{d}^2 \psi}{\mathrm{d} x^2}
+            \end{align}$$
+
+            <p>代入<a href="Chapter1.html#Time-Dependent Schrödinger Equation" class="goto">含时Schrödinger方程</a>，得：</p>
+            $$i\hbar\psi\frac{\mathrm{d} \phi}{\mathrm{d} t} = -\frac{\hbar}{2m}\frac{\mathrm{d}^2 \psi}{\mathrm{d} x^2}\phi + V\psi\phi$$
+            
+            <p>两边同时除以\(\psi\phi\)，得：</p>
+            $$i\hbar\frac{1}{\phi}\frac{\mathrm{d} \phi}{\mathrm{d} t} = -\frac{\hbar}{2m}\frac{1}{\psi}\frac{\mathrm{d}^2\psi}{\mathrm{d} x^2} + V$$
+
+            <p>此时，方程左边仅为\(t\)的函数，右边仅为\(x\)的函数.</p>
+            <p>方程成立的唯一条件为左右两边均为同一常数（否则，改变\(x,t\)中任一个，等式都会不成立）.</p>
+            <p>设此常数为\(E\)，则：</p>
+            $$i\hbar\frac{1}{\phi}\frac{\mathrm{d} \phi}{\mathrm{d} t} = E$$
+            $$-\frac{\hbar}{2m}\frac{1}{\psi}\frac{\mathrm{d}^2 \psi}{\mathrm{d} x^2} + V = E$$
+
+            <b>方程\(i\hbar\frac{1}{\phi}\frac{\mathrm{d} \phi}{\mathrm{d} t} = E\)</b>
+            <p>求解此<a href="../../Math/Mathematic/DifferentialEquation.html" class="goto">微分方程</a>，得：</p>
+            <div class="Formula">
+                $$\phi = Ce^{-iEt/\hbar}$$
+                <div class="Derivation">
+                    $$i\hbar\frac{1}{\phi}\frac{\mathrm{d} \phi}{\mathrm{d} t} = E$$
+                    $$\int\frac{1}{\phi}\mathrm{d}\phi = \int -\frac{iE}{\hbar}\mathrm{d}t$$
+                    $$\ln|\phi| = -\frac{iE}{\hbar}t + C$$
+                    $$\begin{align}
+                    \phi &= e^{-iEt/\hbar + C}\\
+                         &= Ce^{iEt/\hbar}
+                    \end{align}$$
+                </div>
+            </div>
+
+            <p>将常数\(C\)合并到\(\psi\)中，得：</p>
+            $$\phi = e^{-iEt/\hbar}$$
+
+            <b>方程\(-\frac{\hbar}{2m}\frac{1}{\psi}\frac{\mathrm{d}^2 \psi}{\mathrm{d} x^2} + V = E\)</b>
+            <p>由于\(V(x)\)未知，此方程无法求解.</p>
+            <p>记此方程为<b>定态Schrödinger方程</b>.</p>
+        </div>
+
+        <div class="Card-Formula">
+            <b>定态Schrödinger方程</b>
+            $$-\frac{\hbar^2}{2m}\frac{\mathrm{d}^2\psi}{\mathrm{d}x^2} + V\psi = E\psi$$
+
+            <p>只有给出特定的势函数\(V(x)\)才能求解定态Schrödinger方程.</p>
+        </div>
+
+
+        <p>概率密度\(|\Psi(x,t)|^2\)与时间无关</p>
+        $$|\Psi(x,t)|^2 = \Psi\cdot\Psi^* = \psi e^{-iEt/\hbar}\cdot \psi^*e^{iEt/\hbar} = |\psi(x)|^2$$
+
+
+        <b>补充知识点</b>
+        <div class="Card-Definition">
+            <b>Hamiltonian</b>
+            <p>经典力学中，总能量动能加势能称为Hamiltionian.</p>
+            $$H(x,p) = \frac{p^2}{2m} + V(x)$$
+        </div>
+
+        <div class="Card-Definition" id="HamiltonianOperator">
+            <b>Hamiltonian算符</b>
+            <p>将动量算符\(\hat p = \frac{\hbar}{i}\frac{\partial}{\partial x}\)代入Hamiltonian公式，得：</p>
+            $$\hat H = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x)$$
+            <div class="Card-AI">
+                <p>用于描述量子系统的总能量及其时间变化规律.</p>
+            </div>
+        </div>
+
+        <div class="Card-Formula" id="SE1">
+            <b>含时Schrödinger方程（\(\hat H\)形式）</b>
+            $$i\hbar\frac{\partial \Psi}{\partial t} = \hat H\Psi$$
+        </div>
+
+        <div class="Card-Formula" id="SE2">
+            <b>定态Schrödinger方程（\(\hat H\)形式）</b>
+            $$\hat H \psi = E\psi$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>分离变量解的总能量</h2>
+
+            <p>总能量的期望为：</p>
+            $$\begin{align}
+            \langle H\rangle &= \int_{-\infty}^{+\infty} \psi^* \hat H \psi\mathrm{d}x\\
+                    &= \int_{-\infty}^{+\infty} \psi^* E\psi\mathrm{d}x\\
+                    &= E
+            \end{align}$$
+            $${\hat H}^2 \psi = \hat H(\hat H\psi) = \hat H(E\psi) = E(\hat H\psi) = E^2\psi$$
+            $$\langle H^2\rangle =\int_{-\infty}^{+\infty} \psi^* {\hat H}^2\psi\mathrm{d}x = E^2$$
+            $$\sigma_H = \langle H^2\rangle - \langle H\rangle^2 = 0$$
+            <p>总能量每次测量的结果都是\(E\).</p>
+        </div>
+
+        <div class="Card-Analysis" id="one-dimensional infinite square well">
+            <h2>一维无限深方势阱</h2>
+            <p>[设]</p>
+            $$V(x) = \begin{cases}
+            0,\quad 0\leq x\leq a\\
+            \infty,\quad others
+            \end{cases}$$
+            <img src="Img/V.png" width="200" alt="一维无限深方势阱">
+            <p>势阱外，\(\psi(x) = 0\)，无法观测到粒子.</p>
+            <div class="Card-AI">
+                <p>势阱外\(V = \infty\)，而定态Schrodinger方程的能量是有限的，因此\(\psi(x)\)只能为0.</p>
+            </div>
+    
+            <p>势阱内，\(V=0\)，定态Schrödinger方程为：</p>
+            $$-\frac{\hbar^2}{2m}\frac{\partial^2 \psi}{\partial x^2} = E\psi$$
+            <p>整理得</p>
+            $$\frac{\partial^2 \psi}{\partial x^2} = -k^2\psi,\quad k=\frac{\sqrt{2mE}}{\hbar}$$
+            <p>该式为经典谐振子的运动方程.</p>
+            <p>解此<a href="..\..\Math\Mathematic\DifferentialEquation.html#2LinearHomo" class="goto">二阶线性齐次微分方程</a>得：</p>
+            $$\psi(x) = A\sin kx + B\cos kx,~A,B\in \mathbb{R}$$
+            $$\because \psi(0) = \psi(a) = 0$$
+            $$\psi(0) = A\sin 0 + B\cos 0 = 0$$
+            $$\therefore B = 0$$
+            $$\psi(a) = A\sin ka = 0$$
+            <p>为使上式满足，有以下可能：</p>
+            <ul>
+                <li>\(A = 0\)</li>
+                <li>\(\sin ka\) = 0</li>
+                <li>\(k = 0\)</li>
+            </ul>
+            <p>若\(A = 0\)或\(k = 0\)：</p>
+            $$\psi(x) \equiv 0$$
+            <p>无意义.</p>
+    
+            <p>若\(\sin ka = 0\)，即：</p>
+            $$ka = 0, \pm\pi, \pm2\pi,\cdots$$
+            <p>将负号合并至\(A\)中，于是\(k\)可能的取值为：</p>
+            $$k_n = \frac{n\pi}{a},~n=1,2,\cdots$$
+    
+            <p>因此\(E\)可能的取值为：</p>
+            $$E_n = \frac{k_n^2\hbar^2}{2m} = \frac{n^2\pi^2\hbar^2}{2ma^2},\quad n=1,2,\cdots$$
+            <p>这也就是说，一个粒子在一维无限深方势阱中的能量只能取某些特定的值.</p>
+            <div class="Card-AI">
+                <p>每一个能量取值都对应一种本征态.</p>
+            </div>
+    
+            $$\because \int_{-\infty}^{+\infty}|\psi(x)|^2\mathrm{d}x = 1$$
+            $$\therefore \int_{0}^{a} |A\sin kx|^2\mathrm{d}x = 1$$
+            $$\frac{|A|^2}{2}\int_{0}^{a}1-\cos 2k\mathrm{d}x = 1$$
+            $$\frac{|A|^2}{2}(x - \frac{1}{2k}\sin 2kx)|_0^a = 1$$
+            $$\because \psi(a) = A\sin ka = 0$$
+            $$\therefore \sin ka = 0$$
+            $$\therefore \frac{|A|^2}{2}a = 1$$
+            <p>简单取其正实根：</p>
+            $$A = \sqrt{\frac{2}{a}}$$
+            <p>故势阱内的解为：</p>
+            $$\psi_n(x) = \sqrt{\frac{2}{a}}\sin(\frac{n\pi}{a}x)$$
+    
+            <p>\(\psi_1\)具有最低的能量，称为<b>基态</b>.</p>
+            <p>其他态能量均高于\(\psi_1\)，称为<b>激发态</b>.</p>
+
+            <h3>\(\psi_n(x)\)性质</h3>
+            <b>前置知识</b>
+            <ul>
+                <li><a href="HilbertSpace.html" class="goto">Hilbert空间</a></li>
+            </ul>
+            <b>性质1</b>
+            <div class="Formula">
+                <p>\(\psi_n(x)\)相对于势阱中心（\(x = \frac{a}{2}\)）是奇偶交替的：\(\psi_{2n+1}\)是偶函数；\(\psi_{2n}\)是奇函数.</p>
+                <div class="Derivation">
+                    $$\begin{align}
+                    \psi_n'(x) &= \sqrt{\frac{2}{a}}\sin\left[\frac{n\pi}{a}(x - \frac{a}{2})\right]\\
+                              &= \sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x - \frac{n\pi}{2}\right)
+                    \end{align}$$
+                    $$\begin{align}
+                    \psi_{2n+1}'(x) &= \sqrt{\frac{2}{a}}\sin\left[\frac{(2n+1)\pi}{a}x - \frac{(2n+1)\pi}{2}\right]\\
+                              &= \sqrt{\frac{2}{a}}\sin\left[\frac{(2n+1)\pi}{a}x \pm \frac{\pi}{2}\right]\\
+                              &= \pm\sqrt{\frac{2}{a}}\cos\left[\frac{(2n+1)\pi}{a}x\right]\\
+                    \end{align}$$
+                    $$\therefore \psi_{2n+1}'(-x) = \psi_{2n+1}'(x)$$
+                    $$\begin{align}
+                    \psi_{2n}'(x) &= \sqrt{\frac{2}{a}}\sin\left(\frac{2n\pi}{a}x - n\pi\right)\\
+                              &= \sqrt{\frac{2}{a}}\sin\left(\frac{2n\pi}{a}x \pm \pi\right)\\
+                              &= \pm\sqrt{\frac{2}{a}}\sin\left(\frac{2n\pi}{a}x\right)\\
+                    \end{align}$$
+                    $$\therefore \psi_{2n}'(-x) = -\psi_{2n}'(x)$$
+                </div>
+            </div>
+
+            <b>性质2</b>
+            <p>随着能量的增加，态的节点（与x轴交点）数逐渐+1：\(\psi_1\)没有（不计端点）、\(\psi_2\)一个、\(\psi_3\)两个……</p>
+
+            <b>性质3</b>
+            <p>\(\psi_n(x)\)间是相互正交的，即：</p>
+            <div class="Formula">
+                $$\int\psi_m^*(x)\psi_n(x)\mathrm{d}x = 0,\quad m\neq n$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \int\psi_m^*(x)\psi_n(x)\mathrm{d}x &= \int_0^a \sqrt{\frac{2}{a}}\sin(\frac{m\pi}{a}x)\cdot\sqrt{\frac{2}{a}}\sin(\frac{n\pi}{a}x)\mathrm{d}x\\
+                                                        &= \frac{2}{a}\int_0^a\frac{\cos(\frac{m-n}{a}\pi x) - \cos(\frac{m+n}{a}\pi x)}{2}\mathrm{d}x\\
+                                                        &= \frac{1}{a}\left[\frac{a}{(m-n)\pi}\sin\left(\frac{m-n}{a}\pi x\right) - \frac{a}{(m+n)\pi}\sin\left(\frac{m+n}{a}\pi x\right)\right]_0^a\\
+                                                        &= \frac{1}{\pi}\left\{\frac{\sin[(m-n)\pi]}{m-n} - \frac{\sin[(m+n)\pi]}{m+n}\right\}
+                    \end{align}$$
+                    $$\because m,n\in \mathbb{N}_+$$
+                    $$\therefore \sin[(m-n)\pi] = \sin[(m+n)\pi] = 0$$
+                    $$\therefore \int\psi_m^*(x)\psi_n(x)\mathrm{d}x = 0$$
+                </div>
+            </div>
+
+            <b>性质4</b>
+            <p>\(\psi_n(x)\)是完备的，即任一一个函数\(f(x)\)都可以用其线性叠加表示：</p>
+            $$f(x) = \sum_{n=1}^{\infty}c_n\psi_n(x)$$
+
+            <p>一维无限深方势阱的定态为：</p>
+            $$\Psi_n(x,t) = \sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)e^{-i(n^2\pi^2\hbar/2ma^2)t}$$
+
+            <p>含时Schrödinger方程的一般解为定态解的线性叠加：</p>
+            $$\Psi(x,t) = \sum_{n=1}^\infty c_n\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)e^{-i(n^2\pi^2\hbar/2ma^2)t}$$
+            $$c_n = \sqrt{\frac{2}{a}}\int_0^a\sin\left(\frac{n\pi}{a}x\right)\Psi(x,0)\mathrm{d}x$$
+            <p>\(|c_n|^2\)为对能量进行测量时得到结果为\(E_n\)的概率.</p>
+            $$\sum_{n=1}^\infty|c_n|^2 = 1$$
+        </div>
+
+
+        <h2>谐振子</h2>
+        <b>弹簧振子模型</b>
+        <p>一个质量为\(m\)的物体挂在一个力常数为\(k\)的弹簧上，其运动由<b>胡克定律</b>决定：</p>
+        $$F = -kx = m\frac{\mathrm{d}^2 x}{\mathrm{d} t^2}$$
+        <p>其解为：</p>
+        $$x = A\sin(\omega t) + B\cos(\omega t)$$
+        <p>其中：</p>
+        $$\omega = \sqrt{\frac{k}{m}}$$
+
+
+
+        <div class="Card-Definition">
+            <b>算符\(A\)和\(B\)的对易子：</b>
+            $$[\hat A,\hat B] = \hat A \hat B - \hat B \hat A$$
+        </div>
+
+        <div class="Card-Formula">
+            <b>正则对易关系</b>
+            <div class="Formula">
+                $$[\hat x,\hat p] = i\hbar$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    [\hat x,\hat p]f &= [x\cdot \frac{\hbar}{i}\frac{\mathrm{d}}{\mathrm{d}x}(f) - \frac{\hbar}{i}\frac{\mathrm{d}}{\mathrm{d}x}(xf)]\\
+                           &= \frac{\hbar}{i}[x\frac{\mathrm{d}f}{\mathrm{d}x} - f - x\frac{\mathrm{d}f}{\mathrm{d}x}]\\
+                           &= i\hbar f
+                    \end{align}$$
+                    $$\therefore [\hat x,\hat p] = i\hbar$$
+                </div>
+            </div>
+        </div>
+
+        <h2>求解势能为\(V(x) = \frac{1}{2}m\omega^2 x^2\)时的Schrödinger方程</h2>
+
+        <p>将势函数</p>
+        $$V(x) = \frac{1}{2}m\omega^2 x^2$$
+        <p>代入Hamiltonian算符，得：</p>
+
+        <div class="Formula">
+            $$\hat H = \frac{1}{2m}[{\hat p}^2 + (m\omega x)^2]$$
+            <div class="Derivation">
+                $$\begin{align}
+                \hat H &= \frac{{\hat p}^2}{2m} + V\\
+                       &= \frac{{\hat p}^2}{2m} + \frac{1}{2}m\omega^2x^2\\
+                       &= \frac{1}{2m}[{\hat p}^2 + (m\omega x)^2]
+                \end{align}$$
+            </div>
+        </div>
+        <p>代入定态Schrödinger方程</p>
+        $$\hat H \psi = E\psi$$
+        <p>得：</p>
+        $$\frac{1}{2m}[p^2 + (m\omega x)^2]\psi = E\psi$$
+        <p>设：</p>
+        $$a_\pm = \frac{1}{\sqrt{2\hbar m\omega}}(\mp i\hat p + m\omega \hat x)$$
+        $$\begin{align}
+        a_-a_+ &= \frac{1}{2\hbar m\omega}(i\hat p + m\omega \hat x)(-i\hat p + m\omega \hat x)\\
+               &= \frac{1}{2\hbar m\omega}[{\hat p}^2 + im\omega\hat p\hat x - im\omega \hat x\hat p + (m\omega\hat x)^2]\\
+               &= \frac{1}{2\hbar m\omega}[{\hat p}^2 + (m\omega\hat x)^2 - im\omega(\hat x\hat p - \hat p\hat x)]\\
+               &= \frac{1}{2\hbar m\omega}[{\hat p}^2 + (m\omega\hat x)^2] - \frac{i}{2\hbar}[\hat x\hat p - \hat p\hat x]\\
+        \end{align}$$
+        $$\begin{align}
+        \because &\hat H = \frac{1}{2m}[{\hat p}^2 + (m\omega\hat x)^2]
+        \end{align}$$
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

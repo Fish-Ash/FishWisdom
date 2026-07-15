@@ -54,11 +54,11 @@
             <div class="Card-AI">
                 <p>各向异性介质中，总存在三个一般情况下正交的方向，具有如下性质：</p>
                 <p>朝这三个方向的某个方向施加电场时，电位移矢量与电场矢量同方向.</p>
-                <p>反之，若沿其他方向\(\mathbf{r}\)施加电场，电位移矢量总沿另外的\(\mathbf{r}'\)方向.</p>
+                <p>反之，若沿其他方向\(\boldsymbol{r}\)施加电场，电位移矢量总沿另外的\(\boldsymbol{r}'\)方向.</p>
                 <p>这样三个方向称为各向异性介质的主轴（介电轴）.</p>
             </div>
 
-            <p>由光的电磁理论，晶体的介电张量\(\mathbf{\epsilon}\)为一个对称矩阵.</p>
+            <p>由光的电磁理论，晶体的介电张量\(\boldsymbol{\epsilon}\)为一个对称矩阵.</p>
     
             <p>晶体的介电张量为对称张量，经主轴变换后的介电张量为对角张量.</p>
             $$\boldsymbol{\epsilon} = \epsilon_0\left[\begin{matrix}\epsilon_{xx}&0&0\\0&\epsilon_{yy}&0\\0&0&\epsilon_{zz}\end{matrix}\right]$$
@@ -130,31 +130,31 @@
 
             <p>在均匀、不导电、非磁性的各向异性介质中，若无自由电荷存在，Maxwell方程组表示为：</p>
             $$\begin{cases}
-            \nabla\times\mathbf{H} = \frac{\partial\mathbf{D}}{\partial t}\\
-            \nabla\times\mathbf{E} = -\mu_0\frac{\partial\mathbf{H}}{\partial t}\\
-            \nabla\cdot\mathbf{B} = 0\\
-            \nabla\cdot\mathbf{D} = 0
+            \nabla\times\boldsymbol{H} = \frac{\partial\boldsymbol{D}}{\partial t}\\
+            \nabla\times\boldsymbol{E} = -\mu_0\frac{\partial\boldsymbol{H}}{\partial t}\\
+            \nabla\cdot\boldsymbol{B} = 0\\
+            \nabla\cdot\boldsymbol{D} = 0
             \end{cases}$$
 
             <p>物质方程为：</p>
             $$\begin{cases}
-            \mathbf{B} = \mu_0\mathbf{H}\\
-            \mathbf{D} = \boldsymbol{\epsilon}\cdot\mathbf{E}
+            \boldsymbol{B} = \mu_0\boldsymbol{H}\\
+            \boldsymbol{D} = \boldsymbol{\epsilon}\cdot\boldsymbol{E}
             \end{cases}$$
 
             <p>这里只讨论单色平面光波在晶体中的传播特性，这样可以不考虑介质的色散特性.</p>
             <p>同时，对于任意复杂的光波，因光场可以通过傅里叶变换分解为不同频率的单色平面光波叠加，因此也不失普遍性.</p>
 
             $$\begin{cases}
-            \mathbf{D}\perp\mathbf{H}\\
-            \mathbf{D}\perp\mathbf{k}\\
-            \mathbf{H}\perp\mathbf{E}\\
-            \mathbf{H}\perp\mathbf{k}
+            \boldsymbol{D}\perp\boldsymbol{H}\\
+            \boldsymbol{D}\perp\boldsymbol{k}\\
+            \boldsymbol{H}\perp\boldsymbol{E}\\
+            \boldsymbol{H}\perp\boldsymbol{k}
             \end{cases}\Rightarrow
-            \mathbf{H}\perp\mathbf{D},\mathbf{E},\mathbf{k}
+            \boldsymbol{H}\perp\boldsymbol{D},\boldsymbol{E},\boldsymbol{k}
             $$
-            <p>故\(\mathbf{E},\mathbf{D},\mathbf{k}\)在垂直于\(\mathbf{H}\)的同一平面内.</p>
-            <p>且\(\mathbf{E}\)与\(\mathbf{D}\)通常不在同一方向上.</p>
+            <p>故\(\boldsymbol{E},\boldsymbol{D},\boldsymbol{k}\)在垂直于\(\boldsymbol{H}\)的同一平面内.</p>
+            <p>且\(\boldsymbol{E}\)与\(\boldsymbol{D}\)通常不在同一方向上.</p>
 
 
             <p>各向异性介质中，光的能量传播方向通常与光波法线方向不同.</p>
@@ -163,19 +163,19 @@
             <p>一般情况下，光在晶体中的<a href="../PhysicalOptics/Chapter1.html#phase velocity" class="goto">相速度</a>和光线速度的大小和方向均不相同.</p>
 
             <p>相速度：</p>
-            $$\mathbf{v}_p = v_p\mathbf{k}$$
+            $$\boldsymbol{v}_p = v_p\boldsymbol{k}$$
 
             <div class="Card-Definition">
-                <b>光线速度\(\mathbf{v}_r\)</b>
+                <b>光线速度\(\boldsymbol{v}_r\)</b>
                 <p>单色光波能量的传播速度</p>
-                $$\mathbf{v}_r = v_r\mathbf{S}$$
+                $$\boldsymbol{v}_r = v_r\boldsymbol{S}$$
             </div>
 
             <p>晶体中，有：</p>
             $$v_p = v_r\cos\alpha$$
 
 
-            <p>一般情况下，对应于晶体中每一给定的波法线方向\(\mathbf{k}\)，只允许有两个特定振动方向的线偏振光传播，它们的\(\mathbf{D}\)矢量相互垂直（因而振动面相互垂直），具有不同的折射率和相速度.</p>
+            <p>一般情况下，对应于晶体中每一给定的波法线方向\(\boldsymbol{k}\)，只允许有两个特定振动方向的线偏振光传播，它们的\(\boldsymbol{D}\)矢量相互垂直（因而振动面相互垂直），具有不同的折射率和相速度.</p>
 
         </div>
 
@@ -201,7 +201,7 @@
 
             <h3>折射率椭球</h3>
             <p>主轴坐标系中，晶体的电场储能密度为：</p>
-            $$\omega_e = \frac{1}{2}\mathbf{E}\cdot\mathbf{D} = \frac{1}{2\epsilon_0}\left(\frac{D_1^2}{\epsilon_1} + \frac{D_2^2}{\epsilon_2} + \frac{D_3^2}{\epsilon_3}\right)$$
+            $$\omega_e = \frac{1}{2}\boldsymbol{E}\cdot\boldsymbol{D} = \frac{1}{2\epsilon_0}\left(\frac{D_1^2}{\epsilon_1} + \frac{D_2^2}{\epsilon_2} + \frac{D_3^2}{\epsilon_3}\right)$$
             $$\therefore \frac{D_1^2}{\epsilon_1} + \frac{D_2^2}{\epsilon_2} + \frac{D_3^2}{\epsilon_3} = 2\epsilon_0\omega_e$$
 
             <p>令</p>
@@ -235,12 +235,33 @@
             </ul>
 
             <p>当一线偏振光垂直射入波片时，在入射表面产生的o光与e光分量同相位，振幅分别为\(A_o\)与\(A_e\)</p>
-            $$\mathbf{E_o} = \mathbf{A_o}\cos(\phi_0)$$
-            $$\mathbf{E_e} = \mathbf{A_e}\cos(\phi_0)$$
+            $$\boldsymbol{E_{0o}} = \boldsymbol{A_o}\cos\phi_0$$
+            $$\boldsymbol{E_{0e}} = \boldsymbol{A_e}\cos\phi_0$$
             <p>当二光穿过波片射出时，附加了一个相位延迟差，即：</p>
             $$\phi_o - \phi_e = \phi$$
             <p>故合成光矢量端点的轨迹方程为：</p>
-            $$(\frac{E_o}{A_o})^2 + (\frac{E_e}{A_e})^2 - 2(\frac{E_o}{A_o})(\frac{E_e}{A_e})\cos \phi = \sin^2 \phi$$
+            <div class="Formula">
+                $$(\frac{E_o}{A_o})^2 + (\frac{E_e}{A_e})^2 - 2(\frac{E_o}{A_o})(\frac{E_e}{A_e})\cos \phi = \sin^2 \phi$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \because~ &E_o = A_o\cos\phi_o\\
+                              &E_e = A_e\cos\phi_e
+                    \end{align}$$
+                    $$\begin{align}
+                    \therefore~ &\frac{E_o}{A_o} = \cos\phi_o\\
+                                &\frac{E_e}{A_e} = \cos\phi_e
+                    \end{align}$$
+                    $$\because \phi_o - \phi_e = \phi$$
+                    $$\begin{align}
+                    \therefore \frac{E_o}{A_o}&= \cos(\phi + \phi_e)\\
+                                              &= \cos\phi\cos\phi_e - \sin\phi\sin\phi_e\\
+                                              &= \frac{E_e}{A_e}\cos\phi - \sin\phi\sqrt{1-\left(\frac{E_e}{A_e}\right)^2}
+                    \end{align}$$
+                    $$\sin\phi\sqrt{1-\left(\frac{E_e}{A_e}\right)^2} = \frac{E_e}{A_e}\cos\phi - \frac{E_o}{A_o}$$
+                    $$\sin^2\phi - \left(\frac{E_e}{A_e}\right)^2\sin^2\phi = \left(\frac{E_e}{A_e}\right)^2\cos^2\phi -2\left(\frac{E_e}{A_e}\right)\left(\frac{E_o}{A_o}\right)\cos\phi + \left(\frac{E_o}{A_o}\right)^2$$
+                    $$\therefore (\frac{E_o}{A_o})^2 + (\frac{E_e}{A_e})^2 - 2(\frac{E_o}{A_o})(\frac{E_e}{A_e})\cos \phi = \sin^2 \phi$$
+                </div>
+            </div>
 
             <h3>全波片</h3>
             <p>全波片的附加相位差为：</p>
@@ -282,32 +303,32 @@
             <p>光在晶体界面上的双反射和双折射特性可以用解析法和几何作图法描述.</p>
 
             <b>解析法描述</b>
-            <p>假设一束单色平面光波自空气射向晶体，\(\mathbf{k}_i, \mathbf{k}_r, \mathbf{k}_t\)分别为入射光、反射光、折射光的波矢，则由光的电磁场理论可得：</p>
-            $$(\mathbf{k}_r - \mathbf{k}_i)\cdot\mathbf{r} = 0$$
-            $$(\mathbf{k}_t - \mathbf{k}_i)\cdot\mathbf{r} = 0$$
+            <p>假设一束单色平面光波自空气射向晶体，\(\boldsymbol{k}_i, \boldsymbol{k}_r, \boldsymbol{k}_t\)分别为入射光、反射光、折射光的波矢，则由光的电磁场理论可得：</p>
+            $$(\boldsymbol{k}_r - \boldsymbol{k}_i)\cdot\boldsymbol{r} = 0$$
+            $$(\boldsymbol{k}_t - \boldsymbol{k}_i)\cdot\boldsymbol{r} = 0$$
 
             <div class="Prove">
                 $$\begin{cases}
-                \mathbf{E}_i = \mathbf{E}_{i0}e^{i(\mathbf{k}_i\cdot\mathbf{r} - \omega t)}\\
-                \mathbf{E}_r = \mathbf{E}_{r0}e^{i(\mathbf{k}_r\cdot\mathbf{r} - \omega t)}\\
-                \mathbf{E}_t = \mathbf{E}_{t0}e^{i(\mathbf{k}_t\cdot\mathbf{r} - \omega t)}
+                \boldsymbol{E}_i = \boldsymbol{E}_{i0}e^{i(\boldsymbol{k}_i\cdot\boldsymbol{r} - \omega t)}\\
+                \boldsymbol{E}_r = \boldsymbol{E}_{r0}e^{i(\boldsymbol{k}_r\cdot\boldsymbol{r} - \omega t)}\\
+                \boldsymbol{E}_t = \boldsymbol{E}_{t0}e^{i(\boldsymbol{k}_t\cdot\boldsymbol{r} - \omega t)}
                 \end{cases}$$
-                <p>[注]此处的\(\mathbf{E}_0\)实指\(\mathbf{E}_0e^{i\phi_0}\).</p>
+                <p>[注]此处的\(\boldsymbol{E}_0\)实指\(\boldsymbol{E}_0e^{i\phi_0}\).</p>
                 <p>在晶体-空气分界面上，应用边界条件，有：</p>
-                $$\mathbf{E}_{i0,\tan}e^{i(\mathbf{k}_i\cdot\mathbf{r} - \omega t)} + \mathbf{E}_{r0,\tan}e^{i(\mathbf{k}_r\cdot\mathbf{r} - \omega t)} = \mathbf{E}_{t0,\tan}e^{i(\mathbf{k}_t\cdot\mathbf{r} - \omega t)}$$
-                <p>[注]\(\mathbf{E}_{\tan}\)为\(\mathbf{E}\)的切向分量，由于<a href="Chapter1.html#EMProperty" class="goto">\(\mathbf{E}\)的方向仅由\(\mathbf{E}_0\)决定而与\(\mathbf{r}\)的方向无关</a>，此处仍需标明分量.</p>
+                $$\boldsymbol{E}_{i0,\tan}e^{i(\boldsymbol{k}_i\cdot\boldsymbol{r} - \omega t)} + \boldsymbol{E}_{r0,\tan}e^{i(\boldsymbol{k}_r\cdot\boldsymbol{r} - \omega t)} = \boldsymbol{E}_{t0,\tan}e^{i(\boldsymbol{k}_t\cdot\boldsymbol{r} - \omega t)}$$
+                <p>[注]\(\boldsymbol{E}_{\tan}\)为\(\boldsymbol{E}\)的切向分量，由于<a href="Chapter1.html#EMProperty" class="goto">\(\boldsymbol{E}\)的方向仅由\(\boldsymbol{E}_0\)决定而与\(\boldsymbol{r}\)的方向无关</a>，此处仍需标明分量.</p>
                 <p>由于上式对任意时刻分界面上的任意向量均成立，故：</p>
-                $$\mathbf{k}_i\cdot\mathbf{r} - \omega t = \mathbf{k}_r\cdot\mathbf{r} - \omega t = \mathbf{k}_t\cdot\mathbf{r} - \omega t$$
-                $$\therefore\mathbf{k}_i\cdot\mathbf{r} = \mathbf{k}_r\cdot\mathbf{r} = \mathbf{k}_t\cdot\mathbf{r}$$
+                $$\boldsymbol{k}_i\cdot\boldsymbol{r} - \omega t = \boldsymbol{k}_r\cdot\boldsymbol{r} - \omega t = \boldsymbol{k}_t\cdot\boldsymbol{r} - \omega t$$
+                $$\therefore\boldsymbol{k}_i\cdot\boldsymbol{r} = \boldsymbol{k}_r\cdot\boldsymbol{r} = \boldsymbol{k}_t\cdot\boldsymbol{r}$$
                 $$\therefore\begin{cases}
-                (\mathbf{k}_r - \mathbf{k}_i)\cdot\mathbf{r} = 0\\
-                (\mathbf{k}_t - \mathbf{k}_i)\cdot\mathbf{r} = 0
+                (\boldsymbol{k}_r - \boldsymbol{k}_i)\cdot\boldsymbol{r} = 0\\
+                (\boldsymbol{k}_t - \boldsymbol{k}_i)\cdot\boldsymbol{r} = 0
                 \end{cases}$$
             </div>
 
             <p>1式是反射定律的矢量形式，可表述为：反射光和入射光的波矢差与界面垂直.</p>
             <p>2式是折射定律的矢量形式，可表述为：折射光和入射光的波矢差与界面垂直.</p>
-            <p>由两式可知，\(\mathbf{k}_i, \mathbf{k}_r, \mathbf{k}_t\)与界面法线共面，或者说：反射光与折射光的波矢均在入射面内.</p>
+            <p>由两式可知，\(\boldsymbol{k}_i, \boldsymbol{k}_r, \boldsymbol{k}_t\)与界面法线共面，或者说：反射光与折射光的波矢均在入射面内.</p>
 
 
             <div class="Card-AI">
@@ -326,7 +347,7 @@
             <p>设\(\theta_i, \theta_r, \theta_t\)分别为入射角、反射角、折射角，则：</p>
             $$k_i\sin\theta_i = k_r\sin\theta_r = k_t\sin\theta_t$$
             <div class="Prove">
-                $$\because \mathbf{k}_i\cdot\mathbf{r} = \mathbf{k}_r\cdot\mathbf{r} = \mathbf{k}_t\cdot\mathbf{r}$$
+                $$\because \boldsymbol{k}_i\cdot\boldsymbol{r} = \boldsymbol{k}_r\cdot\boldsymbol{r} = \boldsymbol{k}_t\cdot\boldsymbol{r}$$
                 $$\therefore |k_i||r|\cos(\frac{\pi}{2} - \theta_i) = |k_r||r|\cos(\frac{\pi}{2} - \theta_r) = |k_t||r|\cos(\frac{\pi}{2} - \theta_t)$$
                 $$\therefore k_i\sin\theta_i = k_r\sin\theta_r = k_t\sin\theta_t$$
             </div>

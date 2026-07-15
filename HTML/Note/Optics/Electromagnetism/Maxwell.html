@@ -31,45 +31,46 @@
     积分形式
     $$
     \begin{cases}
-    \iint\limits_{闭}\mathbf{D}\cdot \mathrm{d}\mathbf{\sigma} = Q\\
-    \iint\limits_{闭}\mathbf{B}\cdot \mathrm{d}\mathbf{\sigma} = 0\\
-    \oint \mathbf{E}\cdot \mathrm{d}\mathbf{l} = -\iint \frac{\partial \mathbf{B}}{\partial t}\mathrm{d}\mathbf{\sigma}\\
-    \oint \mathbf{H}\cdot \mathrm{d}\mathbf{l} = I + \iint \frac{\partial \mathbf{D}}{\partial t}\mathrm{d}\mathbf{\sigma}
+    \iint\limits_{闭}\boldsymbol{D}\cdot \mathrm{d}\boldsymbol{\sigma} = Q\\
+    \iint\limits_{闭}\boldsymbol{B}\cdot \mathrm{d}\boldsymbol{\sigma} = 0\\
+    \oint \boldsymbol{E}\cdot \mathrm{d}\boldsymbol{l} = -\iint \frac{\partial \boldsymbol{B}}{\partial t}\mathrm{d}\boldsymbol{\sigma}\\
+    \oint \boldsymbol{H}\cdot \mathrm{d}\boldsymbol{l} = I + \iint \frac{\partial \boldsymbol{D}}{\partial t}\mathrm{d}\boldsymbol{\sigma}
     \end{cases}
     $$
 
     参数说明
     <ul>
-        <li>\(\mathbf{D}\)：电感强度（电位移矢量、电通量密度）</li>
+        <li>\(\boldsymbol{D}\)：电感强度（电位移矢量、电通量密度）</li>
         <li>\(Q\)：闭合曲面内包含的总电荷量</li>
-        <li>\(\mathbf{B}\)：磁感强度（磁通量密度）</li>
-        <li>\(\mathbf{E}\)：电场强度</li>
-        <li>\(\mathbf{H}\)：磁场强度</li>
+        <li>\(\boldsymbol{B}\)：磁感强度（磁通量密度）</li>
+        <li>\(\boldsymbol{E}\)：电场强度</li>
+        <li>\(\boldsymbol{H}\)：磁场强度</li>
         <li>\(I\)：传导电流</li>
-        <li>\(\frac{\partial\mathbf{B}}{\partial t}\)：磁场随时间的变化率</li>
-        <li>\(\frac{\partial \mathbf{D}}{\partial t}\)：位移电流密度</li>
-        <li>\(\iint\frac{\partial \mathbf{D}}{\partial t}\mathrm{d}\sigma\)：位移电流</li>
+        <li>\(\frac{\partial\boldsymbol{B}}{\partial t}\)：磁场随时间的变化率</li>
+        <li>\(\frac{\partial \boldsymbol{D}}{\partial t}\)：位移电流密度</li>
+        <li>\(\iint\frac{\partial \boldsymbol{D}}{\partial t}\mathrm{d}\sigma\)：位移电流</li>
     </ul>
 
     <div class="Card-Formula" id="DifferentialForm">
         <b>Maxwell方程组的微分形式</b>
         $$
         \begin{cases}
-        \nabla\cdot\mathbf{D} = \rho\\
-        \nabla\cdot\mathbf{B} = 0\\
-        \nabla\times\mathbf{E} = -\frac{\partial \mathbf{B}}{\partial{t}}\\
-        \nabla\times\mathbf{H} = \mathbf{j} + \frac{\partial \mathbf{D}}{\partial t}
+        \nabla\cdot\boldsymbol{D} = \rho\\
+        \nabla\cdot\boldsymbol{B} = 0\\
+        \nabla\times\boldsymbol{E} = -\frac{\partial \boldsymbol{B}}{\partial{t}}\\
+        \nabla\times\boldsymbol{H} = \boldsymbol{j} + \frac{\partial \boldsymbol{D}}{\partial t}
         \end{cases}
         $$
     </div>
 
     <div class="Card-Formula">
         <b>物质方程</b>
-        <p>静止的各向同性（物质每一点的物理性质不随方向而改变）介质中，有：</p>
+        <p>描述物质在场作用下特性的关系式.</p>
+        <p>静止的各向同性（物质每一点的物理性质不随方向而改变）媒质中，有：</p>
         $$\begin{cases}
-        \mathbf{j} = \sigma\mathbf{E}\\
-        \mathbf{D} = \epsilon\mathbf{E}\\
-        \mathbf{B} = \mu\mathbf{H}
+        \boldsymbol{j} = \sigma\boldsymbol{E}\\
+        \boldsymbol{D} = \epsilon\boldsymbol{E}\\
+        \boldsymbol{B} = \mu\boldsymbol{H}
         \end{cases}$$
 
         <ul>
@@ -93,7 +94,7 @@
     <table>
         <tr>
             <td>不导电介质</td>
-            <td>$$\mathbf{j} = 0$$</td>
+            <td>$$\boldsymbol{j} = 0$$</td>
         </tr>
         <tr>
             <td>非磁性介质</td>

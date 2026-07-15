@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>量子力学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>Hilbert空间</h1>
+
+        <div class="Card-Analysis">
+            <h2>Hilbert空间简介及一些运算</h2>
+
+            <div class="Card-Definition">
+                <b>Hilbert空间</b>
+                <p>所有在特定区域的平方可积函数的集合构成的一个非常小的矢量空间.</p>
+                $$\left\{f(x)\middle|\int_a^b|f(x)|^2\mathrm{d}x \lt \infty\right\}$$
+                <p>数学上，称此矢量空间为\(L_2(a,b)\).</p>
+                <p>通常情况下，\(a = -\infty\)，\(b = +\infty\).</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>Hilbert空间中的矢量并不一定都是量子态，但所有物理上可实现的量子纯态，都对应与Hilbert空间中的某个向量.</p>
+                <p>从抽象的代数意义上看，任何一个函数都可以表示为向量（高等代数、泛函分析）</p>
+                <p>一个完整的矢量空间缺乏内积.</p>
+            </div>
+
+
+            <p>N维空间中，可以简单地用对应于N个正交归一基矢的分量\(\{a_n\}\)的一个N行列矩阵表示一个矢量\(\lvert\alpha\rangle\)：</p>
+            $$\lvert\alpha\rangle \rightarrow \boldsymbol{a} = \left[\begin{matrix}a_1\\a_2\\\vdots\\a_N\end{matrix}\right]$$
+            <div class="Card-AI">
+                <p>\(\lvert\alpha\rangle\)：抽象矢量，选定一组基后，可以将其表示为\(\boldsymbol{a}\)的形式.</p>
+                <p>量子态在数学情景下用抽象矢量表示，这就是引入Hilbert空间的意义.</p>
+            </div>
+
+            <h3>矢量内积</h3>
+            <p>两个矢量的内积（三维空间标量积的推广）\(\langle\alpha\lvert\beta\rangle\)为一个复数：</p>
+            $$\langle\alpha\lvert\beta\rangle = a_1^*b_1 + a_2^*b_2 + \cdots + a_N^*b_N$$
+    
+            <p>量子力学中，波函数是处于Hilbert空间中的.</p>
+    
+            <h3>线性变换</h3>
+            <p>线性变换\(T\)用矩阵（相应指定的基矢）表示，通过普通的矩阵乘法规则作用于矢量上，得到新矢量：</p>
+            $$\lvert\beta\rangle = T\lvert\alpha\rangle \rightarrow\boldsymbol{b} = \boldsymbol{T}\boldsymbol{a} = 
+            \left[\begin{matrix}t_{11}&t_{12}&\cdots&t_{1N}\\t_{21}&t_{22}&\cdots&t_{2N}\\\vdots&\vdots&&\vdots\\t_{N1}&t_{N2}&\cdots&t_{NN}\end{matrix}\right]\left[\begin{matrix}a_1\\a_2\\\vdots\\a_N\end{matrix}\right]$$
+
+            <h3>函数内积</h3>
+            <p>定义两个函数\(f(x)\)与\(g(x)\)的内积为：</p>
+            $$\langle f\lvert g\rangle = \int_a^bf^*(x)g(x)\mathrm{d}x$$
+    
+            <p>若两个函数都是平方可积的（即两个函数均存在于Hilbert空间中），则其内积必定存在（上式中的积分收敛于一有限值）.</p>
+
+            <p>这一结论可由Schwarz不等式推出.</p>
+
+            <b>性质</b>
+            $$\langle g\lvert f\rangle = \langle f\lvert g\rangle^*$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>Hilbert空间下函数的关系</h2>
+            <h3>归一化函数</h3>
+            <p>若一个函数与其自身内积为1，称之为归一化的.</p>
+
+            <h3>正交函数</h3>
+            <p>若两个函数内积为0，称其为正交的.</p>
+
+            <h3>正交归一函数</h3>
+            <p>若一组函数之间是正交的，本身又是归一化的，称其为正交归一的.</p>
+
+            <h3>完备函数</h3>
+            <p>若存在一组函数，Hilbert空间中的任意其他函数都可以表示为这组函数的线性叠加，称这组函数为完备的.</p>
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -45,7 +45,7 @@
         <p>一个平面波斜入射至两个媒质\((\epsilon_1, \mu_1)\)和\((\epsilon_2, \mu_2)\)的分界面上，若在分界面上放置一个超表面，该超表面会对分别面处的反射波与折射波引入一个额外的相位偏移\(\Phi_r(x,y)\)与\(\Phi_t(x,y)\).</p>
         <p>相位偏移是位置相关的函数.</p>
 
-        <p>不失一般性，考虑横电波（TE）以入射角\(\theta_i\)斜入射到超表面上，入射波的横向电场为\(\mathbf{E}_i\).</p>
+        <p>不失一般性，考虑横电波（TE）以入射角\(\theta_i\)斜入射到超表面上，入射波的横向电场为\(\boldsymbol{E}_i\).</p>
 
         <div class="Card-AI">
             <b>横电波【电磁学】：电场矢量方向始终与波的传播方向垂直.</b>
@@ -53,25 +53,25 @@
             <p>横向电场就是指沿横向的电场分量.</p>
         </div>
 
-        <p>设：反射波的横向电场为\(\mathbf{E}_r\)、反射角为\(\theta_r\)，透射波的横向电场为\(\mathbf{E}_t\)、透射角为\(\theta_t\).</p>
+        <p>设：反射波的横向电场为\(\boldsymbol{E}_r\)、反射角为\(\theta_r\)，透射波的横向电场为\(\boldsymbol{E}_t\)、透射角为\(\theta_t\).</p>
         <p>设：入射波、反射波与透射波均位于xoz平面内.</p>
         <p>此时，对于时谐因子为\(e^{i\omega t}\)的入射波，其电场和磁场可以分别表示为：</p>
         <div class="Card-AI">
             <p>时谐：稳定且周期性变化的状态.</p>
         </div>
         <div class="Formula">
-            $$\mathbf{E}_i = \hat{y}E_ie^{-ik_1(x\sin\theta_i + z\cos\theta_i)}$$
+            $$\boldsymbol{E}_i = \hat{y}E_ie^{-ik_1(x\sin\theta_i + z\cos\theta_i)}$$
             <div class="Derivation">
-                $$\mathbf{r} = x\hat x + z\hat z$$
+                $$\boldsymbol{r} = x\hat x + z\hat z$$
                 $$\begin{align}
-                \mathbf{k} &= k_x\hat x + k_z\hat z\\
+                \boldsymbol{k} &= k_x\hat x + k_z\hat z\\
                            &= k_1\sin\theta_i\hat x + k_1\cos\theta_i\hat z
                 \end{align}$$
-                $$\therefore \mathbf{k}\cdot\mathbf{r} = k_1(x\sin\theta_i + z\cos\theta_i)$$
+                $$\therefore \boldsymbol{k}\cdot\boldsymbol{r} = k_1(x\sin\theta_i + z\cos\theta_i)$$
             </div>
         </div>
         $$\begin{align}
-        \mathbf{H}_i &= \frac{\hat x\sin\theta_i + \hat z\cos\theta_i}{\eta_1}\times [\hat y E_i e^{-ik_1(x\sin\theta_i + z\cos\theta_i)}]\\
+        \boldsymbol{H}_i &= \frac{\hat x\sin\theta_i + \hat z\cos\theta_i}{\eta_1}\times [\hat y E_i e^{-ik_1(x\sin\theta_i + z\cos\theta_i)}]\\
                      &= (\hat z\sin\theta_i - \hat x\cos\theta_i)\frac{E_i}{\eta_1}e^{-ik_1(x\sin\theta_i + z\cos\theta_i)}
         \end{align}$$
         <ul>
@@ -86,14 +86,14 @@
         </div>
 
         <p>反射波、透射波的电场、磁场可以分别写为：</p>
-        $$\mathbf{E}_r = \hat{y}E_re^{-ik_1(x\sin\theta_r - z\cos\theta_r) + i\Phi_r}$$
+        $$\boldsymbol{E}_r = \hat{y}E_re^{-ik_1(x\sin\theta_r - z\cos\theta_r) + i\Phi_r}$$
         $$\begin{align}
-        \mathbf{H}_r &= \frac{\hat x\sin\theta_r - \hat z\cos\theta_r}{\eta_1}\times [\hat y E_r e^{-ik_1(x\sin\theta_r - z\cos\theta_r) + i\Phi_r}]\\
+        \boldsymbol{H}_r &= \frac{\hat x\sin\theta_r - \hat z\cos\theta_r}{\eta_1}\times [\hat y E_r e^{-ik_1(x\sin\theta_r - z\cos\theta_r) + i\Phi_r}]\\
                      &= (\hat z\sin\theta_r + \hat x\cos\theta_r)\frac{E_r}{\eta_1}e^{-ik_1(x\sin\theta_r - z\cos\theta_r) + i\Phi_r}
         \end{align}$$
-        $$\mathbf{E}_t = \hat{y}E_te^{-ik_2(x\sin\theta_t + z\cos\theta_t) + i\Phi_t}$$
+        $$\boldsymbol{E}_t = \hat{y}E_te^{-ik_2(x\sin\theta_t + z\cos\theta_t) + i\Phi_t}$$
         $$\begin{align}
-        \mathbf{H}_t &= \frac{\hat x\sin\theta_t + \hat z\cos\theta_t}{\eta_2}\times [\hat y E_t e^{-ik_2(x\sin\theta_t + z\cos\theta_t) + i\Phi_t}]\\
+        \boldsymbol{H}_t &= \frac{\hat x\sin\theta_t + \hat z\cos\theta_t}{\eta_2}\times [\hat y E_t e^{-ik_2(x\sin\theta_t + z\cos\theta_t) + i\Phi_t}]\\
                      &= (\hat z\sin\theta_t - \hat x\cos\theta_t)\frac{E_t}{\eta_2}e^{-ik_2(x\sin\theta_t + z\cos\theta_t) + i\Phi_t}
         \end{align}$$
         

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>组会</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+
+        <div class="Card-AI">
+            <h2>多波长分解复用</h2>
+            <p>一个器件，根据波长不同，将光分配到不同输出通道的功能.</p>
+        </div>
+
+        <div class="Card-AI">
+            <h2>色散工程</h2>
+            <p>主动设计结构，让它在不同波长下产生我们想要的不同响应.</p>
+        </div>
+
+        <div class="Card-AI">
+            <h2>拓扑优化</h2>
+            <p>不再人为规定结构长什么样，而是只规定目标，让算法自己搜索结构形状（大多为不规则结构）.</p>
+        </div>
+
+        <div class="Card-AI">
+            <h2>光子自旋Hall效应（Photonic Spin Hall Effect）</h2>
+
+            <p>光子中不同自旋态的分量，在传播、折射或反射时向不同方向偏移，从而发生空间分离.</p>
+            <p>光子的自旋并不是真正的旋转，而是光的圆偏振手性：</p>
+            <ul>
+                <li>左旋圆偏振光（LCP）对应一种自旋态</li>
+                <li>右旋圆偏振光（RCP）对应相反的自旋态</li>
+            </ul>
+            <p>自由空间中的单个光子，只具有两种独立的物理自旋态.</p>
+
+            <p>经典电磁学中，偏振态是光波电场振动方式的特性；量子光学中，单个光子也具有偏振态.</p>
+            <p>若电磁波处于一个完整的偏振态，那么其中的光子也全部处于这种偏振态.</p>
+
+            <p>手性：一个物体或状态与其镜像无法通过旋转的方式重合的特性（例如左手与右手）.</p>
+
+            <p>一个光子可以处于任意偏振量子态，也可以处于多个偏振基态的叠加态.</p>
+
+            <b>效应的具体表现：</b>
+            <p>光照射到一个界面或超表面上时，左旋偏振分量向一侧偏移，右旋偏振分量向另一侧偏移.</p>
+        </div>
+
+        <div class="Card-AI">
+            <h2>Pancharatnam-Berry几何相位超表面</h2>
+            <p>通过旋转各向异性微纳结构单元，给光引入几何相位，从而控制光的传播方向、波前、偏振或产生涡旋光的超表面.</p>
+            <p>这里的旋转是在设计时就旋转，不是指做好了超表面后还能动，也不用纳米柱结构.</p>
+
+            <p>光学相位（总相位） = 传播相位 + 几何相位 + 共振相位 + ...</p>
+            <p>\(E = E_0 e^{i\phi}\)中的\(\phi\)表示总相位.</p>
+
+            <p>几何相位就是由偏振态变化过程引入的额外相位.</p>
+            
+            <p>PB几何相位并非超表面独有的概念.</p>
+            <p>PB几何相位就是：让圆偏振光通过一个旋转了角度为\(\theta\)的各向异性光学单元，偏振发生转换的部分光会额外获得一个相位\(\Phi_{PB} = 2\sigma\theta\).</p>
+            <p>光学单元放在metasurface中就是指单个微纳单元meta-atom，</p>
+            <p>一个PB几何相位超表面上存在有多个不同旋转角度排列的meta-atom，\(\theta\)角是它们相对于统一参考方向的角度.</p>
+            <p>PB几何相位metasurface具有按圆偏振手性分离光束的功能.</p>
+            
+            <b>一维线性相位梯度型 PB 几何相位超表面</b>
+            <p>每一行的meta-atom角度是一致的，不同行间的meta-atom存在夹角.</p>
+            <img src="PBMetasurface.png" width="400">
+        </div>
+
+        <div class="Card-AI">
+            <h2>Mie共振与多级共振</h2>
+            <ul>
+                <li>米氏散射理论</li>
+                <li>电偶极子（ED）共振与磁偶极子（MD）共振</li>
+                <li>四极子、八极子共振</li>
+            </ul>
+            
+            <b>瑞利散射</b>
+            <p>当颗粒远小于波长时，整个颗粒在同一时刻感受到的是同一个均匀的电场，其内部的电子云会同步地集体振荡，形成一个简单的电偶极子.</p>
+        </div>
+
+        <div class="Card-AI">
+            <h2>庞加莱球</h2>
+            <p>一种用于描述光偏振态的几何工具.</p>
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+    
+</html>

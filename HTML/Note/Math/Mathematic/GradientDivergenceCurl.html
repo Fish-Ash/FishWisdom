@@ -39,25 +39,44 @@
 
         <div class="Card-Analysis">
             <h2>\(\nabla\)算子</h2>
-            $$\nabla = \frac{\partial}{\partial x}\mathbf{x} + \frac{\partial y}{\partial y}\mathbf{y} + \frac{\partial}{\partial z}\mathbf{z}$$
+            $$\nabla = \frac{\partial}{\partial x}\hat{\boldsymbol{x}} + \frac{\partial y}{\partial y}\hat{\boldsymbol{y}} + \frac{\partial}{\partial z}\hat{\boldsymbol{z}}$$
+
+            <table>
+                <tr><td colspan="3">\(\nabla\)的三种作用方式</td></tr>
+                <tr>
+                    <td>梯度</td>
+                    <td>作用在一个标量函数\(F\)上</td>
+                    <td>$$\nabla F$$</td>
+                </tr>
+                <tr>
+                    <td>散度</td>
+                    <td>通过点积作用在一个矢量函数\(\boldsymbol{v}\)上</td>
+                    <td>$$\nabla\cdot\boldsymbol{v}$$</td>
+                </tr>
+                <tr>
+                    <td>旋度</td>
+                    <td>通过叉积作用在一个矢量函数\(\boldsymbol{v}\)上</td>
+                    <td>$$\nabla\times\boldsymbol{v}$$</td>
+                </tr>
+            </table>
         </div>
 
         <div class="Card-Analysis">
             <h2>梯度</h2>
             $$\begin{align}
             \mathrm{d}F &= \left(\frac{\partial F}{\partial x}\right)\mathrm{d}x + \left(\frac{\partial F}{\partial y}\right)\mathrm{d}y + \left(\frac{\partial F}{\partial z}\right)\mathrm{d}z\\
-                        &= \left(\frac{\partial F}{\partial x}\mathbf{x} + \frac{\partial F}{\partial y}\mathbf{y} + \frac{\partial F}{\partial z}\mathbf{z}\right)\cdot(\mathrm{d}x\mathbf{x} + \mathrm{d}y\mathbf{y} + \mathrm{d}z\mathbf{z})\\
-                        &= \nabla F\cdot \mathrm{d}\mathbf{l}
+                        &= \left(\frac{\partial F}{\partial x}\hat{\boldsymbol{x}} + \frac{\partial F}{\partial y}\hat{\boldsymbol{y}} + \frac{\partial F}{\partial z}\hat{\boldsymbol{z}}\right)\cdot(\mathrm{d}x\hat{\boldsymbol{x}} + \mathrm{d}y\hat{\boldsymbol{y}} + \mathrm{d}z\hat{\boldsymbol{z}})\\
+                        &= \nabla F\cdot \mathrm{d}\boldsymbol{l}
             \end{align}$$
             <p>其中：</p>
-            $$\nabla F = \left(\frac{\partial F}{\partial x}\mathbf{x} + \frac{\partial F}{\partial y}\mathbf{y} + \frac{\partial F}{\partial z}\mathbf{z}\right)$$
+            $$\nabla F = \left(\frac{\partial F}{\partial x}\hat{\boldsymbol{x}} + \frac{\partial F}{\partial y}\hat{\boldsymbol{y}} + \frac{\partial F}{\partial z}\hat{\boldsymbol{z}}\right)$$
             <p>称为F的梯度.</p>
         </div>
 
         <div class="Card-Analysis">
             <h2>散度</h2>
             $$\begin{align}
-            \nabla\cdot \mathbf{v} &= \left(\frac{\partial}{\partial x}\mathbf{x} + \frac{\partial}{\partial y}\mathbf{y} + \frac{\partial}{\partial z}\mathbf{z}\right)\cdot (v_x\mathbf{x} + v_y\mathbf{y} + v_z\mathbf{z})\\
+            \nabla\cdot \boldsymbol{v} &= \left(\frac{\partial}{\partial x}\hat{\boldsymbol{x}} + \frac{\partial}{\partial y}\hat{\boldsymbol{y}} + \frac{\partial}{\partial z}\hat{\boldsymbol{z}}\right)\cdot (v_x\hat{\boldsymbol{x}} + v_y\hat{\boldsymbol{y}} + v_z\hat{\boldsymbol{z}})\\
                                    &= \frac{\partial v_x}{\partial x} + \frac{\partial v_y}{\partial y} + \frac{\partial v_z}{\partial z}
             \end{align}$$
         </div>
@@ -65,12 +84,97 @@
         <div class="Card-Analysis">
             <h2>旋度</h2>
             $$\begin{align}
-            \nabla\times\mathbf{v} &= \left|\begin{matrix}\mathbf{x}&\mathbf{y}&\mathbf{z}\\\partial/\partial x& \partial/\partial y&\partial/\partial z\\v_x&v_y&v_z\end{matrix}\right|\\
-                                   &= \left(\frac{\partial v_z}{\partial y}-\frac{\partial v_y}{\partial v_z}\right)\mathbf{x} + \left(\frac{\partial v_x}{\partial z} - \frac{\partial v_z}{\partial v_x}\right)\mathbf{y} + \left(\frac{\partial v_y}{\partial x} - \frac{\partial v_x}{\partial y}\right)\mathbf{z}
+            \nabla\times\boldsymbol{v} &= \left|\begin{matrix}\hat{\boldsymbol{x}}&\hat{\boldsymbol{y}}&\hat{\boldsymbol{z}}\\\partial/\partial x& \partial/\partial y&\partial/\partial z\\v_x&v_y&v_z\end{matrix}\right|\\
+                                   &= \left(\frac{\partial v_z}{\partial y}-\frac{\partial v_y}{\partial v_z}\right)\hat{\boldsymbol{x}} + \left(\frac{\partial v_x}{\partial z} - \frac{\partial v_z}{\partial v_x}\right)\hat{\boldsymbol{y}} + \left(\frac{\partial v_y}{\partial x} - \frac{\partial v_x}{\partial y}\right)\hat{\boldsymbol{z}}
             \end{align}$$
             <div class="Card-AI">
-                $$\nabla\times \frac{\partial \mathbf{Y}}{\partial t} = \frac{\partial}{\partial t}(\nabla\times\mathbf{Y})$$
+                $$\nabla\times \frac{\partial \boldsymbol{Y}}{\partial t} = \frac{\partial}{\partial t}(\nabla\times\boldsymbol{Y})$$
             </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>一般运算规则</h2>
+            $$\nabla(f+g) = \nabla f + \nabla g$$
+            $$\nabla\cdot(\boldsymbol{A}+\boldsymbol{B}) = (\nabla\cdot\boldsymbol{A}) + (\nabla\cdot\boldsymbol{B})$$
+            $$\nabla\times(\boldsymbol{A}+\boldsymbol{B}) = (\nabla\times\boldsymbol{A}) + (\nabla\times\boldsymbol{B})$$
+            $$\nabla(kf) = k(\nabla f)$$
+            $$\nabla\cdot(k\boldsymbol{A}) = k(\nabla\cdot\boldsymbol{A})$$
+            $$\nabla\times(k\boldsymbol{A}) = k(\nabla\times\boldsymbol{A})$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>积规则</h2>
+            <p>用两个矢量或标量去构造一个标量有两种方式：</p>
+            <ul>
+                <li>两个标量函数的乘积：\(fg\)</li>
+                <li>两个矢量函数的点积：\(\boldsymbol{A}\cdot\boldsymbol{B}\)</li>
+            </ul>
+            <p>对应地，梯度有两个积规则：</p>
+            $$\nabla(fg) = f\nabla g + g\nabla f$$
+            $$\nabla(\boldsymbol{A}\cdot\boldsymbol{B}) = \boldsymbol{A}\times(\nabla\times\boldsymbol{B}) + \boldsymbol{B}\times(\nabla\times\boldsymbol{A}) + (\boldsymbol{A}\cdot\nabla)\boldsymbol{B} + (\boldsymbol{B}\cdot\nabla)\boldsymbol{A}$$
+
+            <p>用两个矢量或标量去构造一个矢量有两种方式：</p>
+            <ul>
+                <li>标量函数与矢量函数的乘积：\(f\boldsymbol{A}\)</li>
+                <li>两个矢量函数的叉积：\(\boldsymbol{A}\times\boldsymbol{B}\)</li>
+            </ul>
+            <p>对应地，散度有两个积规则：</p>
+            $$\nabla\cdot(f\boldsymbol{A}) = f(\nabla\cdot\boldsymbol{A}) + \boldsymbol{A}\cdot(\nabla f)$$
+            $$\nabla\cdot(\boldsymbol{A}\times\boldsymbol{B}) = \boldsymbol{B}\cdot(\nabla\times\boldsymbol{A}) - \boldsymbol{A}\cdot(\nabla\times\boldsymbol{B})$$
+            <p>旋度有两个积规则：</p>
+            $$\nabla\times(f\boldsymbol{A}) = f(\nabla\times\boldsymbol{A}) - \boldsymbol{A}\times(\nabla f)$$
+            $$\nabla\times(\boldsymbol{A}\times\boldsymbol{B}) = (\boldsymbol{B}\cdot\nabla)\boldsymbol{A} - (\boldsymbol{A}\cdot\nabla)\boldsymbol{B} + \boldsymbol{A}(\nabla\cdot\boldsymbol{B}) - \boldsymbol{B}(\nabla\cdot\boldsymbol{A})$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>二阶微分</h2>
+            <p>梯度\(\nabla F\)为矢量，因此可以对其求散度与旋度.</p>
+            <h3>梯度的散度\(\nabla\cdot(\nabla F)\)</h3>
+            $$\begin{align}
+            \nabla\cdot(\nabla F) &= (\frac{\partial}{\partial x}\hat{\boldsymbol{x}} + \frac{\partial}{\partial y}\hat{\boldsymbol{y}} + \frac{\partial}{\partial z}\hat{\boldsymbol{z}})\cdot\left(\frac{\partial F}{\partial x}\hat{\boldsymbol{x}} + \frac{\partial F}{\partial y}\hat{\boldsymbol{y}} + \frac{\partial F}{\partial z}\hat{\boldsymbol{z}}\right)\\
+                                  &= \frac{\partial^2 F}{\partial x^2} + \frac{\partial^2 F}{\partial y^2} + \frac{\partial^2 F}{\partial z^2}\\
+                                  &= \nabla^2 F
+            \end{align}$$
+            <p>\(\nabla^2 F\)称为\(F\)的<b>拉普拉斯</b>.</p>
+            <p>一个标量的拉普拉斯仍为标量.</p>
+
+            <h3>梯度的旋度\(\nabla\times(\nabla F)\)</h3>
+            $$\nabla\times(\nabla F) = 0$$
+
+            <hr>
+            <p>散度\(\nabla\cdot\boldsymbol{v}\)为标量，因此可以对其求梯度.</p>
+            <h3>散度的梯度\(\nabla(\nabla\cdot\boldsymbol{v})\)</h3>
+
+            <hr>
+            <p>旋度\(\nabla\times\boldsymbol{v}\)为矢量，因此可以对其求散度与旋度</p>
+            <h3>旋度的散度\(\nabla\cdot(\nabla\times\boldsymbol{v})\)</h3>
+            $$\nabla\cdot(\nabla\times\boldsymbol{v}) = 0$$
+            <h3>旋度的旋度\(\nabla\times(\nabla\times\boldsymbol{v})\)</h3>
+            $$\nabla\times(\nabla\times\boldsymbol{v}) = \nabla(\nabla\cdot\boldsymbol{v}) - \nabla^2\boldsymbol{v}$$
+        </div>
+
+        <div class="Card-AI">
+            <h2>其他性质</h2>
+            $$\boldsymbol{\nabla}\times\frac{\partial\boldsymbol{E}}{\partial t} = \frac{\partial\nabla\times\boldsymbol{E}}{\partial t}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>矢量导数在<a href="../Mathematic/CoordinateSystem.html#SphericalCoordinate">球坐标系</a>中的表示</h2>
+            <table>
+                <tr>
+                    <td>梯度</td>
+                    <td>$$\nabla F = \frac{\partial F}{\partial r}\hat{\boldsymbol{r}} + \frac{1}{r}\frac{\partial F}{\partial\theta}\hat{\boldsymbol{\theta}} + \frac{1}{r\sin\theta}\frac{\partial F}{\partial \phi}\hat{\boldsymbol{\phi}}$$</td>
+                </tr>
+                <tr>
+                    <td>散度</td>
+                    <td>$$\nabla\cdot\boldsymbol{v} = \frac{1}{r^2}\frac{\partial}{\partial r}(r^2 v_r)+\frac{1}{r\sin\theta}\frac{\partial}{\partial\theta}(\sin\theta v_\theta) + \frac{1}{r\sin\theta}\frac{\partial v_\phi}{\partial\phi}$$</td>
+                </tr>
+                <tr>
+                    <td>旋度</td>
+                    <td>$$\nabla\times\mathbf{v} = \frac{1}{r\sin\theta}\left[\frac{\partial}{\partial\theta}(\sin\theta v_\phi) - \frac{\partial v_\theta}{\partial\phi}\right]\hat{\boldsymbol{r}} + \frac{1}{r}\left[\frac{1}{\sin\theta}\frac{\partial v_r}{\partial\phi} - \frac{\partial}{\partial r}(rv_\phi)\right]\hat{\boldsymbol{\theta}}+\frac{1}{r}\left[\frac{\partial}{\partial r}(rv_\theta)-\frac{\partial v_r}{\partial\theta}\right]\hat{\boldsymbol{\phi}}$$</td>
+                </tr>
+            </table>
+
         </div>
 
         <div id="PageEnd"></div>

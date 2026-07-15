@@ -40,13 +40,13 @@
         <p>各向同性（物质方程适用）、无电荷分布（\(\rho=0\)）的介质中，<a
                 href="../Electromagnetism/Maxwell.html#DifferentialForm">Maxwell方程组的微分形式</a>为：</p>
         $$\begin{cases}
-        \nabla\cdot(\epsilon \mathbf{E}) = 0\\
-        \nabla\times\mathbf{E} = -\mu\frac{\partial\mathbf{H}}{\partial t}\\
-        \nabla\times\mathbf{H} = \epsilon \frac{\partial \mathbf{E}}{\partial t}
+        \nabla\cdot(\epsilon \boldsymbol{E}) = 0\\
+        \nabla\times\boldsymbol{E} = -\mu\frac{\partial\boldsymbol{H}}{\partial t}\\
+        \nabla\times\boldsymbol{H} = \epsilon \frac{\partial \boldsymbol{E}}{\partial t}
         \end{cases}$$
         <p>此处只考虑电场与物质相互作用的情况，不考虑磁场与物质相互作用（非常微弱、忽略不计）的情况.</p>
         <p>由此可得<b>波动方程（亥姆霍兹方程）</b>：</p>
-        $$\mu\epsilon \frac{\partial^2\mathbf{E}}{\partial t^2} = \nabla^2\mathbf{E}$$
+        $$\mu\epsilon \frac{\partial^2\boldsymbol{E}}{\partial t^2} = \nabla^2\boldsymbol{E}$$
 
         <div class="Card-Question">
             <p>怎么推导的？（旋度）</p>
@@ -184,13 +184,13 @@
         <h2>均匀介质中高斯光束的基本特性</h2>
         <h3>振幅分布特性</h3>
         <p>基本高斯光束的振幅为：</p>
-        $$|\mathbf{E}| = E_0\frac{\omega_0}{\omega(z)}\exp\left[-\frac{r^2}{\omega^2(z)}\right]$$
+        $$|\boldsymbol{E}| = E_0\frac{\omega_0}{\omega(z)}\exp\left[-\frac{r^2}{\omega^2(z)}\right]$$
         <p>\(z\)为定值时，振幅随\(r\)按\(\mu = 0\)的<a
                 href="../../Math/Probability/Distribution.html#ContinuousDistribution">高斯函数</a>规律变化.</p>
 
         <b>最大振幅</b>
         <p>由高斯函数，在光轴上具有最大的振幅.</p>
-        $$|\mathbf{E}|_{max} = E_0\frac{\omega_0}{\omega(z)}$$
+        $$|\boldsymbol{E}|_{max} = E_0\frac{\omega_0}{\omega(z)}$$
 
         <b>光斑半径</b>
         <p>\(z\)截面内，振幅下降到最大值的\(1/e\)时的离轴距离\(r\).</p>
@@ -375,12 +375,12 @@
         <p>光学变换矩阵：</p>
         <div class="Formula">
             $$\begin{align}
-            \mathbf{T} &= \left[\begin{matrix}1&l_c\\0&1\end{matrix}\right]\left[\begin{matrix}1&0\\-\frac{1}{F}&1\end{matrix}\right]\left[\begin{matrix}1&l\\0&1\end{matrix}\right]\\
+            \boldsymbol{T} &= \left[\begin{matrix}1&l_c\\0&1\end{matrix}\right]\left[\begin{matrix}1&0\\-\frac{1}{F}&1\end{matrix}\right]\left[\begin{matrix}1&l\\0&1\end{matrix}\right]\\
                        &= \left[\begin{matrix}1-\frac{l_c}{F} & \frac{Fl + Fl_c - ll_c}{F}\\-\frac{1}{F}&1 - \frac{l}{F}\end{matrix}\right]
             \end{align}$$
             <div class="Derivation">
                 $$\begin{align}
-                \mathbf{T} &= \left[\begin{matrix}1&l_c\\0&1\end{matrix}\right]\left[\begin{matrix}1&0\\-\frac{1}{F}&1\end{matrix}\right]\left[\begin{matrix}1&l\\0&1\end{matrix}\right]\\
+                \boldsymbol{T} &= \left[\begin{matrix}1&l_c\\0&1\end{matrix}\right]\left[\begin{matrix}1&0\\-\frac{1}{F}&1\end{matrix}\right]\left[\begin{matrix}1&l\\0&1\end{matrix}\right]\\
                            &= \left[\begin{matrix}1 - \frac{l_c}{F}&l_c\\-\frac{1}{F}&1\end{matrix}\right]\left[\begin{matrix}1&l\\0&1\end{matrix}\right]\\
                            &= \left[\begin{matrix}1-\frac{l_c}{F} & \frac{Fl + Fl_c - ll_c}{F}\\-\frac{1}{F}&1 - \frac{l}{F}\end{matrix}\right]
                 \end{align}$$

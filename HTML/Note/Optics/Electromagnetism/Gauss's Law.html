@@ -19,21 +19,20 @@
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
 
-        <h1 lang="en">Gauss's Law</h1>
-
+        <h1>Gauss定理</h1>
 
         <table>
             <tr>
                 <td class="tbtitle" rowspan="3">公式</td>
                 <td rowspan="3">
-                    $$\oint_S\mathbf{D}\mathrm{d}\mathbf{S} = Q$$
+                    $$\oint_S\boldsymbol{D}\mathrm{d}\boldsymbol{S} = Q$$
                     $$\Phi_E = \unicode{x222F}_SE\cos\theta\mathrm{d}S = \frac{1}{\epsilon_0}\sum_{(S内)}q$$
                 </td>
-                <td>$$\mathbf{D}$$</td>
+                <td>$$\boldsymbol{D}$$</td>
                 <td>电位移矢量</td>
             </tr>
             <tr>
-                <td>\(\mathbf{S}\)</td>
+                <td>\(\boldsymbol{S}\)</td>
                 <td>闭合曲面（高斯面）</td>
             </tr>
             <tr>
@@ -50,8 +49,8 @@
         <h2>球面内点电荷</h2>
         <div style="text-align: center;"><img src="./img/Gauss1.png" width="200"></div>
         <br><br>
-        <p>以点电荷\(q\)为中心，取任意长度\(r\)为半径做闭合球面\(S\)。在\(S\)上求面元d\(S\)，其法线\(\mathbf{n}\)与面元处的电场强度\(\mathbf{E}\)方向相同，故通过\(\mathrm{d}S\)的电通量为：</p>
-        $$\mathrm{d}\Phi_e = \mathbf{E}\mathrm{d}\mathbf{S} = E\cos0\mathrm{d}S = \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\mathrm{d}S$$
+        <p>以点电荷\(q\)为中心，取任意长度\(r\)为半径做闭合球面\(S\)。在\(S\)上求面元d\(S\)，其法线\(\boldsymbol{n}\)与面元处的电场强度\(\boldsymbol{E}\)方向相同，故通过\(\mathrm{d}S\)的电通量为：</p>
+        $$\mathrm{d}\Phi_e = \boldsymbol{E}\mathrm{d}\boldsymbol{S} = E\cos0\mathrm{d}S = \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\mathrm{d}S$$
         <p>通过整个闭合球面\(S\)的电通量为：</p>
         $$\Phi_e = \oint_S\mathrm{d}\Phi_e = \oint_S \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\mathrm{d}S = \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\cdot 4\pi r^2 = \frac{q}{\epsilon_0}$$
         
@@ -66,15 +65,33 @@
         $$\Phi_e = \frac{q}{\epsilon_0} = 0$$
         <h2>任意带电系统的电场</h2>
         <p>根据场强叠加原理，有：</p>
-        $$\Phi_e = \oint_S\mathbf{E}\cdot\mathrm{d}\mathbf{S} = \sum\limits_{i=1}^n\oint_S\mathbf{E}_i\cdot\mathrm{d}\mathbf{S} = \frac{\sum q_i}{\epsilon_0}$$
+        $$\Phi_e = \oint_S\boldsymbol{E}\cdot\mathrm{d}\boldsymbol{S} = \sum\limits_{i=1}^n\oint_S\boldsymbol{E}_i\cdot\mathrm{d}\boldsymbol{S} = \frac{\sum q_i}{\epsilon_0}$$
 
         <h2><a href="chapter1.html#Dielectric" class="goto">电介质</a>中</h2>
-        <p>电介质中，总电场\(\mathbf{E}\)是自由电荷电场强度\(\mathbf{E}_0\)和极化电荷电场强度\(\mathbf{E}'\)的叠加。</p>
-        $$\oint_S\mathbf{E}\mathrm{d}\mathbf{S} = \frac{1}{\epsilon_0}(\sum q_i + \sum q_i')$$
-        <span class="tip">$$\because \oint_S\mathbf{P}\mathrm{d}\mathbf{S} = -\sum q_i'$$<span class="tiptext">极化强度与极化电荷的关系式</span></span>
-        $$\therefore \oint_S\mathbf{D}\mathrm{d}\mathbf{S} = \oint_S \epsilon_0\mathbf{E} + \mathbf{P}\mathrm{d}\mathbf{S} = \sum q_i = Q$$
-        <p>没有介质存在时，\(\mathbf{D} = \epsilon_0\mathbf{E_0}\)，公式依然成立。</p>
+        <p>电介质中，总电场\(\boldsymbol{E}\)是自由电荷电场强度\(\boldsymbol{E}_0\)和极化电荷电场强度\(\boldsymbol{E}'\)的叠加。</p>
+        $$\oint_S\boldsymbol{E}\mathrm{d}\boldsymbol{S} = \frac{1}{\epsilon_0}(\sum q_i + \sum q_i')$$
+        <span class="tip">$$\because \oint_S\boldsymbol{P}\mathrm{d}\boldsymbol{S} = -\sum q_i'$$<span class="tiptext">极化强度与极化电荷的关系式</span></span>
+        $$\therefore \oint_S\boldsymbol{D}\mathrm{d}\boldsymbol{S} = \oint_S \epsilon_0\boldsymbol{E} + \boldsymbol{P}\mathrm{d}\boldsymbol{S} = \sum q_i = Q$$
+        <p>没有介质存在时，\(\boldsymbol{D} = \epsilon_0\boldsymbol{E_0}\)，公式依然成立。</p>
         
+        <div class="Card-Analysis">
+            <h2>微分形式——电场的散度</h2>
+
+            <b>前置知识</b>
+            <ul>
+                <li><a href="../../Math/Mathematic/DiracFunction.html">Dirac函数</a></li>
+            </ul>
+
+            $$\begin{align}
+            \nabla\cdot\boldsymbol{E} &= \nabla\cdot\left[\frac{1}{4\pi\epsilon_0}\int_V\frac{\rho(\boldsymbol{r}_Q)}{r^2}\hat{\boldsymbol{r}}\mathrm{d}\tau'\right]\\
+                                      &= \frac{1}{4\pi\epsilon_0}\int_V\rho(\boldsymbol{r}_Q)\cdot\nabla\cdot\left(\frac{\boldsymbol{r}}{r^2}\right)\mathrm{d}\tau'\\
+                                      &= \frac{1}{4\pi\epsilon_0}\int_V\rho(\boldsymbol{r}_Q)\cdot 4\pi\delta^3(\boldsymbol{r})\mathrm{d}\tau'\\
+                                      &= \frac{1}{\epsilon_0}\int_V\rho(\boldsymbol{r}_Q)\delta^3(\boldsymbol{r}_q-\boldsymbol{r}_Q)\mathrm{d}\tau'\\
+                                      &= \frac{\rho(\boldsymbol{r}_q)}{\epsilon_0}
+            \end{align}$$
+            <p>[注]此处的\(V\)为整个空间，由于在无电荷的空间中\(\rho=0\)，因此对结果无影响.</p>
+
+        </div>
 
         <div class="Ending">Ending...</div>
     </body>

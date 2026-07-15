@@ -43,7 +43,7 @@
         <h2 id="Coulomb">库伦定律</h2>
         <p>真空中，两个静止的点电荷\(Q_1\)与\(Q_2\)间的相互作用力大小由同\(Q_1\)与\(Q_2\)的乘积成正比，同它们间的距离\(r\)的平方成反比.</p>
         <p>作用力方向沿它们的连线，同号电荷相互排斥、异号电荷相互吸引.</p>
-        $$\mathbf{F}_{12} = k\frac{Q_1Q_2}{r^2}\mathbf{r}_{12}$$
+        $$\boldsymbol{F}_{12} = k\frac{Q_1Q_2}{r^2}\boldsymbol{r}_{12}$$
         $$k = \frac{1}{4\pi\epsilon_0} \approx 8.99\times 10^9 N\cdot m^2/C^2$$
 
         <p>[注]库伦定律中，“真空”条件是不必要的，“静止”条件可以推广到静止电荷对运动电荷的作用，但不适用于运动电荷对静止电荷的作用（电动力学中说明，运动的电荷产生的场与其速度有关）.</p>
@@ -83,7 +83,7 @@
                 </tr>
                 <tr>
                     <td>介质中</td>
-                    <td>$\mu$</td>
+                    <td>$$\mu$$</td>
                 </tr>
                 <tr>
                     <td>相对磁导率</td>
@@ -94,7 +94,7 @@
         </div>
 
 
-        <p>\(\mathbf{F}_{12}\)表示\(Q_1\)给\(Q_2\)的力，\(\mathbf{r}_{12}\)表示由\(Q_1\)指向\(Q_2\)的单位矢量.</p>
+        <p>\(\boldsymbol{F}_{12}\)表示\(Q_1\)给\(Q_2\)的力，\(\boldsymbol{r}_{12}\)表示由\(Q_1\)指向\(Q_2\)的单位矢量.</p>
         适用条件：
         <ul>
             <li>真空（非必要）</li>
@@ -114,11 +114,10 @@
         
         
         <h2>电场</h2>
-        
         <div class="Card-Definition">
             <b>电场强度（场强）</b>
             <p>场强是一个矢量，其大小等于单位电荷在该处所受电场力的大小，方向与正电荷在该处所受电场力的方向一致.</p>
-            $$\mathbf{E} = \frac{\mathbf{F}}{Q_0}$$
+            $$\boldsymbol{E} = \frac{\boldsymbol{F}}{Q_0}$$
             <p>单位：\(V/m\)或\(N/C\)</p>
             <p>一般来说，电场中空间各点的场强，其大小与方向均能不同.</p>
 
@@ -135,17 +134,68 @@
             <b>电场强度叠加原理</b>
             <p>点电荷组所产生的电场在某点的场强等于各点电荷单独存在时所产生的电场在该点处场强的矢量叠加.</p>
             <div class="Formula">
-                $$\mathbf{E} = \mathbf{E}_1 + \mathbf{E}_2 + \cdots + \mathbf{E}_n$$
+                $$\boldsymbol{E} = \boldsymbol{E}_1 + \boldsymbol{E}_2 + \cdots + \boldsymbol{E}_n$$
                 <div class="Derivation">
                     <p>电场力是矢量，服从矢量叠加原理.</p>
-                    <p>以\(\mathbf{F}_1, \mathbf{F}_2, \cdots, \mathbf{F}_n\)分别表示点电荷\(q_1, q_2, \cdots, q_n\)单独存在时电场施加在空间中同一点上试探点电荷\(q_0\)的力.</p>
-                    <p>\(q_1, q_2, \cdots, q_n\)同时存在时，电场施加在试探点电荷\(q_0\)上的力\(\mathbf{F}\)为\(\mathbf{F}_1, \mathbf{F}_2, \cdots, \mathbf{F}_n\)的矢量和，即：</p>
-                    $$\mathbf{F} = \mathbf{F}_1 + \mathbf{F}_2 + \cdots + \mathbf{F}_n$$
-                    $$\mathbf{E} = \frac{\mathbf{F}}{q_0} = \mathbf{E}_1 + \mathbf{E}_2 + \cdots + \mathbf{E}_n$$
+                    <p>以\(\boldsymbol{F}_1, \boldsymbol{F}_2, \cdots, \boldsymbol{F}_n\)分别表示点电荷\(q_1, q_2, \cdots, q_n\)单独存在时电场施加在空间中同一点上试探点电荷\(q_0\)的力.</p>
+                    <p>\(q_1, q_2, \cdots, q_n\)同时存在时，电场施加在试探点电荷\(q_0\)上的力\(\boldsymbol{F}\)为\(\boldsymbol{F}_1, \boldsymbol{F}_2, \cdots, \boldsymbol{F}_n\)的矢量和，即：</p>
+                    $$\boldsymbol{F} = \boldsymbol{F}_1 + \boldsymbol{F}_2 + \cdots + \boldsymbol{F}_n$$
+                    $$\boldsymbol{E} = \frac{\boldsymbol{F}}{q_0} = \boldsymbol{E}_1 + \boldsymbol{E}_2 + \cdots + \boldsymbol{E}_n$$
                 </div>
             </div>
-
         </div>
+
+        <div class="Card-Analysis">
+            <h2>连续分布电荷</h2>
+
+            <p>若电荷在一个区域内连续分布，则电场为：</p>
+            $$\boldsymbol{E}(\boldsymbol{r}_q) = \frac{1}{4\pi\epsilon_0}\int\frac{\hat{\boldsymbol{r}}}{r^2}\mathrm{d}q$$
+            <ul>
+                <li>\(\boldsymbol{r} = \boldsymbol{r}_q - \boldsymbol{r}_Q\)</li>
+                <li>\(q\)：试探电荷</li>
+            </ul>
+
+
+            <div class="Card-Definition">
+
+                <table>
+                    <tr>
+                        <td>电荷分布</td>
+                        <td></td>
+                        <td>定义</td>
+                        <td>$$\mathrm{d}q$$</td>
+                        <td>$$\boldsymbol{E}$$</td>
+                    </tr>
+                    <tr>
+                        <td>在一条线段上<br>（线元为\(\mathrm{d}l'\)）</td>
+                        <td><b>电荷线密度\(\lambda\)</b></td>
+                        <td>单位长度上的电荷</td>
+                        <td>$$\mathrm{d}q = \lambda\mathrm{d}l'$$</td>
+                        <td>$$\boldsymbol{E}(\boldsymbol{r}_q) = \frac{1}{4\pi\epsilon_0}\int_L\frac{\lambda(\boldsymbol{r}_Q)}{r^2}\hat{\boldsymbol{r}}\mathrm{d}l'$$</td>
+                    </tr>
+                    <tr>
+                        <td>在一个面上<br>（面元为\(\mathrm{d}a'\)）</td>
+                        <td><b>电荷面密度\(\sigma\)</b></td>
+                        <td>单位面积上的电荷</td>
+                        <td>$$\mathrm{d}q = \sigma\mathrm{d}a'$$</td>
+                        <td>$$\boldsymbol{E}(\boldsymbol{r}_q) = \frac{1}{4\pi\epsilon_0}\int_S\frac{\sigma(\boldsymbol{r}_Q)}{r^2}\hat{\boldsymbol{r}}\mathrm{d}a'$$</td>
+                    </tr>
+                    <tr>
+                        <td>在一个体积内<br>（体元为\(\mathrm{d}\tau'\)）</td>
+                        <td><b>电荷体密度\(\rho\)</b></td>
+                        <td>单位体积内的电荷</td>
+                        <td>$$\mathrm{d}q = \rho\mathrm{d}\tau'$$</td>
+                        <td>$$\boldsymbol{E}(\boldsymbol{r}_q) = \frac{1}{4\pi\epsilon_0}\int_V\frac{\rho(\boldsymbol{r}_Q)}{r^2}\hat{\boldsymbol{r}}\mathrm{d}\tau'$$</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>电场的旋度</h2>
+            $$\nabla\times\mathbf{E} = 0$$
+        </div>
+
 
         <b>非接触作用力</b>
         <ul>
@@ -177,7 +227,7 @@
 
 
         <b>静电场的环路定理</b>
-        $$\oint_l\mathbf{E}\cdot\mathrm{d}\mathbf{l} = 0$$
+        $$\oint_l\boldsymbol{E}\cdot\mathrm{d}\boldsymbol{l} = 0$$
 
         <h2>静电场中的电介质</h2>
 
@@ -190,13 +240,13 @@
             </div>
             
             <div class="Card-Definition">
-                <b>电偶极子的轴\(\mathbf{l}\)</b>
-                <p>由负电荷\(-q\)指向正电荷\(+q\)的矢径\(\mathbf{l}\)</p>
+                <b>电偶极子的轴\(\boldsymbol{l}\)</b>
+                <p>由负电荷\(-q\)指向正电荷\(+q\)的矢径\(\boldsymbol{l}\)</p>
             </div>
             
             <div class="Card-Definition">
-                <b>电偶极矩\(\mathbf{p}\)</b>
-                $$\mathbf{p} = q\mathbf{l}$$
+                <b>电偶极矩\(\boldsymbol{p}\)</b>
+                $$\boldsymbol{p} = q\boldsymbol{l}$$
                 <p>可以用一个带箭头的线段来表示，箭头方向由负电荷指向正电荷，线段长度表示电偶极矩的大小.</p>
                 <img src="./img/ElectricDiploe.png" width="200">
             </div>

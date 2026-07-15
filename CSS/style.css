@@ -566,6 +566,11 @@ border-bottom: 1px solid #ccc;
     color: teal;
 }
 
+details summary h3 {
+  display: inline; /* 或 inline-block，防止换行破坏布局 */
+  margin: 0; /* 移除默认上下边距，保持点击区域紧凑 */
+}
+
 /* 已更新 */
 /* 页面样式 */
     .header {

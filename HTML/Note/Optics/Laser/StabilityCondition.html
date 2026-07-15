@@ -63,11 +63,11 @@
         <h3>光线在腔内完成一次往返，总的坐标变换为：</h3>
         $$\begin{align}
         \left[\begin{matrix}r_5\\\theta_5\end{matrix}\right] &= \left[\begin{matrix}1&0\\-\frac{2}{R_1}&1\end{matrix}\right]\left[\begin{matrix}1&L\\0&1\end{matrix}\right]\left[\begin{matrix}1&0\\-\frac{2}{R_1}&1\end{matrix}\right]\left[\begin{matrix}1&L\\0&1\end{matrix}\right]\left[\begin{matrix}r_1\\\theta_1\end{matrix}\right]\\
-                                                             &= \mathbf{T}\left[\begin{matrix}r_1\\\theta_1\end{matrix}\right]
+                                                             &= \boldsymbol{T}\left[\begin{matrix}r_1\\\theta_1\end{matrix}\right]
         \end{align}$$
-        <p>\(\mathbf{T}\)为傍轴光线在腔内往返一次的总变换矩阵，称为<b>往返矩阵</b>.</p>
+        <p>\(\boldsymbol{T}\)为傍轴光线在腔内往返一次的总变换矩阵，称为<b>往返矩阵</b>.</p>
         $$\begin{align}
-        \mathbf{T} &= \left[\begin{matrix}A&B\\C&D\end{matrix}\right]\\
+        \boldsymbol{T} &= \left[\begin{matrix}A&B\\C&D\end{matrix}\right]\\
                    &= \left[\begin{matrix}1&0\\-\frac{2}{R_1}&1\end{matrix}\right]\left[\begin{matrix}1&L\\0&1\end{matrix}\right]\left[\begin{matrix}1&0\\-\frac{2}{R_1}&1\end{matrix}\right]\left[\begin{matrix}1&L\\0&1\end{matrix}\right]\\
                    &= \left[\begin{matrix}1&L\\-\frac{2}{R_1}&-\frac{2L}{R_1}+1\end{matrix}\right]\left[\begin{matrix}1&L\\-\frac{2}{R_2}&-\frac{2L}{R_2} + 1\end{matrix}\right]\\
                    &= \left[\begin{matrix}1-\frac{2L}{R_2} & 2L(1-\frac{L}{R_2})\\\frac{2}{R_2}(\frac{2L}{R_1}-1)-\frac{2}{R_1} & (\frac{2L}{R_1}-1)(\frac{2L}{R_2}-1) - \frac{2L}{R_1}\end{matrix}\right]
@@ -75,7 +75,7 @@
 
         <h3>光线在腔内完成\(n\)次往返，总的坐标矩阵：</h3>
         $$\begin{align}
-        \mathbf{T}_n &= \left[\begin{matrix}A_n&B_n\\C_n&D_n\end{matrix}\right]\\
+        \boldsymbol{T}_n &= \left[\begin{matrix}A_n&B_n\\C_n&D_n\end{matrix}\right]\\
                      &= \left[\begin{matrix}A&B\\C&D\end{matrix}\right]^n\\
                      &= \frac{1}{\sin\phi}\left[\begin{matrix}A\sin n\phi-\sin(n-1)\phi & B\sin n\phi \\ C\sin n\phi & D\sin n\phi - \sin(n-1)\phi\end{matrix}\right]
         \end{align}$$

@@ -62,37 +62,37 @@
             <p>1、介质：无反演对称.</p>
             <p>2、所讨论的效应都远离共振区\(\rightarrow \chi^{(1)},\chi^{(2)}\)均为实数，具有完全对易对称性与时间反演对称性.</p>
 
-            $$\mathbf{P}^{(2)} = \epsilon_0\chi^{(2)}\mathbf{E}^2$$
-            $$\therefore \mathbf{P}^{(2)} \propto \mathbf{E}^2$$
-            $$\mathbf{E} = E_0\cos(\omega t - \mathbf{k}\cdot\mathbf{r} + \phi_0)$$
+            $$\boldsymbol{P}^{(2)} = \epsilon_0\chi^{(2)}\boldsymbol{E}^2$$
+            $$\therefore \boldsymbol{P}^{(2)} \propto \boldsymbol{E}^2$$
+            $$\boldsymbol{E} = E_0\cos(\omega t - \boldsymbol{k}\cdot\boldsymbol{r} + \phi_0)$$
             $$\begin{align}
-            \mathbf{E}^2 &= E_0^2\cos^2(\omega t - \mathbf{k}\cdot\mathbf{r} + \phi_0)\\
-                         &= \frac{E_0^2}{2}[1 + \cos(2\omega t - 2\mathbf{k}\cdot\mathbf{r} + 2\phi_0)]
+            \boldsymbol{E}^2 &= E_0^2\cos^2(\omega t - \boldsymbol{k}\cdot\boldsymbol{r} + \phi_0)\\
+                         &= \frac{E_0^2}{2}[1 + \cos(2\omega t - 2\boldsymbol{k}\cdot\boldsymbol{r} + 2\phi_0)]
             \end{align}$$
-            $$\therefore \mathbf{P}^{(2)} \propto C + \cos(2\omega t - 2\mathbf{k}\cdot\mathbf{r} + 2\phi_0)$$
+            $$\therefore \boldsymbol{P}^{(2)} \propto C + \cos(2\omega t - 2\boldsymbol{k}\cdot\boldsymbol{r} + 2\phi_0)$$
 
             <div class="Card-AI">
-                <p>之所以说\(\mathbf{P}^{(2)} \propto C + \cos(2\omega t - 2\mathbf{k}\cdot\mathbf{r} + 2\phi_0)\)就产生了一个频率为\(2\omega\)的光波，是因为\(\mathbf{P}\)是Maxwell方程中的源项，其振荡频率为\(2\omega\)，因此会辐射出频率为\(2\omega\)的电磁波.</p>
+                <p>之所以说\(\boldsymbol{P}^{(2)} \propto C + \cos(2\omega t - 2\boldsymbol{k}\cdot\boldsymbol{r} + 2\phi_0)\)就产生了一个频率为\(2\omega\)的光波，是因为\(\boldsymbol{P}\)是Maxwell方程中的源项，其振荡频率为\(2\omega\)，因此会辐射出频率为\(2\omega\)的电磁波.</p>
             </div>
 
             <div class="Card-AI">
                 <p>二阶非线性极化强度的一般形式为：</p>
-                $$\mathbf{P}^{(2)} = \epsilon_0\chi^{(2)}:\mathbf{E}_1\mathbf{E}_2$$
+                $$\boldsymbol{P}^{(2)} = \epsilon_0\chi^{(2)}:\boldsymbol{E}_1\boldsymbol{E}_2$$
                 <p>故考虑二阶非线性时，最多考虑两个电场矢量的相互作用.</p>
                 <p>这里需要考虑的是：<a href="../../Math/TensorAnalysis/Dyad.html" class="goto">并矢</a>与<a href="../../Math/TensorAnalysis/Dyad.html#DoubleDotProduct" class="goto">双点积</a></p>
                 <p>当仅存在一个电场矢量时，才会有：</p>
-                $$\mathbf{P}^{(2)} = \epsilon_0\chi^{(2)}\mathbf{E}^2$$
+                $$\boldsymbol{P}^{(2)} = \epsilon_0\chi^{(2)}\boldsymbol{E}^2$$
 
-                $$\mathbf{P}^{(2)}\propto \mathbf{E}_1\mathbf{E}_2$$
-                $$\mathbf{E}_1\mathbf{E}_2 = \mathbf{E}_{01}\mathbf{E}_{02}\cos(\omega_1 t - \mathbf{k}_1\cdot\mathbf{r} + \phi_{01})\cos(\omega_2 t - \mathbf{k}_2\cdot\mathbf{r} + \phi_{02})$$
-                $$\mathbf{P}^{(2)}\propto \mathbf{E}_{01}\mathbf{E}_{02}\cos(\omega_1 t - \mathbf{k}_1\cdot\mathbf{r} + \phi_{01})\cos(\omega_2 t - \mathbf{k}_2\cdot\mathbf{r} + \phi_{02})$$
-                $$\mathbf{P}^{(2)}\propto \cos[(\omega_1 + \omega_2) t - (\mathbf{k}_1 + \mathbf{k}_2)\cdot\mathbf{r} + (\phi_{01} + \phi_{02})] + \cos[(\omega_1 - \omega_2) t - (\mathbf{k}_1 - \mathbf{k}_2)\cdot\mathbf{r} + (\phi_{01} - \phi_{02})]$$
+                $$\boldsymbol{P}^{(2)}\propto \boldsymbol{E}_1\boldsymbol{E}_2$$
+                $$\boldsymbol{E}_1\boldsymbol{E}_2 = \boldsymbol{E}_{01}\boldsymbol{E}_{02}\cos(\omega_1 t - \boldsymbol{k}_1\cdot\boldsymbol{r} + \phi_{01})\cos(\omega_2 t - \boldsymbol{k}_2\cdot\boldsymbol{r} + \phi_{02})$$
+                $$\boldsymbol{P}^{(2)}\propto \boldsymbol{E}_{01}\boldsymbol{E}_{02}\cos(\omega_1 t - \boldsymbol{k}_1\cdot\boldsymbol{r} + \phi_{01})\cos(\omega_2 t - \boldsymbol{k}_2\cdot\boldsymbol{r} + \phi_{02})$$
+                $$\boldsymbol{P}^{(2)}\propto \cos[(\omega_1 + \omega_2) t - (\boldsymbol{k}_1 + \boldsymbol{k}_2)\cdot\boldsymbol{r} + (\phi_{01} + \phi_{02})] + \cos[(\omega_1 - \omega_2) t - (\boldsymbol{k}_1 - \boldsymbol{k}_2)\cdot\boldsymbol{r} + (\phi_{01} - \phi_{02})]$$
                 <p>前者为和频，后者为差频.</p>
                 <p>此处没有非线性电光效应与光整流效应，是因为为考虑DC项.</p>
             </div>
 
             <div class="Card-AI">
-                <p>当我们希望某束光在某特定介质中以某固定角频率传播时，其波矢量是确定的（\(\mathbf{k} = \frac{\omega}{c}n(\omega)\)），所以只有当入射光的波矢量满足相位匹配条件时，才能实现有效的非线性光学过程.</p>
+                <p>当我们希望某束光在某特定介质中以某固定角频率传播时，其波矢量是确定的（\(\boldsymbol{k} = \frac{\omega}{c}n(\omega)\)），所以只有当入射光的波矢量满足相位匹配条件时，才能实现有效的非线性光学过程.</p>
             </div>
 
         </div>
@@ -125,13 +125,13 @@
             <p>低频电场或直流电场引起介质折射率的线性变化，进而影响光电场的传播.</p>
         </div>
 
-        <p>设直流电场为\(\mathbf{E}_0\)，光电场为\(\mathbf{E}\exp{(-i\omega)t} + c.c.\)，则根据极化强度的一般表示式，有：</p>
-        $$\mathbf{P}^{(1)}(t) = \epsilon_0 \chi^{(1)}(0)\cdot \mathbf{E}_0 + \epsilon_0[\chi^{(1)}(\omega)\cdot \mathbf{E}e^{-i\omega t} + c.c.]$$
+        <p>设直流电场为\(\boldsymbol{E}_0\)，光电场为\(\boldsymbol{E}\exp{(-i\omega)t} + c.c.\)，则根据极化强度的一般表示式，有：</p>
+        $$\boldsymbol{P}^{(1)}(t) = \epsilon_0 \chi^{(1)}(0)\cdot \boldsymbol{E}_0 + \epsilon_0[\chi^{(1)}(\omega)\cdot \boldsymbol{E}e^{-i\omega t} + c.c.]$$
 
         <h2>第二节 光整流效应</h2>
         <div class="Card-Definition">
             <b>光整流效应</b>
-            <p>一个高强度单色激光通过非线性介质，由于二阶非线性差频过程产生一个直流极化场\(\mathbf{P}_0\)，并在介质中建立一个直流电场的现象.</p>
+            <p>一个高强度单色激光通过非线性介质，由于二阶非线性差频过程产生一个直流极化场\(\boldsymbol{P}_0\)，并在介质中建立一个直流电场的现象.</p>
         </div>
 
         <h2>第三节 三波混频</h2>
@@ -147,9 +147,9 @@
         </div>
 
         <p>由<a class="goto" href="./Chapter1.html#SecondOrderP">二阶非线性极化强度的一般表示式</a>，可以得到三波混频中任何一对光波所感应的非线性极化强度复振幅：</p>
-        $$\mathbf{P}^{(2)}(\omega_1) = 2\epsilon_0\chi^{(2)}(\omega_3, -\omega_2):\mathbf{E}(\omega_3, z)\mathbf{E}^*(\omega_2, z)$$
-        $$\mathbf{P}^{(2)}(\omega_2) = 2\epsilon_0\chi^{(2)}(\omega_3, -\omega_1):\mathbf{E}(\omega_3, z)\mathbf{E}^*(\omega_1, z)$$
-        $$\mathbf{P}^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1, \omega_2):\mathbf{E}(\omega_1, z)\mathbf{E}(\omega_2, z)$$
+        $$\boldsymbol{P}^{(2)}(\omega_1) = 2\epsilon_0\chi^{(2)}(\omega_3, -\omega_2):\boldsymbol{E}(\omega_3, z)\boldsymbol{E}^*(\omega_2, z)$$
+        $$\boldsymbol{P}^{(2)}(\omega_2) = 2\epsilon_0\chi^{(2)}(\omega_3, -\omega_1):\boldsymbol{E}(\omega_3, z)\boldsymbol{E}^*(\omega_1, z)$$
+        $$\boldsymbol{P}^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1, \omega_2):\boldsymbol{E}(\omega_1, z)\boldsymbol{E}(\omega_2, z)$$
         <div class="Prove">
             <p>考虑到\(\omega_3 = \omega_1 + \omega_2\)，因此仅计算：</p>
             $$\begin{cases}
@@ -167,7 +167,7 @@
             <p>省略时间相位因子，得到非线性极化强度复振幅为：</p>
             $$P^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1,\omega_2)E(\omega_1)E(\omega_2)$$
             <p>考虑张量形式，才会引入<a class="goto" href="../../Math/TensorAnalysis/Dyad.html#DoubleDotProduct">并联式双点积</a>，得到：</p>
-            $$\mathbf{P}^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1, \omega_2):\mathbf{E}(\omega_1, z)\mathbf{E}(\omega_2, z)$$
+            $$\boldsymbol{P}^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1, \omega_2):\boldsymbol{E}(\omega_1, z)\boldsymbol{E}(\omega_2, z)$$
         </div>
 
         <div class="Card-AI">

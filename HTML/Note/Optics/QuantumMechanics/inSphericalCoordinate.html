@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>量子力学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>三维空间中的量子力学</h1>
+        
+        <div class="Card-Analysis">
+            <h2>球坐标系下的Schrödinger方程</h2>
+            <p>向三维情况的推广是直接了当的，Schrödinger方程为：</p>
+            <a href="TimeIndependentSE.html#SE1" class="goto">$$i\hbar\frac{\partial \Psi}{\partial t} = \hat H\Psi$$</a>
+
+            <p>势能\(V\)与波函数\(\Psi\)此时是\(\boldsymbol{r} = (x,y,z)\)与\(t\)的函数.</p>
+            <p>无穷小体积元\(\mathrm{d}^3\boldsymbol{r} = \mathrm{d}x\mathrm{d}y\mathrm{d}z\)内发现粒子的几率为\(|\Psi(\boldsymbol{r}, t)|^2\mathrm{d}^3\boldsymbol{r}\)，归一化条件为：</p>
+            $$\int|\Psi|^2\mathrm{d}^3\boldsymbol{r} = 1$$
+            <p>由经典能量可以得到<a href="TimeIndependentSE.html#HamiltonianOperator">Hamiltonian算符</a>：</p>
+            $$\frac{1}{2}mv^2 + V = \frac{1}{2m}(p_x^2 + p_y^2 + p_z^2) + V$$
+            
+            <p>通过标准方法（现在应用于y、z及x）：</p>
+            $$p_x\rightarrow \frac{\hbar}{i}\frac{\partial}{\partial x}$$
+            $$p_y\rightarrow \frac{\hbar}{i}\frac{\partial}{\partial y}$$
+            $$p_z\rightarrow \frac{\hbar}{i}\frac{\partial}{\partial z}$$
+            <p>或简洁地写作：</p>
+            $$\boldsymbol{p} \rightarrow \frac{\hbar}{i}\nabla$$
+            $$\therefore i\hbar\frac{\partial\Psi}{\partial t} = -\frac{\hbar^2}{2m}\nabla^2\Psi + V\Psi$$
+            <ul>
+                <li>\(\nabla^2\equiv \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}\)：直角坐标系中的拉普拉斯算符</li>
+            </ul>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -35,8 +35,8 @@
         <div class="Card-Definition">
             <b>光波电磁场的波动方程</b>
             $$\begin{cases}
-            \nabla^2\mathbf{E} - \frac{1}{v^2}\frac{\partial^2 \mathbf{E}}{\partial t^2} = 0\\
-            \nabla^2\mathbf{H} - \frac{1}{v^2}\frac{\partial^2 \mathbf{H}}{\partial t^2} = 0
+            \nabla^2\boldsymbol{E} - \frac{1}{v^2}\frac{\partial^2 \boldsymbol{E}}{\partial t^2} = 0\\
+            \nabla^2\boldsymbol{H} - \frac{1}{v^2}\frac{\partial^2 \boldsymbol{H}}{\partial t^2} = 0
             \end{cases}$$
         </div>
 
@@ -49,9 +49,9 @@
         </div>
 
         <div class="Card-Definition" id="k">
-            <b>波矢量\(\mathbf{k}\)</b>
-            $$\mathbf{k} = k\mathbf{k_0}$$
-            <p>\(\mathbf{k}_0\)为单位矢量，沿波的传播方向.</p>
+            <b>波矢量\(\boldsymbol{k}\)</b>
+            $$\boldsymbol{k} = k\boldsymbol{k_0}$$
+            <p>\(\boldsymbol{k}_0\)为单位矢量，沿波的传播方向.</p>
             <p>\(k =  2\pi/\lambda = \sqrt{k_x^2 + k_y^2 + k_z^2}\)为<b>空间角频率</b>或<b>波数</b>.</p>
             <p>\(k_r = 0 \Leftrightarrow\)沿\(r\)方向相位不发生改变.</p>
         </div>
@@ -142,24 +142,24 @@
         <p>由波动方程的线性性质，任何复杂的波都能用球面波或平面波的线性组合表示.</p>
         <h2 id="PlaneWave">单色平面电磁波</h2>
         <h3>表达式</h3>
-        $$\mathbf{E} = \mathbf{E_0}\exp[i\omega(t - \frac{r}{v})] = \mathbf{E_0}\exp[i(\omega t + \alpha)]$$
-        其中，\(\alpha\)可以看作是\(\mathbf{E}\)的初相。
+        $$\boldsymbol{E} = \boldsymbol{E_0}\exp[i\omega(t - \frac{r}{v})] = \boldsymbol{E_0}\exp[i(\omega t + \alpha)]$$
+        其中，\(\alpha\)可以看作是\(\boldsymbol{E}\)的初相。
 
-        <p>[注]光波中包含电场矢量\(\mathbf{E}\)与磁场矢量\(\mathbf{H}\)，从波的传播特性来看，其具有相同的地位；但从光与介质的相互作用来看，磁场的作用远比电场弱，甚至不起作用.因此，在讨论光的波动特性时，常常只考虑电场矢量\(\mathbf{E}\).通常称\(\mathbf{E}\)为光矢量，\(\mathbf{E}\)的振动称为光振动.</p>
+        <p>[注]光波中包含电场矢量\(\boldsymbol{E}\)与磁场矢量\(\boldsymbol{H}\)，从波的传播特性来看，其具有相同的地位；但从光与介质的相互作用来看，磁场的作用远比电场弱，甚至不起作用.因此，在讨论光的波动特性时，常常只考虑电场矢量\(\boldsymbol{E}\).通常称\(\boldsymbol{E}\)为光矢量，\(\boldsymbol{E}\)的振动称为光振动.</p>
         <b>三角函数表示</b>
         <div class="Formula">
-            $$\mathbf{E} = \mathbf{E}_0\cos(\omega t - kr) = \mathbf{E}_0\cos[\omega(t - \frac{r}{v})] = \mathbf{E}_0\cos[2\pi(\frac{t}{T} - \frac{r}{\lambda})]$$
+            $$\boldsymbol{E} = \boldsymbol{E}_0\cos(\omega t - kr) = \boldsymbol{E}_0\cos[\omega(t - \frac{r}{v})] = \boldsymbol{E}_0\cos[2\pi(\frac{t}{T} - \frac{r}{\lambda})]$$
             <div class="Derivation">
                 $$
                 \begin{align}
-                \mathbf{E} &= \mathbf{E}_0\cos(\omega t - kr)\\
-                           &= \mathbf{E}_0\cos[\omega(t - \frac{k}{w}r)]\\
+                \boldsymbol{E} &= \boldsymbol{E}_0\cos(\omega t - kr)\\
+                           &= \boldsymbol{E}_0\cos[\omega(t - \frac{k}{w}r)]\\
                            &\because k = \omega/v\\
-                \therefore \mathbf{E} &= \mathbf{E}_0\cos[\omega(t-\frac{r}{v})]\\\\
-                \mathbf{E} &= \mathbf{E}_0\cos(\omega t - kr)\\
-                           &= \mathbf{E}_0\cos[2\pi(\frac{\omega}{2\pi}t - \frac{k}{2\pi}r)]\\
+                \therefore \boldsymbol{E} &= \boldsymbol{E}_0\cos[\omega(t-\frac{r}{v})]\\\\
+                \boldsymbol{E} &= \boldsymbol{E}_0\cos(\omega t - kr)\\
+                           &= \boldsymbol{E}_0\cos[2\pi(\frac{\omega}{2\pi}t - \frac{k}{2\pi}r)]\\
                            &\because k=2\pi/\lambda,~\omega = 2\pi/T\\
-                \therefore \mathbf{E} &= \mathbf{E}_0\cos[2\pi(\frac{t}{T} - \frac{r}{\lambda})]
+                \therefore \boldsymbol{E} &= \boldsymbol{E}_0\cos[2\pi(\frac{t}{T} - \frac{r}{\lambda})]
                 \end{align}
                 $$
             </div>
@@ -168,15 +168,15 @@
         <b>复数形式</b>
         <p>复数的虚部无物理意义，为了便于计算，引入单色平面波的复数形式.</p>
         <div class="Formula">
-            $$\mathbf{E} = \mathbf{E}_0 e^{-i(\omega t - kz)}$$
+            $$\boldsymbol{E} = \boldsymbol{E}_0 e^{-i(\omega t - kz)}$$
             <div class="Derivation">
                 <p>由欧拉方程</p>
                 $$\begin{align}
-                \mathbf{E} &= \mathbf{E}_0 e^{-i(\omega t - kz)}\\
-                &= \mathbf{E}_0 [\cos(\omega t - kz) - i\sin(\omega t - kz)]
+                \boldsymbol{E} &= \boldsymbol{E}_0 e^{-i(\omega t - kz)}\\
+                &= \boldsymbol{E}_0 [\cos(\omega t - kz) - i\sin(\omega t - kz)]
                 \end{align}$$
                 <p>由于虚部无物理意义，故</p>
-                $$\mathbf{E} = \mathbf{E}_0 \cos(\omega t - kz)$$
+                $$\boldsymbol{E} = \boldsymbol{E}_0 \cos(\omega t - kz)$$
             </div>
         </div>
 
@@ -185,38 +185,38 @@
             $$e^{-i\omega t}$$
 
             <b>空间相位因子</b>
-            $$e^{i\mathbf{k}\cdot\mathbf{r}}$$
+            $$e^{i\boldsymbol{k}\cdot\boldsymbol{r}}$$
         </div>
 
         
         <div class="Card-Definition">
             <b>复振幅</b>
             <p>复振幅反映了光场振动的振幅和相位随空间的变化.</p>
-            $$\mathbf{E} = \mathbf{E}_0 e^{-i(\omega t - \mathbf{k}\cdot\mathbf{r} + \phi_0)} = \mathbf{E}_0 e^{i(\mathbf{k}\cdot\mathbf{r} - \phi_0)}e^{-i\omega t}$$
-            <p>\(\tilde{E} = \mathbf{E}_0 e^{i(\mathbf{k}\cdot\mathbf{r} - \phi_0)}\)称为复振幅.</p>            
+            $$\boldsymbol{E} = \boldsymbol{E}_0 e^{-i(\omega t - \boldsymbol{k}\cdot\boldsymbol{r} + \phi_0)} = \boldsymbol{E}_0 e^{i(\boldsymbol{k}\cdot\boldsymbol{r} - \phi_0)}e^{-i\omega t}$$
+            <p>\(\tilde{E} = \boldsymbol{E}_0 e^{i(\boldsymbol{k}\cdot\boldsymbol{r} - \phi_0)}\)称为复振幅.</p>            
         </div>
 
         <div class="Card-Analysis">
-            <h2>沿任意波矢量\(\mathbf{k}\)方向传播的平面简谐波</h2>
+            <h2>沿任意波矢量\(\boldsymbol{k}\)方向传播的平面简谐波</h2>
             <b>实际光电场：</b>
-            $$\mathbf{E} = \mathbf{E}_0\cos(\omega t - \mathbf{k}\cdot \mathbf{r} + \phi_0)$$
+            $$\boldsymbol{E} = \boldsymbol{E}_0\cos(\omega t - \boldsymbol{k}\cdot \boldsymbol{r} + \phi_0)$$
             <p>为便于计算，常取复数形式：</p>
-            $$\mathbf{E}' = \mathbf{E}_0' e^{-i(\omega t - \mathbf{k}\cdot \mathbf{r} + \phi_0)} = \mathbf{E}_0' e^{-i\phi}$$
+            $$\boldsymbol{E}' = \boldsymbol{E}_0' e^{-i(\omega t - \boldsymbol{k}\cdot \boldsymbol{r} + \phi_0)} = \boldsymbol{E}_0' e^{-i\phi}$$
             <p>复振幅为</p>
-            $$\tilde{\mathbf{E}} =\mathbf{E}_0' e^{i(\mathbf{k}\cdot \mathbf{r} - \phi_0)}$$
+            $$\tilde{\boldsymbol{E}} =\boldsymbol{E}_0' e^{i(\boldsymbol{k}\cdot \boldsymbol{r} - \phi_0)}$$
 
             <table>
                 <tr>
                     <td>描述方式</td>
-                    <td>\(\mathbf{E}_0'\)</td>
+                    <td>\(\boldsymbol{E}_0'\)</td>
                 </tr>
                 <tr>
-                    <td>$$\mathbf{E} = \Re\{\mathbf{E}'\}$$</td>
-                    <td>$$\mathbf{E}_0' = \mathbf{E}_0$$</td>
+                    <td>$$\boldsymbol{E} = \Re\{\boldsymbol{E}'\}$$</td>
+                    <td>$$\boldsymbol{E}_0' = \boldsymbol{E}_0$$</td>
                 </tr>
                 <tr>
-                    <td>$$\mathbf{E} = \mathbf{E'} + c.c.$$</td>
-                    <td>$$\mathbf{E}_0' = \frac{1}{2}\mathbf{E}_0$$</td>
+                    <td>$$\boldsymbol{E} = \boldsymbol{E'} + c.c.$$</td>
+                    <td>$$\boldsymbol{E}_0' = \frac{1}{2}\boldsymbol{E}_0$$</td>
                 </tr>
             </table>
             
@@ -224,30 +224,30 @@
 
         <h3>性质</h3>
         <b>平面电磁波是横波</b>
-        $$\mathbf{k}\mathbf{E} = 0$$
-        $$\mathbf{k}\mathbf{B} = 0$$
+        $$\boldsymbol{k}\boldsymbol{E} = 0$$
+        $$\boldsymbol{k}\boldsymbol{B} = 0$$
         <p>电矢量与磁矢量方向均垂直于波传播方向，平面电磁波为横波</p>
 
-        <b>\(\mathbf{E}, \mathbf{B}, \mathbf{k}_0\)互成右手螺旋系</b>
+        <b>\(\boldsymbol{E}, \boldsymbol{B}, \boldsymbol{k}_0\)互成右手螺旋系</b>
         <p></p>
-        <b>\(\mathbf{E}, \mathbf{B}\)同相位</b>
+        <b>\(\boldsymbol{E}, \boldsymbol{B}\)同相位</b>
         
         <div class="Card-Formula" id="EMProperty">
             <h2>单色平面电磁波的一般方程</h2>
             <b>三角函数形式</b>
-            $$\mathbf{E} = \mathbf{E}_0\cos(\omega t - \mathbf{k}\mathbf{r} + \phi_0)$$
+            $$\boldsymbol{E} = \boldsymbol{E}_0\cos(\omega t - \boldsymbol{k}\boldsymbol{r} + \phi_0)$$
 
             <b>复数形式</b>
-            $$\mathbf{E} = \mathbf{E}_0e^{-i(\omega t - \mathbf{k}\mathbf{r}+ + \phi_0)}$$
+            $$\boldsymbol{E} = \boldsymbol{E}_0e^{-i(\omega t - \boldsymbol{k}\boldsymbol{r}+ + \phi_0)}$$
             <ul>
-                <li>振动方向：\(\mathbf{E}_0\)的方向</li>
-                <li>传播方向：\(\mathbf{k}_0\)的方向</li>
-                <li>相位速度：\(v = \frac{\omega}{k}\)，单位为\(m/s\)，方向沿\(\mathbf{k}_0\)</li>
+                <li>振动方向：\(\boldsymbol{E}_0\)的方向</li>
+                <li>传播方向：\(\boldsymbol{k}_0\)的方向</li>
+                <li>相位速度：\(v = \frac{\omega}{k}\)，单位为\(m/s\)，方向沿\(\boldsymbol{k}_0\)</li>
                 <li>振幅：\(E_0\)，单位为\(V/m\)</li>
                 <li>频率：\(\nu = \omega/2\pi\)，单位为\(Hz\)</li>
                 <li>波长：\(\lambda = 2\pi/k\)，单位为\(m\)</li>
             </ul>
-            <p>[注]复数形式是为了简便计算而取的，虚部无物理意义.此处取\(\mathbf{E} = \mathbf{E}_0e^{-i(\omega t - kr + \phi_0)}\)与\(\mathbf{E} = \mathbf{E}_0e^{i(\omega t - kr + \phi_0)}\)都是可行的，取其实部均为\(\mathbf{E}_0\cos(\omega t - kr + \phi_0)\)，约定取\(-i\)形式.</p>
+            <p>[注]复数形式是为了简便计算而取的，虚部无物理意义.此处取\(\boldsymbol{E} = \boldsymbol{E}_0e^{-i(\omega t - kr + \phi_0)}\)与\(\boldsymbol{E} = \boldsymbol{E}_0e^{i(\omega t - kr + \phi_0)}\)都是可行的，取其实部均为\(\boldsymbol{E}_0\cos(\omega t - kr + \phi_0)\)，约定取\(-i\)形式.</p>
         </div>
 
         <div class="Card-Analysis" id="SphericalWave">
@@ -282,7 +282,7 @@
             <p>在空间域内，波数\(k\)可称为<b>空间圆频率</b>，波长\(\lambda\)可称为<b>光波场的空间周期</b>.</p>
             <div class="Card-Definition">
                 <b>光波场在光波传播方向上的空间频率\(f_k\)</b>
-                <p>表示光波场沿波矢\(\mathbf{k}\)方向每增加单位长度，光波场增加的周期数.</p>
+                <p>表示光波场沿波矢\(\boldsymbol{k}\)方向每增加单位长度，光波场增加的周期数.</p>
                 $$f_k = \frac{1}{\lambda}$$
             </div>
             <p>[注]光波场的空间周期与空间频率随观察方向不同而不同.</p>
@@ -358,9 +358,9 @@
         <h2>平面光波的偏振特性</h2>
         <p>光波的偏振特性是横波区别于纵波的最明显标志.</p>
         <p>设光波沿\(z\)方向传播，电场矢量为</p>
-        $$\mathbf{E} = \mathbf{E}_0 \cos(\omega t - kz + \phi_0)$$
+        $$\boldsymbol{E} = \boldsymbol{E}_0 \cos(\omega t - kz + \phi_0)$$
         <p>为表征光波的偏振特性，将其表示为沿\(x, y\)方向上振动的两个独立分量的线性组合</p>
-        $$\mathbf{E} = \mathbf{i}\mathbf{E}_x + \mathbf{j}\mathbf{E}_y$$
+        $$\boldsymbol{E} = \boldsymbol{i}\boldsymbol{E}_x + \boldsymbol{j}\boldsymbol{E}_y$$
         $$E_x = E_{0x}\cos(\omega t - kz + \phi_x) = E_{0x}e^{-i(\omega t - kz + \phi_x)}$$
         $$E_y = E_{0y}\cos(\omega t - kz + \phi_y) = E_{0y}e^{-i(\omega t - kz + \phi_y)}$$
 
@@ -407,7 +407,7 @@
             </div>
         </div>
         $$\frac{E_y}{E_x} = \frac{E_{0y}}{E_{0x}}e^{-i\phi} = e^{\mp i\frac{\pi}{2}} = \mp i$$
-        <p>规定：逆着光传播方向看，\(\mathbf{E}\)顺时针旋转，称为<b>右旋</b>偏振光；\(\mathbf{E}\)逆时针旋转，称为<b>左旋</b>偏振光.</p>        
+        <p>规定：逆着光传播方向看，\(\boldsymbol{E}\)顺时针旋转，称为<b>右旋</b>偏振光；\(\boldsymbol{E}\)逆时针旋转，称为<b>左旋</b>偏振光.</p>        
         <p>\(\phi = \frac{\pi}{2}\)时，为右旋偏振光；\(\phi=-\frac{\pi}{2}\)时，为左旋偏振光.</p>
 
         <b>椭圆偏振光</b>

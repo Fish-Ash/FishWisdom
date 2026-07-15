@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>电磁学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>暂态过程</h1>
+
+        <p>当一个自感与电阻组成LR电路，在0突变到U或U突变到0的阶跃电压作用下，由于自感的作用，电路中的电流不会瞬间突变.</p>
+        <p>电容与电阻组成的RC电路，在阶段电压的作用下，电容上的电压不会瞬间突变.</p>
+        <p>这种在阶跃电压作用下，从开始发生变化到逐渐趋于稳态的过程称为<b>暂态过程</b>.</p>
+        <p>本节将研究暂态过程的特点与规律.</p>
+
+        <div class="Card-Analysis">
+            <h2>LR电路的暂态过程</h2>
+            <img src="Img/LR.jpg" width="300">
+            <p>考虑如图所示的电路，当开光拨向1时，一个从0到U的阶跃电压作用在LR电路上，由于有自感，电流的变化使电路中出现自感电动势：</p>
+            $$U_L = -L\frac{\mathrm{d}I}{\mathrm{d}t}$$
+            <p>按照楞次定律，这个电动势是反抗电流增加的.</p>
+
+            <p>设电源电动势为U，内阻为0，接通电源后，在任何瞬时，电路内总的电动势为：</p>
+            $$U + U_L = U - L\frac{\mathrm{d}I}{\mathrm{d}t}$$
+            <p>按照欧姆定律：</p>
+            $$U - L\frac{\mathrm{d}I}{\mathrm{d}t} = IR$$
+            <p>[注]此处电流虽不是恒定的，但若变化不快可看成似稳的，欧姆定律仍然成立.</p>
+            $$I - \frac{U}{R} = Ke^{-\frac{R}{L}t}$$
+            <p>其中\(K\)为积分常量，需由初始条件\(t = 0\)时刻的电流值确定.</p>
+            <p>我们选取接通电源的时刻作为计时的零点，从物理上看，未接通电源前电路中不存在电流；接通电源后电感线圈中的电流增加，随机产生反方向的感应电动势阻碍电流的增加.</p>
+            <p>因此，在接通电源的开始，电流只能从0逐渐增加而不能突变，即\(I(0) = 0\).</p>
+            <p>代入初始条件，得：</p>
+            $$K= -\frac{U}{R}$$
+            <p>方程满足初始条件的解为：</p>
+            $$I = \frac{U}{R}(1 - e^{-\frac{R}{L}t})$$
+            <p>按照上式可以画出不同\(\frac{L}{R}\)比值下电流\(I\)随时间\(t\)的变化曲线.</p>
+            <p>可以看出，接通电流后，\(I\)经过一指数增长过程逐渐达到恒定值\(I(t\rightarrow\infty) = \frac{U}{R}\).</p>
+            <p>电路中\(\frac{L}{R}\)值不同，达到恒定值的过程持续的时间也不同.</p>
+            <p>\(\frac{L}{R}\)具有时间的量纲，可以用\(\tau\)表示：</p>
+            $$\tau = \frac{L}{R}$$
+            <p>\(t = \tau\)时，有：</p>
+            $$I(\tau) \approx 0.63I_0$$
+            <p>\(t = 5\tau\)时，有：</p>
+            $$I(5\tau) \approx 0.994I_0$$
+            <p>即经过\(5\tau\)时间后，暂态过程基本结束.</p>
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

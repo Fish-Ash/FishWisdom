@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>高等数学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>Dirac函数</h1>
+
+        <div class="Card-Analysis">
+            <h2>一维Dirac函数</h2>
+            $$\delta(x) = \begin{cases}0,\quad x\neq0\\\infty,\quad x=0\end{cases}$$
+            <p>技术上，\(\delta(x)\)并不是一个函数，因为其在\(x=0\)处的值不是有限的，数学文献中将其称为<b>推广函数</b>或<b>广义函数</b>.</p>
+
+            <p>性质1：</p>
+            <p>一维狄拉克函数为一个面积为1，无限高且无限窄的尖峰.</p>
+            <img src="Img/Dirac.png" width="200">
+            <p>即：</p>
+            $$\int_{-\infty}^{+\infty}\delta(x)\mathrm{d}x = 1$$
+            <p>性质2：</p>
+            $$f(x)\delta(x) = f(0)\delta(x)$$
+            <div class="Formula">
+                $$\int_{-\infty}^{+\infty}f(x)\delta(x)\mathrm{d}x = f(0)$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \int_{-\infty}^{+\infty}f(x)\delta(x)\mathrm{d}x &= \int_{-\infty}^{+\infty}f(0)\delta(x)\mathrm{d}x\\
+                                                                     &= f(0)\int_{-\infty}^{+\infty}\delta(x)\mathrm{d}x\\
+                                                                     &= f(0)
+                    \end{align}$$
+                </div>
+            </div>
+            <p>推广</p>
+            $$\delta(x-a) = \begin{cases}0,\quad x\neq a\\\infty,\quad x=a\end{cases}$$
+            $$\int_{-\infty}^{+\infty}\delta(x-a)\mathrm{d}x = 1$$
+            $$f(x)\delta(x-a) = f(a)\delta(x-a)$$
+            $$\int_{-\infty}^{+\infty}f(x)\delta(x-a)\mathrm{d}x = f(a)$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>三维Dirac函数</h2>
+            $$\delta^3(\boldsymbol{r}) = \delta(x)\delta(y)\delta(z)$$
+            <ul>
+                <li>\(\boldsymbol{r} = x\hat{\boldsymbol{x}} + y\hat{\boldsymbol{y}} + z\hat{\boldsymbol{z}}\)：从源点到\((x,y,z)\)的位置矢量</li>
+            </ul>
+            <b>性质1：</b>
+            <p>\(\delta^3(\boldsymbol{r})\)在\((0,0,0)\)处无穷大，在其他处为0.</p>
+            <b>性质2：</b>
+            <p>\(\delta^3(\boldsymbol{r})\)体积分为1：</p>
+            $$\int_V\delta^3(\boldsymbol{r})\mathrm{d}\tau = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}\delta(x)\delta(y)\delta(z)\mathrm{d}x\mathrm{d}y\mathrm{d}z = 1$$
+            <b>性质3：</b>
+            $$\int_Vf(\boldsymbol{r})\delta^3(\boldsymbol{r}-\boldsymbol{a})\mathrm{d}\tau = f(\boldsymbol{a})$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>\(\hat{\boldsymbol{r}}/r^2\)的散度</h2>
+            <p>利用球坐标的散度公式，计算可得：</p>
+            $$\nabla\cdot(\frac{\hat{\boldsymbol{r}}}{r^2}) = \frac{1}{r^2}\frac{\partial}{\partial r}(r^2\cdot\frac{1}{r^2}) = 0$$
+            <p>实际上：</p>
+            $$\nabla\cdot(\frac{\hat{\boldsymbol{r}}}{r^2}) = 4\pi\delta^3(\boldsymbol{r})$$
+        </div>
+        
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>量子力学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>自旋</h1>
+        <div class="Card-Analysis">
+            <h2>自旋</h2>
+            <p>经典力学中，一个刚性物体具有两种角动量：</p>
+            <ul>
+                <li>轨道角动量\(\boldsymbol{L} = \boldsymbol{r}\times\boldsymbol{p}\)：物体质心相对原点的运动</li>
+                <li>自旋\(\boldsymbol{S} = I\boldsymbol{\omega}\)：物体绕质心的运动</li>
+            </ul>
+
+            <p>自旋的代数理论与轨道角动量的极其相似，由基本对易关系：</p>
+            $$\left[S_x, S_y\right] = i\hbar S_z$$
+            $$\left[S_y, S_z\right] = i\hbar S_x$$
+            $$\left[S_z, S_x\right] = i\hbar S_y$$
+        
+            <div class="Card-AI">
+                <p>自旋与轨道角动量的代数理论相似性就体现在它们都满足角动量基本对易关系.</p>
+                <p>这个基本对易关系同样也是由量子力学得出的内容.</p>
+            </div>
+
+            <p>可以得出\(S^2\)与\(S_z\)的本征矢满足：</p>
+            $$S^2\left|s,m\right\rangle = \hbar^2 s(s+1)\left|s,m\right\rangle$$
+            $$S_z\left|s,m\right\rangle = \hbar m\left|s,m\right\rangle$$
+            <p>及：</p>
+            $$S_\pm\left|s,m\right\rangle = \hbar\sqrt{s(s+1)-m(m\pm1)}\left|s,m\pm1\right\rangle$$
+
+            <div class="Card-Definition">
+                <b>自旋\(s\)</b>
+                <p>每一种基本粒子都有一个特定的永远不变的\(s\)，称为该种粒子的自旋.</p>
+            </div>
+
+            <table>
+                <tr>
+                    <td>粒子</td>
+                    <td>自旋\(s\)</td>
+                </tr>
+                <tr>
+                    <td>\(\pi\)介子</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>质子、电子、中子、夸克、轻子</td>
+                    <td>1/2</td>
+                </tr>
+                <tr>
+                    <td>光子</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>\(\Delta\)粒子</td>
+                    <td>3/2</td>
+                </tr>
+                <tr>
+                    <td>引力子</td>
+                    <td>2</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>自旋1/2</h2>
+            <p>\(s = 1/2\)是构成普通物质的例子（质子、中子和电子）的自旋，以及所有夸克和所有轻子的自旋.</p>
+            <p>掌握自旋1/2更容易理解高自旋.</p>
+            <p>对于\(s=1/2\)，\(S^2\)与\(S_z\)仅有两个本征态：</p>
+            <div class="Card-AI">
+                <p>\(S^2\)与\(S_z\)都是矢量算符.</p>
+            </div>
+            <ul>
+                <li>上自旋态\(\uparrow\)：\(\left|\frac{1}{2}, \frac{1}{2}\right\rangle\)</li>
+                <li>下自旋态\(\downarrow\)：\(\left|\frac{1}{2}, \frac{1}{2}\right\rangle\)</li>
+            </ul>
+            <div class="Card-AI">
+                <p>下自旋态应该是\(\left|\frac{1}{2}, -\frac{1}{2}\right\rangle\)，这里应该是笔误.</p>
+            </div>
+            <p>利用这两个基矢量，一个自旋\(1/2\)粒子的一般态可以表示为一个二元列矩阵或旋量：</p>
+            <div class="Card-AI">
+                <p>一般态指系统所有可能的量子态中的任意一个状态.</p>
+            </div>
+            $$\chi = \left(\begin{matrix}a\\b\end{matrix}\right) = a\chi_+ + b\chi_-$$
+            <ul>
+                <li>\(\chi_+ = \left(\begin{matrix}1\\0\end{matrix}\right)\)：代表上自旋</li>
+                <li>\(\chi_- = \left(\begin{matrix}0\\1\end{matrix}\right)\)：代表下自旋</li>
+            </ul>
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

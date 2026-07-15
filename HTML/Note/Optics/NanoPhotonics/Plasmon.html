@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>微纳光子学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>等离激元光学</h1>
+
+        <div class="Card-Analysis">
+            <h2>基本介绍</h2>
+            <p>依赖于共振结构中光与物质相互作用所产生的表面电磁模式，可以将电磁场局域在亚波长尺度内，因此在信息传输、光学传感、光电探测、显示等领域有着广泛应用.</p>
+            <p>等离激元光学提供了一种将电磁场限制在亚波长尺度的方法，并由于金属界面或金属纳米结构中电磁辐射与传导电子间的相互作用产生增强的光学近场.</p>
+
+            <table>
+                <tr>
+                    <td rowspan="2">等离激元光学</td>
+                    <td>表面等离极化激元<br>（surface plasmon polariton）</td>
+                </tr>
+                <tr><td>局域表面等离激元<br>（localized surface plasmon）</td></tr>
+            </table>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>波动方程</h2>
+            <p>考虑导体与介质间的平坦界面，当外部电荷、电流密度与介电常数在波长量级上随距离的变化均可忽略时，由Maxwell方程组可以推导出亥姆霍兹方程：</p>
+            <div class="Formula">
+                $$\nabla^2\boldsymbol{E} + k_0^2\epsilon\boldsymbol{E} = 0$$
+                <div class="Derivation">
+                    <p>Maxwell方程组：</p>
+                    $$\begin{cases}
+                    \nabla\cdot\boldsymbol{D} = \rho\\
+                    \nabla\cdot\boldsymbol{B} = 0\\
+                    \nabla\times\boldsymbol{E} = -\frac{\partial\boldsymbol{B}}{\partial t}\\
+                    \nabla\times\boldsymbol{H} = \frac{\partial\boldsymbol{E}}{\partial t} + \boldsymbol{j}
+                    \end{cases}$$
+                    <p>物质方程：</p>
+                    $$\begin{cases}
+                    \boldsymbol{j} = \sigma\boldsymbol{E}\\
+                    \boldsymbol{D} = \epsilon\boldsymbol{E}\\
+                    \boldsymbol{B} = \mu\boldsymbol{H}
+                    \end{cases}$$
+                    <ul>
+                        <li>\(k_0 = \omega/c\)：真空中的<a href="../PhysicalOptics/Chapter1.html#k">波矢</a>.</li>
+                        <li>\(\omega\)：角频率</li>
+                        <li>\(c\)：光速</li>
+                        <li>\(\epsilon\)：介电常数</li>
+                    </ul>
+                    <p>对\(\boldsymbol{E}\)的旋度再取旋度，有：</p>
+                    $$\nabla\times(\nabla\times\boldsymbol{E}) = \nabla\times(-\frac{\partial\boldsymbol{B}}{\partial t})$$
+                </div>
+            </div>
+
+            <div class="Card-Question">
+                <p>推导：Maxwell->亥姆霍兹</p>
+                <p>1、旋度与偏微分的先后</p>
+                <p>2、偏微分的替换</p>
+                <p>亥姆霍兹方程的推导可以单列</p>
+            </div>
+
+            <p>对于最简单的一维情况：</p>
+            <p>[设]光场沿<a href="../../Math/Mathematic/MathBasic.html#Descartes" class="goto">笛卡尔坐标系</a>的x方向传播，且在与传播方向垂直的y方向无空间变化.</p>
+            <p>则：</p>
+            $$\epsilon = \epsilon(z)$$
+            <div class="Card-AI">
+                <p>x-y平面就是分界面，z轴垂直于分界面，因此介电常数会随z变化，因为其穿过了不同的介质.</p>
+            </div>
+            <p>此时界面\(z=0\)处的传播场可写为：</p>
+            $$\boldsymbol{E}(x,y,z) = \boldsymbol{E}(z)e^{i\zeta x}$$
+
+            <div class="Card-AI">
+                $$\begin{align}
+                \boldsymbol{E} &= \boldsymbol{E}_0e^{-i(\omega t - \boldsymbol{k}\cdot\boldsymbol{r} + \phi_0)}\\
+                           &= \boldsymbol{E}_0e^{-i(\omega t + \phi_0)}e^{i(k_xx + k_yy + k_zz)}\\
+                           &= [\boldsymbol{E}_0e^{-i(\omega t + \phi_0)}e^{i(k_yy + k_zz)}]e^{ikx}
+                \end{align}$$
+                <p>“在与传播方向垂直的y方向无空间变化”\(\Rightarrow k_y = 0\)</p>
+                <p>只有在介质完全均匀时，中括号内才能取上述表达式，然而现在介质在z轴方向分层，光波会发生复杂的指数衰减，因此直接将中括号中的内容用\(\boldsymbol{E}(z)\)取代.</p>
+                <p>E(z)是一个在x-z平面上的矢量，但它是一个z的一元函数，即：</p>
+                $$\boldsymbol{E}(z) = a(z)\hat{\boldsymbol{x}} + b(z)\hat{\boldsymbol{z}}$$
+            </div>
+            <ul>
+                <li>\(\zeta = k_x\)：传播常数（propagation constant），对应于波矢在传播方向上的分量.</li>
+            </ul>
+
+            <div class="Card-AI">
+                <p>波矢常用于自由空间，传播常数常用于受限空间.</p>
+            </div>
+
+            <p>代入亥姆霍兹方程，得波动方程：</p>
+            <div class="Formula">
+                $$\frac{\partial^2\boldsymbol{E}(z)}{\partial z^2} + (k_0^2\epsilon - \zeta^2)\boldsymbol{E} = 0$$
+                <div class="Derivation">
+                    $$\nabla^2\boldsymbol{E} + k_0^2\epsilon\boldsymbol{E} = 0$$
+                    $$\because\boldsymbol{E} = \boldsymbol{E}(z)e^{i\zeta x}$$
+                    $$\begin{align}
+                    \therefore\nabla^2\boldsymbol{E} &= \frac{\partial^2\boldsymbol{E}}{\partial x^2} + \frac{\partial^2\boldsymbol{E}}{\partial y^2} + \frac{\partial^2\boldsymbol{E}}{\partial z^2}\\
+                                                 &= -\zeta^2\boldsymbol{E} + \frac{\partial^2\boldsymbol{E}(z)}{\partial z^2}
+                    \end{align}$$
+                    $$\therefore \frac{\partial^2\boldsymbol{E}(z)}{\partial z^2} + (k_0^2\epsilon - \zeta^2)\boldsymbol{E} = 0$$
+                </div>
+            </div>
+
+            <p>由于磁场\(\boldsymbol{H}\)也存在类似方程，利用谐波的时间依赖性，可得耦合方程：</p>
+            $$\begin{cases}
+            \frac{\partial E_z}{\partial y} - \frac{\partial E_y}{\partial z} = i\omega\mu_0H_x\\
+            \frac{\partial E_x}{\partial z} - \frac{\partial E_z}{\partial x} = i\omega\mu_0H_y\\
+            \frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y} = i\omega\mu_0H_z\\
+            \frac{\partial H_z}{\partial y} - \frac{\partial H_y}{\partial z} = -i\omega\epsilon_0\epsilon E_x\\
+            \frac{\partial H_x}{\partial z} - \frac{\partial H_z}{\partial x} = -i\omega\epsilon_0\epsilon E_y\\
+            \frac{\partial H_y}{\partial x} - \frac{\partial H_x}{\partial y} = -i\omega\epsilon_0\epsilon E_z
+            \end{cases}$$
+
+            <div class="Card-Question">
+                <p>什么玩意儿一堆</p>
+            </div>
+
+            <p>对于沿x方向传播且在y方向保持同性的电磁波，上述方程可简化为：</p>
+            $$\begin{cases}
+            \frac{\partial E_y}{\partial z} = -i\omega\mu_0H_x\\
+            \frac{\partial E_x}{\partial z} - i\zeta E_z = i\omega\mu_0H_y\\
+            i\zeta E_y = i\omega\mu_0H_z\\
+            \frac{\partial H_y}{\partial z} = i\omega\epsilon_0\epsilon E_x\\
+            \frac{\partial H_x}{\partial z} - i\zeta H_z = -i\omega\epsilon_0\epsilon E_y\\
+            i\zeta H_y = -i\omega\epsilon_0\epsilon E_z
+            \end{cases}$$
+
+            <div class="Card-Question">
+                <p>这又什么玩意儿</p>
+            </div>
+
+            <p>由此可见，该物理体系中存在两个不同偏振态的传播场：</p>
+
+            <table>
+                <tr>
+                    <td>横磁模式</td>
+                    <td>电场有x与z分量，磁场仅存在y分量</td>
+                    <td>
+                        $$\begin{align}
+                        &\frac{\partial E_x}{\partial z} - i\zeta E_z = i\omega\mu_0H_y\\
+                        &\frac{\partial H_y}{\partial z} = i\omega\epsilon_0\epsilon E_x\\
+                        &i\zeta H_y = -i\omega\epsilon_0\epsilon E_z
+                        \end{align}$$
+                    </td>
+                </tr>
+                <tr>
+                    <td>横电模式<br>（transverse electric mode, TE mode）</td>
+                    <td>电场仅存在y分量，磁场有x与z分量</td>
+                    <td>
+                        $$\begin{align}
+                        &\frac{\partial E_y}{\partial z} = -i\omega\mu_0H_x\\
+                        &i\zeta E_y = i\omega\mu_0H_z\\
+                        &\frac{\partial H_x}{\partial z} - i\zeta H_z = -i\omega\epsilon_0\epsilon E_y
+                        \end{align}$$
+                    </td>
+                </tr>
+            </table><br>
+ 
+            <div class="Card-AI">
+                <p>两套体系互不影响，因此可以区分为两种模式.</p>
+                <p>\(E_y = 0\)就是横磁模式；\(H_y = 0\)就是横电模式</p>
+            </div>
+
+            <p>横磁模式下，有：</p>
+            <div class="Formula">
+                $$E_x = -i\frac{1}{\omega\epsilon_0\epsilon}\frac{\partial H_y}{\partial z}$$
+                <div class="Derivation">
+                    $$\because \frac{\partial H_y}{\partial z} = i\omega\epsilon_0\epsilon E_x$$
+                    $$\therefore E_x = -i\frac{1}{\omega\epsilon_0\epsilon}\frac{\partial H_y}{\partial z}$$
+                </div>
+            </div>
+            <div class="Formula">
+                $$E_z = -\frac{\zeta}{\omega\epsilon_0\epsilon}H_y$$
+                <div class="Derivation">
+                    $$\because i\zeta H_y = -i\omega\epsilon_0\epsilon E_z$$
+                    $$\therefore E_z = -\frac{\zeta}{\omega\epsilon_0\epsilon}H_y$$
+                </div>
+            </div>
+
+            <p>波动方程为：</p>
+            $$\frac{\partial^2H_y}{\partial z^2} + (k_0^2\epsilon - \zeta^2)H_y = 0$$
+
+            <hr>
+
+            <p>横电模式下，有：</p>
+            $$H_x = i\frac{1}{\omega\mu_0}\frac{\partial E_y}{\partial z}$$
+            $$H_y = \frac{\zeta}{\omega\mu_0}E_y$$
+
+            <p>波动方程为：</p>
+            $$\frac{\partial^2 E_y}{\partial z^2} + (k_0^2\epsilon - \zeta^2)E_y = 0$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>单一界面的表面等离极化激元</h2>
+            <p>图示为支持表面等离极化激元传播的最简单结构：</p>
+            <img src="Img/Plasmon1.1.png" width="200">
+            <p>即非吸收型介质（介电常数\(\epsilon_2\)）半空间\(z\gt 0\)与相邻导体（介电常数\(\epsilon_1(\omega)\)）半空间\(z\lt 0\)间的平面界面.</p>
+            <p>横磁模式下，由\(E_x\)与\(E_z\)公式可以推出：</p>
+            <div class="Card-Question">
+                <p>怎么推出的？</p>
+                <ul>
+                    <li>\(A_1,A_2\)是什么？</li>
+                </ul>
+            </div>
+            <p>\(z\gt0\)半空间内的电场与磁场为：</p>
+            $$\begin{cases}
+            H_y(z) = A_2e^{i\zeta x}e^{-k_2z}\\
+            E_x(z) = -iA_2\frac{1}{\omega\epsilon_0\epsilon_2}k_2e^{i\zeta x}e^{-k_2z}\\
+            E_z(z) = -A_1\frac{\zeta}{\omega\epsilon_0\epsilon_2}e^{i\zeta x}e^{-k_2z}
+            \end{cases}$$
+
+            <p>\(z\lt 0\)半空间内的电场与磁场为：</p>
+            $$\begin{cases}
+            H_y(z) = A_1e^{i\zeta x}e^{k_1z}\\
+            E_x(z) = -iA_1\frac{1}{\omega\epsilon_0\epsilon_1}e^{i\zeta x}e^{k_1 z}\\
+            E_z(z) = -A_1\frac{\zeta}{\omega\epsilon_0\epsilon_1}e^{i\zeta x}e^{k_1z}
+            \end{cases}$$
+
+            <div class="Card-AI">
+                <p>先解\(H_y\)，再解\(E_x\)和\(E_z\)</p>
+                <p>\(H_y\)是由波动方程解出来的</p>
+            </div>
+
+            <p>根据\(H_y\)与\(\epsilon_iE_z\)在界面处的连续性，可得：</p>
+            $$A_1 = A_2$$
+            $$k_2/k_1 = -\epsilon_2/\epsilon_1$$
+            <div class="Card-Question">
+                <p>为什么偏偏是这两个的连续性</p>
+            </div>
+
+            <p>根据\(z\gt0\)半空间内的电场与磁场表达式中，指数部分符号的使用惯例，对于\(\epsilon_2\gt 0\)的介质材料，模式的局域性则要求\(\Re[\epsilon_1]\lt0\)</p>
+            <p>传播界面上传播的表面等离极化激元的色散关系（dispersion relation）为：</p>
+            $$\zeta = k_0\sqrt{\frac{\epsilon_1\epsilon_2}{\epsilon_1 + \epsilon_2}}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>局域表面等离激元</h2>
+            <p>局域表面等离激元是金属纳米结构中的传导电子耦合至电磁场的非传播激发，模式的本质是亚波长金属纳米颗粒在振荡电磁场中的散射.</p>
+            <div class="Card-AI">
+                <p>传导电子：就是金属纳米结构中的自由电荷</p>
+                <p>耦合至电磁场：就是自由电子随着电场的方向来回振荡，光波中的电场方向是上下振荡的，</p>
+                <p>非传播激发：因为纳米结构具有边界，电子振荡</p>
+                <p>电荷做加速运动，就会向外辐射电磁波</p>
+            </div>
+            <p>由于颗粒的弯曲表面能够对被驱动的电子施加有效的回复力，所以会导致共振态的出现.</p>
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

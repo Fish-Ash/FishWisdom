@@ -198,13 +198,21 @@
         <div class="Card-Analysis">
             <h2>单缝夫琅禾费衍射</h2>
             <img src="Img/Diffraction/SingleSlitFD.jpg" alt="单缝夫琅禾费衍射" width="400">
+            <p>衍射屏上P点的光场复振幅为：</p>
+            $$\tilde{E}(P) = C\int_{-a/2}^{a/2}e^{-ikxx_1/f}\mathrm{d}x_1 = \tilde{E}_0\frac{\sin\alpha}{\alpha}$$
+            <ul>
+                <li>\(\tilde{E}_0 = Ca\)：观察屏中心点P<sub>0</sub>处的光场复振幅</li>
+                <li>\(\alpha = \frac{kax}{2f} = \frac{\pi a}{\lambda}\frac{x}{f} \approx \frac{\pi a\sin\theta}{\lambda}\)</li>
+            </ul>
             <p>P点光强为：</p>
             $$I = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2$$
-            <p>称\(\left(\frac{\sin\alpha}{\alpha}\right)^2\)为单缝衍射因子.</p>
+            <ul>
+                <li>\(I_0 = |\tilde{E}_0|^2\)</li>
+                <li>\(\left(\frac{\sin\alpha}{\alpha}\right)^2\)：单缝衍射因子</li>
+            </ul>
             <p>因此，矩孔夫琅禾费颜色和的相对强度分布是两个单缝衍射因子的乘积.</p>
 
             <b>单色光照明时的衍射光强分布</b>
-            $$\alpha = \frac{kax}{2f} = \frac{\pi a}{\lambda}\frac{x}{f} \approx \frac{\pi a\sin\theta}{\lambda}$$
             <p>\(\alpha = 0\)时：对应于\(\theta = 0\)的衍射位置，为光强中央主极大值（亮条纹）.</p>
             <p>\(\alpha = m\pi\)时：对应于满足：</p>
             $$\sin\theta = m\frac{\lambda}{a},~m=\pm1,\pm2,\cdots$$
@@ -229,6 +237,11 @@
 
         <div class="Card-Analysis">
             <h2>多缝夫琅禾费衍射</h2>
+            <img src="Img/Diffraction/MultiSlit.jpg" alt="多缝夫琅禾费衍射" width="400">
+            <ul>
+                <li>S：与图面垂直的线光源，位于透镜L<sub>1</sub>的焦面上.</li>
+
+            </ul>
             <b>多缝</b>
             <p>在一块不透光的屏上，刻有\(N\)条等间距、等宽度的通光狭缝.</p>
             <p>其每条狭缝均平行于\(y_1\)方向，沿\(x_1\)方向缝宽为\(a\)，相邻狭缝间距为\(d\).</p>
@@ -239,8 +252,14 @@
             <p>P点的光强度为：</p>
             $$I(P) = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2\left(\frac{\sin\frac{N\phi}{2}}{\sin\frac{\phi}{2}}\right)^2$$
             <ul>
-                <li>\(I_0\)：单缝衍射下P<sub>0</sub>点的光强.</li>
+                <li>\(I_0\)：单缝衍射下P<sub>0</sub>点的光强</li>
+                <li>\(\left(\frac{\sin\alpha}{\alpha}\right)^2\)：单缝衍射因子</li>
+                <li>\(\left(\frac{\sin\frac{N\phi}{2}}{\sin\frac{\phi}{2}}\right)^2\)：多光束干涉因子</li>
             </ul>
+            <p>可见，多缝衍射是衍射和干涉的共同结果.</p>
+            <p>单缝衍射因子与单缝本身的性质（缝宽、单缝范围内引入的振幅和相位的变化）有关.</p>
+            <p>多光束干涉因子来源于狭缝的周期性排列，与单缝本身的性质无关.</p>
+            
 
         </div>
 

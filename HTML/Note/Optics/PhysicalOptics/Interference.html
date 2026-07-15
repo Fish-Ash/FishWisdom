@@ -31,28 +31,28 @@
             <h3>干涉光光强</h3>
             <div class="Formula">
                 $$I = I_1 + I_2 + 2\sqrt{I_1I_2}\cos\theta\cos\phi$$
-                $$\phi = (\omega_1 - \omega_2)t - (\mathbf{k}_1 - \mathbf{k}_2)\mathbf{r} + (\phi_{01}-\phi_{02})$$
+                $$\phi = (\omega_1 - \omega_2)t - (\boldsymbol{k}_1 - \boldsymbol{k}_2)\boldsymbol{r} + (\phi_{01}-\phi_{02})$$
                 <p>\(I_1, I_2\)分别为两束光的光强，\(\theta\)为两束光的振动方向夹角，\(\phi\)为两束光的相位差.</p>
                 <p>\(I_{12} = \sqrt{I_1I_2}\cos\theta\cos\phi\)称为干涉项.</p>
                 <div class="Derivation">
                     <p>设两列单色平面线偏振光在空间P点相遇，其振动方向夹角为\(\theta\)：</p>
-                    $$\mathbf{E_1} = \mathbf{E_{01}}e^{-i(\omega_1 t - \mathbf{k_1}\mathbf{r} + \phi_{01})}$$
-                    $$\mathbf{E_2} = \mathbf{E_{02}}e^{-i(\omega_2 t - \mathbf{k_2}\mathbf{r} + \phi_{02})}$$
+                    $$\boldsymbol{E_1} = \boldsymbol{E_{01}}e^{-i(\omega_1 t - \boldsymbol{k_1}\boldsymbol{r} + \phi_{01})}$$
+                    $$\boldsymbol{E_2} = \boldsymbol{E_{02}}e^{-i(\omega_2 t - \boldsymbol{k_2}\boldsymbol{r} + \phi_{02})}$$
                     <img src="Img/E1E2.jpg">
-                    $$\mathbf{E_1} = \mathbf{i}E_1\cos\theta + \mathbf{j}E_1\sin\theta$$
-                    $$\mathbf{E_2} = \mathbf{i}E_2$$
+                    $$\boldsymbol{E_1} = \boldsymbol{i}E_1\cos\theta + \boldsymbol{j}E_1\sin\theta$$
+                    $$\boldsymbol{E_2} = \boldsymbol{i}E_2$$
                     $$\begin{align}
-                    I &= \mathbf{E}\cdot \mathbf{E}^*\\
-                      &= (\mathbf{E}_1 + \mathbf{E}_2)\cdot(\mathbf{E}_1  + \mathbf{E}_2)^*\\
-                      &= (\mathbf{E}_1 + \mathbf{E}_2)\cdot(\mathbf{E}^*_1  + \mathbf{E}^*_2)\\
-                      &= I_1 + \mathbf{E}_2\mathbf{E}^*_1 + \mathbf{E}_1\mathbf{E}^*_2 + I_2\\
-                      &= I_1 + I_2 + \mathbf{i}E_2(\mathbf{i}E^*_1\cos\theta + \mathbf{j}E^*_2\cos\theta) + (\mathbf{i}E_1\cos\theta + \mathbf{j}E_2\sin\theta)\mathbf{i}E^*_2\\
+                    I &= \boldsymbol{E}\cdot \boldsymbol{E}^*\\
+                      &= (\boldsymbol{E}_1 + \boldsymbol{E}_2)\cdot(\boldsymbol{E}_1  + \boldsymbol{E}_2)^*\\
+                      &= (\boldsymbol{E}_1 + \boldsymbol{E}_2)\cdot(\boldsymbol{E}^*_1  + \boldsymbol{E}^*_2)\\
+                      &= I_1 + \boldsymbol{E}_2\boldsymbol{E}^*_1 + \boldsymbol{E}_1\boldsymbol{E}^*_2 + I_2\\
+                      &= I_1 + I_2 + \boldsymbol{i}E_2(\boldsymbol{i}E^*_1\cos\theta + \boldsymbol{j}E^*_2\cos\theta) + (\boldsymbol{i}E_1\cos\theta + \boldsymbol{j}E_2\sin\theta)\boldsymbol{i}E^*_2\\
                       &= I_1 + I_2 + E_2E^*_1\cos\theta + E_1E^*_2\cos\theta\\
-                      &= I_1 + I_2 + E_{02}e^{-i(\omega_2t - \mathbf{k_2}\mathbf{r} + \phi_{02})}\cdot E_{01}e^{i(\omega_1t - \mathbf{k_1}\mathbf{r} + \phi_{01})}\cos\theta + E_{01}e^{-i(\omega_1t - \mathbf{k_1}\mathbf{r} + \phi_{01})}\cdot E_{02}e^{i(\omega_2t - \mathbf{k_2}\mathbf{r} + \phi_{02})}\cos\theta\\
-                      &= I_1 + I_2 + E_{01}E_{02}\cos\theta\{e^{i[(\omega_1 - \omega_2)t - (\mathbf{k_1} - \mathbf{k_2})\mathbf{r} + (\phi_{01}-\phi_{02})]} + e^{-i[(\omega_1 - \omega_2)t - (\mathbf{k_1} - \mathbf{k_2})\mathbf{r} + (\phi_{01}-\phi_{02})]}\}\\
+                      &= I_1 + I_2 + E_{02}e^{-i(\omega_2t - \boldsymbol{k_2}\boldsymbol{r} + \phi_{02})}\cdot E_{01}e^{i(\omega_1t - \boldsymbol{k_1}\boldsymbol{r} + \phi_{01})}\cos\theta + E_{01}e^{-i(\omega_1t - \boldsymbol{k_1}\boldsymbol{r} + \phi_{01})}\cdot E_{02}e^{i(\omega_2t - \boldsymbol{k_2}\boldsymbol{r} + \phi_{02})}\cos\theta\\
+                      &= I_1 + I_2 + E_{01}E_{02}\cos\theta\{e^{i[(\omega_1 - \omega_2)t - (\boldsymbol{k_1} - \boldsymbol{k_2})\boldsymbol{r} + (\phi_{01}-\phi_{02})]} + e^{-i[(\omega_1 - \omega_2)t - (\boldsymbol{k_1} - \boldsymbol{k_2})\boldsymbol{r} + (\phi_{01}-\phi_{02})]}\}\\
                       &= I_1 + I_2 + 2\sqrt{I_1I_2}\cos\theta\cos\phi
                     \end{align}$$
-                    $$\phi = (\omega_1 - \omega_2)t - (\mathbf{k_1} - \mathbf{k_2})\mathbf{r} + (\phi_{01}-\phi_{02})$$
+                    $$\phi = (\omega_1 - \omega_2)t - (\boldsymbol{k_1} - \boldsymbol{k_2})\boldsymbol{r} + (\phi_{01}-\phi_{02})$$
                 </div>
             </div>
 

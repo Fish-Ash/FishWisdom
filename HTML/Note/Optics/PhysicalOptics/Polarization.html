@@ -3,23 +3,44 @@
 <html lang = "zh-cn">
 
     <head>
-        <meta charset="utf-8">
-        <title>物理光学</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
     <body>
         <div class="header" id="PageHead">不惑</div>
-        <a class="BackToTop" href="#PageHead">Top</a>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
 
-
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
         <h1>光的偏振</h1>
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#Poincare">庞加莱球</a></li>
+            </ul>
+        </div>
 
         <h2>平面光波的偏振特性</h2>
 
@@ -28,6 +49,7 @@
         <div class="Card-Definition" id="Polarization">
             <b>光波的偏振特性</b>
             <p>光振动方向相对光传播方向不对称的性质.</p>
+            <p>偏振赋予光场矢量属性.</p>
         </div>
 
         <p>光波的偏振特性是横波区别于纵波的最明显标志.</p>
@@ -37,9 +59,9 @@
         </div>
 
         <p>设光波沿\(z\)方向传播，电场矢量为</p>
-        $$\mathbf{E} = \mathbf{E}_0 \cos(\omega t - kr + \phi_0)$$
+        $$\boldsymbol{E} = \boldsymbol{E}_0 \cos(\omega t - kr + \phi_0)$$
         <p>为表征光波的偏振特性，将其表示为沿\(x, y\)方向上振动的两个独立分量的线性组合</p>
-        $$\mathbf{E} = \mathbf{i}\mathbf{E}_x + \mathbf{j}\mathbf{E}_y$$
+        $$\boldsymbol{E} = \boldsymbol{i}\boldsymbol{E}_x + \boldsymbol{j}\boldsymbol{E}_y$$
         $$E_x = E_{0x}\cos(\omega t - kr + \phi_x) = E_{0x}e^{-i(\omega t - kr + \phi_x)}$$
         $$E_y = E_{0y}\cos(\omega t - kr + \phi_y) = E_{0y}e^{-i(\omega t - kr + \phi_y)}$$
 
@@ -59,78 +81,159 @@
         <div class="Card-Definition">
             <b>旋向</b>
             <p>迎着光传播方向看：</p>
-            <p>\(\mathbf{E}\)顺时针旋转，称为<b>右旋</b>偏振光.</p>
-            <p>\(\mathbf{E}\)逆时针旋转，称为<b>左旋</b>偏振光.</p>
+            <p>\(\boldsymbol{E}\)顺时针旋转，称为<b>右旋</b>偏振光.</p>
+            <p>\(\boldsymbol{E}\)逆时针旋转，称为<b>左旋</b>偏振光.</p>
         </div>
 
-        <b>线偏振光</b>
-        <p>条件：\(\phi = m\pi(m = 0, \pm 1, \pm 2, \cdots)\)</p>
-        <div class="Formula">
-            $$\frac{1}{E_{0x}}E_x \pm \frac{1}{E_{0y}}E_y = 0$$
-            <div class="Derivation">
-                $$\phi = m\pi(m = 0, \pm 1, \pm 2, \cdots) \Rightarrow \begin{cases}\sin \phi = 0\\ \cos\phi = \pm 1\end{cases}$$
-                $$(\frac{E_x}{E_{0x}})^2 + (\frac{E_y}{E_{0y}})^2 - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos \phi = \sin^2 \phi$$
-                $$(\frac{E_x}{E_{0x}})^2 \pm 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}}) + (\frac{E_y}{E_{0y}})^2 = 0$$
-                $$(\frac{E_x}{E_{0x}} \pm \frac{E_y}{E_{0y}})^2 = 0$$
-                $$\frac{1}{E_{0x}}E_x \pm \frac{1}{E_{0y}}E_y = 0$$                
-            </div>
-        </div>
-        $$\frac{E_y}{E_x} = \frac{E_{0y}}{E_{0x}}e^{-i\phi} = \frac{E_{0y}}{E_{0x}}e^{-im\pi}$$
+        <div class="Card-Analysis">
+            <h2>偏振态（state of polarization）在空间均匀分布的光束</h2>
+            <details>
+                <summary><h3>线偏振光</h3></summary>
 
-        <p>当\(m\)为偶数时，光场在\(Ⅰ,Ⅲ\)象限内振动.</p>
-        <p>当\(m\)为奇数时，光场在\(Ⅱ,Ⅳ\)象限内振动.</p>
-
-        <b>圆偏振光</b>
-        <p>条件：\(E_{0x} = E_{0y} = E'_0, \phi = m\pi/2(m = \pm 1, \pm 3, \pm 5\cdots)\)</p>
-        <div class="Formula">
-            $$E^2_x + E^2_y = E'^2_0$$
-            <div class="Derivation">
-                $$\phi = m\pi/2(m = \pm 1, \pm 3, \pm 5\cdots) Rightarrow \begin{cases}\sin \phi = \pm 1 \\ \cos\phi = 0\end{cases}$$
-                $$E_{0x} = E_{0y} = E'_0$$
-                $$(\frac{E_x}{E_{0x}})^2 + (\frac{E_y}{E_{0y}})^2 - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos \phi = \sin^2 \phi$$
-                $$(\frac{E_x}{E'_0})^2 + (\frac{E_y}{E'_0})^2 = 1$$
-                $$E^2_x + E^2_y = E'^2_0$$                
-            </div>
-        </div>
-        $$\frac{E_y}{E_x} = \frac{E_{0y}}{E_{0x}}e^{-i\phi} = e^{\mp i\frac{\pi}{2}} = \mp i$$
-        <div class="Formula">
-            <p>\(\phi = \frac{\pi}{2}\)时，为右旋偏振光.</p>
-            <div class="Derivation">
-                <p>取：</p>
-                $$\begin{cases}
-                x = \cos\theta \gt 0\\
-                y = \cos(\theta + \phi) \gt 0 
-                \end{cases}$$
-                <p>当\(\phi = \frac{\pi}{2} + 2k\pi,~k = \pm1,\pm2,\cdots\)时，令：</p>
-                $$\theta \in (-\frac{\pi}{2},0)$$
-                $$\therefore \theta + \phi \in (0,\frac{\pi}{2})$$
-                <p>故：</p>
-                $$\begin{cases}
-                x' = \cos(\theta + \omega\Delta t) \gt x\\
-                y' = \cos(\theta + \phi + \omega\Delta t) \lt y
-                \end{cases}$$
-            </div>
-        </div>
-        <p>\(\phi=-\frac{\pi}{2}\)时，为左旋偏振光.</p>
-
-        <b>椭圆偏振光</b>
-        <p>\(2m\pi \lt \phi \lt (2m+1)\pi\)：右旋椭圆偏振光.</p>
-        <p>\((2m-1)\pi \lt \phi \lt 2m\pi\)：左旋椭圆偏振光.</p>
+                <p>条件：\(\phi = m\pi(m = 0, \pm 1, \pm 2, \cdots)\)</p>
+                <div class="Formula">
+                    $$\frac{1}{E_{0x}}E_x \pm \frac{1}{E_{0y}}E_y = 0$$
+                    <div class="Derivation">
+                        $$\phi = m\pi(m = 0, \pm 1, \pm 2, \cdots) \Rightarrow \begin{cases}\sin \phi = 0\\ \cos\phi = \pm 1\end{cases}$$
+                        $$(\frac{E_x}{E_{0x}})^2 + (\frac{E_y}{E_{0y}})^2 - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos \phi = \sin^2 \phi$$
+                        $$(\frac{E_x}{E_{0x}})^2 \pm 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}}) + (\frac{E_y}{E_{0y}})^2 = 0$$
+                        $$(\frac{E_x}{E_{0x}} \pm \frac{E_y}{E_{0y}})^2 = 0$$
+                        $$\frac{1}{E_{0x}}E_x \pm \frac{1}{E_{0y}}E_y = 0$$                
+                    </div>
+                </div>
+                $$\frac{E_y}{E_x} = \frac{E_{0y}}{E_{0x}}e^{-i\phi} = \frac{E_{0y}}{E_{0x}}e^{-im\pi}$$
         
+                <p>当\(m\)为偶数时，光场在\(Ⅰ,Ⅲ\)象限内振动.</p>
+                <p>当\(m\)为奇数时，光场在\(Ⅱ,Ⅳ\)象限内振动.</p>
+            </details>
 
-        <h3>琼斯矩阵法表示偏振态</h3>
-        <b>琼斯矩阵</b>
-        $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}E_{0x}e^{-i\phi_x}\\E_{0y}e^{-i\phi_y}\end{matrix}\right]$$
-
-        <b>\(Ⅰ，Ⅲ\)象限内的线偏振光</b>
-        <p>此时\(\phi_x = \phi_y = \phi_0\)</p>
-        $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}E_{0x}\\E_{0y}\end{matrix}\right]e^{-i\phi_0}$$
-
-        <b>右旋、左旋圆偏振光</b>
-        <p>此时\(\phi_y - \phi_x = \pm \frac{\pi}{2}, E_{0x} = E_{0y} = E_0\)</p>
-        $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}1\\\mp i\end{matrix}\right]E_0e^{-i\phi_x}$$
+            <details>
+                <summary><h3>圆偏振光</h3></summary>
+                <p>条件：\(E_{0x} = E_{0y} = E'_0, \phi = m\pi/2(m = \pm 1, \pm 3, \pm 5\cdots)\)</p>
+                <div class="Formula">
+                    $$E^2_x + E^2_y = E'^2_0$$
+                    <div class="Derivation">
+                        $$\phi = m\pi/2(m = \pm 1, \pm 3, \pm 5\cdots) Rightarrow \begin{cases}\sin \phi = \pm 1 \\ \cos\phi = 0\end{cases}$$
+                        $$E_{0x} = E_{0y} = E'_0$$
+                        $$(\frac{E_x}{E_{0x}})^2 + (\frac{E_y}{E_{0y}})^2 - 2(\frac{E_x}{E_{0x}})(\frac{E_y}{E_{0y}})\cos \phi = \sin^2 \phi$$
+                        $$(\frac{E_x}{E'_0})^2 + (\frac{E_y}{E'_0})^2 = 1$$
+                        $$E^2_x + E^2_y = E'^2_0$$                
+                    </div>
+                </div>
+                $$\frac{E_y}{E_x} = \frac{E_{0y}}{E_{0x}}e^{-i\phi} = e^{\mp i\frac{\pi}{2}} = \mp i$$
+                <div class="Formula">
+                    <p>\(\phi = \frac{\pi}{2}\)时，为右旋偏振光.</p>
+                    <div class="Derivation">
+                        <p>取：</p>
+                        $$\begin{cases}
+                        x = \cos\theta \gt 0\\
+                        y = \cos(\theta + \phi) \gt 0 
+                        \end{cases}$$
+                        <p>当\(\phi = \frac{\pi}{2} + 2k\pi,~k = \pm1,\pm2,\cdots\)时，令：</p>
+                        $$\theta \in (-\frac{\pi}{2},0)$$
+                        $$\therefore \theta + \phi \in (0,\frac{\pi}{2})$$
+                        <p>故：</p>
+                        $$\begin{cases}
+                        x' = \cos(\theta + \omega\Delta t) \gt x\\
+                        y' = \cos(\theta + \phi + \omega\Delta t) \lt y
+                        \end{cases}$$
+                    </div>
+                </div>
+                <p>\(\phi=-\frac{\pi}{2}\)时，为左旋偏振光.</p>
+            </details>
+    
+            <details>
+                <summary><h3>椭圆偏振光</h3></summary>
+                <p>\(2m\pi \lt \phi \lt (2m+1)\pi\)：右旋椭圆偏振光.</p>
+                <p>\((2m-1)\pi \lt \phi \lt 2m\pi\)：左旋椭圆偏振光.</p>
+            </details>
+        </div>
         
+        <div class="Card-Analysis">
+            <h2>Jones矩阵法</h2>
+            <p>一种用于描述光束偏振态的方法.</p>
+            $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}E_{0x}e^{-i\phi_x}\\E_{0y}e^{-i\phi_y}\end{matrix}\right]$$
+            <p>这个矩阵称为<b>Jones矢量</b>.</p>
 
+
+    
+            <b>\(Ⅰ，Ⅲ\)象限内的线偏振光</b>
+            <p>此时\(\phi_x = \phi_y = \phi_0\)</p>
+            $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}E_{0x}\\E_{0y}\end{matrix}\right]e^{-i\phi_0}$$
+    
+            <b>右旋、左旋圆偏振光</b>
+            <p>此时\(\phi_y - \phi_x = \pm \frac{\pi}{2}, E_{0x} = E_{0y} = E_0\)</p>
+            $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}1\\\mp i\end{matrix}\right]E_0e^{-i\phi_x}$$
+
+            <h3>Jones矩阵用途</h3>
+            <b>计算二偏振光的叠加</b>
+            $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}E_{1x}\\E_{1y}\end{matrix}\right] + \left[\begin{matrix}E_{2x}\\E_{2y}\end{matrix}\right] = \left[\begin{matrix}E_{1x} + E_{2x}\\E_{1y} + E_{2y}\end{matrix}\right]$$
+
+            <b>计算偏振光\(E_i\)经过偏振元件后的偏振态</b>
+            $$\left[\begin{matrix}E_x\\E_y\end{matrix}\right] = \left[\begin{matrix}J_{11} & J_{12}\\J_{21} & J_{22}\end{matrix}\right]\left[\begin{matrix}E_{ix}\\E_{iy}\end{matrix}\right]$$
+            
+
+            <p>[补充]Jones矩阵法由Jones于1941年提出.</p>
+        </div>
+
+        <div class="Card-Analysis" id="Poincare">
+            <h2>庞加莱球</h2>
+            <p>任一椭圆偏振光仅需两个方位角就可完全决定其偏振态，而两个方位角可以用球面上的经度与纬度表示，所以球面上的一个点就可以代表一个偏振态，球上所有点的组合则代表了所有可能的偏振态.</p>
+            <img src="Img/Poincare.png" width="300">
+
+            <p>\(\phi\)为椭圆偏振光的椭圆长轴与x轴的夹角.</p>
+            <p>\(\tan\chi = \pm b/a\)，\(2a, 2b\)分别为椭圆的长轴与短轴.</p>
+            <p>庞加莱球有如下结论：</p>
+            <p>1、赤道上（\(\chi = 0\)）任一点代表不同振动方向的线偏振光.</p>
+            <ul>
+                <li>x轴正向上的点（\(\phi = 0\)）表示水平偏振.</li>
+                <li>x轴负向上的点（\(\phi = \pi/2\)）表示垂直偏振.</li>
+            </ul>
+            <p>2、球的北极（\(\chi = \pi/4\)）表示右旋圆偏振；南极（\(\chi = -\pi/4\)）表示左旋圆偏振.</p>
+            <p>3、北半球上每个点表示右旋椭圆偏振；南半球上每个点表示左旋椭圆偏振.</p>
+            <p>椭圆相应的方位角与椭圆度分别为该点经度与纬度值的一，因此\(\phi \in \mathbb{C}\)的所有点表示所有方位角相同而椭圆度不同的椭圆偏振；\(\chi\in\mathbb{C}\)的所有点表示所有椭圆度相同而方位角不同的椭圆偏振.</p>
+
+            <h3>庞加莱球与斯托克斯矢量的关系</h3>
+            <p>对于一完全偏振光，斯托克斯四参量为：</p>
+            $$I = E_x^2 + E_y^2$$
+            $$M = E_x^2 - E_y^2$$
+            $$C = 2E_xE_y\cos\delta$$
+            $$S = 2E_xE_y\sin\delta$$
+            <ul>
+                <li>\(\delta\)：\(E_x, E_y\)间的相位差</li>
+            </ul>
+            <p>由于为完全偏振光，因此有：</p>
+            $$I^2 = M^2 + C^2 + S^2$$
+            <p>进而：</p>
+            $$M = I\cos(2\chi)\cos(2\phi)$$
+            $$C = I\cos(2\chi)\sin(2\phi)$$
+            $$S = I\sin(2\chi)$$
+            <p>即为庞加莱球上任一点P的直角坐标分量..</p>
+
+            <p>庞加莱球和斯托克斯矢量都能表示部分偏振光及完全非偏振光.</p>
+            <p>对于部分偏振光，有：</p>
+            $$0\lt M^2 + C^2 + S^2 \lt I^2$$
+            <p>定义偏振光的偏振度P为：</p>
+            $$P = \frac{\sqrt{M^2 + C^2 + S^2}}{I}$$
+            <p>同时，部分偏振光可以理解为完全偏振光+自然光：</p>
+            $$\left[\begin{matrix}I\\M\\C\\S\end{matrix}\right] = \left[\begin{matrix}I - (M^2 + C^2 + S^2)^{1/2}\\0\\0\\0\end{matrix}\right] + \left[\begin{matrix}(M^2 + C^2 + S^2)^{1/2}\\M\\C\\S\end{matrix}\right]$$
+            $$\left[\begin{matrix}(M^2 + C^2 + S^2)^{1/2}\\M\\C\\S\end{matrix}\right] = (M^2 + C^2 + S^2)^{1/2}\left[\begin{matrix}1\\\cos(2\chi)\cos(2\phi)\\\cos(2\chi)\sin(2\phi)\\\sin(2\chi)\end{matrix}\right]$$
+            <p>故部分偏振光的斯托克斯矢量为：</p>
+            $$\left[\begin{matrix}I\\M\\C\\S\end{matrix}\right] = I\left[\begin{matrix}1\\P\cos(2\chi)\cos(2\phi)\\P\cos(2\chi)\sin(2\phi)\\P\sin(2\chi)\end{matrix}\right]$$
+            <p>故：</p>
+            <ul>
+                <li>庞加莱球球心处（\(P=0\)）：完全非偏振光</li>
+                <li>庞加莱球球面上（\(P=1\)）：完全偏振光</li>
+                <li>庞加莱球球面内（\(0\lt P\lt 1\)）：部分偏振光</li>
+                <li>庞加莱球外（\(P>1\)）：无物理意义</li>
+            </ul>
+            <p>[补充]庞加莱球由庞加莱于1892年提出.</p>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
         <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
+
 </html>

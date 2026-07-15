@@ -3,22 +3,46 @@
 <html lang = "zh-cn">
 
     <head>
-        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>非线性光学</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
     <body>
-        <div class="header">不惑</div>
-
-        
+        <div class="header" id="PageHead">不惑</div>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
 
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>第四章 二阶非线性光学效应</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#SHG">二次谐波产生（SHG）</a></li>
+                <li><a href="#PocklerEffect">线性电光效应</a></li>
+            </ul>
+        </div>
 
         <h1>第一章 非线性介质响应特性的经典描述</h1>
 
@@ -38,36 +62,37 @@
                 <p>这里是介质被光电场极化.</p>
             </div>
             <p>一般情况下，<a href="../Electromagnetism/Chapter1.html#Polarization" class="goto">极化强度</a>包含线性极化强度与非线性极化强度.</p>
-            $$\mathbf{P} = \mathbf{P}_{L} + \mathbf{P}_{NL}$$
+            $$\boldsymbol{P} = \boldsymbol{P}_{L} + \boldsymbol{P}_{NL}$$
     
-            <p>光电场强度很弱时：可以忽略\(\mathbf{P}_{NL}\)，为线性光学问题，此时：</p>
-            $$\mathbf{P} = \mathbf{P}_{L} = \mathbf{P}^{(1)} = \epsilon_0\chi^{(1)}\mathbf{E}$$
+            <p>光电场强度很弱时：可以忽略\(\boldsymbol{P}_{NL}\)，为线性光学问题，此时：</p>
+            $$\boldsymbol{P} = \boldsymbol{P}_{L} = \boldsymbol{P}^{(1)} = \epsilon_0\chi^{(1)}\boldsymbol{E}$$
             <ul>
                 <li>\(\epsilon_0\)：真空介电常数</li>
                 <li>\(\chi^{(1)}\)：线性极化率</li>
             </ul>
 
 
-            <p>光电场强度较强时：不可忽略\(\mathbf{P}_{NL}\)，将其表示为级数形式，有：</p>
+            <p>光电场强度较强时：不可忽略\(\boldsymbol{P}_{NL}\)，将其表示为级数形式，有：</p>
             $$\begin{align}
-            &\mathbf{P}_{L} = \mathbf{P}^{(1)}\\
-            &\mathbf{P}_{NL} = \mathbf{P}^{(2)} + \mathbf{P}^{(3)} + \cdots + \mathbf{P}^{(r)} + \cdots
+            &\boldsymbol{P}_{L} = \boldsymbol{P}^{(1)}\\
+            &\boldsymbol{P}_{NL} = \boldsymbol{P}^{(2)} + \boldsymbol{P}^{(3)} + \cdots + \boldsymbol{P}^{(r)} + \cdots
             \end{align}$$
             <div class="Card-AI">
                 <p>级数形式即为：\(a_1 + a_2 + \cdots + a_r + \cdots\)或\(a_1 + a_2 + a_3\)的形式</p>
             </div>
             <ul>
-                <li>\(\mathbf{P}^{(r)}\)：\(r\)阶非线性极化强度，与光电场\(\mathbf{E}\)的\(r\)次方有关的非线性极化强度.</li>
+                <li>\(\boldsymbol{P}^{(r)}\)：\(r\)阶非线性极化强度，与光电场\(\boldsymbol{E}\)的\(r\)次方有关的非线性极化强度.</li>
             </ul>
 
             <p>在无损耗（lossless）、无色散（dispersionless）介质中：</p>
             $$\begin{align}
-            \mathbf{P} &= \mathbf{P}^{(1)} + \mathbf{P}^{(2)} + \mathbf{P}^{(3)} + \cdots + \mathbf{P}^{(r)} + \cdots\\
-                       &= \epsilon_0\chi^{(1)}\mathbf{E} + \epsilon_0\chi^{(2)}\mathbf{E}^2 + \epsilon_0\chi^{(3)}\mathbf{E}^3 + \cdots + \epsilon_0\chi^{(r)}\mathbf{E}^r + \cdots
+            \boldsymbol{P} &= \boldsymbol{P}^{(1)} + \boldsymbol{P}^{(2)} + \boldsymbol{P}^{(3)} + \cdots + \boldsymbol{P}^{(r)} + \cdots\\
+                       &= \epsilon_0\chi^{(1)}\boldsymbol{E} + \epsilon_0\chi^{(2)}\boldsymbol{E}^2 + \epsilon_0\chi^{(3)}\boldsymbol{E}^3 + \cdots + \epsilon_0\chi^{(r)}\boldsymbol{E}^r + \cdots
             \end{align}$$
 
             <p>[注]\(r=1\)时代表线性.</p>
             <p>[注]\(\tilde{P}^{(r)}(t) = \epsilon_0\chi^{(r)}\tilde{E}^r(t)\).</p>
+            <p>[注]这里只考虑电偶极矩近似，完全忽略电四极矩及多极矩的影响.</p>
             <p>[注]光电场过强时，上述非极化强度的级数形式将不再适用.</p>
 
 
@@ -75,7 +100,7 @@
             <div class="Card-AI">
                 <p>\(\chi\)不一定是常数，但是我们通常将其视作常数张量.</p>
                 <p>\(\chi^{(r)}\)是\(r\)阶极化率张量.</p>
-                $$\mathbf{P}^{(r)} \propto \mathbf{E}^r$$
+                $$\boldsymbol{P}^{(r)} \propto \boldsymbol{E}^r$$
             </div>
     
             <div class="Card-Question">
@@ -84,14 +109,14 @@
 
             <p>随时间变化的极化可以作为电磁场新分量的源.</p>
             <p>非线性光学介质中的波动方程为：</p>
-            $$\nabla^2\mathbf{E} - \frac{n^2}{c^2}\frac{\partial^2\mathbf{E}}{\partial t^2} = \frac{1}{\epsilon_0 c^2}\frac{\partial^2\mathbf{P}_{NL}}{\partial t^2}$$
+            $$\nabla^2\boldsymbol{E} - \frac{n^2}{c^2}\frac{\partial^2\boldsymbol{E}}{\partial t^2} = \frac{1}{\epsilon_0 c^2}\frac{\partial^2\boldsymbol{P}_{NL}}{\partial t^2}$$
             <ul>
                 <li>\(n\)：线性折射率</li>
                 <li>\(c\)：真空中的光速</li>
             </ul>
             <div class="Card-AI">
-                <p>这个式子说明\(\mathbf{P}_{NL}\)是源项，可能会产生哪些频率的光，由其决定.</p>
-                <p>将\(\mathbf{P}_{NL}(t)\)按时间谐波展开后，其中每一个与\(e^{-i\omega t}\)成正比的分量，都表示可能产生一个频率为\(\omega\)的光.</p>
+                <p>这个式子说明\(\boldsymbol{P}_{NL}\)是源项，可能会产生哪些频率的光，由其决定.</p>
+                <p>将\(\boldsymbol{P}_{NL}(t)\)按时间谐波展开后，其中每一个与\(e^{-i\omega t}\)成正比的分量，都表示可能产生一个频率为\(\omega\)的光.</p>
             </div>
             <p>这个方程与电磁学中的Larmor理论一致，描述了加速运动的电荷会产生电磁辐射.</p>
         </div>
@@ -101,37 +126,37 @@
         <div class="Card-Analysis" id="Flag1">
             <h2>因果性原理</h2>
             <h3>线性响应函数</h3>
-            <p>光在介质中传播时，\(t\)时刻介质所感应的线性极化强度\(\mathbf{P}(t)\)不仅与\(t\)时刻的光电场\(\mathbf{E}(t)\)有关，还与\(t\)时刻前所有的光电场有关.</p>
+            <p>光在介质中传播时，\(t\)时刻介质所感应的线性极化强度\(\boldsymbol{P}(t)\)不仅与\(t\)时刻的光电场\(\boldsymbol{E}(t)\)有关，还与\(t\)时刻前所有的光电场有关.</p>
             <div class="Formula">
-                $$\mathbf{P}(t) = \int_{-\infty}^t \epsilon_0\mathbf{R}(t-\tau)\mathbf{E}(\tau)\mathrm{d}\tau$$
+                $$\boldsymbol{P}(t) = \int_{-\infty}^t \epsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau$$
                 <div class="Derivation">
-                    <p>设时刻\(t\)前任一时刻\(\tau\)的光电场强度为\(\mathbf{E}(\tau)\)，它对\(t\)时刻时的极化强度的贡献为\(\mathrm{d}\mathbf{P}(t)\)，且：</p>
-                    $$\mathrm{d}\mathbf{P}(t) = \epsilon_0\mathbf{R}(t-\tau)\mathbf{E}(\tau)\mathrm{d}\tau$$
+                    <p>设时刻\(t\)前任一时刻\(\tau\)的光电场强度为\(\boldsymbol{E}(\tau)\)，它对\(t\)时刻时的极化强度的贡献为\(\mathrm{d}\boldsymbol{P}(t)\)，且：</p>
+                    $$\mathrm{d}\boldsymbol{P}(t) = \epsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau$$
                     $$\begin{align}\therefore 
-                    \mathbf{P}(t) &= \int_{-\infty}^t \mathrm{d}\mathbf{P}\\
-                                  &= \int_{-\infty}^t \epsilon_0\mathbf{R}(t-\tau)\mathbf{E}(\tau)\mathrm{d}\tau
+                    \boldsymbol{P}(t) &= \int_{-\infty}^t \mathrm{d}\boldsymbol{P}\\
+                                  &= \int_{-\infty}^t \epsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau
                     \end{align}$$
                     $$令\tau' = t - \tau \Rightarrow \tau = t - \tau'$$
                     $$\tau = -\infty时\rightarrow \tau' = +\infty$$
                     $$\tau = t时\rightarrow \tau'=0$$
                     $$\begin{align}\therefore
-                    \mathbf{P}(t) &= \int_{+\infty}^0\epsilon_0\mathbf{R}(\tau')\mathbf{E}(t-\tau')\mathrm{d}(t-\tau')\\
-                                  &= \int_0^{+\infty}\epsilon_0\mathbf{R}(\tau)\mathbf{E}(t-\tau)\mathrm{d}\mathbf{\tau}
+                    \boldsymbol{P}(t) &= \int_{+\infty}^0\epsilon_0\boldsymbol{R}(\tau')\boldsymbol{E}(t-\tau')\mathrm{d}(t-\tau')\\
+                                  &= \int_0^{+\infty}\epsilon_0\boldsymbol{R}(\tau)\boldsymbol{E}(t-\tau)\mathrm{d}\boldsymbol{\tau}
                     \end{align}$$
                 </div>
             </div>
             <ul>
-                <li>\(\mathbf{R}(t-\tau)\)：介质的线性响应函数，是一个二阶张量.</li>
+                <li>\(\boldsymbol{R}(t-\tau)\)：介质的线性响应函数，是一个二阶张量.</li>
             </ul>
 
-            <p>此外，\(t'\gt t\)时的光电场\(\mathbf{E}(t')\)对\(\mathbf{P}(t)\)是没有贡献的，即：</p>
-            $$\mathbf{R}(t-\tau) = 0,~\tau\gt t$$
+            <p>此外，\(t'\gt t\)时的光电场\(\boldsymbol{E}(t')\)对\(\boldsymbol{P}(t)\)是没有贡献的，即：</p>
+            $$\boldsymbol{R}(t-\tau) = 0,~\tau\gt t$$
 
             <b>响应函数所满足的真实性条件</b>
-            <p>由于\(\mathbf{E}(t)\)与\(\mathbf{P}(t)\)均为实函数，故\(\mathbf{R}(\tau)\)也必须是实函数，才能保证上式成立.</p>
+            <p>由于\(\boldsymbol{E}(t)\)与\(\boldsymbol{P}(t)\)均为实函数，故\(\boldsymbol{R}(\tau)\)也必须是实函数，才能保证上式成立.</p>
 
             <div class="Card-AI">
-                <p>积分也是线性运算，所以线性响应函数体现了\(\mathbf{P}\)与\(\mathbf{E}\)之间的线性关系.</p>
+                <p>积分也是线性运算，所以线性响应函数体现了\(\boldsymbol{P}\)与\(\boldsymbol{E}\)之间的线性关系.</p>
             </div>
 
             <h3>非线性响应函数</h3>
@@ -145,7 +170,7 @@
         <div class="Card-Definition">
             <b>线性极化率</b>
             $$\begin{align}
-            \chi^{(1)}(\omega) &= \int_{-\infty}^{+\infty}\mathbf{R}^{(1)}(\tau)e^{i\omega\tau}\mathrm{d}\tau\\
+            \chi^{(1)}(\omega) &= \int_{-\infty}^{+\infty}\boldsymbol{R}^{(1)}(\tau)e^{i\omega\tau}\mathrm{d}\tau\\
                                &= \chi'(\omega) + i\chi''(\omega)
             \end{align}$$
         </div>
@@ -186,7 +211,7 @@
         </div>
         <p>设光电场包含\(x\)个频率，则：</p>
         $$\omega_m, \omega_n \in \{\pm\omega_1, \pm\omega_2, \cdots, \pm\omega_x\}$$
-        <p>即\(\mathbf{P}^{(2)}\)的展开式中存在\(x^2\)项.</p>
+        <p>即\(\boldsymbol{P}^{(2)}\)的展开式中存在\(x^2\)项.</p>
 
         <div class="Card-AI">
             <p>\(-\omega\)是为了描述实际电场引入的分量.</p>
@@ -197,9 +222,9 @@
             <h2>色散介质中的极化率</h2>
             <p>当材料具有色散或损耗时，非线性极化率是一个复数量，它将电场与极化强度的复振幅联系起来.</p>
             <p>将电场矢量表示为若干频率分量的离散和，即：</p>
-            $$\tilde{\mathbf{E}}(\mathbf{r}, t) = \sum_n'\tilde{\mathbf{E}}_n(\mathbf{r}, t)$$
+            $$\tilde{\boldsymbol{E}}(\boldsymbol{r}, t) = \sum_n'\tilde{\boldsymbol{E}}_n(\boldsymbol{r}, t)$$
             <p>其中：</p>
-            $$\tilde{\mathbf{E}}_n(\mathbf{r}, t) = \mathbf{E}_n(\mathbf{r})e^{-i\omega_n t} + c.c.$$
+            $$\tilde{\boldsymbol{E}}_n(\boldsymbol{r}, t) = \boldsymbol{E}_n(\boldsymbol{r})e^{-i\omega_n t} + c.c.$$
 
             $$P_i(\omega_n+\omega_m) = \epsilon_0\sum_{jk}\sum_{(nm)}\chi_{ijk}^{(2)}(\omega_n+\omega_m, \omega_m, \omega_n)E_j(\omega_n)E_k(\omega_m)$$
         </div>
@@ -213,16 +238,67 @@
             <p>类似的，对于二次谐波产生，有：</p>
             $$P(2\omega) = 2\epsilon_0 d_{eff}E^2(\omega)$$
             <p>其中：</p>
-            $$E(\omega) = |\mathbf{E}(\omega)|$$
-            $$P(\omega) = |\mathbf{P}(\omega)|$$
+            $$E(\omega) = |\boldsymbol{E}(\omega)|$$
+            $$P(\omega) = |\boldsymbol{P}(\omega)|$$
         </div>
 
+        <div class="Card-Analysis">
+            <h2>非线性极化强度表示方法</h2>
+            $$\chi_{\mu\alpha_1\alpha_2\cdots\alpha_r}^{(r)}(\omega_1, \omega_2, \cdots, \omega_r) = \chi_{\mu\alpha_1\alpha_2\cdots\alpha_r}^{(r)}$$
+            <p>其中，\(\alpha_i\)与\(\omega_i\)一一对应，表示频率为\(\omega_i\)、振动方向为\(\alpha_i\)的光电场分量参与非线性作用；\(\mu\)表示最终产生极化强度的分量方向为\(\mu\).</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>极化强度表示式</h2>
+            $$\boldsymbol{P}^{(1)} = \sum_n\epsilon_0\boldsymbol{\chi}^{(1)}(\omega_n)\cdot \boldsymbol{E}(\omega_n)e^{-i\omega_nt}$$
+            $$\boldsymbol{P}^{(2)} = \sum_{m,n}\epsilon_0\boldsymbol{\chi}^{(2)}(\omega_m, \omega_n)\cdot \boldsymbol{E}(\omega_m)\boldsymbol{E}(\omega_n)e^{-i(\omega_m + \omega_n)t}$$
+            $$\boldsymbol{P}^{(3)} = \sum_{m,n,l}\epsilon_0\boldsymbol{\chi}^{(3)}(\omega_m, \omega_n, \omega_l)\cdot \boldsymbol{E}(\omega_m)\boldsymbol{E}(\omega_n)\boldsymbol{E}(\omega_l)e^{-i(\omega_m + \omega_n + \omega_l)t}$$
+            <div class="Card-AI">
+                <p>\(\boldsymbol{P}^{(r)}\)均为一阶张量，也就是矢量.</p>
+                <p>\(\cdot, :, \vdots\)为缩并符号，分别表示为：</p>
+                <p>一重缩并：</p>
+                $$P_i = \chi\cdot E = \sum_{j} \chi_{ij} E_i$$
+                <p>二重缩并：</p>
+                $$P_i = \chi : EE = \sum_{j,k} \chi_{ijk} E_jE_k$$
+                <p>三重缩并：</p>
+                $$P_i = \chi \vdots EEE = \sum_{j,k,l} \chi_{ijkl} E_jE_kE_l$$
+            </div>
+            <p>[注]式中的\(m,n,l\)包含所有的正值与负值.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>一维振子的线性响应</h2>
+            <p>一维振子的线性与非线性响应可以根据牛顿定律确定.</p>
+            $$F(\omega)  = \frac{1}{\omega_0^2 - \omega^2 - 2ih\omega}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>一维振子的非线性响应</h2>
+            <p>为描述非线性光学现象，必须考虑振子的非线性响应.</p>
+            <p>若振子恢复力中存在小的非简谐项，在考虑到三次项时，非简谐力为：</p>
+            $$-m\omega_0^2r + mAr^2 + mBr^3$$
+            <ul>
+                <li>\(A,B\)：表示非简谐效应的参数</li>
+            </ul>
+            <div class="Card-AI">
+                <p>简谐力，又叫线性回复力，是一种大小与位移成正比，方向总是指向平衡位置的力.</p>
+                $$F = -kx$$
+                <p>上式中的第一项算简谐力，而整体不是简谐力.</p>
+            </div>
+            <p>此时，振子的运动方程为：</p>
+            $$\frac{\mathrm{d}^2r}{\mathrm{d}t^2} + 2h\frac{\mathrm{d}r}{\mathrm{d}t} + \omega_0^2r - Ar^2 - Br^3 = -\frac{e}{m}E$$
+            <p id="formula1">一维振子的二阶非线性极化率表示式</p>
+            $$\chi^2(\omega_1, \omega_2) = -A\frac{ne^3}{\epsilon_0m^2}F(\omega_1 + \omega_2)F(\omega_1)F(\omega_2)$$
+            <div class="Card-Question">
+                <p>1、非简谐力的来历</p>
+                <p>2、振子运动方程的来历</p>
+            </div>
+        </div>
         
 
+        <div id="PageEnd"></div>
 
-
-
-
+        <script src="../../../../JavaScript/MenuButton.js"></script>
         <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 

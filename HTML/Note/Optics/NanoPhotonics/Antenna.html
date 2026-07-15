@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>微纳光子学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>光学天线</h1>
+        
+        <p>与无线电和微波天线类似，微纳光子器件的目的之一是使得能量在自由传播辐射场与局域能量之间实现高效的转换，因此也称为光学天线（optical antenna）.</p>
+
+        <div class=Card-Analysis>
+            <h2>光学天线的发展历史</h2>
+            <p>与传统天线类似，光学天线的设计目标是优化局域源或接收体与自由辐射场间的能量传递.</p>
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>光学天线的物理特性</h2>
+            <p>光学天线能够增强辐射体至接收体的传输效率.</p>
+            <p>这种增强是通过增加辐射体所释放的辐射总量实现的.</p>
+            <div class="Card-AI">
+                <p>天线也会反过来影响辐射体.</p>
+            </div>
+            <div class="Card-Formula">
+                <b>天线效率</b>
+                $$\epsilon_{rad} = \frac{P_{rad}}{P} = \frac{P_{rad}}{P_{rad}+P_{loss}}$$
+                <ul>
+                    <li>\(P\)：天线耗散的总功率</li>
+                    <li>\(P_{rad}\)：辐射功率</li>
+                    <li>\(P_{loss}\)：其他方式损耗的功率（如天线吸收）</li>
+                </ul>
+            </div>
+        </div>
+        
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

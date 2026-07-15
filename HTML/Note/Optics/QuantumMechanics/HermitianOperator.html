@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>量子力学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>Hermitian算符</h1>
+
+        <div class="Card-Analysis">
+            <h2>Hermitian算符</h2>
+            <p>一个可观测量\(Q(x,p)\)的期望可以用内积符号简洁表示：</p>
+            $$\langle Q\rangle = \int\psi^*\hat Q\psi\mathrm{d}x = \langle\psi\lvert\hat{Q}\psi\rangle,\quad Q\in\mathbb{R}\Rightarrow \langle Q\rangle\in\mathbb{R}$$
+    
+            <b>性质</b>
+            <div class="Formula">
+                $$\langle\psi\lvert\hat{Q}\psi\rangle = \langle\hat{Q}\psi\lvert\psi\rangle$$
+                <div class="Derivation">
+                    $$\because \langle Q\rangle \in \mathbb{R}$$
+                    $$\therefore \langle Q\rangle = \langle Q\rangle ^*$$
+                    $$\therefore \langle\psi\lvert\hat{Q}\psi\rangle = \langle\psi\lvert\hat{Q}\psi\rangle ^*$$
+                    $$\because \langle g\lvert f\rangle = \langle f\lvert g\rangle ^*$$
+                    $$\therefore \langle\psi\lvert\hat{Q}\psi\rangle = \langle\psi\lvert\hat{Q}\psi\rangle ^* = \langle\hat{Q}\psi\lvert\psi\rangle$$
+                </div>
+            </div>
+
+            
+            <p>上式对任意波函数成立，因此表示可观测量的算符具有特殊的性质：</p>
+            $$\langle f\lvert\hat{Q}f\rangle = \langle\hat{Q}f\lvert f\rangle$$
+            <p>对任意\(f(x)\)成立.</p>
+
+            <p>[延伸]</p>
+            <div class="Formula">
+                $$\langle f\lvert\hat{Q}g\rangle = \langle\hat{Q}f\lvert g\rangle$$
+                <p>对任意\(f(x)\)与\(g(x)\)成立.</p>
+            </div>
+
+
+            <p>Hermitian算符指满足上述条件的\(\hat Q\).</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>定值态（determinate State）</h2>
+
+            <b>量子力学中的不确定性</b>
+            <p>当对全同体系组成的系综测量一个可观测量Q，每个体系都处于相同的状态\(\Psi\)，每次测量并不能得到相同的结果.</p>
+
+            <div class="Card-AI">
+                <p>“全同体系”通常指由全同粒子组成的量子系统，也就是这些粒子具有完全相同的内禀属性，例如质量、电荷和自旋，并且在量子力学中原则上不可相互区分.</p>
+                <p>具有这样性质的量子系统在宏观体系上不一定是完全相同的.</p>
+            </div>
+
+            <div class=Card-Definition>
+                <b>可观测量Q的定值态</b>
+                <p>可以使每次观测Q都得到相同值q的态.</p>
+            </div>
+
+            <div class="Card-Example">
+                <p>Hamiltonian的定态是定值态：</p>
+                <p>测量一个粒子处于定态\(\Psi_n\)时的总能量，测得值总是\(E_n\)</p>
+            </div>
+
+            <p>定值态下\(Q\)的标准差总为0：</p>
+            $$\sigma^2 = \left\langle\left(\hat{Q} - \langle Q\rangle\right)^2\right\rangle = \left\langle\Psi\middle|\left(\hat{Q} - q\right)^2\Psi\right\rangle = \left\langle\left(\hat{Q} - q\right)\Psi\middle|\left(\hat{Q} - q\right)\Psi\right\rangle = 0$$
+
+            <b>算符\(\hat{Q}\)的本征值方程</b>
+            <p>$$\hat{Q}\Psi = q\Psi$$</p>
+            <ul>
+                <li>\(\Psi\)：\(\hat{Q}\)的一个本征函数</li>
+                <li>\(q\)：相应的本征值</li>
+            </ul>
+            <p>定值态是\(\hat{Q}\)的本征函数.</p>
+            <p>在定值态上测量\(Q\)一定能得到本征值\(q\).</p>
+            
+            <p>[注]0不可作本征函数，但可做本征值.</p>
+
+            <div class=Card-Definition>
+                <b>谱</b>
+                <p>一个算符的所有本征值的集合称为这个算符的谱.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>谱的简并</b>
+                <p>两个或多个线性独立的本征函数具有相同的本征值的情况.</p>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>Hermitian算符的本征函数</h2>
+
+            <p>分成两种情况讨论：</p>
+            <ul>
+                <li>分立谱</li>
+                <li>连续谱</li>
+            </ul>
+            
+            <h3>分立谱</h3>
+            <p>本征值是分开的，则本征函数处于Hilbert空间中，且构成物理上可实现的态.</p>
+            <p>数学上，Hermitian算符可归一化的本征函数具有两个重要性质：</p>
+            <b>性质1</b>
+            <div class="Formula">
+                <p>其本征值为实数.</p>
+                <div class="Derivation">
+                    <p>[设]</p>
+                    $$\hat{Q}f = qf$$
+                    <ul>
+                        <li>\(\hat{Q}\)：Hermitian算符</li>
+                        <li>\(q\)：\(\hat{Q}\)的本征值</li>
+                        <li>\(f(x)\)：\(\hat{Q}\)的本征函数</li>
+                    </ul>
+                    <p>由于\(\hat{Q}\)为Hermitian算符，故：</p>
+                    $$\langle f\lvert\hat{Q}f\rangle = \langle \hat{Q}f\lvert f\rangle$$
+                    $$\therefore \int f^*qf\mathrm{d}x = \int q^*f^*f\mathrm{d}x$$
+                    <p>\(q\)与\(q^*\)是常数，因此可以移出积分外.</p>
+                    $$\therefore q\langle f|f\rangle = q^*\langle f|f\rangle$$
+                    <p>\(f(x) = 0\)不是正当的本征函数.</p>
+                    $$\because \langle f|f\rangle\neq 0$$
+                    $$\therefore q = q^*$$
+                    $$\therefore q\in\mathbb{R}$$
+                </div>
+            </div>
+
+            <b>性质2</b>
+            <div class="Formula">
+                <p>属于不同本征值的本征函数是正交的</p>
+                <div class="Derivation">
+                    <p>[设]</p>
+                    $$\hat{Q}f = q_1f$$
+                    $$\hat{Q}g = q_2g$$
+                    $$\because \left\langle f\middle|\hat{Q}g\right\rangle = \left\langle \hat{Q}f\middle|g\right\rangle$$
+                    $$\therefore \int f^*q_1g\mathrm{d}x = \int q_2^*f^*g\mathrm{d}x$$
+                    $$\therefore q_1\left\langle f\middle|g\right\rangle = q_2^*\left\langle f\middle|g\right\rangle$$
+                    <p>（内积的存在是因为本征函数位于Hilbert空间内）</p>
+                    $$\because q_1\neq q_2$$
+                    $$\therefore \left\langle f\middle|g\right\rangle = 0$$
+                </div>
+            </div>
+
+            <h3>连续谱</h3>
+            <p>本征值充满一个范围，则本征函数是不可归一化的，且它们不能代表可能的波函数.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>广义统计诠释</h2>
+            <p>若测量一个处于\(\Psi(x,t)\)态的可观测量\(Q(x,p)\)，那么其结果一定是Hermitian算符\(\hat{Q}(x,-i\mathrm{d}\hbar/\mathrm{d}x)\)的一个本征值.</p>
+            <p>若\(\hat{Q}\)的谱是分立的，得到与正交归一本征函数\(f_n(x)\)相应的本征值\(q_n\)的几率是：</p>
+            $$|c_n|^2,\quad c_n = \left\langle f_n\middle|\Psi\right\rangle$$
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

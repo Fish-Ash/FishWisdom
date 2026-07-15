@@ -116,23 +116,28 @@
             <p>通过将一组人造原子按照一定的排列方式组成的二维平面结构.</p>
         </div>
 
+        <div class="Card-AI">
+            <p>等离激元超表面：使用金属纳米结构.</p>
+            <p>全介质超表面：完全不使用金属，只采用高折射率的介质材料.</p>
+        </div>
+
         <p>与三维超材料相比，超表面由于具有亚波长厚度，其剖面低且损耗小.</p>
         <p>类似于三维超材料，超表面可以视为具有等效材料参数的均匀薄板.</p>
         <p>考虑其电厚度很小，为了简化可以将其近似视为零厚度的表面.</p>
         <p>这种情况下，电磁波于超表面间的相互作用可以通过边界条件加以建模.</p>
         <p>表面的边界条件为：</p>
         $$\begin{cases}
-        Z\mathbf{J} = \hat{n}\times \mathbf{E}_{av} \\
-        Y\mathbf{K} = \hat{n}\times \mathbf{H}_{av}
+        Z\boldsymbol{J} = \hat{n}\times \boldsymbol{E}_{av} \\
+        Y\boldsymbol{K} = \hat{n}\times \boldsymbol{H}_{av}
         \end{cases}$$
         <ul>
             <li>\(Z\)：表面等效电阻抗</li>
             <li>\(Y\)：表面等效磁导纳</li>
-            <li>\(\mathbf{J}\)：表面等效电流密度</li>
-            <li>\(\mathbf{K}\)：表面等效磁流密度</li>
+            <li>\(\boldsymbol{J}\)：表面等效电流密度</li>
+            <li>\(\boldsymbol{K}\)：表面等效磁流密度</li>
             <li>\(\hat{n}\)：表面外法方向单位矢量</li>
-            <li>\(\mathbf{E}_{av}\)：表面平均电场</li>
-            <li>\(\mathbf{H}_{av}\)：表面平均磁场</li>
+            <li>\(\boldsymbol{E}_{av}\)：表面平均电场</li>
+            <li>\(\boldsymbol{H}_{av}\)：表面平均磁场</li>
         </ul>
 
         <div class="Card-AI">
@@ -149,17 +154,17 @@
         </div>
 
         <p>设薄板厚度为\(d\)，相应的波数为\(k\).</p>
-        <p>\(\mathbf{E}_{av}\)和\(\mathbf{H}_{av}\)可以用薄板两侧的电场与磁场切向分量近似表示为：</p>
+        <p>\(\boldsymbol{E}_{av}\)和\(\boldsymbol{H}_{av}\)可以用薄板两侧的电场与磁场切向分量近似表示为：</p>
         $$\begin{cases}
-        \mathbf{E}_{av} \approx \frac{\mathbf{E}_t^+ + \mathbf{E}_t^-}{kd}\tan\left(\frac{kd}{2}\right)\\
-        \mathbf{H}_{av} \approx \frac{\mathbf{H}_t^+ + \mathbf{H}_t^-}{kd}\tan\left(\frac{kd}{2}\right)
+        \boldsymbol{E}_{av} \approx \frac{\boldsymbol{E}_t^+ + \boldsymbol{E}_t^-}{kd}\tan\left(\frac{kd}{2}\right)\\
+        \boldsymbol{H}_{av} \approx \frac{\boldsymbol{H}_t^+ + \boldsymbol{H}_t^-}{kd}\tan\left(\frac{kd}{2}\right)
         \end{cases}$$
 
         <p>其中上标“+”与“-”分别表示薄板的上侧与下侧.</p>
         <p>\(kd\rightarrow 0\)时，上式可化简为：</p>
         $$\begin{cases}
-        \mathbf{E}_{av} \approx \frac{\mathbf{E}_t^+ + \mathbf{E}_t^-}{2}\\
-        \mathbf{H}_{av} \approx \frac{\mathbf{H}_t^+ + \mathbf{H}_t^-}{2}
+        \boldsymbol{E}_{av} \approx \frac{\boldsymbol{E}_t^+ + \boldsymbol{E}_t^-}{2}\\
+        \boldsymbol{H}_{av} \approx \frac{\boldsymbol{H}_t^+ + \boldsymbol{H}_t^-}{2}
         \end{cases}$$
 
 

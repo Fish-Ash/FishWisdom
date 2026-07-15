@@ -55,16 +55,16 @@
 
         参数：
         <ul>
-            <li>场景的三维数据立方体：\(\mathbf{X}\in \mathbb{R}^{H\times W\times C}\)</li>
-            <li>编码孔径（编码掩膜）：\(\mathbf{M}\in \mathbb{R}^{H\times W}\)
+            <li>场景的三维数据立方体：\(\boldsymbol{X}\in \mathbb{R}^{H\times W\times C}\)</li>
+            <li>编码孔径（编码掩膜）：\(\boldsymbol{M}\in \mathbb{R}^{H\times W}\)
                 <br>编码孔径是二进制的二维数据，0表示透明区域，1表示不透明区域
             </li>
         </ul>
 
         SD-CASSI流程：
         <ol>
-            <li>空间调制：\(\mathbf{X}'(\lambda) = \mathbf{X}(\lambda)\odot \mathbf{M}\)
-                <br>\(\mathbf{X}(\lambda)\)为\(\mathbf{X}\)中波长为\(\lambda\)的单色图像
+            <li>空间调制：\(\boldsymbol{X}'(\lambda) = \boldsymbol{X}(\lambda)\odot \boldsymbol{M}\)
+                <br>\(\boldsymbol{X}(\lambda)\)为\(\boldsymbol{X}\)中波长为\(\lambda\)的单色图像
             </li>
         </ol>
 
