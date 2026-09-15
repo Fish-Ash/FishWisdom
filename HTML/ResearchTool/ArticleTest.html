@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ArticleNetwork</title>
+    <style></style>
+</head>
+
+<body>
+    <!-- 我想，改成右键菜单 -->
+    <button id="addArticleButton">
+        +
+    </button>
+
+    <button id="importButton">
+        导入
+    </button>
+
+    <button id="exportButton">
+        导出
+    </button>
+
+    <input id="fileInput" type="file" accept=".csv" hidden>
+
+    <dialog id="articleDialog">
+        <h2>标题</h2>
+        <input id="articleTitle">
+
+        <h2>作者</h2>
+        <input id="articleAuthors">
+
+        <h2>影响因子</h2>
+        <input id="articleImpactFactor" type="number">
+        
+        <br><br>
+        <button id="saveButton">保存</button>
+        <button id="cancelButton">取消</button>
+    </dialog>
+
+    <!-- 我想，未来整个页面都是它 -->
+    <svg id="network" width="800" height="5000"></svg>
+
+    <script>
+        // 控件const
+        const addArticleButton = document.getElementById("addArticleButton");
+        const importButton = document.getElementById("importButton");
+        const exportButton = document.getElementById("exportButton");
+        const fileInput = document.getElementById("fileInput");
+
+        const articleDialog = document.getElementById("articleDialog");
+        const articleTitle = document.getElementById("articleTitle");
+        const articleAuthors = document.getElementById("articleAuthors");
+        const articleImpactFactor = document.getElementById("articleImpactFactor");
+
+        const saveButton = document.getElementById("saveButton");
+        const cancelButton = document.getElementById("cancelButton");
+        const network = document.getElementById("network");
+
+        // 新建const
+        const authors = new Set();
+        const articles = [];
+
+        //EventListener
+        addArticleButton.addEventListener("click", function(){
+            articleDialog.showModal();
+        });
+
+        saveButton.addEventListener("click", function(){
+            saveArticle();
+        });
+
+        articleDialog.addEventListener("keydown", function(event){
+            if(event.key == "Enter"){
+                saveArticle();
+            }
+        });
+
+        cancelButton.addEventListener("click", function(){
+            articleDialog.close();
+        })
+
+        exportButton.addEventListener("click", function(){
+            exportArticles();
+        });
+
+        importButton.addEventListener("click", function(){
+            fileInput.click();
+        });
+
+        fileInput.addEventListener("change", function(){
+            importArticles();
+        });
+
+        //function
+        function saveArticle(){
+            const title = articleTitle.value.trim();
+
+            const authorText = articleAuthors.value;
+            const authorList = authorText.split(",");
+            const cleanAuthorList = [];
+
+            authorList.forEach(function(author){
+                author = author.trim();
+
+                if(author !== "" && !cleanAuthorList.includes(author)){
+                    cleanAuthorList.push(author);
+                }
+
+                if(author !== "" && !authors.has(author)){
+                    authors.add(author);
+                    addAuthorCircle();
+                }
+            });
+
+            const impactText = articleImpactFactor.value.trim();
+            const impactFactor = impactText === "" ? null : Number(impactText);
+
+            if(title !== "" && cleanAuthorList.length > 0){
+                articles.push({
+                    title: title,
+                    authors: cleanAuthorList,
+                    impactFactor: impactFactor
+                });
+            }
+
+            console.log(articles);
+
+            articleDialog.close();
+        }
+
+        function addAuthorCircle(){
+            const circle = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "circle"
+            );
+
+            // 圆参数
+            circle.setAttribute("cx", 50 + authors.size * 60);
+            circle.setAttribute("cy", 100);
+            circle.setAttribute("r", 20);
+            network.appendChild(circle)
+        }
+
+        function exportArticles(){
+            const rows = [];
+
+            rows.push([
+                "文章名",
+                "作者列表",
+                "影响因子"
+            ]);
+            console.log(rows);
+
+            articles.forEach(function(article){
+                rows.push([
+                    article.title,
+                    article.authors.join("|"),
+                    article.impactFactor === null ? "" : article.impactFactor
+                ]);
+                console.log(rows);
+            });
+
+            const csv = rows.map(function(row){
+                return row.map(function(value){
+                    return '"' + String(value).replace(/"/g, '""') + '"';
+                }).join(",");
+            }).join("\n");
+
+            const blob = new Blob(
+                ["\uFEFF" + csv],
+                {type: "text/csv;charset=utf-8"}
+            );
+
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+
+            link.href = url;
+            link.download = "articles.csv";
+            link.click();
+
+            URL.revokeObjectURL(url);
+        }
+
+        function importArticles(){
+            const file = fileInput.files[0];
+
+            if(!file){
+                return;
+            }
+
+            const reader = new FileReader();
+
+            reader.onload = function(){
+                const text = reader.result.replace(/^\uFEFF/, "");
+                const rows = parseCSV(text);
+
+                articles.length = 0;
+                authors.clear();
+                network.innerHTML = "";
+
+                for(let i = 1; i < rows.length; i++){
+                    const row = rows[i];
+
+                    if(row.length < 2 || row[0].trim() === ""){
+                        continue;
+                    }
+
+                    const title = row[0].trim();
+
+                    const authorList = row[1]
+                        .split("|")
+                        .map(function(author){
+                            return author.trim();
+                        })
+                        .filter(function(author){
+                            return author !== "";
+                        });
+
+                    const impactFactor =
+                        row[2] === "" || row[2] === undefined
+                        ? null
+                        : Number(row[2]);
+
+                    articles.push({
+                        title: title,
+                        authors: authorList,
+                        impactFactor: impactFactor
+                    });
+
+                    authorList.forEach(function(author){
+                        if(!authors.has(author)){
+                            authors.add(author);
+                            addAuthorCircle();
+                        }
+                    });
+                }
+
+                console.log(articles);
+            };
+
+            reader.readAsText(file);
+        }
+
+        function parseCSV(text){
+            const rows = [];
+            let row = [];
+            let value = "";
+            let insideQuotes = false;
+
+            for(let i = 0; i < text.length; i++){
+                const character = text[i];
+
+                if(character === '"'){
+                    if(insideQuotes && text[i + 1] === '"'){
+                        value += '"';
+                        i++;
+                    }
+                    else{
+                        insideQuotes = !insideQuotes;
+                    }
+                }
+                else if(character === "," && !insideQuotes){
+                    row.push(value);
+                    value = "";
+                }
+                else if(
+                    (character === "\n" || character === "\r") &&
+                    !insideQuotes
+                ){
+                    if(character === "\r" && text[i + 1] === "\n"){
+                        i++;
+                    }
+
+                    row.push(value);
+                    rows.push(row);
+
+                    row = [];
+                    value = "";
+                }
+                else{
+                    value += character;
+                }
+            }
+
+            if(value !== "" || row.length > 0){
+                row.push(value);
+                rows.push(row);
+            }
+
+            return rows;
+        }
+    </script>
+</body>
+
+</html>s

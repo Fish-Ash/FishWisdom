@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>物理光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>单色波</h1>
+        
+        <div class="Card-Analysis">
+            <h2>一般单色波</h2>
+            <div class="Card-AI">
+                <p>任意满足适当数学条件的复色矢量场，都可以表示为单色矢量场的傅里叶积分或傅里叶级数.</p>
+            </div>
+            <p>确定频率的电磁波，电磁场对时间的依赖关系为\(e^{i\omega t}\)，因此单色电磁波的基本表达式为：</p>
+            $$\boldsymbol{E}(\boldsymbol{r}, t) = \tilde{\boldsymbol{E}}(\boldsymbol{r})e^{-i\omega t},\quad\boldsymbol{H}(\boldsymbol{r}, t) = \tilde{\boldsymbol{H}}(\boldsymbol{r})e^{-i\omega t}$$
+            <p>因此：</p>
+            <div class="Formula" id="formula2">
+                $$\frac{\partial}{\partial t}\boldsymbol{E} = -i\omega\boldsymbol{E},\quad\frac{\partial}{\partial t}\boldsymbol{H} = -i\omega\boldsymbol{H}$$        
+            </div>
+
+
+            <h3 id="MonochromaticMaxwell">单色电磁波的基本方程</h3>
+
+            <p>[设]对于各向同性的线性<a href="../Electromagnetism/Maxwell.html#condition2" class="goto">非磁性</a>光学介质（通常为非导体），\(\rho = 0, \boldsymbol{j} = 0, \boldsymbol{D} = \epsilon\boldsymbol{E}, \boldsymbol{B} = \mu\boldsymbol{H}\).</p>
+            <p>因此，单色波下Maxwell方程组可简化为不含时间因子的形式，即：</p>
+            <div class="Formula">
+                $$\nabla\times\boldsymbol{E} = i\omega\mu_0\boldsymbol{H}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \nabla\times\boldsymbol{E} &= -\frac{\partial\boldsymbol{B}}{\partial t}\\
+                                               &= -\mu_0\frac{\partial\boldsymbol{H}}{\partial t}\\
+                    \end{align}$$
+                    <a href="#formula2" class="goto">$$\because \frac{\partial}{\partial t}\boldsymbol{H} = -i\omega\boldsymbol{H}$$</a>
+                    $$\therefore \nabla\times\boldsymbol{E} = i\omega\mu_0\boldsymbol{H}$$
+                </div>
+            </div>
+            <div class="Formula">
+                $$\nabla\times\boldsymbol{H} = -i\omega\epsilon\boldsymbol{E}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \nabla\times\boldsymbol{H} &= \frac{\partial\boldsymbol{D}}{\partial t}\\
+                    &= \epsilon\frac{\partial\boldsymbol{E}}{\partial t}\\
+                    \end{align}$$
+                    <a href="#formula2" class="goto">$$\because \frac{\partial}{\partial t}\boldsymbol{E} = -i\omega\boldsymbol{E}$$</a>
+                    $$\therefore \nabla\times\boldsymbol{H} = -i\omega\epsilon\boldsymbol{E}$$
+                </div>
+            </div>
+            $$\nabla\cdot\boldsymbol{D} = 0$$
+            $$\nabla\cdot\boldsymbol{B} = 0$$
+            <p>这组方程只有前两式是独立的，后两式可以由前两式取散度运算导出.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>单色球面波</h2>
+            <p>单色球面波是最简单的简谐球面光波.</p>
+            <div class="Card-AI">
+                <p>当然还有非简谐的光波，但是单色且简谐通常是矛盾的.</p>
+            </div>
+            <h3>发散球面波</h3>
+            $$E = \frac{E_0}{|\boldsymbol{r}|}\cos(\omega t - \boldsymbol{k}\cdot\boldsymbol{r} + \phi_0) = \frac{E_0}{r}e^{-i(\omega t - \boldsymbol{k}\cdot\boldsymbol{r})}$$
+
+            <ul>
+                <li>\(E_0\)：距点源单位距离处的振幅值</li>
+                <li>\(|\boldsymbol{r}|\)：观察点到点源的距离</li>
+            </ul>
+
+            <p>等相面是\(|\boldsymbol{r}| \in \mathbb{C}\)的球面.</p>
+
+            <p>复振幅为：</p>
+            $$\tilde{E}(\boldsymbol{r}) = \frac{E_0}{|\boldsymbol{r}|}e^{i\boldsymbol{k}\cdot\boldsymbol{r}}$$
+
+            <b>光波在某特定平面上产生的复振幅分布的数学描述</b>
+            <p>点光源\(S(x_0, y_0, 0)\)位于\(x_0y_0\)平面内，考察与其相距\(z>0\)的\(xy\)平面上的光场分布.</p>
+            $$|\boldsymbol{r}| = \sqrt{(x-x_0)^2 + (y-y_0)^2 + z^2}$$
+
+            <p>[近似]当xy平面上只考虑一个对S张角不大的范围（傍轴近似）：</p>
+            $$\frac{(x-x_0)^2 + (y-y_0)^2}{z^2} \ll 1$$
+            <p>麦克劳林展开（或二项式展开）后，约去高阶项，近似为：</p>
+            $$\begin{align}
+            |\boldsymbol{r}| &= z\left[\frac{(x-x_0)^2 + (y-y_0)^2}{z^2} + 1\right]^{1/2}\\
+                             &\approx z\left[1 + \frac{(x-x_0)^2 + (y-y_0)^2}{2z^2}\right]\\
+                             &\approx z + \frac{(x-x_0)^2 + (y-y_0)^2}{2z}
+            \end{align}$$
+
+            <h3>汇聚球面波</h3>
+            $$\boldsymbol{k}' = -\boldsymbol{k}$$
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

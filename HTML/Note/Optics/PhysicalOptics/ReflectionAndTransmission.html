@@ -24,7 +24,7 @@
         <div class="PageCatalog">
             <ul>
                 <li><a href="#Fresnel">菲涅尔公式</a></li>
-                <li><a href="#PoyntingVector">坡印廷矢量</a></li>
+                <li><a href="#Poynting Vector">坡印廷矢量</a></li>
                 <li><a href="#TotalPolarization">全偏振</a></li>
                 <li><a href="#TotalReflection">全反射</a></li>
                 <li><a href="#HalfWaveLoss">半波损失</a></li>
@@ -39,19 +39,6 @@
             <b>略入射</b>
             <p>入射角\(\theta_1 \rightarrow 90°\).</p>
         </div>
-
-        <b id="BoundaryCondition">电磁场的连续条件</b>
-        <p>在没有传导电流和自由电荷的介质中，磁感强度\(\boldsymbol{B}\)与电感强度\(\boldsymbol{D}\)的法向分量在界面上连续；电场强度\(\boldsymbol{E}\)和磁场强度\(\boldsymbol{H}\)的切向分量在界面上连续。</p>
-        $$
-        \begin{align}
-        \begin{cases}
-        B_{1n} = B_{2n}\\
-        D_{1n} = D_{2n}\\
-        H_{1t} = H_{2t}\\
-        E_{1t} = E_{2t}
-        \end{cases}
-        \end{align}
-        $$
 
         <div class="Card-Definition">
             <b>\(p\)分量与\(s\)分量</b>
@@ -77,7 +64,7 @@
         
         <h2><a href="Fresnel.html" id="Fresnel">菲涅尔公式</a></h2>
 
-        <div class="Card-Definition" id="PoyntingVector">
+        <div class="Card-Definition" id="Poynting Vector">
             <b>Poynting矢量（辐射强度矢量、能流密度）\(\boldsymbol{S}\)</b>
             $$\boldsymbol{S} = \boldsymbol{E} \times \boldsymbol{H}$$
             <p>用于描述电磁能量的传播。</p>
@@ -167,24 +154,45 @@
             $$\tan\theta_B = n$$
         </div>
 
+        <div class="Card-Analysis" id="TotalReflection">
+            <h2>全反射</h2>
 
-        <div class="Card-Definition" id="TotalReflection">
-            <b>全反射</b>
-            <p>当光从光密介质入射到光疏介质、入射角大于临界角\(\theta_c\)时，光全部返回原介质中的现象.</p>
-            $$\sin\theta_c = n$$
-
-            <div class="Prove">
-                <p>光全部返回原介质\(\Rightarrow\)只有反射光，不存在折射光.</p>
-                $$\sin\theta_2 = \frac{n_1}{n_2}\sin\theta_1 \gt 1 \Rightarrow \frac{n_1}{n_2} \gt 1$$
-                <p>故条件1为：从光密介质入射到光疏介质.</p>
-                <p>设临界角为\(\theta_c\)，当\(\theta_1 = \theta_c\)时，\(\sin\theta_2\)恰好等于\(1\).</p>
-                $$\sin\theta_2 = \frac{n_1}{n_2}\sin\theta_c = 1$$
-                $$\sin\theta_c = \frac{n_1}{n_1} = n$$
-                <p>由于\(\sin\theta_2\)为关于\(\theta_1\)的单调递增函数，所以\(\theta_1 \gt \theta_c\)时，\(\sin\theta_2 \gt 1\).</p>
-                <p>故条件2为\(\theta_1 \gt \theta_c\).</p>
+            <div class="Card-Definition">
+                <b>全反射</b>
+                <p>当光从光密介质入射到光疏介质、入射角大于临界角\(\theta_c\)时，光全部返回原介质中的现象.</p>
+                <div class="Formula">
+                    $$\sin\theta_c = n,\quad n = n_2/n_1$$
+                    <div class="Derivation">
+                        <div class="Prove">
+                            <p>光全部返回原介质\(\Rightarrow\)只有反射光，不存在折射光.</p>
+                            $$\sin\theta_2 = \frac{n_1}{n_2}\sin\theta_1 \gt 1 \Rightarrow \frac{n_1}{n_2} \gt 1$$
+                            <p>故条件1为：从光密介质入射到光疏介质.</p>
+                            <p>设临界角为\(\theta_c\)，当\(\theta_1 = \theta_c\)时，\(\sin\theta_2\)恰好等于\(1\).</p>
+                            $$\sin\theta_2 = \frac{n_1}{n_2}\sin\theta_c = 1$$
+                            $$\sin\theta_c = \frac{n_1}{n_1} = n$$
+                            <p>由于\(\sin\theta_2\)为关于\(\theta_1\)的单调递增函数，所以\(\theta_1 \gt \theta_c\)时，\(\sin\theta_2 \gt 1\).</p>
+                            <p>故条件2为\(\theta_1 \gt \theta_c\).</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <p>全反射时发生相位的变化。</p>
             </div>
-            <p>全反射时发生相位的变化。</p>
+
+            <h3>倏逝波</h3>
+            <div class="Card-Definition">
+                <b>倏逝波（衰逝波）</b>
+                <p>全反射时，光波不是绝对地在界面上被全部反射回第一介质，而是透入第二介质约一个波长的深度，并沿界面流过波长量级距离后重新返回第一介质，沿反射光方向射出.</p>
+                <p>这个沿第二介质表面流动的波称为倏逝波.</p>
+            </div>
+            <p>倏逝波可以由如下形式的解描述：</p>
+            $$\boldsymbol{E} = e^{i(\boldsymbol{k}\boldsymbol{r} - \omega t)}$$
+            <p>其特征是描述传播方向的波矢\(\boldsymbol{k}\)至少有一个分量为虚数.</p>
+            <p>在该虚分量对应的空间方向上，波并不传播，而是按指数规律衰减.</p>
+            <p>倏逝波不会出现在均匀介质中，而总是与光和结构化材料间的相互作用有关.</p>
+            
         </div>
+
 
         <div class="Card-Analysis" id="HalfWaveLoss">
             <h2>由菲涅尔系数推断相位变化（半波损失）</h2>
@@ -316,11 +324,7 @@
 
 
 
-        <div class="Card-Definition">
-            <b>衰逝波（倏逝波）</b>
-            <p>全反射时，光波场将透入第二个介质中很薄的一层（约为\(\lambda\)）范围内，并沿界面传播一段距离，再返回第一个介质.</p>
-            <p>这个透入到第二个介质表面层的波叫做衰逝波.</p>
-        </div>
+
 
 
 

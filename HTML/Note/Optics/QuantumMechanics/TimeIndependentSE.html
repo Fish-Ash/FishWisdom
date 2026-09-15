@@ -35,7 +35,7 @@
             <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
         </div>
 
-        <h1>第二章 定态Schrödinger方程</h1>
+        <h1>定态Schrödinger方程</h1>
 
         <div class="PageCatalog">
             <ul>
@@ -95,7 +95,7 @@
             <p>记此方程为<b>定态Schrödinger方程</b>.</p>
         </div>
 
-        <div class="Card-Formula">
+        <div class="Card-Formula" id="time independent Schrödinger equation">
             <b>定态Schrödinger方程</b>
             $$-\frac{\hbar^2}{2m}\frac{\mathrm{d}^2\psi}{\mathrm{d}x^2} + V\psi = E\psi$$
 
@@ -120,6 +120,7 @@
             $$\hat H = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x)$$
             <div class="Card-AI">
                 <p>用于描述量子系统的总能量及其时间变化规律.</p>
+                <p>Hamiltonian量是否含时，主要看\(V\)是否显含时间，当然有时会有\(m\)随时间变化的情况，无论如何，上式是与时间无关的Hamiltonian量，这是肯定的.</p>
             </div>
         </div>
 
@@ -282,23 +283,33 @@
         $$\omega = \sqrt{\frac{k}{m}}$$
 
 
+        <div class="Card-Analysis">
+            <h2>对易</h2>
 
-        <div class="Card-Definition">
-            <b>算符\(A\)和\(B\)的对易子：</b>
-            $$[\hat A,\hat B] = \hat A \hat B - \hat B \hat A$$
-        </div>
+            <p>[设]\(\hat A, \hat B\)为算符.</p>
+            <p>通常情况下，有：</p>
+            $$\hat A\hat B\neq \hat B\hat A$$
 
-        <div class="Card-Formula">
-            <b>正则对易关系</b>
-            <div class="Formula">
-                $$[\hat x,\hat p] = i\hbar$$
-                <div class="Derivation">
-                    $$\begin{align}
-                    [\hat x,\hat p]f &= [x\cdot \frac{\hbar}{i}\frac{\mathrm{d}}{\mathrm{d}x}(f) - \frac{\hbar}{i}\frac{\mathrm{d}}{\mathrm{d}x}(xf)]\\
-                           &= \frac{\hbar}{i}[x\frac{\mathrm{d}f}{\mathrm{d}x} - f - x\frac{\mathrm{d}f}{\mathrm{d}x}]\\
-                           &= i\hbar f
-                    \end{align}$$
-                    $$\therefore [\hat x,\hat p] = i\hbar$$
+            <div class="Card-Definition" id="commutator">
+                <b>算符\(\hat A\)和\(\hat B\)的对易子（对易式）：</b>
+                $$[\hat A,\hat B] = \hat A \hat B - \hat B \hat A$$
+                <p>[注]对易子本身也是算符.</p>
+            </div>
+            <p>若\([\hat A, \hat B] = 0\)，则称\(\hat A\)与\(\hat B\)是对易的，即：</p>
+            $$\hat A\hat B = \hat B\hat A$$
+    
+            <div class="Card-Formula">
+                <b>正则对易关系</b>
+                <div class="Formula">
+                    $$[\hat x,\hat p] = i\hbar$$
+                    <div class="Derivation">
+                        $$\begin{align}
+                        [\hat x,\hat p]f &= [x\cdot \frac{\hbar}{i}\frac{\mathrm{d}}{\mathrm{d}x}(f) - \frac{\hbar}{i}\frac{\mathrm{d}}{\mathrm{d}x}(xf)]\\
+                               &= \frac{\hbar}{i}[x\frac{\mathrm{d}f}{\mathrm{d}x} - f - x\frac{\mathrm{d}f}{\mathrm{d}x}]\\
+                               &= i\hbar f
+                        \end{align}$$
+                        $$\therefore [\hat x,\hat p] = i\hbar$$
+                    </div>
                 </div>
             </div>
         </div>

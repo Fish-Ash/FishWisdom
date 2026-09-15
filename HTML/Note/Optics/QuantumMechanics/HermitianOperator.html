@@ -67,6 +67,11 @@
 
 
             <p>Hermitian算符指满足上述条件的\(\hat Q\).</p>
+
+            <div class="Card-AI">
+                <p>可观测量的算符一定是Hermitian算符.</p>
+                <p>Hermitian算符不一定都是可观测量的算符.</p>
+            </div>
         </div>
 
         <div class="Card-Analysis">
@@ -97,13 +102,12 @@
             <p>$$\hat{Q}\Psi = q\Psi$$</p>
             <ul>
                 <li>\(\Psi\)：\(\hat{Q}\)的一个本征函数</li>
-                <li>\(q\)：相应的本征值</li>
+                <li>\(q\)：相应的本征值，是一个数</li>
             </ul>
             <p>定值态是\(\hat{Q}\)的本征函数.</p>
             <p>在定值态上测量\(Q\)一定能得到本征值\(q\).</p>
-            
-            <p>[注]0不可作本征函数，但可做本征值.</p>
-
+            <p>任何本征函数乘一个常数，依旧是一个具有相同本征值的本征函数.</p>
+            <p>[注]0不可作本征函数（否则由\(\hat Q 0 = q0\)，任何\(q\)都将成为本征值），但可做本征值.</p>
             <div class=Card-Definition>
                 <b>谱</b>
                 <p>一个算符的所有本征值的集合称为这个算符的谱.</p>
@@ -113,11 +117,23 @@
                 <b>谱的简并</b>
                 <p>两个或多个线性独立的本征函数具有相同的本征值的情况.</p>
             </div>
+
+            <div class="Card-Example">
+                <p>总能量的定值态是Hamiltonian算符的本征函数（定态Schrödinger方程）：</p>
+                $$\hat H\psi = E\psi$$
+                <ul>
+                    <li>\(E\)：本征值</li>
+                    <li>\(\psi\)：本征函数</li>
+                </ul>
+                $$\hat H\psi e^{-iEt/\hbar} = E\psi e^{-iEt/\hbar}\Rightarrow \hat H\Psi = E\Psi$$
+                <p>仍是\(H\)的本征函数.</p>
+            </div>
+            
         </div>
 
         <div class="Card-Analysis">
             <h2>Hermitian算符的本征函数</h2>
-
+            <p>Hermitian算符的本征函数就是物理上可观测的定值态.</p>
             <p>分成两种情况讨论：</p>
             <ul>
                 <li>分立谱</li>
@@ -140,14 +156,22 @@
                     </ul>
                     <p>由于\(\hat{Q}\)为Hermitian算符，故：</p>
                     $$\langle f\lvert\hat{Q}f\rangle = \langle \hat{Q}f\lvert f\rangle$$
+                    <p>假定本征函数位于Hilbert空间内，否则内积不可能存在.</p>
+                    <div class="Card-Question">
+                        <p>为什么是假定？</p>
+                    </div>
                     $$\therefore \int f^*qf\mathrm{d}x = \int q^*f^*f\mathrm{d}x$$
                     <p>\(q\)与\(q^*\)是常数，因此可以移出积分外.</p>
                     $$\therefore q\langle f|f\rangle = q^*\langle f|f\rangle$$
-                    <p>\(f(x) = 0\)不是正当的本征函数.</p>
                     $$\because \langle f|f\rangle\neq 0$$
+                    <p>因为\(f(x) = 0\)不是正当的本征函数.</p>
                     $$\therefore q = q^*$$
                     $$\therefore q\in\mathbb{R}$$
                 </div>
+            </div>
+            <p>[注]这个结果表明，如果对粒子的一个定值态测量一个可观测值，至少会得到一个实数.</p>
+            <div class="Card-Question">
+                <p>为什么是“至少”？</p>
             </div>
 
             <b>性质2</b>
@@ -160,7 +184,7 @@
                     $$\because \left\langle f\middle|\hat{Q}g\right\rangle = \left\langle \hat{Q}f\middle|g\right\rangle$$
                     $$\therefore \int f^*q_1g\mathrm{d}x = \int q_2^*f^*g\mathrm{d}x$$
                     $$\therefore q_1\left\langle f\middle|g\right\rangle = q_2^*\left\langle f\middle|g\right\rangle$$
-                    <p>（内积的存在是因为本征函数位于Hilbert空间内）</p>
+                    <p>（内积的存在是因为假定本征函数位于Hilbert空间内）</p>
                     $$\because q_1\neq q_2$$
                     $$\therefore \left\langle f\middle|g\right\rangle = 0$$
                 </div>

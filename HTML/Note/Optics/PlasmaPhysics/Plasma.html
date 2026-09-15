@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>微纳光子学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>等离子体</h1>
+
+        <div class="Card-Analysis">
+            <h2>简介</h2>
+            <div class="Card-Definition">
+                <b>等离子体</b>
+                <p>带电粒子与中性粒子组成的表现出集体行为（collective behavior）的一种准中性（quasineutral）气体.</p>
+                <p>[注]不是任何电离的气体都能称为等离子体.</p>
+                <p>[注]任何气体中总会存在某些小电离度.</p>
+                <p>[注]等离子体被称为“物质的第四态”.</p>
+            </div>
+    
+            <div class="Card-AI">
+                <p>等离子体不是气体，是一种独立的物质态.</p>
+                <p>气体的电离：让原本中性的气体原子或分子，变成带电离子的过程.</p>
+                <p>气体中的自发电离普遍存在，任何气体中都会发生极少量的电离.</p>
+            </div>
+    
+            <b>集体行为</b>
+            <p>考虑作用在一个分子（如普通空气中的一个分子）上的力：</p>
+            <p>由于分子是中性的，因此不存在净电磁力.</p>
+            <p>重力可以忽略.</p>
+            <p>在这个分子与另一个分子碰撞前，它不受扰动地运动，这些碰撞支配了粒子的运动.</p>
+            <div class="Card-AI">
+                <p>不受扰动是指两次碰撞间的阶段.</p>
+                <p>碰撞支配是指碰撞后的瞬间.</p>
+            </div>
+            <p>作用在中性气体上的宏观力（像扬声器中的声波）通过碰撞传给单个原子.</p>
+            <div class="Card-AI">
+                <p>我们所处的空气中，99%都是氧气和氮气，它们都是双原子分子，所以这里的原子和分子其实是等价的.</p>
+            </div>
+            <p>在有带电粒子的等离子体中，情况则完全不同，当这些电荷到处运动时，它们能引起正电荷或负电荷的局部集中，就产生了电场.</p>
+            <p>电荷的运动也引起电流，因而产生磁场.</p>
+            <p>这些场又影响了远处其他带电粒子的运动.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>温度的概念</h2>
+            <p>在进一步讨论问题前，应评论与扩充我们对“温度”的物理概念.</p>
+            <p>处于热平衡的气体，其粒子有一切速度，这些速度的最可几分布称为<b>Maxwell分布</b>.</p>
+            <p>简单起见，考虑一种气体，其粒子仅能在一维上运动（例如，强磁场可约束电子，使其仅能沿着场力线运动）.</p>
+
+            <div class="Card-Formula">
+                <b>一维Maxwell分布</b>
+                $$f(u) = A\exp\left(-\frac{1}{2}mu^2/KT\right)$$
+                <ul>
+                    <li>\(f\)：速度在\(u\sim u + \mathrm{d}u\)范围内每立方厘米的粒子数</li>
+                    <li>\(\frac{1}{2}mu^2\)：动能</li>
+                </ul>
+            </div>
+
+            <div class="Card-AI">
+                <p>一切速度指：在海量的粒子中，可以观察到具有各种方向、各种大小的速度的粒子.</p>
+                <p>最可几分布就是最可能的分布.</p>
+                <p>并不存在一个速度，使绝大多数粒子恰好都以这个速度移动，而是在所有</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>密度\(n\)</b>
+                <p>每立方厘米的粒子数.</p>
+                $$n = \int_{-\infty}^{+\infty}f(u)\mathrm{d}u$$
+            </div>
+
+            <p>常数\(A\)与密度\(n\)的关系为：</p>
+            $$A = n\left(\frac{m}{2\pi KT}\right)^{1/2}$$
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

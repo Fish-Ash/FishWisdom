@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>量子力学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>绝热近似</h1>
+
+        <div class="Card-Analysis">
+            <h2>绝热定理</h2>
+
+            <p>绝热近似最基本的内容可以表述为绝热定理.</p>
+            <div class="Card-Definition">
+                <b>绝热定理</b>
+                <p>[设]Hamiltonian量由初值\(H^i\)逐渐变化到终值\(H^f\).</p>
+                <p>[设]从\(H^i\)到\(H^f\)的演化过程中谱是分立的且不简并，这样态的次序就不会混淆.</p>
+                <p>若粒子开始时处于\(H^i\)的第\(n\)阶本征态，它将按Scrödinger方程演化\(H^f\)的第\(n\)阶本征态.</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>第\(n\)阶本征态就是指能量为\(E_n\)的那个本征态.</p>
+                <p>演化就是指变化到.</p>
+            </div>
+        </div>
+
+        
+        <div class="Card-Analysis">
+            <h2>绝热定理的证明</h2>
+        
+            <h3>Hamiltonian量不依赖时间的情况</h3>
+            <p>此时，在开始时满足：</p>
+            <div class="Formula">
+                $$H\psi_n = E_n\psi_n$$
+                <div class="Derivation">
+                    $$H\Psi = E_n\Psi$$
+                    $$H\psi\phi = E_n\psi\phi$$
+                    $$\because \phi = e^{-iEt/\hbar}$$
+                    $$\therefore H\psi_n = E_n\psi_n$$
+                </div>
+            </div>
+            <p>第\(n\)本征态\(\psi_n\)的一个粒子以后将仍处在第\(n\)本征态，只是具有了一个相因子：</p>
+            $$\Psi_n(t) = \psi_n e^{-iE_nt/h}$$
+            <div class="Card-AI">这个相因子是在任何一个n阶本征态都存在的.</div>
+
+            <h3>Hamiltonian量随时间变化的情况</h3>
+            <p>此时，本征函数与本征值也随时间变化：</p>
+            $$H(t)\psi_n(t) = E_n(t)\psi_n(t)$$
+            <div class="Card-AI">
+                <p>这里的\(\psi_n(t)\)并不包含\(\phi(t)\)，它是另一种形式的随时间变化.</p>
+            </div>
+
+
+            <p>但它们在任何瞬间仍构成正交归一集：</p>
+            $$\left\langle\psi_n(t)\middle|\psi_m(t)\right\rangle = \delta_{mn}$$
+            <p>且它们是完备的，因此<a href="TimeIndependentSE.html">含时Scrödinger方程</a>：</p>
+            $$i\hbar\frac{\partial}{\partial t}\Psi(t) = H(t)\Psi(t)$$
+            <p>的一般解可以表示为它们的线性叠加：</p>
+            $$\Psi(t) = \sum_n c_n(t)\psi_n(t)e^{i\theta_n(t)}$$
+            <p>式中：</p>
+            $$\theta_n(t) = -\frac{1}{\hbar}\int_0^t E_n(t')\mathrm{d}t'$$
+            <p>这是将标准含时相位因子推广到\(E_n\)随时间变化的情况.</p>
+            <p>通常这个因子可以包含在\(c_n(t)\)中，但由于它在Hamiltonian量不含时时也同样存在，因此单独写出.</p>
+
+            <p>将</p>
+            $$\Psi(t) = \sum_n c_n(t)\psi_n(t)e^{i\theta_n(t)}$$
+            <p>代入到</p>
+            $$i\hbar\frac{\partial}{\partial t}\Psi(t) = H(t)\Psi(t)$$
+            $$\therefore i\hbar\sum_n\left(\frac{\partial c_n}{\partial t}\psi_ne^{i\theta_n} + \frac{\partial \psi_n}{\partial t}c_ne^{i\theta_n} + \frac{\mathrm{d}\theta_n}{\mathrm{d}t}ic_n\psi_ne^{i\theta_n}\right) = \sum_n c_n H\psi_n e^{i\theta_n}$$
+            <p>由<a href="../../Math/Mathematic/Integral_UpperLimitFunction.html">积分上限函数</a>：</p>
+            $$\because\theta_n(t) = -\frac{1}{\hbar}\int_0^t E_n(t')\mathrm{d}t'$$
+            $$\frac{\mathrm{d}\theta_n}{\mathrm{d}t} = -\frac{1}{\hbar}E_n(t)$$
+            $$\because H(t)\psi_n(t) = E_n(t)\psi_n(t)$$
+            $$\therefore i\hbar\sum_n\left(\frac{\partial c_n}{\partial t}\psi_n + \frac{\partial \psi_n}{\partial t}c_n\right)e^{i\theta_n} + \sum_nE_nc_n\psi_ne^{i\theta_n} = \sum_n c_n E_n\psi_n e^{i\theta_n}$$
+            $$\therefore \sum_n\frac{\partial c_n}{\partial t}\psi_ne^{i\theta_n} = -\sum_n\frac{\partial\psi_n}{\partial t}c_ne^{i\theta_n}$$
+            <p>对\(\psi_n\)取与\(\psi_m\)的内积：</p>
+            $$\sum_n\frac{\partial c_n}{\partial t}\left\langle\psi_m\middle|\psi_n\right\rangle e^{i\theta_n} = -\sum_n\left\langle\psi_m\middle|\frac{\partial\psi_n}{\partial t}\right\rangle c_ne^{i\theta_n}$$
+            $$\because \left\langle\psi_m\middle|\psi_n\right\rangle = \delta_{mn}$$
+            $$\therefore\sum_n\frac{\partial c_n}{\partial t}\delta_{mn}e^{i\theta_n} = -\sum_n\left\langle\psi_m\middle|\frac{\partial\psi_n}{\partial t}\right\rangle c_ne^{i\theta_n}$$
+            $$\because\sum_n\frac{\partial c_n}{\partial t}\delta_{mn}e^{i\theta_n} = \frac{\partial c_m}{\partial t}e^{i\theta_m}$$
+            $$\therefore\frac{\partial c_m}{\partial t}e^{i\theta_m} = -\sum_n\left\langle\psi_m\middle|\frac{\partial\psi_n}{\partial t}\right\rangle c_ne^{i\theta_n}$$
+            $$\therefore\frac{\partial c_m}{\partial t} = -\sum_n\left\langle\psi_m\middle|\frac{\partial\psi_n}{\partial t}\right\rangle c_ne^{i(\theta_n-\theta_m)}$$
+            <p>将</p>
+            $$H(t)\psi_n(t) = E_n(t)\psi_n(t)$$
+            <p>对时间求微分：</p>
+            $$\frac{\partial H}{\partial t}\psi_n + \frac{\partial \psi_n}{\partial t}H = \frac{\partial E_n}{\partial t}\psi_n + \frac{\partial \psi_n}{\partial t}E_n$$
+            <p>取与\(\psi_m\)的内积：</p>
+            $$\left\langle\psi_m\middle|\frac{\partial H}{\partial t}\middle|\psi_n\right\rangle + \left\langle\psi_m\middle|H\middle|\frac{\partial \psi_n}{\partial t}\right\rangle = \frac{\partial E_n}{\partial t}\delta_{mn} + E_n\left\langle\psi_n\middle|\psi_m\right\rangle$$
+            <p>利用\(H\)的Hermitian性：</p>
+            $$\left\langle\psi_m\middle|H\middle|\frac{\partial\phi_n}{\partial t}\right\rangle = E_m\left\langle\phi_m\middle|\frac{\partial\psi_n}{\partial t}\right\rangle$$
+            <p>在\(n\neq m\)时：</p>
+            $$\left\langle\psi_m\middle|\frac{\partial H}{\partial t}\middle|\psi_n\right\rangle = (E_n-E_m)\left\langle\psi_n\middle|\psi_m\right\rangle$$
+            <p>设能级不能简并，将上式代入到：</p>
+            $$\frac{\partial c_m}{\partial t} = -\sum_n\left\langle\psi_m\middle|\frac{\partial\psi_n}{\partial t}\right\rangle c_ne^{i(\theta_n-\theta_m)}$$
+            $$\therefore\frac{\partial c_m}{\partial t} = -c_m\left\langle\psi_m\middle|\frac{\partial\phi_m}{\partial t}\right\rangle -\sum_{n\neq m}\frac{\left\langle\psi_m\middle|\frac{\partial H}{\partial t}\middle|\psi_n\right\rangle}{E_n-E_m}e^{(-i/\hbar)\int_0^t[E_n(t')-E_m(t')]\mathrm{d}t'}$$
+            <p>这个结果是精确的.</p>
+            <p>回到绝热近似：设\(\frac{\partial H}{\partial t}\)非常小，舍弃上式第二项（这步的严格证明非常复杂）：</p>
+            $$\therefore\frac{\partial c_m}{\partial t} = -c_m\left\langle\psi_m\middle|\frac{\partial\phi_m}{\partial t}\right\rangle$$
+            <p>解得：</p>
+            $$c_m(t) = c_m(0)e^{i\gamma_m(t)}$$
+            <p>其中：</p>
+            $$\gamma_m(t)\equiv i\int_0^t\left\langle\psi_m(t')\middle|\frac{\partial}{\partial t'}\psi_m(t')\right\rangle\mathrm{d}t'$$
+            <p>特别地，若粒子开始时处于第\(n\)本征态，即：</p>
+            $$c_n(0) = 1, c_m(0) = 0, m\neq n$$
+            <p>则：</p>
+            $$\begin{align}
+            \Psi(t) &= \sum_n c_n(t)\psi_n(t)e^{i\theta_n(t)}\\
+                    &= e^{i\theta_n(t)t}e^{i\gamma_n(t)}\psi_n(t)
+            \end{align}$$
+            <p>因此它仍处于演化Hamiltonian量的第n本征态，仅仅添加了一对相因子.</p>
+
+
+
+            <div class="Card-Question">
+                <p>1、为什么正交归一？</p>
+                <p>2、为什么完备？</p>
+                <p>3、为什么可以表示为线性叠加？</p>
+                <p>4、为什么是两根竖线</p>
+                <p>5、什么是Hermitian性</p>
+            </div>
+
+
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

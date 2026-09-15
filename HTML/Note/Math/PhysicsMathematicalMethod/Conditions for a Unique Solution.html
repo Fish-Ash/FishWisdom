@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>数学物理方法</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>定解条件</h1>
+
+        <div class="Card-Analysis">
+            <h2>初始条件</h2>
+            <p>初始条件应当给出整个系统的初始状态，而非系统某部分的初始状态.</p>
+
+            <div class="Card-Definition">
+                <b>无初始条件的问题</b>
+                <p>可以完全忽略初始条件的影响的问题.</p>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>边界条件</h2>
+
+            <p>[设]用\(\Sigma\)表示边界.</p>
+            <p>常见的线性边界条件，数学上分为三类：</p>
+            <p>第一类边界条件：规定了所研究物理量在边界上的数值.</p>
+            $$\left. u(\boldsymbol{r}, t)\right\rvert_\Sigma = f(M, t)$$
+            <p>第二类边界条件：规定了所研究物理量在边界外法线方向上方向导数的数值.</p>
+            $$\left.\frac{\partial u}{\partial n}\right\rvert_\Sigma = f(M, t)$$
+            <p>第三类边界条件：规定了所研究物理量及其外法向导数的线性组合在边界上的数值.</p>
+            $$\left.\left(u + H\frac{\partial u}{\partial n}\right)\right\rvert_\Sigma = f(M, t)$$
+        </div>
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

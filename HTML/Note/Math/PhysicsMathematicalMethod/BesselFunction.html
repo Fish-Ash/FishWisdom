@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>数学物理方法</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>Bessel方程</h1>
+
+        <div class="Card-Analysis">
+            <h2>正则奇点邻域上的Bessel方程级数解</h2>
+            <h3>\(\nu\)阶Bessel方程</h3>
+            <p>在\(x_0 = 0\)的邻域上求解\(\nu\)阶Bessel方程：</p>
+            $$x^2\frac{\mathrm{d}^2y}{\mathrm{d}x^2} + x\frac{\mathrm{d}y}{\mathrm{d}x} + (x^2 - \nu^2)y = 0$$
+            <ul>
+                <li>\(\nu\)：阶数，不为整数或半整数</li>
+            </ul>
+
+            $$y'' + \frac{1}{x}y' + \left(1 - \frac{\nu^2}{x^2}\right)y = 0$$
+            <p>点\(x_0 = 0\)为\(p(x) = \frac{1}{x}\)的一阶极点，又是\(q(x) = 1 - \frac{\nu^2}{x^2}\)的二阶极点，因此\(x_0 = 0\)为Bessel方程的正则奇点.</p>
+            <p>判定方程为：</p>
+            $$s(s-1) + s - \nu^2 = 0$$
+            <p>即</p>
+            $$s^2 - \nu^2 = 0$$
+            $$s_1 = \nu,\quad s_2 = -\nu$$
+            
+            <p>\(s_1 - s_2 = 2\nu\neq\mathbb{Z}\)，因此线性独立解的形式为：</p>
+            $$\omega_1(z) = \sum_{k=0}^\infty a_k (z-z_0)^{s_1 +k}$$
+            $$\omega_2(z) = \sum_{k=0}^\infty b_k (z-z_0)^{s_2 +k}$$
+
+            <h3>半奇数\(l+1/2\)阶Bessel方程</h3>
+            <p>在\(x_0 = 0\)的邻域上求解\(l+1/2\)阶Bessel方程：</p>
+            $$x^2y'' + xy' + \left[x^2 - (l + 1/2)^2\right]y = 0,\quad l=0,1,2,\cdots$$
+            <p>\(x_0 = 0\)为方程的正则奇点.</p>
+            
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>\(l\)阶球Bessel方程</h2>
+            $$r^2\frac{\mathrm{d}^2R}{\mathrm{d}r^2} + 2r\frac{\mathrm{d}R}{\mathrm{d}r} + \left[k^2r^2 - l(l+1)\right]R = 0$$
+            <p>\(k=0\)时，方程退化为：</p>
+            <a href="SphericalFunction.html#RFunction" class="goto">$$r^2\frac{\mathrm{d}^2R}{\mathrm{d}r^2} + 2r\frac{\mathrm{d}R}{\mathrm{d}r} - l(l+1)R = 0$$</a>
+            
+            <p>[令]</p>
+            $$x = kr,\quad R(r) = \sqrt{\frac{\pi}{2x}}y(x)$$
+            <p>则方程化为\(l + 1/2\)阶Bessel方程：</p>
+            $$x^2\frac{\mathrm{d}^2y}{\mathrm{d}x^2} + x\frac{\mathrm{d}y}{\mathrm{d}x} + \left[x^2 - \left(l + \frac{1}{2}\right)^2\right]y = 0$$
+
+            <h3>线性独立解</h3>
+            <p>\(l + 1/2\)阶Bessel方程有如下几种解：</p>
+            $$J_{l + 1/2}(x),\quad J_{-(l + 1/2)},\quad N_{l + 1/2}(x),\quad H_{l + 1/2}^{(1)}(x),\quad H_{l + 1/2}^{(2)}(x)$$
+            <p>其中，任取两个就组成\(l+1/2\)阶Bessel方程的线性独立解.</p>
+            <p>这样，\(l\)阶Bessel方程的线性独立解就是下列五种中的任选两种：</p>
+            <b>球Bessel函数：</b>
+            $$j_l(x) = \sqrt{\frac{\pi}{2x}}J_{l + 1/2}(x)$$
+            $$j_{-l}(x) = \sqrt{\frac{\pi}{2x}}J_{-l + 1/2}(x)$$
+            <b>球Neumann函数：</b>
+            $$n_l(x) = \sqrt{\frac{\pi}{2x}}N_{l + 1/2}(x)$$
+            <b>球Hankel函数：</b>
+            $$h_l^{(1)}(x) = \sqrt{\frac{\pi}{2x}}H_{l + 1/2}^{(1)}(x)$$
+            $$h_l^{(2)}(x) = \sqrt{\frac{\pi}{2x}}H_{l + 1/2}^{(2)}(x)$$
+
+            <h3>递推公式</h3>
+            <p>用\(z_l(x)\)表示球Bessel函数中球Neumann函数或球Hankel函数：</p>
+            $$z_l(x) = \sqrt{\frac{\pi}{2x}}Z_{l + 1/2}(x)$$
+            $$\because Z_{\nu+1}(x) - 2\nu Z_{\nu}(x)/x + Z_{\nu-1}(x) = 0$$
+            <p>[令]\(\nu = l + 1/2\)</p>
+            $$Z_{l + 3/2}(x) = (2l + 1)Z_{l + 1/2}(x)/x + Z_{l - 1/2}(x) = 0$$
+            $$z_{l+1}(x) = \frac{(2l + 1)}{x}z_l(x) + z_{l-1}(x)$$
+
+            <h3>初等函数表示式</h3>
+            $$J_{1/2}(x) = \sqrt{\frac{2}{\pi x}}\sin x,\quad J_{-1/2}(x) = \sqrt{\frac{2}{\pi x}}\cos x$$
+            <div class="Formula">
+                $$j_0(x) = \frac{\sin x}{x},\quad j_{-1}(x) = \frac{\cos x}{x}$$
+                <div class="Derivation">
+                    $$\because j_l(x) = \sqrt{\frac{\pi}{2x}}J_{l + 1/2}(x)$$
+                    <div class="Split2">
+                        <div class="SplitHalf">
+                            $$\begin{align}\therefore
+                            j_0(x) &= \sqrt{\frac{\pi}{2x}}J_{1/2}(x)\\
+                                   &= \frac{\sin x}{x}
+                            \end{align}$$
+                        </div>
+                        <div class="SplitHalf">
+                            $$\begin{align}\therefore
+                            j_{-1}(x) &= \sqrt{\frac{\pi}{2x}}J_{-1/2}(x)\\
+                                      &= \frac{\cos x}{x}
+                            \end{align}$$
+                        </div>
+                    </div>
+                    <div class="Card-AI">
+                        <p>缺少关于\(x\geq 0\)的证明.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>应用递推公式，可以得到所有\(j_l(x)\)的初等函数表达式.</p>
+            
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

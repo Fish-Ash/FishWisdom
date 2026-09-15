@@ -472,7 +472,7 @@ border-bottom: 1px solid #ccc;
     transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 .Derivation.active {
-  max-height: 1000px;
+  max-height: 20000px;
   opacity: 1;
 }
 
@@ -581,3 +581,12 @@ details summary h3 {
         text-align: center;
         font-size: xx-large;
     }
+
+
+/* 分栏 */
+.Split2 {
+  display: flex;
+}
+.SplitHalf {
+  flex: 1 1 50%;
+}

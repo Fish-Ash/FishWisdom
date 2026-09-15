@@ -37,6 +37,7 @@
 
         <h1>三维空间中的量子力学</h1>
         
+        <p>[注]此章中不再用\(\hat{}\)区分算符与常规物理量，需要自行区分.</p>
         <div class="Card-Analysis">
             <h2>球坐标系下的Schrödinger方程</h2>
             <p>向三维情况的推广是直接了当的，Schrödinger方程为：</p>
@@ -45,6 +46,8 @@
             <p>势能\(V\)与波函数\(\Psi\)此时是\(\boldsymbol{r} = (x,y,z)\)与\(t\)的函数.</p>
             <p>无穷小体积元\(\mathrm{d}^3\boldsymbol{r} = \mathrm{d}x\mathrm{d}y\mathrm{d}z\)内发现粒子的几率为\(|\Psi(\boldsymbol{r}, t)|^2\mathrm{d}^3\boldsymbol{r}\)，归一化条件为：</p>
             $$\int|\Psi|^2\mathrm{d}^3\boldsymbol{r} = 1$$
+
+
             <p>由经典能量可以得到<a href="TimeIndependentSE.html#HamiltonianOperator">Hamiltonian算符</a>：</p>
             $$\frac{1}{2}mv^2 + V = \frac{1}{2m}(p_x^2 + p_y^2 + p_z^2) + V$$
             
@@ -58,7 +61,166 @@
             <ul>
                 <li>\(\nabla^2\equiv \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}\)：直角坐标系中的拉普拉斯算符</li>
             </ul>
+
+            <p>若势不显含时间，将有一组<a href="HilbertSpace.html">完备的</a>定态：</p>
+            <div class="Formula">
+                $$\Psi_n(\boldsymbol{r},t) = \psi_n(\boldsymbol{r})e^{-iE_nt/\hbar}$$
+                <div class="Derivation">
+                    <p>[设]\(\Psi(\boldsymbol{r}, t) = \psi(\boldsymbol{r})\phi(t)\)</p>
+                    <p>[设]\(V(\boldsymbol{r},t) = V(\boldsymbol{r})\)</p>
+                    $$\because i\hbar\frac{\partial\Psi}{\partial t} = -\frac{\hbar^2}{2m}\nabla^2\Psi + V\Psi$$
+                    $$\therefore i\hbar\psi\frac{\mathrm{d}\phi}{\mathrm{d} t} = -\frac{\hbar^2}{2m}\phi\nabla^2\psi + V\psi\phi$$
+                    $$\therefore i\hbar\frac{1}{\phi}\frac{\mathrm{d}\phi}{\mathrm{d} t} = -\frac{\hbar^2}{2m}\frac{1}{\psi}\nabla^2\psi + V$$
+                    $$\therefore i\hbar\frac{1}{\phi}\frac{\mathrm{d}\phi}{\mathrm{d} t} = -\frac{\hbar^2}{2m}\frac{1}{\psi}\nabla^2\psi + V = E,\quad E\in\mathbb{C}$$
+        
+                    $$\because i\hbar\frac{1}{\phi}\frac{\mathrm{d}\phi}{\mathrm{d}t} = E $$
+                    $$\therefore \phi = Ce^{-iEt/\hbar}$$
+                </div>
+            </div>
+            <p>其中空间波函数\(\psi_n\)满足<a href="TimeIndependentSE.html#time independent Schrödinger equation">定态Schrödinger方程</a>：</p>
+            $$-\frac{\hbar^2}{2m}\nabla^2\psi + V\psi = E\psi$$
+            <p>含时Schrödinger方程的一般解为：</p>
+            $$\Psi(\boldsymbol{r}, t) = \sum c_n\psi_n(\boldsymbol{r})e^{-iE_nt/\hbar}$$
+            <p>其中常数\(c_n\)由初始波函数\(\Psi(\boldsymbol{r},0)\)用通常的方法确定.</p>
+            <p>若势允许连续态，则上式中的求和变为积分.</p>
+
+            <p>算符\(\boldsymbol{r}\)与\(\boldsymbol{p}\)各分量之间的<a href="TimeIndependentSE.html#commutator">正则对易关系</a>：</p>
+            $$[r_i, p_j] = -[p_i, r_j] = i\hbar\delta_{ij}$$
+            $$[r_i, r_j] = [p_i, p_j] = 0$$
+
+            <p>三维情况下的Ehrenfest定理：</p>
+            $$\frac{\mathrm{d}}{\mathrm{d}t}\left\langle\boldsymbol{r}\right\rangle = \frac{1}{m}\left\langle\boldsymbol{p}\right\rangle$$
+            $$\frac{\mathrm{d}}{\mathrm{d}t}\left\langle\boldsymbol{p}\right\rangle = \left\langle-\nabla V\right\rangle$$
+            <p>上面每个式子代表三个方程，一个分量一个</p>
+
+            <p>三维情况下的海森堡不确定原理公式：</p>
+            $$\sigma_x\sigma_{p_x} \geq \hbar/2$$
+            $$\sigma_y\sigma_{p_y} \geq \hbar/2$$
+            $$\sigma_z\sigma_{p_z} \geq \hbar/2$$
+            <p>对\(\sigma_x\sigma_{p_y}\)等无限制.</p>
         </div>
+
+        <div class="Card-Analysis">
+            <h2>分离变量法</h2>
+            <p>通常，势能仅是到原点距离的函数，这种情况下自然应用到球坐标系\((r,\theta, \phi)\).</p>
+            <p>整理球坐标系下的Schrödinger方程，可得：</p>
+            <div class="Formula">
+                $$\frac{1}{R}\frac{\mathrm{d}}{\mathrm{d}r}\left(r^2\frac{\mathrm{d}R}{\mathrm{d}r}\right) - [V(r)-E]\frac{2m}{\hbar}r^2 = -\frac{1}{Y}\left[\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial Y}{\partial\theta}\right) + \frac{1}{\sin^2\theta}\frac{\partial^2Y}{\partial\phi^2}\right]$$
+                <div class="Derivation">
+                    <p>将<a href="../../Math/Mathematic/GradientDivergenceCurl.html" class="goto">球坐标系下的拉普拉斯算符</a>代入Schrödinger方程，得：</p>
+                    $$-\frac{\hbar^2}{2m}\left[\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial\psi}{\partial r}\right) + \frac{1}{r^2\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial\psi}{\partial\theta}\right) + \frac{1}{r^2\sin^2\theta}\frac{\partial^2\psi}{\partial\phi^2}\right] + V\psi = E\psi$$
+                    <p>[令]</p>
+                    $$\psi(r,\theta,\phi) = R(r)Y(\theta,\phi)$$
+                    $$\therefore -\frac{\hbar^2}{2m}\left[\frac{Y}{r^2}\frac{\mathrm{d}}{\mathrm{d}r}\left(r^2\frac{\mathrm{d}R}{\mathrm{d}r}\right) + \frac{R}{r^2\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial Y}{\partial\theta}\right) + \frac{R}{r^2\sin^2\theta}\frac{\partial^2Y}{\partial\phi^2}\right] + VYR = EYR$$
+                    $$\therefore \frac{Y}{r^2}\frac{\mathrm{d}}{\mathrm{d}r}\left(r^2\frac{\mathrm{d}R}{\mathrm{d}r}\right) + \frac{R}{r^2\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial Y}{\partial\theta}\right) + \frac{R}{r^2\sin^2\theta}\frac{\partial^2Y}{\partial\phi^2} = (V-E)\frac{2m}{\hbar}YR$$
+                    $$\therefore \frac{1}{R}\frac{\mathrm{d}}{\mathrm{d}r}\left(r^2\frac{\mathrm{d}R}{\mathrm{d}r}\right) + \frac{1}{Y}\left[\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial Y}{\partial\theta}\right) + \frac{1}{\sin^2\theta}\frac{\partial^2Y}{\partial\phi^2}\right] = (V-E)\frac{2m}{\hbar}r^2$$
+                    $$\therefore \frac{1}{R}\frac{\mathrm{d}}{\mathrm{d}r}\left(r^2\frac{\mathrm{d}R}{\mathrm{d}r}\right) - [V(r)-E]\frac{2m}{\hbar}r^2 = -\frac{1}{Y}\left[\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial Y}{\partial\theta}\right) + \frac{1}{\sin^2\theta}\frac{\partial^2Y}{\partial\phi^2}\right]$$
+                </div>
+            </div>
+
+            <p>左式仅与\(r\)有关，而右式仅与\(\theta,\phi\)有关，因此二者皆为常数，令：</p>
+            $$\frac{1}{R}\frac{\mathrm{d}}{\mathrm{d}r}\left(r^2\frac{\mathrm{d}R}{\mathrm{d}r}\right) - [V(r)-E]\frac{2m}{\hbar}r^2 = l(l+1)$$
+            $$\frac{1}{Y}\left[\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial Y}{\partial\theta}\right) + \frac{1}{\sin^2\theta}\frac{\partial^2Y}{\partial\phi^2}\right] = -l(l+1)$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>角动量方程</h2>
+
+            $$\sin\theta\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial Y}{\partial\theta}\right) + \frac{\partial^2Y}{\partial\phi^2} = -l(l+1)Y\sin^2\theta$$
+            <p>这个方程在经典电动力学中求解拉普拉斯方程时出现过.</p>
+            <p>[令]</p>
+            $$Y(\theta,\phi) = \Theta(\theta)\Phi(\phi)$$
+            $$\therefore\Phi\sin\theta\frac{\mathrm{d}}{\mathrm{d}\theta}\left(\sin\theta\frac{\mathrm{d}\Theta}{\partial\theta}\right) + \Theta\frac{\mathrm{d}^2\Phi}{\mathrm{d}\phi^2} = -l(l+1)\Theta\Phi\sin^2\theta$$
+            $$\therefore\frac{\sin\theta}{\Theta}\frac{\mathrm{d}}{\mathrm{d}\theta}\left(\sin\theta\frac{\mathrm{d}\Theta}{\partial\theta}\right) + \frac{1}{\Phi}\frac{\mathrm{d}^2\Phi}{\mathrm{d}\phi^2} = -l(l+1)\sin^2\theta$$
+            $$\therefore\frac{\sin\theta}{\Theta}\frac{\mathrm{d}}{\mathrm{d}\theta}\left(\sin\theta\frac{\mathrm{d}\Theta}{\partial\theta}\right) + l(l+1)\sin^2\theta = -\frac{1}{\Phi}\frac{\mathrm{d}^2\Phi}{\mathrm{d}\phi^2}$$
+            <p>左式仅与\(\theta\)有关，而右式仅与\(\phi\)有关，因此二者皆为常数，令：</p>
+            $$\frac{\sin\theta}{\Theta}\frac{\mathrm{d}}{\mathrm{d}\theta}\left(\sin\theta\frac{\mathrm{d}\Theta}{\partial\theta}\right) + l(l+1)\sin^2\theta = m^2$$
+            $$\frac{1}{\Phi}\frac{\mathrm{d}^2\Phi}{\mathrm{d}\phi^2} = -m^2$$
+            <p>称\(m^2\)为<b>分离常数</b>.</p>
+            $$\frac{1}{\Phi}\frac{\mathrm{d}^2\Phi}{\mathrm{d}\phi^2} = -m^2\Rightarrow \Phi(\phi) = e^{im\phi}$$
+            $$\frac{\sin\theta}{\Theta}\frac{\mathrm{d}}{\mathrm{d}\theta}\left(\sin\theta\frac{\mathrm{d}\Theta}{\partial\theta}\right) + l(l+1)\sin^2\theta = m^2\Rightarrow \Theta(\theta) = AP_l^m(\cos\theta)$$
+            <ul>
+                <li>\(P_l^m\)：缔合勒让德函数
+                    $$P_l^m(x)\equiv (1-x^2)^{|m|/2}\left(\frac{\mathrm{d}}{\mathrm{d}x}\right)^{|m|}P_l(x)$$
+                </li>
+                <li>\(P_l\)：勒让德多项式，由Rodrigue公式定义
+                    $$P_l(x)\equiv \frac{1}{2^ll!}\left(\frac{\mathrm{d}}{\mathrm{d}x}\right)^l\left(x^2-1\right)^l$$
+                </li>
+            </ul>
+
+            <div class="Card-AI">
+                <p>勒让德函数目前没必要深入了解.</p>
+            </div>
+
+            <p>球坐标系中的体积元为：</p>
+            $$\mathrm{d}^3\boldsymbol{r} = r^2\sin\theta\mathrm{d}r\mathrm{d}\theta\mathrm{d}\phi$$
+            <p>因此归一化条件可以写为：</p>
+            <div class="Formula">
+                $$\begin{align}
+                \int|\psi|^2r^2\sin\theta\mathrm{d}r\mathrm{d}\theta\mathrm{d}\phi &= \int|R|^2|Y|^2r^2\sin\theta\mathrm{d}r\mathrm{d}\theta\mathrm{d}\phi\\
+                &= \int|R|^2r^2\mathrm{d}r\cdot\int|Y|^2\sin\theta\mathrm{d}\theta\mathrm{d}\phi\\
+                &= 1
+                \end{align}$$
+                <div class="Derivation">
+                    $$\int|\Psi|^2\mathrm{d}^3\boldsymbol{r} = 1$$
+                    $$\because \Psi = \psi_n e^{-iE_nt/\hbar}$$
+                    $$\therefore |\Psi|^2 = \Psi\Psi^* = |\psi|^2$$
+                </div>
+            </div>
+            <p>对\(R\)与\(Y\)分别归一化是方便的：</p>
+            $$\int_{0}^{\infty}|R|^2r^2\mathrm{d}r = 1$$
+            $$\int_0^{2\pi}\int_0^{\pi}|Y|^2\sin\theta\mathrm{d}\theta\mathrm{d}\phi = 1$$
+
+            <div class="Card-AI">
+                <p>分别归一化的取法有很多，这里只是图方便，因此两个都等于1.</p>
+                <p>\(\theta\)取\(0\sim\pi\)，而\(\phi\)取\(0\sim2\pi\)，简单来说就是\(theta\)沿z轴扫了个半圆，\(\phi\)扫从上到下的整个圆，足够表征一个球面上的任何一个点.</p>
+
+            </div>
+
+            <div class="Card-Definition">
+                <b>球谐函数</b>
+                <p>归一化的角波函数：</p>
+                $$Y_l^m(\theta, \phi) = \epsilon\sqrt{\frac{(2l-1)(l-|m|)!}{4\pi(l+|m|)!}}e^{im\phi}P_l^m(\cos\theta)$$
+                $$\begin{align}
+                Y &= \Theta\Phi\\
+                  &= AP_l^m\cos\theta e^{im\phi}
+                \end{align}$$
+                <p>\(m\geq 0\)时，\(\epsilon = (-1)^m\).</p>
+                <p>\(m\leq 0\)时，\(\epsilon = 1\).</p>
+                <p>它们是自动正交的，因此：</p>
+                $$\int_0^{2\pi}\int_0^\pi\left[Y_l^m(\theta,\phi)\right]^*\left[Y_{l'}^{m'}(\theta,\phi)\right]\sin\theta\mathrm{d}\theta\mathrm{d}\phi = \delta_{ll'}\delta_{mm'}$$
+                <div class="Card-AI">
+                    <p>每两个球谐函数之间是正交的.</p>
+                </div>
+                <div class="Card-Question">
+                    <p>证明？意义？</p>
+                </div>
+                <ul>
+                    <li>\(l\)：角量子数</li>
+                    <li>\(m\)：磁量子数</li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <div class="Card-Analysis">
+            <h2>径向方程</h2>
+            <p>注意到波函数的角度部分\(Y(\theta, \phi)\)对所有的球对称势都是一样的，势\(V(r)\)的具体形式只影响波函数的径向部分\(R(r)\).</p>
+            <div class="Card-Question">
+                <p>球对称是一种什么样的形式？为什么说\(Y(\theta, \phi)\)对所有球对称势一样？</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>径向方程</b>
+                $$-\frac{\hbar^2}{2m}\frac{\mathrm{d}^2u}{\mathrm{d}r^2} + \left[V + \frac{\hbar^2}{2m}\frac{l(l+1)}{r^2}\right]u = Eu$$
+                <ul>
+                    <li>\(m\)：质量</li>
+                </ul>
+                <p>[注]分离常数\(m\)不出现在径向方程中.</p>
+            </div>
+        </div>
+
+
 
         <div id="PageEnd"></div>
 

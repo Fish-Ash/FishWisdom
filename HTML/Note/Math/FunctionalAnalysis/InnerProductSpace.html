@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>泛函分析</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>内积空间</h1>
+
+        <p>复欧式空间中，向量除了有长度的概念，还定义了两个向量的内积运算.</p>
+        <div class="Card-Definition">
+            <b>内积</b>
+            <p>[设]\(\alpha = (a_1, a_2, \cdots, a_n), \beta = (b_1, b_2, \cdots, b_n),~a_i,b_i\in\mathbb{C}\).</p>
+            <p>\(\alpha\)与\(\beta\)的内积定义为：</p>
+            $$\left\langle\alpha,\beta\right\rangle = a_1b_1^* + a_2b_2^* + \cdots + a_nb_n^*$$
+            <ul>
+                <li>\(b_i^*\)：\(b_i\)的复共轭</li>
+            </ul>
+        </div>
+
+        <p>内积与向量的长度存在如下关系：</p>
+        $$||\alpha|| = \sqrt{\left\langle\alpha,\alpha\right\rangle}$$
+
+        <p>\(\alpha\)与\(\beta\)正交\(\Leftrightarrow \left\langle\alpha, \beta\right\rangle = 0\)</p>
+        <p>有限维复欧式空间\(\mathbb{E}^n\)中，内积具有以下性质：</p>
+        <ul>
+            <li>\(\left\langle\alpha, \alpha\right\rangle\geq 0\)，当且仅当\(\alpha = 0\)时取等号.</li>
+            <li>\(\left\langle m\alpha + n\beta, \gamma\right\rangle = m\langle\alpha, \gamma\rangle + n\langle\beta,\gamma\rangle,~\alpha,\beta,\gamma\in\mathbb{E}^n,~m,n\in\mathbb{C}\)</li>
+            <li>\(\langle\alpha,\beta\rangle = \overline{\langle\beta,\alpha\rangle},~\alpha,\beta\in\mathbb{E}^n\)</li>
+        </ul>
+
+        <p>在一般的线性空间中引入内积的概念.</p>
+        <div class="Card-Definition">
+            <b>一般线性空间中的内积</b>
+            <p>[设]\(X\)为复线性空间.</p>
+            <p>若\(\forall\)向量\(x,y\in X\)，有一复数\(\left\langle x,y\right\rangle\)与之对应，且满足以下条件：</p>
+            <ul>
+                <li>\(\left\langle x, x\right\rangle\geq 0,~x\in X\)，当且仅当\(x = 0\)时取等号.</li>
+                <li>\(\left\langle mx + ny, z\right\rangle = m\langle x, z\rangle + n\langle y, z\rangle,~x,y,z\in X,~m,n\in\mathbb{C}\)</li>
+                <li>\(\langle x,y\rangle = \overline{\langle y,x\rangle},~x,y\in\mathbb{E}^n\)</li>
+            </ul>
+            <p>称\(\langle x,y\rangle\)为\(x\)与\(y\)的内积，\(X\)为内积空间.</p>
+        </div>
+
+        <div class="Card-Question">
+            <p>复欧式空间与复线性空间的概念.</p>
+            <p>Hilbert空间与它们的联系.</p>
+
+        </div>
+
+        <div class="Card-Definition">
+            <b>Schwarz不等式</b>
+            <p></p>
+        </div>
+        
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

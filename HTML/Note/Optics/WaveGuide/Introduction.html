@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>光波导理论</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>光波导的一般理论</h1>
+
+        <div class="Card-Analysis">
+            <h2>光频的<a href="../Electromagnetism/Maxwell.html" class="goto">Maxwell方程组</a></h2>
+            <p>对于线性、各向同性、时不变的光波导，通常有：</p>
+            $$\boldsymbol{D} = \epsilon_0\boldsymbol{E} + \boldsymbol{P}$$
+            $$\boldsymbol{B} = \mu_0(\boldsymbol{H} + \boldsymbol{M})$$
+
+            <p>光频下，介质都是无磁性介质，即：</p>
+            $$\boldsymbol{M} = 0$$
+            $$\therefore \boldsymbol{B} = \mu_0\boldsymbol{H}$$
+
+            <p>但\(\boldsymbol{P}\)与\(\boldsymbol{E}\)的关系却是很复杂的，\(\boldsymbol{P}\)与\(\boldsymbol{E}\)关系的一个微小变化，都将导致波导新的物理现象.</p>
+            <p>对于线性、各向同性的时不变光波导，有：</p>
+            <div class="Formula">
+                $$\boldsymbol{\boldsymbol{D}} = \epsilon(\omega)\boldsymbol{E}$$
+                <div class="Derivation">
+                    <a href="../NonlinearOptics/Chapter1.html">$$\because \boldsymbol{P}(\boldsymbol r, t) = \epsilon_0\boldsymbol R(t)*\boldsymbol E(\boldsymbol r, t)$$</a>
+                    $$\begin{align}
+                    \therefore \boldsymbol D(\boldsymbol r, t) &= \epsilon_0\boldsymbol{E}(\boldsymbol r, t) + \boldsymbol{P}(\boldsymbol r, t)\\
+                                                               &= \epsilon_0\boldsymbol{E}(\boldsymbol r, t) + \epsilon_0\boldsymbol R(t)*\boldsymbol E(\boldsymbol r, t)\\
+                    \end{align}$$
+                    <a href="../../Math/FourierAnalysis/FourierTransform.html">$$\because\mathcal F[f(t)*g(t)] = F(\omega)\cdot G(\omega)$$</a>
+                    
+                    <a href="../NonlinearOptics/Chapter1.html">$$\mathcal{F}[\boldsymbol{R}(t)] = \chi^{(1)}(\omega)$$</a>
+                    $$\begin{align}
+                    \therefore \boldsymbol{D}(\boldsymbol{r}, \omega) &= \mathcal{F}[\boldsymbol{D}(\boldsymbol{r}, t)]\\
+                                                                      &= \epsilon_0\boldsymbol{E}(\boldsymbol{r}, \omega) + \epsilon_0\chi^{(1)}(\omega)\boldsymbol{E}(\boldsymbol{r}, \omega)\\
+                                                                      &= \epsilon_0[1 + \chi^{(1)}(\omega)]\boldsymbol{E}(\boldsymbol{r}, \omega)
+                    \end{align}$$
+                    <p>[令]</p>
+                    $$\epsilon(\omega) = \epsilon_0[1 + \chi^{(1)}(\omega)]$$
+                    $$\therefore \boldsymbol{D}(\boldsymbol{r}, \omega) = \epsilon(\omega)\boldsymbol{E}(\boldsymbol{r}, \omega)$$
+                </div>
+            </div>
+
+            <p>可见，以往常用的\(\boldsymbol{D} = \epsilon\boldsymbol{E}\)，实际是一个频域表达式（而非时域），\(\boldsymbol{D}, \boldsymbol{E}, \epsilon\)三个量均为频率（光频）的函数，都有大小、相位等.</p>
+            <p>为便于分析我们首先考虑单一光频的情形，此时光场可以表示为：</p>
+            $$\left[\begin{matrix}\boldsymbol{E}(x,y,z,t)\\\boldsymbol{H}(x,y,z,t)\end{matrix}\right] = \left[\begin{matrix}\boldsymbol{E}(x,y,z)\\\boldsymbol{H}(x,y,z)\end{matrix}\right]e^{-i\omega t} + c.c.$$
+            <ul>
+                <li>\(c.c.\)：共轭</li>
+            </ul>
+            <p>[注]\(\left[\begin{matrix}\boldsymbol{E}(x,y,z)\\\boldsymbol{H}(x,y,z)\end{matrix}\right]\)为一个复矢量，包括方向、幅度、相位.</p>
+
+            <h3>单色平面电磁波</h3>
+
+
+            <p>由<a href="../PhysicalOptics/MonochromaticWave.html#MonochromaticMaxwell" class="goto">单色电磁波的基本方程</a>，根据激发形式的不同与传播介质及其边界条件的限制，电磁波的场强\(\boldsymbol{E}(\boldsymbol{r})\)和\(\boldsymbol{H}(\boldsymbol{r})\)可以有不同的形式.</p>
+            <p>单色平面电磁波是电磁波最单纯、最基本的理想形式，其特征是等相位面为平面，电磁波有确定的传播方向，场量可表示为：</p>
+            $$\boldsymbol{E}(\boldsymbol{r}, t) = \boldsymbol{E}_0e^{-i(\omega t - \boldsymbol{k}\cdot\boldsymbol{r})},\quad\boldsymbol{H}(\boldsymbol{r}, t) = \boldsymbol{H}_0e^{-i(\omega t - \boldsymbol{k}\cdot\boldsymbol{r})}$$            
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光场纵向分量与横向分量的关系</h2>
+            <p>纵向（传输方向）与横向的取向区分是光波导基本特征.</p>
+            <p>规定哪个方向为纵向或横向，具有很大的任意性，但一旦规定好了纵向与横向，则场的分布、方程的形式等随之确定，不再具有任意性.</p>
+            <p>此时光波导中的光场可以分解为纵向分量与横向分量之和：</p>
+            $$\boldsymbol{E} = \boldsymbol{E}_t + \boldsymbol{E}_z$$
+            $$\boldsymbol{H} = \boldsymbol{H}_t + \boldsymbol{H}_z$$
+            <ul>
+                <li>下标\(z\)方向：纵向</li>
+                <li>下表\(t\)方向：垂直于\(z\)方向的横向</li>
+            </ul>
+
+            <p>矢量微分算子可以表示为纵向与横向两个方向的叠加：</p>
+            $$\nabla = \nabla_t + \frac{\partial}{\partial z}\hat{\boldsymbol{z}}$$
+            <ul>
+                <li>\(\hat{\boldsymbol{z}}\)：\(z\)方向单位矢量</li>
+            </ul>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>全反射相移与古斯-汉森位移</h2>
+            <p>全反射条件下，菲涅尔公式不成立，\(\cos\gamma\)失去实数意义，因此反射光束与入射光束间的关系也需要重新确定.</p>
+            <p>TE偏振下，电磁波的场分量</p>
+            <div class="Card-AI">
+                <p>什么是\(\cos\gamma\)?</p>
+            </div>
+        </div>
+        
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

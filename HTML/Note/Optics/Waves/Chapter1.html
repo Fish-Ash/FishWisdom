@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>波动学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>第一章 简单体系的自由振动</h1>
+
+        <h2>引言</h2>        
+        <p>所有事物的运动可以粗略分为两大类：</p>
+        <ul>
+            <li>事物在一个地点附近运动：单摆的摆动、琴弦的振动、杯中水的晃动、电子在原子内的振动、光在激光器两块镜面间的来回反射等.</li>
+            <li>事物从一个地点运动到另一个地点：冰球的滑动、一根紧绷长绳在弹其一端时引起的脉冲的传播、海浪向着海岸的前进、电视显像管中的电子束、恒星发出的肉眼可见的光线等.</li>
+        </ul>
+
+        <p>我们首先研究物体在平衡位置附近的振动.</p>
+        <p>在第一章与第二章，我们将研究一个闭合体系运动的各种实例.</p>
+
+        <div class="Card-Definition">
+            <b>自由振动（自然振动）</b>
+            <p>一个闭合体系首先受到一个初始激发（某种外界扰动），随后自由振动，而不再受任何扰动.</p>
+        </div>
+
+        <p>第一章中，我们仅研究由一个或两个运动部分组成的简单体系，这是第2章中研究由许多个运动部分组成的自由振动体系的基础.</p>
+        <p>第二章中，我们将学习由许多运动部分组成的复杂体系的运动，总可以看作为由许多同时发生的称为模式的更简单运动的合成.</p>
+        <p>我们还将看到，不管怎样复杂的体系，其每一个振动模式的性质都十分类似于一个简单的谐振子.</p>
+        <p>因此，对于处于某个振动模式的任何体系的运动来说，我们将会看到其每个运动部分、每单位质量在单位唯一种都受到同样大小的回复力；同时，所有运动部分的振动都以\(\cos(\omega t + \phi)\)的方式依赖于时间，即它们具有相同的频率\(\omega\)与相同的相位常数\(\phi\).</p>
+
+        <h2>一个自由度体系的自由振动</h2>
+        <p>首先研究在平衡位置附近振荡或振动的物体，这种简单的体系有：</p>
+        <ul>
+            <li>在平面上摆动的摆</li>
+            <li>接在弹簧上的物体</li>
+            <li>LC电路</li>
+            <li>...</li>
+        </ul>
+        <p>它们在任意时刻的位形只用一个量来标定就足够了.</p>
+        <p>这时候我们说，这些体系仅具有一个自由度，或者不太严格的说，它们仅有一个运动部分.</p>
+        <p>对于仅有一个自由度的所有体系，我们将会看到：“运动部分”离开其平衡值的位移都具有相同的简单的时间依赖关系（叫做<b>简谐运动</b>）：</p>
+        $$\phi(t) = A\cos(\omega t + \phi)$$
+        <ul>
+            <li>\(A\gt 0\)：振幅</li>
+            <li>\(\omega\)：角频率，单位：\(rad/s\)</li>
+        </ul>
+        <p>相位常数\(\phi\)取决于时间零点的选择，通常我们对其值并无特别兴趣.</p>
+        <p>对于振动的物体，\(\phi\)表示该物体离开其平衡位置的位移.</p>
+
+        <p>推导符号：</p>
+        <ul>
+            <li>\(\nu = \omega/2\pi\)：频率，单位：\(Hz = s^{-1}\)</li>
+            <li>\(T = 1/\nu\)：周期，单位：\(s\)</li>
+        </ul>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

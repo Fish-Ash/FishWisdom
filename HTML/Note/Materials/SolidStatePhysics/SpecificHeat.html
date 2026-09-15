@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>物理光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>固体的比热</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+
+            <div class="Card-Definition">
+                <b>Dulong-Petit定律</b>
+                <p>对于许多固体，热容近似为：</p>
+                $$C = 3k_B,\quad \text{per atom}$$
+                <p>或</p>
+                $$C = 3R$$
+                <ul>
+                    <li>\(R\)：理想气体常数</li>
+                </ul>
+            </div>            
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>Einstein的计算</h2>
+            <p>一维情况下，一个简谐振子的本征态为：</p>
+            $$E_n = \hbar\omega(n + 1/2)$$
+            <ul>
+                <li>\(\omega\)：谐振频率（Einstein频率）</li>
+            </ul>
+
+            <p>配分函数为：</p>
+            $$\begin{align}
+            Z_{1D} &= \sum_{n\geq 0}e^{-\beta\hbar\omega(n+1/2)}\\
+                   &= \frac{e^{-\beta\hbar\omega/2}}{1-e^{-\beta\hbar\omega}}\\
+                   &= \frac{1}{2\sinh(\beta\hbar\omega/2)}
+            \end{align}$$
+            <ul>
+                <li>\(\beta = \frac{1}{k_BT}\)</li>
+            </ul>
+            <div class="Card-AI">
+                <p>?E_n</p>
+                <p>?配分函数</p>
+                <p>?sinh</p>
+            </div>
+
+            <p>能量的期望为：</p>
+            $$\begin{align}
+            \left\langle E\right\rangle &= -\frac{1}{Z_{1D}}\frac{\partial Z_{1D}}{\partial\beta}\\
+                                        &= \frac{\hbar\omega}{2}\coth\left(\frac{\beta\hbar\omega}{2}\right)\\
+                                        &= \hbar\omega\left[n_B(\beta\hbar\omega) + 1/2\right]
+            \end{align}$$
+            <ul>
+                <li>\(n_B(x) = \frac{1}{e^x - 1}\)：Bose占据因子</li>
+            </ul>
+            
+        </div>
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

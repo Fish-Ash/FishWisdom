@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fourier光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>复振幅分布的空间频谱（角谱）</h1>
+
+        <div class="Card-Analysis">
+            <h2>平面波的空间频率</h2>
+            <p>沿\(\boldsymbol{k}\)方向传播的单色平面波，在光场中\(P(x,y,z)\)点产生的复振幅可以表示为：</p>
+            $$\tilde{E}(x,y,z) = E_0\exp[ik(x\cos\alpha + y\cos\beta + z\cos\gamma)]$$
+            <ul>
+                <li>\(E_0\)：振幅常量</li>
+                <li>\(\cos\alpha, \cos\beta, \cos\gamma\)：传播方向的方向余弦</li>
+            </ul>
+            <p>有如下关系：</p>
+            $$\cos^2\alpha + \cos^2\beta + \cos^2\gamma = 1$$
+            <p>因此，复振幅可以改写为：</p>
+            $$\begin{align}
+            \tilde{E}(x,y,z) &= E_0e^{ikz\cos\gamma}e^{ik(x\cos\alpha + y\cos\beta)}\\
+                             &= E_0e^{ikz\sqrt{1 - \cos^2\alpha - \cos^2\beta}}e^{ik(x\cos\alpha + y\cos\beta)}
+            \end{align}$$
+
+            <p>对于某个选定的\(xy\)平面：</p>
+            $$e^{ikz\sqrt{1 - \cos^2\alpha - \cos^2\beta}}\in\mathbb{C}$$
+            <p>将其归入\(E_0\)，\(xy\)平面上的复振幅分布可以表示为：</p>
+            $$\tilde{E}(x,y) = E_0e^{ik(x\cos\alpha + y\cos\beta)}$$
+
+            <p>等相位线的方程为：</p>
+            $$x\cos\alpha + y\cos\beta = C,\quad C\in\mathbb{C}$$
+            <p>对应于一些平行斜线.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2 id="SpatialFrequency">光波场的空间频率域表示</h2>
+            <p>在空间域内，波数\(k\)可称为<b>空间圆频率（空间角频率）</b>，波长\(\lambda\)可称为<b>光波场的空间周期</b>.</p>
+
+            <div class="Card-Definition">
+                <b>光波场在光波传播方向上的空间频率\(f_k\)</b>
+                <p>表示光波场沿波矢\(\boldsymbol{k}\)方向每增加单位长度，光波场增加的周期数.</p>
+                $$f_k = \frac{1}{\lambda}$$
+            </div>
+
+            <div class="Card-AI">
+                <p>可以类比于\(\omega, T, \nu\)之间的关系</p>
+                $$\omega = \frac{2\pi}{T}$$
+                $$\nu = \frac{1}{T}$$
+            </div>
+
+
+            <p>[注]光波场的空间周期与空间频率随观察方向不同而不同.</p>
+
+            <div class="Card-Definition">
+                <b>三维空间表示式</b>
+                $$E = E_0  e^{i(k_xx + k_yy + k_zz + \phi_0)}$$
+                <p>[注]三维空间表示式即为省略时间相位因子的表示式.</p>
+            </div>
+        </div> 
+
+        <div class="Card-Analysis">
+            <h2>局部空间频率</h2>
+            <p>在Fourier分析中，构成函数的每一频率成分（正、余弦函数或复指数函数）都是扩展到整个\(xy\)空间域的基元函数，因而无法将空间位置与特定空间频率联系在一起.</p>
+            <p>但在实践中存在空间频率局域化的现象.</p>
+            <p>例如，图像的某一局部由类似光栅的一组平行线段组成.</p>
+            <p>图像在局部表现出的周期性特点可以引入与位置关联的局部空间频率来描述.</p>
+            <p>对于复函数：</p>
+            $$g(x,y) = a(x,y)e^{i\phi(x,y)}$$
+            <p>\(a(x,y)\)与\(\phi(x,y)\)分别表示振幅分布与相位分布，都是实函数.</p>
+            <p>光学上我们更关心相位分布，因此假设振幅分布为\((x,y)\)的缓变函数，函数\(g\)的局部空间频率定义为\(\phi(x,y)\)沿\(x\)与\(y\)方向的变化率为：</p>
+            $$f_{lx} = \frac{1}{2\pi}\frac{\partial}{\partial x}\phi(x,y)\quad f_{ly} = \frac{1}{2\pi}\frac{\partial}{\partial y}\phi(x,y)$$
+            <p>对\(g(x,y)\)定义为0的区域，\(f_{lx}, f_{ly}\)定义为0.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>角谱</h2>
+            <p>利用<a href="../../Math/FourierAnalysis/FourierTransform.html">Fourier变换</a>对位于单色光场中的\(xy\)平面上的复振幅分布\(U(x,y)\)进行Fourier分析，得：</p>
+            $$U(x,y) = \iint_{-\infty}^{+\infty}A(f_x, f_y)e^{i2\pi(f_x x + f_y y)}\mathrm{d}f_x\mathrm{d}f_y$$
+            $$A(f_x, f_y) = \iint_{-\infty}^{+\infty}U(x,y)e^{-i2\pi(f_xx + f_yy)}\mathrm{d}x\mathrm{d}y$$
+            <p>这里将平面上复振幅分布\(U(x,y)\)看作频率不同的复指数分量的线性组合，各频率分量的权重因子为\(A(f_x, f_y)\).</p>
+            <p>\(e^{i2\pi(f_xx + f_yy)}\)代表一个传播方向余弦为\((\cos\alpha=\lambda f_x, \cos\beta=\lambda f_y)\)的单色平面波.</p>
+            <p>因此，复振幅分布\(U(x,y)\)可以看作不同方向传播的单色平面波的线性叠加.</p>
+            <p>这些平面波分量的传播方向和频率\(f_x, f_y\)相对应，其相对的振幅与常量相位取决于频谱\(A(f_x, f_y)\)，即复振幅分布的空间频谱.</p>
+            $$\because f_x = \frac{\cos\alpha}{\lambda}, \quad f_y = \frac{\cos\beta}{\lambda}$$
+            <p>\(A(f_x, f_y)\)也可以用余弦方向来表示，即：</p>
+            $$A\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right) = \iint_{-\infty}^{+\infty}U(x,y)e^{-i2\pi\left(\frac{\cos\alpha}{\lambda}x + \frac{\cos\beta}{\lambda}y\right)}\mathrm{d}x\mathrm{d}y$$
+            <p>此时\(A\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)\)就称为\(xy\)平面上复振幅分布的<b>角谱</b>.</p>
+            <p>引入角谱的概念助于进一步理解复振幅分布的物理含义：单色光波场中某一平面上的场分布可以看作不同方向传播的单色平面波的叠加，在叠加时各平面波成分有自己的振幅和常量相位，它们分别取决于角谱的模与辐角.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>衍射的角谱理论</h2>
+            <h3>角谱的传播</h3>
+            <p>孔径平面与观察平面上的光场都可以分别看作为许多不同方向传播的单色平面波分量的线性组合.</p>
+            <p>每一平面波分量的相对振幅与相位取决于相应的角谱\(A_0\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)\)与\(A\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)\)，即：</p>
+            $$U(x_0, y_0) = \iint_{-\infty}^{+\infty}A_0\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)e^{i2\pi\left(\frac{\cos\alpha}{\lambda}x_0 + \frac{\cos\beta}{\lambda}y_0\right)}\times\mathrm{d}\left(\frac{\cos\alpha}{\lambda}\right)\mathrm{d}\left(\frac{\cos\beta}{\lambda}\right)$$
+            $$U(x, y) = \iint_{-\infty}^{+\infty}A\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)e^{i2\pi\left(\frac{\cos\alpha}{\lambda}x + \frac{\cos\beta}{\lambda}y\right)}\times\mathrm{d}\left(\frac{\cos\alpha}{\lambda}\right)\mathrm{d}\left(\frac{\cos\beta}{\lambda}\right)$$
+
+            <p>若我们能找到\(A_0\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)\)与\(A\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)\)间的关系，就知道了每一平面波分量在传播过程中振幅与相位发生的变化，从而确定整个光场由孔径平面传播至观察平面所发生的变化.</p>
+
+            $$A\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right) = A_0\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)e^{ikz\sqrt{1-\cos^2\alpha-\cos^\beta}}$$
+
+            <div class="Card-Question">
+                <p>1、为什么是叉乘</p>
+                <p>2、最后式子由来</p>
+            </div>
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

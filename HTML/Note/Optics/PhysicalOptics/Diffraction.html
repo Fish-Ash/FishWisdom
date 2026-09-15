@@ -3,31 +3,70 @@
 <html lang = "zh-cn">
 
     <head>
-        <meta charset="utf-8">
-        <title>物理光学</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
     <body>
-        <div class="header">不惑</div>
-
-        
+        <div class="header" id="PageHead">不惑</div>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
 
-
-        <h1>衍射</h1>
-
-        <div class="Card-Definition">
-            <b>光的衍射（光的绕射）</b>
-            <p>光波在传播过程中遇到障碍物时偏离直线传播的现象.</p>
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
         </div>
 
+        <!-- <h1>衍射</h1>
+        
         <div class="Card-Analysis">
+            <h2>光的衍射</h2>
+            <div class="Card-Definition">
+                <b>光的衍射（光的绕射）</b>
+                <p>光波在传播过程中遇到障碍物时偏离直线传播的现象.</p>
+                <p>光的衍射是光的波动性的主要标志之一.</p>
+                <p>波面的任何变形（通过相位物体），或者说波面（波前）上光场的复振幅分布受到任何空间调制，都将导致衍射现象的发生，从而使通过障碍物后的光场复振幅重新分布.</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>衍射是一种特殊的干涉.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>衍射屏</b>
+                <p>导致衍射发生的障碍物.</p>
+                <p>其特性用复振幅透射系数\(t(x_1, y_1)\)表示为：</p>
+                $$t(x_1, y_1) = A(x_1, y_1)e^{i\phi(x_, y_1)}$$
+                <ul>
+                    <li>\(t(x_1, y_1)\)：复值函数</li>
+                    <li>\(A(x_1, y_1)\)：振幅</li>
+                    <li>\(\phi(x_1, y_1)\)：相位</li>
+                    <li>\((x_1, y_1)\)：衍射屏上的空间坐标</li>
+                </ul>
+                <p>[设]\(\tilde{E}_0(x_1,y_1)\)为照明光场透过衍射屏前的复振幅分布.</p>
+                <p>[设]\(\tilde{E}(x_1, y_1)\)为刚刚透过衍射屏后的复振幅分布.</p>
+                <p>则：</p>
+                $$\tilde{E}(x_1, y_1) = \tilde{E}_0(x_1, y_1)t(x_1, y_1)$$
+            </div>
+
             <b>光的衍射现象</b>
             <p>使一个足够亮的点光源S发出的光透过一个圆孔\(\Sigma\)，照射到屏幕K上，逐渐改变圆孔的大小.</p>
             <img src="Img/Diffraction/Phenomenon.jpg" width="300">
@@ -36,18 +75,105 @@
             <p>使用单色光源时，是一组明暗相间的同心环带.</p>
             <p>使用白色光源时，是一组色彩相间的彩色环带.</p>
             <p>此后再使圆孔变小，光斑及圆环不仅不跟着变小，反而会增大.</p>
-        </div>
-
-        <div class="Card-Analysis">
-            <h2>惠更斯原理</h2>
-            <p>对于波源S，在某一时刻所产生波的波阵面为\(\Sigma\)，则\(\Sigma\)面上的每一点都可以看作是次波源，它们发出球面次波.</p>
-            <p>其后某一时刻的波阵面\(\Sigma'\)，即是该时刻这些球面次波的包迹面.</p>
-            <img src="Img/Diffraction/HuyghensPrinciple.jpg" width="200">
-        </div>
+        </div> -->
 
         <div class="Card-Analysis">
             <h2>惠更斯-菲涅尔原理</h2>
+
+            <h3>惠更斯原理</h3>
+            <p>对于波源S，在某一时刻所产生波的波阵面为\(\Sigma\)，则\(\Sigma\)面上的每一点都可以看作是次波源，它们发出球面次波.</p>
+            <p>其后某一时刻的波阵面\(\Sigma'\)，即是该时刻这些球面次波的包迹面.</p>
+            <img src="Img/Diffraction/HuyghensPrinciple.jpg" width="200">
+
+            
+            <h3>惠更斯-菲涅尔原理</h3>
             <p>某一时刻\(t'\)的波阵面\(\Sigma'\)上每一点的光振动，应为任意\(t\lt t'\)时刻的波阵面\(\Sigma\)上各点发出的次波场叠加的结果.</p>
+
+            <h3>数学表达式</h3>
+            $$\tilde{E}(P) = \frac{CA\exp(ikR)}{R}\iint_{\Sigma}\frac{\exp(ikr)}{r}k(\theta)\mathrm{d}\sigma$$
+            <p>真空或各向同性、均匀、透明、无源介质中自由传播的单色光波，空间Q点的惠更斯-菲涅尔原理的数学表达式为：</p>
+            $$U(P) = C\iint_\Sigma U(P_0)K(\theta)\frac{e^{ikr}}{r}\mathrm{d}s$$
+            <ul>
+                <li>\(\Sigma\)：光波的一个波面</li>
+                <li>\(U(P_0)\)：波面上任一点\(P_0\)的复振幅</li>
+                <li>\(U(P)\)：光场上任一观察点\(P\)的复振幅</li>
+                <li>\(r\)：\(P_0\)到\(P\)的距离</li>
+                <li>\(\theta\)：\(\overline{PP_0}\)与过\(P_0\)点的元波面法线\(\boldsymbol{n}\)的夹角</li>
+                <li>\(K(\theta)\)：倾斜因子，表示子波源\(P_0\)对\(P\)的作用与角度\(\theta\)有关.</li>
+                <li>\(C\)：常数</li>
+            </ul>
+
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>亥姆霍兹和基尔霍夫积分定理</h2>
+            <p>衍射理论所要解决的问题是：光场中任一点\(P\)的复振幅能否用光场中其他各点的复振幅表示出来.</p>
+            <p>例如：由孔径平面场分布计算出孔径后任一点的复振幅.</p>
+            <p>显然，这是一个根据边界值求解波动方程的问题.</p>
+
+            <p>计算\(U(P)\)的主要数学工具为Green定理，它可作如下表述：</p>
+            <p>若\(U(P)\)与\(G(P)\)为空间位置坐标的任意两复函数，\(S\)为包围空间某体积\(V\)的封闭曲面.</p>
+            <p>若在\(S\)面上与\(S\)面内，\(U(P)\)与\(G(P)\)均单值连续，且具有单值连续的一阶与二阶偏导数，则有：</p>
+            $$\iiint_V(G\nabla^2 U - U\nabla^2 G)\mathrm{d}V = \iint_S\left(U\frac{\partial G}{\partial n} - G\frac{\partial U}{\partial n}\right)\mathrm{d}S$$
+            <ul>
+                <li>\(\frac{\partial}{\partial n}\)：\(S\)上每一点沿向外法线方向上的偏导数</li>
+            </ul>
+
+            <div class="Formula">
+                $$\iint_{S'}\left(U\frac{\partial G}{\partial n} - G\frac{\partial U}{\partial n}\right)\mathrm{d}S = 0$$
+                <div class="Derivation">
+                    $$(\nabla^2 + k^2)U = 0\Rightarrow \nabla^2 U = -k^2U$$
+                    $$(\nabla^2 + k^2)G = 0\Rightarrow \nabla^2 G = -k^2G$$
+                    $$\begin{align}
+                    \iiint_{V'}(G\nabla^2 U - U\nabla^2 G)\mathrm{d}V &= \iiint_{V'}(-GUk^2 + GUk^2)\mathrm{d}V\\
+                                                                      &= 0
+                    \end{align}$$
+                    $$\because\iiint_V(G\nabla^2 U - U\nabla^2 G)\mathrm{d}V = \iint_S\left(U\frac{\partial G}{\partial n} - G\frac{\partial U}{\partial n}\right)\mathrm{d}S$$
+                    $$\therefore\iint_{S'}\left(U\frac{\partial G}{\partial n} - G\frac{\partial U}{\partial n}\right)\mathrm{d}S = 0$$
+                </div>
+            </div>
+
+            $$U(P) = \frac{1}{4\pi}\iint_S\left[\frac{\partial U}{\partial n}\left(\frac{e^{ikr}}{r} - U\frac{\partial}{\partial n}\left(\frac{e^{ikr}}{r}\right)\right)\right]\mathrm{d}S$$
+            <p>上式称为亥姆霍兹和基尔霍夫积分定理.</p>
+            <p>其意义在于衍射场中任意点\(P\)的复振幅分布\(U(P)\)可以用包围该点的任意封闭曲面\(S\)上各点扰动的边界值\(U\)与\(\frac{\partial U}{\partial n}\)计算得出.</p>
+
+            <h3>信息光学补充</h3>
+            <img src="Img/Diffraction/Example1.jpg" width="200" alt="点光源照明平面屏幕">
+            <p>上图表示位于\(P_0\)点的单色点光源照明平面屏幕的情况.</p>
+            <ul>
+                <li>\(P\)：孔径平面\(\Sigma\)上任一点</li>
+                <li>\(Q\)：孔径后方的观察点</li>
+                <li>\(r,r_0\)：分别为\(Q\)与\(P_0\)到\(P\)的距离，二者均比波长大得多</li>
+                <li>\(\boldsymbol{n}\)：\(\Sigma\)面上法线的正方向</li>
+            </ul>
+            <p>单色点光源照明下，平面孔径后方光场中任一点\(Q\)的复振幅为：</p>
+            $$U(Q) = \frac{1}{i\lambda}\iint_\Sigma\frac{a_0e^{ik_0r_0}}{r_0}\left[\frac{\cos(\boldsymbol{n}, \boldsymbol{r}) - \cos(\boldsymbol{n}, \boldsymbol{r}_0)}{2}\right]\frac{e^{ikr}}{r}\mathrm{d}S$$
+            <p>上式称为基尔霍夫衍射公式.</p>
+            <p>孔径平面上的复振幅分布是球面波产生的，因此可用下式表示：</p>
+            $$U_0(P) = \frac{a_0}{r_0}e^{ikr_0}$$
+            <p>可以看出，基尔霍夫衍射公式与惠更斯-菲涅尔原理是一致的，只是在波动理论的基础上，它进一步得出了常数\(c\)与倾斜因子\(K(\theta)\)的具体值：</p>
+            $$c = \frac{1}{i\lambda}$$
+            $$K(\theta) = \frac{\cos(\boldsymbol{n}, \boldsymbol{r}) - \cos(\boldsymbol{n}, \boldsymbol{r}_0)}{2}$$
+
+            <h3>惠更斯-菲涅尔原理与叠加积分</h3>
+            <p>在上基尔霍夫衍射公式中，令：</p>
+            $$h(P, Q) = \frac{1}{i\lambda}\frac{e^{ikr}}{r}K(\theta)$$
+            <p>则：</p>
+            $$U(Q) = \iint_\Sigma h(P, Q)U(P)\mathrm{d}S$$
+
+            <p>为了理解\(h(P, Q)\)的物理意义，可以设想\(\Sigma\)面上任一点\(P\)，其复振幅为\(U_0(P)\)，在\(P\)点处的小面元\(\mathrm{d}S\)对观察点\(Q\)的贡献为：</p>
+            $$\mathrm{d}U(Q) = h(P, Q)U(P)\mathrm{d}S$$
+            <p>\(h(P,Q)\)表示在\(P\)点有一个单位脉冲（即\(U_0(P)\mathrm{d}S = 1\)时），在观察点\(Q\)造成的复振幅分布.</p>
+            <p>\(h(P,Q)\)称为<b>脉冲响应</b>或<b>点扩散函数</b>.</p>
+            <div class="Card-AI">
+                <p>物理上，\(U_0(P)\mathrm{d}S\)通常并不等于1，让其为1是认为定义的.</p>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>菲涅尔-基尔霍夫衍射公式</h2>
+            $$\tilde{E}(P) = \frac{A}{i\lambda}\iint_\sum\frac{\exp(ikl)}{l}\frac{\exp(ikr)}{r}\left[\frac{\cos(n,r) - \cos(n, l)}{2}\right]\mathrm{d}\sigma$$
         </div>
 
         <div class="Card-Definition">
@@ -106,22 +232,7 @@
             <h2>夫琅禾费衍射</h2>
             <p>观察屏必须放置在远离衍射屏的地方.</p>
 
-            <h3>夫琅禾费矩形孔衍射</h3>
-            $$\tilde{E}(x,y) = \tilde{E}_0\frac{\sin\alpha}{\alpha}\frac{\sin\beta}{\beta}$$
-            <ul>
-                <li>\(\tilde{E}_0 = \tilde{E}(0,0) = Cab\)：观察屏中心点\(P_0\)处的光场复振幅.</li>
-                <li>\(a,b\)：分别为矩形孔沿\(x_1,y_1\)轴方向的宽度.</li>
-                <li>\(\alpha = \frac{kax}{2f}\)</li>
-                <li>\(\beta = \frac{kby}{2f}\)</li>
-            </ul>
-            $$I(x,y) = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2\left(\frac{\sin\beta}{\beta}\right)^2$$
-            <ul>
-                <li>\(I_0 = |Cab|^2\)：\(P_0\)点的光强度.</li>
-            </ul>
 
-            <b>衍射光强沿\(x\)轴分布</b>
-            $$\because y = 0$$
-            $$\therefore I = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2$$
 
             <h3>夫琅禾费圆孔衍射</h3>
             <b>实用性</b> 
@@ -196,74 +307,6 @@
         </div>
 
         <div class="Card-Analysis">
-            <h2>单缝夫琅禾费衍射</h2>
-            <img src="Img/Diffraction/SingleSlitFD.jpg" alt="单缝夫琅禾费衍射" width="400">
-            <p>衍射屏上P点的光场复振幅为：</p>
-            $$\tilde{E}(P) = C\int_{-a/2}^{a/2}e^{-ikxx_1/f}\mathrm{d}x_1 = \tilde{E}_0\frac{\sin\alpha}{\alpha}$$
-            <ul>
-                <li>\(\tilde{E}_0 = Ca\)：观察屏中心点P<sub>0</sub>处的光场复振幅</li>
-                <li>\(\alpha = \frac{kax}{2f} = \frac{\pi a}{\lambda}\frac{x}{f} \approx \frac{\pi a\sin\theta}{\lambda}\)</li>
-            </ul>
-            <p>P点光强为：</p>
-            $$I = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2$$
-            <ul>
-                <li>\(I_0 = |\tilde{E}_0|^2\)</li>
-                <li>\(\left(\frac{\sin\alpha}{\alpha}\right)^2\)：单缝衍射因子</li>
-            </ul>
-            <p>因此，矩孔夫琅禾费颜色和的相对强度分布是两个单缝衍射因子的乘积.</p>
-
-            <b>单色光照明时的衍射光强分布</b>
-            <p>\(\alpha = 0\)时：对应于\(\theta = 0\)的衍射位置，为光强中央主极大值（亮条纹）.</p>
-            <p>\(\alpha = m\pi\)时：对应于满足：</p>
-            $$\sin\theta = m\frac{\lambda}{a},~m=\pm1,\pm2,\cdots$$
-            <p>的衍射角方向为光强极小值（暗条纹方向）.</p>
-            <p>相邻暗条纹角宽度为：</p>
-            <div class="Formula">
-                $$\Delta \theta = \frac{\lambda}{a\cos\theta}$$
-                <div class="Derivation">
-                    $$\because \sin\theta = m\frac{\lambda}{a}$$
-                    $$\therefore \cos\theta\mathrm{d}\theta = \frac{\lambda}{a}\mathrm{d}m$$
-                    $$\therefore \cos\theta\Delta\theta = \frac{\lambda}{a}\Delta m$$
-                    $$\because \Delta m = 1$$
-                    $$\therefore \Delta\theta = \frac{\lambda}{a\cos\theta}$$
-                </div>
-            </div>
-            <p>衍射角很小时，相邻暗条纹的角宽度为：</p>
-            $$\Delta\theta \approx \frac{\lambda}{a}$$
-            <p>对于中央亮条纹，其角宽度\(\Delta\theta_0\)为：</p>
-            $$\Delta\theta_0 = 2\Delta\theta = \frac{2\lambda}{a}$$
-
-        </div>
-
-        <div class="Card-Analysis">
-            <h2>多缝夫琅禾费衍射</h2>
-            <img src="Img/Diffraction/MultiSlit.jpg" alt="多缝夫琅禾费衍射" width="400">
-            <ul>
-                <li>S：与图面垂直的线光源，位于透镜L<sub>1</sub>的焦面上.</li>
-
-            </ul>
-            <b>多缝</b>
-            <p>在一块不透光的屏上，刻有\(N\)条等间距、等宽度的通光狭缝.</p>
-            <p>其每条狭缝均平行于\(y_1\)方向，沿\(x_1\)方向缝宽为\(a\)，相邻狭缝间距为\(d\).</p>
-            $$\begin{align}
-            \phi &= k\cdot\Delta\\
-                 &= \frac{2\pi}{\lambda}d\sin\theta
-            \end{align}$$
-            <p>P点的光强度为：</p>
-            $$I(P) = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2\left(\frac{\sin\frac{N\phi}{2}}{\sin\frac{\phi}{2}}\right)^2$$
-            <ul>
-                <li>\(I_0\)：单缝衍射下P<sub>0</sub>点的光强</li>
-                <li>\(\left(\frac{\sin\alpha}{\alpha}\right)^2\)：单缝衍射因子</li>
-                <li>\(\left(\frac{\sin\frac{N\phi}{2}}{\sin\frac{\phi}{2}}\right)^2\)：多光束干涉因子</li>
-            </ul>
-            <p>可见，多缝衍射是衍射和干涉的共同结果.</p>
-            <p>单缝衍射因子与单缝本身的性质（缝宽、单缝范围内引入的振幅和相位的变化）有关.</p>
-            <p>多光束干涉因子来源于狭缝的周期性排列，与单缝本身的性质无关.</p>
-            
-
-        </div>
-
-        <div class="Card-Analysis">
             <h2>夫琅禾费衍射与菲涅尔衍射的应用</h2>
             <ul>
                 <li>光栅</li>
@@ -277,8 +320,10 @@
             <li><b>夫琅禾费衍射</b>：</li>
         </ul>
 
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
         <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
-    
 </html>

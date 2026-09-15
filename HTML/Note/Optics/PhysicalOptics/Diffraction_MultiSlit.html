@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>多缝夫琅禾费衍射</h1>
+
+        <div class="Card-Analysis">
+            <h2>实验装置</h2>
+            <img src="Img/Diffraction/MultiSlit.jpg" alt="多缝夫琅禾费衍射" width="400">
+            <ul>
+                <li>S：与图面垂直的线光源，位于透镜L<sub>1</sub>的焦面上</li>
+                <li>G：一块不透光的屏上，开有\(N\)个等宽（\(a\)）等间距（光栅常数\(d\)）狭缝的衍射屏（振幅型矩形光栅），能对入射光的振幅进行空间周期性调制.</li>
+            </ul>
+            <div class="Card-AI">
+                <p>线光源发出的柱面波经透镜L<sub>1</sub>调制后成为平面波.</p>
+            </div>
+            <p>多缝的方向与线光源平行.</p>
+            <p>多缝的衍射图样在透镜L<sub>2</sub>的焦面上观察.</p>
+            <p>设多缝的方向是\(y_1\)方向，则显然多缝衍射图样的强度分布只沿\(x\)方向变化，衍射条纹是一些平行于\(y\)轴的亮条纹.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>强度分布公式</h2>
+
+            <p>夫琅禾费多缝衍射中，多缝按其光栅常数\(d\)将入射波波面分成\(N\)个部分，每个部分成为一单缝而发生<a href="Diffraction.html">单缝夫琅禾费衍射</a>.</p>
+            <p>由于单缝衍射场之间是相干的，因此多缝夫琅禾费衍射的复振幅分布为所有单缝夫琅禾费衍射复振幅的叠加，可以看作为单缝夫琅禾费衍射与多缝干涉的综合结果.</p>
+
+            <p>设P为L<sub>2</sub>后焦面上任一观察点，位于光轴上的中心单缝的夫琅禾费衍射图样在P点的复振幅为：</p>
+            $$\tilde{E}(P) = A\left(\frac{\sin\alpha}{\alpha}\right)$$
+            <ul>
+                <li>\(A = \frac{C}{f}A'\exp([ikf])\in\mathbb{C}\)</li>
+                <li>\(\alpha = \frac{\pi}{\lambda}a\sin\theta\)</li>
+                <li>\(\sin\theta = \frac{x}{f}\)</li>
+            </ul>
+
+            <p>相邻单缝在\(P\)点产生的夫琅禾费衍射的幅值与中心单缝的相同，但产生一个相位差：</p>
+            $$\begin{align}
+            \delta &= k\cdot\Delta\\
+            &= \frac{2\pi}{\lambda}d\sin\theta
+            \end{align}$$
+            
+            <p>因此，多缝在\(P\)点产生的复振幅为\(N\)个振幅相同、相邻光束相位差相等的多光束干涉的结果：</p>
+            <div class="Formula">
+                $$\begin{align}
+                \tilde{E}(P) &= A\left(\frac{\sin\alpha}{\alpha}\right)\left[1 + e^{i\delta} + e^{i2\delta} + \cdots + e^{i(N-1)\delta}\right]\\
+                             &= A\left(\frac{\sin\alpha}{\alpha}\right)\left(\frac{\sin\frac{N\delta}{2}}{\sin\frac{\delta}{2}}\right)\exp\left[i(N-1)\frac{\delta}{2}\right]
+                \end{align}$$
+                <div class="Derivation">
+                    <p>由<a href="../../Math/Mathematic/Sequence.html">等比数列求和公式</a>：</p>
+                    $$\left[1 + e^{i\delta} + e^{i2\delta} + \cdots + e^{i(N-1)\delta}\right] = \frac{1 - e^{iN\delta}}{1 - e^{i\delta}}$$
+                    $$\begin{align}\because 1 - e^{i\theta} &= e^{i\theta/2}(e^{-i\theta/2} - e^{i\theta/2})\\&= e^{i\theta/2}\left(-2i\sin\frac{\theta}{2}\right)\end{align}$$
+                    $$\begin{align}
+                    \therefore \left[1 + e^{i\delta} + e^{i2\delta} + \cdots + e^{i(N-1)\delta}\right] &= \frac{e^{i(N/2)\delta}\left(-2i\sin\frac{N\delta}{2}\right)}{e^{i\delta/2}\left(-2i\sin\frac{\delta}{2}\right)}\\
+                                                                                                       &= \left(\frac{\sin\frac{N\delta}{2}}{\sin\frac{\delta}{2}}\right)\exp\left[i(N-1)\frac{\delta}{2}\right]
+                    \end{align}$$
+                </div>
+            </div>
+            <div class="Card-AI">
+                <p>这里用标量加法，是假设了振动方向平行.</p>
+            </div>
+
+            <p>P点的光强为：</p>
+            $$I(P) = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2\left(\frac{\sin\frac{N\delta}{2}}{\sin\frac{\delta}{2}}\right)^2$$
+            <ul>
+                <li>\(I_0 = |A|^2\)：单缝衍射下P<sub>0</sub>点的光强</li>
+                <div class="Card-AI"><p>一个单缝</p></div>
+                <li>\(\left(\frac{\sin\alpha}{\alpha}\right)^2\)：单缝衍射因子</li>
+                <li>\(\left(\frac{\sin\frac{N\phi}{2}}{\sin\frac{\phi}{2}}\right)^2\)：多光束干涉因子</li>
+            </ul>
+            <p>可见，多缝衍射是衍射和干涉的共同结果.</p>
+            <p>单缝衍射因子与单缝本身的性质（缝宽、单缝范围内引入的振幅和相位的变化）有关.</p>
+            <p>多光束干涉因子来源于狭缝的周期性排列，与单缝本身的性质无关.</p>
+        </div>
+        
+
+                    
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

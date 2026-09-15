@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>电磁学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>多极展开</h1>
+
+        <div class="Card-Analysis">
+            <h2></h2>
+            <p>考虑一个远小于光波长尺度的任意材料系统，称之为粒子.</p>
+            <p>尽管其尺度小于波长量级，但此粒子仍由原子或分子组成.</p>
+
+            <p>宏观尺度下，\(\rho\)与\(\boldsymbol{j}\)可以视为空间位置的连续函数.</p>
+            <p>然而，原子与分子由空间上离散分布的电荷组成.</p>
+            <p>因此，宏观Maxwell方程组没有考虑到物质的微观结构.</p>
+            <p>宏观场是微观场在局部空间范围内的平均</p>
+
+            <p>[令]</p>
+            $$\rho(\boldsymbol{r}) = \sum_n q_n\delta[\boldsymbol{r} - \boldsymbol{r}_n]$$
+            $$\boldsymbol{j}(\boldsymbol{r}) = \sum_n q_n\dot{\boldsymbol{r}}_n\delta[\boldsymbol{r} - \boldsymbol{r}_n]$$
+            <ul>
+                <li>\(\boldsymbol{r}_n\)：第\(n\)个电荷的位置矢量</li>
+                <li>\(\dot{\boldsymbol{r}_n}\)：第\(n\)个电荷的速度</li>
+            </ul>
+            
+            <div class="Card-AI">
+                <p>\(\rho,\boldsymbol{j}\)仍为\(t\)的函数，因为\(\boldsymbol{r}_n(t)\).</p>
+            </div>
+
+            $$\boldsymbol{j} = \frac{\partial\boldsymbol{P}}{\partial t} + \nabla\times\boldsymbol{M}$$
+            <p>[注]此处忽略了产生入射电场\(\boldsymbol{E}_{inc}\)的源电流密度\(\boldsymbol{j}_s\)，因为其不属于该系统.</p>
+            <p>[注]此处将感生传导电流密度\(\boldsymbol{j}_c\)并入了极化电流密度中.</p>
+
+            <div class="Formula">
+                $$\rho = -\nabla\cdot\boldsymbol{P}$$
+                <div class="Derivation">
+                    $$\nabla\cdot\boldsymbol{j} = \frac{\partial\nabla\cdot\boldsymbol{P}}{\partial t} + \nabla\cdot(\nabla\times\boldsymbol{M})$$
+                    $$\because \nabla\cdot\boldsymbol{j} + \frac{\partial\rho}{\partial t} = 0$$
+                    $$\nabla\cdot(\nabla\times\boldsymbol{M}) = 0$$
+                    $$\therefore \rho = -\nabla\cdot\boldsymbol{P}$$
+                </div>
+            </div>
+
+            <div class="Card-AI">
+                <p>?散度有逆运算？</p>
+            </div>
+            $$\boldsymbol{P}(\boldsymbol{r}) = \sum_n q_n\boldsymbol{r}_n\int_0^1\delta[\boldsymbol{r} - s\boldsymbol{r}_n]\mathrm{d}s$$
+            $$\boldsymbol{M}(\boldsymbol{r}) = \sum_n q_n\boldsymbol{r}_n\times\dot{\boldsymbol{r}}_n\int_0^1s\delta[\boldsymbol{r}-s\boldsymbol{r}_n]\mathrm{d}s$$
+
+            $$V_E = -\int_V\boldsymbol{P}\cdot\boldsymbol{E}_{inc}\mathrm{d}V = -\sum_n q_n\int_0^1\boldsymbol{r}_n\cdot\boldsymbol{E}_{\text{inc}}(s\boldsymbol{r}_n)\mathrm{d}s$$
+            <p>以粒子中心为原点，令\(\boldsymbol{r} = 0\)，对\(\boldsymbol{E}_{inc}\)做Taylor展开，得：</p>
+            $$\boldsymbol{E}_{inc}(s\boldsymbol{r}_n) = \boldsymbol{E}_{inc}(0) + [s\boldsymbol{r}_n\cdot\nabla]\boldsymbol{E}_{inc}(0) + \frac{1}{2!}[s\boldsymbol{r}_n\cdot\nabla]^2\boldsymbol{E}_{inc}(0) + \cdots$$
+            
+            $$\begin{align}
+            V_E = &-\sum_nq_n\boldsymbol{r}_n\cdot\boldsymbol{E}_{inc}(0)\\
+                  &-\sum_n\frac{q_n}{2!}\boldsymbol{r}_n\cdot[\boldsymbol{r}_n\cdot\nabla]\boldsymbol{E}_{inc}(0)\\
+                  &-\sum_n\frac{q_n}{3!}\boldsymbol{r}_n\cdot[\boldsymbol{r}_n\cdot\nabla]^2\boldsymbol{E}_{inc}(0)\\
+                  &-\cdots
+            \end{align}$$
+
+            <div class="Card-Definition" id="definition1">
+                <b>电偶极矩（electric dipole moment）</b>
+                $$\boldsymbol{p} = \sum_nq_n\boldsymbol{r}_n$$
+            </div>
+            <p>\(V_E\)的第一项为<b>电偶极相互作用</b>：</p>
+            $$V_E^{(1)} = -\boldsymbol{p}\cdot\boldsymbol{E}_{\text{inc}}(0)$$
+
+            <div class="Card-Definition">
+                <b>电四极矩</b>
+                $$\overleftrightarrow{\boldsymbol{Q}} = \frac{1}{2}\sum_nq_n\boldsymbol{r}_n\boldsymbol{r}_n$$
+            </div>
+            <p>\(V_E\)的第二项为<b>电四极相互作用</b>：</p>
+            $$V_E^{(2)} = -[\overleftrightarrow{\boldsymbol{Q}}\nabla]\cdot\boldsymbol{E}_{\text{inc}}(0)$$
+        </div>
+        
+        <div class="Card-Analysis">
+            <h2>远距离处的近似电势</h2>
+            <b>前置知识</b>
+            <ul>
+                <li><a href="ElectricPotential.html">电势</a></li>
+            </ul>
+            <p>远离一个局域电荷分布时，可以将其看作一个总电荷为\(Q\)的点电荷.</p>
+            <p>其电势可以近似为\(\frac{1}{4\pi\epsilon_0}\frac{Q}{r}\).</p>
+
+            <div class="Card-Example">
+                <p>求远离<a href="Chapter1.html#ElectricDipole">电偶极子</a>处的电势</p>
+                <img src="Img/MultipolarExpansion1.png" width="200">
+                $$V(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0}\left(\frac{q}{r_+} - \frac{q}{r_-}\right)$$
+                <p>由余弦定理：</p>
+                $$\begin{align}
+                r_+^2 &= (d/2)^2 + r^2 - 2(d/2)r\cos\theta\\
+                      &= \frac{d^2}{4} + r^2 - dr\cos\theta\\
+                      &= r^2\left(1 + \frac{d^2}{4r^2} - \frac{d}{r}\cos\theta\right)\\
+                \end{align}$$
+                $$\begin{align}
+                r_-^2 &= (d/2)^2 + r^2 - 2(d/2)r\cos(\pi - \theta)\\
+                      &= \frac{d^2}{4} + r^2 + dr\cos\theta\\
+                      &= r^2\left(1 + \frac{d^2}{4r^2} + \frac{d}{r}\cos\theta\right)
+                \end{align}$$
+                <p>我们对\(r\gg d\)的区域感兴趣，因此：</p>
+                $$d/r\rightarrow 0$$
+                $$\therefore \frac{d^2}{4r^2} \pm \frac{d}{r}\cos\theta \rightarrow 0$$
+                <a href="../../Math/Mathematic/TaylorFormula.html" class="goto">$$\because (1 + x)^\alpha \approx 1 + \alpha x,\quad x \to 0$$</a>
+                $$\begin{align}
+                \therefore \frac{1}{r_\pm} &= \frac{1}{r}\left(1 - \frac{d^2}{4r^2} \mp \frac{d}{r}\cos\theta\right)^{-1/2}\\
+                                           &\approx \frac{1}{r}\left(1 + \frac{d^2}{8r^2} \pm \frac{d}{2r}\cos\theta\right)\\
+                \end{align}$$
+                $$\therefore \frac{1}{r_+}-\frac{1}{r_-} \approx \frac{d}{r^2}\cos\theta$$
+                $$\therefore V(\boldsymbol{r}) \approx \frac{1}{4\pi\epsilon_0}\frac{qd\cos\theta}{r^2}$$
+            </div>
+            <img src="Img/Pole.png" width="400">
+            <ul>
+                <li>电单极子（点电荷）：按\(1/r\)减小</li>
+                <li>电偶极子：按\(1/r^2\)减小，比点电荷减小得更快</li>
+                <li>电四极子：按\(1/r^3\)减小，比偶极子减小得更快</li>
+                <li>电八极子：按\(1/r^4\)减小，比四极子减小得更快</li>
+            </ul>
+
+            <p>对于任意局域电荷分布，介绍一种以\(1/r\)幂次系统展开的方法.</p>
+            <img src="Img/MultipolarExpansion2.png" width="200">
+            <ul>
+                <li>\(\theta\)：\(\boldsymbol{r}\)与\(\boldsymbol{r}'\)的夹角</li>
+            </ul>
+            $$V(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0}\int\frac{1}{r_0}\rho(\boldsymbol{r}')\mathrm{d}\tau$$
+            <p>由余弦定理：</p>
+            $$\begin{align}
+            r_0^2 &= r^2 + r'^2 - 2r r'\cos\theta\\
+                  &= r^2\left[1 + \left(\frac{r'}{r}\right)^2 - 2\left(\frac{r'}{r}\right)\cos\theta\right]
+            \end{align}$$
+            <p>[令]</p>
+            $$\epsilon\equiv\left(\frac{r'}{r}\right)^2 - 2\left(\frac{r'}{r}\right)\cos\theta$$
+            <div class="Card-AI">
+                <p>这里的\(\epsilon\)与介电常数没有关系.</p>
+            </div>
+            $$\therefore r_0 = r\sqrt{1 + \epsilon}$$
+            <p>对于电荷分布区域外的点，有：</p>
+            $$\epsilon\rightarrow 0$$
+            <p>由<a href="../../Math/Mathematic/TaylorFormula.html" class="goto">Taylor展开</a>：</p>
+            $$\begin{align}
+            \frac{1}{r_0} &= \frac{1}{r}\left(1 + \epsilon\right)^{-1/2}\\
+                          &= \frac{1}{r}\left(1 - \frac{1}{2}\epsilon + \frac{3}{8}\epsilon^2 - \frac{5}{16}\epsilon^3 + \cdots\right)\\
+            \end{align}$$
+
+            <p>或者用\(r, r', \theta'\)表示：</p>
+            $$\begin{align}
+            \frac{1}{r_0} &= \frac{1}{r}\left[1 - \frac{1}{2}\left(\frac{r'}{r}\right)\left(\frac{r'}{r} - 2\cos\theta\right) + \frac{3}{8}\left(\frac{r'}{r}\right)^2\left(\frac{r'}{r} - 2\cos\theta\right)^2 - \frac{5}{16}\left(\frac{r'}{r}\right)^3\left(\frac{r'}{r} - 2\cos\theta\right)^3 + \cdots\right]\\
+                          &= \frac{1}{r}\left[1 + \left(\frac{r'}{r}\cos\theta\right) + \left(\frac{r'}{r}\right)^2(3\cos\theta - 1)/2 + \left(\frac{r'}{r}\right)^3(5\cos^3\theta - 3\cos\theta)/2 + \cdots\right]
+            \end{align}$$
+            <p>按\(r'/r\)的幂次合并同类项后，可以发现其系数为<a href="../../Math/PhysicsMathematicalMethod/LegendreFunction.html" class="goto">勒让德多项式</a>.</p>
+            $$\therefore \frac{1}{r_0} = \frac{1}{r}\sum_{n=0}^\infty\left(\frac{r'}{r}\right)^nP_n(\cos\theta)$$
+            <p>注意涉及积分时\(r\)为常数，将上式代入电势表达式中，得：</p>
+            $$\begin{align}
+            V(\boldsymbol{r}) &= \frac{1}{4\pi\epsilon_0}\sum_{n=0}^\infty\frac{1}{r^{(n+1)}}\int(r')^nP_n(\cos\theta)\rho(\boldsymbol{r}')\mathrm{d}\tau\\
+                              &= \frac{1}{4\pi\epsilon_0}\left[\frac{1}{r}\int\rho(\boldsymbol{r}')\mathrm{d}\tau + \frac{1}{r^2}\int r'\cos\theta\rho(\theta)\mathrm{d}\tau + \frac{1}{r^3}\int(r')^2\left(\frac{3}{2}\cos^2\theta - \frac{1}{2}\right)\rho(\boldsymbol{r}')\mathrm{d}\tau + \cdots\right]
+            \end{align}$$
+            <p>可以看出，\(V\)是按\(1/r\)幂次的多极展开.</p>
+            <p>第一项\(n=0\)是单极子的贡献（按\(1/r\)减小）；第二项\(n=1\)为偶极子（按\(1/r^2\)；第三项为四极子；第四项为八极子……</p>
+
+            <h3>单极项与偶极项</h3>
+            <p>通常，多极展开中的主要贡献来源于单极项：</p>
+            $$V_{单极}(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0}\frac{Q}{r}$$
+            <ul>
+                <li>\(Q = \int\rho\mathrm{d}\tau\)：总电荷</li>
+            </ul>
+            <p>这正是远离电荷处我们所预期的近似电势.</p>
+            <p>对恰巧位于原点的点电荷，\(V_{单极}\)就是所有地方的严格电势，而不仅仅是对大\(r\)处的一级近似；对这种情况，所有高阶的多极矩为\(0\).</p>
+            <p>若总电荷为\(0\)，对电势的主要贡献是偶极（除非它也为\(0\)）：</p>
+            $$V_{偶极}(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0}\frac{1}{r^2}\int r'\cos\theta\rho(\boldsymbol{r}')\mathrm{d}\tau$$
+            <p>由于\(\theta\)为\(\boldsymbol{r}\)与\(\boldsymbol{r}'\)的夹角：</p>
+            $$\therefore r'\cos\theta = \hat{\boldsymbol{r}}\cdot\boldsymbol{r}'$$
+            <p>偶极势可以更有趣地表示为：</p>
+            $$V_{偶极}(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0}\frac{1}{r^2}\hat{\boldsymbol{r}}\cdot\int\boldsymbol{r}'\rho(\boldsymbol{r}')\mathrm{d}\tau$$
+            <p>式中完全不依赖于\(\boldsymbol{r}\)的积分，称为电荷分布的偶极矩：</p>
+            $$\boldsymbol{p}\equiv \int\boldsymbol{r}'\rho(\boldsymbol{r}')\mathrm{d}\tau$$
+            <p>偶极矩对电势的贡献可以简单表示为：</p>
+            $$V_{偶极}(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0}\frac{\boldsymbol{p}\cdot\hat{\boldsymbol{r}}}{r^2}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>辐射电偶极子</h2>
+            <p>由电荷\(q_n\)构成的分布中，各电荷的位置矢量为\(\boldsymbol{r}_n\)、速度为\(\dot{\boldsymbol{r}}_n\)，其产生的电流密度由下式给出：</p>
+            $$\boldsymbol{j}(\boldsymbol{r}) = \sum_n q_n\dot{\boldsymbol{r}}_n\delta[\boldsymbol{r} - \boldsymbol{r}_n]$$
+            <p>取电荷中心\(\boldsymbol{r}_0\)为原点，对上式进行Taylor展开，保留最低阶项，得：</p>
+            $$\boldsymbol{j}(\boldsymbol{r}, t) = \frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{p}(t)\delta[\boldsymbol{r}-\boldsymbol{r}_0]$$
+            <p>偶极矩为：</p>
+            $$\boldsymbol{p}(t) = \sum_nq_n[\boldsymbol{r}_n(t) - \boldsymbol{r}_0]$$
+            <p>这与<a href="#definition1">上式</a>中对偶极矩的定义是一样的，只是上式中取了\(\boldsymbol{r}_0 = 0\).</p>
+            <p>假设其为简谐时间依赖的，则：</p>
+            $$\boldsymbol{j}(\boldsymbol{r}, t) = \text{Re}\{\boldsymbol{j}(\boldsymbol{r})e^{-i\omega t}\}$$
+            $$\boldsymbol{p}(t) = \text{Re}\{\boldsymbol{p}e^{-i\omega t}\}$$
+            <div class="Formula">
+                $$\boldsymbol{j}(\boldsymbol{r}) = -i\omega\boldsymbol{p}\delta[\boldsymbol{r} - \boldsymbol{r}_n]$$
+                <div class="Derivation">
+                    $$\boldsymbol{j}(\boldsymbol{r}, t) = \frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{p}(t)\delta[\boldsymbol{r}-\boldsymbol{r}_0]$$
+                </div>
+            </div>
+            <p>因此，在最低阶近似下，任意电流密度都可以看作一个以电荷分布中心为原点的电偶极子.</p>
+        </div>
+ 
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

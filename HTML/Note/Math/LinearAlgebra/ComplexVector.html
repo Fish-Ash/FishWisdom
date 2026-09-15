@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>线性代数</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>复矩阵</h1>
+
+        <div class="Card-Analysis">
+            <h2>复向量的长度与转置</h2>
+            <div class="Card-Definition">
+                <b>复向量空间\(\mathbb{C}^n\)</b>
+                <p>复向量空间\(\mathbb{C}^n\)包含所有含\(n\)个复分量的向量\(\boldsymbol{x}\).</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>复向量</b>
+                $$x = \left[\begin{matrix}x_1\\x_2\\\vdots\\x_n\end{matrix}\right],\quad x_j = a_j + ib_j\in\mathbb{C}$$
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>Hermitian矩阵</h2>
+
+            <b>前置知识</b>
+            <ul>
+                <li><a href="Matrix.html">矩阵转置</a></li>
+            </ul>
+            <p>Hermitian矩阵类比于实矩阵中的对称矩阵.</p>
+
+            <div class="Card-Definition">
+                <b>共轭转置\(\boldsymbol{A}^{H}\)</b>
+                <p>先将矩阵内每个元素取共轭，再将矩阵转置.</p>
+                $$\boldsymbol{A}^{H} = \left[\begin{matrix}a_{11}^*&a_{21}^*&\cdots&a_{n1}^*\\a_{12}^*&a_{22}^*&\cdots&a_{n2}^*\\\vdots&\vdots&\ddots&\vdots\\a_{1n}^*&a_{2n}^*&\cdots&a_{nn}^*\end{matrix}\right]$$
+            </div>
+
+            <div class="Card-Property">
+                <b>共轭转置的性质</b>
+                <p>1、\(\boldsymbol{x}\)与\(\boldsymbol{y}\)的内积为\(\boldsymbol{x}^{H}\boldsymbol{y}\)，对于正交向量，\(\boldsymbol{x}^{H}\boldsymbol{y} = 0\)</p>
+                <p>2、\(\boldsymbol{x}\)长度的平方为：\(\Vert\boldsymbol{x}\Vert^2 = \boldsymbol{x}^{H}\boldsymbol{x} = |x_1|^2 + \cdots + |x_n|^2\)</p>
+                <p>3、\((\boldsymbol{A}_1\boldsymbol{A}_2)^{H} = \boldsymbol{A}_2^{H}\boldsymbol{A}_1^{H}\)</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>Hermitian矩阵</b>
+                $$\boldsymbol{A}^{H} = \boldsymbol{A}$$
+                <div class="Formula">
+                    $$a_{ji}^* = a_{ij}\Rightarrow a_{kk}\in\mathbb{R}$$
+                    <div class="Derivation">
+                        $$\begin{align}\boldsymbol{A} &= \left[\begin{matrix}a_{11}&a_{12}&\cdots&a_{1n}\\a_{21}&a_{22}&\cdots&a_{2n}\\\vdots&\vdots&\ddots&\vdots\\a_{n1}&a_{n2}&\cdots&a_{nn}\end{matrix}\right]\\
+                        &\overset{*}{\rightarrow}\left[\begin{matrix}a_{11}^*&a_{12}^*&\cdots&a_{1n}^*\\a_{21}^*&a_{22}^*&\cdots&a_{2n}^*\\\vdots&\vdots&\ddots&\vdots\\a_{n1}^*&a_{n2}^*&\cdots&a_{nn}^*\end{matrix}\right]\\
+                        &\overset{T}{\rightarrow}\left[\begin{matrix}a_{11}^*&a_{21}^*&\cdots&a_{n1}^*\\a_{12}^*&a_{22}^*&\cdots&a_{n2}^*\\\vdots&\vdots&\ddots&\vdots\\a_{1n}^*&a_{2n}^*&\cdots&a_{nn}^*\end{matrix}\right]\\
+                        &= \boldsymbol{A}^{H}
+                        \end{align}$$
+                        $$\because\boldsymbol{A} = \boldsymbol{A}^{H}$$
+                        $$\therefore a_{ji}^* = a_{ij}$$
+                        <p>\(i = j = k\)时：</p>
+                        $$a_{kk}^* = a_{kk} \Rightarrow a_{kk}\in\mathbb{R}$$
+                    </div>
+                </div>
+                <p>[注]实对称矩阵必为Hermitian矩阵.</p>
+            </div>
+
+            <div class="Card-Property">
+                <h3>Hermitian矩阵的性质</h3>
+                <h4>若\(\boldsymbol{A}^{H} = \boldsymbol{A}\)，则\(\boldsymbol{A}\)的所有特征值都是实数</h4>
+                <h4>实对称矩阵或Hermitian矩阵的两个特征向量，若它们对应于相异的特征值，则它们相互正交</h4>
+
+                <div class="Formula">
+                    <h4>若\(\boldsymbol{A}^{H} = \boldsymbol{A}\)，则\(\forall \boldsymbol{x}\in\mathbb{C}^n, \boldsymbol{x}^{H}\boldsymbol{A}\boldsymbol{x}\in\mathbb{R}\).</h4>
+                    <div class="Derivation">
+                        <p>\(\boldsymbol{x}^{H}\)为\(1\times n\)矩阵；\(\boldsymbol{A}\)为\(n\times n\)矩阵；\(\boldsymbol{x}\)为\(n\times 1\)矩阵，故：</p>
+                        $$\boldsymbol{x}^{H}\boldsymbol{A}\boldsymbol{x}\in\mathbb{C}$$
+                        $$(\boldsymbol{x}^{H}\boldsymbol{A}\boldsymbol{x})^{H} = \boldsymbol{x}^{H}\boldsymbol{A}^{H}\boldsymbol{x} = \boldsymbol{x}^{H}\boldsymbol{A}\boldsymbol{x}$$
+                        $$\therefore \boldsymbol{x}^{H}\boldsymbol{A}\boldsymbol{x}\in\mathbb{C}$$
+                    </div>
+                </div>
+            </div>
+
+
+            <p>一个实对称矩阵可以分解成\(\boldsymbol{A} = \boldsymbol{Q}\boldsymbol{\Lambda}\boldsymbol{Q}^T\)，正交矩阵\(\boldsymbol{Q}\)由\(\boldsymbol{A}\)的标准正交特征向量组成，\(\boldsymbol{\Lambda}\)由\(\boldsymbol{A}\)的特征值组成.</p>
+            <p>[注]在几何或力学中，这通常称为主轴定理.</p>
+            
+            <div class="Card-Formula">
+                <b>谱定理</b>
+                $$\boldsymbol{A} = \boldsymbol{Q}\boldsymbol{\Lambda}\boldsymbol{Q}^T$$
+            </div>
+            <p>若用列乘行，矩阵\(\boldsymbol{A}\)就变成了一维投影（秩为1的特殊矩阵\(\boldsymbol{x}\boldsymbol{x}^T\)乘\(\lambda\)）的线性组合：</p>
+            $$\begin{align}
+            \boldsymbol{A} &= \boldsymbol{Q}\boldsymbol{\Lambda}\boldsymbol{Q}^T\\
+                           &= \left[\boldsymbol{x}_1\cdots\boldsymbol{x}_n\right]\left[\begin{matrix}\lambda_1&&\\&\ddots&\\&&\lambda_n\end{matrix}\right]\left[\begin{matrix}\boldsymbol{x}_1^T\\\vdots\\\boldsymbol{x}_n^T\end{matrix}\right]\\
+                           &= \lambda_1\boldsymbol{x}_1\boldsymbol{x}_1^T + \lambda_2\boldsymbol{x}_2\boldsymbol{x}_2^T + \cdots + \lambda_n\boldsymbol{x}_n\boldsymbol{x}_n^T
+            \end{align}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>反Hermitian矩阵</h2>
+            <div class="Card-Definition">
+                <b>反Hermitian矩阵</b>
+                $$\boldsymbol{K}^{H} = -\boldsymbol{K}$$
+            </div>
+
+            <div class="Card-Property">
+                <h3>反Hermitian矩阵的性质</h3>
+                <h4>若\(\boldsymbol{A}\)为Hermitian矩阵，则\(\boldsymbol{K} = i\boldsymbol{A}\)为反Hermiatian矩阵.</h4>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>酉矩阵</h2>
+
+            <b>前置知识</b>
+            <ul>
+                <li><a href="Matrix_InverseMatrix.html">逆矩阵</a></li>
+            </ul>
+            <p>作如下类比：</p>
+            <p>Hermitian矩阵（或对称矩阵）比作实数；酉矩阵（或正交矩阵）比作单位圆上的一个数（绝对值为1的复数）.</p>
+            <p>\(\boldsymbol{A}^H = \boldsymbol{A}\)时，特征值均为实数；\(\boldsymbol{U}^H\boldsymbol{U} = I\)时，特征值都在单位圆上.</p>
+
+            <div class="Card-Definition">
+                <b>酉矩阵\(\boldsymbol{U}\)（unitary matrix）</b>
+                $$\boldsymbol{U}^H\boldsymbol{U} = \boldsymbol{I},\quad \boldsymbol{U}\boldsymbol{U}^H = \boldsymbol{I}\Rightarrow \boldsymbol{U}^H = \boldsymbol{U}^{-1}$$
+            </div>
+
+            <div class="Card-Property">
+                <h3>酉矩阵的性质</h3>
+                <h4>\(\boldsymbol{U}\)乘向量，对内积、角度与长度无任何影响.</h4>
+                <p>内积：</p>
+                $$(\boldsymbol{U}\boldsymbol{x})^{H}(\boldsymbol{U}\boldsymbol{y}) = \boldsymbol{x}^{H}\boldsymbol{U}^{H}\boldsymbol{U}\boldsymbol{y} = \boldsymbol{x}^{H}\boldsymbol{y}$$
+                <p>长度：</p>
+                $$\Vert\boldsymbol{U}\boldsymbol{x}\Vert^2 = \boldsymbol{x}^{H}\boldsymbol{U}^{H}\boldsymbol{U}\boldsymbol{x} = \boldsymbol{x}^{H}\boldsymbol{x}$$
+                <h4>\(\boldsymbol{U}\)的每个特征值\(\lambda\)都满足\(|\lambda| = 1\).</h4>
+                <h4>对应于相异特征值的特征向量是正交的.</h4>
+
+            </div>
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

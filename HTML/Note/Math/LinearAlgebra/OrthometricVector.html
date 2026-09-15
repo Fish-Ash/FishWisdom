@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fourier光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+    
+        <h1>正交矢量空间与正交函数系</h1>
+
+        <div class="Card-Analysis">
+            <h2>正交矢量空间</h2>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>正交函数系</h2>
+
+            <p>正交矢量空间的概念可以推广到正交函数系.</p>
+            <div class="Card-Definition">
+                <b>正交函数系</b>
+                <p>若定义在\((x_1,x_2)\)区间上的复函数系\(\left\{\phi_n(x)\right\}\)中的每个函数绝对平方可积，且满足：</p>
+                $$\int_{x_1}^{x_2}\phi_n(x)\phi_m^*(x)\mathrm{d}x = \begin{cases}0,\quad n\neq m\\\mu_m,\quad n=m\end{cases}$$
+                <ul>
+                    <li>\(\mu_m\in\mathbb{R}\)</li>
+                </ul>
+                <p>称\(\{\phi_n(x)\}\)为区间\((x_1, x_2)\)上的正交函数系.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>标准正交函数系</b>
+                <p>若\(\forall m, \mu_m = 1\)，则称\(\{\phi_n(x)\}\)为区间\((x_1, x_2)\)上的标准正交函数系.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>完备正交函数系</b>
+                <p>若在\(\{\phi_n(x)\}\)外再也找不到一个平方可积函数\(g(x)\)（\(g(x)\)在\((x_1, x_2)\)上不恒为零）能和函数系中的所有函数正交，则称\(\{\phi_n(x)\}\)为\((x_1, x_2)\)上的完备正交函数系.</p>
+            </div>
+
+            <p>可以用正交函数系中的个函数（基元函数）的线性组合表示任一位于区间\((x_1, x_2)\)的复函数\(f(x)\)：</p>
+            $$\begin{align}
+            f(x) &= c_1\phi_1(x) + c_2\phi_2(x) + \cdots c_3\phi_3(x) + \cdots\\
+                 &= \sum_i^{\infty}c_n\phi_n(x)
+            \end{align}$$
+            <ul>
+                <li>\(c_n\)：复值系数，作为级数每一项的权重因子</li>
+            </ul>
+            
+            <p>[注]展开式可能包含有限项或无限项数，视具体情况而定.</p>
+
+            <b>\(c_i\)的确定</b>
+            <div class="Formula">
+                $$c_i = \frac{1}{\mu_i}\int_{x_1}^{x_2}f(x)\phi_i^*(x)\mathrm{d}x$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \int_{x_1}^{x_2}f(x)\phi_i^*(x)\mathrm{d}x &= \int_{x_1}^{x_2}c_1\phi_1(x)\phi_i^*(x) + c_2\phi_2(x)\phi_i^*(x) + \cdots + c_i\phi_i(x)\phi_i^*(x) + \cdots\mathrm{d}x\\
+                                                               &= c_i\mu_i
+                    \end{align}$$
+                    $$\therefore c_i = \frac{1}{\mu_i}\int_{x_1}^{x_2}f(x)\phi_i^*(x)\mathrm{d}x$$
+                </div>
+            </div>
+
+            <p>满足正交性的函数系很多，但对线性系统而言，最重要的是正、余弦函数系与复指数函数系.</p>
+            <div class="Card-Formula">
+                <b>正弦函数系</b>
+                $$\phi_n(x) = \sin2\pi nf_0x,~n=0,1,2\cdots$$
+            </div>
+            <div class="Card-Formula">
+                <b>余弦函数系</b>
+                $$\phi_n(x) = \cos2\pi nf_0x,~n=0,1,2\cdots$$
+            </div>
+            <div class="Card-Formula">
+                <b>复指数函数系</b>
+                $$\phi_n(x) = \exp(i2\pi nf_0x), n=0,\pm 1, \pm2, \cdots$$
+            </div>
+
+            <p>这些函数系都在等于周期\(\frac{1}{f_0}\)的整数倍的区间上正交，即：</p>
+            $$x_1 - x_2 = k\left(\frac{1}{f_0}\right),\quad k=1,2,3,\cdots$$
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>超表面</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>分类</h1>
+        <div class="Card-Analysis">
+            <h2>局域超表面与非局域超表面</h2>
+
+            <ul>
+                <li>局域超表面：每个“小天线”各管各的</li>
+                <li>非局域超表面：所有“小天线”通过电磁耦合形成一个整体，集体决定光的响应，特点是可以产生<b>高Q共振</b>.</li>
+            </ul>
+
+            <table>
+                <tr>
+                    <td rowspan="10">非局域超表面</td>
+                    <td>高灵敏度生化与折射率传感</td>
+                </tr>
+                <tr>
+                    <td>窄带滤波与光谱选择</td>
+                </tr>
+                <tr>
+                    <td>图像边缘检测与光学模拟计算</td>
+                </tr>
+                <tr><td>低阈值激光器</td></tr>
+                <tr><td>非线性光学与频率转换</td></tr>
+                <tr><td>高速光调制与全光开关</td></tr>
+                <tr><td>定向、窄带热辐射</td></tr>
+                <tr><td>量子光源与强光–物质耦合</td></tr>
+                <tr><td>窄带波束偏转、聚焦和全息</td></tr>
+                <tr><td>AR/VR眼动追踪与透明光学器件</td></tr>
+            </table>
+
+            <p>在非局域超表面设计中，RCWA扫描出的单元数据库（传统的局域相位数据）通常会失去作用，但RCWA方法依旧管用，</p>
+
+            <div class="Card-AI">
+                <b>高Q共振</b>
+                <p>共振峰特别尖锐、特别窄，且光能够在结构中停留较久的共振状态.</p>
+                <ul>
+                    <li>导模共振</li>
+                    <li>表面晶格共振</li>
+                    <li>Fano共振</li>
+                    <li>准连续域束缚态</li>
+                </ul>
+
+                <b>高敏感度生化传感</b>
+                <p>利用非局域超表面对光极其敏感的特性，检测极少量的生物分子或化学物质.</p>
+
+                <b>折射率传感</b>
+
+            </div>
+                <div class="Split2">
+                    <div class="SplitHalf"><b>局域超表面</b>
+                        <p>设计对象为单个超原子</p>
+                        <p>先计算目标位置的相位、振幅与偏折</p>
+                    </div>
+                    <div class="SplitHalf"><b>非局域超表面</b>
+                        <p>设计对象为整个周期整列的集体模式</p>
+                        <p>先确定设计对象的导模、晶格共振、BIC模式或准BIC模式等集体模式</p>
+                    </div>
+                </div>
+
+
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>厄密超表面与非厄密超表面</h2>
+
+            <p>厄密超表面：可以近似看作能力守恒，无明显增益或损耗的系统.</p>
+            <p>非厄密超表面：主动利用损耗、增益或辐射泄漏来调控光.</p>
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>分析一个工具</h2>
+            <p>适用条件：周期/非周期，局域/非局域，厄密/非厄密</p>
+            <p>数学约束：在计算过程中做了哪些近似？近场/远场？标量衍射？其他？</p>
+            <p>物理约束：是否考虑了材料的损耗？是否考虑了材料的非线性？是否考虑了材料的增益？</p>
+            <p>计算精度：由哪些参数决定？大概在什么量级？</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>扫描建库</h2>
+            <p>扫描不同结构单元的参数，建立包含各种光学响应的数据库，用以备用，这是无论是周期性超表面，还是非周期性超表面，都需要做的一个前期的工作.</p>
+            <p>周期性结构中，一般可以直接选用RCWA来扫描，以下情况另外：</p>
+            
+            <p>1、分析有限阵列和边缘效应时，需要FDTD或FEM补充</p>
+            <p>1.1、阵列周期数较少：器件只有几个到几十个周期时，无限周期近似可能不准确.</p>
+            <p>1.2、研究高Q、BIC或导模共振时：边缘会产生额外辐射，使Q因子下降、共振展宽或频率偏移.</p>
+            <p>1.3、功能与远场光束有关：例如光束偏转、分束、方向性辐射，需要考虑有限孔径引起的旁瓣和角度展宽.</p>
+            <p>1.4、入射光斑与器件尺寸接近：光斑覆盖到阵列边缘时，实验响应会与无限平面波模型不同.</p>
+            <p>1.5、存在长程单元耦合：导模、表面波或非局域模式传播到边缘后会被反射或泄漏.</p>
+            <p>1.6、需要与实际实验结果精确比较：尤其是绝对效率、共振线宽、远场分布和旁瓣.</p>
+
+            <p>2、需要直接求BIC本征模、复本征频率和Q因子：最好补充本征模求解器</p>
+            <p>3、需要研究瞬态过程、脉冲传播：普通RCWA不适合</p>
+            <p>4、需要计算非线性频率转换：需要非线性RCWA扩展或其他全波方法</p>
+            <p>5、结构具有复杂斜面、曲面或沿厚度连续变化：RCWA需要分层近似和收敛验证</p>
+            <p>6、需要非常准确的尖角近场：傅里叶展开可能收敛较慢，必须增加谐波数并进行收敛测试.</p>
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

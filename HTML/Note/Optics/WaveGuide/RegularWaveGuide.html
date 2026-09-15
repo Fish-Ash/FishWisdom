@@ -46,33 +46,83 @@
                 <p>正规光波导表现出明显的导光性质（波动性）.</p>
             </div>
 
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>正规光波导的模式</h2>
+
             <p>正规光波导中，光场可以表示为如下形式：</p>
             $$\left[\begin{matrix}\boldsymbol{E}(x,y,z,t)\\\boldsymbol{H}(x,y,z,t)\end{matrix}\right] = \left[\begin{matrix}\boldsymbol{e}(x,y)\\\boldsymbol{h}(x,y)\end{matrix}\right] e^{i(\beta z - \omega t)}$$
-            <p>因此，光场沿空间的分布可以表示为：</p>
-            $$\left[\begin{matrix}\boldsymbol{E}(x,y,z)\\\boldsymbol{H}(x,y,z)\end{matrix}\right] = \left[\begin{matrix}\boldsymbol{e}(x,y)\\\boldsymbol{h}(x,y)\end{matrix}\right] e^{i\beta z}$$
+            <p>因此，光场的<a href="../PhysicalOptics/Chapter1.html" class="goto">复振幅</a>可以表示为：</p>
+            $$\left[\begin{matrix}\tilde{\boldsymbol{E}}(x,y,z)\\\tilde{\boldsymbol{H}}(x,y,z)\end{matrix}\right] = \left[\begin{matrix}\boldsymbol{e}(x,y)\\\boldsymbol{h}(x,y)\end{matrix}\right] e^{i\beta z}$$
             <ul>
                 <li>\(\beta\)：位移常数，表示光场具有波动性</li>
                 <li>\(\boldsymbol{e}, \boldsymbol{h}\)：模式场，表示光场\((\boldsymbol{E}, \boldsymbol{H})\)沿横截面的分布，模式场是复矢量，具有方向（三维）、幅度与相位</li>
             </ul>
+            <p>“模式场”在一些文献中也被称为“横场”，但这个名称不够确切，因为\(\boldsymbol{e}\)和\(\boldsymbol{h}\)本身不只存在于横截面中，只不过它是由横向坐标决定的，可理解为：横坐标变元的场.</p>
+            <p>只有模式才可以表示为上述形式，它是模式固有的特征.</p>
+            
+            <p>证明模式场存在的方法：</p>
+            <ul>
+                <li>将\(\left[\begin{matrix}\boldsymbol{E}\\\boldsymbol{H}\end{matrix}\right]\)分解成\(\left[\begin{matrix}\boldsymbol{e}\\\boldsymbol{h}\end{matrix}\right]f(z)\)，然后求出\(f(z)\).</li>
+                <li>将光场沿空间的分布方程代入亥姆霍兹方程，验证其正确性.</li>
+            </ul>
+    
+            <!-- <h3>方法2证明过程</h3>
+            <p>由亥姆霍兹方程，有：</p>
+            $$\nabla^2 \boldsymbol{E} + k^2n^2\boldsymbol{E} + \nabla\left(\boldsymbol{E} \cdot \frac{\nabla\epsilon}{\epsilon}\right) = 0$$
+            $$\nabla^2 \boldsymbol{H} + k^2n^2\boldsymbol{H} + \frac{\nabla\epsilon}{\epsilon}\times(\nabla\times\boldsymbol{H}) = 0$$
+            <p>考虑：</p>
+            $$\nabla^2 = \nabla_t^2 + \frac{\partial^2}{\partial z^2}$$
+            $$\nabla^2\boldsymbol{E} = \nabla_t^2\boldsymbol{e}e^{i\beta z} + \left(-\beta^2\right)\boldsymbol{e}e^{i\beta z}$$ -->
         </div>
 
-        <p>“模式场”在一些文献中也被称为“横场”，但这个名称不够确切，因为\(\boldsymbol{e}\)和\(\boldsymbol{h}\)本身不只存在于横截面中，只不过它是由横向坐标决定的，可理解为：横坐标变元的场.</p>
-        <p>只有模式才可以表示为上述形式，它是模式固有的特征.</p>
-        
-        <p>证明模式场存在的方法：</p>
-        <ul>
-            <li>将\(\left(\begin{matrix}\boldsymbol{E}\\\boldsymbol{H}\end{matrix}\right)\)分解成\(\left(\begin{matrix}\boldsymbol{e}\\\boldsymbol{h}\end{matrix}\right)f(z)\)，然后求出\(f(z)\).</li>
-            <li>将光场沿空间的分布方程代入亥姆霍兹方程，验证其正确性.</li>
-        </ul>
+        <div class="Card-Analysis">
+            <h2>模式的含义</h2>
+            <p>数学含义：模式是满足Helmholtz方程的一个特解，并满足在波导中心有界，在边界趋于无穷时等于0等边界条件.</p>
+            <p>一个模式，实际上是正规光波导沿横截面分布的一种场图.</p>
+            <p>较低阶模的场图较简单，高阶模的场图往往非常复杂.</p>
+            <p>由方程求出的模式，只是光波导中光场一个可能的分布形式，是否真正存在还要看激励条件.</p>
+            <p>模式是有序的，因为模式是微分方程的一系列特征解，因此是离散的、可排序的.</p>
+            <p>排序的方式有两种：</p>
+            <ul>
+                <li>以特征方程中分离变量的根的序号排列，由于\(\left[\begin{matrix}\boldsymbol{e}\\\boldsymbol{h}\end{matrix}\right]\)有两个自变量，因此有两列序号.</li>
+                <li>以\(\beta\)的大小排序，\(\beta\)越大序号越小.</li>
+            </ul>
+            <p>许多个模式的线性组合构成了光波导中总的场分布：</p>
+            $$\left[\begin{matrix}\boldsymbol{E}\\\boldsymbol{H}\end{matrix}\right] = \sum_i \left[\begin{matrix}a_i\boldsymbol{e_i}\\b_i\boldsymbol{h_i}\end{matrix}\right](x,y)e^{i\beta_iz}$$
+            <ul>
+                <li>\(a_i,b_i\)：分解系数，表示该模式的相对大小</li>
+            </ul>
+            <p>一个模式在波导中传输的最基本物理量是它的传输常数\(\beta\in\mathbb{C}\).</p>
+            <p>[注]\(\beta\)不仅是光频的函数\(\beta(\omega)\)，也是折射率分布\(\epsilon(x,y)\)的函数（泛函）.</p>
+            <p>\(\beta\)为实数时，光在传输过程中只有相移，没有衰减，光波导相当于一个相移器.</p>
+            <p>\(\beta\)为复数时，表明既有相移又有衰减，\(\beta\)的虚部表示沿光波导的衰减.</p>
+        </div>
 
-        <h3>方法2证明过程</h3>
-        <p>由亥姆霍兹方程，有：</p>
-        $$\nabla^2 \boldsymbol{E} + k^2n^2\boldsymbol{E} + \nabla\left(\boldsymbol{E} \cdot \frac{\nabla\epsilon}{\epsilon}\right) = 0$$
-        $$\nabla^2 \boldsymbol{H} + k^2n^2\boldsymbol{H} + \frac{\nabla\epsilon}{\epsilon}\times(\nabla\times\boldsymbol{H}) = 0$$
-        <p>考虑：</p>
-        $$\nabla^2 = \nabla_t^2 + \frac{\partial^2}{\partial z^2}$$
-        $$\nabla^2\boldsymbol{E} = \nabla_t^2\boldsymbol{e}e^{i\beta z} + \left(-\beta^2\right)\boldsymbol{e}e^{i\beta z}$$
+        <div class="Card-Analysis">
+            <h2>模式场的纵向分量与横向分量的关系</h2>
+            <p>三维的模式场同样可以分解为纵向分量与横向分量之和：</p>
+            $$\boldsymbol{e} = \boldsymbol{e}_t + \boldsymbol{e}_z$$
+            $$\boldsymbol{h} = \boldsymbol{h}_t + \boldsymbol{h}_z$$
+            $$\therefore \left[\begin{matrix}\tilde{\boldsymbol{E}}_t\\\tilde{\boldsymbol{E}}_z\\\tilde{\boldsymbol{H}}_t\\\tilde{\boldsymbol{H}}_z\end{matrix}\right] = \left[\begin{matrix}\boldsymbol{e}_t\\\boldsymbol{e}_z\\\boldsymbol{h}_t\\\boldsymbol{h}_z\end{matrix}\right]e^{i\beta z}$$
+        </div>
 
+        <div class="Card-Analysis">
+            <h2>模式的分类</h2>
+            <p>根据模式场在空间的方向特征，或者说包含纵向分量的情况，通常将模式分为三类：</p>
+            <ul>
+                <li>TEM模（\(\boldsymbol{e}_z = \boldsymbol{h}_z = 0\)）：模式只有横向分量，无纵向分量.</li>
+                <li>TE模（\(\boldsymbol{e}_z = 0,~\boldsymbol{h}_z\neq 0\)）和TM模（\(\boldsymbol{e}_z = 0,~\boldsymbol{h}_z\neq 0\)）：模式仅有一个纵向分量.</li>
+                <li>HE模和EH模：模式的两个纵向分量均不为零，即\(\boldsymbol{h}_z\neq 0,~\boldsymbol{e}_z\neq 0\).</li>
+            </ul>
+            <div class="Card-AI">
+                <p>HE模和EH模不是一类，取决于电场与磁场哪个占优势.</p>
+            </div>
+        </div>
+        <p>光波导中不可能存在TEM模.</p>
+
+        <p>一个正规光波导的不同模式之间满足正交关系.</p>
 
         
         <div id="PageEnd"></div>

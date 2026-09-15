@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>物理光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>电磁场的边界条件</h1>
+
+        <p>在利用Maxwell方程组解决有限空间的电磁场问题，或涉及两种及两种以上介质内的电磁场问题时，除了考虑物质方程外，还须考虑介电常数不连续处的边界条件.</p>
+        <p>由于物理量在界面上发生跃变，因此微分形式的Maxwell方程不再适用，须利用Maxwell方程组的积分形式.</p>
+
+        <div class="Card-Question">
+            <b>为什么不再适用，这似乎是个数学问题？</b>
+            <p>Maxwell积分形式->下式的转变过程是怎样的？</p>
+        </div>
+
+        <div class="Card-Definition" id="BoundaryConditions">
+            <b>电磁场的连续条件</b>
+            <p>在没有传导电流和自由电荷的介质中，磁感强度\(\boldsymbol{B}\)与电位移矢量\(\boldsymbol{D}\)的法向分量在界面上连续；电场强度\(\boldsymbol{E}\)和磁场强度\(\boldsymbol{H}\)的切向分量在界面上连续.</p>
+            $$\begin{cases}
+            B_{1n} = B_{2n}\\
+            D_{1n} = D_{2n}\\
+            H_{1t} = H_{2t}\\
+            E_{1t} = E_{2t}
+            \end{cases}$$
+            <p>对于各向同性介质，\(D_{1n} = D_{2n}\)也可写作\(n_1^2E_{1n} = n_2^2E_{2n}\).</p>
+        </div>
+
+        <div class="Card-Question">
+            <b>证明过程见《光波导理论基础》Page2，需一定的电磁学基础.</b>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>其他形式的边界条件</h2>
+            $$\boldsymbol{n}\times(\boldsymbol{E}_2 - \boldsymbol{E}_1) = 0$$
+            $$\boldsymbol{n}\times(\boldsymbol{H}_2 - \boldsymbol{H}_1) = \boldsymbol{J}_S$$
+            <ul>
+                <li>\(\boldsymbol{J}_s\)：面电流密度</li>
+            </ul>
+
+            $$\boldsymbol{n}\cdot(\boldsymbol{D}_2 - \boldsymbol{D}_1) = \sigma_s$$
+            $$\boldsymbol{n}\cdot(\boldsymbol{B}_2 - \boldsymbol{B}_1) = 0$$
+            <ul>
+                <li>\(\sigma_S\)：电荷面密度</li>
+            </ul>
+
+            <p>对于非导电介质，有：</p>
+            $$\sigma_S = 0,\quad J_S = 0$$
+            <p>四个电磁场矢量的边界条件可以简化为：</p>
+            $$\boldsymbol{n}\times(\boldsymbol{E}_2 - \boldsymbol{E}_1) = 0$$
+            $$\boldsymbol{n}\times(\boldsymbol{H}_2 - \boldsymbol{H}_1) = \boldsymbol{J}_S$$
+            $$\boldsymbol{n}\cdot(\boldsymbol{D}_2 - \boldsymbol{D}_1) = \sigma_s$$
+            $$\boldsymbol{n}\cdot(\boldsymbol{B}_2 - \boldsymbol{B}_1) = 0$$
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

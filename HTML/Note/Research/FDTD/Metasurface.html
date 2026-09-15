@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>FDTD</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>Example 1</h1>
+        
+        <b>添加结构</b>
+        <pre><code class="Code">
+            addrect; # 添加矩形
+        </code></pre>
+
+
+
+        <b>将结构添加至组</b>
+
+        <pre><code class="Code">
+            addtogroup("")  # 将结构添加至组，参数为组名
+        </code></pre>
+
+        <b>循环</b>
+        <pre><code class="Code">
+            for(i = start:step:end){
+                ?i # 输出
+            }
+        </code></pre>
+                
+
+        <h2>FDTD专属</h2>
+        <pre><code class="Code">
+            set("pml profile", 3) # steep angle
+        </code></pre>
+
+        <h2>光源设置</h2>
+        <pre><code class="Code">
+            addplane; # 平面光源
+        </code></pre>
+
+        <h2>监视器</h2>
+        <pre><code class="Code">
+            addindex; # IndexMonitor
+            addpower; # DFTMonitor
+        </code></pre>
+
+        <h2>RCWA</h2>
+        <div class="Card-AI">
+            <p>RCWA求解器自带平面波激励.</p>
+
+            <p>fdtd求解区域设置原则：</p>
+            <ul>
+                <ol>xy方向，贴合胞元</ol>
+                <ol>z方向，上下留出空位</ol>
+            </ul>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+    
+</html>

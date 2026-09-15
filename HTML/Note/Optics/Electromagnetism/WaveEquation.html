@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>电磁学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>波动方程</h1>
+
+        <div class="Card-Analysis">
+            <h2>非齐次波动方程</h2>
+            <b>前置知识</b>
+            <ul>
+                <li><a href="Maxwell.html">Maxwell方程组</a></li>
+            </ul>
+            <div class="Formula">
+                $$\nabla\times\nabla\times\boldsymbol{E} + \frac{1}{c^2}\frac{\partial^2 \boldsymbol{E}}{\partial t^2} = -\mu_0\frac{\partial}{\partial t}\left(\frac{\partial\boldsymbol{P}}{\partial t} + \boldsymbol{j} + \nabla\times\boldsymbol{M}\right)$$
+                <div class="Derivation">
+                    $$\nabla\times\nabla\times\boldsymbol{E} = -\frac{\partial(\nabla\times\boldsymbol{B})}{\partial t}$$
+                    $$\because\boldsymbol{B} = \mu_0(\boldsymbol{H} + \boldsymbol{M})$$
+                    $$\begin{align}
+                    \nabla\times\nabla\times\boldsymbol{E} &= -\mu_0\frac{\partial}{\partial t}\left(\nabla\times\boldsymbol{H} + \nabla\times\boldsymbol{M}\right)\\
+                                                            &= -\mu_0\frac{\partial}{\partial t}\left(\frac{\partial\boldsymbol{D}}{\partial t} + \boldsymbol{j} + \nabla\times\boldsymbol{M}\right)\\
+                                                            &= -\mu_0\frac{\partial}{\partial t}\left(\epsilon_0\frac{\partial\boldsymbol{E}}{\partial t} + \frac{\partial\boldsymbol{P}}{\partial t} + \boldsymbol{j} + \nabla\times\boldsymbol{M}\right)\\
+                                                            &= -\mu_0\frac{\partial}{\partial t}\left(\frac{\partial\boldsymbol{P}}{\partial t} + \boldsymbol{j} + \nabla\times\boldsymbol{M}\right) - \mu_0\epsilon_0\frac{\partial^2\boldsymbol{E}}{\partial t^2}
+                    \end{align}$$
+                    $$\therefore \nabla\times\nabla\times\boldsymbol{E} + \mu_0\epsilon_0\frac{\partial^2\boldsymbol{E}}{\partial t^2} = -\mu_0\frac{\partial}{\partial t}\left(\frac{\partial\boldsymbol{P}}{\partial t} + \boldsymbol{j} + \nabla\times\boldsymbol{M}\right)$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\nabla\times\nabla\times\boldsymbol{B} + \frac{1}{c^2}\frac{\partial^2\boldsymbol{B}}{\partial t^2} = \mu_0\nabla\times\left(\frac{\partial\boldsymbol{P}}{\partial t} + \boldsymbol{j} + \nabla\times\boldsymbol{M}\right)$$
+                <div class="Derivation">
+                    $$\because\boldsymbol{B} = \mu_0(\boldsymbol{H} + \boldsymbol{M})$$
+                    $$\begin{align}
+                    \nabla\times\nabla\times\boldsymbol{B} &= \mu_0\nabla\times\left(\nabla\times\boldsymbol{H} + \nabla\times\boldsymbol{M}\right)\\
+                                                            &= \mu_0\nabla\times\left(\frac{\partial\boldsymbol{D}}{\partial t} + \boldsymbol{j} + \nabla\times\boldsymbol{M}\right)\\
+                                                            &= \mu_0\nabla\times\left(\epsilon_0\frac{\partial\boldsymbol{E}}{\partial t} + \frac{\partial\boldsymbol{P}}{\partial t} + \boldsymbol{j} + \nabla\times\boldsymbol{M}\right)\\
+                                                            &= \mu_0\nabla\times\left(\frac{\partial\boldsymbol{P}}{\partial t} + \boldsymbol{j} + \nabla\times\boldsymbol{M}\right) + \epsilon_0\mu_0\frac{\partial(\nabla\times\boldsymbol{E})}{\partial t}\\
+                    \end{align}$$
+                    $$\therefore \nabla\times\nabla\times\boldsymbol{B} + \frac{1}{c^2}\frac{\partial^2\boldsymbol{B}}{\partial t^2} = \mu_0\nabla\times\left(\frac{\partial\boldsymbol{P}}{\partial t} + \boldsymbol{j} + \nabla\times\boldsymbol{M}\right)$$
+                </div>
+            </div>
+
+            <p>[令]</p>
+            $$\boldsymbol{j} = \boldsymbol{j}_s + \boldsymbol{j}_c$$
+            $$\boldsymbol{j}_{tot} = \boldsymbol{j}_s + \boldsymbol{j}_c + \frac{\partial\boldsymbol{P}}{\partial t} + \nabla\times\boldsymbol{M}$$
+            <ul>
+                <li>\(\boldsymbol{j}_{tot}\)：总电流密度</li>
+                <li>\(\boldsymbol{j}_s\)：源电流密度</li>
+                <li>\(\boldsymbol{j}_c\)：感生传导电流密度</li>
+                <li>\(\frac{\partial\boldsymbol{P}}{\partial t}\)：极化电流密度</li>
+                <li>\(\nabla\times\boldsymbol{M}\)：磁化电流密度</li>
+            </ul>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>波动方程</h2>
+            $$\nabla^2\boldsymbol{E} - \frac{1}{v^2}\frac{\partial\boldsymbol{E}}{\partial t} = 0$$
+            $$\nabla^2\boldsymbol{B} - \frac{1}{v^2}\frac{\partial\boldsymbol{B}}{\partial t} = 0$$
+
+
+            <p>用单一的一个标量波动方程就可以概括\(\boldsymbol{E}\)和\(\boldsymbol{H}\)中所有分量的行为：</p>
+            $$\nabla^2u(Q, t) - \frac{n^2}{c^2}\frac{\partial^2 u(Q, t)}{\partial t^2} = 0$$
+            <ul>
+                <li>\(\nabla^2\)：<a href="../../Math/Mathematic/GradientDivergenceCurl.html#Laplacian" class="goto">Laplace算子</a></li>
+                <li>\(u(Q, t)\)：任何标量场分量</li>
+                <li>\(Q\)：空间位置</li>
+                <li>\(t\)：时间</li>
+            </ul>
+        </div>
+
+        
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

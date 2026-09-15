@@ -20,123 +20,128 @@
         </ul>
 
         <h1>矩阵</h1>
-        <h2>概念</h2>
-        <b>矩阵（\(m\times n\)矩阵）</b>
-        <p>由\(m\times n\)个数\(a_{ij}(i = 1,2,\cdots , m; j=1,2,\cdots , n)\)构成的\(m\)行\(n\)列的数表.</p>
-        $$\left (\begin{matrix}a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots && \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn}\end{matrix} \right )$$
-        <p>其中\(a_{ij}\)称为矩阵第\(i\)行第\(j\)列的元素.</p>
 
-        <b>矩阵的表示方法</b>
-        $$\boldsymbol{A}$$
-        $$\boldsymbol{A}_{m\times n}$$
-        $$\boldsymbol{A} = (a_{ij})_{m\times n}$$
+        <div class="Card-Analysis">
+            <h2>概念</h2>
+            <b>矩阵（\(m\times n\)矩阵）</b>
+            <p>由\(m\times n\)个数\(a_{ij}(i = 1,2,\cdots , m; j=1,2,\cdots , n)\)构成的\(m\)行\(n\)列的数表.</p>
+            $$\left (\begin{matrix}a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots && \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn}\end{matrix} \right )$$
+            <p>其中\(a_{ij}\)称为矩阵第\(i\)行第\(j\)列的元素.</p>
 
-        <table>
-            <tr>
-                <td colspan="3">特殊形式的矩阵</td>
-            </tr>
-            <tr>
-                <td>\(n\)阶矩阵（\(n\)阶方阵）</td>
-                <td>行数与列数相等（\(m = n\)）</td>
-                <td>$$\left( \begin{matrix} \end{matrix}\right)$$</td>
-            </tr>
-            <tr>
-                <td>行矩阵</td>
-                <td>行数为\(1\)（\(m=1\)）</td>
-                <td>$$\left( \begin{matrix}a_{11}, a_{12}, \cdots a_{1n}\end{matrix}\right)$$</td>
-            </tr>
-            <tr>
-                <td>列矩阵</td>
-                <td>列数为\(1\)（\(n = 1\)）</td>
-                <td>$$\left( \begin{matrix}a_{11} \\ a_{21} \\ \vdots \\ a_{m1}\\ \end{matrix}\right)$$</td>
-            </tr>
-            <tr>
-                <td>零矩阵</td>
-                <td>元素均为\(0\)的矩阵</td>
-                <td>$$\left( \begin{matrix} \end{matrix}\right)$$</td>
-            </tr>
-            <tr>
-                <td>同型矩阵</td>
-                <td>两个矩阵的行数与列数相等</td>
-                <td></td>
-            </tr>
-        </table>
-        
-        <table>
-            <tr>
-                <td colspan="2">特殊形式的方阵</td>
-            </tr>
-            <tr>
-                <td>对角矩阵</td>
-                <td>$$\mathrm{diag}(\lambda_1, \lambda_2, \cdots, \lambda_n) = \left( \begin{matrix}\lambda_1\\&\lambda_2\\&&\ddots\\&&&\lambda_n\end{matrix}\right)$$</td>
-            </tr>
-            <tr>
-                <td>数量矩阵</td>
-                <td>$$\left( \begin{matrix}a\\&a\\&&\ddots\\&&&a\end{matrix}\right)(a\neq 0)$$</td>
-            </tr>
-            <tr>
-                <td>单位矩阵</td>
-                <td>$$\left( \begin{matrix}1\\&1\\&&\ddots\\&&&1\end{matrix}\right)(a\neq 0)$$</td>
-            </tr>
-            <tr>
-                <td>上三角矩阵</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>下三角矩阵</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>对称矩阵</td>
-                <td>\(a_{ij} = a_{ji}(i,j = 1,2,\cdots,n)\)</td>
-            </tr>
-            <tr>
-                <td>反称矩阵</td>
-                <td>
-                    $$a_{ij} = -a_{ji}(i,j = 0,1,\cdots,n)$$
-                    $$a_{ii} = -a_{ii}\Rightarrow a_{ii} = 0(i=0,1,\cdots,n)$$
-                </td>
-            </tr>
-        </table>
-        <p>[注]一阶方阵即为一个数.</p>
-        
-        
-        <h2>矩阵运算</h2>
-        <h3>矩阵的加法</h3>
-        $$\boldsymbol{A} + \boldsymbol{B} = (a_{ij} + b_{ij})_{m\times n} = \left(\begin{matrix}a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n} \\ a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n} \\ \vdots & \vdots && \vdots \\ a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn}\end{matrix}\right)$$
+            <b>矩阵的表示方法</b>
+            $$\boldsymbol{A}$$
+            $$\boldsymbol{A}_{m\times n}$$
+            $$\boldsymbol{A} = (a_{ij})_{m\times n}$$
 
-        <h3>矩阵的数乘</h3>
-        $$k\boldsymbol{A} = (ka_{ij})_{m\times n} = \left(\begin{matrix}ka_{11}&ka_{12}&\cdots&ka_{1n}\\ka_{21}&ka_{22}&\cdots&ka_{2n}\\\vdots&\vdots&&\vdots\\ka_{m1}&ka_{m2}&\cdots&ka_{mn}\end{matrix}\right)$$
-        
-        <h3>矩阵的乘法</h3>
-        <p>设\(\boldsymbol{C} = \boldsymbol{A}\boldsymbol{B}\)，则\(c_{ij} = \sum\limits_{k=1}^na_{ik}b_{kj}\)</p>
-        <p>[注]\(\boldsymbol{A}\boldsymbol{B}\)读作“\(\boldsymbol{A}\)左乘\(\boldsymbol{B}\)”或“\(\boldsymbol{B}\)右乘\(\boldsymbol{A}\)”</p>
-        <p>[注]\(\boldsymbol{A}\boldsymbol{B}\neq \boldsymbol{B}\boldsymbol{A}\)</p>
-        <b>运算性质</b>
-        <p>乘法结合律：\((\boldsymbol{A}\boldsymbol{B})\boldsymbol{C} = \boldsymbol{A}(\boldsymbol{B}\boldsymbol{C})\)</p>
-        <p>数乘结合律：\(k(\boldsymbol{A}\boldsymbol{B}) = (k\boldsymbol{A})\boldsymbol{B} = \boldsymbol{A}(k\boldsymbol{B})\)</p>
-        <p>左分配律：\(\boldsymbol{A}(\boldsymbol{B}+\boldsymbol{C}) = \boldsymbol{A}\boldsymbol{B} + \boldsymbol{A}\boldsymbol{C}\)</p>
-        <p>右分配律：\((\boldsymbol{B}+\boldsymbol{C})\boldsymbol{A} = \boldsymbol{B}\boldsymbol{A} + \boldsymbol{C}\boldsymbol{A}\)</p>
-        <p>\(\boldsymbol{A}\boldsymbol{O} = \boldsymbol{O}\boldsymbol{A} = \boldsymbol{O}\)</p>
-        <p>\(\boldsymbol{A}_{m\times n}\boldsymbol{E}_n = \boldsymbol{E}_m\boldsymbol{A}_{m\times n} = \boldsymbol{A}_{m\times n}\)</p>
-        <p>若两个\(n\)阶方阵\(\boldsymbol{A},\boldsymbol{B}\)满足\(\boldsymbol{A}\boldsymbol{B} = \boldsymbol{B}\boldsymbol{A}\)，称方阵\(\boldsymbol{A}\)与方阵\(\boldsymbol{B}\)<b>可交换</b>.</p>
-        <p>对于方阵\(\boldsymbol{A}\)</p>
-        $$\boldsymbol{A}\boldsymbol{E} = \boldsymbol{E}\boldsymbol{A} = \boldsymbol{A}$$
-        $$$$
-        
-        
-        <h3>矩阵的转置 </h3>
-        <p>将矩阵的行换为同序数的列得到的新矩阵称为转置矩阵.</p>
-        <b>转置矩阵的性质</b>
-        <p>\((\boldsymbol{A}^T)^T = A\)</p>
-        <p>\((\boldsymbol{A}_1 + \boldsymbol{A}_2 + \cdots + \boldsymbol{A}_k)^T = \boldsymbol{A}_1^T + \boldsymbol{A_2}^T + \cdots + \boldsymbol{A}_k^T\)</p>
-        <p>\((k\boldsymbol{A})^T = k\boldsymbol{A}^T\)</p>
-        <p>\((\boldsymbol{A}_1\boldsymbol{A}_2\cdots \boldsymbol{A}_k)^T = \boldsymbol{A}_k^T\cdots \boldsymbol{A}_2^T\boldsymbol{A}_1^T\)</p>
-        <p>\(|\boldsymbol{A}^T| = |\boldsymbol{A}|\)</p>
+            <table>
+                <tr>
+                    <td colspan="3">特殊形式的矩阵</td>
+                </tr>
+                <tr>
+                    <td>\(n\)阶矩阵（\(n\)阶方阵）</td>
+                    <td>行数与列数相等（\(m = n\)）</td>
+                    <td>$$\left( \begin{matrix} \end{matrix}\right)$$</td>
+                </tr>
+                <tr>
+                    <td>行矩阵</td>
+                    <td>行数为\(1\)（\(m=1\)）</td>
+                    <td>$$\left( \begin{matrix}a_{11}, a_{12}, \cdots a_{1n}\end{matrix}\right)$$</td>
+                </tr>
+                <tr>
+                    <td>列矩阵</td>
+                    <td>列数为\(1\)（\(n = 1\)）</td>
+                    <td>$$\left( \begin{matrix}a_{11} \\ a_{21} \\ \vdots \\ a_{m1}\\ \end{matrix}\right)$$</td>
+                </tr>
+                <tr>
+                    <td>零矩阵</td>
+                    <td>元素均为\(0\)的矩阵</td>
+                    <td>$$\left( \begin{matrix} \end{matrix}\right)$$</td>
+                </tr>
+                <tr>
+                    <td>同型矩阵</td>
+                    <td>两个矩阵的行数与列数相等</td>
+                    <td></td>
+                </tr>
+            </table>
+            
+            <table>
+                <tr>
+                    <td colspan="2">特殊形式的方阵</td>
+                </tr>
+                <tr>
+                    <td>对角矩阵</td>
+                    <td>$$\mathrm{diag}(\lambda_1, \lambda_2, \cdots, \lambda_n) = \left( \begin{matrix}\lambda_1\\&\lambda_2\\&&\ddots\\&&&\lambda_n\end{matrix}\right)$$</td>
+                </tr>
+                <tr>
+                    <td>数量矩阵</td>
+                    <td>$$\left( \begin{matrix}a\\&a\\&&\ddots\\&&&a\end{matrix}\right)(a\neq 0)$$</td>
+                </tr>
+                <tr>
+                    <td>单位矩阵</td>
+                    <td>$$\left( \begin{matrix}1\\&1\\&&\ddots\\&&&1\end{matrix}\right)(a\neq 0)$$</td>
+                </tr>
+                <tr>
+                    <td>上三角矩阵</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>下三角矩阵</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>对称矩阵</td>
+                    <td>\(a_{ij} = a_{ji}(i,j = 1,2,\cdots,n)\)</td>
+                </tr>
+                <tr>
+                    <td>反称矩阵</td>
+                    <td>
+                        $$a_{ij} = -a_{ji}(i,j = 0,1,\cdots,n)$$
+                        $$a_{ii} = -a_{ii}\Rightarrow a_{ii} = 0(i=0,1,\cdots,n)$$
+                    </td>
+                </tr>
+            </table>
+            <p>[注]一阶方阵即为一个数.</p>            
+        </div>
 
-        <p>\(\boldsymbol{A}\)为对称矩阵\(\Leftrightarrow\boldsymbol{A}^T = \boldsymbol{A}\)</p>
-        <p>\(\boldsymbol{A}\)为反对称矩阵\(\Leftrightarrow\boldsymbol{A}^T = -\boldsymbol{A}\)</p>
+        <div class="Card-Analysis">
+            <h2>矩阵运算</h2>
+            <h3>矩阵的加法</h3>
+            $$\boldsymbol{A} + \boldsymbol{B} = (a_{ij} + b_{ij})_{m\times n} = \left(\begin{matrix}a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n} \\ a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n} \\ \vdots & \vdots && \vdots \\ a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn}\end{matrix}\right)$$
+    
+            <h3>矩阵的数乘</h3>
+            $$k\boldsymbol{A} = (ka_{ij})_{m\times n} = \left(\begin{matrix}ka_{11}&ka_{12}&\cdots&ka_{1n}\\ka_{21}&ka_{22}&\cdots&ka_{2n}\\\vdots&\vdots&&\vdots\\ka_{m1}&ka_{m2}&\cdots&ka_{mn}\end{matrix}\right)$$
+            
+            <h3>矩阵的乘法</h3>
+            <p>设\(\boldsymbol{C} = \boldsymbol{A}\boldsymbol{B}\)，则\(c_{ij} = \sum\limits_{k=1}^na_{ik}b_{kj}\)</p>
+            <p>[注]\(\boldsymbol{A}\boldsymbol{B}\)读作“\(\boldsymbol{A}\)左乘\(\boldsymbol{B}\)”或“\(\boldsymbol{B}\)右乘\(\boldsymbol{A}\)”</p>
+            <p>[注]\(\boldsymbol{A}\boldsymbol{B}\neq \boldsymbol{B}\boldsymbol{A}\)</p>
+            <b>运算性质</b>
+            <p>乘法结合律：\((\boldsymbol{A}\boldsymbol{B})\boldsymbol{C} = \boldsymbol{A}(\boldsymbol{B}\boldsymbol{C})\)</p>
+            <p>数乘结合律：\(k(\boldsymbol{A}\boldsymbol{B}) = (k\boldsymbol{A})\boldsymbol{B} = \boldsymbol{A}(k\boldsymbol{B})\)</p>
+            <p>左分配律：\(\boldsymbol{A}(\boldsymbol{B}+\boldsymbol{C}) = \boldsymbol{A}\boldsymbol{B} + \boldsymbol{A}\boldsymbol{C}\)</p>
+            <p>右分配律：\((\boldsymbol{B}+\boldsymbol{C})\boldsymbol{A} = \boldsymbol{B}\boldsymbol{A} + \boldsymbol{C}\boldsymbol{A}\)</p>
+            <p>\(\boldsymbol{A}\boldsymbol{O} = \boldsymbol{O}\boldsymbol{A} = \boldsymbol{O}\)</p>
+            <p>\(\boldsymbol{A}_{m\times n}\boldsymbol{E}_n = \boldsymbol{E}_m\boldsymbol{A}_{m\times n} = \boldsymbol{A}_{m\times n}\)</p>
+            <p>若两个\(n\)阶方阵\(\boldsymbol{A},\boldsymbol{B}\)满足\(\boldsymbol{A}\boldsymbol{B} = \boldsymbol{B}\boldsymbol{A}\)，称方阵\(\boldsymbol{A}\)与方阵\(\boldsymbol{B}\)<b>可交换</b>.</p>
+            <p>对于方阵\(\boldsymbol{A}\)</p>
+            $$\boldsymbol{A}\boldsymbol{E} = \boldsymbol{E}\boldsymbol{A} = \boldsymbol{A}$$
+            
+            
+            <h3>矩阵的转置 </h3>
+            <p>将矩阵的行换为同序数的列得到的新矩阵称为转置矩阵.</p>
+            <b>转置矩阵的性质</b>
+            <p>\((\boldsymbol{A}^T)^T = A\)</p>
+            <p>\((\boldsymbol{A}_1 + \boldsymbol{A}_2 + \cdots + \boldsymbol{A}_k)^T = \boldsymbol{A}_1^T + \boldsymbol{A_2}^T + \cdots + \boldsymbol{A}_k^T\)</p>
+            <p>\((k\boldsymbol{A})^T = k\boldsymbol{A}^T\)</p>
+            <p>\((\boldsymbol{A}_1\boldsymbol{A}_2\cdots \boldsymbol{A}_k)^T = \boldsymbol{A}_k^T\cdots \boldsymbol{A}_2^T\boldsymbol{A}_1^T\)</p>
+            <p>\(|\boldsymbol{A}^T| = |\boldsymbol{A}|\)</p>
+    
+            <p>\(\boldsymbol{A}\)为对称矩阵\(\Leftrightarrow\boldsymbol{A}^T = \boldsymbol{A}\)</p>
+            <p>\(\boldsymbol{A}\)为反对称矩阵\(\Leftrightarrow\boldsymbol{A}^T = -\boldsymbol{A}\)</p>
 
+
+        </div>    
+        
 
         <h3>方阵的行列式</h3>
         <b>性质</b>

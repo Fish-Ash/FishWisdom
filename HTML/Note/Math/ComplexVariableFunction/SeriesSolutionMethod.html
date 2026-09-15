@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>复变函数</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>二阶线性常微分方程的级数解法</h1>
+
+        <div class="Card-Analysis">
+            <h2>级数解法</h2>
+
+            <p>对于带初始条件的二阶线性常微分方程：</p>
+            $$\omega'' + p(z)\omega' + q(z)\omega = 0$$
+            $$\omega(z_0) = C_0, \quad \omega'(z_0) = C_1$$
+            <ul>
+                <li>\(z_0\)：任意指定点</li>
+                <li>\(C_0, C_1\in\mathbb{C}\)</li>
+            </ul>
+            <p>这种方程常常无法用常规方法解出，但可用级数解法解出.</p>
+            <p>级数解法，就是在某个任选点\(z_0\)的邻域上，将待求的解表示为系数待定的系数，代入方程以逐个确定系数.</p>
+    
+            <div class="Card-Definition">
+                <b>方程的常点</b>
+                <p>若\(p(z)\)与\(q(z)\)在\(z_0\)的邻域中是解析的，则\(z_0\)称为方程的常点.</p>
+            </div>
+    
+            <div class="Card-Definition">
+                <b>方程的奇点</b>
+                <p>若\(z_0\)为\(p(z)\)或\(q(z)\)的奇点，则\(z_0\)称为方程的奇点.</p>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>常点邻域上的级数解法</h2>
+            <p>二阶线性常微分方程在常点邻域上的级数解，有如下定理：</p>
+            <p>若\(p(z), q(z)\)为点\(z_0\)邻域\(|z-z_0|\lt R\)中的解析函数，则方程在此邻域内存在唯一的解析解\(\omega(z)\)，且满足：</p>
+            $$\omega(z_0) = C_0, \quad \omega'(z_0) = C_1$$
+            <ul>
+                <li>\(z_0\)：任意指定点</li>
+                <li>\(C_0, C_1\in\mathbb{C}\)</li>
+            </ul>
+
+            <p>可以将\(\omega(z)\)表示为此邻域上Taylor级数的形式：</p>
+            $$\omega(z) = \sum_{k=0}^{\infty} a_k (z-z_0)^k$$
+            <p>为了确定级数解中的系数，具体做法是将其代入原方程，合并同幂项，令合并后的各系数分别为0，找出系数间的递推关系，最后用给定的初值\(C_0, C_1\)来确定系数，从而求得确定的级数解.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>正则奇点邻域上的级数解法</h2>
+            <h3>奇点邻域上的级数解</h3>
+            <p>对于二阶线性常微分方程：</p>
+            $$\omega'' + p(z)\omega' + q(z)\omega = 0$$
+            <p>若选定的点\(z_0\)为方程的奇点，则一般情况下，解也以\(z_0\)为奇点，在\(z_0\)点邻域上的展开式不是Taylor级数而含有负幂项.</p>
+            <p>关于奇点邻域上的级数解，有如下定理：</p>
+            <p>若\(z_0\)为方程奇点，则在\(z_0\)的邻域\(0\lt|z-z_0|\lt R\)上，方程存在两个线性独立解，其形式为为：</p>
+            $$\omega_1(z) = \sum_{k=-\infty}^{\infty} a_k (z-z_0)^{s_1 +k}$$
+            $$\omega_2(z) = \sum_{k=-\infty}^{\infty} b_k (z-z_0)^{s_2 +k}$$
+            <p>或</p>
+            $$\omega_2(z) = A\omega_1(z)\ln(z-z_0) + \sum_{k=-\infty}^{\infty} b_k (z-z_0)^{s_2 +k}$$
+            <ul>
+                <li>\(s_1, s_2, a_k, b_k, A(k=0,\pm1, \pm2)\in\mathbb{C}\)</li>
+            </ul>
+
+            <p>一般情况下，很难确定\(s_1, s_2, a_k, b_k, A\)的值.</p>
+
+            <h3>正则奇点邻域上的级数解</h3>
+            <div class="Card-Definition">
+                <b>方程的正则奇点</b>
+                <p>若在方程的奇点\(z_0\)的邻域\(0\lt |z-z_0\lt R|\)上，方程的两个线性独立解全部具有有限个负幂项，则\(z_0\)称为方程的正则奇点.</p>
+            </div>
+
+            <p>若\(p(z)\)以\(z_0\)为不高于一阶的极点，且\(q(z)\)以\(z_0\)为不高于二阶的极点，即：</p>
+            $$p(z) = \sum_{k=-1}^\infty p_k(z-z_0)^k,\quad q(z) = \sum_{k=-2}^\infty q_k(z-z_0)^k$$
+            <p>则\(z_0\)为方程的正则奇点.</p>
+            <p>也就是说，在\(z_0\)的邻域\(0\lt|z-z_0|\lt R\)上，方程的两个线性独立解的级数表达式仅有有限个负幂项：</p>
+            $$\omega_1(z) = \sum_{k=0}^\infty a_k (z-z_0)^{s_1 +k}$$
+            $$\omega_2(z) = \sum_{k=0}^\infty b_k (z-z_0)^{s_2 +k},\quad s_1-s_2\notin\mathbb{Z}$$
+            <p>或</p>
+            $$\omega_2(z) = A\omega_1(z)\ln(z-z_0) + \sum_{k=0}^\infty b_k (z-z_0)^{s_2 +k},\quad s_1-s_2\in\mathbb{Z}$$
+            <div class="Card-Formula">
+                <b>判定方程</b>
+                $$s(s-1) + sp_{-1} + q_{-2} = 0$$
+            </div>
+            <p>\(s_1\gt s_2\)为判定方程的两个根，\(a_k, b_k, A\in\mathbb{C}\).</p>
+        </div>
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

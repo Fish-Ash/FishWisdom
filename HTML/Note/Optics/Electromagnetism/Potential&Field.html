@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>微纳光子学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>势和场</h1>
+
+        <div class="Card-Analysis">
+            <h2>标势与矢势</h2>
+            <p>本章探究源（\(\rho\)与\(\boldsymbol{J}\)）如何产生电场与磁场，即寻求Maxwell方程组的普遍解.</p>
+            <p>亦即：给定\(\rho(\boldsymbol{r}, t)\)或\(\boldsymbol{J}(\boldsymbol{r}, t)\)，如何确定场\(\boldsymbol{E}(\boldsymbol{r}, t)\)与\(\boldsymbol{B}(\boldsymbol{r}, t)\).</p>
+            <p>对于静态情形，库伦定律与毕奥-萨伐尔定律给出了解.</p>
+            <p>我们寻求的是依赖时间的这些定律的普遍情形的解.</p>
+
+            <p>[令]</p>
+            <div class="Formula">
+                $$\boldsymbol{B} = \nabla\times \boldsymbol{A}$$
+                <div class="Derivation">
+                    $$\because \nabla\cdot\boldsymbol{B} = 0$$
+                    $$\nabla\cdot(\nabla\times\boldsymbol{A}) = 0$$
+                    <p>因此可以令</p>
+                    $$\boldsymbol{B} = \nabla\times\boldsymbol{A}$$
+                    <p>其中\(A\)为任意矢量.</p>
+                </div>
+            </div>
+
+            <p>代入法拉第定律：</p>
+            $$\nabla\times\boldsymbol{E} = -\frac{\partial\boldsymbol{B}}{\partial t}$$
+            <p>得：</p>
+            $$\nabla\times\boldsymbol{E} = -\frac{\partial}{\partial t}(\nabla\times\boldsymbol{A})$$
+            $$\nabla\times\left(\boldsymbol{E} + \frac{\partial\boldsymbol{A}}{\partial t}\right) = 0$$
+            $$\boldsymbol{E} + \frac{\partial\boldsymbol{A}}{\partial t}  = -\nabla V$$
+            <div class="Card-AI">
+                <p>这里的-号取决于电势的物理意义.</p>
+            </div>
+            $$\boldsymbol{E} = -\nabla V - \frac{\partial\boldsymbol{A}}{\partial t}$$
+
+            <p>代入：</p>
+            $$\nabla\cdot\boldsymbol{E} = \frac{1}{\epsilon_0}\rho$$
+            <p>得：</p>
+            $$\nabla\cdot\left(-\nabla V - \frac{\partial \boldsymbol{A}}{\partial t}\right) = \frac{\rho}{\epsilon_0}$$
+            $$\nabla^2 V + \frac{\partial}{\partial t}(\nabla\cdot\boldsymbol{A}) = -\frac{\rho}{\epsilon_0}$$
+            <p>它代替了泊松方程，从它可以回到静电学的形式.</p>
+            <div class="Card-AI">
+                <p>?什么是泊松方程</p>
+                <p>?什么叫回到静电学的形式</p>
+            </div>
+            $$\because \nabla\times\boldsymbol{B} = \epsilon_0\mu_0\frac{\partial\boldsymbol{E}}{\partial t} + \mu_0\boldsymbol{J}$$
+            $$\nabla\times(\nabla\times\boldsymbol{A}) = \epsilon_0\mu_0\frac{\partial}{\partial t}(-\nabla V - \frac{\partial\boldsymbol{A}}{\partial t}) + \mu_0\boldsymbol{J}$$
+            $$\nabla\times(\nabla\times\boldsymbol{A}) = \mu_0\boldsymbol{J} - \epsilon_0\mu_0\nabla\left(\frac{\partial V}{\partial t}\right) - \epsilon_0\mu_0\frac{\partial^2\boldsymbol{A}}{\partial t^2}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>规范变换</h2>
+            <p>上一小节中的公式虽然形式上不太优美，但是我们成功将求解六个问题（\(\boldsymbol{E}\)与\(\boldsymbol{B}\)各自的三个分量）缩减为四个（\(V\)一个分量与\(\boldsymbol{A}\)三个分量）.</p>
+            <p>式</p>
+            $$\boldsymbol{B} = \nabla\times \boldsymbol{A}$$
+            $$\boldsymbol{E} = -\nabla V - \frac{\partial\boldsymbol{A}}{\partial t}$$
+            <p>不能唯一定义势：只要不影响\(\boldsymbol{E}\)与\(\boldsymbol{B}\)，可以自由对\(V\)与\(\boldsymbol{A}\)附加额外条件.</p>
+
+            <p>假设有两套势\((V, \boldsymbol{A})\)与\((V', \boldsymbol{A}')\)，它们对应相同的电场与磁场，设：</p>
+            $$\boldsymbol{A}' = \boldsymbol{A} + \boldsymbol{\alpha}$$
+            $$V' = V + \beta$$
+            <p>由于\(\boldsymbol{A}\)与\(\boldsymbol{A}'\)需要给出同样的\(\boldsymbol{B}\)，因此其旋度必须相等，即：</p>
+            $$\nabla\times\boldsymbol{\alpha} = 0$$
+            <p>因此可以将\(\boldsymbol{\alpha}\)写成某个标量的梯度：</p>
+            $$\boldsymbol{\alpha} = \nabla\lambda$$
+            <p>两个势也要给出同一个\(\boldsymbol{E}\)，因此：</p>
+            $$\nabla\beta + \frac{\partial\alpha}{\partial t} = 0$$
+            $$\nabla\left(\beta + \frac{\partial\lambda}{\partial t}\right) = 0$$
+            <p>括号中的项因此不依赖于坐标，但可依赖于时间，称为\(k(t)\)：</p>
+            $$\beta = -\frac{\partial\lambda}{\partial t} + k(t)$$
+            $$\boldsymbol{A}' = \boldsymbol{A} + \nabla\lambda$$
+            $$V' = V - \frac{\partial\lambda}{\partial t}$$
+
+
+            <h3>洛伦兹规范</h3>
+            <p>[令]</p>
+            $$\nabla\cdot\boldsymbol{A} = -\mu_0\epsilon_0\frac{\partial V}{\partial t}$$
+            <div class="Card-Definition">
+                <b>d' Alembertian算子</b>
+                $$\square^2 \equiv \nabla^2 - \mu_0\epsilon_0\frac{\partial^2}{\partial t^2}$$
+            </div>
+
+            <p>洛伦兹规范的优点在于其对\(V\)与\(\boldsymbol{A}\)的处理是相同的：</p>
+            <p>d' Alembertian算子同时出现在两个方程中：</p>
+            $$\square^2 V = -\frac{\rho}{\epsilon_0}$$
+            $$\square^2 \boldsymbol{A} = -\mu_0\boldsymbol{J}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>推迟势</h2>
+            <p>静态形式下：</p>
+            $$\square^2 V = -\frac{\rho}{\epsilon_0} \Rightarrow \nabla^2 V = -\frac{\rho}{\epsilon_0}$$
+            $$\square^2 \boldsymbol{A} = -\mu_0\boldsymbol{J}\Rightarrow \nabla^2 \boldsymbol{A} = -\mu_0\boldsymbol{J}$$
+            <p>变为四个相同的Possion方程.</p>
+            <div class="Card-AI">
+                <p>\(\boldsymbol{A}\)式算三个方程；</p>
+                <p>“相同”是只都是\(\nabla^2(势) = -(源)\)的形式相同.</p>
+            </div>
+
+            <img src="Img/RetardedPotential.jpg" width="300">
+            <p>它具有熟知的解：</p>
+            $$V(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0}\int\frac{\rho(\boldsymbol{r}')}{r_0}\mathrm{d}\tau$$
+            $$\boldsymbol{A}(\boldsymbol{r}) = \frac{\mu_0}{4\pi}\int\frac{\boldsymbol{J}(\boldsymbol{r}')}{r_0}\mathrm{d}\tau$$
+            <ul>
+                <li>\(r_0\)：源点\(\boldsymbol{r}'\)距场点\(\boldsymbol{r}\)的距离</li>
+            </ul>
+            <p>电磁“信息”以光速传播，所以，在非静止情况下，这信息不是源“现在”的状态，而是较早时间\(t_r\)（<b>推迟时间</b>）当“信息”离开源时的.</p>
+            <p>由于信息必须传播一个距离\(r_0\)，推迟为\(r_0/c\)：</p>
+            $$t_r \equiv t - \frac{r_0}{c}$$
+            <p>因此，对于非静止源，\(V(\boldsymbol{r})\)与\(\boldsymbol{A}(\boldsymbol{r})\)的一个自然推广为：</p>
+            $$V(\boldsymbol{r}, t) = \frac{1}{4\pi\epsilon_0}\int\frac{\rho(\boldsymbol{r}', t_r)}{r_0}\mathrm{d}\tau$$
+            $$\boldsymbol{A}(\boldsymbol{r}, t) = \frac{\mu_0}{4\pi}\int\frac{\boldsymbol{J}(\boldsymbol{r}', t_r)}{r_0}\mathrm{d}\tau$$
+            <ul>
+                <li>\(\rho(\boldsymbol{r}', t)\)：在推迟时间\(t_r\)时在点\(\boldsymbol{r}'\)处的电荷密度.</li>
+            </ul>
+            <p>由于积分在推迟时间内进行，因此称为<b>推迟势</b>.</p>
+
+
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

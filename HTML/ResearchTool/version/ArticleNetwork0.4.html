@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ArticleNetwork</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 上下文菜单 -->
+    <div id="contextMenu" hidden>
+        <button id="addArticleButton">新增</button>
+        <button id="importButton">导入</button>
+        <button id="exportButton">导出</button>
+    </div>
+
+    <dialog id="inputArticleDialog">
+        <h2>标题</h2>
+        <input id="inputArticleTitle">
+        <h2>作者</h2>
+        <input id="inputArticleAuthors">
+        
+        <br><br>
+        <button id="inputSaveButton">保存</button>
+        <button id="inputCancelButton">取消</button>
+    </dialog>
+
+    <!-- 画布 -->
+    <svg id="network"></svg>
+
+    <!-- 侧边栏 -->
+    <div id="sideBar" hidden>
+        <h2 id="sideBarTitle"></h2>
+    </div>
+
+    <button id="settingsTab">设置</button>
+    <button id="listTab">列表</button>
+
+    <div id="authorContextMenu" hidden>
+        <button id="authorDelButton">删除</button>
+    </div>
+
+
+<!-- 我想，撤回功能 -->
+<!-- 我想, 删除确认 -->
+
+
+
+
+    <script src="ArticleData.js"></script>
+    <script src="LocalStorage.js"></script>
+    <script src="SideBar.js"></script>
+
+    <script>
+        // 上下文菜单
+        const contextMenu = document.getElementById("contextMenu");
+        const addArticleButton = document.getElementById("addArticleButton");
+        const importButton = document.getElementById("importButton");
+        const exportButton = document.getElementById("exportButton");
+        
+        document.addEventListener("contextmenu", function(event){
+            event.preventDefault();
+            contextMenu.hidden = false;
+            contextMenu.style.position = "absolute";
+            contextMenu.style.left = event.pageX + "px";
+            contextMenu.style.top = event.pageY + "px";
+        });
+
+        document.addEventListener("click", function(){
+            contextMenu.hidden = true;
+            authorContextMenu.hidden = true;
+        });
+        /*------------------------------------------------------------*/
+
+        // 侧边栏相关
+        // 我想，自由拉伸
+        // 我想，标签随动
+        // 我想，样式美化
+        const sideBar = document.getElementById("sideBar");// 侧边栏本体
+        const settingsTab = document.getElementById("settingsTab");// 设置标签
+        const listTab = document.getElementById("listTab"); // 列表标签
+        const authorContextMenu = document.getElementById("authorContextMenu");// 列表-作者菜单
+        const authorDelButton = document.getElementById("authorDelButton");// 列表-作者菜单-删除
+        
+
+
+        authorDelButton.addEventListener("click", function(){
+
+        })
+
+
+        
+        // 控件const
+        const inputArticleDialog = document.getElementById("inputArticleDialog");
+        const inputSaveButton = document.getElementById("inputSaveButton")
+        const inputCancelButton = document.getElementById("inputCancelButton")
+
+
+        const network = document.getElementById("network");
+
+
+
+        // 新建const
+        const authors = new Set();//作者列表
+        const collaborations = new Set();//合作关系
+        let draggingCircle = null;
+
+        //EventListener
+        document.addEventListener("mouseup", function(){
+            draggingCircle = null;
+        });
+
+        document.addEventListener("mousemove", function(event){
+            if(draggingCircle !== null){
+                draggingCircle.setAttribute("cx", event.clientX)
+                draggingCircle.setAttribute("cy", event.clientY)
+            }
+        });
+
+        network.addEventListener("click", function(event){
+            if(event.target === network){
+                sideBar.hidden = true;
+            }
+        });
+
+        addArticleButton.addEventListener("click", function(){
+            inputArticleDialog.showModal();
+        });
+
+
+        inputArticleDialog.addEventListener("keydown", function(event){
+            if(event.key == "Enter"){
+                submitArticleData();
+            }
+        });
+
+        inputSaveButton.addEventListener("click", function(){
+            submitArticleData();
+        });
+
+        inputCancelButton.addEventListener("click", function(){
+            inputArticleDialog.close();
+        });
+
+        //function
+        function submitArticleData(){
+            const article = saveArticleData();
+
+            saveLocalData();
+
+            article.authors.forEach(function(author){
+                if(!authors.has(author)){
+                    authors.add(author);
+                    addAuthorCircle(author);
+                }
+            });
+
+            inputArticleDialog.close();
+        };
+
+        // 我想，加上作者名字
+        // 我想，禁止碰撞
+        function addAuthorCircle(){
+            const circle = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "circle"
+            );
+
+            // 圆参数
+            authors.forEach(function(author){
+                circle.setAttribute("cx", 50 + authors.size * 60);
+                circle.setAttribute("cy", 100);
+                circle.setAttribute("r", 20);
+                network.appendChild(circle)
+    
+                circle.addEventListener("mousedown", function(event){
+                    if(event.button == 0){
+                        draggingCircle = circle;
+                    }
+                });
+    
+                circle.addEventListener("dblclick", function(){
+                    // 侧边栏初始化
+                    sideBar.innerHTML = "";
+                    sideBar.hidden = false;
+                    
+                    // 侧边栏标题
+                    const sideBarTitle = document.createElement("h2");
+                    sideBarTitle.textContent = author;
+                    sideBar.appendChild(sideBarTitle);
+    
+                    // 文章
+                    const sideBarSubTitle = document.createElement("h3");
+                    sideBarSubTitle.textContent = "Article";
+                    sideBar.appendChild(sideBarSubTitle);
+                    // authorArticles.get(author).forEach(function(title){
+                    //     const articleList = document.createElement("p");
+                    //     articleList.textContent = title;
+                    //     sideBarSubTitle.appendChild(articleList);
+                    // })
+                });
+            });
+        }
+
+        loadLocalData();
+
+        articles.forEach(function(article){
+            article.authors.forEach(function(author){
+                if(!authors.has(author)){
+                    authors.add(author);
+                    addAuthorCircle();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+1、忽略“我想，”开头的注释，那不是现在的内容，但是在做的时候需要考虑留有余地
+2、保留我写的注释
+3、你写的时候不要加注释
+4、告诉我你增加/修改了哪些内容
+-->

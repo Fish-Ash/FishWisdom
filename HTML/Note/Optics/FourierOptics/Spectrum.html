@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>物理光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>场的频谱</h1>
+
+        <div class="Card-Analysis">
+            <h2>场的频谱</h2>
+            <div class="Card-Definition">
+                <b>场的频谱</b>
+                <p>任意时变场\(\boldsymbol{E}(\boldsymbol{r}, t)\)的频谱\(\hat{\boldsymbol{E}}(\boldsymbol{r}, \omega)\)定义为：</p>
+                $$\hat{\boldsymbol{E}}(\boldsymbol{r}, \omega) = \frac{1}{2\pi}\int_{-\infty}^{+\infty}\boldsymbol{E}(\boldsymbol{r}, t)e^{i\omega t}\mathrm{d}t$$
+            </div>
+            <p>为了保证\(\boldsymbol{E}(\boldsymbol{r}, t)\)为实值场，有：</p>
+            <div class="Formula">
+                $$\hat{\boldsymbol{E}}(\boldsymbol{r}, -\omega) = \hat{\boldsymbol{E}}^*(\boldsymbol{r}, \omega)$$
+                <div class="Derivation">
+                    $$\hat{\boldsymbol{E}}(\boldsymbol{r}, -\omega) = \frac{1}{2\pi}\int_{-\infty}^{+\infty}\boldsymbol{E}(\boldsymbol{r}, t)e^{-i\omega t}\mathrm{d}t$$
+                    $$\begin{align}
+                    \hat{\boldsymbol{E}}^*(\boldsymbol{r}, \omega) &= \left[\frac{1}{2\pi}\int_{-\infty}^{+\infty}\boldsymbol{E}(\boldsymbol{r}, t)e^{i\omega t}\mathrm{d}t\right]\\
+                                                                   &= \frac{1}{2\pi}\int_{-\infty}^{+\infty}\boldsymbol{E}^*(\boldsymbol{r}, t)e^{-i\omega t}\mathrm{d}t
+                    \end{align}$$
+                    $$\because\hat{\boldsymbol{E}}(\boldsymbol{r}, -\omega) = \hat{\boldsymbol{E}}^*(\boldsymbol{r}, \omega)$$
+                    $$\therefore\boldsymbol{E}(\boldsymbol{r}, t) = \boldsymbol{E}^*(\boldsymbol{r}, t)$$
+                    <p>即\(\boldsymbol{E}(\boldsymbol{r}, t)\)为实值场.</p>
+                </div>
+            </div>
+
+            <p>对含时<a href="../Electromagnetism/Maxwell.html">Maxwell方程组</a>进行Fourier变换，可得：</p>
+            $$\nabla\times\hat{\boldsymbol{E}}(\boldsymbol{r}, \omega) = i\omega\hat{\boldsymbol{B}}(\boldsymbol{r}, \omega)$$
+            $$\nabla\times\hat{\boldsymbol{H}}(\boldsymbol{r}, \omega) = -i\omega\hat{\boldsymbol{D}}(\boldsymbol{r}, \omega) + \hat{\boldsymbol{j}}(\boldsymbol{r}, \omega)$$
+            $$\nabla\cdot\hat{\boldsymbol{D}}(\boldsymbol{r}, \omega) = \hat{\rho}(\boldsymbol{r}, \omega)$$
+            $$\nabla\cdot\hat{\boldsymbol{B}}(\boldsymbol{r}, \omega) = 0$$
+
+            <p>一旦求得\(\hat{\boldsymbol{E}}(\boldsymbol{r}, t)\)，时变场可以通过Fourier逆变换求得：</p>
+            $$\boldsymbol{E}(\boldsymbol{r}, t) = \int_{-\infty}^{+\infty}\hat{\boldsymbol{E}}(\boldsymbol{r}, \omega)e^{-i\omega t}\mathrm{d}\omega$$
+            <p>因此，非谐电磁场的时间依赖关系可以进行傅里叶变换，并且每一个频谱分量都可以作为单色场分别处理。一般的时间依赖关系则通过逆变换恢复.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2></h2>
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

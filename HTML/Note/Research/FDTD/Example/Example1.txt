@@ -1,0 +1,22 @@
+switchtolayout;
+deleteall;
+
+addrect;
+set("name", "film");
+set("x", 0);
+set("x span", 1.2e-6);
+set("y", 0);
+set("y span", 1.2e-6);
+set("z min", 0);
+set("z max", 1e-7);
+set("material", "Au (Gold) - CRC");
+
+addrect;
+set("name", "substrate");
+set("x", 0);
+set("x span", 1.2e-6);
+set("y", 0);
+set("y span", 1.2e-6);
+set("z min", -1e-6);
+set("z max", 0);
+set("material", "SiO2 (Glass) - Palik");

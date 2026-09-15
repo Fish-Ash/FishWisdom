@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>微纳光子学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>二维光子晶体</h1>
+
+        <div class="Card-Analysis">
+            <h2>二维Bloch态</h2>
+
+            <p>二维光子晶体沿其两个轴是周期性的，而沿第三个轴是均匀的.</p>
+            <p>如图所示为一种典型的四方晶格光子晶体.</p>
+            <img src="Img/PhotonicCrystals_2D.jpg" width="400">
+            <p>这里假设介质柱无限高.</p>
+            <p>特定周期下，该结构在\(xy\)面内拥有光子带隙.</p>
+            <p>这个带隙中，光子晶体不存在任何扩展态，入射波会被反射.</p>
+            <p>与多层膜不同，这种二维光子晶体可以阻止光沿平面内任何方向进行传播.</p>
+
+            <div class="Card-AI">
+                <p>?光子带隙</p>
+                <p>?扩展态</p>
+            </div>
+
+            <p>仍可以利用晶体的对称性对电磁波模式进行分类.</p>
+            <p>由于二维光子晶体在\(z\)轴上是均匀的，因此电磁波的空间模式一定在这个方向上振荡，波矢\(k_z\)可以是任意值.</p>
+            <p></p>
+
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

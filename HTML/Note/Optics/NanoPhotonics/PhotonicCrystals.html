@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>微纳光子学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>光子晶体</h1>
+
+        <div class="Card-Analysis">
+            <h2>混合介质中的电磁理论</h2>
+            <p>所有宏观的电磁学，包括电磁学在光子晶体中的传播，都可以用<a href="../Electromagnetism/Maxwell.html">Maxwell方程组</a>描述.</p>
+
+            <p>[设]一束电磁波在一个混合介质中传播，该混合介质中，介电常数为位置\(r\)（笛卡尔）的函数，内部也没有自由电荷或电流，且介质内没有波源，即\(\rho = 0, \boldsymbol{j} = 0\).</p>
+            <a href="../Electromagnetism/ConstitutiveRelation.html">$$\boldsymbol{D}(\boldsymbol{r}) = \epsilon_0\epsilon_r(\boldsymbol{r})\boldsymbol{E}(\boldsymbol{r})$$</a>
+            <a href="../Electromagnetism/ConstitutiveRelation.html">$$\boldsymbol{B}(\boldsymbol{r}) = \mu_0\mu_r(\boldsymbol{r})\boldsymbol{H}(\boldsymbol{r})$$</a>
+            
+            <ul>
+                <li>\(\epsilon_r(\boldsymbol{r})\)：相对介电常数</li>
+                <li>\(\mu_r(\boldsymbol{r})\)：相对磁导率</li>
+            </ul>
+
+            <p>一般而言，\(\boldsymbol{E}\)与\(\boldsymbol{H}\)为时间与空间的函数，但由于Maxwell方程组为线性的，因此可以通过将场变为谐波模式而将时间与空间函数分离.</p>
+
+            <div class="Card-Formula">
+                <b>主方程</b>
+                <div class="Formula">
+                    $$\nabla\times\left[\frac{1}{\epsilon(\boldsymbol{r})}\nabla\times\boldsymbol{H}(\boldsymbol{r})\right] = \left(\frac{\omega}{c}\right)^2\boldsymbol{H}(\boldsymbol{r})$$
+                    <div class="Derivation">
+                        <p>Maxwell方程组为：</p>
+                        $$\begin{align}
+                        &\nabla\cdot\boldsymbol{D}(\boldsymbol{r}, t) = \rho(\boldsymbol{r}, t)\\
+                        &\nabla\cdot\boldsymbol{B}(\boldsymbol{r}, t) = 0\\
+                        &\nabla\times\boldsymbol{E}(\boldsymbol{r}, t) = -\frac{\partial \boldsymbol{B}(\boldsymbol{r}, t)}{\partial{t}}\\
+                        &\nabla\times\boldsymbol{H}(\boldsymbol{r}, t) = \frac{\partial \boldsymbol{D}(\boldsymbol{r}, t)}{\partial t} + \boldsymbol{j}(\boldsymbol{r}, t)
+                        \end{align}$$
+
+                        <p>简化后：</p>
+                        $$\begin{align}
+                        &\nabla\cdot\boldsymbol{D}(\boldsymbol{r}, t) = 0\\
+                        &\nabla\cdot\boldsymbol{B}(\boldsymbol{r}, t) = 0\\
+                        &\nabla\times\boldsymbol{E}(\boldsymbol{r}, t) = -\frac{\partial \boldsymbol{B}(\boldsymbol{r}, t)}{\partial{t}}\\
+                        &\nabla\times\boldsymbol{H}(\boldsymbol{r}, t) = \frac{\partial \boldsymbol{D}(\boldsymbol{r}, t)}{\partial t}
+                        \end{align}$$
+
+                        <p>考虑<a href="../Electromagnetism/ConstitutiveRelation.html" class="goto">本构关系</a>：</p>
+                        $$\boldsymbol{D}(\boldsymbol{r}) = \epsilon_0\epsilon_r(\boldsymbol{r})\boldsymbol{E}(\boldsymbol{r})$$
+                        $$\boldsymbol{B}(\boldsymbol{r}) = \mu_0\mu_r(\boldsymbol{r})\boldsymbol{H}(\boldsymbol{r})$$
+
+                        <p>考虑非磁性介质：</p>
+                        $$\mu_r(\boldsymbol{r}) = 1$$
+
+                        $$\boldsymbol{E}(\boldsymbol{r}, t) = \boldsymbol{E}(\boldsymbol{r})\cdot e^{-i\omega t}\Rightarrow \frac{\partial\boldsymbol{E}(\boldsymbol{r}, t)}{\partial t} = -i\omega\boldsymbol{E}(\boldsymbol{r}, t)$$
+                        $$\boldsymbol{H}(\boldsymbol{r}, t) = \boldsymbol{H}(\boldsymbol{r})\cdot e^{-i\omega t}\Rightarrow \frac{\partial\boldsymbol{H}(\boldsymbol{r}, t)}{\partial t} = -i\omega\boldsymbol{H}(\boldsymbol{r}, t)$$
+                        $$\nabla\times\boldsymbol{E}(\boldsymbol{r}) - i\omega\mu_0\boldsymbol{H}(\boldsymbol{r}) = 0$$
+                        $$\nabla\times\boldsymbol{H}(\boldsymbol{r}) + i\omega\epsilon_0\epsilon(\boldsymbol{r})\boldsymbol{E}(\boldsymbol{r}) = 0$$
+                        $$\frac{1}{\epsilon(\boldsymbol{r})}\nabla\times\boldsymbol{H}(\boldsymbol{r}) = -i\omega\epsilon_0\boldsymbol{E}(\boldsymbol{r})$$
+                        $$\begin{align}
+                        \nabla\times\left[\frac{1}{\epsilon(\boldsymbol{r})}\nabla\times\boldsymbol{H}(\boldsymbol{r})\right] &= -i\omega\epsilon_0\nabla\times\boldsymbol{E}(\boldsymbol{r})\\
+                                                                                                                              &= -(i\omega)^2\epsilon_0\mu_0\boldsymbol{H}(\boldsymbol{r})\\
+                                                                                                                              &= \left(\frac{\omega}{c}\right)^2\boldsymbol{H}(\boldsymbol{r})
+                        \end{align}$$
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>将电磁学看作一个本征值问题</h2>
+            <p>对于一个描述在混合介质中传播的谐波模式的Maxwell方程组，其核心是关于\(\boldsymbol{H}(\boldsymbol{r})\)的微分方程：</p>
+            $$\nabla\times\left[\frac{1}{\epsilon(\boldsymbol{r})}\nabla\times\boldsymbol{H}(\boldsymbol{r})\right] = \left(\frac{\omega}{c}\right)^2\boldsymbol{H}(\boldsymbol{r})$$
+            <p>方程的内涵为：对函数\(\boldsymbol{H}(\boldsymbol{r})\)进行一系列运算，若\(\boldsymbol{H}(\boldsymbol{r})\)确实为被允许的电磁波模式，那么运算后得到的结果必然为一个常数乘上这个初始函数\(\boldsymbol{H}(\boldsymbol{r})\).</p>
+            <p>这种情况在数学物理方法中称为本征值问题.</p>
+            <p>若对一个函数进行运算后得到的仅为函数本身与一些常数的积累，那么这个函数被称为该运算符的本征函数或本征向量，而乘积因子称为本征值.</p>
+            <div class="Card-AI">
+                ?本征值问题的内容
+            </div>
+            <p>将主方程定义为一个运算符\(\hat\Theta\)作用在函数\(\boldsymbol{H}(\boldsymbol{r})\)上的形式，使方程看起来更像一个传统的本征值问题：</p>
+            $$\hat\Theta\boldsymbol{H}(\boldsymbol{r}) = \left(\frac{\omega}{c}\right)^2\boldsymbol{H}(\boldsymbol{r})$$
+            <ul>
+                <li>\(\hat\Theta\boldsymbol{H}(\boldsymbol{r})\equiv\nabla\times\left[\frac{1}{\epsilon(\boldsymbol{r})}\nabla\times\boldsymbol{H}(\boldsymbol{r})\right]\)：\(\hat\Theta\)为一个微分算符，先计算旋度，再除以因子\(\epsilon(\boldsymbol{r})\)，最后计算旋度.</li>
+            </ul>
+
+            <p>本征向量\(\boldsymbol{H}(\boldsymbol{r})\)为<b>谐波模的空间分布</b>，本征值\(\left(\frac{\omega}{c}\right)^2\)则正比于这些模频率的平方.</p>
+            <div class="Card-AI">
+                <p>\(\boldsymbol{H}(\boldsymbol{r})\)为复振幅.</p>
+            </div>
+            <p>[注]\(\widehat{\Theta}\)为线性算符，即它的解的任意线性组合仍为它的解.</p>
+            <p>[注]差异仅仅体现在一个乘数因子上的场可以归类为同一个模.</p>
+
+
+            <div class="Card-Definition">
+                <b>矢量场的内积</b>
+                $$(\boldsymbol{F}, \boldsymbol{G}) \equiv\int\mathrm{d}^3\boldsymbol{r}\boldsymbol{F}^*(\boldsymbol{r})\cdot\boldsymbol{G}(\boldsymbol{r})$$
+                <ul>
+                    <li>\(\boldsymbol{F}^*\)：\(\boldsymbol{F}\)的复共轭</li>
+                </ul>
+                <p>[注]类比于波函数的内积.</p>
+                <div class="Card-AI">
+                    <p>其实是：</p>
+                    $$(\boldsymbol{F}, \boldsymbol{G}) \equiv\int\boldsymbol{F}^*(\boldsymbol{r})\cdot\boldsymbol{G}(\boldsymbol{r})\mathrm{d}^3\boldsymbol{r}$$
+                </div>
+
+                <p>[推论]</p>
+                <p>\(\forall\boldsymbol{F}(\boldsymbol{r}),~\boldsymbol{G}(\boldsymbol{r})\)：</p>
+                $$(\boldsymbol{F}, \boldsymbol{G}) = (\boldsymbol{G}, \boldsymbol{F})^*$$
+
+                <p>[推论]</p>
+                <p>即使\(\boldsymbol{F}\)为复数，\(\boldsymbol{F},\boldsymbol{F}\)也为非负的实数.</p>
+
+                <p>[推论]</p>
+                <p>若\(\boldsymbol{F}(\boldsymbol{r})\)为电磁波系统中的一个谐波模，那么总可以找到一组函数使\((\boldsymbol{F}, \boldsymbol{F}) = 1\).</p>
+            </div>
+            
+
+            <p>采用分步积分法，可以证明\(\widehat{\Theta}\)是哈密顿算符，其满足：</p>
+            $$(\boldsymbol{F}, \widehat{\Theta}\boldsymbol{G}) = (\widehat{\Theta}\boldsymbol{F}, \boldsymbol{G})$$
+            <div class="Card-AI">
+                <p>\(\widehat{\Theta}\)只是在数学形式上为哈密顿算符，但它并不是哈密顿算符.</p>
+            </div>
+
+
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>谐波模的一般特性</h2>
+            <p>既然已经确定了\(\hat\Theta\)为哈密顿算符，就可以说\(\hat\Theta\)的本征值一定为实数.</p>
+            <div class="Card-AI">
+                <p>怎么确定的\(\Theta\)为哈密顿算符？</p>
+            </div>
+            <p>[设]\(\boldsymbol{H}(\boldsymbol{r})\)为\(\hat\Theta\)的一个本征向量，其本征值为\(\left(\frac{\omega}{c}\right)^2\).</p>
+            <p>做<a href="../QuantumMechanics/HilbertSpace.html">内积运算</a>：</p>
+            $$\because\hat\Theta\boldsymbol{H}(\boldsymbol{r}) = \left(\frac{\omega}{c}\right)^2\boldsymbol{H}(\boldsymbol{r})$$
+            $$\left(\boldsymbol{H},\widehat{\Theta}\boldsymbol{H}\right) = \left(\frac{\omega}{c}\right)^2(\boldsymbol{H},\boldsymbol{H})$$
+            <p>即\(\omega^2 = (\omega^2)^*\)，即\(\omega^2\in\mathbb{R}\).</p>
+            <p>通过另一种论证，也可以证明\(\forall \epsilon\gt 0\)，\(\omega^2\)总是非负的实数.</p>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>时间反演对称</h2>
+            <p>若对主方程取复共轭，且利用无损材料的本征值为实数这一特点，可以得到：</p>
+            $$\left(\widehat{\Theta}\boldsymbol{H}_{\boldsymbol{k}n}\right)^* = \frac{\omega_n^2(\boldsymbol{k})}{c^2}\boldsymbol{H}_{\boldsymbol{k}n}^*$$
+            $$\widehat{\Theta}\boldsymbol{H}_{\boldsymbol{k}n}^* = \frac{\omega_n^2(\boldsymbol{k})}{c^2}\boldsymbol{H}_{\boldsymbol{k}n}^*$$
+            <p>可以看到，\(\boldsymbol{H}_{\boldsymbol{k}n}^*\)与\(\boldsymbol{H}_{\boldsymbol{k}n}\)满足一样的方程，拥有一样的本征值.</p>
+            <p>\(\boldsymbol{H}_{\boldsymbol{k}n}^*\)是波矢为\(-k\)的Bloch态，就是说：</p>
+            $$\omega_n(\boldsymbol{k}) = \omega_n(-\boldsymbol{k})$$
+            <p>上述方程对几乎所有光子晶体都成立.</p>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

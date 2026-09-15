@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>光波导理论</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>均匀光波导</h1>
+
+        <div class="Card-Analysis">
+            <h2>概述</h2>
+            <p>均匀光波导是正规光波导中最简单的一种.</p>
+            <p>其折射率分布不仅沿纵向是均匀的，而且沿横截面的分布也是分区域均匀的.</p>
+
+            <div class="Card-Question">
+                <p>什么叫分区域均匀</p>
+            </div>
+
+            <p>均匀光波导折射率分布的数学描述为：</p>
+            $$\epsilon(x,y,z) = \epsilon_i,\quad (x,y,z)\in\Omega_i$$
+            <p>其中\(\Omega_i\)为一个柱状域.</p>
+            <p>此时有：</p>
+            $$\nabla\epsilon = 0,\quad (x,y,z)\in\Omega_i$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>平面光波导</h2>
+            <p><b>应用</b>：平面光波导在激光器中用作谐振腔.</p>
+            <p>最简单的平面光波导结构：两个无限大平面将光波导空间分为3个部分.</p>
+            <img src="Img/PlaneWaveGuide.png" width="200">
+            <p>[设]折射率具有对称分布，仅取两个值\(n_1, n_2\)，且\(n_1\gt n_2\)，并可表示为：</p>
+            $$n(y) = \begin{cases}n_1,\quad |y|\lt a\\n_2, \quad |y|\gt a\end{cases}$$
+            <p>称\(|y|\lt a\)的部分为<b>芯层</b>，\(|y|\gt a\)的部分为<b>包层</b>.</p>
+            <p>这种光波导称为<b>阶跃平面光波导</b>.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>均匀介质薄膜波导</h2>
+            <p>薄膜波导是最简单的光波导类型，是集成光学的技术基础.</p>
+
+
+            <h3>波导光线</h3>
+            <p>对于均匀介质波导，光线在芯层内沿直线传播，经上下界面的反射和这折射形成锯齿形传播路径.</p>
+            <p>波导中的光线可以分为两种：</p>
+            <ul>
+                <li>束缚光线（波导光线）</li>
+                <li>折射光线（辐射光线）</li>
+            </ul>
+
+            <div class="Card-Definition">
+                <b>束缚光线</b>
+                <p>满足全反射条件并始终被束缚在芯层内的光线.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>折射光线</b>
+                <p>未满足全反射条件的光线.</p>
+                <p>这种光线可以穿过界面进入衬底或覆盖层.</p>
+            </div>
+
+            <h3>波导条件</h3>
+            <p>假定芯层的锯齿形光线沿\(z\)方向传播，但局部光线的指向却有上倾和下倾两种可能，即波矢量\(\boldsymbol{k}\)不是唯一确定的.</p>
+            <p>\(x\)方向的分量\(\boldsymbol{k}_{1x} = \pm n_1K_0\cos\alpha\)，具有双值不确定性.</p>
+            <div class="Card-Definition" id="PropagationConstant">
+                <b>传播常数</b>
+                <p>\(z\)方向分量\(k_{1z} = n_1k_0\sin\alpha\)是确定的，且在光线传播过程中始终保持不变，将其以\(\beta\)表示，称为<b>传播常数</b>.</p>
+                $$\beta = n_1k_0\sin\alpha = n_1k_0\cos\theta$$
+            </div>
+            <div class="Card-AI">
+                <p>这里指的“两种可能”是指不同时刻有可能向上反射也可能向下反射，不是指同一时刻.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>有效折射率\(n_{\text{eff}}\)或\(\bar{\beta}\)</b>
+                $$n_{\text{eff}} = \bar{\beta} = \beta/K_0$$
+            </div>
+
+            <div class="Card-Definition" id="WaveGuideCondition">
+                <b>导波条件</b>
+                <p>由于波导光线必须满足界面全反射条件，即：</p>
+                $$\sin\alpha\gt n_2/n_1$$
+                <p>因此\(\beta\)满足：</p>
+                $$n_2K_0\lt \beta\lt n_1K_0$$
+                <p>或</p>
+                $$n_2\lt n_{\text{eff}}\lt n_1$$
+                <p>[注]波导条件适用于多种类型的波导.</p>
+            </div>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>折射率渐变薄膜波导中的光线</h2>
+            <p>一种实用的非均匀介质薄膜波导，其芯层折射率沿\(x\)方向渐变，并呈对称分布.</p>
+            $$n(x) = n(-x)$$
+            $$n(0) = n_1$$
+            $$n(\pm a) = n_2$$
+            <p>函数\(n(x)\)的具体形式有多种选择，它必须是缓变、平滑且对称的.</p>
+        </div>
+
+        
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

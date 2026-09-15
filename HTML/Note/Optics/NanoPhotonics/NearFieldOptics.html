@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>微纳光子学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>近场光学</h1>
+
+        <div class="Card-Analysis">
+            <h2>相互作用级数</h2>
+            <p>光学探针与样品间的相互作用可以用光的散射描述.</p>
+            <p>光学探针与样品在位置上相互接近，其介电极化率可以分别用\(\chi(\boldsymbol{r})\)与\(\eta(\boldsymbol{r})\)描述.</p>
+            <p>[设]入射光场为\(\boldsymbol{E}^i\)，为齐次Helmholtz方程的一个解.</p>
+            <p>入射场会产生可在远场探测到的散射波\(\boldsymbol{E}^s\)，因此，总场为：</p>
+            $$\boldsymbol{E} = \boldsymbol{E}^i + \boldsymbol{E}^s$$
+
+            <img src="Img/PorbeSample.jpg" width="300">
+            <p>图示为通用几何结构.</p>
+
+            <p>形式上，总场的<a href="../Electromagnetism/HelmholtzEquation.html" class="goto">Helmholtz方程</a>为：</p>
+            $$(\nabla^2 + k^2)\boldsymbol{E} = 0$$
+            <p>可以写作：</p>
+            $$\begin{aligned}
+            (\nabla^2 + k_0^2)\boldsymbol{E} &= -k_0[\epsilon(\boldsymbol{r} - 1)]\boldsymbol{E}\\
+                                             &= -k_0^2[\eta(\boldsymbol{r}) + \chi(\boldsymbol{r})]\boldsymbol{E}
+            \end{aligned}$$
+            <ul>
+                <li>\(k_0\)：真空中的波数</li>
+            </ul>
+            <p>利用入射场的性质：</p>
+            $$(\nabla^2 + k_0^2)\boldsymbol{E}^i = 0$$
+            $$\therefore (\nabla^2 + k_0^2)\boldsymbol{E}^s = -k_0^2[\eta(\boldsymbol{r}) + \chi(\boldsymbol{r})]\boldsymbol{E}$$
+            <p>这是关于散射场\(\boldsymbol{E}^s\)的非齐次Helmholtz方程.</p>
+            <p>光学探针与样品的介电极化率出现在源项中.</p>
+            <p>上式可以利用\(\boldsymbol{G}(\boldsymbol{r}, \boldsymbol{r}')\)形式求解.</p>
+
+        </div>
+
+        <div class="Card-AI">
+            <p>光学探针：一种真实存在的光学结构，形状多样.</p>
+            <p>样品：具有一定光学性质和空间结构的物质对象.</p>
+            <p>光存在于光学探针与样品周围的空间中.</p>
+            <p></p>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

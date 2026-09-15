@@ -44,21 +44,32 @@
                 <li>自旋\(\boldsymbol{S} = I\boldsymbol{\omega}\)：物体绕质心的运动</li>
             </ul>
 
-            <p>自旋的代数理论与轨道角动量的极其相似，由基本对易关系：</p>
-            $$\left[S_x, S_y\right] = i\hbar S_z$$
-            $$\left[S_y, S_z\right] = i\hbar S_x$$
-            $$\left[S_z, S_x\right] = i\hbar S_y$$
+            <p>自旋的代数理论与轨道角动量的极其相似，由<a href="TimeIndependentSE.html#commutator">基本对易关系</a>：</p>
+            $$\left[\hat S_x, \hat S_y\right] = i\hbar\hat S_z$$
+            $$\left[\hat S_y, \hat S_z\right] = i\hbar\hat S_x$$
+            $$\left[\hat S_z, \hat S_x\right] = i\hbar\hat S_y$$
         
             <div class="Card-AI">
                 <p>自旋与轨道角动量的代数理论相似性就体现在它们都满足角动量基本对易关系.</p>
-                <p>这个基本对易关系同样也是由量子力学得出的内容.</p>
+                <p>自旋的基本对易关系不好证明，一般是通过轨道角动量的基本对易关系建立的.</p>
+                <ul>
+                    <li>\(s\)：自旋（角量子数）</li>
+                    <li>\(m\)：（自旋）磁量子数</li>
+                </ul>
             </div>
 
             <p>可以得出\(S^2\)与\(S_z\)的本征矢满足：</p>
-            $$S^2\left|s,m\right\rangle = \hbar^2 s(s+1)\left|s,m\right\rangle$$
-            $$S_z\left|s,m\right\rangle = \hbar m\left|s,m\right\rangle$$
-            <p>及：</p>
-            $$S_\pm\left|s,m\right\rangle = \hbar\sqrt{s(s+1)-m(m\pm1)}\left|s,m\pm1\right\rangle$$
+            $$\hat S^2\left|s,m\right\rangle = \hbar^2 s(s+1)\left|s,m\right\rangle$$
+            $$\hat S_z\left|s,m\right\rangle = \hbar m\left|s,m\right\rangle$$
+            <p>[注]由于自旋的本征态不是函数，因此使用右矢\(\left\lvert s,m\right\rangle\)标记.</p>
+            <div class="Card-AI">
+                <p>本征态不一定用函数表示，也可以用向量表示.</p>
+            </div>
+            <p>[令]</p>
+            $$S_\pm = S_x\pm iS_y$$
+            $$\hat S_\pm\left|s,m\right\rangle = \hbar\sqrt{s(s+1)-m(m\pm1)}\left|s,m\pm1\right\rangle$$
+            <p>\(m\)所有可能的取值为：</p>
+            $$m = -s, -s+1, \cdots, s-1, s$$
 
             <div class="Card-Definition">
                 <b>自旋\(s\)</b>
@@ -97,17 +108,11 @@
             <h2>自旋1/2</h2>
             <p>\(s = 1/2\)是构成普通物质的例子（质子、中子和电子）的自旋，以及所有夸克和所有轻子的自旋.</p>
             <p>掌握自旋1/2更容易理解高自旋.</p>
-            <p>对于\(s=1/2\)，\(S^2\)与\(S_z\)仅有两个本征态：</p>
-            <div class="Card-AI">
-                <p>\(S^2\)与\(S_z\)都是矢量算符.</p>
-            </div>
+            <p>对于\(s=1/2\)，\(\hat S^2\)与\(\hat S_z\)仅有两个本征态：</p>
             <ul>
                 <li>上自旋态\(\uparrow\)：\(\left|\frac{1}{2}, \frac{1}{2}\right\rangle\)</li>
-                <li>下自旋态\(\downarrow\)：\(\left|\frac{1}{2}, \frac{1}{2}\right\rangle\)</li>
+                <li>下自旋态\(\downarrow\)：\(\left|\frac{1}{2}, -\frac{1}{2}\right\rangle\)</li>
             </ul>
-            <div class="Card-AI">
-                <p>下自旋态应该是\(\left|\frac{1}{2}, -\frac{1}{2}\right\rangle\)，这里应该是笔误.</p>
-            </div>
             <p>利用这两个基矢量，一个自旋\(1/2\)粒子的一般态可以表示为一个二元列矩阵或旋量：</p>
             <div class="Card-AI">
                 <p>一般态指系统所有可能的量子态中的任意一个状态.</p>
@@ -117,6 +122,76 @@
                 <li>\(\chi_+ = \left(\begin{matrix}1\\0\end{matrix}\right)\)：代表上自旋</li>
                 <li>\(\chi_- = \left(\begin{matrix}0\\1\end{matrix}\right)\)：代表下自旋</li>
             </ul>
+            <div class="Card-AI">
+                <ul>
+                    <li>\(|a|^2\)：上自旋的概率</li>
+                    <li>\(|b|^2\)：下自旋的概率</li>
+                </ul>
+            </div>
+
+            <div class="Card-AI">
+                <p>自旋1/2的本征态在\(S_z\)表象下一定是一个2x1矩阵.</p>
+                <p>因此自旋算符一定是2x2矩阵.</p>
+            </div>
+            <p>自旋算符成为\(2\times2\)矩阵，具体表示可由它们对\(\chi_+\)和\(\chi_-\)作用的结果写出.</p>
+
+            <div class="Formula">
+                $$\begin{align}
+                \boldsymbol{S}^2\chi_+ = \frac{3}{4}\hbar^2\chi_+\\
+                \boldsymbol{S}^2\chi_- = \frac{3}{4}\hbar^2\chi_-
+                \end{align}\Rightarrow
+                \boldsymbol{S}^2 = \frac{3}{4}\hbar^2\left(\begin{matrix}1&0\\0&1\end{matrix}\right)$$
+                <div class="Derivation">
+                    <p>将\(\boldsymbol{S}^2\)写成矩阵元待定的矩阵：</p>
+                    $$\boldsymbol{S}^2 = \left(\begin{matrix}c&d\\e&f\end{matrix}\right)$$
+                    $$\because\boldsymbol{S}^2\chi_+ = \frac{3}{4}\hbar^2\chi_+$$
+                    $$\therefore \left(\begin{matrix}c&d\\e&f\end{matrix}\right)\left(\begin{matrix}1\\0\end{matrix}\right) = \frac{3}{4}\hbar^2\left(\begin{matrix}1\\0\end{matrix}\right)$$
+                    $$\therefore \left(\begin{matrix}c\\e\end{matrix}\right) = \left(\begin{matrix}\frac{3}{4}\hbar^2\\0\end{matrix}\right)$$
+                    $$\because\boldsymbol{S}^2\chi_- = \frac{3}{4}\hbar^2\chi_-$$            
+                    $$\therefore \left(\begin{matrix}c&d\\e&f\end{matrix}\right)\left(\begin{matrix}0\\1\end{matrix}\right) = \frac{3}{4}\hbar^2\left(\begin{matrix}0\\1\end{matrix}\right)$$
+                    $$\therefore \left(\begin{matrix}d\\f\end{matrix}\right) = \left(\begin{matrix}0\\\frac{3}{4}\hbar^2\end{matrix}\right)$$
+                    $$\therefore \boldsymbol{S}^2 = \frac{3}{4}\hbar^2\left(\begin{matrix}1&0\\0&1\end{matrix}\right)$$
+                </div>
+            </div>
+
+            $$\begin{align}
+            \boldsymbol{S}_z\chi_+ = \frac{1}{2}\hbar\chi_+\\
+            \boldsymbol{S}_z\chi_- = \frac{1}{2}\hbar\chi_-
+            \end{align}\Rightarrow
+            \boldsymbol{S}_z = \frac{1}{2}\hbar^2\left(\begin{matrix}1&0\\0&-1\end{matrix}\right)$$
+
+            <div class="Formula">
+                $$\begin{align}
+                &\boldsymbol{S}_+\chi_+ = 0\\
+                &\boldsymbol{S}_+\chi_- = \hbar\chi_+
+                \end{align}\Rightarrow
+                \boldsymbol{S}_+ = \hbar\left(\begin{matrix}0&1\\0&0\end{matrix}\right)$$
+                <div class="Derivation">
+                    $$\sqrt{s(s+1) - m(m+1)}\rvert_{s=1/2, m=1/2} = 0$$
+                    $$\sqrt{s(s+1) - m(m+1)}\rvert_{s=1/2, m=-1/2} = 1$$
+                </div>
+            </div>
+
+
+            $$\begin{align}
+            &\boldsymbol{S}_-\chi_- = 0\\
+            &\boldsymbol{S}_-\chi_+ = \hbar\chi_+
+            \end{align}\Rightarrow
+            \boldsymbol{S}_- = \hbar\left(\begin{matrix}0&0\\1&0\end{matrix}\right)
+            $$
+
+            $$\because S_\pm = S_x\pm iS_y$$
+            $$\therefore S_x = \frac{1}{2}(S_++S_-),\quad S_y = -\frac{i}{2}(S_+-S_-)$$
+            $$\boldsymbol{S}_x = \frac{1}{2}\hbar\left(\begin{matrix}0&1\\1&0\end{matrix}\right)$$
+            $$\boldsymbol{S}_y = \frac{1}{2}\hbar\left(\begin{matrix}0&-i\\i&0\end{matrix}\right)$$
+
+            <p>\(\boldsymbol{S}\)可以更简洁地表示为：</p>
+            $$\boldsymbol{S} = \frac{\hbar}{2}\boldsymbol{\sigma}$$
+            <p>其中：</p>
+            $$\sigma_x\equiv \left(\begin{matrix}0&1\\1&0\end{matrix}\right),\quad \sigma_y\equiv \left(\begin{matrix}0&-i\\i&0\end{matrix}\right),\quad \sigma_x\equiv \left(\begin{matrix}1&0\\0&-1\end{matrix}\right)$$
+            <p>这就是<b>Pauli自旋矩阵</b>.</p>
+            <p>\(\boldsymbol{S}_x,\boldsymbol{S}_y,\boldsymbol{S}_z,\boldsymbol{S}^2\)是厄密矩阵（因为它们都是可观测量）.</p>
+            <p>\(\boldsymbol{S}_+\boldsymbol{S}_-\)是非厄密的（都是不可观测量）.</p>
         </div>
 
 

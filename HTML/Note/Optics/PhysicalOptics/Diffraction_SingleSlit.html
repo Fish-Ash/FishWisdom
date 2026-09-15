@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>单缝夫琅禾费衍射</h1>
+
+        <div class="Card-Analysis">
+            <h2>实验装置</h2>
+            <img src="Img/Diffraction/SingleSlitFDsetup.jpg" alt="单缝夫琅禾费衍射装置" width="350">
+            <p>若矩孔一个方向的宽度比另一个方向的宽度大得多，即\(b\gg a\)，矩孔就变成了狭缝.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>衍射图样</h2>
+            <img src="Img/Diffraction/SingleSlitFD.jpg" alt="单缝夫琅禾费衍射图样" width="400">
+            <p>由于\(b\gg a\)，所以入射光在\(y\)方向上的衍射效应可以忽略，衍射图样只分布在\(x\)轴上.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>衍射强度分布</h2>
+            <p>衍射屏上P点的光场复振幅为：</p>
+            $$\tilde{E}(P) = C\int_{-a/2}^{a/2}e^{-ikxx_1/f}\mathrm{d}x_1 = \tilde{E}_0\frac{\sin\alpha}{\alpha}$$
+            <ul>
+                <li>\(\tilde{E}_0 = Ca\)：观察屏中心点P<sub>0</sub>处的光场复振幅</li>
+                <li>\(\alpha = \frac{kax}{2f} = \frac{\pi a}{\lambda}\frac{x}{f} \approx \frac{\pi a\sin\theta}{\lambda}\)</li>
+            </ul>
+            <p>P点光强为：</p>
+            $$I = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2$$
+            <ul>
+                <li>\(I_0 = |\tilde{E}_0|^2\)</li>
+                <li>\(\left(\frac{\sin\alpha}{\alpha}\right)^2\)：单缝衍射因子</li>
+            </ul>
+            <p>因此，矩孔夫琅禾费颜色和的相对强度分布是两个单缝衍射因子的乘积.</p>
+
+            <b>单色光照明时的衍射光强分布</b>
+            <p>\(\alpha = 0\)时：对应于\(\theta = 0\)的衍射位置，为光强中央主极大值（亮条纹）.</p>
+            <p>\(\alpha = m\pi\)时：对应于满足：</p>
+            $$\sin\theta = m\frac{\lambda}{a},~m=\pm1,\pm2,\cdots$$
+            <p>的衍射角方向为光强极小值（暗条纹方向）.</p>
+            <p>相邻暗条纹角宽度为：</p>
+            <div class="Formula">
+                $$\Delta \theta = \frac{\lambda}{a\cos\theta}$$
+                <div class="Derivation">
+                    $$\because \sin\theta = m\frac{\lambda}{a}$$
+                    $$\therefore \cos\theta\mathrm{d}\theta = \frac{\lambda}{a}\mathrm{d}m$$
+                    $$\therefore \cos\theta\Delta\theta = \frac{\lambda}{a}\Delta m$$
+                    $$\because \Delta m = 1$$
+                    $$\therefore \Delta\theta = \frac{\lambda}{a\cos\theta}$$
+                </div>
+            </div>
+            <p>衍射角很小时，相邻暗条纹的角宽度为：</p>
+            $$\Delta\theta \approx \frac{\lambda}{a}$$
+            <p>对于中央亮条纹，其角宽度\(\Delta\theta_0\)为：</p>
+            $$\Delta\theta_0 = 2\Delta\theta = \frac{2\lambda}{a}$$
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

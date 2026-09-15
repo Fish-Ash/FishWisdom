@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>泛函分析</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>点集</h1>
+
+        <div class="Card-Analysis">
+            <h2>邻域</h2>
+            <div class="Card-Definition">
+                <b>邻域</b>
+                <p>\(\mathbb{R}^n\)中所有与定点\(P_0\)距离小于定值\(\delta\gt 0\)的点的全体，即集合：</p>
+                $$\{P:d(P,P_0)\lt\delta\}$$
+                <p>称为点\(P_0\)的\(\delta\)邻域，记作\(U(P_0,\delta)\).</p>
+                <p>在无需特别指出半径情况时，也可简单称为\(P_0\)的邻域，记作\(U(P_0)\).</p>
+                <p>\(P_0\)称为邻域的中心.</p>
+                <p>\(\delta\)称为邻域的半径.</p>
+            </div>
+    
+            <div class="Card-Property">
+                <b>邻域的性质</b>
+                <p>在\(\mathbb{R},\mathbb{R}^2, \mathbb{R}^3\)中的\(U(P_0, \delta)\)，就是以\(P_0\)为中心，\(\delta\)为半径的开区间、开圆与开球.</p>
+                <p>\(P\in U(P)\).</p>
+                <p>对于\(U_1(P)\)与\(U_2(P)\)，存在\(U_3(P)\subset U_1(P)\cap U_2(P)\).</p>
+                <p>对于\(Q\in U(P)\)，存在\(U(Q)\subset U(P)\).</p>
+                <p>对于\(P\neq Q\)，存在\(U(P)\cap U(Q) = \emptyset\).</p>
+            </div>
+    
+            <div class="Card-Definition">
+                <b>两个非空点集\(A,B\)的距离</b>
+                $$d(A,B) = \inf\{d(x,y):x\in A,y\in B\}$$
+                <div class="Card-Question">
+                    <p>inf是什么？x与y需要对应吗？</p>
+                </div>
+            </div>
+
+            <div class="Card-Definition">
+                <b>非空点集\(E\)的直径</b>
+                $$\delta(E) = \mathop{\sup}_{P\in E\\ Q\in E}d(P,Q)$$
+                <div class="Card-Question">
+                    <p>sup?</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>聚点、内点、界点</h2>
+
+            <p>[设]\(E\)为\(\mathbb{R}^n\)中的一个点集，\(P_0\)为\(\mathbb{R}^n\)中的一个定点.</p>
+            <div class="Card-Definition">
+                <b>内点</b>
+                <p>若存在\(P_0\)的某一邻域\(U(P_0)\)，使得\(U(P_0)\subset E\)，则称\(P_0\)为\(E\)的内点.</p>
+                <p>（\(P_0\)位于\(E\)范围内除边界上.）</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>外点</b>
+                <p>若\(P_0\)为\(E^c\)的内点，则称\(P_0\)为\(E\)的外点.</p>
+                <p>（\(P_0\)位于\(E\)范围外除边界上.）</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>界点（边界点）</b>
+                <p>定义1：若\(P_0\)既非\(E\)的内点又非\(E\)的外点，称其为\(E\)的界点.</p>
+                <p>定义2：若\(P_0\)的任一邻域内既含有属于\(E\)的点，又含有不属于\(E\)的点，称其为\(E\)的界点.</p>
+                <p>（\(P_0\)位于\(E\)的边界上.）</p>
+            </div>
+
+            <table>
+                <tr>
+                    <td rowspan="3">\(\mathbb{R}^n\)中的点<br>（对\(E\)来说）</td>
+                    <td>内点</td>
+                </tr>
+                <tr><td>界点</td></tr>
+                <tr><td>外点</td></tr>
+            </table><br>
+
+            <div class="Card-Definition">
+                <b>聚点</b>
+                <p>若\(P_0\)任一邻域内都含有无穷多个属于\(E\)的店，称\(P_0\)为\(E\)的一个聚点.</p>
+                <p>[注]由定义可知，有限集无聚点.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>孤立点</b>
+                <p>若\(P_0\in E\)，但\(P_0\)不为\(E\)的聚点，则\(P_0\)称为\(E\)的孤立点.</p>
+                <div class="Card-Question">
+                    <p>想象不出来孤立点的存在，存在于可列无限集中吗？</p>
+                </div>
+                <p>[注]\(E\)的界点只可能是聚点或孤立点.</p>
+            </div>
+
+            <table>
+                <tr>
+                    <td rowspan="3">\(\mathbb{R}^n\)中的点<br>（对\(E\)来说）</td>
+                    <td>聚点</td>
+                </tr>
+                <tr><td>孤立点</td></tr>
+                <tr><td>外点</td></tr>
+            </table><br>
+
+            <div class="Card-Definition">
+                <b>开核</b>
+                <p>\(E\)的全体内点组成的集合，记作\(\mathring{E}\)，即：</p>
+                $$\mathring{E} = \{x:\exists U(x)\subset E\}$$
+            </div>
+
+            <div class="Card-Definition">
+                <b>导集</b>
+                <p>\(E\)的全体聚点组成的集合，记作\(E'\)，即：</p>
+                $$E' = \{x:\forall U(x)\cap E\setminus \{x\}\neq \emptyset\}$$
+            </div>
+
+            <div class="Card-Definition">
+                <b>边界</b>
+                <p>\(E\)的全体界点组成的集合，记作\(\partial E\)，即：</p>
+                $$\partial E = \{x:\forall U(x), U(x)\cap E\neq\emptyset, U(x)\cap E^c\neq\emptyset\}$$
+            </div>
+                
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>开集、闭集、完备集</h2>
+
+            <div class="Card-Definition">
+                <b>开集</b>
+                <p>设\(E\subset\mathbb{R}^n\)，若\(E\)中每点均为\(E\)的内点，称\(E\)为开集.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>闭集</b>
+                <p>设\(E\subset\mathbb{R}^n\)，若\(E\)的每个聚点都属于\(E\)，称\(E\)为开集.</p>
+            </div>            
+        </div>
+        
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

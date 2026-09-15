@@ -1,0 +1,91 @@
+/* 基础样式 */
+body{
+    margin: 0;
+}
+/* 上下文菜单 */
+#contextMenu {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 120px;
+}
+
+#contextMenu button{
+    display: block;
+    width: 100px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+#contextMenu button:hover{
+    background-color: #ccc;
+}
+
+/* 画布铺屏 */
+#network{
+    width: 100vw;
+    height: 100vh;
+}
+
+/* 侧边栏 */
+#settingsTab{
+position: fixed;
+right: 0;
+top: 10vh;
+width: 70px;
+height: 50px;
+border: none;
+clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
+}
+
+#listTab{
+position: fixed;
+right: 0;
+top: 17vh;
+width: 70px;
+height: 50px;
+border: none;
+clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
+}
+
+#sideBar{
+    position: fixed;
+    width: 30vw;
+    height: 100vh;
+    top: 0px;
+    right: 0px;
+    background-color: aquamarine;
+}
+
+#sideBar p:hover{
+    background-color: aqua;
+}
+
+#authorContextMenu {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 120px;
+}
+
+#authorContextMenu button{
+    display: block;
+    width: 100px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+#authorContextMenu button:hover{
+    background-color: #ccc;
+}
+/* 我想，星空样式 */
+
+.authorArrow{
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+}

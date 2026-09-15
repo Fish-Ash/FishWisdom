@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>光波导理论</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>薄膜波导模式理论</h1>
+
+        <div class="Card-Definition">
+            <b>导模（guided mode）</b>
+            
+            <p>理论证明，并非波导条件所限定的任何\(\beta\)值都能称为实际的传播常数，只有那些由特征方程所决定的特定的\(\beta\)值次啊能对应一定的光波传播方式，这种由特定参数所确定的特殊传播方式，称为光波导的导模.</p>
+            <div class="Card-Question">
+                <p>什么是波导条件？</p>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>均匀薄膜波导特征方程</h2>
+            <p>[设]薄膜波导的芯层、衬底和覆盖层折射率分别为\(n_1, n_2, n_3\)，且\(n_1\gt n_2\geq n_3\)，芯层厚度为\(d\).</p>
+            <p>对三层介质，有：</p>
+            $$k_i = n_ik_0,\quad i=1,2,3$$
+            <p><a href="UniformWaveGuide.html#PropagationConstant" class="goto">传播常数</a>为：</p>
+            $$\beta = k_{1z} = k_{2z} = k_{3z} = n_1k_0\sin\alpha$$
+            <div class="Card-AI">
+                <p>相等是由于切向方向的连续性.</p>
+            </div>
+            <p>以\(\kappa\)表示芯层波矢的\(x\)分量，则：</p>
+            $$\kappa = |k_{1x}| = n_1k_0\cos\alpha$$
+
+            <img src="Img/ThinFilmWaveGuide.jpg" width="300">
+
+            <p>均匀介质波导的锯齿形光线，在波动光学看来不过是大量平面波的叠加.</p>
+            <p>能够在薄膜波导中传输的光波，一定满足相干加强（谐振）条件，也就是说，这些平面波在它们共同的波面上，如MM'面，必须保持\(2\pi\)整数倍的相位差.</p>
+            <div class="Card-AI">
+                <p>这里只是说需要具有相干性，而非发生了干涉.</p>
+            </div>
+            <div class="Formula">
+                $$\Delta = 2n_1d\cos\alpha$$
+                <div class="Derivation">
+                    $$\Delta = n_1(BC + B_E)$$
+                    $$BC = d/\cos\alpha$$
+                    $$BE = BC\cos2\alpha$$
+                    $$\begin{align}
+                    \Delta &= n_1(1 + \cos2\alpha)\frac{d}{\cos\alpha}\\
+                           &= 2n_1\cos\alpha
+                    \end{align}$$
+                </div>
+            </div>
+
+            <p>因为这里的平面波表达式采取了\(e^{i(\omega t - \boldsymbol{k}\cdot\boldsymbol{r})}\)的形式，经过两次反射的光波在波面MM'上的相位要比其入射光波在MM'上的相位落后，因此由传播路程不同引起的相位差可以表示为：</p>
+            $$\Phi_\Delta = -k_0\Delta = -2k_0n_1d\cos\alpha = -2\kappa d$$
+            <p>此外，对两光波相位差的计算，还要考虑由于其中一条光线在芯层与衬底及芯层与覆盖层两分界面上的全反射引起的相移\(2\Phi_{12}\)与\(2\Phi_{13}\).</p>
+            <p>因此，总相位差须满足如下相干加强条件：</p>
+            $$-2\kappa d + 2\Phi_{12} + 2\Phi_{13} = -2m\pi$$
+
+            <b>均匀薄膜波导的特征方程（色散方程）</b>
+            <p>总相位差需要满足如下相干增强条件：</p>
+            $$\kappa d = m\pi + \Phi_{12} + \Phi_{13},\quad m\in\mathbb{N}$$
+            <ul>
+                <li>\(m\)：模序数</li>
+            </ul>
+            <p>方程中每一个满足波导条件的解，对应一种波导模式或电磁场模式，称为<b>导模</b>.</p>
+
+            <p>利用全反射相移公式，分别得到两种偏振态下的特征方程：</p>
+            <b>TE模</b>
+            $$\begin{align}
+            \kappa d &= m\pi + \arctan\frac{\sqrt{\sin^2\alpha - n_2^2/n_1^2}}{\cos\alpha} + \arctan\frac{\sqrt{\sin^2\alpha - n_3^2/n_1^2}}{\cos\alpha}\\
+                     &= m\pi + \arctan\frac{\sqrt{\beta^2 - n_2^2K_0^2}}{\kappa} + \arctan\frac{\sqrt{\beta^2 - n_3^2K_0^2}}{\kappa}
+            \end{align}$$
+            <b>TM模</b>
+            $$\begin{align}
+            \kappa d &= m\pi + \arctan\frac{n_1^2}{n_2^2}\frac{\sqrt{\sin^2\alpha - n_2^2/n_1^2}}{\cos\alpha} + \arctan\frac{n_1^2}{n_3^2}\frac{\sqrt{\sin^2\alpha - n_3^2/n_1^2}}{\cos\alpha}\\
+                     &= m\pi + \arctan\frac{n_1^2}{n_2^2}\frac{\sqrt{\beta^2 - n_2^2k_0^2}}{\kappa} + \arctan\frac{n_1^2}{n_2^2}\frac{\sqrt{\beta^2 - n_3^2k_0^2}}{\kappa}
+            \end{align}$$
+            <p>其中\(m = 0,1,2,\cdots\)</p>
+            <p>当波导的条件参数\(d,n_1,n_2,n_3\)及波长\(\lambda\)确定后，可以求解出对应一定\(m\)值的\(\beta\)和\(\kappa\)，这些模参数可以决定一个光波模式的全部特性.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>薄膜波导电磁场方程</h2>
+            <p>由于几何光学的局限性，当波导的横向尺寸与光波长相当时，利用几何光学理论得到的结果，精度将极大降低，甚至无法得到正确结果.</p>
+            <p>光波导问题的严格分析应该是寻找满足光波导边界条件的电磁场方程的解，确定各模式的电磁场的横向分布和纵向传输特性.</p>
+            <p>无论对何种截面的波导，如薄膜波导、光纤、条形波导等，其中传输的任何导模、辐射模都是满足Maxwell方程组和边界条件的.</p>
+            <p>从Maxwell方程组出发，利用<a href="../PhysicalOptics/MonochromaticWave.html#MonochromaticMaxwell" class="goto">单色电磁波的基本方程</a>：</p>
+            $$\nabla\times\boldsymbol{E} = i\omega\mu_0\boldsymbol{H}$$
+            $$\nabla\times\boldsymbol{H} = -i\omega\epsilon\boldsymbol{H}$$
+            <p>直角坐标系下，写出如下单色光波的分量形式：</p>
+            <div class="Split2">
+                <div class="SplitHalf">
+                    $$\frac{\partial}{\partial y}E_z - \frac{\partial}{\partial z}E_y = i\omega\mu_0H_x$$
+                    $$\frac{\partial}{\partial z}E_x - \frac{\partial}{\partial x}E_z = i\omega\mu_0H_y$$
+                    $$\frac{\partial}{\partial x}E_y - \frac{\partial}{\partial y}E_x = i\omega\mu_0H_z$$
+                </div>
+                <div class="SplitHalf">
+                    $$\frac{\partial}{\partial y}H_z - \frac{\partial}{\partial z}H_y = -i\omega\epsilon E_x$$
+                    $$\frac{\partial}{\partial z}H_x - \frac{\partial}{\partial x}H_z = -i\omega\epsilon E_y$$
+                    $$\frac{\partial}{\partial x}H_y - \frac{\partial}{\partial y}H_x = -i\omega\epsilon E_z$$
+                </div>
+            </div>
+            <div class="Card-AI">
+                <p>以下式子中的正负号翻转来源于时间相位因子的正负号不同（上取\(e^{-i\omega t}\)，下取\(e^{i\omega t}\)）</p>
+            </div>
+            <p>波导结构在\(y,z\)方向是无限的，假设电磁波沿\(z\)方向传播，因而波矢分量\(k_y = 0, k_z = \beta\)，场量与\(y\)无关.</p>
+            <p>由于受到上下界面的反射，芯层内必然形成两种方向的平面波，因此\(k_x\)有两种可能值，\(k_x^+ = \kappa, k_y^- = -\kappa\).</p>
+            <p>为简化方程，以双平面波的叠加为依据，构造一个形式解：</p>
+            $$\begin{align}
+            \boldsymbol{E} &= \boldsymbol{E}^+ e^{-i\boldsymbol{k}^+\cdot\boldsymbol{r}} + \boldsymbol{E}^- e^{-i\boldsymbol{k}^-\cdot\boldsymbol{r}}\\
+                           &= (\boldsymbol{E}^+e^{-i\kappa x} + \boldsymbol{E}^-e^{i\kappa x})e^{-i\beta z}
+            \end{align}$$
+
+            <div class="Split2">
+                <div class="SplitHalf">
+                    $$\beta E_y = -\omega\mu H_x$$
+                    $$\frac{\partial}{\partial x}E_y = -i\omega\mu H_z$$
+                    $$i\beta H_x + \frac{\partial}{\partial x}H_z = -i\omega\epsilon E_y$$
+                    <p>本组方程只含\(E_y, H_x, H_z\)，其中\(E_y\)是唯一电场分量，且垂直于传播方向（横电场），因此该方程组描述的传播模式为横电模（TE模）.</p>
+                </div>
+                <div class="SplitHalf">
+                    $$\beta H_y = \omega\epsilon H_x$$
+                    $$\frac{\partial}{\partial x}H_y = i\omega\epsilon H_z$$
+                    $$i\beta E_x + \frac{\partial}{\partial x}E_z = i\omega\mu H_y$$
+                    <p>本组方程仅含\(H_y, E_x, E_z\)，其中\(H_y\)为唯一磁场分量，且垂直于传播方向（横磁场），因此该方程组描述的传播模式为横磁模（TM模）</p>
+                </div>
+            </div>
+            <p>可以看出，上述两方程组是格各自独立互不关联的.</p>
+
+            <p>以上分析表明，薄膜波导存在两种不同偏振状态的传播模式，即TE模和TM模.</p>
+            <p>对以上两方程组分别进行变量代换可以得到单变量微分方程.</p>
+
+
+
+            <div class="Split2">
+                <div class="SplitHalf">
+                    <b>TE模</b>
+                    <div class="Formula">
+                        $$\frac{\mathrm{d}^2}{\mathrm{d}x^2}E_y + (n^2k_0^2 - \beta^2)E_y = 0$$
+                        <div class="Derivation">
+                            $$\because\beta E_y = -\omega\mu H_x$$
+                            $$\therefore H_x = -\frac{\beta}{\omega\mu}E_y$$
+                            $$\because i\beta H_x + \frac{\partial H_z}{\partial x} = -i\omega\epsilon E_y$$
+                            $$\begin{align}\therefore 
+                            \frac{\partial H_z}{\partial x} &= -i\omega\epsilon E_y - i\beta H_x\\
+                                                            &= (-i\omega\epsilon + \frac{i\beta^2}{\omega\mu})E_y
+                            \end{align}$$
+                            $$\begin{align}\therefore
+                            \frac{\partial^2 E_y}{\partial x^2} &= -i\omega\mu \frac{\partial H_z}{\partial x}\\
+                                                                &= -i\omega\mu\left(-i\omega\epsilon + \frac{i\beta^2}{\omega\mu}\right)E_y\\
+                                                                &= (-\omega^2\epsilon\mu + \beta^2)E_y
+                            \end{align}$$
+                            $$\because \omega^2\epsilon\mu = \omega^2/v^2 = \frac{(2\pi)^2 n^2}{c^2T^2} = n^2k_0^2$$
+                            $$\therefore\frac{\partial^2}{\partial x^2}E_y + (n^2k_0^2 - \beta^2)E_y = 0$$
+                        </div>
+                    </div>
+                    <p>求得\(E_y\)则可推出其他分量：</p>
+                    $$H_x = -\frac{\beta}{\omega\mu}E_y$$
+                    $$H_z = \frac{i}{\omega\mu}\frac{\partial E_y}{\partial x}$$
+                </div>
+                <div class="SplitHalf">
+                    <b>TH模</b>
+                    $$\frac{\mathrm{d}^2}{\mathrm{d}x^2}H_y + (n^2k_0^2 - \beta^2)H_y = 0$$
+                    <p>求出\(H_y\)则可推出其他分量：</p>
+                    $$E_x = \frac{\beta}{\omega\epsilon}H_y$$
+                    $$E_z = -\frac{i}{\omega\epsilon_0}\frac{1}{n^2}\frac{\partial H_y}{\partial x}$$
+                </div>
+
+            </div>
+            <p>依照导波条件，设：</p>
+            <div class="Formula" id="Param">
+                $$\kappa = \sqrt{n_1^2k_0^2 - \beta^2}\Rightarrow k_{1x}^2 = n_1^2k_0^2 - \beta^2 = \kappa^2$$
+                $$p = \sqrt{\beta^2 - n_2^2k_0^2}\Rightarrow k_{2x}^2 = n_2^2k_0^2 - \beta^2 = -p^2$$
+                $$q = \sqrt{\beta^2 - n_3^2k_0^2}\Rightarrow k_{3x}^2 = n_3^2k_0^2 - \beta^2 = -q^2$$
+            </div>
+            <p>对导模而言，两介质层中的场为倏逝波，\(k_{2x}\)与\(k_{3x}\)均为虚值.</p>
+            <p>\(\kappa, p, q, \beta\)均为场的特征常数：</p>
+            <p>\(\kappa\)：芯层中场在\(x\)方向的相位常数.</p>
+            <p>\(p\)：衬底中场沿\(x\)方向的衰减常数.</p>
+            <p>\(q\)：覆盖层中场沿\(x\)方向的衰减常数.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>TE模分析</h2>
+
+            <p>\(E_y\)完整形式的空间场分布为：</p>
+            $$E_y = \begin{cases}
+            Ce^{-q(x-a)}e^{-i\beta z}\quad(x\gt a)\\
+            A\cos(\kappa x + \phi)e^{-i\beta z}\quad(-a\lt x\lt a)\\
+            Be^{p(x+a)}e^{-i\beta z}\quad(x\lt -a)
+            \end{cases}$$
+            <b>覆盖层（\(x\gt a\)）</b>
+            $$\frac{\mathrm{d}^2}{\mathrm{d}x^2}E_y - q^2E_y = 0$$
+
+            <b>芯层（\(-a\lt x\lt a\)）</b>
+            $$\frac{\mathrm{d}^2}{\mathrm{d}x^2}E_y + \kappa^2E_y = 0$$
+
+            <b>衬底（\(x\lt -a\)）</b>
+            $$\frac{\mathrm{d}^2}{\mathrm{d}x^2}E_y - p^2E_y = 0$$
+
+            <div class="Card-AI">
+                <p>这里要令\(E_y = e^{rx}\)</p>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>TM模分析</h2>
+            <p>\(H_y\)完整形式的空间场分布为：</p>
+            $$H_y = \begin{cases}
+            C'e^{-q(x-a)}e^{-i\beta z}\quad(x\gt a)\\
+            A'\cos(\kappa x + \phi)e^{-i\beta z}\quad(-a\lt x\lt a)\\
+            B'e^{p(x+a)}e^{-i\beta z}\quad(x\lt -a)
+            \end{cases}$$            
+        </div>
+
+
+
+        
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

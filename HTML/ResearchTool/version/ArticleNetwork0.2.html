@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ArticleNetwork</title>
+    <style>
+        /* 基础样式 */
+        body{
+            margin: 0;
+        }
+        /* 上下文菜单 */
+        #contextMenu {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 120px;
+        }
+
+        #contextMenu button{
+            display: block;
+            width: 100px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        #contextMenu button:hover{
+            background-color: #ccc;
+        }
+
+        /* 画布铺屏 */
+        #network{
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* 侧边栏 */
+        #settingsTab{
+        position: fixed;
+        right: 0;
+        top: 10vh;
+        width: 70px;
+        height: 50px;
+        border: none;
+        clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
+        }
+
+        #listTab{
+        position: fixed;
+        right: 0;
+        top: 17vh;
+        width: 70px;
+        height: 50px;
+        border: none;
+        clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
+        }
+
+        #sideBar{
+            position: fixed;
+            width: 30vw;
+            height: 100vh;
+            top: 0px;
+            right: 0px;
+            background-color: aquamarine;
+        }
+
+        #sideBar p:hover{
+            background-color: aqua;
+        }
+
+        #authorContextMenu {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 120px;
+        }
+
+        #authorContextMenu button{
+            display: block;
+            width: 100px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        #authorContextMenu button:hover{
+            background-color: #ccc;
+        }
+        /* 我想，星空样式 */
+    </style>
+</head>
+
+<body>
+    <!-- 上下文菜单 -->
+    <div id="contextMenu" hidden>
+        <button id="addArticleButton">新增</button>
+        <button id="importButton">导入</button>
+        <button id="exportButton">导出</button>
+    </div>
+
+    <dialog id="articleDialog">
+        <h2>标题</h2>
+        <input id="articleTitle">
+        <h2>作者</h2>
+        <input id="articleAuthors">
+        
+        <br><br>
+        <button id="saveButton">保存</button>
+        <button id="cancelButton">取消</button>
+    </dialog>
+
+    <!-- 画布 -->
+    <svg id="network"></svg>
+
+    <!-- 侧边栏 -->
+    <div id="sideBar" hidden>
+        <h2 id="sideBarTitle"></h2>
+    </div>
+
+    <button id="settingsTab">设置</button>
+    <button id="listTab">列表</button>
+
+    <div id="authorContextMenu" hidden>
+        <button id="authorDelButton">删除</button>
+    </div>
+
+
+<!-- 我想，撤回功能 -->
+<!-- 我想, 删除确认 -->
+
+
+
+
+
+
+    <script>
+        // 上下文菜单
+        const contextMenu = document.getElementById("contextMenu");
+        const addArticleButton = document.getElementById("addArticleButton");
+        const importButton = document.getElementById("importButton");
+        const exportButton = document.getElementById("exportButton");
+        
+        document.addEventListener("contextmenu", function(event){
+            event.preventDefault();
+            contextMenu.hidden = false;
+            contextMenu.style.position = "absolute";
+            contextMenu.style.left = event.pageX + "px";
+            contextMenu.style.top = event.pageY + "px";
+        });
+
+        document.addEventListener("click", function(){
+            contextMenu.hidden = true;
+            authorContextMenu.hidden = true;
+        });
+        /*------------------------------------------------------------*/
+
+        // 侧边栏相关
+        // 我想，自由拉伸
+        // 我想，标签随动
+        // 我想，样式美化
+        const sideBar = document.getElementById("sideBar");
+        const settingsTab = document.getElementById("settingsTab");
+        const listTab = document.getElementById("listTab");
+        const authorContextMenu = document.getElementById("authorContextMenu");
+        const authorDelButton = document.getElementById("authorDelButton");
+        
+        listTab.addEventListener("click", function(){
+            sideBar.innerHTML = "";
+            sideBar.hidden = false;
+            const sideBarTitle = document.createElement("h2");
+            sideBarTitle.textContent = "作者列表";
+            sideBar.appendChild(sideBarTitle);
+            authors.forEach(function(author){
+                const authorName = document.createElement("p");
+                authorName.textContent = author;
+                authorName.addEventListener("contextmenu", function(event){
+                    event.preventDefault();
+                    event.stopPropagation();
+                    contextMenu.hidden = true;
+                    authorContextMenu.hidden = false;
+
+                    authorContextMenu.style.position = "absolute";
+                    authorContextMenu.style.left = event.pageX + "px";
+                    authorContextMenu.style.top = event.pageY + "px";
+                });
+
+                sideBar.appendChild(authorName);
+            })
+        })
+
+        authorDelButton.addEventListener("click", function(){
+
+        })
+
+
+        
+        // 控件const
+        const saveButton = document.getElementById("saveButton");
+        const cancelButton = document.getElementById("cancelButton");
+
+        const articleDialog = document.getElementById("articleDialog");
+        const articleTitle = document.getElementById("articleTitle");
+        const articleAuthors = document.getElementById("articleAuthors");
+
+
+        const network = document.getElementById("network");
+
+
+
+        // 新建const
+        const authors = new Set();//作者列表
+        const authorArticles = new Map();
+        const collaborations = new Set();//合作关系
+        let draggingCircle = null;
+
+        //EventListener
+        document.addEventListener("mouseup", function(){
+            draggingCircle = null;
+        });
+
+        document.addEventListener("mousemove", function(event){
+            if(draggingCircle !== null){
+                draggingCircle.setAttribute("cx", event.clientX)
+                draggingCircle.setAttribute("cy", event.clientY)
+            }
+        });
+
+        network.addEventListener("click", function(event){
+            if(event.target === network){
+                sideBar.hidden = true;
+            }
+        });
+
+        addArticleButton.addEventListener("click", function(){
+            articleDialog.showModal();
+        });
+
+        saveButton.addEventListener("click", function(){
+            saveArticle();
+        });
+
+        articleDialog.addEventListener("keydown", function(event){
+            if(event.key == "Enter"){
+                saveArticle()
+            }
+        });
+
+        cancelButton.addEventListener("click", function(){
+            articleDialog.close();
+        })
+
+        //function
+        function saveArticle(){
+            const authorList = articleAuthors.value.split(",");
+            const title = articleTitle.value.trim();
+            authorList.forEach(function(author){
+                author = author.trim();
+                if(author !== "" && !authors.has(author)){
+                    authors.add(author);
+                    addAuthorCircle(author);
+                    authorArticles.set(author, []);
+                }
+                authorArticles.get(author).push(title);
+            });
+            articleDialog.close();
+
+            saveData();
+        }
+
+        // 我想，加上作者名字
+        // 我想，禁止碰撞
+        function addAuthorCircle(author){
+            const circle = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "circle"
+            );
+
+            // 圆参数
+            circle.setAttribute("cx", 50 + authors.size * 60);
+            circle.setAttribute("cy", 100);
+            circle.setAttribute("r", 20);
+            network.appendChild(circle)
+
+            circle.addEventListener("mousedown", function(event){
+                if(event.button == 0){
+                    draggingCircle = circle;
+                }
+            });
+
+            circle.addEventListener("dblclick", function(){
+                // 侧边栏初始化
+                sideBar.innerHTML = "";
+                sideBar.hidden = false;
+                
+                // 侧边栏标题
+                const sideBarTitle = document.createElement("h2");
+                sideBarTitle.textContent = author;
+                sideBar.appendChild(sideBarTitle);
+
+                // 文章
+                const sideBarSubTitle = document.createElement("h3");
+                sideBarSubTitle.textContent = "Article";
+                sideBar.appendChild(sideBarSubTitle);
+                console.log(authorArticles.get(author));
+                // authorArticles.get(author).forEach(function(title){
+                //     const articleList = document.createElement("p");
+                //     articleList.textContent = title;
+                //     sideBarSubTitle.appendChild(articleList);
+                // })
+
+
+            });
+        }
+
+        function exportDatum(){
+            
+        }
+
+        console.log(authorArticles);
+
+        /*------------------------------------------------------------*/
+        // 本地存储
+        function saveData(){
+            localStorage.setItem("author", JSON.stringify(Array.from(authors)))
+        }
+
+        function loadData(){
+            const saveAuthors = JSON.parse(localStorage.getItem("author"));
+            if(saveAuthors !== null){
+                saveAuthors.forEach(function(author){
+                    authors.add(author);
+                    addAuthorCircle(author);
+                });
+            }
+        }
+
+        loadData();
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+1、忽略“我想，”开头的注释，那不是现在的内容，但是在做的时候需要考虑留有余地
+2、保留我写的注释
+3、你写的时候不要加注释
+4、告诉我你增加/修改了哪些内容
+-->

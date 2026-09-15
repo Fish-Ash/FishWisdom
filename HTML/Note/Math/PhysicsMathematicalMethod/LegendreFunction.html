@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>数学物理方法</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>Legendre公式</h1>
+
+        <div class="Card-Analysis" id="associated Legendre function">
+            <h2>\(l\)阶连带勒让德方程</h2>
+            <div class="Formula">
+                $$(1-x^2)\frac{\mathrm{d}^2\Theta}{\mathrm{d}x^2} - 2x\frac{\mathrm{d}\Theta}{\mathrm{d}x} + \left[l(l+1) - \frac{m^2}{1-x^2}\right]\Theta = 0,\quad x = \cos\theta$$
+                <div class="Derivation">
+                    $$\frac{\sin\theta}{\Theta}\frac{\mathrm{d}}{\mathrm{d}\theta}\left(\sin\theta\frac{\mathrm{d}\Theta}{\mathrm{d}\theta}\right) + l(l+1)\sin^2\theta = m^2$$
+                    <p>[令]\(x = \cos\theta\)：</p>
+                    $$\frac{\sin\theta}{\Theta}\frac{\mathrm{d}x}{\mathrm{d}\theta}\frac{\mathrm{d}}{\mathrm{d}x}\left(\sin\theta\frac{\mathrm{d}x}{\mathrm{d}\theta}\frac{\mathrm{d}\Theta}{\mathrm{d}x}\right) + l(l+1)(1-x^2) - m^2 = 0$$
+                    $$-\sin^2\theta\frac{\mathrm{d}}{\mathrm{d}x}\left(-\sin^2\theta\frac{\mathrm{d}\Theta}{\mathrm{d}x}\right) + [l(l+1)(1-x^2) - m^2]\Theta = 0$$
+                    $$\frac{\mathrm{d}}{\mathrm{d}x}\left[(1-x^2)\frac{\mathrm{d}\Theta}{\mathrm{d}x}\right] + \left[l(l+1) - \frac{m^2}{1 + x^2}\right]\Theta = 0$$
+                    $$(1-x^2)\frac{\mathrm{d}^2\Theta}{\mathrm{d}x^2} - 2x\frac{\mathrm{d}\Theta}{\mathrm{d}x} + \left[l(l+1) - \frac{m^2}{1-x^2}\right]\Theta = 0$$
+                </div>
+            </div>
+            <p>[注]\(x\)并非直角坐标.</p>
+
+
+            <h3>\(l\)阶勒让德方程</h3>
+            <div class="Card-Formula">
+                <b>\(l\)阶勒让德方程</b>
+                <p>\(m = 0\)时，连带勒让德方程简化为勒让德方程.</p>
+                $$(1-x^2)\frac{\mathrm{d}^2\Theta}{\mathrm{d}x^2} - 2x\frac{\mathrm{d}\Theta}{\mathrm{d}x} + l(l+1)\Theta = 0,\quad x = \cos\theta$$
+            </div>
+
+            <b>\(l\)阶勒让德方程的<a href="../ComplexVariableFunction/SeriesSolutionMethod.html" class="goto">级数解</a></b>
+            <p>由系数递推关系：</p>
+            <div class="Formula">
+                $$a_{k+2} = \frac{k(k+1) - l(l+1)}{(k+2)(k+1)}a_k,\quad k= 0,1,2,\cdots$$
+                <div class="Derivation">
+                    <p>在\(x_0 = 0\)的邻域上求解\(l\)阶勒让德方程.</p>
+                    $$(1-x^2)\Theta'' - 2x\Theta' + l(l+1)\Theta = 0$$
+                    $$\Theta'' - \frac{2x}{1-x^2}\Theta' + \frac{l(l+1)}{1-x^2}\Theta = 0$$
+                    $$p(x) = -\frac{2x}{1-x^2}\Rightarrow p(x_0) = 0$$
+                    $$q(x) = \frac{l(l+1)}{1-x^2}\Rightarrow q(x_0) = l(l+1)$$
+                    <p>\(p(x), q(x)\)均为有限值，必然在\(x_0 = 0\)处解析，因此\(x_0=0\)为方程的常点.</p>
+                    <p>根据常点邻域上解的定理，解具有泰勒级数的形式，此处为：</p>
+                    $$y(x) = a_0 + a_1x + a_2x^2 + \cdots + a_kx^k + \cdots$$
+                    $$y'(x) = a_1 + 2a_2x + 3a_3x^2 + \cdots + (k+1)a_{k+1}x^k + \cdots$$
+                    $$y''(x) = 2a_2 + 3\cdot 2a_3x + 4\cdot 3a_4x^2 + \cdots + (k+2)(k+1)a_{k+2}x^k + \cdots$$
+                    <p>代入原方程得：</p>
+                    $$\begin{align}
+                    &\sum_{k=0}^{\infty}(1-x^2)(k+2)(k+1)a_{k+2}x^k - 2x(k+1)a_{k+1}x^k + l(l+1)a_kx^k\\
+                    = &\sum_{k=0}^\infty[(k+2)(k+1)a_{k+2} + l(l+1)a_k]x^k - 2(k+1)a_{k+1}x^{k+1} - (k+2)(k+1)a_{k+2}x^{k+2}\\
+                    \end{align}$$
+                    <table>
+                        <tr><td colspan="2">\(x^k\)系数</td></tr>
+                        <tr>
+                            <td>$$x^0$$</td>
+                            <td>$$\begin{align}&\left.(k+2)(k+1)a_{k+2} + l(l+1)a_k\right\rvert_{k=0}\\=&2a_2 + l(l+1)a_0\end{align}$$</td>
+                        </tr>
+                        <tr>
+                            <td>$$x$$</td>
+                            <td>$$\begin{align}&\left.[(k+2)(k+1)a_{k+2} + l(l+1)a_k + 2ka_k\right\rvert_{k=1}\\=&6a_3 + (l^2+l-2)a_1\end{align}$$</td>
+                        </tr>
+                        <tr>
+                            <td>$$x^k,\quad k \geq 2$$</td>
+                            <td>$$\begin{align}&(k+2)(k+1)a_{k+2} + l(l+1)a_k - 2ka_k - k(k-1)a_k\\=&(k+2)(k+1)a_{k+2} + [l(l+1) - k(k+1)]a_k\end{align}$$</td>
+                        </tr>
+                    </table>
+        
+                    <p>令所有系数为零，得到递推关系：</p>
+                    $$a_{k+2} = \frac{k(k+1) - l(l+1)}{(k+2)(k+1)}a_k,\quad k= 0,1,2,\cdots$$
+                </div>
+            </div>
+
+            <p>\(l\)阶勒让德方程的级数解为：</p>
+            $$y(x) = a_0y_0(x) + a_1y_1(x)$$
+            $$y_0(x) = 1 + \sum_{k=1}^{\infty}\frac{(2k-2-l)(2k-4-l)\cdots(-l)(l+1)(l+3)\cdots(l+2k-1)}{(2k)!}x^{2k}$$
+            $$y_1(x) = x + \sum_{k=1}^{\infty}\frac{(2k-1-l)(2k-3-l)\cdots(1-l)(l+2)(l+4)\cdots(l+2k)}{(2k+1)!}x^{2k+1}$$
+
+            <h3>\(l\)阶勒让德多项式</h3>
+            $$a_l = \frac{(2l)!}{2^l(l!)^2}$$
+            <p>反用递推公式，有：</p>
+            $$a_k = \frac{(k+2)(k+1)}{(k-l)(k+l+1)}a_{k+2}$$
+            <p>可以求得任意系数：</p>
+            <div class="Formula">
+                $$a_{l-2n} = (-1)^n\frac{(2l-2n)!}{n!2^l(l-n)!(l-2n)!}$$
+                <div class="Derivation">
+                    $$a_{l-2} = \frac{l(l-1)}{-2(2l-1)}a_l$$
+                    $$a_{l-4} = \frac{(l-2)(l-3)}{-4(2l-3)}a_{l-2}$$
+                    $$\begin{align}
+                    a_{1-2n} &= \frac{(l-2n+2)(l-2n+1)}{-2n(2l-2n+1)}a_{l-2(n-1)}\\
+                             &= (-1)^n\frac{l!}{(l-2n)!}\frac{(2l)(2l-2)\cdots(2l-2n+2)(2l-2n)!}{2^nn!(2l)!}\frac{(2l)!}{2^l(l!)^2}\\
+                             &= (-1)^n\frac{(2l-2n)!}{n!2^l(l-2n)!}\frac{(2l)(2l-2)\cdots(2l-2n+2)}{2^nl!}\\
+                             &= (-1)^n\frac{(2l-2n)!}{n!2^l(l-n)!(l-2n)!}
+                    \end{align}$$
+                </div>
+            </div>
+
+            <p>将\(n\)记为\(k\)，求得\(l\)阶勒让德多项式的具体表达式：</p>
+            $$P_l(x) = \sum_{k=0}^{\left\lfloor l/2 \right\rfloor}(-1)^k\frac{(2l-2k)!}{k!2^l(l-k)!(l-2k)!}x^{l-2k}$$
+
+            <div class="Card-Example">
+                <div class="Split2">
+                    <div class="SplitHalf">
+                        $$\begin{align}
+                        &P_0(x) = 1\\\\
+                        &P_1(x) = x\\\\
+                        &P_2(x) = \frac{1}{2}(3x^2 - 1)\\\\
+                        &P_3(x) = \frac{1}{2}(5x^3 - 3x)\\\\
+                        &P_4(x) = \frac{1}{8}(35x^4 - 30x^2 + 3)\\\\
+                        &P_5(x) = \frac{1}{8}(63x^5 - 70x^3 + 15x)\\\\
+                        &P_6(x) = \frac{1}{16}(231x^6 - 315x^4 + 105x^2 - 5)
+                        \end{align}$$
+                    </div>
+                    <div class="SplitHalf">
+                        $$\begin{align}
+                        &P_0(\cos\theta) = 1\\\\
+                        &P_1(\cos\theta) = \cos\theta\\\\
+                        &P_2(\cos\theta) = \frac{1}{4}(3\cos2\theta + 1)\\\\
+                        &P_3(\cos\theta) = \frac{1}{8}(5\cos3\theta + 3\cos\theta)\\\\
+                        &P_4(\cos\theta) = \frac{1}{64}(35\cos4\theta + 20\cos2\theta + 9)\\\\
+                        &P_5(\cos\theta) = \frac{1}{128}(63\cos5\theta + 35\cos3\theta + 30\cos\theta)\\\\
+                        &P_6(\cos\theta) = \frac{1}{512}(231\cos6\theta + 126\cos4\theta + 105\cos2\theta + 50)
+                        \end{align}$$
+                    </div>
+                </div>
+            </div>
+            
+            <img src="Img/Legendre.jpg" width="300" alt="Legendre多项式的图像">
+
+            <h3>勒让德多项式的微分表示</h3>
+            <div class="Card-Formula">
+                <b>Rodrigues公式</b>
+                <p>勒让德多项式的微分表示.</p>
+                $$P_l(x) = \frac{1}{2^l l!}\frac{\mathrm{d}^l}{\mathrm{d}x^l}(x^2-1)^l$$
+            </div>
+            <div class="Card-Property">
+                <b>Rodrigues公式的奇偶性</b>
+                $$P_l(-x) = (-1)^l P_l(x)$$
+            </div>
+
+            <h3>勒让德多项式的模</h3>
+            $$N_l = \sqrt{\frac{2}{2l+1}},\quad l = 0, 1, 2, \cdots$$
+
+            <h3>勒让德多项式的正交关系</h3>
+            <p>作为施图姆-刘维尔本征值问题的正交关系的特例，不同阶的勒让德多项式在区间\((-1, 1)\)上正交.</p>
+            $$\int_{-1}^{1} P_l(x) P_{l'}(x) \, dx = \frac{2}{2l+1} \delta_{ll'}$$
+
+            <h3>连带勒让德函数</h3>
+            <div class="Card-Formula">
+                <b>连带勒让德函数</b>
+                $$P_l^m(x) = (1-x^2)^{\frac{m}{2}}P_l^{[m]}(x)$$
+                <ul>
+                    <li>\(P_l^{[m]}(x)\)：\(P_l(x)\)的\(m\)阶导数</li>
+                </ul>
+            </div>
+        </div>
+
+        
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

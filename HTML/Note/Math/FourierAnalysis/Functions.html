@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fourier光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>常用函数</h1>
+
+        <div class="Card-Analysis">
+            <h2>阶跃函数</h2>
+            $$\text{step}(x) = \begin{cases}1,\quad x\gt0\\\frac{1}{2},\quad x=0\\0,\quad x\lt 0\end{cases}$$
+            <img src="Img/step.jpg" width="250">
+
+            $$\text{step}(x)f(x) = \begin{cases}f(x),\quad x\gt 0\\0,\quad x\lt 0\end{cases}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>符号函数</h2>
+            $$\text{sgn}(x) = \begin{cases}1,\quad x\gt0\\0, \quad x=0\\-1,\quad x\lt 0\end{cases}$$
+            $$\text{sgn}(x) = 2\text{step}(x) - 1$$
+            <img src="Img/sgn.jpg" width="200">
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>矩形函数</h2>
+            $$\text{rect}\left(\frac{x}{a}\right) = \begin{cases}1,\quad |x|\leq \frac{a}{2}\\0,\quad \text{others}\end{cases}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>三角形函数</h2>
+            $$\text{tri}\left(\frac{x}{z}\right) = \Lambda\left(\frac{x}{a}\right) = \begin{cases}1 - \frac{|x|}{a},\quad |x|\leq a\\0,\quad \text{others}\end{cases}$$
+            <p>其中\(a\gt 0\)，函数为以原点为底边中心、底边长为\(2a\)、高度为\(1\)的等腰三角形.</p>
+            <img src="Img/tri.jpg" width="200">
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>圆柱函数</h2>
+            <p>直角坐标系内圆柱函数的定义式为：</p>
+            $$\text{circ}\left(\frac{\sqrt{x^2 + y^2}}{a}\right) = \begin{cases}1,\quad\sqrt{x^2+y^2}\leq a\\0,\quad\text{others}\end{cases}$$
+            <p>极坐标内的定义式为：</p>
+            $$\text{circ}\left(\frac{r}{a}\right) = \begin{cases}1,\quad r\leq a\\0,\quad r\gt a\end{cases}$$
+            <img src="Img/circ.jpg" width="200">
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>sinc函数</h2>
+            $$\text{sinc}\left(\frac{x-x_0}{a}\right) = \frac{\sin\pi(x-x_0)/a}{\pi(x-x_0)/a}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>脉冲函数（\(\delta\)函数）</h2>
+            <p>二维空间\(\delta\)函数的一般定义为：</p>
+            $$\delta(x,y)\neq 0,\quad x\neq 0~or~y\neq 0$$
+            $$\iint\delta(x,y)\mathrm{d}x\mathrm{d}y = 1$$
+            <p>定义式表明：除原点外\(\delta\)函数值恒为\(0\)，而在原点附近无限小范围内，函数积分为\(1\).</p>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -20,74 +20,90 @@
     <li><a href="../../Navigation.html">导航</a></li>
     </ul>
 
-    <h1><span lang="en">Maxwell</span>方程组</h1>
-    <p><span lang="en">Maxwell</span>方程组由以下四个定律组成：</p>
-    <ul>
-        <li lang="en"><a href="Gauss's Law.html" class="goto">Gauss's Law</a></li>
-        <li lang="en"><a href="Gauss's Law for Magnetism.html" class="goto">Gauss's Law for Magnetism</a></li>
-        <li>法拉第电磁感应定律</li>
-        <li>安培全电流定律</li>
-    </ul> 
-    积分形式
-    $$
-    \begin{cases}
-    \iint\limits_{闭}\boldsymbol{D}\cdot \mathrm{d}\boldsymbol{\sigma} = Q\\
-    \iint\limits_{闭}\boldsymbol{B}\cdot \mathrm{d}\boldsymbol{\sigma} = 0\\
-    \oint \boldsymbol{E}\cdot \mathrm{d}\boldsymbol{l} = -\iint \frac{\partial \boldsymbol{B}}{\partial t}\mathrm{d}\boldsymbol{\sigma}\\
-    \oint \boldsymbol{H}\cdot \mathrm{d}\boldsymbol{l} = I + \iint \frac{\partial \boldsymbol{D}}{\partial t}\mathrm{d}\boldsymbol{\sigma}
-    \end{cases}
-    $$
+    <h1>Maxwell方程组</h1>
 
-    参数说明
-    <ul>
-        <li>\(\boldsymbol{D}\)：电感强度（电位移矢量、电通量密度）</li>
-        <li>\(Q\)：闭合曲面内包含的总电荷量</li>
-        <li>\(\boldsymbol{B}\)：磁感强度（磁通量密度）</li>
-        <li>\(\boldsymbol{E}\)：电场强度</li>
-        <li>\(\boldsymbol{H}\)：磁场强度</li>
-        <li>\(I\)：传导电流</li>
-        <li>\(\frac{\partial\boldsymbol{B}}{\partial t}\)：磁场随时间的变化率</li>
-        <li>\(\frac{\partial \boldsymbol{D}}{\partial t}\)：位移电流密度</li>
-        <li>\(\iint\frac{\partial \boldsymbol{D}}{\partial t}\mathrm{d}\sigma\)：位移电流</li>
-    </ul>
-
-    <div class="Card-Formula" id="DifferentialForm">
-        <b>Maxwell方程组的微分形式</b>
-        $$
-        \begin{cases}
-        \nabla\cdot\boldsymbol{D} = \rho\\
-        \nabla\cdot\boldsymbol{B} = 0\\
-        \nabla\times\boldsymbol{E} = -\frac{\partial \boldsymbol{B}}{\partial{t}}\\
-        \nabla\times\boldsymbol{H} = \boldsymbol{j} + \frac{\partial \boldsymbol{D}}{\partial t}
-        \end{cases}
-        $$
-    </div>
-
-    <div class="Card-Formula">
-        <b>物质方程</b>
-        <p>描述物质在场作用下特性的关系式.</p>
-        <p>静止的各向同性（物质每一点的物理性质不随方向而改变）媒质中，有：</p>
-        $$\begin{cases}
-        \boldsymbol{j} = \sigma\boldsymbol{E}\\
-        \boldsymbol{D} = \epsilon\boldsymbol{E}\\
-        \boldsymbol{B} = \mu\boldsymbol{H}
-        \end{cases}$$
-
+    <div class="Catalog">
         <ul>
-            <li>\(\sigma\)：电导率，各向同性均匀介质中\(\sigma = 0\)</li>
-            <li>\(\epsilon\)：介电常数</li>
-            <li>\(\mu\)：磁导率，各项同性均匀介质中为常数。\(\mu_0 = 4\pi\times 10^{-7}N\cdot s^2/C^2\)。非磁性物质\(\mu = \mu_0\)</li>
+            <li><a href="#Constituent">Maxwell方程组的组成</a></li>
+            <li><a href="#Formula">Maxwell方程组的数学表达式</a></li>
         </ul>
     </div>
 
-    <div class="Card-Formula">
-        <b>简化Maxwell方程组</b>
-        $$\begin{cases}
-        \nabla\cdot E  =\frac{\rho}{\epsilon_0}\\
-        \nabla\times E = -\frac{\partial B}{\partial t}\\
-        \nabla\cdot B = 0\\
-        \nabla\times B = \mu_0j_0+\epsilon_0\mu_0\frac{\partial E}{\partial t}
-        \end{cases}$$
+    <div class="Card-Analysis" id="Constituent">
+        <h2>Maxwell方程组的组成</h2>
+        <p>Maxwell方程组由以下四个定律组成：</p>
+        <ul>
+            <li><a href="Gauss's Law.html" class="goto">Gauss's Law</a></li>
+            <li><a href="Gauss's Law for Magnetism.html" class="goto">Gauss's Law for Magnetism</a></li>
+            <li>法拉第电磁感应定律</li>
+            <li>安培全电流定律</li>
+        </ul>
+    </div>
+    
+    <div class="Card-Analysis" id="Formula">
+        <h2>Maxwell方程组的数学表达式</h2>
+        <div class="Card-Formula">
+            <b>Maxwell方程组的积分形式</b>
+            
+            $$\begin{cases}
+            \iint\limits_{闭}\boldsymbol{D}\cdot \mathrm{d}\boldsymbol{\sigma} = Q\\
+            \iint\limits_{闭}\boldsymbol{B}\cdot \mathrm{d}\boldsymbol{\sigma} = 0\\
+            \oint \boldsymbol{E}\cdot \mathrm{d}\boldsymbol{l} = -\iint \frac{\partial \boldsymbol{B}}{\partial t}\mathrm{d}\boldsymbol{\sigma}\\
+            \oint \boldsymbol{H}\cdot \mathrm{d}\boldsymbol{l} = I + \iint \frac{\partial \boldsymbol{D}}{\partial t}\mathrm{d}\boldsymbol{\sigma}
+            \end{cases}$$
+            
+            <ul>
+                <li>\(Q\)：闭合曲面内包含的总电荷量</li>
+                <li>\(I\)：传导电流</li>
+                <li>\(\frac{\partial\boldsymbol{B}}{\partial t}\)：磁场随时间的变化率</li>
+                <li>\(\frac{\partial \boldsymbol{D}}{\partial t}\)：位移电流密度</li>
+                <li>\(\iint\frac{\partial \boldsymbol{D}}{\partial t}\mathrm{d}\sigma\)：位移电流</li>
+            </ul>
+        </div>
+        
+        
+        <div class="Card-Formula" id="DifferentialForm">
+            <b>宏观Maxwell方程组的微分形式（SI）</b>
+            $$\begin{align}
+            &\nabla\cdot\boldsymbol{D}(\boldsymbol{r}, t) = \rho(\boldsymbol{r}, t)\\
+            &\nabla\cdot\boldsymbol{B}(\boldsymbol{r}, t) = 0\\
+            &\nabla\times\boldsymbol{E}(\boldsymbol{r}, t) = -\frac{\partial \boldsymbol{B}(\boldsymbol{r}, t)}{\partial{t}}\\
+            &\nabla\times\boldsymbol{H}(\boldsymbol{r}, t) = \frac{\partial \boldsymbol{D}(\boldsymbol{r}, t)}{\partial t} + \boldsymbol{j}(\boldsymbol{r}, t)
+            \end{align}$$
+            <ul>
+                <li>\(\boldsymbol{D}\)：电感强度（电位移矢量、电通量密度）</li>
+                <li>\(\boldsymbol{B}\)：磁感强度（磁通量密度）</li>
+                <li>\(\boldsymbol{E}\)：电场强度</li>
+                <li>\(\boldsymbol{H}\)：磁场强度</li>
+                <li>\(\rho\)：自由电荷密度</li>
+                <li>\(\boldsymbol{j}\)：传导电流密度</li>
+            </ul>
+        
+            <p>[注]完整的Maxwell方程组包含了16个未知量（五个矢量场分别包含\(x,y,z\)方向的分量共15个，标量\(\rho\)含1个），实际问题中的未知量数可根据介质性质大幅减少.</p>
+            <p>[注]微分形式的Maxwell方程组无法确定场中可能存在的时空常量部分，因此时空常量场叠加在原场上也不会影响微分形式Maxwell方程组的结果.</p>
+            <div class="Card-AI">
+                $$\frac{\partial E + E_c}{\partial t} = \frac{\partial E}{\partial t}$$
+                <p>必须时间和空间上都恒定.</p>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <hr><hr>
+
+
+
+    <div class="Card-Analysis">
+        <h2>介质的宏观电磁特性</h2>
+        $$\boldsymbol{D}(\boldsymbol{r}, t) = \epsilon_0\boldsymbol{E}(\boldsymbol{r}, t) + \boldsymbol{P}(\boldsymbol{r}, t)$$
+        $$\boldsymbol{B}(\boldsymbol{r}, t) = \mu_0[\boldsymbol{H}(\boldsymbol{r}, t) + \boldsymbol{M}(\boldsymbol{r}, t)]$$
+        <ul>
+            <li>\(\epsilon_0\)：真空介电常数</li>
+            <li>\(\mu_0\)：真空磁导率</li>
+            <li>\(\boldsymbol{P}\)：宏观极化强度</li>
+            <li>\(\boldsymbol{M}\)：宏观磁化强度</li>
+        </ul>
     </div>
 
     <h2>常用条件</h2>
@@ -97,15 +113,41 @@
             <td>$$\boldsymbol{j} = 0$$</td>
         </tr>
         <tr>
-            <td>非磁性介质</td>
-            <td>$$\mu\approx \mu_0$$</td>
+            <td id="condition2">非磁性介质</td>
+            <td>$$\mu_r\approx 1\Rightarrow\mu\approx \mu_0$$</td>
         </tr>
         <tr>
             <td>无自由电荷存在</td>
             <td>$$\rho = 0$$</td>
         </tr>
-    </table>
-    
+        <tr>
+            <td>各向同性线性介质</td>
+            <td>$$\boldsymbol{P} = \epsilon_0\chi_e\boldsymbol{E}$$ $$\boldsymbol{M} = \chi_m\boldsymbol{H}$$</td>
+        </tr>
+    </table><br>
+
+    <div class="Card-AI">
+        <h2>补充知识</h2>
+
+        <b>电荷的奇异性</b>
+        $$E = \frac{1}{4\pi\epsilon_0}\frac{Q}{r^2}$$
+        $$r\rightarrow 0\Rightarrow E\rightarrow \infty$$
+        <p>即，点电荷所在位置，场不是一个普通的函数，这就是电荷的奇异性.</p>
+
+    </div>
+
+    <div class="Card-Analysis">
+        <h2>补充知识</h2>
+        <div class="Card-Definition">
+            <b>连续性方程</b>
+            $$\nabla\cdot\boldsymbol{j}(\boldsymbol{r}, t) + \frac{\partial \rho(\boldsymbol{r}, t)}{\partial t} = 0$$
+        </div>
+
+        <div class="Card-Formula">
+            $$\boldsymbol{E}(\boldsymbol{r}, t) = \boldsymbol{E}(\boldsymbol{r})\cdot e^{-i\omega t}\Rightarrow \frac{\partial\boldsymbol{E}(\boldsymbol{r}, t)}{\partial t} = -i\omega\boldsymbol{E}(\boldsymbol{r}, t)$$
+            $$\boldsymbol{H}(\boldsymbol{r}, t) = \boldsymbol{H}(\boldsymbol{r})\cdot e^{-i\omega t}\Rightarrow \frac{\partial\boldsymbol{H}(\boldsymbol{r}, t)}{\partial t} = -i\omega\boldsymbol{H}(\boldsymbol{r}, t)$$
+        </div>
+    </div>
 </body>
 
 </html>

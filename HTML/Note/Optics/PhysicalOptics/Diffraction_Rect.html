@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>矩孔Fraunhofer衍射</h1>
+
+        <div class="Card-Analysis">
+            <h2>复振幅与光强分布</h2>
+            <img src="Img/Diffraction/Rect.jpg" width="400">
+            <p>选取矩孔中心C为坐标原点.</p>
+            <p>观察平面上P点的复振幅为：</p>
+            $$\tilde{E} = C'ab\frac{\sin\frac{kla}{2}\sin\frac{k\omega b}{2}}{\frac{kla}{2}\frac{k\omega b}{2}}\exp\left[ik\left(\frac{x^2 + y^2}{2f}\right)\right]$$
+            <div class="Card-Question">
+                <p>这个需要从基尔霍夫公式推，先略过.</p>
+            </div>
+            <ul>
+                <li>\(C' = \frac{CA'}{f}\exp(ikf)\)</li>
+            </ul>
+            <p>对于光轴上的P<sub>0</sub>\((0,0)\)点，复振幅为：</p>
+            <div class="Formula">
+                $$\tilde{E}_0 = C'ab$$
+                <div class="Derivation">
+                    $$\because\tilde{E} = C'ab\frac{\sin\frac{kla}{2}\sin\frac{k\omega b}{2}}{\frac{kla}{2}\frac{k\omega b}{2}}\exp\left[ik\left(\frac{x^2 + y^2}{2f}\right)\right]$$
+                    $$x = y = 0$$
+                    $$l = x/r = 0$$
+                    $$\omega = y/r = 0$$
+                    $$\therefore \tilde{E}_0 = C'ab$$
+                </div>
+            </div>
+            <p>对于任一点P\((x,y)\)，有：</p>
+            $$\tilde{E} = \tilde{E}_0\left(\frac{\sin\frac{kla}{2}}{\frac{kla}{2}}\right)\left(\frac{\sin\frac{k\omega b}{2}}{\frac{k\omega b}{2}}\right)\exp\left[ik\left(\frac{x^2 + y^2}{2f}\right)\right]$$
+    
+            <p>[令]</p>
+            $$\alpha = \frac{kla}{2} = \frac{\pi}{\lambda}a\sin\theta_x$$
+            $$\beta = \frac{k\omega b}{2} = \frac{\pi}{\lambda}b\sin\theta_y$$
+            <p>则P点光强为：</p>
+            $$I = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2\left(\frac{\sin\beta}{\beta}\right)^2$$
+            $$\begin{align}
+            I &= |\tilde{E}|^2\\
+              &= |\tilde{E}_0|^2\left(\frac{\sin\alpha}{\alpha}\right)^2\left(\frac{\sin\beta}{\beta}\right)^2\\
+              &= I_0\left(\frac{\sin\alpha}{\alpha}\right)^2\left(\frac{\sin\beta}{\beta}\right)^2
+            \end{align}$$
+            <ul>
+                <li>\(I_0 = |C'ab|^2\)：\(P_0\)点光强</li>
+            </ul>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>衍射光强沿\(x\)轴分布</h2>
+            <p>讨论\(I\)沿\(x\)轴的分布，有：</p>
+            $$\omega = y = 0$$
+            $$\therefore I = I_0\left(\frac{\sin\alpha}{\alpha}\right)^2$$
+            <p>强度分布曲线如图所示：</p>
+            <img src="Img/Diffraction/RectI.jpg" width="400">
+            <p>\(I_0\)在\(\alpha = 0\)（\(P_0\)点处）有主极大值\(I_0 = I\).</p>
+            <p>在\(\alpha = m\pi,~m \in \mathbb{Z}\)处有极小值\(I_0 = 0\).</p>
+            <p>相邻零强度点间存在一个次极大，位置由下式决定：</p>
+            <div class="Formula">
+                $$\tan\alpha = \alpha$$
+                <div class="Derivation">
+                    <p>次极大位置即\(I'(\alpha) = 0,~(\alpha\neq m\pi,~m\in\mathbb{Z})\)处</p>
+                    $$\begin{align}
+                    I'(\alpha) &= \left[I_0\left(\frac{\sin\alpha}{\alpha}\right)^2\right]'\\
+                               &= I_0\cdot2\left(\frac{\sin\alpha}{\alpha}\right)\left(\frac{\alpha\cos\alpha - \sin\alpha}{\alpha^2}\right)\\
+                               &= 0
+                    \end{align}$$
+                    $$\because I_0\neq 0,\quad \alpha\neq m\pi,~m\in\mathbb{Z}$$
+                    $$\therefore\alpha\cos\alpha - \sin\alpha = 0$$
+                    <p>\(\alpha = n\frac{\pi}{2},~n\in\mathbb{Z}\)时：</p>
+                    $$\alpha\cos\alpha - \sin\alpha = \pm 1 \neq 0$$
+                    $$\therefore \tan\alpha = \alpha$$
+                </div>
+            </div>
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

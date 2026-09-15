@@ -37,6 +37,12 @@
         
 
         <h1>电势</h1>
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#Poisson Equation">Poisson方程</a></li>
+            </ul>
+        </div>
+        
 
         <div class="Card-Definition">
             <b>保守力场（势场）</b>
@@ -85,6 +91,28 @@
             <p>等势面密集的地方场强大；等势面稀疏的地方场强小.</p>
         </div>
 
+        <div class="Card-Analysis" id="Poisson Equation">
+            <h2>Poisson方程</h2>
+
+            <div class="Card-Formula">
+                <b>Poisson方程</b>
+                <div class="Formula">
+                    $$\nabla^2V = -\frac{\rho}{\epsilon_0}$$
+                    <div class="Derivation">
+                        $$\nabla\cdot\boldsymbol{D} = \rho$$
+                        $$\because \boldsymbol{D} = \epsilon_0\boldsymbol{E}$$
+                        $$\therefore \nabla\cdot\boldsymbol{E} = \frac{\rho}{\epsilon_0}$$
+                        $$\because \boldsymbol{E} = -\nabla V$$
+                        $$\therefore \nabla\cdot(-\nabla V) = \frac{\rho}{\epsilon_0}$$
+                        $$\therefore \nabla^2 V = -\frac{\rho}{\epsilon_0}$$
+                    </div>
+                </div>
+            </div>
+
+            <div class="Card-AI">
+                <p>静电学中，泊松方程就是高斯方程用电势\(V\)重新表达.</p>
+            </div>
+        </div>
 
 
         <div id="PageEnd"></div>

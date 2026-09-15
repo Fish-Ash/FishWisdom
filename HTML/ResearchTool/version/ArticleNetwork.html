@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ArticleNetwork</title>
+    <!-- 我想，制造成星空的样式 -->
+    <style></style>
+</head>
+
+<body>
+    <!-- 我想，改成右键菜单 -->
+    <button id="addArticleButton">
+        +
+    </button>
+
+    <dialog id="articleDialog">
+        <h2>标题</h2>
+        <input>
+        <h2>作者</h2>
+        <input id="articleAuthors">
+        
+        <br><br>
+        <button id="saveButton">保存</button>
+        <button id="cancelButton">取消</button>
+    </dialog>
+
+    <!-- 我想，未来整个页面都是它 -->
+    <svg id="network" width="800", height=5000"></svg>
+
+    <script>
+        // 控件const
+        const addArticleButton = document.getElementById("addArticleButton");
+        const articleDialog = document.getElementById("articleDialog");
+        const articleAuthors = document.getElementById("articleAuthors");
+        const saveButton = document.getElementById("saveButton");
+        const cancelButton = document.getElementById("cancelButton");
+        const network = document.getElementById("network");
+
+        // 新建const
+        const authors = new Set();//作者列表
+        const collaborations = new Set();//合作关系
+
+        //EventListener
+        addArticleButton.addEventListener("click", function(){
+            articleDialog.showModal();
+        });
+
+        saveButton.addEventListener("click", function(){
+            saveArticle();
+        });
+
+        articleDialog.addEventListener("keydown", function(){
+            if(event.key == "Enter"){
+                saveArticle()
+            }
+        });
+
+        cancelButton.addEventListener("click", function(){
+            articleDialog.close();
+        })
+
+        //function
+        function saveArticle(){
+            const authorText = articleAuthors.value;
+            const authorList = authorText.split(",");
+            authorList.forEach(function(author){
+                author = author.trim();
+                if(author !== "" && !authors.has(author)){
+                    authors.add(author);
+                    addAuthorCircle();
+                }
+                console.log(authors);
+            });
+            articleDialog.close();
+        }
+
+        // 我想，加上作者名字
+        function addAuthorCircle(){
+            const circle = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "circle"
+            );
+
+            // 圆参数
+            circle.setAttribute("cx", 50 + authors.size * 60);
+            circle.setAttribute("cy", 100);
+            circle.setAttribute("r", 20);
+            network.appendChild(circle)
+        }
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+1、忽略“我想，”开头的注释，那不是现在的内容，但是在做的时候需要考虑留有余地
+2、保留我写的注释
+3、你写的时候不要加注释
+4、告诉我你增加/修改了哪些内容
+-->

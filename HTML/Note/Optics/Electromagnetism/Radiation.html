@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>微纳光子学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>辐射</h1>
+
+        <div class="Card-Analysis">
+            <h2>辐射的定义</h2>
+            <p>[设]源局域在原点附近.</p>
+            <p>[注]对于非局域源，如无穷大平面、线或螺线管，辐射的整个概念需重新定义.</p>
+            <p>想象一个半径为\(r\)的巨大球壳，通过这个面的总功率为<a href="../PhysicalOptics/ReflectionAndTransmission.html#Poynting Vector" class="goto">Poynting矢量</a>的积分：</p>
+            $$P(r) = \oint\boldsymbol{S}\cdot\mathrm{d}\boldsymbol{a} = \frac{1}{\mu_0}\oint(\boldsymbol{E}\times\boldsymbol{B})\cdot\mathrm{d}\boldsymbol{a}$$
+            <p>辐射的功率由\(r\)趋于无限大时的极限得到：</p>
+            $$P_{radiation} =  \lim\limits_{r\rightarrow\infty}P(r)$$
+
+            <div class="Card-AI">
+                <p>功率：单位时间内传递的能量.</p>
+                <p>辐射实际上并不要求传递到无限远，但是在理想的无限自由空间模型中，辐射一定是需要能够传递到无限远.</p>
+            </div>
+            
+            <p>这个能量（单位时间内的）传播至无限远，且不再返回.</p>
+            <p>现在，球壳的面积为\(4\pi r^2\)，故由辐射发生时，Poynting矢量的减小（在\(r\)较大时）不能快于\(1/r^2\).</p>
+            <div class="Card-AI">
+                <p>\(n=2\)时，典型辐射</p>
+                <p>\(n\lt 2\)时，不符合能量守恒</p>
+                <p>\(n\gt 2\)时，\(P(r)\rightarrow 0\)</p>
+            </div>
+
+            <p>根据库伦定律，静电场以\(1/r^2\)的形式减小（或更快，若总电荷为\(0\)）；根据毕奥-萨伐尔定律，磁场以\(1/r^2\)（或更快）的方式减小.</p>
+            <p>这意味着：对于静止情形，\(S\sim 1/r^4\).</p>
+            <p>故静止的源不产生辐射.</p>
+            <p>但杰斐缅柯方程指出，依赖于时间的场包含的一些项（包含\(\dot{\rho}\)与\(\dot{\boldsymbol{J}}\)）以\(1/r\)变化，正是由于这些项导致电磁辐射.</p>
+            <div class="Card-AI">
+                <p>意思就是说，静止的场不会产生辐射，但是时变的场会产生.</p>
+            </div>
+
+            <div class="Card-Formula">
+                <b>杰斐缅柯方程</b>
+                $$\boldsymbol{E}(\boldsymbol{r}, t) = \frac{1}{4\pi\epsilon_0}\int\left[\frac{\rho(\boldsymbol{r}', t_r)}{r_0^2}\hat{\boldsymbol{r}}_0 + \frac{\dot{\rho}(\boldsymbol{r}', t_r)}{c r_0}\hat{\boldsymbol{r}}_0 - \frac{\dot{\boldsymbol{J}}(\boldsymbol{r}', t_r)}{c^2 r_0}\right]\mathrm{d}\tau'$$
+                $$\boldsymbol{B}(\boldsymbol{r}, t) = \frac{\mu_0}{4\pi}\int\left[\frac{\boldsymbol{J}(\boldsymbol{r}', t_r)}{r_0^2} + \frac{\dot{\boldsymbol{J}}(\boldsymbol{r}', t_r)}{cr_0}\right]\times\hat{\boldsymbol{r}}_0\mathrm{d}\tau$$
+                <p>上两式是有因果关系的Maxwell方程组的解.</p>
+            </div>
+            
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>电偶极子辐射</h2>
+            <p>想象两个金属小球相距为\(d\)且用一根细导线相连.</p>
+            <img src="Img/Radiation2.jpg" width="250">
+            <p>\(t\)时刻，上面小球带电\(q(t)\)，下面带电\(-q(t)\).</p>
+            <p>[设]以角频率\(\omega\)驱动电荷通过导线在两端的小球上来回振荡：</p>
+            $$q(t) = q_0\cos(\omega t)$$
+            <p>这样产生一个振荡的电偶极子：</p>
+            $$\boldsymbol{p}(t) = p_0\cos(\omega t)\hat{\boldsymbol{z}}$$
+            <ul>
+                <li>\(p_0\equiv q_0 d\)：电偶极矩最大值</li>
+            </ul>
+            <p><a href="Potential&Field.html" class="goto">推迟势</a>为：</p>
+            $$V(\boldsymbol{r}, t) = \frac{1}{4\pi\epsilon_0}\left\{\frac{q_0\cos[\omega(t-r_{0+}/c)]}{r_{0+}} - \frac{q_0\cos[\omega(t-r_{0-}/c])}{r_{0-}}\right\}$$
+            <ul>
+                <li>\(r_{0\pm} = \sqrt{r^2\mp rd\cos\theta + (d/2)^2}\)</li>
+            </ul>
+            <p>[近似]将物理上的电偶极子变成理想的电偶极子，使正负电荷相距非常小：</p>
+            $$d\ll r$$
+            <p>当然，若\(d\)为\(0\)，则根本得不到势，我们想得到的是有关\(d\)展开的一级近似，即：</p>
+            $$r_{0\pm}\approx r\left(1\mp \frac{d}{2r}\cos\theta\right)$$
+            $$\frac{1}{r_{0\pm}}\approx \frac{1}{r}\left(1\pm\frac{d}{2r}\cos\theta\right)$$
+            $$\begin{align}
+            \cos[\omega(t - r_{0\pm}/c)]&\approx\cos\left[\omega(t-r/c)\pm\frac{\omega d}{2c}\cos\theta\right]\\
+                                        &= \cos[\omega(t-r/c)]\cos\left(\frac{\omega d}{2c}\cos\theta\right)\mp\sin[\omega(t-r/c)]\sin\left(\frac{\omega d}{2c}\cos\theta\right)
+            \end{align}$$
+            <p>对于理想电偶极子极限，进一步有：</p>
+            <p>[近似]</p>
+            $$d\ll \frac{c}{\omega}$$
+            <p>由于角频率为\(\omega\)的波其波长为\(\lambda = \frac{2\pi c}{\omega}\)，这等同于要求\(d\ll\lambda\).</p>
+            <p>在这些条件下：</p>
+            $$\cos[\omega(t - r_{0\pm}/c)]\approx \cos[\omega(t-r/c)]\mp \frac{\omega d}{2c}\cos\theta\sin[\omega(t-r/c)]$$
+            
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>磁偶极子辐射</h2>
+            <p>想象一个由导线构成的半径为\(b\)的环，它通过一个交变电流：</p>
+            <img src="Img/Radiation_MD.jpg" width="300">
+            $$I(t) = I_0\cos(\omega t)$$
+            <p>这就是一个振动的磁偶极子模型.</p>
+            $$\boldsymbol{m}(t) = \pi b^2I(t)\hat{\boldsymbol{z}} = m_0\cos(\omega t)\hat{\boldsymbol{z}}$$
+            <ul>
+                <li>\(m_0\equiv \pi b^2I_0\)：磁偶极矩最大值</li>
+            </ul>
+        
+            <p>环不带电荷，故标势为\(0\)，推迟矢势为：</p>
+            $$\boldsymbol{A}(\boldsymbol{r}, t) = \frac{\mu_0}{4\pi}\int \frac{I_0\cos[\omega(t-r_0/c)]}{r_0}\mathrm{d}\boldsymbol{l}'$$
+
+            <p>对于一个在\(x\)轴上方的点\(\boldsymbol{r}\)，\(\boldsymbol{A}\)必定指向\(y\)方向，因为对称分布在\(x\)轴两边的\(x\)分量彼此抵消，故：</p>
+            $$\boldsymbol{A}(\boldsymbol{r}, t) = \frac{\mu_0 I_0 b}{4\pi}\hat{\boldsymbol{y}}\int_0^{2\pi} \frac{\cos[\omega(t-r_0/c)]}{r_0}\cos\phi'\mathrm{d}\phi'$$
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

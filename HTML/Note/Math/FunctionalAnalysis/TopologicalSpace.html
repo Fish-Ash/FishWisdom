@@ -37,6 +37,131 @@
         
         <h1>拓扑空间简介</h1>
         
+        <div class="Card-Analysis">
+            <h2>基本概念</h2>
+            <div class="Card-Definition">
+                <b>拓扑</b>
+                <p>设\(E\)为一个集合，称\(E\)的子集族\(\tau\subset \mathcal{P}(E)\)为一个拓扑.</p>
+            </div>
+            <div class="Card-AI">
+                <b>子集族</b>
+                <p>由若干个子集组成的集合.</p>
+                <p>\(\mathcal{P}(E)\)：\(E\)的所有子集组成的集合.</p>
+                <p>并非任意一个子集族都可以称为拓扑，必须满足下面列的三条开集公理.</p>
+                <p>满足闭集公理的子集族也不一定是拓扑.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>拓扑空间</b>
+                <p>若\(\tau\)满足以下条件：</p>
+                <ul>
+                    <li>\((O_1)\quad\)\(E\in\tau\)且\(\emptyset\in\tau\)</li>
+                    <li>\((O_2)\quad\)满足<b>任意并</b>性质：\(\tau\)中任意多元素的并仍是\(\tau\)中的元素</li>
+                    <li>\((O_3)\quad\)满足<b>有限交</b>性质：\(\tau\)中有限个元素的交仍是\(\tau\)中的元素</li>
+                </ul>
+                <p>称\(\tau\)中的元素为开集.</p>
+                <p>称\((E,\tau)\)（或简单称\(E\)）为拓扑空间.</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>O是open-set，这里指代开集公理的第1、2、3条</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>平凡拓扑</b>
+                <p>\(\tau = \{\emptyset, E\}\)是\(E\)上的拓扑.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>离散拓扑</b>
+                <p>\(\tau = \mathcal{P}(E)\)是\(E\)上的拓扑.</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>平凡拓扑与离散拓扑中的元素都是开集.</p>
+            </div>
+            
+            <div class="Card-Definition">
+                <b>度量空间</b>
+                <p>设\(E\)为一个非空集合，\(d\)为定义在\(E\times E\)上的实值函数，若取\(\forall x,y,z\in E\)，满足：</p>
+                <ol>
+                    <li><b>非负性</b>：\(d(x,y)\geq 0\)</li>
+                    <li><b>正定性</b>：\(d(x,y)=0\)当且仅当\(x=y\)</li>
+                    <li><b>对称性</b>：\(d(x,y) = d(y,x)\)</li>
+                    <li><b>三角不等式</b>：\(d(x,y)\leq d(x, z) + d(z, y)\)</li>
+                </ol>
+                <p>称\(d\)是集合\(E\)上的一个度量（或距离）.</p>
+                <p>称\((E,d)\)是度量空间.</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>\(E\times E\)表示自身的笛卡尔积，即：</p>
+                $$E\times E = \{(x,y)|x,y\in E\}$$
+            </div>
+
+            <div class="Card-Definition">
+                <b>由距离\(d\)诱导的拓扑\(\tau\)</b>
+                
+                <p>[设]\((E,d)\)为一个度量空间.</p>
+                <p>[设]\(B(x,r)\)表示中心在\(x\)，半径为\(r\)的一个开球，即：</p>
+                $$B(x,r) = \left\{y\in E:d(y,r)\lt r\right\}$$
+                <p>\(E\)上子集族\(\tau\)定义为：</p>
+                <p>设\(U\)是\(E\)的子集，\(U\in\tau\)当且仅当\(\forall x\in U\),\(\exists r\gt 0\)，使得\(B(x,r)\in U\).</p>
+                <p>易证：\(\tau\)是\(E\)上的一个拓扑，并称\(\tau\)为由距离\(d\)诱导的拓扑.</p>
+            </div>
+            
+            <div class="Card-Definition">
+                <b>可度量化空间</b>
+                <p>若\(E\)上的拓扑\(\tau\)可由一个距离\(d\)诱导，则称\((E,\tau)\)为一个可度量化空间.</p>
+                <p>[注]同一个拓扑能被不同的距离诱导（甚至是无数个）.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>闭集</b>
+                <p>[设]\((E,\tau)\)为一个拓扑空间，\(A\subset E\).</p>
+                <p>若\(A\)的补集\(A^{C}\)是关于拓扑\(\tau\)的开集，则称\(A\)是关于拓扑\(\tau\)的闭集.</p>
+            </div>
+
+            <div class="Card-Property">
+                <p>由开集与闭集的互补关系，给出闭集性质如下：</p>
+                <ul>
+                    <li>\(F_1\quad\)\(E\)与\(\emptyset\)都是闭集</li>
+                    <li>\(F_1\quad\)满足<b>任意交</b>性质：任意多个闭集的交仍是闭集</li>
+                    <li>\(F_1\quad\)满足<b>有限并</b>性质：有限多个闭集的并仍是并集</li>
+                </ul>
+                <p>[注]可以用性质\((F_1)-(F_3)\)定义\(E\)上的拓扑\(\mathcal{F}\)，那么称\(\mathcal{F}\)中的元素为闭集，并称它们的补集为开集.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>邻域</b>
+                <p>[设]\((E,\tau)\)为一个拓扑空间，\(x\in E\).</p>
+                <p>若\(E\)中子集\(V\)满足：\(\exists\)开集\(U\in\tau\)，使得\(x\in U\)且\(U\subset V\)，则称集合\(V\)为\(x\)的邻域.</p>
+
+                <div class="Card-AI">
+                    <p>V是E的一个子集.</p>
+                    <p>V中包含一个子集U，是开集.</p>
+                    <p>对于U中的所有元素x，V是x的邻域.</p>
+                </div>
+            </div>
+
+            <div class="Card-Definition">
+                <b>邻域系</b>
+                <p>\(x\)点处所有邻域构成的集族，用\(\mathcal{N}(x)\)表示.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>邻域基（基础邻域系）</b>
+                <p>若\(\mathcal{B}(x)\)为\(\mathcal{N}(x)\)的子集族，且满足\(\forall V\in \mathcal{N}(x), \exists U\in\mathcal{B}(x)\)，使得\(U\subset V\)，称\(\mathcal{B}(x)\)为\(x\)的邻域基.</p>
+            </div>
+
+            <div class="Card-Property">
+                <p>\(\mathcal{N}(x)\)是\(x\)处的邻域基.</p>
+                <p>含有\(x\)的所有开集族是\(x\)的一个邻域基，但是由\(x\)所有的闭邻域构成的集族不一定是\(x\)的邻域基.</p>
+                <p>设\((E,d)\)为一个度量空间，其拓扑由\(d\)诱导，\(x\in E\)，\(\mathcal{B}(x)\)表示所有中心在\(x\)、半径为\(1/n,\quad n\in\mathbb{N}^*\)的开球构成的集族，易证\(\mathcal{B}(x)\)为\(x\)的邻域基.</p>
+            </div>
+            
+        </div>
+        
 
         <div id="PageEnd"></div>
 

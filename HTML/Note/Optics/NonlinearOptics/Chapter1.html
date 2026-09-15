@@ -34,15 +34,6 @@
             <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
             <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
         </div>
-        
-        <h1>第四章 二阶非线性光学效应</h1>
-
-        <div class="PageCatalog">
-            <ul>
-                <li><a href="#SHG">二次谐波产生（SHG）</a></li>
-                <li><a href="#PocklerEffect">线性电光效应</a></li>
-            </ul>
-        </div>
 
         <h1>第一章 非线性介质响应特性的经典描述</h1>
 
@@ -151,6 +142,10 @@
 
             <p>此外，\(t'\gt t\)时的光电场\(\boldsymbol{E}(t')\)对\(\boldsymbol{P}(t)\)是没有贡献的，即：</p>
             $$\boldsymbol{R}(t-\tau) = 0,~\tau\gt t$$
+            $$\therefore \int_{t}^{+\infty}\epsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau = 0$$
+            <p>亦即：</p>
+            $$\boldsymbol{P}(t) = \int_{-\infty}^{+\infty}\epsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau$$
+            $$\boldsymbol{P}(t) = \epsilon_0\boldsymbol{R}*\boldsymbol{E}$$
 
             <b>响应函数所满足的真实性条件</b>
             <p>由于\(\boldsymbol{E}(t)\)与\(\boldsymbol{P}(t)\)均为实函数，故\(\boldsymbol{R}(\tau)\)也必须是实函数，才能保证上式成立.</p>
@@ -169,15 +164,33 @@
 
         <div class="Card-Definition">
             <b>线性极化率</b>
-            $$\begin{align}
-            \chi^{(1)}(\omega) &= \int_{-\infty}^{+\infty}\boldsymbol{R}^{(1)}(\tau)e^{i\omega\tau}\mathrm{d}\tau\\
-                               &= \chi'(\omega) + i\chi''(\omega)
-            \end{align}$$
+            <div class="Formula">
+                $$\begin{align}
+                \chi^{(1)}(\omega) &= \int_{-\infty}^{+\infty}\boldsymbol{R}^{(1)}(\tau)e^{i\omega\tau}\mathrm{d}\tau\\
+                                   &= \chi'(\omega) + i\chi''(\omega)
+                \end{align}$$
+                <div class="Derivation">
+                    $$\because \boldsymbol{P}(t) = \epsilon_0\boldsymbol{R}(t)*\boldsymbol{E}(t)$$
+                    $$\begin{align}
+                    \therefore \boldsymbol{P}(\omega) &= \mathcal{F}[\boldsymbol{P}(t)]\\
+                                                      &= \epsilon_0\mathcal{F}[\boldsymbol{R}(t)]\boldsymbol{E}(\omega)\\
+                                                      &= \epsilon_0\chi^{(1)}(\omega)\boldsymbol{E}(\omega)
+                    \end{align}$$
+                    $$\therefore \chi^{(1)}(\omega) = \mathcal{F}[\boldsymbol{R}(t)]$$
+                    <p>线性极化率实部与虚部间的关系称为色散关系，由Kramers-Kroning关系给出.</p>
+                </div>
+            </div>
+
         </div>
 
         <div class="Card-Definition">
-            <b>克雷默斯-克朗尼（Kramers-Kroning）函数</b>
+            <b>Kramers-Kroning关系</b>
             <p>给出了\(\chi^{(1)}(\omega)\)实部与虚部之间的关系.</p>
+            $$\chi'(\omega) = \frac{1}{\pi}\text{P.V.}\int_{-\infty}^{+\infty}\frac{\chi''(\Omega)}{\Omega-\omega}\mathrm{d}\Omega$$
+            $$\chi''(\omega) = -\frac{1}{\pi}\text{P.V.}\int_{-\infty}^{+\infty}\frac{\chi'(\Omega)}{\Omega-\omega}\mathrm{d}\Omega$$
+            <ul>
+                <li>\(\text{P.V.}\)：柯西主值积分</li>
+            </ul>
         </div>
 
         <div class="Card-Analysis">

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>量子力学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../Home.html">主页</a></li>
+            <li><a href="../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>一些物理学常量</h1>
+        <table>
+            <tr>
+                <td>$$h$$</td>
+                <td>Planck常数</td>
+                <td>$$$$</td>
+            </tr>
+            <tr>
+                <td id="hbar">$$\hbar$$</td>
+                <td>约化Planck常数</td>
+                <td>$$\hbar = \frac{h}{2\pi}\approx 1.054572\times 10^{-34}J\cdot s$$</td>
+            </tr>
+            <tr>
+                <td id="Boltzmann">K</td>
+                <td>Boltzmann常数</td>
+                <td>$$K = 1.38\times 10^{-16}\text{erg/K}$$</td>
+            </tr>
+            <tr>
+                <td>$$\mu_0$$</td>
+                <td>真空磁导率</td>
+                <td>$$\begin{align}\mu_0 &= 4\pi\times 10^{-7}N\cdot s^2/C^2\\&=4\pi\times 10^{-7}H/m\end{align}$$</td>
+            </tr>
+            <tr>
+                <td>$$c$$</td>
+                <td>光在真空中的传播速度</td>
+                <td>$$c = 2.9979\times 10^8 m/s$$</td>
+            </tr>
+        </table>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

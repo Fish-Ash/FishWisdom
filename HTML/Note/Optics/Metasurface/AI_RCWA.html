@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>超表面</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>严格耦合波分析</h1>
+        <p>严格耦合波分析（RCWA），又称傅里叶模态法（FMM）.</p>
+
+        <div class="Card-Analysis">
+            <h2>计算过程</h2>
+            <b>前置知识</b>
+            <ul>
+                <li><a href="../../Math/FourierAnalysis/FourierSeries.html">Fourier级数</a></li>
+                <li><a href="../FourierOptics/SpatialFrequencySpectrum.html">空间频率</a></li>
+            </ul>
+
+            <p>对于周期性的结构，有：</p>
+            $$\epsilon(x) = \epsilon(x + \Lambda)$$
+            <p>将其展开为Fourier级数，有：</p>
+            $$\epsilon(x) = \sum_{n=-\infty}^{\infty} \epsilon_n e^{i n \frac{2\pi}{\Lambda} x}$$
+            <p>\(G = 2\pi/\Lambda\)称为倒格矢，是波矢.</p>
+
+            <div class="Card-Definition">
+                <b>谐波</b>
+                <p>频率为基频整数倍的波.</p>
+                <p>若基频波为\(e^{ikx}\)，则二次、三次谐波分别为\(e^{i2kx}\)和\(e^{i3kx}\).</p>
+            </div>
+
+            <p>因此结构的介电常数经过Fourier展开后成为了不同谐波的线性组合.</p>
+
+            <p>电场做Floquet展开：</p>
+            $$\begin{align}
+            E(x,z) &= e^{ik_xx}\\
+                   &= \sum_mE_{0m}(z)e^{i(k_{x0} + mG)x}
+            \end{align}$$
+
+            $$\because \nabla\times\boldsymbol{H} = -i\omega\epsilon\boldsymbol{E}$$
+            $$\begin{align}
+            \epsilon(x)\boldsymbol{E}(x,z) &= \sum_n \epsilon_n e^{inGx}\sum_mE_{0m}(z)e^{i(k_{x0} + mG)x}\\
+                                           &= \sum_n\sum_m \epsilon_nE_{0m}(z)e^{i[k_{x0} + (m+n)G]x}
+            \end{align}$$
+
+
+            <p>结构的某个空间周期成分，会让一个场的波矢分量变成另一个波矢分量.</p>
+
+            <div class="Card-Definition">
+                <b>波矢通道</b>
+                <p>具有某个特定波矢的场分量.</p>
+            </div>
+
+            <h3>用矩阵逐层连接</h3>
+
+            <ul>
+                <li>\(\boldsymbol{a}_1\)：入射侧进入结构的所有正向模式的激发系数</li>
+                <li>\(\boldsymbol{b}_1\)：从结构返回入射侧的所有反向模式的激发系数</li>
+                <li>\(\boldsymbol{a}_n\)：从结构传播到出射侧的所有正向模式的激发系数</li>
+                <li>\(\boldsymbol{b}_n\)：从出射侧反向射入结构的模式系数</li>
+            </ul>
+
+            <p>[设]已知入射侧初始入射模式\(\boldsymbol{a}_{in}\)，即：</p>
+            $$\boldsymbol{a}_1 = \boldsymbol{a}_{in}$$
+
+            <p>[设]出射侧无额外光源，即：</p>
+            $$\boldsymbol{b}_n = 0$$
+
+            $$\boldsymbol{b}_1 = S_{11}\boldsymbol{a}_1$$
+            $$\boldsymbol{a}_n = S_{12}\boldsymbol{a}_1$$
+
+            $$r_m = \frac{b_{1,m}}{a_{in}}$$
+            $$t_m = \frac{a_{n,m}}{a_{in}}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>FDTD</h2>
+
+            <h3>空间划分为离散网格（Yee）</h3>
+            <p>网格三个方向的边长\(\Delta x, \Delta y, \Delta z\)不要求相等.</p>
+            <p>网格需要足够小，使网格内材料可以近似看作均匀.</p>
+            <p>只有一套网格.</p>
+            <p>每个网格中都会有\(E\)和\(H\)，但其分量\(E_x,E_y,E_z\)与\(H_x, H_y, H_z\)放在网格内不同位置.</p>
+            
+        </div>
+
+        <h2>参数</h2>
+
+        <table>
+            <tr>
+                <td rowspan="13">输入</td>
+                <td colspan="2">几何结构</td>
+            </tr>
+            <tr>
+                <td>材料参数</td>
+                <td>介电常数</td>
+            </tr>
+            <tr>
+                <td rowspan="3">入射光条件</td>
+                <td>波长/频率</td>
+            </tr>
+            <tr><td>入射方向（极角/方位角）</td></tr>
+            <tr><td>入射偏振</td></tr>
+            <tr>
+                <td rowspan="7">数值计算参数</td>
+                <td colspan="2">Fourier截断阶数（精度相关）</td>
+            </tr>
+            <tr>
+                <td colspan="2">z方向分层数量（精度相关）</td>
+            </tr>
+            <tr>
+                <td rowspan="5">数值算法设置</td>
+                <td>S-matrix 或 transfer matrix</td>
+            </tr>
+            <tr>
+                <td>Fourier factorization 方法</td>
+            </tr>
+            <tr><td>本征值求解器</td></tr>
+            <tr><td>是否计算近场</td></tr>
+            <tr><td>输出采样位置</td></tr>
+        </table><br>
+
+        <table>
+            <tr>
+                <td rowspan="3">输出</td>
+                <td>透射率、反射率、吸收率</td>
+            </tr>
+            <tr><td>复振幅</td></tr>
+            <tr><td>各衍射级次效率</td></tr>
+
+        </table>
+
+
+        <h1>FDTD</h1>
+        <table>
+            <tr>
+                <td rowspan="100">输入</td>
+                <td>几何结构</td>
+            </tr>
+            <tr>
+                <td>材料参数</td>
+            </tr>
+            <tr>
+                <td rowspan="5">光源类型</td>
+                <td>频率：单色光/宽带脉冲</td>
+            </tr>
+            <tr>
+                <td>光源类型：平面波、高斯光束……</td>
+            </tr>
+            <tr>
+                <td>入射方向</td>
+            </tr>
+            <tr>
+                <td>偏振</td>
+            </tr>
+            <tr>
+                <td>仿真区域</td>
+            </tr>
+            <tr>
+                <td rowspan="3">边界条件</td>
+                <td>PML</td>
+            </tr>
+            <tr>
+                <td>周期边界</td>
+            </tr>
+            <tr>
+                <td>对称边界</td>
+            </tr>
+        </table>
+
+        <p>仿真区域要足够大，以包含结构、光源、场监视器、边界吸收区域.</p>
+
+        <h2>超表面工程常见工作流</h2>
+        <p>1、适用RCWA扫描单元结构，得到相位、振幅、偏振转换效率与色散数据库</p>
+        <p>2、构建完整超表面</p>
+        <p>3、FDTD检查：不同单元间的耦合、边缘效应、实际焦距和焦斑、旁瓣、整体效率、局部近似.</p>
+        <p>RCWA方法得到的是计算单元无限周期性排列后的电磁响应，不是孤立的单元响应.</p>
+        <p>RCWA会考虑单元与单元之间的边界条件（周期/Bloch边界条件），但是不会考虑有限超表面的边缘.</p>
+        <p>Bloch边界条件是周期边界条件的推广.</p>
+
+
+        <p>使用RCWA方法得到的单元数据库，在用于非周期超表面的设计时，还需要考虑一些因素.</p>
+        
+        <div class="Card-Question">
+            <p>Bloch边界条件与周期边界条件值得深挖.</p>
+        </div>
+
+        <h2>超表面设计方法分类</h2>
+        <table>
+            <tr>
+                <td>周期性超表面</td>
+                <td>RCWA</td>
+            </tr>
+            <tr>
+                <td>非周期性超表面</td>
+                <td>RCWA + 波前设计</td>
+            </tr>
+        </table>
+
+        <p>超表面可以控制：相位、振幅、频率</p>
+        $$E = E_0 e^{i(kx - \omega t + \phi)}$$
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

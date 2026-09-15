@@ -83,9 +83,13 @@
 
             <b>性质</b>
             $$\langle g\lvert f\rangle = \langle f\lvert g\rangle^*$$
+
+            <p>绝大多数情况下，在量子力学中我们遇到的矢量是函数，它们存在于无穷维空间中.</p>
+            <p>对于它们，用\(N\)行列矩阵/矩阵的方法有些笨拙，以及在有限维下很好行为的矩阵乘法可能存在问题.</p>
+            <p>比如，对于内积，有限求和总是存在的，但无限求和或积分可能不收敛，这种情况下内积将不存在，那么涉及到内积的任何论述都将出现问题.</p>
         </div>
 
-        <div class="Card-Analysis">
+        <div class="Card-Analysis" id="HilbertRelationship">
             <h2>Hilbert空间下函数的关系</h2>
             <h3>归一化函数</h3>
             <p>若一个函数与其自身内积为1，称之为归一化的.</p>
@@ -95,9 +99,11 @@
 
             <h3>正交归一函数</h3>
             <p>若一组函数之间是正交的，本身又是归一化的，称其为正交归一的.</p>
+            $$\left\langle f_m\middle|f_n\right\rangle = \delta_{mn}$$
 
             <h3>完备函数</h3>
             <p>若存在一组函数，Hilbert空间中的任意其他函数都可以表示为这组函数的线性叠加，称这组函数为完备的.</p>
+            $$f(x) = \sum_{n=1}^\infty c_nf_n(x)$$
         </div>
 
 

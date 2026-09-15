@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fourier光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        <h1>Fourier变换</h1>
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#Definition">Fourier变换的定义</a></li>
+            </ul>
+        </div>
+
+        <div class="Card-Analysis" id="Definition">
+            <h2>Fourier变换的定义</h2>
+            <div class="Card-Definition">
+                <b>\(f(x)\)的Fourier变换式</b>
+                <p>设函数\(f(t)\)满足Fourier积分定理条件，则表达式：</p>
+                $$\begin{align}
+                F(\omega) &= \mathcal{F}[f(t)]\\
+                          &= \int_{-\infty}^{+\infty}f(t)e^{-i\omega t}\mathrm{d}t
+                \end{align}$$
+                <p>为\(f(t)\)的Fourier变换式，称函数\(F(\omega)\)为\(f(t)\)的Fourier变换.</p>
+            </div>
+    
+            <div class="Card-Definition">
+                <b>\(F(\omega)\)的Fourier逆变换式</b>
+                $$\begin{align}
+                f(t) &= \mathcal{F}^{-1}[F(\omega)]\\
+                     &= \frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega)e^{i\omega t}\mathrm{d}\omega
+                \end{align}$$
+                <p>该表达式为\(F(\omega)\)的Fourier逆变换式，称函数\(f(t)\)为\(F(\omega)\)的Fourier逆变换.</p>
+            </div>
+
+            <h3>二维Fourier变换</h3>
+            $$\begin{align}
+            G(f_x,f_y) &= \mathcal{F}[g(x,y)]\\
+                       &= \iint_{-\infty}^{+\infty}g(x,y)e^{-i2\pi(f_xx + f_yy)}\mathrm{d}x\mathrm{d}y
+            \end{align}$$
+            $$\begin{align}
+            g(x,y) &= \mathcal{F}^{-1}[G(f_x,f_y)]\\
+                   &= \iint_{-\infty}^{+\infty}G(f_x,f_y)e^{i2\pi(f_xx + f_yy)}\mathrm{d}f_x\mathrm{d}f_y
+            \end{align}$$
+
+        </div>
+
+        <h2>Fourier变换的性质</h2>
+        <h3>线性性质</h3>
+        $$F[k_1f_1(t) + k_2f_2(t)] = k_1F[f_1(t)] + k_2F[f_2(t)]$$
+        $$F^{-1}[k_1F_1(\omega) + k_2F_2(\omega)] = k_1F^{-1}[F_1(\omega)] + k_2F^{-1}[F_2(\omega)]$$
+
+        <h3>对称性质</h3>
+        <div class="Formula">
+            $$F(\omega) = F[f(t)]\Rightarrow F[F(t)] = 2\pi f(-\omega)$$
+            <div class="Derivation">
+                $$\because F[f(t)] = \int_{-\infty}^{+\infty}f(t)e^{-i\omega t}\mathrm{d}t$$
+                $$\therefore F[F(t)] = \int_{-\infty}^{+\infty}F(t)e^{i\omega t}\mathrm{d}t$$
+                $$\because f(t) = \int_{-\infty}^{+\infty}F(\omega)e^{i\omega t}\mathrm{d}\omega$$
+                $$\begin{align}
+                \therefore f(-\omega) &= \frac{1}{2\pi}\int_{-\infty}^{+\infty}F(x)e^{ix(-\omega)}\mathrm{d}x\\
+                                      &= \frac{1}{2\pi}\int_{-\infty}^{+\infty}F(t)e^{-i\omega t}\mathrm{d}t\\
+                                      &= \frac{1}{2\pi}F[F(t)]
+                \end{align}$$
+                $$\therefore F[F(t)] = 2\pi f(-\omega)$$
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>卷积与Fourier变换</h2>
+            <b>前置知识</b>
+            <ul>
+                <li><a href="Convolution.html">卷积</a></li>
+            </ul>
+            
+
+            <div class="Card-Formula">
+                <b>卷积定理</b>
+                <p>[设]\(F(\omega) = \mathcal F[f(t)],~G(\omega) = \mathcal F[g(t)]\)</p>
+                $$\mathcal F[f(t)*g(t)] = F(\omega)\cdot G(\omega)$$
+                $$\begin{align}
+                \mathcal F[f(t)*g(t)] &= \int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty}f(\tau)g(t-\tau)\mathrm{d}\tau\right]e^{-i\omega t}\mathrm{d}t\\
+                                      &= \int_{-\infty}^{+\infty}f(\tau)\left[\int_{-\infty}^{+\infty}g(t-\tau)e^{-i\omega(t-\tau)}\mathrm{d}(t-\tau)\right]e^{-i\omega\tau}\mathrm{d}\tau\\
+                                      &= F(\omega)\cdot G(\omega)
+                \end{align}$$
+                $$\mathcal F[f_1(t)\cdot f_2(t)] = \frac{1}{2\pi}F_1(\omega)*F_2(\omega)$$
+
+            </div>
+        </div>
+
+        <div class="Card-AI">
+            <b>Fourier变换的物理意义</b>
+            <p>\(f(t)\)：信号如何随时间变化，即时域表示.</p>
+            <p>\(F(\omega)\)：信号由哪些频率组成，即频域表示</p>
+
+        </div>
+
+       
+        
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

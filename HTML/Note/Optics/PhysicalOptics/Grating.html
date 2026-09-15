@@ -3,24 +3,45 @@
 <html lang = "zh-cn">
 
     <head>
-        <meta charset="utf-8">
-        <title>物理光学</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
     <body>
-        <div class="header">不惑</div>
-
-        
+        <div class="header" id="PageHead">不惑</div>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
 
-
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
         <h1>光栅</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#BlazedGrating">闪耀光栅</a></li>
+                <li><a href="#Dispersion">光栅的色散</a></li>
+            </ul>
+        </div>
 
         <div class="Card-Analysis">
             <h2>光栅</h2>
@@ -123,6 +144,8 @@
             <b>光波斜入射时的光栅方程</b>
             $$d(\sin\theta_i \pm\sin\theta_r) = m\lambda,\quad m = 0,\pm1,\pm2,\cdots$$
             <ul>
+                <li>\(d\)：光栅常数</li>
+                <li>\(m\)：衍射级次</li>
                 <li>\(\theta_i\)：入射角，入射光于光栅平面法线的夹角</li>
                 <li>\(\theta_r\)：衍射角，m级衍射光与光栅平面法线的夹角</li>
             </ul>
@@ -150,9 +173,18 @@
             <p>即，\(\theta_i\neq 0\)时，正级光谱与负极光谱的级数是不相等的.</p>
         </div>
 
-        <div class="Card-Analysis">
+        <div class="Card-Analysis" id="BlazedGrating">
             <h2>闪耀光栅</h2>
-            <p>闪耀光栅又叫炫耀光栅、定向光栅，是一种相位型光栅，其弥补了平面光栅的不足.</p>
+
+            <h3>振幅型光栅的缺点</h3>
+            <p>作为色散元件，无色散的零级光谱占据了总能量的很大一部分，而光谱分析中使用的较高级次光谱却只占了很少一部分能量，因此衍射效率（衍射光能量与入射光能量之比）很低.</p>
+            <p>其原因在于单缝衍射的中央主极大与缝间干涉的零级主极大（即零级光谱）重合.</p>
+            <div class="Card-AI">
+                <p>每一条单缝的中央主极大都与多缝干涉的零级主极大完全重合</p>
+            </div>
+
+            <h3>闪耀光栅</h3>
+            <p>闪耀光栅又叫炫耀光栅、定向光栅，是一种相位型光栅，其弥补了平面光栅的不足，可以使光能量几乎全部集中到所需要的光谱级次上.</p>
             <p>由光栅的分光原理可知，光栅衍射的零级主极大无色散作用，不能用于分光，光栅分光必须利用高级主极大.</p>
             <p>但由多缝衍射的强度分布可知，多缝衍射的零级主极大占有很大一部分光能量，因此可用于分光的高级主极大光能量较少，大部分能量被浪费.</p>
             <p>因此在实际应用中必须改变通常光栅的衍射光强度分布，使光强度集中到有用的那一级高光谱级上.</p>
@@ -160,6 +192,10 @@
             <p>Wood在1910年首先成功刻制出了形状可控制的沟槽，制成了所谓的闪耀光栅.</p>
 
             <h3>闪耀光栅的结构</h3>
+            <p>闪耀光栅的巧妙之处在于其刻槽面与光栅面不平行，存在一夹角\(\gamma\)（称为闪耀角）.</p>
+            <p>闪耀角可以使单个刻槽面（相当于单缝）衍射的中央极大和各槽面间（缝间）干涉零级主极大分开，将光能量从干涉零级主极大（即零级光谱），转移并集中到某一级光谱上去，实现该光谱的闪耀.</p>
+            
+
             <p>平面衍射光栅之所以零级主极大占有很大一部分光能量，是由于干涉零级主极大与单缝衍射主极大重合，而这种重合起因于干涉和衍射的光程差均由同一衍射角决定.</p>
             <div class="Card-Question">
                 <p>回到平面衍射光栅，理解什么叫“干涉零级主极大”与“单缝衍射主极大重合”</p>
@@ -192,9 +228,57 @@
             <p>阶梯光栅是由一系列平行平面厚玻璃板组成的</p>
         </div>
 
+        <div class="Card-Analysis">
+            <h2>正弦（振幅）光栅</h2>
+            <p>正弦型振幅光栅能对入射光波的振幅按余弦或正弦函数变化规律进行调制，而不影响其相位分布.</p>
+            <p>其复振幅透射系数为：</p>
+            $$t(x_1, y_1) = \left(1 + B\cos2\pi\frac{1}{d}x_1\right)$$
+            <ul>
+                <li>\(d\)：光栅常数</li>
+                <li>\(0\lt B\lt 1\)：光栅对光波振幅的调制幅度</li>
+            </ul>
+            <p>这是一个在\(x_1\)方向上无限长的一维光栅.</p>
+        </div>
 
+        <div class="Card-Analysis" id="Dispersion">
+            <h2>光栅的色散</h2>
+            <div class="Card-Definition">
+                <b>光栅的色散</b>
+                <p>由光栅方程可知，除0级外，不同波长的同一级主极大对应不同的衍射角.</p>
+                <p>这种现象称为光栅的色散.</p>
+                <p>光栅有色散，表明其有分光能力.</p>
+                <p>光栅的色散可以用角色散与线色散表示.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>角色散</b>
+                <p>相差单位波长的两条谱线通过光栅分开的角度.</p>
+                <div class="Formula">
+                    $$\frac{\mathrm{d}\theta_r}{\mathrm{d}\lambda} = \frac{m}{d\cos\theta_r}$$
+                    <div class="Derivation">
+                        $$d(\sin \theta_i + \sin\theta_r) = m\lambda$$
+                        $$\mathrm{d}[d(\sin \theta_i + \sin\theta_r)] = \mathrm{d}(m\lambda)$$
+                        $$d\cos\theta_r\mathrm{d}\theta_r = m\mathrm{d}\lambda$$
+                        $$\therefore \frac{\mathrm{d}\theta_r}{\mathrm{d}\lambda} = \frac{m}{d\cos\theta_r}$$
+                    </div>
+                </div>
+            </div>
+
+            <div class="Card-Definition">
+                <b>线色散</b>
+                <p>聚焦物镜焦面上相差单位波长的两条谱线分开的距离.</p>
+                $$\frac{\mathrm{d}l}{\mathrm{d}\lambda} = f\frac{\mathrm{d}\theta}{\mathrm{d}\lambda} = f\frac{m}{d\cos\theta}$$
+                <ul>
+                    <li>\(f\)：物镜的焦距</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
         <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
-    
 </html>

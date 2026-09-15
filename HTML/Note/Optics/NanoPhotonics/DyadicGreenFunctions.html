@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>微纳光子学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+    
+        <h1>并矢Green函数</h1>
+
+        
+        <div class="Card-Analysis">
+            <h2>Green函数的数学表达式</h2>
+            <p>Green函数表示点源产生的场，是场论中的一个重要概念.</p>
+            <p>并矢Green函数\(\overleftrightarrow{\boldsymbol{G}}\)本质上由以下关系定义：</p>
+            <p>位于源点\(\boldsymbol{r}'\)的电偶极子\(\boldsymbol{p}\)，在场点\(\boldsymbol{r}\)处产生电场\(\boldsymbol{E}\).</p>
+            <p>数学形式表示为：</p>
+            $$\boldsymbol{E}(\boldsymbol{r}) = \omega^2\mu_0\mu\overleftrightarrow{\boldsymbol{G}}(\boldsymbol{r}, \boldsymbol{r}')\boldsymbol{p}$$
+
+            <p>考虑一个一般的非齐次方程：</p>
+            $$\mathcal{L}\boldsymbol{A}(\boldsymbol{r}) = \boldsymbol{B}(\boldsymbol{r})$$
+            <div class="Card-AI">
+                <b>非齐次方程</b>
+                <p>方程右边存在一个不为零的、独立于未知函数的“源项”或“驱动项”.</p>
+                <p>这里其实指的是一个非齐次线性微分方程.</p>
+            </div>
+            <p>线性算符\(\mathcal{L}\)作用于矢量场\(\boldsymbol{A}\)，而\(\boldsymbol{A}\)表示系统的未知响应（亦即算符\(\mathcal{L}\)对源\(\boldsymbol{B}\)）的响应.</p>
+
+            <div class="Card-AI">
+                <b>响应</b>
+                <p>源\(B\)是客观存在的，它经过法则\(\mathcal{L}\)，会引起\(A\).</p>
+                <p>比如胡克定律：</p>
+                $$f = kx$$
+                <p>其中\(f\)就是源，在算符\(k\)作用下，它引起了弹簧移动\(x\).</p>
+            </div>
+
+            <p>矢量场\(\boldsymbol{B}\)是已知的源函数，它使该微分方程成为<a href="../../Math/Mathematic/DifferentialEquation.html">非齐次方程</a>.</p>
+
+            <p>线性微分方程的定理指出：通解等于齐次方程（\(\boldsymbol{B} = 0\)）的完整解与某个非齐次特解之和.</p>
+            <p>[设]齐次解\(\boldsymbol{A}_0\)已知.</p>
+            <p>因此，我们需要解出任意一个特解.</p>
+            <p>通常，直接求解上式非常困难，简单起见，考虑形式为\(\delta(\boldsymbol{r} - \boldsymbol{r'})\)的点源，该电源在除\(\boldsymbol{r} = \boldsymbol{r}'\)处外，处处为0.</p>
+            <p>这样，方程可以写作：</p>
+            $$\mathcal{L}\boldsymbol{G}_i(\boldsymbol{r}, \boldsymbol{r}') = \boldsymbol{n}_i\delta(\boldsymbol{r} - \boldsymbol{r}'),\quad i=x,y,z$$
+            <ul>
+                <li>\(\boldsymbol{n}_i\)：\(i\)方向上的单位矢量</li>
+                <li>\(\boldsymbol{G}_i\)：\(\mathcal{L}\)对源\(\boldsymbol{n}_i\delta(\boldsymbol{r}-\boldsymbol{r}')\)的响应</li>
+            </ul>
+            <p>写成矩阵形式为：</p>
+            $$\mathcal{L}\boldsymbol{G}(\boldsymbol{r}, \boldsymbol{r}') = \overleftrightarrow{\boldsymbol{I}}\delta(\boldsymbol{r} - \boldsymbol{r}')$$
+            <ul>
+                <li>\(\overleftrightarrow{\boldsymbol{I}}\)：单位矩阵</li>
+            </ul>
+            <p>其中\(\mathcal{L}\)作用于\(\overleftrightarrow{\boldsymbol{G}}\)的每一列.</p>
+            <p>满足上式的\(\overleftrightarrow{\boldsymbol{G}}\)称为并矢Green函数.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>均匀介质的Green函数</h2>
+            <p>考虑由常数\(\epsilon\)与\(\mu\)表征的无限均匀介质.</p>
+            <p>在这种介质中，Green函数最方便的推导方法是采用时谐矢势（time-harmonic vector potential）\(\boldsymbol{A}\)与标势（scalar potential）\(\phi\)，它们与电场和磁场的关系为：</p>
+            $$\boldsymbol{E}(\boldsymbol{r}) = i\omega\boldsymbol{A}(\boldsymbol{r}) - \nabla\phi(\boldsymbol{r})$$
+            $$\boldsymbol{H}(\boldsymbol{r}) = \frac{1}{\mu_0\mu}\nabla\times\boldsymbol{A}(\boldsymbol{r})$$
+
+            $$\nabla\times\nabla\times\boldsymbol{A}(\boldsymbol{r}) = \mu_0\mu\boldsymbol{j}(\boldsymbol{r}) - i\omega\mu_0\mu\epsilon_0\epsilon[i\omega\boldsymbol{A}(\boldsymbol{r}) - \nabla\phi(\boldsymbol{r})]$$
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

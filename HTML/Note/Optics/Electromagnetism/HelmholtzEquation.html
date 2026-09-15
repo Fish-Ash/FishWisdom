@@ -16,14 +16,38 @@
 
 
     <ul class="navibar">
-    <li><a href="../../Home.html">主页</a></li>
-    <li><a href="../../Navigation.html">导航</a></li>
+    <li><a href="../../../Home.html">主页</a></li>
+    <li><a href="../../../Navigation.html">导航</a></li>
     </ul>
 
     <h1>Helmholtz方程</h1>
-    $$\nabla^2 \boldsymbol{E} + k^2n^2\boldsymbol{E} + \nabla\left(\boldsymbol{E} \cdot \frac{\nabla\epsilon}{\epsilon}\right) = 0$$
-    $$\nabla^2 \boldsymbol{H} + k^2n^2\boldsymbol{H} + \frac{\nabla\epsilon}{\epsilon}\times(\nabla\times\boldsymbol{H}) = 0$$
-    
+
+    <div class="Card-Analysis">
+        $$\nabla^2 \boldsymbol{E} + k^2n^2\boldsymbol{E} + \nabla\left(\boldsymbol{E} \cdot \frac{\nabla\epsilon}{\epsilon}\right) = 0$$
+        $$\nabla^2 \boldsymbol{H} + k^2n^2\boldsymbol{H} + \frac{\nabla\epsilon}{\epsilon}\times(\nabla\times\boldsymbol{H}) = 0$$
+    </div>
+
+    <div class="Card-Analysis">
+        <p>单色光波场中任一点\(P\)的光振动\(u\)应满足标量波动方程：</p>
+        $$\nabla^2u - \frac{1}{c^2}\frac{\partial^2 u}{\partial t^2} = 0$$
+        <ul>
+            <li>\(\nabla^2\)：<a href="../../Math/Mathematic/GradientDivergenceCurl.html" class="goto">拉普拉斯算子</a></li>
+        </ul>
+        <p>实扰动\(u\)又可以表示为：</p>
+        $$u(P, t) = \text{Re}\{U(P)e^{i2\pi\nu t}\}$$
+        <p>将其代入上式，可得不含时间的方程：</p>
+        $$(\nabla^2 + k^2)U(P) = 0$$
+        <ul>
+            <li>\(k\)：波数</li>
+        </ul>
+        <p>上式即为Helmholtz方程，可以将其视作自由空间传播的单色光扰动的复振幅必须满足的波动方程.</p>
+        <p>对于单色光场来说，标量波动方程与Helmholtz方程是等价的.</p>
+        <p>标量波动方程同时存在时间与空间变量，而Helmholtz方程只包含空间变量，因此在求解单色光场的空间分布时，Helmholtz方程更为方便.</p>
+
+        $$(\nabla^2 + k_i^2)\boldsymbol{E}_i = -i\omega\mu_0\mu_i\boldsymbol{j}_i + \frac{\nabla\rho_i}{\epsilon_0\epsilon_i}$$
+        $$(\nabla^2 + k_i^2)\boldsymbol{H}_i = -\nabla\times\boldsymbol{j}_i$$
+    </div>
+
 </body>
 
 </html>

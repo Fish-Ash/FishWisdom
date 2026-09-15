@@ -43,22 +43,29 @@
             </ul>
         </div>
 
-        <p>一个动力学体系的状态可以用一个归一化的波函数\(\Psi\)描述.</p>
+        <div class="Card-Analysis">
+            <h2>Scrödinger方程</h2>
 
-        <p>求解Schrödinger方程可以得到粒子的波函数\(\Psi(x,t)\).</p>
-        <p>给定适当的初始条件，Schrödinger方程可以决定以后所有时刻的波函数.</p>
-
-        <div class="Card-Formula" id="Time-Dependent Schrödinger Equation">
-            <b>含时Schrödinger方程</b>
-            $$i\hbar\frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m}\frac{\partial^2\Psi}{\partial x^2}+V\Psi$$
-            <ul>
-                <li>\(\hbar = \frac{h}{2\pi} = 1.054572\times 10^{-34}J\cdot s\)</li>
-            </ul>
+            <p>一个动力学体系的状态可以用一个归一化的波函数\(\Psi\)描述.</p>
+    
+            <p>求解Schrödinger方程可以得到粒子的波函数\(\Psi(x,t)\).</p>
+            <p>给定适当的初始条件，Schrödinger方程可以决定以后所有时刻的波函数.</p>
+    
+            <div class="Card-Formula" id="Time-Dependent Schrödinger Equation">
+                <b>含时Schrödinger方程</b>
+                $$i\hbar\frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m}\frac{\partial^2\Psi}{\partial x^2}+V\Psi$$
+                <ul>
+                    <li>\(i\)：虚单位</li>
+                    <li>\(\hbar\)：<a href="../Constant.html#hbar" class="goto">约化Planck常数</a></li>
+                </ul>
+            </div>
         </div>
+
 
         <div class="Card-Definition">
             <b>Born定则</b>
             <p>在\(t\)时刻发现粒子在\(x\)处的概率为\(|\Psi(x,t)|^2\).</p>
+            <p>在\(t\)时刻发现粒子在\(a\)与\(b\)之间的概率为\(\int_a^b|\Psi(x,t)|^2\mathrm{d}x\).</p>
 
             <p>[推论]</p>
             $$\int_{-\infty}^{+\infty}|\Psi(x,t)|^2\mathrm{d}x = 1$$

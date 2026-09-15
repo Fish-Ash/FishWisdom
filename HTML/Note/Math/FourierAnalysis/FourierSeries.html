@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fourier光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+    
+        <h1>Fourier级数</h1>
+
+        <b>前置知识</b>
+        <ul>
+            <li><a href="../LinearAlgebra/OrthometricVector.html">正交矢量空间</a></li>
+        </ul>
+
+        <div class="Card-Analysis">
+            <h2>三角Fourier级数</h2>
+            <p>考察三角函数系：</p>
+            $$1,\quad \cos2\pi f_0x,\quad\sin2\pi f_0x,\quad\cdots,\quad\cos2\pi nf_0x,\quad\sin2\pi nf_0x,\cdots$$
+            <p>在区间</p>
+            $$x_2 - x_1 = k\left(\frac{1}{f_0}\right),\quad k=1,2,3,\cdots$$
+            <p>上的正交性，有：</p>
+            $$\int_{x_1}^{x_2}\cos2\pi nf_0x\mathrm{d}x = \int_{x_1}^{x_2}\sin 2\pi nf_0x\mathrm{d}x = 0, \quad n\neq 0$$
+            $$\int_{x_1}^{x_2}\cos2\pi mf_0x\cdot \sin2\pi nf_0x\mathrm{d}x = 0, \quad m,n\in \mathbb{Z}$$
+            $$\int_{x_1}^{x_2}\cos2\pi mf_0x\cdot \cos 2\pi nf_0x\mathrm{d}x = \begin{cases}0, \quad m\neq n,\\ \frac{k}{2}\frac{1}{f_0}, \quad m = n\end{cases}$$
+            $$\int_{x_1}^{x_2}\sin2\pi mf_0x\cdot \sin 2\pi nf_0x\mathrm{d}x = \begin{cases}0, \quad m\neq n,\\ \frac{k}{2}\frac{1}{f_0}, \quad m = n\end{cases}$$
+            $$\int_{x_1}^{x_2}1^2\mathrm{d}x = k\left(\frac{1}{f_0}\right)$$
+
+            <p>由于函数系中任意两个不同函数的乘积在区间\((x_1, x_2)\)上的积分为0，且每个函数（除1外）自乘的积分为\(\frac{k}{2}\left(\frac{1}{f_0}\right)\)，因此在该区间三角函数系构成<a href="../LinearAlgebra/OrthometricVector.html">正交函数系</a>.</p>
+            <p>在这一区间内的任意函数\(g(x)\)可以由这些函数的线性组合表示.</p>
+            <p>若\(g(x)\)是周期为\(\tau = 1/f_0\)的周期函数，则在整个区间\((-\infty, +\infty)\)内都可以由三角Fourier级数表示：</p>
+            $$g(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty}(a_n\cos2\pi nf_0x + b_n\sin2\pi nf_0x)$$
+
+            <div class="Formula">
+                $$a_n = \frac{1}{\pi} \int_{-\pi}^\pi g(x) \cos nx \mathrm{d}x, n=0,1,2,\cdots$$
+                $$b_n = \frac{1}{\pi} \int_{-\pi}^\pi g(x) \sin nx \mathrm{d}x, n=1,2,\cdots$$
+                <div class="Derivation">
+                    <p>Fourier级数在\((0,\tau)\)区间上一致收敛于\(g(x)\)，因此可逐项积分：</p>
+                    <div class="Card-AI">
+                        <p>为什么收敛？为什么可以逐项积分？</p>
+                    </div>
+                    $$\int_0^\tau g(x)\mathrm{d}x = \int_0^\tau\frac{a_0}{2}\mathrm{d}x + \sum_{n=1}^{\infty}\left(a_n\int_0^\tau \cos2\pi nf_0x\mathrm{d}x + b_n\int_0^\tau \sin2\pi nf_0x\mathrm{d}x\right)$$
+                    <p>由于三角函数的正交性，上式右端除第一项外均为0，因此：</p>
+                    $$\int_0^\tau g(x)\mathrm{d}x = \frac{a_0}{2}\tau$$
+                    <p>Fourier级数两端同时乘\(\cos2\pi mf_0x\)或\(\sin2\pi mf_0x\)，然后逐项积分，因函数的正交性，右侧仅剩\(m=n\)的项，其他各项为0，因此：</p>
+                    $$\int_0^\tau g(x)\cos2\pi mf_0x\mathrm{d}x = \frac{a_0}{2}\tau$$
+                    $$\int_0^\tau g(x)\sin2\pi mf_0x\mathrm{d}x = \frac{b_0}{2}\tau$$
+                    <p>因此Fourier系数为：</p>
+                    $$a_0 = \frac{2}{\tau}\int_0^\tau g(x)\mathrm{d}x$$
+                    $$a_n = \frac{2}{\tau}\int_0^\tau g(x)\cos2\pi nf_0x\mathrm{d}x, n=1,2,\cdots$$
+                    $$b_n = \frac{2}{\tau}\int_0^\tau g(x)\sin2\pi nf_0x\mathrm{d}x, n=1,2,\cdots$$
+                </div>
+            </div>
+            <p>称为\(g(x)\)的傅里叶系数，表示相应频率\(nf_0, n=0,1,2,\cdots\)的余弦波分量与正弦波分量的振幅大小.</p>
+
+
+            <p>利用三角关系式：</p>
+            $$B_n\cos(2\pi n f_0 x + \phi_n) = B_n\cos\phi_n \cos2\pi nf_0 x - B_n\sin\phi_n\sin2\pi nf_0x$$
+            <p>[令]</p>
+            $$a_n = B_n\cos\phi_n,\quad b_n = -B_n\sin\phi_n$$
+            <p>Fourier级数可以改写为：</p>
+            $$g(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty}B_n\cos(2\pi nf_0x + \phi_n)$$
+            <ul>
+                <li>\(B_n = \sqrt{a_n^2 + b_n^2}\)</li>
+                <li>\(\phi_n = \arctan\left(-\frac{b_n}{a_n}\right)\)</li>
+            </ul>
+
+            <p>公式表明，周期函数\(g(x)\)可以表示为无穷多不同频率余弦波分量的线性组合，每一频率余弦波分量的振幅\(B_n\)于初相位\(\Phi_n\)由上式决定.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>指数Fourier级数</h2>
+            <p>考虑复指数函数系：</p>
+            $$\left\{e^{i2\pi nf_0x}\right\},\quad n\in\mathbb{Z}$$
+            <p>在区间</p>
+            $$x_2 - x_1 = k\left(\frac{1}{f_0}\right),\quad k\in\mathbb{N}_+$$
+            <p>上正交，因为它满足以下条件：</p>
+            $$\int_{x_1}^{x_2}e^{i2\pi mf_0x}(e^{i2\pi nf_0x})^*\mathrm{d}x = \int_{x_1}^{x_2}e^{i2\pi(m-n)f_0x}\mathrm{d}x = \begin{cases}0,\quad m\neq n\\k\left(\frac{1}{f_0}\right),\quad m=n\end{cases}$$
+
+            <p>满足狄利克雷条件的周期为\(\tau = \frac{1}{f_0}\)的函数\(g(x)\)，可以表示为无限多不同频率的复指数函数的线性组合，即指数傅里叶级数形式：</p>
+            $$g(x) = \sum_{n=-\infty}^{+\infty}c_ne^{i2\pi nf_0x},\quad n\in\mathbb{Z}$$
+            <p>为了确定系数\(c_n\)，用\((e^{i2\pi mf_0x})^*\)乘上式两端，然后在\((0,\tau)\)区间积分，得到：</p>
+            $$\int_0^\tau g(x)e^{-i2\pi (n-m)f_0x}\mathrm{d}x = \sum_{n=-\infty}^{+\infty}\int_0^\tau c_n e^{i2\pi(n-m)f_0x}\mathrm{d}x$$
+            <p>由函数的正交性可知，上式右端仅\(m=n\)项积分不为0.</p>
+            $$\int_0^\tau g(x)e^{-i2\pi nf_0x}\mathrm{d}x = c_n\tau$$
+            $$c_n = \frac{1}{\tau}\int_0^\tau g(x)e^{-i2\pi nf_0x}\mathrm{d}x$$
+
+            <div class="Card-Definition">
+                <b>频谱（频谱函数）</b>
+                <p>Fourier系数\(c_n\)为频率\(nf_0\)的函数，称为频谱函数.</p>
+            </div>
+
+            <p>定义在空间域的函数\(g(x)\)，也可以从频率域研究，即将函数看作不同频率的复指数分量的线性组合，研究系数\(c_n\)与频率\(nf_0\)的关系，也就是研究频谱.</p>
+            <p>\(c_n\)为复函数时，可以表示为：</p>
+            $$c_n = A_n e^{i\phi_n}$$
+            <ul>
+                <li>\(A_n = |c_n|\)：振幅频谱</li>
+                <li>\(\phi_n\)：相位频谱</li>
+            </ul>
+        </div>
+        
+        <div class="Card-Analysis">
+            <h2>三角Fourier级数与指数Fourier级数的关系</h2>
+            <p>三角Fourier级数与指数Fourier级数只是同一种级数的两种表示方式，一种系数可以由另一种系数导出.</p>
+
+            <p>利用欧拉公式，可以找到\(c_n\)与三角Fourier级数系数\(a_n,b_n\)间的关系，三角Fourier级数可以改写为：</p>
+            $$\begin{align}
+            g(x) &= \frac{a_0}{2} + \sum_{n=1}^{+\infty}\left[a_n\left(\frac{e^{i2\pi nf_0x} + e^{-i2\pi nf_0x}}{2}\right) + b_n\left(\frac{e^{i2\pi nf_0x} + e^{-i2\pi nf_0x}}{2i}\right)\right]\\
+                 &= \frac{a_0}{2} + \sum_{n=1}^{+\infty}\left[\left(\frac{a_n-ib_n}{2}\right)e^{i2\pi nf_0x} + \left(\frac{a_n + ib_n}{2}e^{-i2\pi nf_0x}\right)\right]
+            \end{align}$$
+            <p>[令]</p>
+            $$c_0 = \frac{a_0}{2}$$
+            $$c_n = \frac{1}{2}(a_n - ib_n),\quad n\in\mathbb{N}_+$$
+            $$c_{-n} = \frac{1}{2}(a_n + ib_n),\quad n\in\mathbb{N}_+$$
+            <p>则有：</p>
+            $$\begin{align}
+            g(x) &= c_0 + \sum_{n=1}^{+\infty}(c_ne^{i2\pi nf_0x} + c_{-n}e^{-i2\pi nf_0x})\\
+                 &= \sum_{n=-\infty}^{+\infty}c_n e^{i2\pi nf_0 x}, \quad n\in\mathbb{Z}
+            \end{align}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>收敛定理（狄利克雷条件）</h2>
+
+            <p>函数\(g(x)\)应满足狄利克雷条件，即在一个周期内仅有有限个极值点与第一类不连续点.</p>
+
+            <p>设\(f(x)\)为周期函数，若其满足：</p>
+            <ul>
+                <li>在一个周期内连续或只有有限个第一类间断点</li>
+                <li>在一个周期内至多只有有限个极值点</li>
+            </ul>
+            <p>则\(f(x)\)的傅里叶级数收敛，且：</p>
+            <ul>
+                <li>\(x_0\)为\(f(x)\)连续点\(\Rightarrow\)级数收敛于\(f(x_0)\)</li>
+                <li>\(x_0\)为\(f(x)\)间断点\(\Rightarrow\)级数收敛于\(\frac{1}{2}[f(x_0^-) + f(x_0^+)]\)</li>
+            </ul>
+            
+            <b>常用结论</b>
+            $$\sin n\pi = 0$$
+            $$\cos n\pi = (-1)^n$$
+            <p>[注]\(\sin[(n+k)x], \cos[(n+k)x]\)直接展开.</p>
+            
+            <h3>将\(f(x)\)展开为傅里叶级数的基本步骤</h3>
+            <p><span lang="en">(1)</span>列出\(a_n\)表达式，将\(n=0\)代入求得\(a_0\).</p>
+            <p><span lang="en">(2)</span>求出\(n=1,2,\cdots\)时的\(a_n\)与\(b_n\).</p>
+            <p><span lang="en">(3)</span>判断\(f(x)\)在一个区间内的连续性，以及\(f(-l)\)是否等于\(f(l)\)，得出收敛区间.</p>
+            <p>[注]：若\(f(x)\)在\(x_0\)出间断，则\(x\neq (2k + 1)x_0, k\in \mathbb{Z}\)</p>
+            
+        </div>
+
+
+        <h3>周期为\(2\pi\)函数\(f(x)\)的展开</h3>
+        <b>奇函数在\([-\pi, \pi\)上的傅里叶级数</b>
+        $$a_n = 0, n = 0,1,2, \cdots$$
+        $$b_n = \frac{2}{\pi}\int_0^\pi f(x)\sin nx \mathrm{d}x, n=1,2,\cdots$$
+        <b>\(f(x)\)为偶函数</b>
+        $$a_n = \frac{2}{\pi}\int_0^\pi f(x)\cos nx \mathrm{d}x, n=0,1,2\cdots$$
+        $$b_n = 0, n=1,2,\cdots$$
+
+        <b>在\([0,\pi]\)上函数\(f(x)\)的正弦级数和余弦级数</b>
+        <p>（1）将\(f(x)\)延拓成\([-\pi, \pi]\)上的奇函数，则</p>
+        $$a_0, n=0,1,2\cdots$$
+        $$b_n = \frac{2}{\pi}\int_0^\pi f(x)\sin nx \mathrm{d}x, n=1,2,\cdots$$
+        <p>\(f(x)\)的正弦级数为：</p>
+        $$f(x) \sim \sum\limits_{n=1}^\infty b_n\sin nx$$
+
+        <p>（2）将\(f(x)\)延拓成\([-\pi, \pi]\)上的偶函数，则</p>
+        $$a_n = \frac{2}{\pi}\int_0^\pi f(x)\cos nx \mathrm{d}x, n=0,1,2\cdots$$
+        $$b_n = 0, n=1,2,\cdots$$
+        <p>\(f(x)\)的余弦级数为：</p>
+        $$f(x)\sim \frac{a_0}{2} + \sum\limits_{n=1}^\infty a_n\cos nx$$
+
+
+        <b>周期为\(2l\)的函数的展开</b>
+        <p>在\([-l,l]\)上函数\(f(x)\)的傅里叶级数为</p>
+        $$f(x)\sim \frac{a_0}{2} + \sum\limits_{n=1}^\infty(a_n\cos \frac{n\pi}{l}x + b_n\sin\frac{n\pi}{l}x)$$
+        $$a_n = \frac{1}{l}\int_{-l}^{l}f(x)\cos\frac{n\pi}{l}x\mathrm{d}x, n=0,1,2,\cdots$$
+        $$b_n = \frac{1}{l}\int_{-l}^lf(x)\sin\frac{n\pi}{l}x\mathrm{d}x, n=1,2,\cdots$$
+
+
+        <b>在\([-l,l]\)上奇偶函数的傅里叶级数展开</b>
+        <p>\(f(x)\)为奇函数</p>
+        $$a_n = 0, n=0,1,2,\cdots$$
+        $$b_n = \frac{2}{l}\int_0^lf(x)\sin\frac{n\pi}{l}x\mathrm{d}x, n=1,2,\cdots$$
+        $$f(x)\sim \sum\limits_{n=1}^\infty b_n\sin\frac{n\pi}{l}x$$
+
+        <p>\(f(x)\)为偶函数</p>
+        $$a_n = \frac{2}{l}\int_0^{l}f(x)\cos\frac{n\pi}{l}x\mathrm{d}x, n=0,1,2,\cdots$$
+        $$b_n = 0, n=1,2,\cdots$$
+        $$f(x)\sim \frac{a_0}{2} + \sum\limits_{n=1}^\infty a_n\cos \frac{n\pi}{l}x$$
+
+        <b>在\([0,l]\)上\(f(x)\)的正弦级数和余弦级数</b>
+        <p>（1）将\(f(x)\)延拓成\([-l,l]\)上的奇函数，则</p>
+        $$a_n = 0, n=0,1,2,\cdots$$
+        $$b_n = \frac{2}{l}\int_0^lf(x)\sin\frac{n\pi}{l}x\mathrm{d}x, n=1,2,\cdots$$
+        $$f(x)\sim \sum\limits_{n=1}^\infty b_n\sin\frac{n\pi}{l}x$$
+
+        <p>（1）将\(f(x)\)延拓成\([-l,l]\)上的偶函数，则</p>
+        $$a_n = \frac{2}{l}\int_0^{l}f(x)\cos\frac{n\pi}{l}x\mathrm{d}x, n=0,1,2,\cdots$$
+        $$b_n = 0, n=1,2,\cdots$$
+        $$f(x)\sim \frac{a_0}{2} + \sum\limits_{n=1}^\infty a_n\cos \frac{n\pi}{l}x$$
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

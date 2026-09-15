@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>泛函分析</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>线性空间</h1>
+        <p>设\(X\)为一非空集合，在\(X\)中定义了元素的加法运算与实数（或复数）同\(X\)中元素的乘法运算，满足下列条件：</p>
+        <p>1、关于加法成为<b>交换群</b>，即\(\forall x,y\in X, \exists u\in X\)与之对应，记作\(u = x+y\)，称为\(x\)与\(y\)的和，满足：</p>
+        <ul>
+            <li>\(x+y = y+x\)</li>
+            <li>\((x+y)+z = x+(y+z),~z\in X\)</li>
+            <li>在\(X\)中存在唯一元素\(\theta\)，使\(\forall x\in X\)，有\(x+\theta = x\)，称\(\theta\)为\(X\)中<b>零元素</b>.</li>
+            <li>\(\forall x \in X\)，存在唯一元素\(x'\in X\)，使\(x + x' = \theta\)，称\(x'\)为\(x\)的负元素，记作\(-x\).</li>
+        </ul>
+        <p>2、\(\forall x\in X\)，及任意实数（或复数）\(a\)，存在元素\(u\in X\)与之对应，及\(u = ax\)，称为\(a\)与\(x\)的数积，满足：</p>
+        <ul>
+            <li>\(1x = x\)</li>
+            <li>\(a(bx) = (ab)x\)对任意实数（或复数）\(a\)和\(b\)成立.</li>
+            <li>\((a+b)x = ax+bx, a(x+y) = ax + ay\)</li>
+        </ul>
+
+        <p>称\(X\)按上述加法和数乘运算成为<b>线性空间</b>或<b>向量空间</b>.</p>
+        <p>其中的元素成为<b>向量</b>.</p>
+        <p>若数积运算仅对实数（或复数）有意义，称\(X\)为实（复）线性空间.</p>
+
+        <div class="Card-AI">
+            <p>当取值既包含实数也包含复数时，由于实数属于复数，因此也称为复数线性空间.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>\(l^p\)空间（\(p\gt 0\)）</h2>
+            <p>设复数列\(x = (\xi_1, \xi_2, \cdots)\)，若\(\sum_\limits{i=1}^\infty|\xi_i|^p\lt \infty\)，称数列\((\xi_1, \xi_2, \cdots)\)为<b>\(p\)次收敛数列</b>.</p>
+            <p>记\(p\)次收敛数列全体为\(l^p\).</p>
+
+            <div class="Card-Question">
+                <p>x为无穷数列是吗？</p>
+            </div>
+            
+            <p>\(\forall x = (\xi_i,\xi_2,\cdots),~y = (\eta_1, \eta_2, \cdots)\in l^p\)及\(a\in\mathbb{C}\)，定义：</p>
+            $$x + y = (\xi_1+\eta_1, \xi_2+\eta_2 + \cdots)$$
+            $$ax = (a\xi_1, a\xi_2, a\xi_3, \cdots)$$
+
+            $$x + y\in l^p,\quad ax\in l^p$$
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>
