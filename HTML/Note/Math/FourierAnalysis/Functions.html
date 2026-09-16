@@ -36,25 +36,44 @@
         </div>
         
         <h1>常用函数</h1>
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#step">阶跃函数</a></li>
+                <li><a href="#sgn">符号函数</a></li>
+                <li><a href="#rect">矩形函数</a></li>
+            </ul>
+        </div>
 
-        <div class="Card-Analysis">
+        <div class="Card-Analysis" id="step">
             <h2>阶跃函数</h2>
             $$\text{step}(x) = \begin{cases}1,\quad x\gt0\\\frac{1}{2},\quad x=0\\0,\quad x\lt 0\end{cases}$$
-            <img src="Img/step.jpg" width="250">
+            <img src="Img/step.jpg" width="250" alt="阶跃函数">
 
             $$\text{step}(x)f(x) = \begin{cases}f(x),\quad x\gt 0\\0,\quad x\lt 0\end{cases}$$
         </div>
 
-        <div class="Card-Analysis">
+        <div class="Card-Analysis" id="sgn">
             <h2>符号函数</h2>
             $$\text{sgn}(x) = \begin{cases}1,\quad x\gt0\\0, \quad x=0\\-1,\quad x\lt 0\end{cases}$$
             $$\text{sgn}(x) = 2\text{step}(x) - 1$$
             <img src="Img/sgn.jpg" width="200">
         </div>
 
-        <div class="Card-Analysis">
+        <div class="Card-Analysis" id="rect">
             <h2>矩形函数</h2>
-            $$\text{rect}\left(\frac{x}{a}\right) = \begin{cases}1,\quad |x|\leq \frac{a}{2}\\0,\quad \text{others}\end{cases}$$
+            <b>一维矩形函数</b>
+            $$\text{rect}\left(\frac{x-x_0}{a}\right) = \begin{cases}1,\quad \left\lvert\frac{x-x_0}{a}\right\rvert\leq \frac{1}{2}\\0,\quad \text{others}\end{cases}$$
+            <p>其中\(a\gt 0\).</p>
+            <p>函数图像表示以\(x_0\)为中心，宽度为\(a\)，高度为\(1\)的矩形.</p>
+            <img src="Img/rect.jpg" width="300" alt="一维矩形函数">
+
+            <div class="Card-AI">
+                <p>矩形函数与sinc函数互为傅里叶变换对.</p>
+            </div>
+
+            <b>二维矩形函数s</b>
+            <p>二维矩形函数可以表示为一维矩形函数的乘积：</p>
+            $$\text{rect}\left(\frac{x-x_0}{a}\right)\text{rect}\left(\frac{y-y_0}{b}\right),\quad a,b\gt0$$
         </div>
 
         <div class="Card-Analysis">
@@ -70,12 +89,13 @@
             $$\text{circ}\left(\frac{\sqrt{x^2 + y^2}}{a}\right) = \begin{cases}1,\quad\sqrt{x^2+y^2}\leq a\\0,\quad\text{others}\end{cases}$$
             <p>极坐标内的定义式为：</p>
             $$\text{circ}\left(\frac{r}{a}\right) = \begin{cases}1,\quad r\leq a\\0,\quad r\gt a\end{cases}$$
-            <img src="Img/circ.jpg" width="200">
+            <img src="Img/circ.jpg" width="200" alt="圆柱函数">
         </div>
 
         <div class="Card-Analysis">
             <h2>sinc函数</h2>
             $$\text{sinc}\left(\frac{x-x_0}{a}\right) = \frac{\sin\pi(x-x_0)/a}{\pi(x-x_0)/a}$$
+            <img src="Img/sinc.jpg" width="300" alt="sinc函数">
         </div>
 
         <div class="Card-Analysis">

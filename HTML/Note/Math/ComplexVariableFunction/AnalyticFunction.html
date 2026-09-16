@@ -5,9 +5,20 @@
     <head>
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>复变函数</title>
+        <title>Fourier光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
         <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
@@ -18,7 +29,52 @@
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
 
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
         <h1>解析函数</h1>
+
+        <div class="Card-Analysis">
+            <h2>复变函数的导数</h2>
+            <div class="Card-Definition">
+                <b>复变函数的导数</b>
+                <p>设\(\omega = f(z)\)为定义在区域D内的单值函数，\(z_0 \in D\)，且\(\omega_0 = f(z_0)\).</p>
+                <p>记\(\Delta z = z - z_0,~\Delta \omega =  f(z) - f(z_0)\).</p>
+                <p>若极限</p>
+                $$\lim_{\Delta z \to 0}\frac{\Delta \omega}{\Delta z} = \lim_{z\to z_0} \frac{f(z) - f(z_0)}{z - z_0}$$
+                <p>存在，则称函数\(f(z)\)在点\(z_0\)处<b>可导</b>（<b>可微</b>），极限值记为\(f'(z_0)\)或\(\left.\frac{\mathrm{d}f(z_0)}{\mathrm{d}z}\right|_{z=z_0}\)或\(\frac{\mathrm{d}\omega}{\mathrm{d}z}\bigg|_{z=z_0}\)，称为函数\(f(z)\)在点\(z_0\)处的导数.</p>
+            </div>
+
+            <p><b>结论</b>：可导一定连续，连续不一定可导.</p>
+
+            <h3>导数的运算法则</h3>
+            <b>常数的导数</b>
+            $$C' = 0$$
+
+            <b>和与差的导数</b>
+            <p>若单值函数\(f(z),~g(z)\)在\(z_0\)可导，则单值函数\(f(z)\pm g(z)\)也在\(z_0\)可导，且：</p>
+            $$\left.\left[f(z)\pm g(z)\right]'\right\rvert_{z=z_0} = f'(z_0)\pm g'(z_0)$$
+
+            <b>积的导数</b>
+            <p>若单值函数\(f(z),~g(z)\)在\(z_0\)可导，则单值函数\(f(z)\cdot g(z)\)也在\(z_0\)可导，且：</p>
+            $$\left.\left[f(z)\cdot g(z)\right]'\right\rvert_{z=z_0} = f'(z_0)\cdot g(z_0) + f(z_0)\cdot g'(z_0)$$
+
+            <b>商的导数</b>
+            <p>若单值函数\(f(z),~g(z)\)在\(z_0\)可导，且\(g(z_0) \neq 0\)，则单值函数\(\frac{f(z)}{g(z)}\)也在\(z_0\)可导，且：</p>
+            $$\left.\left[\frac{f(z)}{g(z)}\right]'\right\rvert_{z=z_0} = \frac{f'(z_0)\cdot g(z_0) - f(z_0)\cdot g'(z_0)}{g^2(z_0)}$$
+
+            <b>复合函数的导数</b>
+            <p>设单值函数\(\zeta = g(z)\)在\(z_0\)可导，单值函数\(w = f(\zeta)\)在\(\zeta_0 = g(z_0)\)可导，则单值函数\(w = f[g(z)]\)在\(z_0\)可导，且：</p>
+            $$\left.f'[g(z)]'\right\rvert_{z=z_0} = f'(\zeta_0)\cdot g'(z_0)$$
+
+            <b>反函数的导数</b>
+            <p>设函数\(\omega = f(z)\)将区域\(D\)双方单值连续映射成区域\(D^*\)，又\(\omega_0 = f(z_0),~z_0\in D\).</p>
+            <p>若函数\(f(z)\)在点\(z_0\)处可导且\(f'(z_0)\neq 0\)，则区域\(D^*\)上的单值连续反函数\(z = f^{-1}(\omega)\)在\(\omega_0\)处可导，且：</p>
+            $$\left.\frac{\mathrm{d}z}{\mathrm{d}\omega}\right|_{\omega=\omega_0} = \frac{1}{f'(z_0)}$$
+        </div>
         
         <div class="Card-Definition">
             <b>解析</b>
@@ -57,10 +113,10 @@
 
 
 
-        <a class="BackToTop" href="#PageHead">Top</a>
-        <div class="PageEnd"></div>
-        
-        <script src="/JavaScript/Capacity.js"></script>
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
 </html>

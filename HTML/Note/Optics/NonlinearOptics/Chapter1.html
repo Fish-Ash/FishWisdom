@@ -298,14 +298,29 @@
                 $$F = -kx$$
                 <p>上式中的第一项算简谐力，而整体不是简谐力.</p>
             </div>
-            <p>此时，振子的运动方程为：</p>
+            <p id="formmula2">此时，振子的运动方程为：</p>
             $$\frac{\mathrm{d}^2r}{\mathrm{d}t^2} + 2h\frac{\mathrm{d}r}{\mathrm{d}t} + \omega_0^2r - Ar^2 - Br^3 = -\frac{e}{m}E$$
+            <p>给定光电场\(E\)，即可解出\(r\)，再由\(P = -ner\)，就可求出非线性极化强度与非线性极化率.</p>
+
             <p id="formula1">一维振子的二阶非线性极化率表示式</p>
             $$\chi^2(\omega_1, \omega_2) = -A\frac{ne^3}{\epsilon_0m^2}F(\omega_1 + \omega_2)F(\omega_1)F(\omega_2)$$
             <div class="Card-Question">
                 <p>1、非简谐力的来历</p>
                 <p>2、振子运动方程的来历</p>
             </div>
+
+            <h3>单个频率光场的情况</h3>
+            <p>[设]频率为\(\omega\)的光电场表示式为：</p>
+            $$E = E(\omega)e^{-i\omega t} + E^*(\omega)e^{i\omega t}$$
+            <p>由于<a href="#formula2">振子的运动方程</a>是非线性的，直接求解非常困难，考虑到振子恢复力中的非简谐项较小，可以根据微扰理论求解.</p>
+            <div class="Card-AI">
+                <p>微扰理论也称为摄动理论，是量子力学中的内容.</p>
+            </div>
+            <p>将\(r\)展开为幂级数形式：</p>
+            $$r = \sum_{k=1}^\infty r_k$$
+            <p>将其代入<a href="#formmula2">振子的运动方程</a>，可以得到一系列\(r_k\)所满足的方程.</p>
+            <p>在每个方程中包含的项，对光电场来说具有相同的阶次.</p>
+
         </div>
         
 

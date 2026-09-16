@@ -26,7 +26,7 @@ def find_html_with_content(folder_path, target_content, case_sensitive=False):
 # 使用示例
 if __name__ == "__main__":
     search_folder = r"D:\Code\Git\FishWisdom\HTML"  # 替换为目标文件夹路径
-    target_content = r"Poynting"  # 替换为要搜索的内容
+    target_content = r"复合函数的导数"  # 替换为要搜索的内容
     matching_files = find_html_with_content(search_folder, target_content)
     
     print("\n搜索结果:")

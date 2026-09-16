@@ -124,6 +124,36 @@
 
         </div>
 
+        <div class="Card-Analysis">
+            <h2>广义Fourier变换</h2>
+
+            <p>若只考虑经典意义（狭义）的Fourier变换，那么对一些很有用的函数，都无法确定其Fourier变换，这给Fourier变换带来很大的局限性.</p>
+            <p>Fourier变换之所以获得如此广泛的应用，很大程度上与引入广义Fourier变换有关.</p>
+            
+            <b>广义Fourier变换：</b>
+            <ul>
+                <li>极限意义下的Fourier变换</li>
+                <li>\(\delta\)函数的Fourier变换</li>
+            </ul>
+
+            <h3>极限意义下的Fourier变换</h3>
+            <p>[设]\(\boldsymbol{f}(x)\)是一个无法确定狭义Fourier变换的函数.</p>
+            <p>若\(\boldsymbol{f}(x)\)与一个函数序列\(\boldsymbol{f}_n(x)\)（\(n = 1,2,\cdots\)）具有如下关系：</p>
+            $$\boldsymbol{f}(x) = \lim_{n\to\infty}\boldsymbol{f}_n(x)$$
+            <p>且对函数序列中的每个函数\(\boldsymbol{f}_n(x)\)来说，其狭义Fourier变换：</p>
+            $$\boldsymbol{F}_n(\xi) = F\{\boldsymbol{f}_n(x)\}$$
+            <p>都存在.</p>
+            <p>且当\(n\to\infty\)时，函数序列\(\boldsymbol{F}(\xi)\)也具有确定的极限，则称该极限为函数在极限意义下的Fourier变换.</p>
+
+            <h3>\(\delta\)函数的Fourier变换</h3>
+            <p>\(\delta\)函数是一个广义函数，狭义Fourier变换的概念不再适用.</p>
+            <p>然而，根据\(\delta\)函数的定义式，可以直接求得其Fourier变换.</p>
+            $$\boldsymbol{F}\{\delta(x)\} = \int_{-\infty}^{+\infty}\delta(x)e^{-i2\pi\xi x}\mathrm{d}x = 1$$
+            <p>即\(\delta\)函数的Fourier变换为常数1.</p>
+
+
+        </div>
+
        
         
         <div id="PageEnd"></div>

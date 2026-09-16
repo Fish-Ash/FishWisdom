@@ -89,6 +89,66 @@
             $$\nabla\cdot(\frac{\hat{\boldsymbol{r}}}{r^2}) = 4\pi\delta^3(\boldsymbol{r})$$
         </div>
         
+        <div class="Card-Analysis">
+            <h2>\(\delta\)函数</h2>
+            <h3>\(\delta\)函数的定义</h3>
+            <b>类似普通函数形式的定义：</b>
+            $$\begin{cases}
+            \delta(x,y) = \begin{cases}0,\quad (x,y)\neq (0,0)\\ \infty,\quad (x,y) = (0,0) \end{cases}\\
+            \iint_{-\infty}^{+\infty}\delta(x,y)\mathrm{d}x\mathrm{d}y = 1
+            \end{cases}$$
+            <p>在这个\(\delta\)函数定义中，与普通函数的类似之处，就是保留了数值对应关系的痕迹.</p>
+
+            <b>普通函数序列极限形式的定义</b>
+            $$\delta(x,y) = \lim_{n\rightarrow\infty}g_n(x,y)$$
+            <div class="Card-AI">
+                <p>不是更复杂了吗？</p>
+            </div>
+
+            <b>广义函数形式的定义</b>
+            <p>\(\delta\)函数是一个广义函数，它赋予检验函数\(f(x,y)\)一个数\(f(0,0)\)，即：</p>
+            $$\iint_{-\infty}^{+\infty}\delta(x,y)f(x,y)\mathrm{d}x\mathrm{d}y = f(0,0)$$
+            <p>其中\(f(x,y)\)在原点处连续.</p>
+            <p>上式表明：\(\delta(x,y)\)在该式左端积分中的作用，就是赋予\(f(x,y)\)在\((x,y) = (0,0)\)处的数值\(\phi(0,0)\).</p>
+            <p>不同形式的函数，只要其在积分中的作用与上式相同，就可以认为它们与\(\delta(x,y)\)相等.</p>
+            <div class="Card-AI">
+                <p>不是无穷吗？抽样的作用是什么？</p>
+            </div>
+
+            <h3>\(\delta\)函数的性质</h3>
+            <b>筛选性质</b>
+            <p>[设]\(f(x,y)\)在\(x_0, y_0\)处连续：</p>
+            $$\iint_{-\infty}^{+\infty}\delta(x-x_0,y-y_0)f(x,y)\mathrm{d}x\mathrm{d}y = f(x_0,y_0)$$
+
+            <b>坐标缩放性质</b>
+            <p>[设]\(a,b\in\mathbb{R}\)：</p>
+            $$\therefore \delta(ax, by) = \frac{1}{|ab|}\delta(x,y)$$
+
+            <b>可分离变量性</b>
+            $$\delta(x,y) = \delta(x)\delta(y)$$
+
+            <b>与普通函数乘积的性质</b>
+            <p>[设]\(f(x,y)\)在\(x_0, y_0\)处连续：</p>
+            $$f(x,y)\delta(x-x_0,y-y_0) = f(x_0,y_0)\delta(x-x_0,y-y_0)$$
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>梳状函数</h2>
+            <h3>一维梳状函数</h3>
+            $$\text{comb}(x) = \sum_{n=-\infty}^{+\infty}\delta(x-n)$$
+            <p>[注]梳状函数也是广义函数，其性质可由\(\delta\)函数的性质推出.</p>
+
+            <img src="Img/comb.jpg" width="300" alt="梳状函数">
+            <p>这是间隔为\(1\)的\(\delta\)函数的无穷序列.</p>
+
+            <h3>二维梳状函数</h3>
+            <p>常在直角坐标系内考察二维梳状函数，记为\(\text{comb}(x,y)\).</p>
+            $$\begin{align}
+            \text{comb}(x,y) &= \sum_{m=-\infty}^{+\infty}\delta(x-m)\sum_{n=-\infty}^{+\infty}\delta(y-n)\\
+                             &= \text{comb}(x)\text{comb}(y)
+            \end{align}$$
+        </div>
 
         <div id="PageEnd"></div>
 
