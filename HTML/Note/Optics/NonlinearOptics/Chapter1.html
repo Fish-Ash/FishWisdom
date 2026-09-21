@@ -200,35 +200,62 @@
                 <li>单个原子极化率：\(\chi^{(r)mic}\)</li>
             </ul>
             $$\chi^{(r)} = n\chi^{(r)mic}$$
-            <p>式中，\(n\)为介质的原子数密度.</p>
-            <p>国际单位制（SI）中：</p>
-            $$\chi^{(r)}:\left(\frac{m}{V}\right)^{r-1}$$
-            $$\chi^{(r)mic}:m^3\left(\frac{m}{V}\right)^{r-1}$$
+            <ul>
+                <li>\(n\)：介质的原子数密度</li>
+            </ul>
+
+            <table>
+                <tr>
+                    <td></td>
+                    <td>国际单位制（SI）</td>
+                    <td>高斯单位制（c. g. s. /e. s. u.）</td>
+                </tr>
+                <tr>
+                    <td>$$\chi^{(r)}$$</td>
+                    <td>$$\left(\frac{m}{V}\right)^{r-1}$$</td>
+                    <td>$$\left(\frac{cm^3}{erg}\right)^{(r-1)/2}$$</td>
+                </tr>
+                <tr>
+                    <td>$$\chi^{(r)mic}$$</td>
+                    <td>$$m^3\left(\frac{m}{V}\right)^{r-1}$$</td>
+                    <td>$$cm^3\left(\frac{cm^3}{erg}\right)^{(r-1)/2}$$</td>
+                </tr>
+            </table>
+
+
+            <p>两种单位制中，线性极化率\(\chi^{(1)}\)都是无量纲的，其他非线性极化率张量间的关系为：</p>
+            $$\frac{\chi^{(r)}(SI)}{\chi^{(r)}(c. g. s.)} = \frac{4\pi}{(3\times 10^4)^{r-1}}$$
+            $$\frac{\chi^{(r)mic}(SI)}{\chi^{(r)mic}(c. g. s.)} = \frac{4\pi}{10^6(3\times 10^4)^{(r-1)}}$$
+            
+        </div>
+    
+        <div class="Card-Analysis">
+            <h2>第二节 非线性光学极化率的经典描述</h2>
+            <p>振子的非线性响应可以用于描述非线性光学现象.</p>
+            <b>频率为\(\omega\)的光电场：</b>
+            $$E = E(\omega)e^{-i\omega t} + E^*(\omega)e^{i\omega t}$$
+
+            <b>包含多个频率分量光电场</b>
+            <p>设光电场包含多个频率分量，用复数表示时，可以写成以下形式：</p>
+            $$E = \sum_nE(\omega_n)e^{-i\omega_n t}$$
+            <ul>
+                <li>\(E(\omega_n)\)：频率为\(\omega_n\)的光场的复振幅.</li>
+            </ul>
+            <p>考虑到光场的真实性，有：</p>
+            $$E(-\omega_n) = E^*(\omega_n)$$
+            <div id="SecondOrderP">
+                $$P^{(2)}(t) = \epsilon_0\sum_{m,n}\chi^{(2)}(\omega_m,\omega_n)E(\omega_m)E(\omega_n)e^{-i(\omega_m + \omega_n)t}$$
+            </div>
+            <p>设光电场包含\(x\)个频率，则：</p>
+            $$\omega_m, \omega_n \in \{\pm\omega_1, \pm\omega_2, \cdots, \pm\omega_x\}$$
+            <p>即\(\boldsymbol{P}^{(2)}\)的展开式中存在\(x^2\)项.</p>
+
+            <div class="Card-AI">
+                <p>\(-\omega\)是为了描述实际电场引入的分量.</p>
+            </div>
         </div>
 
-        <h2>第二节 非线性光学极化率的经典描述</h2>
-        <p>振子的非线性响应可以用于描述非线性光学现象.</p>
-        <b>频率为\(\omega\)的光电场：</b>
-        $$E = E(\omega)e^{-i\omega t} + E^*(\omega)e^{i\omega t}$$
 
-        <b>包含多个频率分量光电场</b>
-        <p>设光电场包含多个频率分量，用复数表示时，可以写成以下形式：</p>
-        $$E = \sum_nE(\omega_n)e^{-i\omega_n t}$$
-        <ul>
-            <li>\(E(\omega_n)\)：频率为\(\omega_n\)的光场的复振幅.</li>
-        </ul>
-        <p>考虑到光场的真实性，有：</p>
-        $$E(-\omega_n) = E^*(\omega_n)$$
-        <div id="SecondOrderP">
-            $$P^{(2)}(t) = \epsilon_0\sum_{m,n}\chi^{(2)}(\omega_m,\omega_n)E(\omega_m)E(\omega_n)e^{-i(\omega_m + \omega_n)t}$$
-        </div>
-        <p>设光电场包含\(x\)个频率，则：</p>
-        $$\omega_m, \omega_n \in \{\pm\omega_1, \pm\omega_2, \cdots, \pm\omega_x\}$$
-        <p>即\(\boldsymbol{P}^{(2)}\)的展开式中存在\(x^2\)项.</p>
-
-        <div class="Card-AI">
-            <p>\(-\omega\)是为了描述实际电场引入的分量.</p>
-        </div>
 
 
         <div class="Card-Analysis">

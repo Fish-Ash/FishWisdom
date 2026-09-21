@@ -64,14 +64,23 @@
         
         <h2><a href="Fresnel.html" id="Fresnel">菲涅尔公式</a></h2>
 
-        <div class="Card-Definition" id="Poynting Vector">
-            <b>Poynting矢量（辐射强度矢量、能流密度）\(\boldsymbol{S}\)</b>
-            $$\boldsymbol{S} = \boldsymbol{E} \times \boldsymbol{H}$$
-            <p>用于描述电磁能量的传播。</p>
-            <p>其方向表示能量流动的方向。各向同性介质中，亦为波的传播方向。</p>
-            <p>其大小等于单位时间内垂直通过传播方向上单位面积的能量。</p>
-        </div>
+        <div class="Card-Analysis">
+            <h2>Poynting矢量</h2>
 
+            <div class="Card-Definition">
+                <b>电场的瞬态能量密度</b>
+                $$w = \frac{1}{2}\epsilon E^2(\boldsymbol{r}, t) + \frac{1}{2}\mu H^2(\boldsymbol{r}, t)$$
+            </div>
+            
+            <div class="Card-Definition" id="Poynting Vector">
+                <b>Poynting矢量（辐射强度矢量、能流密度）\(\boldsymbol{S}\)</b>
+                $$\boldsymbol{S} = \boldsymbol{E}(\boldsymbol{r}, t) \times \boldsymbol{H}(\boldsymbol{r}, t)$$
+                <p>用于描述电磁能量的传播。</p>
+                <p>其方向表示能量流动的方向。各向同性介质中，亦为波的传播方向。</p>
+                <p>其大小等于单位时间内垂直通过传播方向上单位面积的能量。</p>
+            </div>
+        </div>
+            
         <div class="Card-Definition">
             <b>光强度\(I\)</b>
             <p>介质中某点坡印廷矢量的瞬时值是忽大忽小的，但在一个周期内其平均值是一个定值，将其定义为光强度。</p>

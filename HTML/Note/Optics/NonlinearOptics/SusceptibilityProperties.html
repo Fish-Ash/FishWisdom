@@ -133,6 +133,31 @@
             <p>在这种情况下，全排列（full permutation）对称条件应当成立</p>
         </div>
 
+        <div class="Card-Analysis">
+            <h2>补充</h2>
+            <b>一阶极化率张量元素的表示式</b>
+            $$\chi_{\mu\alpha}^{(1)}(\omega) = -\frac{n}{\epsilon_0\hbar}\sum_{a,b}\rho_{aa}^0\left[\frac{R_{ab}^\mu R_{ba}^\alpha}{\omega + \omega_{ab}} - \frac{R_{ab}^\alpha R_{ba}^\mu}{\omega - \omega_{ab}}\right]$$
+
+            <h3>极化率张量的性质</h3>
+            <ul>
+                <li>完全对易对称性</li>
+                <li>Kleinman对称性</li>
+                <li>时间反演对称性</li>
+            </ul>
+
+            <h3>一阶极化率张量的完全对易对称性</h3>
+            <div class="Formula">
+                $$\chi_{\alpha\mu}^{(1)}(-\omega) = \chi_{\mu\alpha}^{(1)}(\omega)$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \chi_{\alpha\mu}^{(1)}(-\omega) = &-\frac{n}{\epsilon_0\hbar}\sum_{a,b}\rho_{aa}^0\left[\frac{R_{ab}^\alpha R_{ba}^\mu}{-\omega + \omega_{ab}} - \frac{R_{ab}^\mu R_{ba}^\alpha}{-\omega - \omega_{ab}}\right]\\
+                                                    = &-\frac{n}{\epsilon_0\hbar}\sum_{a,b}\rho_{aa}^0\left[\frac{R_{ab}^\mu R_{ba}^\alpha}{\omega + \omega_{ab}} - \frac{R_{ab}^\alpha R_{ba}^\mu}{\omega - \omega_{ab}}\right]\\
+                                                    = &\chi_{\mu\alpha}^{(1)}(\omega)
+                    \end{align}$$
+                </div>
+            </div>
+        </div>
+
 
 
 

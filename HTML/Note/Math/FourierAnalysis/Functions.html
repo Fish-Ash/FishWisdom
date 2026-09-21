@@ -78,7 +78,7 @@
 
         <div class="Card-Analysis">
             <h2>三角形函数</h2>
-            $$\text{tri}\left(\frac{x}{z}\right) = \Lambda\left(\frac{x}{a}\right) = \begin{cases}1 - \frac{|x|}{a},\quad |x|\leq a\\0,\quad \text{others}\end{cases}$$
+            $$\text{tri}\left(\frac{x}{a}\right) = \Lambda\left(\frac{x}{a}\right) = \begin{cases}1 - \frac{|x|}{a},\quad |x|\leq a\\0,\quad \text{others}\end{cases}$$
             <p>其中\(a\gt 0\)，函数为以原点为底边中心、底边长为\(2a\)、高度为\(1\)的等腰三角形.</p>
             <img src="Img/tri.jpg" width="200">
         </div>
@@ -94,7 +94,7 @@
 
         <div class="Card-Analysis">
             <h2>sinc函数</h2>
-            $$\text{sinc}\left(\frac{x-x_0}{a}\right) = \frac{\sin\pi(x-x_0)/a}{\pi(x-x_0)/a}$$
+            $$\text{sinc}\left(\frac{x-x_0}{a}\right) = \frac{\sin\left[\frac{\pi(x-x_0)}{a}\right]}{\frac{\pi(x-x_0)}{a}},\quad a\gt 0$$
             <img src="Img/sinc.jpg" width="300" alt="sinc函数">
         </div>
 
@@ -104,6 +104,11 @@
             $$\delta(x,y)\neq 0,\quad x\neq 0~or~y\neq 0$$
             $$\iint\delta(x,y)\mathrm{d}x\mathrm{d}y = 1$$
             <p>定义式表明：除原点外\(\delta\)函数值恒为\(0\)，而在原点附近无限小范围内，函数积分为\(1\).</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>Gauss函数</h2>
+            $$\text{Gauss}\left(\frac{x}{a}\right) = e^{-\pi\left(\frac{x}{a}\right)^2}$$
         </div>
 
         <div id="PageEnd"></div>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光诱导损伤</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>损伤理论</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+
+            <p>当辐射水平达到足够高的量级时，将发生一系列不可逆、灾难性的相互作用，通常称为材料的激光诱导损伤（LIDT）.</p>
+            <p>只要辐射足够强，均有可能发生这些相互作用.</p>
+            <p>激光的出现使这些现象变得突出，不论所考虑的高功率光学/激光系统的指标如何，我们均须考虑激光诱导损伤问题.</p>
+
+            <p>激光诱导损伤可能发生在光学元件的表面（前表面或后表面，取决于激光束入射的方向）、元件间的界面（尤其当它们接触时）或者大块光学元件中</p>
+            <p>元件间的反射也可能发生系统的损伤.</p>
+
+            <p>了解材料和元件的物理参数对预测激光诱导损伤的可能性非常重要.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>引发激光诱导损伤的机制</h2>
+            <ul>
+                <li>热过程</li>
+                <li>电介质过程</li>
+                <li>多光子离化</li>
+            </ul>
+
+            <h3>热过程</h3>
+            <p>源自材料中激光能量的吸收.</p>
+            <p>总的来说，适用于连续波操作、长脉冲长度以及高脉冲重复频率脉冲序列.</p>
+            
+            <h3>电介质过程</h3>
+            <p>源自电场强度足够高时电子从晶格剥离的过程.</p>
+            <p>该机制适用于脉冲长度足够短时发生的雪崩离化以及低热吸收的情况.</p>
+
+            <h3>多光子离化</h3>
+            <p>可以视为电介质过程的特殊情况.</p>
+            <p>在这样高的强度传递能量时，电子从晶格被剥离并被瞬时提升到高能级，这个效应发生在飞秒脉冲长度.</p>
+
+            <p>前两类机制可以被再分（下表），以便描述正确的因果关系，但是总的来说它们的结果是相同的.</p>
+            <table>
+                <tr>
+                    <td>电介击穿</td>
+                    <td>热吸收</td>
+                </tr>
+                <tr>
+                    <td>块体效应</td>
+                    <td>块体效应</td>
+                </tr>
+                <tr>
+                    <td>表面效应</td>
+                    <td>表面效应</td>
+                </tr>
+                <tr>
+                    <td>由于划痕、空穴、粒子等的增强</td>
+                    <td>局部吸收</td>
+                </tr>
+                <tr>
+                    <td>拉曼散射</td>
+                    <td>传导以及自由电子吸收</td>
+                </tr>
+                <tr>
+                    <td>布里渊散射</td>
+                    <td>瞬态吸收</td>
+                </tr>
+                <tr>
+                    <td>自聚焦</td>
+                    <td>应力</td>
+                </tr>
+            </table>
+
+            <p>激光诱导损伤可能源于单个机制或上述机制共同作用的结果.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>损伤测试方法</h2>
+            <ul>
+                <li>1-on-1测试：采用单个激光脉冲进行测试</li>
+                <li>S-on-1测试：在单一的点上进行重复辐照</li>
+                <li>R-on-1测试：通过高重复频率测试/积累损伤</li>
+            </ul>
+
+            <p>损伤可能与下述因素有关：</p>
+            <ul>
+                <li>激光脉冲中的峰值功率（空间与时间的）</li>
+                <li>激光脉冲中的最大能量密度（空间的）</li>
+                <li>脉冲尖峰的平均能量密度</li>
+                <li>具有尖峰和彗尾的脉冲的平均能量密度</li>
+                <li>脉冲链中的总能量密度</li>
+                <li>脉冲链中的平均功率密度</li>
+                <li>连续波脉冲功率密度（给定时间内的能量）</li>
+                <li>长脉冲中的线性功率密度</li>
+            </ul>
+
+            <p>并且，一个激光脉冲可能由下述任一脉冲组成</p>
+            <ul>
+                <li>具有确定时间形状的单个尖峰</li>
+                <li>尖峰链，再某些给定的脉冲重复频率下，每个尖峰具有特定的脉冲宽度</li>
+                <li>尖峰+彗尾，可能包含可观数量的能量，但功率较低</li>
+                <li>具有相当随机的时间分布的短脉冲群</li>
+                <li>连续或断裂束</li>
+            </ul>
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

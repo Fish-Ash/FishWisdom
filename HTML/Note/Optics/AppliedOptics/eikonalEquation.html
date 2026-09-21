@@ -5,7 +5,7 @@
     <head>
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>FDTD</title>
+        <title>几何光学</title>
 
         <!-- 基本CSS库（基础、菜单） -->
         <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
@@ -34,50 +34,34 @@
             <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
             <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
         </div>
+        
+        <h1>程函方程</h1>
 
-        <h1>Example 1</h1>
-        <b>将结构添加至组</b>
+        <p>程函方程（eikonal方程）是几何光学的基本方程.</p>
 
-        <pre><code class="Code">
-            addtogroup("")  # 将结构添加至组，参数为组名
-        </code></pre>
+        <p>为证实几何光学与光的电磁理论的内在联系，将从Maxwell方程出发推导程函方程.</p>
 
-        <b>循环</b>
-        <pre><code class="Code">
-            for(i = start:step:end){
-                ?i # 输出
-            }
-        </code></pre>
-                
+        <p>适用于单色光的Maxwell方程的约化形式为：</p>
+        $$\nabla\times\boldsymbol{E} = -i\omega\mu\boldsymbol{H}$$
+        $$\nabla\times\boldsymbol{H} = i\omega\epsilon\boldsymbol{E}$$
+        <p>均匀介质中该方程存在平面波特解：</p>
+        $$\boldsymbol{E}(\boldsymbol{r}) = \boldsymbol{E}_0e^{-i\boldsymbol{k}\cdot\boldsymbol{r}}$$
+        $$\boldsymbol{H}(\boldsymbol{r}) = \boldsymbol{H}_0e^{-i\boldsymbol{k}\cdot\boldsymbol{r}}$$
+        <p>[注]这些表达式中省略了固定的时间变化因子\(e^{i\omega t}\).</p>
 
-        <h2>FDTD专属</h2>
-        <pre><code class="Code">
-            set("pml profile", 3) # steep angle
-        </code></pre>
-
-        <h2>光源设置</h2>
-        <pre><code class="Code">
-            addplane; # 平面光源
-        </code></pre>
-
-        <h2>监视器</h2>
-        <pre><code class="Code">
-            addindex; # IndexMonitor
-            addpower; # DFTMonitor
-        </code></pre>
-
-        <h2>RCWA</h2>
-        <div class="Card-AI">
-            <p>RCWA求解器自带平面波激励.</p>
-
-            <p>fdtd求解区域设置原则：</p>
-            <ul>
-                <ol>xy方向，贴合胞元</ol>
-                <ol>z方向，上下留出空位</ol>
-            </ul>
-
-            <p>很多个Monitor，分别是干什么用的？</p>
+        <p>一般情况下，对于适用于单色光的Maxwell方程的约化形式，需要找到既能适用于非均匀介质，又能在均匀介质条件下回归平面波的具有普遍意义的形式解，一般采取如下形式：</p>
+        $$\boldsymbol{E}(\boldsymbol{r}) = \boldsymbol{E}_0(\boldsymbol{r})e^{-ik_0\psi(\boldsymbol{r})}$$
+        $$\boldsymbol{H}(\boldsymbol{r}) = \boldsymbol{H}_0(\boldsymbol{r})e^{-ik_0\psi(\boldsymbol{r})}$$
+        <p>这种解与平面波类似，不同点是振幅矢量\(\boldsymbol{E}_0(\boldsymbol{r})\)与\(\boldsymbol{H}_0(\boldsymbol{r})\)都是待定的空间分布，而相位部分也用待定函数代替.</p>
+        <p>其中\(\phi(\boldsymbol{r})\)代表光程，称为程函数.</p>
+        
+        <div class="Card-Formula">
+            <b>程函方程</b>
+            $$|\nabla\psi| = n$$
+            <p>程函方程是摆脱繁杂场变量，仅含单一程函数\(\psi\)的光传播方程.</p>
         </div>
+
+
 
         <div id="PageEnd"></div>
 
@@ -85,5 +69,4 @@
         <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
-    
 </html>

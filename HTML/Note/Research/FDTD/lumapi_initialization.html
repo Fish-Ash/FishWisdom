@@ -35,49 +35,26 @@
             <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
         </div>
 
-        <h1>Example 1</h1>
-        <b>将结构添加至组</b>
+        <h1>lumapi初始化</h1>
+
+        <p>由于lumapi库并非使用pip install 下载，而是FDTD自带的，因此首先需要定位到文件目录下：</p>
 
         <pre><code class="Code">
-            addtogroup("")  # 将结构添加至组，参数为组名
+            import sys
+            
+            sys.path.insert(
+                0,
+                r"D:\Program Files\Lumerical\v241\api\python"
+            )
         </code></pre>
 
-        <b>循环</b>
+        <p>调用lumapi</p>
         <pre><code class="Code">
-            for(i = start:step:end){
-                ?i # 输出
-            }
-        </code></pre>
-                
-
-        <h2>FDTD专属</h2>
-        <pre><code class="Code">
-            set("pml profile", 3) # steep angle
+            import lumapi
         </code></pre>
 
-        <h2>光源设置</h2>
-        <pre><code class="Code">
-            addplane; # 平面光源
-        </code></pre>
 
-        <h2>监视器</h2>
-        <pre><code class="Code">
-            addindex; # IndexMonitor
-            addpower; # DFTMonitor
-        </code></pre>
 
-        <h2>RCWA</h2>
-        <div class="Card-AI">
-            <p>RCWA求解器自带平面波激励.</p>
-
-            <p>fdtd求解区域设置原则：</p>
-            <ul>
-                <ol>xy方向，贴合胞元</ol>
-                <ol>z方向，上下留出空位</ol>
-            </ul>
-
-            <p>很多个Monitor，分别是干什么用的？</p>
-        </div>
 
         <div id="PageEnd"></div>
 
