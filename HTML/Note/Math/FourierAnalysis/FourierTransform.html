@@ -154,6 +154,74 @@
 
         </div>
 
+        <div class="Card-Analysis">
+            <h2>Fourier变换的基本性质</h2>
+
+            <h3>线性性质</h3>
+            <p>[设]</p>
+            $$F(\xi, \eta) = \mathcal{F}\{f(x,y)\}$$
+            $$G(\xi, \eta) = \mathcal{F}\{g(x,y)\}$$
+            $$a,b\in\mathbb{C}$$
+            $$\therefore \mathcal{F}\{af(x,y) + bg(x,y)\} = aF(\xi, \eta) + bG(\xi, \eta)$$
+            <p>即：函数线性组合的傅里叶变换等于各函数傅里叶变换的相应组合，这是由积分运算的线性性质决定的.</p>
+
+            <h3>对称性</h3>
+            <p>[设]</p>
+            $$F(\xi, \eta) = \mathcal{F}\{f(x,y)\}$$
+            $$\therefore \mathcal{F}\{F(x, y)\} = f(-\xi, -\eta)$$
+
+            <h3>迭次Fourier变换</h3>
+            <p>以连续两次Fourier变换为例，有：</p>
+            $$\mathcal{F}\{\mathcal{F}\{f(x,y)\}\} = f(-x, -y)$$
+            <p>即对二元函数\(f(x,y)\)连续作两次Fourier变换，得其倒立像.</p>
+
+            <h3>坐标缩放性质</h3>
+            <p>[设]</p>
+            $$a,b\in\mathbb{R}\quad \text{and}\quad a,b\neq 0$$
+            $$\mathcal{F}\{f(x,y)\} = F(\xi, \eta)$$
+            $$\therefore \mathcal{F}\{f(ax, by)\} = \frac{1}{|ab|}F\left(\frac{\xi}{a}, \frac{\eta}{b}\right)$$
+            <p>这一性质表明，若\(f(x,y)\)的图像变窄，则其Fourier变换\(F(\xi, \eta)\)的图像将变宽变矮；若\(f(x, y)\)变宽，则\(F(\xi, \eta)\)变高变窄.</p>
+
+            <h3>平移性</h3>
+            <div class="Card-AI">
+                <p>空间域平移，频率域多一个相位因子；反之亦然，但相位因子不同.</p>
+            </div>
+            <p>[设]</p>
+            $$\mathcal{F}\{f(x,y)\} = F(\xi, \eta)$$
+            $$x_0, y_0\in \mathbb{R}$$
+            $$\therefore \mathcal{F}\{f(x-x_0, y-y_0)\} = e^{-i2\pi(\xi x_0 + \eta y_0)}F(\xi, \eta)$$
+            
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>Fourier变换的基本定理</h2>
+
+            <h3>卷积定理</h3>
+            <p>[设]</p>
+            $$\mathcal{F}\{f(x,y)\} = F(\xi, \eta)$$
+            $$\mathcal{F}\{g(x,y)\} = G(\xi, \eta)$$
+            $$\therefore \mathcal{F}\{f(x,y)*g(x,y)\} = F(\xi, \eta)G(\xi, \eta)$$
+            $$\mathcal{F}\{f(x,y)g(x,y)\} = F(\xi,\eta)*G(\xi,\eta)$$
+
+            <h3>相关定理（维纳-辛钦定理）</h3>
+
+            <b>互相关定理</b>
+            <p>[设]</p>
+            $$F(\xi, \eta) = \mathcal{F}\{f(x,y)\}$$
+            $$G(\xi, \eta) = \mathcal{F}\{g(x,y)\}$$            
+            $$\therefore \mathcal{F}(f(x,y))$$
+            <p>称\(F^*(\xi, \eta)\)与\(G(\xi, \eta)\)为函数\(f(x, y)\)与\(g(x, y)\)的<b>互谱能量密度</b>或简称<b>互谱密度</b>.</p>
+            <p>因此，互相关定理表明，两个函数的互相关与其互谱密度构成Fourier变换对.</p>
+
+            <b>自相关定理</b>
+            <p>[设]</p>
+            $$F(\xi, \eta) = \mathcal{F}\{f(x,y)\}$$
+            $$\therefore F()$$
+
+            <p>称\(|F(\xi, \eta)|^2\)为\(f(x,y)\)的<b>能谱密度</b>.</p>
+            <p>因此，自相关定理表明，一个函数的自相关函数与其能谱密度构成Fourier变换对.</p>
+        </div>
+
        
         
         <div id="PageEnd"></div>

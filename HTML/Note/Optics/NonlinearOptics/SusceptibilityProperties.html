@@ -67,7 +67,7 @@
             <div class="Formula">
                 $$\chi^{(2)}(\omega_1, \omega_2) = \chi^{(2)}(\omega_2, \omega_1)$$
                 <div class="Derivation">
-                    <p>由<a href="Chapter1.html#formula1" class="goto">一维振子的二阶非线性极化率表达式</a>：</p>
+                    <p>由<a href="NonlinearSusceptibility.html#chi2" class="goto">一维振子的二阶非线性极化率表达式</a>：</p>
                     $$\chi^2(\omega_1, \omega_2) = -A\frac{ne^3}{\epsilon_0m^2}F(\omega_1 + \omega_2)F(\omega_1)F(\omega_2)$$
                     <p>可得：</p>
                     $$\chi^{(2)}(\omega_1, \omega_2) = \chi^{(2)}(\omega_2, \omega_1)$$
@@ -91,20 +91,104 @@
         </div>
         
         <div class="Card-Analysis">
-            <b>完全对易对称性</b>
-            <p>在\(\chi^{(1)}(\omega)\)的表达式中，用\(-\omega\)代替\(\omega\)时，其值不变，即：</p>
-            $$\chi^{(1)}(-\omega) = \chi^{(1)}(\omega)$$
-            <p>在\(\chi^{(2)}(\omega_1, \omega_2)\)的表达式中，用\(-(\omega_1 + \omega_2)\)代替\(\omega_1\)或\(\omega_2\)时，其值不变，即：</p>
-            $$\chi^{(2)}[-(\omega_1 + \omega_2), \omega_2] = \chi^{(2)}[\omega_1, -(\omega_1 + \omega_2)] = \chi^{(2)}(\omega_1, \omega_2)$$
-            <p>在\(\chi^{(3)}(\omega_1, \omega_2, \omega_3)\)的表达式中，用\(-(\omega_1 + \omega_2 + \omega_3)\)代替\(\omega_1\)或\(\omega_2\)或\(\omega_3\)时，其值不变，即：</p>
-            $$\begin{align}
-            &\chi^{(3)}[-(\omega_1 + \omega_2 + \omega_3), \omega_2, \omega_3]\\
-            =&\chi^{(3)}[\omega_1, -(\omega_1 + \omega_2 + \omega_3), \omega_3]\\  
-            =&\chi^{(3)}[\omega_1, \omega_2, -(\omega_1 + \omega_2 + \omega_3)]\\
-            =&\chi^{(3)}(\omega_1, \omega_2, \omega_3)  
-            \end{align}$$
+            <h2>完全对易对称性</h2>
+            <p>当外加光电场频率远离共振频率\(\omega_0\)时，\(F(\omega)\)式中的虚部可以忽略不计.</p>
+            <p>此时，介质与外加光电场间无能量交换，\(F(\omega)\)为实数，且：</p>
+            $$F(\omega) = F(-\omega)$$
+
+            <table>
+                <tr>
+                    <td>$$\chi^{(1)}(\omega)$$</td>
+                    <td>$$\omega\to -\omega$$</td>
+                    <td>
+                        <div class="Formula">
+                            $$\chi^{(1)}(-\omega) = \chi^{(1)}(\omega)$$
+                            <div class="Derivation">
+                                <a href="NonlinearSusceptibility.html#chi1">$$\because \chi^{(1)}(\omega) = \frac{ne^2}{\epsilon_0 m}F(\omega)$$</a>
+                                $$\begin{align}
+                                \therefore\chi^{(1)}(-\omega) &= \frac{ne^2}{\epsilon_0 m}F(-\omega)\\
+                                                              &= \frac{ne^2}{\epsilon_0 m}F(\omega)\\
+                                                              &= \chi^{(1)}(\omega)
+                                \end{align}$$
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>$$\chi^{(2)}(\omega_1, \omega_2)$$</td>
+                    <td>$$\omega_1~\text{or}~\omega_2\to-(\omega_1 + \omega_2)$$</td>
+                    <td>
+                        <div class="Formula">
+                            $$\chi^{(2)}[-(\omega_1 + \omega_2), \omega_2] = \chi^{(2)}(\omega_1, \omega_2)$$
+                            <div class="Derivation">
+                                <a href="NonlinearSusceptibility.html#chi2">$$\because \chi^2(\omega_1, \omega_2) = -A\frac{ne^3}{\epsilon_0m^2}F(\omega_1 + \omega_2)F(\omega_1)F(\omega_2)$$</a>
+                                $$\begin{align}\therefore~
+                                &\chi^{(2)}[-(\omega_1 + \omega_2), \omega_2]\\
+                                =&-A\frac{ne^3}{\epsilon_0m^2}F[-(\omega_1 + \omega_2) + \omega_2]F[-(\omega_1 + \omega_2)]F(\omega_2)\\
+                                =&-A\frac{ne^3}{\epsilon_0m^2}F(\omega_1)F(\omega_1 + \omega_2)F(\omega_2)\\
+                                =&\omega^{(2)}(\omega_1, \omega_2)
+                                \end{align}$$
+                            </div>
+                        </div>
+                        <div class="Formula">
+                            $$\chi^{(2)}[\omega_1, -(\omega_1 + \omega_2)] = \chi^{(2)}(\omega_1, \omega_2)$$
+                            <div class="Derivation">
+                                <a href="NonlinearSusceptibility.html#chi2">$$\because \chi^2(\omega_1, \omega_2) = -A\frac{ne^3}{\epsilon_0m^2}F(\omega_1 + \omega_2)F(\omega_1)F(\omega_2)$$</a>
+                                $$\begin{align}\therefore~
+                                &\chi^{(2)}[\omega_2, -(\omega_1 + \omega_2)]\\
+                                =&-A\frac{ne^3}{\epsilon_0m^2}F[\omega_1 - (\omega_1 + \omega_2)]F(\omega_1)F[-(\omega_1 + \omega_2)]\\
+                                =&-A\frac{ne^3}{\epsilon_0m^2}F(\omega_2)F(\omega_1)F(\omega_1 + \omega_2)\\
+                                =&\omega^{(2)}(\omega_1, \omega_2)
+                                \end{align}$$
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>$$\chi^{(3)}(\omega_1, \omega_2, \omega_3)$$</td>
+                    <td>$$\omega_1~\text{or}~\omega_2~\text{or}~\omega_3\\\to-(\omega_1 + \omega_2 + \omega_3)$$</td>
+                    <td>
+                        <div class="Formula">
+                            $$\chi^{(3)}[-(\omega_1 + \omega_2 + \omega_3), \omega_2, \omega_3] = \chi^{(3)}(\omega_1, \omega_2, \omega_3)$$
+                            <div class="Derivation">
+                                <a href="NonlinearSusceptibility.html">
+                                    $$\begin{align}\because~
+                                    &\chi^{(3)}(\omega_1, \omega_2, \omega_3)\\
+                                    =&\frac{ne^4}{\epsilon_0m^3}\left\{B + \frac{2}{3}A^2[F(\omega_1 + \omega_2) + F(\omega_2 + \omega_3) + F(\omega_3 + \omega_1)]\right\}\\
+                                    &\times F(\omega_1 + \omega_2 + \omega_3)F(\omega_1)F(\omega_2)F(\omega_3)
+                                    \end{align}$$
+                                </a>
+                            </div>
+                        </div>
+                        <div class="Formula">
+                            $$\chi^{(3)}[\omega_1, -(\omega_1 + \omega_2 + \omega_3), \omega_3] = \chi^{(3)}(\omega_1, \omega_2, \omega_3)$$
+                            <div class="Derivation">
+                                <a href="NonlinearSusceptibility.html">
+                                    $$\begin{align}\because~
+                                    &\chi^{(3)}(\omega_1, \omega_2, \omega_3)\\
+                                    =&\frac{ne^4}{\epsilon_0m^3}\left\{B + \frac{2}{3}A^2[F(\omega_1 + \omega_2) + F(\omega_2 + \omega_3) + F(\omega_3 + \omega_1)]\right\}\\
+                                    &\times F(\omega_1 + \omega_2 + \omega_3)F(\omega_1)F(\omega_2)F(\omega_3)
+                                    \end{align}$$
+                                </a>
+                            </div>
+                        </div>
+                        <div class="Formula">
+                            $$\chi^{(3)}[\omega_1, \omega_2, -(\omega_1 + \omega_2 + \omega_3)] = \chi^{(3)}(\omega_1, \omega_2, \omega_3)$$
+                            <div class="Derivation">
+                                <a href="NonlinearSusceptibility.html">
+                                    $$\begin{align}\because~
+                                    &\chi^{(3)}(\omega_1, \omega_2, \omega_3)\\
+                                    =&\frac{ne^4}{\epsilon_0m^3}\left\{B + \frac{2}{3}A^2[F(\omega_1 + \omega_2) + F(\omega_2 + \omega_3) + F(\omega_3 + \omega_1)]\right\}\\
+                                    &\times F(\omega_1 + \omega_2 + \omega_3)F(\omega_1)F(\omega_2)F(\omega_3)
+                                    \end{align}$$
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
-        
+<!--         
         <div class="Card-Analysis">
             <b>空间对称性</b>
             <p>三维空间中，介质的极化率是张量.</p>
@@ -156,7 +240,7 @@
                     \end{align}$$
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
 
