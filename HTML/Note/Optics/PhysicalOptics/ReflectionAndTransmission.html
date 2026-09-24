@@ -3,21 +3,37 @@
 <html lang = "zh-cn">
 
     <head>
-        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>物理光学</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
     <body>
         <div class="header" id="PageHead">不惑</div>
-        <a class="BackToTop" href="#PageHead">Top</a>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
-        
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
         
         
         <h1>光在电介质面上的反射与折射</h1>
@@ -40,7 +56,7 @@
             <p>入射角\(\theta_1 \rightarrow 90°\).</p>
         </div>
 
-        <div class="Card-Definition">
+        <div class="Card-Definition" id="TE&TM">
             <b>\(p\)分量与\(s\)分量</b>
             <p>任一方位振动的光矢量\(\boldsymbol{E}\)，都可分解为互相垂直的两个分量：</p>
             <ul>
@@ -163,44 +179,7 @@
             $$\tan\theta_B = n$$
         </div>
 
-        <div class="Card-Analysis" id="TotalReflection">
-            <h2>全反射</h2>
-
-            <div class="Card-Definition">
-                <b>全反射</b>
-                <p>当光从光密介质入射到光疏介质、入射角大于临界角\(\theta_c\)时，光全部返回原介质中的现象.</p>
-                <div class="Formula">
-                    $$\sin\theta_c = n,\quad n = n_2/n_1$$
-                    <div class="Derivation">
-                        <div class="Prove">
-                            <p>光全部返回原介质\(\Rightarrow\)只有反射光，不存在折射光.</p>
-                            $$\sin\theta_2 = \frac{n_1}{n_2}\sin\theta_1 \gt 1 \Rightarrow \frac{n_1}{n_2} \gt 1$$
-                            <p>故条件1为：从光密介质入射到光疏介质.</p>
-                            <p>设临界角为\(\theta_c\)，当\(\theta_1 = \theta_c\)时，\(\sin\theta_2\)恰好等于\(1\).</p>
-                            $$\sin\theta_2 = \frac{n_1}{n_2}\sin\theta_c = 1$$
-                            $$\sin\theta_c = \frac{n_1}{n_1} = n$$
-                            <p>由于\(\sin\theta_2\)为关于\(\theta_1\)的单调递增函数，所以\(\theta_1 \gt \theta_c\)时，\(\sin\theta_2 \gt 1\).</p>
-                            <p>故条件2为\(\theta_1 \gt \theta_c\).</p>
-                        </div>
-                    </div>
-                </div>
-    
-                <p>全反射时发生相位的变化。</p>
-            </div>
-
-            <h3>倏逝波</h3>
-            <div class="Card-Definition">
-                <b>倏逝波（衰逝波）</b>
-                <p>全反射时，光波不是绝对地在界面上被全部反射回第一介质，而是透入第二介质约一个波长的深度，并沿界面流过波长量级距离后重新返回第一介质，沿反射光方向射出.</p>
-                <p>这个沿第二介质表面流动的波称为倏逝波.</p>
-            </div>
-            <p>倏逝波可以由如下形式的解描述：</p>
-            $$\boldsymbol{E} = e^{i(\boldsymbol{k}\boldsymbol{r} - \omega t)}$$
-            <p>其特征是描述传播方向的波矢\(\boldsymbol{k}\)至少有一个分量为虚数.</p>
-            <p>在该虚分量对应的空间方向上，波并不传播，而是按指数规律衰减.</p>
-            <p>倏逝波不会出现在均匀介质中，而总是与光和结构化材料间的相互作用有关.</p>
-            
-        </div>
+        <h2><a href="TotalReflection.html">全反射与倏逝波</a></h2>
 
 
         <div class="Card-Analysis" id="HalfWaveLoss">
@@ -366,9 +345,9 @@
         
 
         <div id="PageEnd"></div>
-        <a class="GoToBottom" href="#PageEnd">Bottom</a>
 
-
+        <script src="../../../../JavaScript/MenuButton.js"></script>
         <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
+
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>物理光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>全反射与倏逝波</h1>
+
+        <div class="Card-Analysis" id="TotalReflection">
+            <h2>全反射</h2>
+
+            <div class="Card-Definition">
+                <b>全反射</b>
+                <p>当光从光密介质入射到光疏介质、入射角大于临界角\(\theta_c\)时，光全部返回原介质中的现象.</p>
+
+                <b>全反射临界角</b>
+                $$\theta_c = \arcsin\frac{n_2}{n_1}$$
+    
+                <p>全反射时发生相位的变化。</p>
+            </div>
+
+            <p>分析全反射，即分析\(\theta_2\)无物理意义的情况，亦即\(\sin\theta_2\notin[-1,1]\)的情况</p>
+            <p>由折射定律</p>
+            $$n_1\sin\theta_1 = n_2\sin\theta_2$$
+            $$\therefore \sin\theta_2 = \frac{n_1}{n_2}\sin\theta_1$$
+            
+            $$\because n_1,n_2\gt 0,\quad \theta\in[0, \pi/2]$$
+            $$\therefore \sin\theta_2\gt 0$$
+
+            <p>当光从光疏介质入射到光密介质，即</p>
+            $$n_1/n_2\lt 0$$
+            <p>时，由于\(\sin\theta_1\in[0,1]\)，因此也可以保证\(\sin\theta_2\le 1\)</p>
+
+            <p>但当光从光密介质入射到光束介质，即</p>
+            $$n_1/n_2 \gt 1$$
+            <p>时，\(\sin\theta_2\)确实有可能大于\(1\).</p>
+
+            $$\frac{n_1}{n_2}\sin\theta_1\gt 1 \Rightarrow \theta_1\gt \arcsin\frac{n_2}{n_1}$$
+            <p>这种情况下，\(\sin\theta_2\gt 1\)，折射角失去物理意义，反射率\(R=1\)，称为全反射.</p>
+            <p>称恰等于\(\arcsin\frac{n_2}{n_1}\)入射角\(\theta_1\)为<b>全反射临界角</b>，记作\(\theta_c\).</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>倏逝波</h2>
+            <div class="Card-Definition">
+                <b>倏逝波（衰逝波）</b>
+                <p>全反射时，光波不是绝对地在界面上被全部反射回第一介质，而是透入第二介质约一个波长的深度，并沿界面流过波长量级距离后重新返回第一介质，沿反射光方向射出.</p>
+                <p>这个沿第二介质表面流动的波称为倏逝波.</p>
+            </div>
+            <p>倏逝波可以由如下形式的解描述：</p>
+            $$\boldsymbol{E} = e^{i(\boldsymbol{k}\boldsymbol{r} - \omega t)}$$
+            <p>其特征是描述传播方向的波矢\(\boldsymbol{k}\)至少有一个分量为虚数.</p>
+            <p>在该虚分量对应的空间方向上，波并不传播，而是按指数规律衰减.</p>
+            <p>倏逝波不会出现在均匀介质中，而总是与光和结构化材料间的相互作用有关.</p>
+            
+            <div class="Card-Definition">
+                <b>倏逝波在第二介质中的透射深度</b>
+                <p>定义为在垂直表面方向振幅减小为表面处振幅的\(1/e\)的距离，即</p>
+                $$d = \frac{1}{k_0\delta} = \frac{\lambda}{2\pi\sqrt{n_1^2\sin^2\alpha - n_2^2}}$$
+            </div>
+        </div>
+                    
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

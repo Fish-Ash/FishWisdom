@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>信息光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>线性系统分析</h1>
+
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#Flag1">因果性原理</a></li>
+            </ul>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>线性系统</h2>
+
+            <div class="Card-Definition">
+                <b>系统</b>
+
+                <p>从数学上看，很多线性都可以抽象为：使函数\(f\)经过一定的变换，形成函数\(g\)的运算过程.</p>
+                <p>这种实现函数变换的运算过程称为<b>系统</b>.</p>
+            </div>
+
+            <p>这种意义下的系统，即可以是特定功能的元器件的组合，例如电子线路、光学透镜组等；也可以是与实际元件无关的物理现象，例如光波通过自由空间的传播过程等.</p>
+
+            <p>这样定义的系统的作用可由算符\(L\{\}\)表征，即：</p>
+            $$g = L\{f\}$$
+            <p>二维形式为：</p>
+            $$g(x_2, y_2) = L\{f(x_1, y_1)\}$$
+            <ul>
+                <li>\(f\)：系统的输入函数</li>
+                <li>\(g\)：系统的输出函数</li>
+            </ul>
+
+            <p>[注]在应用问题中，两个函数宗量的意义与量纲可以不同.</p>
+
+            <h3>线性系统</h3>
+
+            <p>[设]</p>
+            $$g_1(x_2, y_2) = L\{f_1(x_1, y_1)\}$$
+            $$g_2(x_2, y_2) = L\{f_2(x_1, y_1)\}$$
+
+            <b>叠加性</b>
+            $$L\{f_1(x_1, y_1) + f_2(x_1, y_1)\} = L\{f_1(x_1, y_1)\} + L\{f_2(x_1, y_1)\} = g_1(x_2, y_2) + g_2(x_2, y_2)$$
+
+            <b>均匀性</b>
+            $$L\{af_1(x_1, y_1)\} = aL\{f_1(x_1, y_1)\} = ag_1(x_2, y_2),\quad a\in\mathbb{C}$$
+
+            <div class="Card-Definition">
+                <b>线性系统</b>
+                <p>同时具有叠加性与均匀性的系统，即：</p>
+                $$\begin{align}
+                L\{a_1f_1(x_1, y_1) + a_2f_2(x_1, y_1)\} &= a_1L\{f_1(x_1, y_1)\} + a_2L\{f_2(x_1, y_1)\}\\
+                                                         &= a_1g_1(x_2, y_2) + a_2g_2(x_2, y_2)
+                \end{align}$$
+                <p>上式表明，当输入函数是多个函数的线性组合时，该系统的输出函数，等于输入函数中各个函数单独输入时各对应输出函数的线性组合.</p>
+            </div>
+
+            <h3>基元函数</h3>
+            <p>在光学中，常用的基元函数基本上有两种：</p>
+            <ul>
+                <li>点基元函数（\(\delta\)函数）</li>
+                <li>指数基元函数</li>
+            </ul>
+
+            <div class="Card-AI">
+                <p>点基元函数对应发光点，对应空域.</p>
+                <p>指数基元函数对应平面波，对应频域.</p>
+            </div>
+
+            <p>下面以点基元函数为例说明线性系统的分解与综合的过程.</p>
+
+            <p>任何输入函数\(f(x_1, y_1)\)可以很方便地分解成\(\delta\)函数的线性组合.</p>
+            <p>应用\(\delta\)函数的卷积性质，\(f(x_1, y_1)\)可以用\(delta\)函数表示为：</p>
+            $$f(x_1, y_1) = \iint_{-\infty}^{+\infty} f(\alpha, \beta)\delta(x_1 - \alpha, y_1 - \beta)\mathrm{d}\alpha\mathrm{d}\beta$$
+            <p>这个积分式可以看作是一种特殊的线性叠加：</p>
+            <p>当\(\alpha, \beta\)在整个物平面上取值时，上式是无穷多个不同位置的\(\delta\)函数\(\delta(x_1-\alpha, y_1-\beta)\)以\(f(\alpha,\beta)\mathrm{d}\alpha\mathrm{d}\beta\)为系数（权重）的线性叠加.</p>
+
+            $$\begin{align}\therefore
+            g(x_2, y_2) &= L\{f(x_1, y_1)\}\\
+                        &= L\left\{\iint_{-\infty}^{+\infty}f(\alpha, \beta)\delta(x_1-\alpha, y_1-\beta)\mathrm{d}\alpha\mathrm{d}\beta\right\}\\
+                        &= \iint_{-\infty}^{+\infty}f(\alpha, \beta)L\left\{\delta(x_1-\alpha, y_1-\beta)\right\}\mathrm{d}\alpha\mathrm{d}\beta\\
+
+            \end{align}$$
+            
+            <p>\(L\{\delta(x_1-\alpha, y_1-\beta)\}\)的物理意义为：</p>
+            <p>当物平面上位于\((x_1 = \alpha, y_1=\beta)\)点的单位脉冲（点光源）通过系统后在像面得到的分布.</p>
+            <p>称为<b>脉冲响应函数</b>或<b>点扩散函数</b>.</p>
+            <p>对于给定的光学系统，点扩散函数既与输入点脉冲的位置\(\alpha, \beta\)的位置有关，又与像点的位置\(x_2, y_2\)有关，因此其一般表示为：</p>
+            $$h(x_2, y_2;\alpha, \beta) = L\{\delta(x_1-\alpha, y_1-\beta)\}$$
+            $$\therefore g(x_2, y_2) = \iint_{-\infty}^{+\infty}f(\alpha, \beta)h(x_2, y_2;\alpha, \beta)\mathrm{d}\alpha\mathrm{d}\beta$$
+            <p>这个表达式称为<b>叠加积分</b>.</p>
+            <p>该式表明，线性系统的性质完全由它的脉冲响应\(h(x_2, y_2;\alpha,\beta)\)所表征.</p>
+            <p>对于一个脉冲响应已知的线性系统，任何输入函数对应的输出函数均可由叠加积分求得.</p>
+        </div>
+        
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

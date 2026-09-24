@@ -288,9 +288,9 @@ ul.pagination li a {
 
 /* 页面内跳转 */
 .goto{
-    color: gray;
+    color: palevioletred;
     text-decoration: none;
-    border-bottom: 1px dashed gray
+    border-bottom: 1px dashed palevioletred;
 }
 
 .opt{

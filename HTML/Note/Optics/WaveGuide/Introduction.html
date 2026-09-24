@@ -107,12 +107,56 @@
         </div>
 
         <div class="Card-Analysis">
-            <h2>全反射相移与古斯-汉森位移</h2>
-            <p>全反射条件下，菲涅尔公式不成立，\(\cos\gamma\)失去实数意义，因此反射光束与入射光束间的关系也需要重新确定.</p>
-            <p>TE偏振下，电磁波的场分量</p>
-            <div class="Card-AI">
-                <p>什么是\(\cos\gamma\)?</p>
-            </div>
+            <h2>全反射相移</h2>
+            <p>全反射条件下，菲涅尔公式不成立，透射角失去实数意义，因此反射光束与入射光束间的关系也需要重新确定.</p>
+            <img src="Img/Coordinate.jpg" width="400">
+
+            <p>采用如图所示的坐标系，设入射面为\(xOz\)平面，分别讨论TE与TM两种偏振状态.</p>
+
+            <h3>TE偏振</h3>
+
+            <p>TE偏振下，电磁波的场分量只有\(E_y, H_x, H_z\)，其他分量都为\(0\).</p>
+            <p>根据切向分量连续的边界条件，有：</p>
+            $$E_{1y} + E_{2y} = E_{3y}$$
+            $$H_{1z} + H_{2z} = H_{3z}$$
+
+            $$\Phi_{\text{TE}} = \arctan\frac{\delta}{n_1\cos\alpha} = \arctan\frac{\sqrt{\sin^2\alpha - n_2^2/n_1^2}}{\cos\alpha}$$
+            <p>TE偏振下的全反射相移为：</p>
+            $$\Gamma = 2\Phi_{\text{TE}}$$
+
+            <h3>TM偏振</h3>
+            <p>TM偏振下，电磁波的场分量只有\(H_y, E_x, E_z\)，其他分量均为\(0\).</p>
+            <p>根据切向分量连续的边界条件：</p>
+            $$H_{1y} + H_{2y} = H_{3y}$$
+            $$E_{1z} + E_{2z} = E_{3z}$$
+
+            $$\Phi{\text{TM}} = \arctan\frac{n_1^2}{n_2^2}\frac{\delta}{n_1\cos\alpha} = \arctan\left(\frac{n_1^2}{n_2^2}\frac{\sqrt{\sin^2\alpha - n_2^2/n_1^2}}{\cos\alpha}\right)$$
+            <p>TM偏振下的全反射相移为：</p>
+            $$\Gamma = 2\Phi_{\text{TM}}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>Goos-Hänchen位移</h2>
+
+            <p>前面的分析都是认为光束的反射点与入射点在同一位置，然而Goos与Hänchen通过实验精确测出了全反射光线的位置，发现并不像通常认为的那样，而是沿表面产生了一个位移\(\Delta z\)，从而使反射光线产生一侧向位移\(D\).</p>
+            <img src="Img/Goos-Hänchen.jpg" width="200" alt="Goos-Hänchen位移">
+            <p>这一位移称为Goos-Hänchen位移，位移的大小与入射角和偏振状态有关，是波长的量级.</p>
+
+            <p>上面已经给出全反射相移\(\Gamma\)，进一步应用电磁波理论可以证明：</p>
+            $$\Delta z = \frac{\partial\Gamma}{\partial\beta}$$
+            <ul>
+                <li>\(\beta = n_1k_0\sin\alpha\)</li>
+            </ul>
+
+            <p>TE与TM偏振的Goos-Hänchen位移分别为：</p>
+            $$D_{\text{TE}} = \frac{\lambda_1}{\pi}\frac{\sin\theta_1}{\sqrt{\sin^2\theta_1 - n^2}}$$
+            $$D_{\text{TM}} = \frac{n^2}{(1 + n^2)\sin^2\theta_1 - n^2}$$
+            <ul>
+                <li>\(n = n_2/n_1\)</li>
+            </ul>
+
+            <p>入射角接近全反射临界角时，Goos-Hänchen位移最大，随入射角增大快速减小.</p>
+
         </div>
         
         <div id="PageEnd"></div>

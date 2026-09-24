@@ -37,44 +37,62 @@
         
         <h1>薄膜波导模式理论</h1>
 
-        <div class="Card-Definition">
-            <b>导模（guided mode）</b>
+        <div class="Card-Analysis">
+            <h2>引入</h2>
+            <p>本章将介绍利用经典电磁理论分析薄膜波导的方法，与几何光学相比，电磁场理论不仅能提供更加详尽的光波信息，还引入了导模的概念.</p>
             
-            <p>理论证明，并非波导条件所限定的任何\(\beta\)值都能称为实际的传播常数，只有那些由特征方程所决定的特定的\(\beta\)值次啊能对应一定的光波传播方式，这种由特定参数所确定的特殊传播方式，称为光波导的导模.</p>
-            <div class="Card-Question">
-                <p>什么是波导条件？</p>
+            <div class="Card-Definition">
+                <b>导模（guided mode）</b>
+                
+                <p>理论证明，并非<a href="UniformWaveGuide.html#GuideWaveCondition" class="goto">导波条件</a>所限定的任何\(\beta\)值都能称为实际的传播常数，只有那些由特征方程所决定的特定的\(\beta\)值才能对应一定的光波传播方式，这种由特定参数所确定的特殊传播方式，称为光波导的导模.</p>
             </div>
         </div>
-
+            
         <div class="Card-Analysis">
             <h2>均匀薄膜波导特征方程</h2>
+            <p>为了不使严谨的数学推导脱离直观的概念，本节首先采用熟知的射线光学与波动光学干涉方法建立薄膜波导的特征方程.</p>
             <p>[设]薄膜波导的芯层、衬底和覆盖层折射率分别为\(n_1, n_2, n_3\)，且\(n_1\gt n_2\geq n_3\)，芯层厚度为\(d\).</p>
+            <img src="Img/ThinFilmWaveGuide.jpg" width="300">
+
             <p>对三层介质，有：</p>
-            $$k_i = n_ik_0,\quad i=1,2,3$$
+            <div class="Formula">
+                $$k_i = n_ik_0,\quad i=1,2,3$$
+                <div class="Derivation">
+                    $$k = n\frac{\omega}{c} = nk_0$$
+                </div>
+            </div>
             <p><a href="UniformWaveGuide.html#PropagationConstant" class="goto">传播常数</a>为：</p>
-            $$\beta = k_{1z} = k_{2z} = k_{3z} = n_1k_0\sin\alpha$$
+            <div class="Formula">
+                $$\beta = k_{1z} = k_{2z} = k_{3z} = n_1k_0\sin\alpha$$
+                <div class="Derivation">
+                    $$k_{1z} = k_{2z} = k_{3z}$$
+                </div>
+            </div>
+
             <div class="Card-AI">
                 <p>相等是由于切向方向的连续性.</p>
             </div>
             <p>以\(\kappa\)表示芯层波矢的\(x\)分量，则：</p>
             $$\kappa = |k_{1x}| = n_1k_0\cos\alpha$$
 
-            <img src="Img/ThinFilmWaveGuide.jpg" width="300">
 
             <p>均匀介质波导的锯齿形光线，在波动光学看来不过是大量平面波的叠加.</p>
             <p>能够在薄膜波导中传输的光波，一定满足相干加强（谐振）条件，也就是说，这些平面波在它们共同的波面上，如MM'面，必须保持\(2\pi\)整数倍的相位差.</p>
             <div class="Card-AI">
                 <p>这里只是说需要具有相干性，而非发生了干涉.</p>
             </div>
+            
+            <p>考察图中斜向下的相邻平行光线在波面上的光程差，显然AB、CD两条光线在它们共同波面MM'上的光程差为：</p>
+
             <div class="Formula">
                 $$\Delta = 2n_1d\cos\alpha$$
                 <div class="Derivation">
-                    $$\Delta = n_1(BC + B_E)$$
+                    $$\Delta = n_1(BC + BE)$$
                     $$BC = d/\cos\alpha$$
                     $$BE = BC\cos2\alpha$$
                     $$\begin{align}
                     \Delta &= n_1(1 + \cos2\alpha)\frac{d}{\cos\alpha}\\
-                           &= 2n_1\cos\alpha
+                           &= 2n_1d\cos\alpha
                     \end{align}$$
                 </div>
             </div>
@@ -106,6 +124,24 @@
             \end{align}$$
             <p>其中\(m = 0,1,2,\cdots\)</p>
             <p>当波导的条件参数\(d,n_1,n_2,n_3\)及波长\(\lambda\)确定后，可以求解出对应一定\(m\)值的\(\beta\)和\(\kappa\)，这些模参数可以决定一个光波模式的全部特性.</p>
+
+            <p>由于\(m\)是非负整数，是离散的，因此在<a href="UniformWaveGuide.html#GuideWaveCondition" class="goto">导波条件</a>下，\(\beta\)也是离散的.</p>
+            <p>所以导模是离散模，具有离散谱.</p>
+
+            <h3>辐射模</h3>
+            <p>当光线在芯层与衬底（或覆盖层）分界面上不能实现全反射时，部分光将从芯层向衬底（或覆盖层）辐射出去，这种光波模式称为辐射模.</p>
+            <p>辐射模在芯层中不必满足谐振条件，只要其传播常数\(\beta\)满足\(0\leq \beta\leq n_2k_0\)，就是辐射模，所以辐射模的\(\beta\)在\([0,n_2k_0]\)范围内可以取连续值，辐射模谱为连续谱.</p>
+
+            <h3>波导色散</h3>
+            <p>对某特定模式，其\(\beta\)随工作波长\(\lambda_0\)（或角频率\(\omega\)或波数\(k_0\)）变化，从而引起所谓的波导色散.</p>
+            <p>即使同一波长，波导模式不同，传播常数也不同，这会引起模式色散.</p>
+            <p>通过波导的\(\beta-\omega\)曲线示意图，可以分析波导的模式特性.</p>
+            <img src="Img/beta-omega.jpg" alt="波导的β-ω曲线示意图" width="300">
+            <p>图中，三个离散模对应\(m = 0,1,2\)；</p>
+            <p>\(n_1k_0\)是最大可能的传播常数；</p>
+            <p>\(\beta\gt n_1k_0\)的区域为禁区，代表不存在模式的区域；</p>
+            <p>\(\beta\leq n_2k_0\)的区域为连续的辐射模区域.</p>
+
         </div>
 
         <div class="Card-Analysis">
