@@ -3,32 +3,51 @@
 <html lang = "zh-cn">
 
     <head>
-        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>非线性光学</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
     <body>
-        <div class="header">不惑</div>
-
-        
+        <div class="header" id="PageHead">不惑</div>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
 
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
         <h1>非线性光学极化率的经典描述</h1>
         
         <div class="PageCatalog">
             <ul>
+                <li><a href="#introduction">引言</a></li>
+                <li><a href="#linear">一维振子的线性响应</a></li>
+                <li><a href="#nonlinear">一维振子的非线性响应</a></li>
             </ul>
         </div>
 
-        <div class="Card-Analysis">
-            <h2>非线性光学极化率的经典描述</h2>
-            
+        <div class="Card-Analysis" id="introduction">
+            <h2>引言</h2>
+
             <p>光与物质相互作用的经典理论认为：光在介质中传播时，介质对光的响应是电偶极振子在光电场作用下振动所产生的极化，其极化强度为：</p>
             $$\boldsymbol{P}(t) = -ne\boldsymbol{r}(t)$$
             <ul>
@@ -38,8 +57,10 @@
             </ul>
 
             <p>一维振子的线性与非线性响应可以根据牛顿定律确定.</p>
+        </div>
 
-            <h3>一维振子的线性响应</h3>
+        <div class="Card-Analysis" id="linear">
+            <h2>一维振子的线性响应</h2>
             
             <p>设介质为一个含有固有振动频率\(\omega_0\)的振子的集合.</p>
             <p>振子模型是原子中电子运动的一种粗略模型，即认为介质的每一个原子的电子都受到一个弹性恢复力作用，使其保持在平衡位置上.</p>
@@ -49,10 +70,23 @@
                 <li>\(h\)：阻尼系数</li>
                 <li>\(m\)：电子质量</li>
             </ul>
+            
+            <div class="Card-AI">
+                <p>公式中的\(E\)和\(r\)，是\(E(t)\)和\(r(t)\).</p>
+            </div>
 
-            <p>将\(r\)与\(E\)进行Fourier展开：</p>
+            <p>将\(r\)与\(E\)进行<a href="../../Math/FourierAnalysis/FourierTransform.html" class="goto">Fourier展开</a>：</p>
             $$r(t) = \int_{-\infty}^{+\infty}r(\omega)e^{-i\omega t}\mathrm{d}\omega$$
             $$E(t) = \int_{-\infty}^{+\infty}E(\omega)e^{-i\omega t}\mathrm{d}\omega$$
+
+            <div class="Card-AI">
+                $$\frac{\mathrm{d}r(t)}{\mathrm{d}t} = \int_{-\infty}^{+\infty}(-i\omega)r(\omega)e^{-i\omega t}\mathrm{d}\omega$$
+                <p>将求导符号放进积分中不是没有条件的，具体见莱布尼兹积分法则.</p>
+                <p>下面的式子，是将积分拆解成了每个\(\omega\)对应的等式，因为这个系统是线性的，所以可以这样拆.</p>
+                <p>时间域的线性方程经过Fourier变换后不会影响其线性.</p>
+            </div>
+
+            <p>由于运动方程为一个线性微分方程，因此其解\(r(t)\)只与光电场\(E(t)\)成线性关系，故对任一频率分量都可得到：</p>
 
             $$-\omega^2 r(\omega) - 2ih\omega r(\omega) + \omega_0^2r(\omega) = -\frac{e}{m}E(\omega)$$
             $$\therefore r(\omega) = -\frac{e}{m}E(\omega)\frac{1}{\omega_0^2 - \omega^2 - 2ih\omega}$$
@@ -83,10 +117,16 @@
             </div>
 
             <p>可见，线性极化率\(\chi^{(1)}(\omega)\)的实部和虚部都是\(\omega\)的函数.</p>
-            <p></p>
+            <p>根据光的传输理论，线性极化率的实部描述光在介质中传输时相位延迟的频率色散特性；虚部描述介质对光传输的吸收（或放大特性）.</p>
+            <p>实部\(\chi'(\omega)\)与虚部\(\chi''(\omega)\)随频率变化的曲线如图所示：</p>
+            <img src="Img/Susceptibility.jpg" width="200" alt="线性极化率的实部和虚部与频率的关系曲线">
+            <p>\(\chi''(\omega)\)曲线在中心（共振）频率\(\omega_0\)处有一个峰值，具有Lorentz线型，其半功率点全宽度为\(2h\)，且\(h\)也是\(\chi'(\omega)\)曲线峰值处的频率与中心频率\(\omega_0\)之差.</p>
+            <p>若频率\(\omega\)远离共振频率\(\omega_0\)，即\(\omega-\omega_0\)大于几个线宽，则\(\chi''(\omega)\)可以忽略不计，则频率为\(\omega\)的光将在介质中无吸收地传输.</p>
 
-            
-            <h3>一维振子的非线性响应</h3>
+        </div>
+
+        <div class="Card-Analysis" id="nonlinear">
+            <h2>一维振子的非线性响应</h2>
             <p>为描述非线性光学现象，必须考虑振子的非线性响应.</p>
             <p>若振子恢复力中存在小的非简谐项，在考虑到三次项时，非简谐力为：</p>
             $$-m\omega_0^2r + mAr^2 + mBr^3$$
@@ -102,17 +142,14 @@
             $$\frac{\mathrm{d}^2r}{\mathrm{d}t^2} + 2h\frac{\mathrm{d}r}{\mathrm{d}t} + \omega_0^2r - Ar^2 - Br^3 = -\frac{e}{m}E$$
             <p>给定光电场\(E\)，即可解出\(r\)，再由\(P = -ner\)，就可求出非线性极化强度与非线性极化率.</p>
 
-            <div class="Card-Formula" id="chi2">
-                <b>一维振子的二阶非线性极化率表示式</b>
-                $$\chi^2(\omega_1, \omega_2) = -A\frac{ne^3}{\epsilon_0m^2}F(\omega_1 + \omega_2)F(\omega_1)F(\omega_2)$$
-            </div>
+
             
             <div class="Card-Question">
                 <p>1、非简谐力的来历</p>
                 <p>2、振子运动方程的来历</p>
             </div>
 
-            <h4>单个频率光场的情况</h4>
+            <h3>单个频率光场的情况</h3>
             <p>[设]频率为\(\omega\)的光电场表示式为：</p>
             $$E = E(\omega)e^{-i\omega t} + E^*(\omega)e^{i\omega t}$$
             <p>由于<a href="#formula2">振子的运动方程</a>是非线性的，直接求解非常困难，考虑到振子恢复力中的非简谐项较小，可以根据微扰理论求解.</p>
@@ -154,6 +191,47 @@
                 <p>\(r(\omega)\)没有c.c.，但是\(r(t)\)有.</p>
             </div>
 
+            <p>将极化强度写成级数形式：</p>
+            $$P(t) = \sum_{k=1}^{\infty}P^{(k)}(t)$$
+            <p>则第\(r\)阶极化强度为：</p>
+            $$P^{(k)}(t) = -ner_k(t)$$
+
+            <p>二阶极化强度为：</p>
+            $$\begin{align}
+            P^{(2)}(t) &= -ner_2(t)\\
+                       &= -\frac{ne^3}{m^2}AE^2(\omega)F(2\omega)F(\omega)F(\omega)e^{-i2\omega t}\\
+                       & -\frac{ne^3}{m^2}AE(\omega)E^*(\omega)F(0)F(\omega)F(-\omega)\\
+                       & + c.c.
+            \end{align}$$
+
+            <p>按照极化强度与光电场的关系，可将上式写成如下形式：</p>
+            $$P^{(2)}(t) = \epsilon_0\chi^{(2)}(\omega, \omega)E^2(\omega)e^{-i2\omega t} + \epsilon_0\chi^{(2)}(\omega, -\omega)E(\omega)E(-\omega) + c.c.$$
+            <ul>
+                <li>\(\chi^{(2)}(\omega, \omega),~\chi^{(2)}(\omega, -\omega)\)：二阶极化率</li>
+            </ul>
+            <p>比较两种形式的\(P^{(2)}(t)\)，可得这两个二阶极化率分别为：</p>
+            $$\chi^{(2)}(\omega, \omega) = -A\frac{ne^3}{\epsilon_0m^2}F(\omega + \omega)F(\omega)F(\omega)$$
+            $$\chi^{(2)}(\omega, -\omega) = -A\frac{ne^3}{\epsilon_0m^2}F(0)F(\omega)F(-\omega)$$
+
+            <div class="Card-Formula" id="chi2">
+                <b>一维振子的二阶非线性极化率表示式</b>
+                $$\chi^{(2)}(\omega_1, \omega_2) = -A\frac{ne^3}{\epsilon_0m^2}F(\omega_1 + \omega_2)F(\omega_1)F(\omega_2)$$
+            </div>
+
+            <p>同理：</p>
+            $$\begin{align}
+            P^{(3)}(t) &= -ner_3(t)\\
+                       &= \frac{e^3}{m^3}E^3(\omega)[2A^2F(2\omega) + B]F(3\omega)F^3(\omega)e^{-i3\omega t}\\
+                       & + \frac{e^3}{m^3}E^2(\omega)E^*(\omega)\left[2A^2F(2\omega) + \frac{4A^2}{\omega_0^2} + 3B\right]F^3(\omega)F(-\omega)e^{-i\omega t}\\
+                       & + c.c.\\
+                       &= \epsilon_0\chi^{(3)}(\omega, \omega, \omega)E^3(\omega)e^{-i3\omega t} + 3\epsilon_0\chi^{(3)}(\omega, \omega, -\omega)E^2(\omega)E^*(\omega)e^{-i\omega t} + c.c.
+            \end{align}$$
+
+            <p>上式右边第二项中的因子\(3\)，时考虑到极化率的本征对易对称性后引入的.</p>
+            <p>式中三阶非线性极化率分别为：</p>
+            $$\chi^{(3)}(\omega, \omega, \omega) = \frac{ne^4}{m^3}[2A^2F(2\omega) + B]F(3\omega)F^3(\omega)$$
+            $$\chi^{(3)}(\omega, \omega, -\omega) = \frac{ne^4}{3\epsilon_0m^3}\left[2A^2F(2\omega) + \frac{4A^2}{\omega_0^2} + 3B\right]F^3(\omega)F(-\omega)$$
+
             <div class="Card-Formula" id="chi3">
                 <b>三阶非线性极化率的一般表达式</b>
                 $$\begin{align}
@@ -163,6 +241,10 @@
             </div>
         </div>
 
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
         <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 

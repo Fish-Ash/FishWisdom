@@ -40,9 +40,9 @@
         <div class="Catalog">
             <ul>
                 <li><a>真实性条件</a></li>
-                <li><a>本征对易对称性</a></li>
+                <li><a href="#Properties1">本征对易对称性</a></li>
                 <li><a>完全对易对称性</a></li>
-                <li><a>空间对称性</a></li>
+                <li><a href="#spatial symmetry">空间对称性</a></li>
             </ul>
         </div>
 
@@ -67,12 +67,19 @@
             <div class="Formula">
                 $$\chi^{(2)}(\omega_1, \omega_2) = \chi^{(2)}(\omega_2, \omega_1)$$
                 <div class="Derivation">
-                    <p>由<a href="NonlinearSusceptibility.html#chi2" class="goto">一维振子的二阶非线性极化率表达式</a>：</p>
-                    $$\chi^2(\omega_1, \omega_2) = -A\frac{ne^3}{\epsilon_0m^2}F(\omega_1 + \omega_2)F(\omega_1)F(\omega_2)$$
-                    <p>可得：</p>
-                    $$\chi^{(2)}(\omega_1, \omega_2) = \chi^{(2)}(\omega_2, \omega_1)$$
+                    <a href="NonlinearSusceptibility.html#chi2" class="goto">$$\because\chi^2(\omega_1, \omega_2) = -A\frac{ne^3}{\epsilon_0m^2}F(\omega_1 + \omega_2)F(\omega_1)F(\omega_2)$$</a>
+                    $$\therefore\chi^{(2)}(\omega_1, \omega_2) = \chi^{(2)}(\omega_2, \omega_1)$$
                 </div>
             </div>
+            <p>这表明：交换两个频率为\(\omega_1\)与\(\omega_2\)的相互作用光电场的次序，二阶极化率保持不变，相应的两个极化强度\(P^{(2)}_{(\omega_1 + \omega_2)}(t)\)与\(P_{(\omega_2 + \omega_1)}^{(2)}(t)\)相等.</p>
+
+            <p>推广到三维极化率张量的情况，除要考虑光电场的振动频率外，还要考虑光电场的振动方向.</p>
+
+            <p>对于一般情况，有：</p>
+            $$\chi^{(2)}_{\mu\alpha\beta}(\omega_1, \omega_2) = \chi^{(2)}_{\mu\beta\alpha}(\omega_2, \omega_1)$$
+
+            
+
             <p>对于三阶非线性极化率张量，下示6个式子是相等的：</p>
             <table>
                 <tr>
@@ -188,9 +195,9 @@
                 </tr>
             </table>
         </div>
-<!--         
-        <div class="Card-Analysis">
-            <b>空间对称性</b>
+        
+        <div class="Card-Analysis" id="spatial symmetry">
+            <h2>空间对称性</h2>
             <p>三维空间中，介质的极化率是张量.</p>
             <p>线性极化率\(\chi^{(1)}\)是二阶张量，一般有9个元素；</p>
             <p>二阶极化率\(\chi^{(2)}\)是三阶张量，一般有27个元素；</p>
@@ -199,6 +206,14 @@
             <p>\(r\)阶极化率\(\chi^{(r)}\)是\(r+1\)阶张量.</p>
 
             <p>晶体的对称性越高，极化率张量中的非零元素、独立元素数目越少.</p>
+
+            <p>具有对称中心的晶体，偶数阶非线性极化率为\(0\).</p>
+            <div class="Card-AI">
+                <a href="Chapter1.html#Flag2">$$\because P^{(2)}_\mu(t) = \epsilon_0\sum_{m,n\\\alpha,\beta}\chi^{(2)}_{\mu\alpha\beta}(\omega_m, \omega_n)E_\alpha(\omega_m)E_\beta(\omega_n)e^{-i(\omega_m+\omega_n)t}$$</a>
+                $$\therefore P^{(2)}_{-\mu}(t) = \epsilon_0\sum_{m,n\\\alpha,\beta}\chi^{(2)}_{-\mu-\alpha-\beta}(\omega_m, \omega_n)E_{-\alpha}(\omega_m)E_{-\beta}(\omega_n)e^{-i(\omega_m+\omega_n)t}$$
+                $$\therefore -P^{(2)}_\mu(t) = \epsilon_0\sum_{m,n\\\alpha,\beta}\chi^{(2)}_{-\mu-\alpha-\beta}(\omega_m, \omega_n)E_\alpha(\omega_m)E_\beta(\omega_n)e^{-i(\omega_m+\omega_n)t}$$
+            </div>
+            <p>由于具有压电效应的晶体都没有对称中心，因此它们的二阶极化率不可能为\(0\).</p>
         </div>
 
         <div class="Card-Analysis">
@@ -240,7 +255,7 @@
                     \end{align}$$
                 </div>
             </div>
-        </div> -->
+        </div>
 
 
 

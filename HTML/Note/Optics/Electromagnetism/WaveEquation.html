@@ -86,8 +86,19 @@
 
         <div class="Card-Analysis">
             <h2>波动方程</h2>
-            $$\nabla^2\boldsymbol{E} - \frac{1}{v^2}\frac{\partial\boldsymbol{E}}{\partial t} = 0$$
-            $$\nabla^2\boldsymbol{B} - \frac{1}{v^2}\frac{\partial\boldsymbol{B}}{\partial t} = 0$$
+            <div class="Formula">
+                $$\nabla^2\boldsymbol{E} = \epsilon\mu\frac{\partial^2\boldsymbol{E}}{\partial t^2}$$
+                <div class="Derivation">
+                    $$\nabla\times\boldsymbol{E} = -\frac{\partial\boldsymbol{B}}{\partial t} = -\mu\frac{\partial\boldsymbol{H}}{\partial t}$$
+                    $$\therefore\nabla\times(\nabla\times\boldsymbol{E}) = -\mu\frac{\partial}{\partial t}(\nabla\times\boldsymbol{H})$$
+                    $$\because \nabla\times\boldsymbol{H} = \frac{\partial\boldsymbol{D}}{\partial t} = \epsilon\frac{\partial\boldsymbol{E}}{\partial t}$$
+                    $$\therefore \nabla\times(\nabla\times\boldsymbol{E}) = -\epsilon\mu\frac{\partial^2\boldsymbol{E}}{\partial t^2} = \nabla(\nabla\cdot\boldsymbol{E}) - \nabla^2\boldsymbol{E}$$
+                    $$\because \nabla\cdot\boldsymbol{E} = \frac{1}{\epsilon}\nabla\cdot\boldsymbol{D} = 0$$
+                    $$\therefore \nabla^2\boldsymbol{E} = \epsilon\mu\frac{\partial^2\boldsymbol{E}}{\partial t^2}$$
+                </div>
+            </div>
+
+            $$\nabla^2\boldsymbol{H} = \epsilon\mu\frac{\partial^2\boldsymbol{H}}{\partial t^2}$$
 
 
             <p>用单一的一个标量波动方程就可以概括\(\boldsymbol{E}\)和\(\boldsymbol{H}\)中所有分量的行为：</p>

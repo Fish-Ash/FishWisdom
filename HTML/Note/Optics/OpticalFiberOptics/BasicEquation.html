@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>光纤光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>光纤光学的基本方程</h1>
+
+        <div class="Card-Analysis">
+            <h2>光线理论</h2>
+
+            <p>当光纤芯径远大于光波波长\(\lambda_0\)时，可近似认为\(\lambda_0\to0\)，从而将光波近似看成由一根根光线所构成，因此，可以采几何光学的方法来分析光线的入射、传播（轨迹）及时延（色散）和光强分布等特性，这种分析方法即为<b>光线理论</b>.</p>
+
+            <p>光线理论的主要优点是简单直观，在分析芯径较粗的多模光纤时，可以得到较精确的结果.</p>
+            <div class="Card-AI">
+                <p>单模光纤芯径较细.</p>
+            </div>
+            <p>但由于采用了几何光学近似，光线理论无法解释诸如：模式分布、包层模、模式耦合及光场分布等现象.</p>
+            <p>而且，当不满足\(\lambda_0\)远小于芯径的近似条件时（如对单模光纤），光线理论的分析结果存在很大误差.</p>
+
+            <p>在光纤中传播的光线遵从<a href="../AppliedOptics/LightEquation.html" class="goto">光线方程</a>.</p>
+            <p>SIOF中，光线沿直线传播；GIOF中，光线轨迹为曲线.</p>
+
+            <div class="Card-AI">
+                $$\frac{\mathrm{d}}{\mathrm{d}S}\left(n\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}S}\right) = \nabla n(\boldsymbol{r})$$
+
+                <p></p>
+            </div>
+
+            <p>光纤中存在两类光线：</p>
+            <ul>
+                <li>子午光线</li>
+                <li>偏斜光线</li>
+            </ul>
+            
+            <p><b>子午光线</b>：在子午平面上传播的光线，其传播较简单，子午平面是与纤轴相交的且与纤壁垂直的所有平面.</p>
+            <p><b>偏斜光线</b>：与纤轴既不相交也不平行的光线，其传播一般较复杂.</p>
+
+            <h3>SIOF中光线的传播</h3>
+            <p>SIOF中，子午光线沿直线传播，遇到纤芯与包层交界面（纤壁）则会发生内全反射，因此其光线轨迹是限制在子午平面内传播的锯齿形折线.</p>
+
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>波动理论</h2>
+
+            <p>波动理论是一种更为严格的分析方法，其严格在于：</p>
+            <ul>
+                <li>从光波的本质特性——电磁波出发，通过求解电磁波所遵从的<a href="../Electromagnetism/Maxwell.html" class="goto">Maxwell方程组</a>，导出电磁场的场分布，具有理论上的严谨性.</li>
+                <li>未作任何前提近似，因此适用于各种折射率分布的单模光纤与多模光纤.</li>
+            </ul>
+
+            <div class="Card-AI">
+                <p>缺点是求解复杂，甚至有时无法得到解析解.</p>
+            </div>
+
+            <p>光纤是一种介质光波导，这种波导具有如下特点：</p>
+            <ul>
+                <li>无传导电流</li>
+                <li>无自由电荷</li>
+                <li>线性各向同性</li>
+            </ul>
+
+            <p>对于光纤中的一般问题，均可以使用标量<a href="../Electromagnetism/WaveEquation.html" class="goto">波动方程</a>解决；只有在进行更精密的分析时，才使用矢量波动方程.</p>
+
+            <p>圆柱坐标系中，纵向场分量\(E_z\)与\(H_z\)满足的波导场方程为：</p>
+            $$\left(\frac{\partial^2}{\partial r^2} + \frac{1}{r}\cdot\frac{\partial}{\partial r} + \frac{1}{r^2}\cdot\frac{\partial^2}{\partial\theta^2} + \chi^2\right)\left[\begin{matrix}E_z\\H_z\end{matrix}\right] = 0$$
+
+            <p>其中\(\chi\)为场的横向传播常数，由下式定义：</p>
+            $$\chi^2(r) = \begin{cases}
+            n^2(r)k_0^2 - \beta^2,\quad 0\leq r\leq a\\
+            n_2^2k_0^2 - \beta^2,\quad r\gt a
+            \end{cases}$$
+
+            <b>模式分布</b>
+            <p>光纤的结构参数可由其归一化频率\(V\)表征：</p>
+            $$V = (2\pi/\lambda_0)a\sqrt{n_1^2 - n_2^2} = k_0an_1\sqrt{2\Delta}$$
+            <p>\(V\)越大，允许存在的导模数越多.</p>
+
+            <p>除基模外，其他导模都可能在某个\(V\)值以下不允许存在，称之为<b>导模的截止</b>，此时导模转换为辐射模.</p>
+            <p>使某一导模截止的\(V_0\)值称为导模的<b>截止条件</b>.</p>
+
+            <p>当导模的本征值\(\beta\to n_1k_0\)时，导模场紧紧束缚于纤芯中传输，称之为<b>导模的远离截止</b>.</p>
+            <p>每个导模都对应一个合适的\(V\)值使其远离截止，称之为导模的<b>远离截止条件</b>.</p>
+
+            <div class="Card-AI">
+                $$V = k_0a\cdot NA$$
+                <p>\(V\)越大，\(NA\)越大，更多的光线可以进入光纤.</p>
+            </div>
+
+            <b>横向传播常数</b>
+            <p>纤芯内：</p>
+            $$\chi_1 = \sqrt{n_1^2k_0^2 - \beta^2},\quad\beta\lt n_1k_0$$
+            <p>\(\chi_1\)为实数.</p>
+
+            <p>包层内：</p>
+            $$\chi_2 = \sqrt{n_2^2k_0^2 - \beta^2},\quad\beta\gt n_2k_0$$
+            <p>\(\chi_2\)为纯虚数.</p>
+
+            <p>方便起见，定义三个实的归一化参数：</p>
+            $$U = a\chi_1 = \sqrt{n_1^2k_0^2 - \beta^2}\cdot a$$
+            $$W = -ia\chi_2 = \sqrt{\beta^2 - n_2^2k_2^2}\cdot a$$
+            $$b = \frac{W^2}{V^2} = \frac{\beta^2 - n_2^2k_0^2}{n_1^2k_0^2 - n_2^2k_0^2}$$
+
+            <p>\(b\in[0,1]\)是场的归一化传播常数.</p>
+            <p>\(U\)与\(W\)是场的归一化横向传播常数.</p>
+            <p>\(U\)值反映了导模在芯区中的驻波场的横向振荡频率.</p>
+            <p>\(W\)值反映了导模在包层中的消逝场的衰减速度，\(W\)越大衰减越快.</p>
+            <p>\(U\)与\(W\)满足：</p>
+            $$V^2 = U^2 + W^2$$
+
+
+        </div>
+
+
+
+
+        
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -38,8 +38,17 @@
         <h1>梯度、散度、旋度</h1>
 
         <div class="Card-Analysis">
-            <h2>\(\nabla\)算子</h2>
+            <h2>\(\nabla\)算子（梯度算子）</h2>
+
+            <b>直角坐标系中</b>
             $$\nabla = \frac{\partial}{\partial x}\hat{\boldsymbol{x}} + \frac{\partial y}{\partial y}\hat{\boldsymbol{y}} + \frac{\partial}{\partial z}\hat{\boldsymbol{z}}$$
+
+            <b>柱坐标系中</b>
+            $$\nabla = \frac{\partial}{\partial r}\hat{\boldsymbol{r}} + \frac{1}{r}\cdot\frac{\partial}{\partial\phi}\hat{\boldsymbol{\phi}} + \frac{\partial}{\partial z}\hat{\boldsymbol{z}}$$
+            <ul>
+                <li>\(\hat{\boldsymbol{r}}\)：沿径向的单位矢量</li>
+                <li>\(\hat{\boldsymbol{\phi}}\)：沿角向的单位矢量</li>
+            </ul>
 
             <table>
                 <tr><td colspan="3">\(\nabla\)的三种作用方式</td></tr>

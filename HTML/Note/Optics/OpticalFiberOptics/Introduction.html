@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>光纤光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>光纤光学的基本理论</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+
+            <div class="Card-Definition">
+                <b>光纤光学</b>
+                <p>光纤光学是一门研究光波在光纤中传播特性的科学.</p>
+            </div>
+
+
+        </div>
+        
+        <div class="Card-Analysis">
+            <h2>光纤</h2>
+            
+            <div class="Card-Definition">
+                <b>光纤</b>
+                <p>一种介质圆柱光波导，能够约束并导引光波在其内部或其表面附近沿其轴线方向向前传播.</p>
+                <p>光纤由<b>纤芯</b>、<b>包层</b>与<b>套层</b>构成.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>纤芯</b>
+                <p>纤芯由高度透明的介质材料（如石英玻璃等）经严格的工艺制成，是光波的传播媒体.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>包层</b>
+                <p>折射率稍低于纤芯折射率的介质材料，一方面与纤芯一起构成光波导，另一方面也保护纤壁不受污染或损坏.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>套层</b>
+                <p>一般由高损耗的柔软材料（如塑料等）制成，起增强机械性能，保护光纤的作用，同时也组织纤芯光功率串入邻近光纤线路，抑制串扰.</p>
+            </div>
+
+            <figure>
+                <img src="Img/optical fiber.jpg" width="300">
+                <figcaption>光纤的结构</figcaption>
+                <figcaption>(a)阶跃光纤；(b)渐变光纤；(c)单模光纤</figcaption>
+                <figcaption>1-纤芯；2-包层；3-套层</figcaption>
+            </figure>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光纤的分类</h2>
+            <table>
+                <tr>
+                    <td rowspan="2">按用途分类</td>
+                    <td>通信用光纤</td>
+                </tr>
+                <tr><td>非通信用光纤</td></tr>
+                <tr>
+                    <td rowspan="2">按纤芯折射率分类</td>
+                    <td>跃迁折射率分布光纤（SIOF）</td>
+                </tr>
+                <tr><td>渐变折射率分布光纤（GIOF）</td></tr>
+                <tr>
+                    <td rowspan="3">按光纤中的传输模式分</td>
+                    <td>单模光纤</td>
+                </tr>
+                <tr><td>双模光纤</td></tr>
+                <tr><td>多模光纤</td></tr>
+            </table>
+
+            <h3>通信用光纤与非通信用光纤</h3>
+            <b>通信用光纤</b>
+            <p>主要用于各种光纤通信系统中.</p>
+            <p>通信用光纤在系统工作波长处应满足低损耗、宽传输带宽（大容量）及与系统元器件（如光源、探测器与无光源器件）间的高效率耦合等要求.</p>
+            <p>同时，也要求光纤具有良好的机械稳定性、低廉的成本与抗恶劣环境的性能.</p>
+
+            <b>非通信用光纤</b>
+            <p>主要用于光纤传感、光纤信号处理、光纤测量及各类常规光纤系统中.</p>
+            <p>非通信用光纤通常要求具有特殊的性能（如高双折射、物理敏感性强及具有非线性等），而在其他方面的要求则相应降低.</p>
+
+            <h3>跃迁折射率分布光纤与渐变折射率分布光纤</h3>
+            <b id="SIOF">跃迁折射率分布光纤（SIOF）</b>
+            <p>SIOF中，纤芯各处折射率均等于\(n_1\)，包层各处的折射率均等于\(n_2\)，且\(n_1\gt n_2\).</p>
+            <p>在纤芯与包层分界面处，折射率发生突变或阶跃变化，其折射率分布形式为：</p>
+            $$n(r) = \begin{cases}
+            n_1,\quad 0\lt r\leq a\\
+            n_2,\quad r\gt a
+            \end{cases}$$
+            <ul>
+                <li>\(a\)：纤芯半径</li>
+            </ul>
+
+            <b id="GIOF">渐变折射率分布光纤（GIOF）</b>
+            <p>GIOF中，纤芯中折射率是变化的，在轴线处最高，为\(n_1\)；沿径向随半径\(r\)的增大而减小，在包层与纤芯分界面处最低，为\(n_2\)；在包层中折射率一般恒定不变.</p>
+            <p>多数GIOF遵从g型折射率分布：</p>
+            $$n(r) = \begin{cases}
+            n_1[1-2\Delta(r/a)^g]^{1/2},\quad 0\leq r\leq a\\
+            n_2,\quad r\gt a
+            \end{cases}$$
+            <ul>
+                <li>\(a\)：纤芯半径</li>
+                <li>\(\Delta = \frac{n_1^2 - n_2^2}{2n_1^2}\approx \frac{n_1-n_2}{n_1}\)：纤芯轴线折射率与包层折射率的相对差（简称为相对折射率差）</li>
+                <li>\(g\)：折射率分布参数，决定了折射率分布曲线的情况</li>
+            </ul>
+
+            <p>\(g\to\infty\)时，为SIOF.</p>
+            <p>\(g=2\)时，为平方律分布或抛物线分布光纤，又称自聚焦光纤.</p>
+            <p>\(g=1\)时，为三角分布光纤.</p>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>特种光纤</h2>
+
+            <p>特种光纤是具有某种特殊性能的光纤.</p>
+
+            <b>保偏（单偏振）光纤</b>
+            <p>通过波导结构的特殊设计，使在纤芯中传播的基模只沿一个方向偏振，且在传播过程中保持偏振方向不变.</p>
+
+            <b>有源光纤</b>
+            <p>利用具有增益的激活材料制作纤芯，在外光源泵浦下可输出激光（光纤激光器）或对外来微弱光信号进行直接光放大（光纤放大器）.</p>
+
+            <b>双包层或多包层光纤</b>
+            <p>这种光纤具有模场半径大、弯曲损耗小的特点，且在很宽的波长范围内均具有较低的Sean，在波分复用光纤通信系统中具有重要应用.</p>
+
+            <b>增敏光纤</b>
+            <p>通过增强光纤的磁光、电光或温度敏感效应，使光纤的特征参数对外界物理量（如磁场、电流、温度、压力、转速等）的敏感性增强，从而构成各种灵敏的光纤传感系统.</p>
+
+            <b>特殊涂层光纤</b>
+            <p>对于应用于恶劣环境中的光纤，其涂层材料不能采用普通的石英或硅胶类材料，而必须采用一些硬质材料（如SiN<sub>2</sub>或金属等），以增强光纤的抗压或耐高温、耐酸碱等性能.</p>
+
+            <b>耐辐射光纤</b>
+            <p>当光纤工作于大剂量核辐射环境下时，普通的石英玻璃会因染色失去透光能力，为此，采用耐辐射材料（如含铈玻璃）来制作光纤的纤芯和包层，这样的光纤就可以在核辐射环境下正常工作.</p>
+
+            <b>发光光纤</b>
+            <p>采用磷光体、发光晶体及其他发光材料制成的光纤，可用于探测\(X\)射线、高能粒子及其他带电粒子.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光纤光学研究的问题</h2>
+
+            <p>与其他任何光波导研究一样，光纤光学理论研究涉及的基本问题是：光波如何进入光纤，以及光波在光纤中如何传播.</p>
+            <p>具体而言，主要包括以下几个方面的内容：</p>
+            <ul>
+                <li>光纤模式的激励（或光的入射）</li>
+                <li>光纤中的模式分布（或光线传播轨迹）</li>
+                <li>模式的传播速度（或光线的时延）</li>
+                <li>模式沿光线横截面场分布</li>
+                <li>光信号的传输损耗</li>
+                <li>光信号的畸变</li>
+                <li>模式的偏振特性</li>
+                <li>模式的耦合</li>
+            </ul>
+
+            <p>光纤光学的研究目的，就是通过对光纤传输特性的理论分析，为光纤技术的应用奠定基础.</p>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

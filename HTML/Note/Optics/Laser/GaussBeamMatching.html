@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>高斯光束的匹配</h1>
+
+        <div class="Card-Analysis">
+            <h2>高斯光束的匹配</h2>
+            <b>问题的导出</b>
+            <p>实践过程中，通常需要把一个激光器谐振腔所产生的高斯光束，注入到另一个谐振腔或其他光学系统中，这就涉及到了高斯光束匹配的问题.</p>
+
+            <p>一般来讲，高斯光束注入的光学系统相当于一个稳定腔，具有确定的本征模式.</p>
+
+            <b>不匹配的缺点</b>
+            <ul>
+                <li>耦合效率的降低</li>
+                <li>能量的损失</li>
+            </ul>
+
+            <b>利用单透镜实现模式匹配</b>
+            <p>当一个谐振腔产生的单模高斯光束入射到另一个谐振腔内时，在两腔之间适当位置插入一个适当焦距的单透镜.</p>
+
+            <div class="Card-Question">
+                <p>为什么插一个透镜就能光束匹配了？</p>
+                <p>高斯光束的模的概念是什么？</p>
+                <p>怎么判断两个高斯光束的模一致？</p>
+            </div>
+
+            $$l' = F + \frac{F^2(l-F)}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}$$
+            $$\therefore \frac{l' - F}{l - F} = \frac{F^2}{(F - l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}$$
+            $$\frac{1}{\omega_0'^2} = \frac{1}{\omega_0^2}\left(1 - \frac{l}{F}\right)^2 + \frac{1}{F^2}\left(\frac{\pi\omega_0}{\lambda}\right)^2$$
+            $$\therefore \frac{\omega_0^2}{\omega_0'^2} = \frac{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}{F^2}$$
+            $$\therefore \frac{\omega_0'^2}{\omega_0^2} = \frac{F^2}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}$$
+            $$\therefore \frac{\omega_0'^2}{\omega_0^2} = \frac{l'-F}{l - F}$$
+            $$又\because \frac{1}{\omega_0'^2} = \frac{1}{\omega_0^2}\left(1 - \frac{l}{F}\right)^2 + \frac{1}{F^2}\left(\frac{\pi\omega_0}{\lambda}\right)^2$$
+            <p>两边同乘\(\omega_0'\)，得：</p>
+            $$1 = \frac{l'-F}{l-F}\cdot\frac{(F-l)^2}{F^2} + \frac{1}{F^2}\left(\frac{\pi\omega_0\omega_0'}{\lambda}\right)^2$$
+            $$F^2 = (l'-F)(l-F) + \left(\frac{\pi\omega_0\omega_0'}{\lambda}\right)^2$$
+            <p>令\(f_0 = \left(\frac{\pi\omega_0\omega_0'}{\lambda}\right)^2\)，则：</p>
+            $$F^2 - f_0^2 = (l'-F)(l-F)$$
+            $$又\because \frac{\omega_0'^2}{\omega_0^2} = \frac{l'-F}{l - F}$$
+            $$\therefore\begin{cases}
+            l'-F = \pm\frac{\omega_0'}{\omega_0}\sqrt{F^2 - f_0^2}\\
+            l-F = \pm\frac{\omega_0}{\omega_0'}\sqrt{F^2 - f_0^2}
+            \end{cases}$$
+
+            <b>case 1</b>
+            <p>给定一个焦距为\(F\)的透镜：</p>
+            <p>此时可以解出一组\(l,l'\).</p>
+            <p>求出实数解的条件为：</p>
+            $$F\geq f_0$$
+
+            <b>case 2</b>
+            <p>两个腔的相对位置固定：</p>
+            $$l_0 = l + l'$$
+            <p>两式相加即可解出\(F\).</p>
+            <p>再代回两式即可解出\(l,l'\).</p>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

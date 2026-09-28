@@ -36,16 +36,34 @@
         </div>
         
         <h1>光线方程</h1>
-        <p>几何光学始终以光线为研究对象，因而也称为光线光学或射线光学.</p>
 
-        <p>为了建立能够描述光线行为的方程，一个自然的思路是从光线的定义出发，依据光线处处与光波的等相位面正交的特点来寻求光线方程，以解决我们关心的光传播路径问题.</p>
+        <div class="Card-Analysis">
+            <h2>光线方程</h2>
 
-        <p>由<a href="eikonalEquation.html" class="goto">程函方程</a></p>
+            <p>几何光学始终以光线为研究对象，因而也称为光线光学或射线光学.</p>
+    
+            <p>为了建立能够描述光线行为的方程，一个自然的思路是从光线的定义出发，依据光线处处与光波的等相位面正交的特点来寻求光线方程，以解决我们关心的光传播路径问题.</p>
+    
+            <p>由<a href="eikonalEquation.html" class="goto">程函方程</a>可知，等相位面就是程函数\(\psi\)的等值面，因而梯度矢量\(\nabla\psi\)必然指向等相位面的法线方向.</p>
+            
+    
+            <div class="Card-Formula">
+                <b>光线方程</b>
+                $$\frac{\mathrm{d}}{\mathrm{d}S}\left(n\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}S}\right) = \nabla n(\boldsymbol{r})$$
+                <p>光线方程式研究介质中光的几何传播特性的重要方程，它将光线轨迹（由\(\boldsymbol{r}\)描述）与空间折射率分布\(n(\boldsymbol{r})\)联系起来，由光线方程可以直接求出光线轨迹表达式.</p>
+    
+                <div class="Card-AI">
+    
+                </div>
+            </div>
 
-        <div class="Card-Formula">
-            <b>光线方程</b>
-            $$\frac{\mathrm{d}}{\mathrm{d}S}\left(n\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}S}\right) = \nabla n$$
-            <p>光线方程式研究介质中光的几何传播特性的重要方程，它将光线轨迹（由\(\boldsymbol{r}\)）联系起来，由光线方程可以直接求出光线轨迹表达式.</p>
+            <p>由光线方程，可以证明下式成立：</p>
+            $$\frac{1}{R} = \frac{1}{n(r)}N\cdot\nabla n$$
+            <ul>
+                <li>\(R\)：光线弯曲的曲率半径</li>
+                <li>\(N\)：光线法向单位矢量</li>
+            </ul>
+            <p>上式的物理意义为：光线总向折射率高的区域弯曲.</p>
         </div>
 
 

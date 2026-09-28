@@ -20,6 +20,11 @@ img{
     margin: 0 auto;
 }
 
+figcaption{
+    display: block;
+    text-align: center;
+}
+
 /* 页内目录 */
 .PageCatalog{
     background-color: #e6f7ff;

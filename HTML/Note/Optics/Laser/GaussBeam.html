@@ -39,7 +39,6 @@
 
         <div class="PageCatalog">
             <ul>
-                <li><a href="#Flag1">波动方程</a></li>
                 <li><a href="#Flag2">波动方程在类透镜介质中的解</a></li>
                 <li><a href="#Flag3">均匀介质中的高斯光束</a></li>
                 <li><a href="#GaussBeamProperty">高斯光束基本特性</a></li>
@@ -48,31 +47,12 @@
             </ul>
         </div>
 
+        <b>前置知识</b>
+        <ul>
+            <li><a href="../Electromagnetism/WaveEquation.html">波动方程</a></li>
+        </ul>
 
-        <div class="Card-Analysis" id="Flag1">
-            <h2>波动方程</h2>
 
-            <p>各向同性（物质方程适用）、无电荷分布（\(\rho=0\)）的介质中，<a
-                    href="../Electromagnetism/Maxwell.html#DifferentialForm">Maxwell方程组的微分形式</a>为：</p>
-            $$\begin{cases}
-            \nabla\cdot(\epsilon \boldsymbol{E}) = 0\\
-            \nabla\times\boldsymbol{E} = -\mu\frac{\partial\boldsymbol{H}}{\partial t}\\
-            \nabla\times\boldsymbol{H} = \epsilon \frac{\partial \boldsymbol{E}}{\partial t}
-            \end{cases}$$
-            <p>此处只考虑电场与物质相互作用的情况，不考虑磁场与物质相互作用（非常微弱、忽略不计）的情况.</p>
-            <p>由此可得<b>波动方程（亥姆霍兹方程）</b>：</p>
-            $$\mu\epsilon \frac{\partial^2\boldsymbol{E}}{\partial t^2} = \nabla^2\boldsymbol{E}$$
-
-            <div class="Card-Question">
-                <p>怎么推导的？（旋度）</p>
-            </div>
-        </div>
-
-        <div class="Card-Analysis">
-            <h2>高斯光束</h2>
-            <p>稳定球面腔中产生的激光束是高斯光束（Gauss球面波）.</p>
-            <p>[注]Gauss光束既不是均匀平面波，也不是均匀球面波.</p>
-        </div>
 
         <div class="Card-Analysis">
             <h2 id="Flag2">波动方程在类透镜介质中的解</h2>
@@ -171,12 +151,43 @@
 
         </div>
 
-        <p>设：</p>
-        $$q_0 = i\frac{\pi\omega_0^2\eta}{\lambda}$$
-        <p>人为定义以下参数：</p>
-        $$\omega^2(z) = \omega_0^2\left[1+\left(\frac{\lambda z}{\pi\omega_0^2\eta}\right)^2\right] = \omega_0^2(1 +
-        \frac{z^2}{z_0^2})$$
-        $$\kappa(z) = \tan^{-1}\left(\frac{\lambda z}{\pi\omega_0^2\eta}\right) = \tan^{-1}\left(\frac{z}{z_0}\right)$$
+        <div class="Card-Analysis">
+            <h2>高斯光束</h2>
+            <p>理论和实践证明，在可能存在的激光束形式中，最重要、最具有典型意义的，就是基模高斯光束.</p>
+            <p>若激光器发射的激光为单横模，即只有一种横模模式，通常就是基横模\(\text{TEM}_{00}\).</p>
+            <p>稳定球面腔中产生的激光束是高斯光束（Gauss球面波）.</p>
+
+            <img src="Img/GaussBeam.jpg" width="400">
+
+            <p>[注]Gauss光束既不是均匀平面波，也不是均匀球面波.</p>
+
+            <p>沿\(z\)轴方向传播的基模Gauss光束，不论其是由何种结构的稳定腔所产生的，其电矢量均可表示为：</p>
+            $$E(x,y,z) = \frac{A_0}{\omega(z)}\exp\left[\frac{-(x^2 + y^2)}{\omega^2(z)}\right]\times\exp\left\{-ik\left[\frac{x^2+y^2}{2R(z)} + i\phi(z)\right]\right\}$$
+            <ul>
+                <li>\(E(x,y,z)\)：\((x,y,z)\)处的电矢量</li>
+                <li>\(\frac{A_0}{\omega(z)}\exp\left[\frac{-(x^2 + y^2)}{\omega^2(z)}\right]\)：振幅因子</li>
+                <li>\(\exp\left\{-ik\left[\frac{x^2+y^2}{2R(z)} + i\phi(z)\right]\right\}\)：相位因子</li>
+                <li>\(A_0/\omega(z)\)：\(z\)轴上各点的电矢量振幅</li>
+            </ul>
+
+            <b>其他参数</b>
+            <p>\(\omega(z)\)：\(z\)点处的光斑半径</p>
+            $$\omega(z) = \omega_0\sqrt{1 + \left(\frac{\lambda z}{\pi\omega^2\eta}\right)^2}$$
+            <p>\(\omega_0 = \omega(0)\)：高斯光束束腰半径</p>
+            <p>\(R(z)\)：\(z\)点处波阵面的曲率半径</p>
+            $$R(z) = z\left[1 + \left(\frac{\pi\omega^2}{\lambda z}\right)^2\right]$$
+            <p>\(\phi(z)\)：相位因子</p>
+            $$\phi(z) = \arctan\frac{\lambda z}{\pi\omega^2}$$
+
+            
+            <p>设：</p>
+            $$q_0 = i\frac{\pi\omega_0^2\eta}{\lambda}$$
+            <p>人为定义以下参数：</p>
+            $$\omega^2(z) = \omega_0^2\left[1+\left(\frac{\lambda z}{\pi\omega_0^2\eta}\right)^2\right] = \omega_0^2(1 +
+            \frac{z^2}{z_0^2})$$
+            $$\kappa(z) = \tan^{-1}\left(\frac{\lambda z}{\pi\omega_0^2\eta}\right) = \tan^{-1}\left(\frac{z}{z_0}\right)$$
+        </div>
+
 
         <div class="Card-Definition">
             <b>准直距离（瑞利长度）</b>
@@ -459,63 +470,10 @@
             </div>
         </div>
 
-        <div>
+        <div class="Card-Analysis">
             <h2>高斯光束的聚焦</h2>
             <b>聚焦的目的</b>
             <p>缩小光斑半径，将激光束聚焦成极小的光斑，从而得到极高的功率密度与空间分辨率.</p>
-        </div>
-
-        <div class="Card-Analysis">
-            <h2>高斯光束的匹配</h2>
-            <b>问题的导出</b>
-            <p>实践过程中，通常需要把一个激光器谐振腔所产生的高斯光束，注入到另一个谐振腔或其他光学系统中.这就涉及到了高斯光束匹配的问题.</p>
-
-            <p>一般来讲，高斯光束注入的光学系统相当于一个稳定腔，具有确定的本征模式.</p>
-
-            <b>不匹配的缺点</b>
-            <ul>
-                <li>耦合效率的降低</li>
-                <li>能量的损失</li>
-            </ul>
-
-            <b>利用单透镜实现模式匹配</b>
-            <p>当一个谐振腔产生的单模高斯光束入射到另一个谐振腔内时，在两腔之间适当位置插入一个适当焦距的单透镜.</p>
-
-            <div class="Card-Question">
-                <p>为什么插一个透镜就能光束匹配了？</p>
-                <p>高斯光束的模的概念是什么？</p>
-                <p>怎么判断两个高斯光束的模一致？</p>
-            </div>
-
-            $$l' = F + \frac{F^2(l-F)}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}$$
-            $$\therefore \frac{l' - F}{l - F} = \frac{F^2}{(F - l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}$$
-            $$\frac{1}{\omega_0'^2} = \frac{1}{\omega_0^2}\left(1 - \frac{l}{F}\right)^2 + \frac{1}{F^2}\left(\frac{\pi\omega_0}{\lambda}\right)^2$$
-            $$\therefore \frac{\omega_0^2}{\omega_0'^2} = \frac{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}{F^2}$$
-            $$\therefore \frac{\omega_0'^2}{\omega_0^2} = \frac{F^2}{(F-l)^2 + \left(\frac{\pi\omega_0^2}{\lambda}\right)^2}$$
-            $$\therefore \frac{\omega_0'^2}{\omega_0^2} = \frac{l'-F}{l - F}$$
-            $$又\because \frac{1}{\omega_0'^2} = \frac{1}{\omega_0^2}\left(1 - \frac{l}{F}\right)^2 + \frac{1}{F^2}\left(\frac{\pi\omega_0}{\lambda}\right)^2$$
-            <p>两边同乘\(\omega_0'\)，得：</p>
-            $$1 = \frac{l'-F}{l-F}\cdot\frac{(F-l)^2}{F^2} + \frac{1}{F^2}\left(\frac{\pi\omega_0\omega_0'}{\lambda}\right)^2$$
-            $$F^2 = (l'-F)(l-F) + \left(\frac{\pi\omega_0\omega_0'}{\lambda}\right)^2$$
-            <p>令\(f_0 = \left(\frac{\pi\omega_0\omega_0'}{\lambda}\right)^2\)，则：</p>
-            $$F^2 - f_0^2 = (l'-F)(l-F)$$
-            $$又\because \frac{\omega_0'^2}{\omega_0^2} = \frac{l'-F}{l - F}$$
-            $$\therefore\begin{cases}
-            l'-F = \pm\frac{\omega_0'}{\omega_0}\sqrt{F^2 - f_0^2}\\
-            l-F = \pm\frac{\omega_0}{\omega_0'}\sqrt{F^2 - f_0^2}
-            \end{cases}$$
-
-            <b>case 1</b>
-            <p>给定一个焦距为\(F\)的透镜：</p>
-            <p>此时可以解出一组\(l,l'\).</p>
-            <p>求出实数解的条件为：</p>
-            $$F\geq f_0$$
-
-            <b>case 2</b>
-            <p>两个腔的相对位置固定：</p>
-            $$l_0 = l + l'$$
-            <p>两式相加即可解出\(F\).</p>
-            <p>再代回两式即可解出\(l,l'\).</p>
         </div>
 
         <div class="Card-Analysis">
