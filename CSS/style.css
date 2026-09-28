@@ -23,6 +23,7 @@ img{
 figcaption{
     display: block;
     text-align: center;
+    font-size: small;
 }
 
 /* 页内目录 */

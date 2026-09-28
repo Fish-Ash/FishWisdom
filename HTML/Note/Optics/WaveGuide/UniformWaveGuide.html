@@ -129,10 +129,26 @@
             <p>函数\(n(x)\)的具体形式有多种选择，它必须是缓变、平滑且对称的.</p>
             <p>实际设计的\(n(x)\)的峰值与边值仅差\(1%\)左右，这种函数可用它的泰勒展开式代替而不会降低其精确性.</p>
 
+            <p>如：</p>
+            $$f(x) = f(0) + f'(0)x + \frac{1}{2}f''(0)x^2 + \cdots$$
+            <p>由于对称性，\(f'(0)=0\)，忽略高次项，可得到具有代表性的典型抛物型折射率分布函数：</p>
             $$n(x) = n_1[1-\Delta(x/a)^2]$$
             <ul>
                 <li>\(\Delta = \frac{n_1^2 - n_2^2}{2n_1^2}\approx \frac{n_1-n_2}{n_1}\approx\frac{n_1-n_2}{n_2}\)：相对折射率差（relative refractive index contrast），是介质波导与光纤中的重要参数.</li>
             </ul>
+
+            <p>基于该种折射率分布的薄膜波导，光线方程的分量形式为：</p>
+            <p>\(z\)分量：</p>
+            $$\frac{\mathrm{d}}{\mathrm{d}S}\left(n\frac{\mathrm{d}z}{\mathrm{d}S}\right) = 0$$
+            <p>\(x\)分量：</p>
+            $$\frac{\mathrm{d}}{\mathrm{d}S}\left(n\frac{\mathrm{d}x}{\mathrm{d}S}\right) = \frac{\mathrm{d}n}{\mathrm{d}x} = -2n_1\Delta x/a^2$$
+
+            <div class="Card-AI">
+                $$n(z)\in\mathbb{C}$$
+                
+            </div>
+            <p>[设]光线初始值为\(x=0, z=0, n(0)=n_1\)，倾角为\(\theta_0\).</p>
+            <p>显然，\(n\frac{\mathrm{d}n}{\mathrm{d}S}\)为不变量，因此：</p>
 
             <b>导波光线</b>
             <p>抛物型折射率渐变波导的光线是一组正弦曲线，曲线无需界面反射，而是自行往返，蛇形前进，只要振幅适当，不超出芯区，光线就是导波光线.</p>
