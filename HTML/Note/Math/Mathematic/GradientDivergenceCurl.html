@@ -45,6 +45,7 @@
 
             <b>柱坐标系中</b>
             $$\nabla = \frac{\partial}{\partial r}\hat{\boldsymbol{r}} + \frac{1}{r}\cdot\frac{\partial}{\partial\phi}\hat{\boldsymbol{\phi}} + \frac{\partial}{\partial z}\hat{\boldsymbol{z}}$$
+
             <ul>
                 <li>\(\hat{\boldsymbol{r}}\)：沿径向的单位矢量</li>
                 <li>\(\hat{\boldsymbol{\phi}}\)：沿角向的单位矢量</li>
@@ -150,6 +151,10 @@
             <div class="Card-Formula" id="Laplacian">
                 <b>Laplace算子（直角坐标系中）</b>
                 $$\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$$
+
+                <b>Laplace算子（柱坐标系中）</b>
+                $$\nabla^2 = \frac{\partial^2}{\partial r^2} + \frac{1}{r}\frac{\partial}{\partial r} + \frac{1}{r^2}\frac{\partial^2}{\partial\phi^2} + \frac{\partial^2}{\partial z^2}$$
+                
             </div>
 
             <h3>梯度的旋度\(\nabla\times(\nabla F)\)</h3>

@@ -46,10 +46,158 @@
                 <li>\(\theta\)：极角，位置矢量与z轴的夹角</li>
                 <li>\(\phi\)：方位角，位置矢量在xy平面投影与x轴的夹角</li>
             </ul>
-            <p>球坐标\((r,\theta,\phi)\)与直角坐标\(x,y,z\)的关系为：</p>
+            <p>球坐标\((r,\theta,\phi)\)与直角坐标\((x,y,z)\)的关系为：</p>
             $$x = r\sin\theta\cos\phi$$
             $$y = r\sin\theta\sin\phi$$
             $$z = r\cos\theta$$
+
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>柱坐标系</h2>
+            <img src="Img/CylindricalCoordinate.png" width="300">
+            <p>柱坐标\(r,\phi,z\)与直角坐标\(x,y,z\)的关系为：</p>
+            <div class="Split2">
+                <div class="SplitHalf">
+                    $$x = r\cos\phi$$
+                    $$y = r\sin\phi$$
+                    $$z = z$$
+                </div>
+                <div class="SplitHalf">
+                    $$r = \sqrt{x^2 + y^2}$$
+                    $$\phi = \arctan\frac{y}{x}$$
+                    $$z = z$$
+                </div>
+            </div>
+
+            <h3>直角坐标系与柱坐标系的转化</h3>
+
+            <table>
+                <tr>
+                    <td></td>
+                    <td>$$r$$</td>
+                    <td>$$\phi$$</td>
+                </tr>
+                <tr>
+                    <td>$$x$$</td>
+                    <td>
+                        <div class="Formula">
+                            $$\frac{\partial r}{\partial x} = \cos\phi$$
+                            <div class="Derivation">
+                                $$\because r = \sqrt{x^2 + y^2}$$
+                                $$\therefore \frac{\partial r}{\partial x} = \frac{1}{2\sqrt{x^2 + y^2}}\cdot 2x = \frac{x}{r}$$
+                                $$\because x = r\cos\phi$$
+                                $$\therefore \frac{\partial r}{\partial x} = \cos\phi$$
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="Formula">
+                            $$\frac{\partial\phi}{\partial x} = -\frac{\sin\phi}{r}$$
+                            <div class="Derivation">
+                                $$\because \phi = \arctan\frac{y}{x}$$
+                                $$\therefore \frac{\partial\phi}{\partial x} = \frac{1}{1 + \left(\frac{y}{x}\right)^2}\cdot -\frac{y}{x^2} = -\frac{y}{x^2 + y^2}$$
+                                $$\because y = r\sin\phi,\quad r = \sqrt{x^2 + y^2}$$
+                                $$\therefore \frac{\partial\phi}{\partial x} = -\frac{\sin\phi}{r}$$
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>$$y$$</td>
+                    <td>
+                        <div class="Formula">
+                            $$\frac{\partial r}{\partial y} = \sin\phi$$
+                            <div class="Derivation">
+                                $$\because r = \sqrt{x^2 + y^2}$$
+                                $$\therefore\frac{\partial r}{\partial y} = \frac{1}{2\sqrt{x^2 + y^2}}\cdot 2y = \frac{y}{r}$$
+                                $$\because y = r\sin\phi$$
+                                $$\therefore\frac{\partial r}{\partial y} = \sin\phi$$
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="Formula">
+                            $$\frac{\partial\phi}{\partial y} = \frac{\cos\phi}{r}$$
+                            <div class="Derivation">
+                                $$\because \phi = \arctan\frac{y}{x}$$
+                                $$\frac{\partial\phi}{\partial y} = \frac{1}{1 + \left(\frac{y}{x}\right)^2}\cdot \frac{1}{x} = \frac{x}{x^2 + y^2}$$
+                                $$\because x = r\cos\phi,\quad r = \sqrt{x^2 + y^2}$$
+                                $$\therefore\frac{\partial\phi}{\partial y} = \frac{\cos\phi}{r}$$
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="Split2">
+                <div class="SplitHalf">
+                    <div class="Formula">
+                        $$\frac{\partial}{\partial x} = \cos\phi\frac{\partial}{\partial r} - \frac{\sin\phi}{r}\frac{\partial}{\partial\phi}$$
+                        <div class="Derivation">
+                            $$\because\frac{\partial}{\partial x} = \frac{\partial}{\partial r}\frac{\partial r}{\partial x} + \frac{\partial}{\partial\phi}\frac{\partial\phi}{\partial x}$$
+                            $$\therefore \frac{\partial}{\partial x} = \cos\phi\frac{\partial}{\partial r} - \frac{\sin\phi}{r}\frac{\partial}{\partial\phi}$$
+                        </div>
+                    </div>
+                </div>
+                <div class="SplitHalf">
+                    <div class="Formula">
+                        $$\frac{\partial}{\partial y} = \sin\phi\frac{\partial}{\partial r} + \frac{\cos\phi}{r}\frac{\partial}{\partial\phi}$$
+                        <div class="Derivation">
+                            $$\because\frac{\partial}{\partial y} = \frac{\partial}{\partial r}\frac{\partial r}{\partial y} + \frac{\partial}{\partial\phi}\frac{\partial\phi}{\partial y}$$
+                            $$\therefore\frac{\partial}{\partial y} = \sin\phi\frac{\partial}{\partial r} + \frac{\cos\phi}{r}\frac{\partial}{\partial\phi}$$
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\begin{align}
+                \frac{\partial^2}{\partial x^2} =& \cos^2\phi\frac{\partial^2}{\partial r^2} + \frac{\sin^2\phi}{r}\frac{\partial}{\partial r} - \frac{\sin\phi\cos\phi}{r}\frac{\partial^2}{\partial r\partial\phi}\\
+                                                 & -\frac{\sin\phi\cos\phi}{r}\frac{\partial^2}{\partial\phi\partial r} + \frac{2\sin\phi\cos\phi}{r^2}\frac{\partial}{\partial\phi} + \frac{\sin^2\phi}{r^2}\frac{\partial^2}{\partial\phi^2}
+                \end{align}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \frac{\partial^2}{\partial x^2} =& \frac{\partial}{\partial x}\left(\frac{\partial}{\partial x}\right)\\
+                                                    =& \left(\cos\phi\frac{\partial}{\partial r} - \frac{\sin\phi}{r}\frac{\partial}{\partial\phi}\right)\left(\cos\phi\frac{\partial}{\partial r} - \frac{\sin\phi}{r}\frac{\partial}{\partial\phi}\right)\\
+                                                    =& \cos\phi\frac{\partial}{\partial r}\left(\cos\phi\frac{\partial}{\partial r}\right) - \cos\phi\frac{\partial}{\partial r}\left(\frac{\sin\phi}{r}\frac{\partial}{\partial\phi}\right)\\
+                                                     & -\frac{\sin\phi}{r}\frac{\partial}{\partial\phi}\left(\cos\phi\frac{\partial}{\partial r}\right) + \frac{\sin\phi}{r}\frac{\partial}{\partial\phi}\left(\frac{\sin\phi}{r}\frac{\partial}{\partial\phi}\right)\\
+                                                    =& \cos^2\phi\frac{\partial^2}{\partial r^2} - \sin\phi\cos\phi\left(-\frac{1}{r^2}\frac{\partial}{\partial\phi} + \frac{1}{r}\frac{\partial^2}{\partial r\partial\phi}\right)\\
+                                                     & -\frac{\sin\phi}{r}\left(-\sin\phi\frac{\partial}{\partial r} + \cos\phi\frac{\partial^2}{\partial\phi\partial r}\right) + \frac{\sin\phi}{r^2}\left(\cos\phi\frac{\partial}{\partial\phi} + \sin\phi\frac{\partial^2}{\partial\phi^2}\right)\\
+                                                    =& \cos^2\phi\frac{\partial^2}{\partial r^2} + \frac{\sin\phi\cos\phi}{r^2}\frac{\partial}{\partial\phi} - \frac{\sin\phi\cos\phi}{r}\frac{\partial^2}{\partial r\partial\phi} + \frac{\sin^2\phi}{r}\frac{\partial}{\partial r}\\
+                                                     & -\frac{\sin\phi\cos\phi}{r}\frac{\partial^2}{\partial\phi\partial r} + \frac{\sin\phi\cos\phi}{r^2}\frac{\partial}{\partial\phi} + \frac{\sin^2\phi}{r^2}\frac{\partial^2}{\partial\phi^2}\\
+                                                    =& \cos^2\phi\frac{\partial^2}{\partial r^2} + \frac{\sin^2\phi}{r}\frac{\partial}{\partial r} - \frac{\sin\phi\cos\phi}{r}\frac{\partial^2}{\partial r\partial\phi}\\
+                                                     & -\frac{\sin\phi\cos\phi}{r}\frac{\partial^2}{\partial\phi\partial r} + \frac{2\sin\phi\cos\phi}{r^2}\frac{\partial}{\partial\phi} + \frac{\sin^2\phi}{r^2}\frac{\partial^2}{\partial\phi^2}
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\begin{align}
+                \frac{\partial^2}{\partial y^2} =& \sin^2\phi\frac{\partial^2}{\partial r^2} + \frac{\cos^2\phi}{r}\frac{\partial}{\partial r} + \frac{\sin\phi\cos\phi}{r}\frac{\partial^2}{\partial r\partial\phi}\\
+                                                 & +\frac{\sin\phi\cos\phi}{r}\frac{\partial^2}{\partial\phi\partial r} - \frac{2\sin\phi\cos\phi}{r^2}\frac{\partial}{\partial\phi} + \frac{\cos^2\phi}{r^2}\frac{\partial^2}{\partial\phi^2}
+                \end{align}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \frac{\partial^2}{\partial y^2} =& \frac{\partial}{\partial y}\left(\frac{\partial}{\partial y}\right)\\
+                                                    =& \left(\sin\phi\frac{\partial}{\partial r} + \frac{\cos\phi}{r}\frac{\partial}{\partial\phi}\right)\left(\sin\phi\frac{\partial}{\partial r} + \frac{\cos\phi}{r}\frac{\partial}{\partial\phi}\right)\\
+                                                    =& \sin\phi\frac{\partial}{\partial r}\left(\sin\phi\frac{\partial}{\partial r}\right) + \sin\phi\frac{\partial}{\partial r}\left(\frac{\cos\phi}{r}\frac{\partial}{\partial\phi}\right)\\
+                                                    & +\frac{\cos\phi}{r}\frac{\partial}{\partial\phi}\left(\sin\phi\frac{\partial}{\partial r}\right) + \frac{\cos\phi}{r}\frac{\partial}{\partial\phi}\left(\frac{\cos\phi}{r}\frac{\partial}{\partial\phi}\right)\\
+                                                    =& \sin^2\phi\frac{\partial^2}{\partial r^2} + \sin\phi\cos\phi\left(-\frac{1}{r^2}\frac{\partial}{\partial\phi} + \frac{1}{r}\frac{\partial^2}{\partial r\partial\phi}\right)\\
+                                                    & +\frac{\cos\phi}{r}\left(\cos\phi\frac{\partial}{\partial r} + \sin\phi\frac{\partial^2}{\partial\phi\partial r}\right) + \frac{\cos\phi}{r^2}\left(-\sin\phi\frac{\partial}{\partial\phi} + \cos\frac{\partial^2}{\partial\phi^2}\right)\\
+                                                    =& \sin^2\phi\frac{\partial^2}{\partial r^2} - \frac{\sin\phi\cos\phi}{r^2}\frac{\partial}{\partial\phi} + \frac{\sin\phi\cos\phi}{r}\frac{\partial^2}{\partial r\partial\phi} + \frac{\cos^2\phi}{r}\frac{\partial}{\partial r}\\
+                                                    & +\frac{\sin\phi\cos\phi}{r}\frac{\partial^2}{\partial\phi\partial r} - \frac{\sin\phi\cos\phi}{r^2}\frac{\partial}{\partial\phi} + \frac{\cos^2\phi}{r^2}\frac{\partial^2}{\partial\phi^2}\\
+                                                    =& \sin^2\phi\frac{\partial^2}{\partial r^2} + \frac{\cos^2\phi}{r}\frac{\partial}{\partial r} + \frac{\sin\phi\cos\phi}{r}\frac{\partial^2}{\partial r\partial\phi}\\
+                                                    & +\frac{\sin\phi\cos\phi}{r}\frac{\partial^2}{\partial\phi\partial r} - \frac{2\sin\phi\cos\phi}{r^2}\frac{\partial}{\partial\phi} + \frac{\cos^2\phi}{r^2}\frac{\partial^2}{\partial\phi^2}
+                    \end{align}$$
+                </div>
+            </div>
+
+            
+
+
+
 
 
         </div>

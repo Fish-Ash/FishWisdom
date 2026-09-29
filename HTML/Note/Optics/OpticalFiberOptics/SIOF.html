@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>光纤光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>跃迁折射率分布光纤（SIOF）</h1>
+
+        <div class="Card-Analysis">
+            <h2>光纤的数值孔径</h2>
+
+            <div class="Card-Definition">
+                <b>光纤的数值孔径（NA）</b>
+                <p>定义光纤的数值孔径为：入射媒质折射率与最大入射角的正弦值之积，即：</p>
+                $$NA = n_1\sin\theta_{1\max} = \sqrt{n_1^2-n_2^2} = n_1\sqrt{2\Delta}$$
+                <p>则能够进入光纤传播的光线落在以\(\theta_{1\max}\)为锥角的圆锥中，称\(\theta_{1\max}\)为光纤的<b>收光角</b>.</p>
+            </div>
+
+            <p>数值孔径是光纤性能的一个重要参数，它标志着光纤的收光能力或当与光源耦合时其耦合效率的大小.</p>
+            <p>[注]光纤的数值孔径只决定于光纤的折射率，而与光纤的几何尺寸无关，这一点与普通的光学系统有所不同.</p>
+
+            <p>由光纤数值孔径的定义式可知，\(\Delta\)的值越大，光纤数值孔径越大，这对提高光纤耦合效率是有利的.</p>
+            <p>但\(\Delta\)的增大会使光纤的另一重要传输性能<b>通信容量</b>降低.</p>
+            <p>因为光纤的通信容量正比于光纤传输带宽或单位长度光纤脉冲展宽的倒数.</p>
+
+            <p>\(\cos\theta_2 = n_2/n_1\)时，角向光线与轴向光线延时差最大，为：</p>
+            $$\Delta \tau = t_0(n_1-n_2)/n_2\approx \Delta\cdot n_1/c$$
+            <div class="Card-AI">
+                <p>什么是延时差？</p>
+                <p>传输容量为时延差的倒数.</p>
+                <p>多模光纤不适合光纤通信，因为其通信容量不高；也不适合用来传播图像（不聚焦）.</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>偏斜光线在光纤两端的投影，会包围出一个内接圆，称为内散焦面，其半径为：</p>
+                $$r_{ic} = a\cos\theta_\phi$$
+            </div>
+
+            <p>SIOF中，偏斜光线传播时不亚于纤轴相交，因而不限于单一平面内，其光线轨迹是螺旋状折现，限制在\(r_{10}\leq r\leq a\)的圆筒内传播.</p>
+            <p>其轨迹折线在光线端面上的投影形成一个多边形，其内接圆称为<b>内散焦面</b>.</p>
+
+            <p>偏斜光线对应的数值孔径\(NA_s\)为：</p>
+            $$NA_s = NA/\sin\theta_\phi$$
+            <ul>
+                <li>\(NA\)：子午光线数值孔径</li>
+            </ul>
+            <p>上式表明，偏斜光线收光角大于子午光线.</p>
+            <p>因此，若考虑到偏斜光线的贡献，光线实际的收光能力比单纯考虑子午光线时大.</p>
+
+            <p>偏斜光线的最大延时差为：</p>
+            $$\Delta \tau_s = \left[\frac{n_1}{\sqrt{n_1^2-NA_s^2}} - 1\right]\frac{n_1}{c}$$
+            <p>由于\(NA_s\geq NA\)，故偏斜光线延时差大于子午光线延时差.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>SIOF中光线的传播</h2>
+            <p>SIOF中，子午光线沿直线传播，遇到纤芯与包层交界面（纤壁）则会发生内全反射，因此其光线轨迹是限制在子午平面内传播的锯齿形折线.</p>
+
+        </div>
+        
+        <div class="Card-Analysis">
+            <h2>SIOF中的场解</h2>
+
+            <p>这里讨论的SIOF是一种理想的数学模型：即认为光纤是一种无限大直圆柱系统，芯区半径为\(a\)，折射率为\(n_1\)；包层沿径向无限延伸，折射率为\(n_2\)；光纤材料为线性、无损、各向同性的电介质.</p>
+            <p>SIOF中，场矢量一般具有六个分量，即\(E_r,E_\phi,E_z,H_r,H_\phi,H_z\)，其纵向场分量\(E_z\)与\(H_z\)满足如下波导场方程：</p>
+            $$\left(\frac{\partial^2}{\partial r^2} + \frac{1}{r}\frac{\partial}{\partial r} + \frac{1}{r^2}\frac{\partial^2}{\partial\phi^2}\chi_j^2\right)\left[\begin{matrix}E_z\\H_z\end{matrix}\right] = 0$$
+            <div class="Card-AI">
+                <p>这个波导场方程怎么来的？</p>
+            </div>
+
+            <p>由于光纤具有圆对称折射率分布，其场分布也必然具有圆对称形式，即：沿角向场分布为周期函数.</p>
+            <p>[令]</p>
+            $$\left[\begin{matrix}E_z\\H_z\end{matrix}\right] = \left[\begin{matrix}A\\B\end{matrix}\right]F(r)e^{il\phi},\quad l\in\mathbb{Z}$$
+            <ul>
+                <li>\(A,B\)：待定常数</li>
+            </ul>
+
+            <div class="Card-AI">
+                <p>这里讨论的式本征模式，而不是任意入射场，所以不要去考虑入射到端面随机一点还非正入射的情形，其场分布一定是圆对称的.</p>
+                <p>\(F(r)\)表示模式场沿径向方向\(r\)的分布函数.</p>
+                <p>\(e^{il\phi}\)为角向部分.</p>
+            </div>
+
+            $$\frac{\partial^2 F(r)}{\partial r^2} + \frac{1}{r}\cdot \frac{\partial F(r)}{\partial r} + \left(\chi^2- \frac{l^2}{r^2}\right)F(r) = 0$$
+            <p>上式为\(l\)阶贝塞尔方程，其解为圆柱函数.</p>
+
+            <h3>本征解的选择</h3>
+            <p>纤芯中选取贝塞尔函数\(J_l\)，包层中选取变态汉克尔函数\(K_l\)作为上式的解是合适的，符合导模场分布特点要求.</p>
+
+            $$\left[\begin{matrix}E_z\\H_z\end{matrix}\right] = \begin{cases}
+            \left[\begin{matrix}A\\B\end{matrix}\right]J_l\left(\frac{U_r}{a}\right)e^{i\omega\phi},\quad 0\leq r\leq a\\
+            \left[\begin{matrix}C\\D\end{matrix}\right]K_l\left(\frac{W_r}{a}\right)e^{i\omega\phi},\quad r\gt a
+            \end{cases}$$
+
+            <h3>本征值方程</h3>
+            $$l^2\beta^2\left(\frac{1}{U^2} + \frac{1}{W^2}\right)^2 = \left[\frac{J_l'(U)}{UJ_l(U)} + \frac{K_l'(W)}{WK_l(W)}\right]\left[\frac{k_1^2J_l'(U)}{UJ_l(U)} + \frac{k_2^2K_l'(W)}{WK_l(W)}\right]$$
+            <ul>
+                <li>\(k_1 = n_1k_0\)</li>
+                <li>\(k_2 = n_2k_0\)</li>
+            </ul>
+            <p>上式即<b>本征值方程</b>，又称<b>特征方程</b>.</p>
+            <p>实际上它是关于\(\beta\)的一个超越方程.</p>
+
+            <h3>光线中的模式及其分类</h3>
+            <p>光纤中的模式可以是TE模或TM模，也可以是EH模或HE模.</p>
+
+            <p>定义一个与\(H_z\)和\(E_z\)比值有关的参数\(q\)：</p>
+            $$q = \frac{\omega\mu_0}{i\beta}\frac{H_z}{E_z} = \frac{\omega\mu_0}{i\beta}\frac{B}{A}$$
+
+            <h3>模式本征值</h3>
+            
+        </div>
+
+
+
+
+        
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

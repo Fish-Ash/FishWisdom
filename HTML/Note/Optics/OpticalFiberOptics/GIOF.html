@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>光纤光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>渐变折射率分布光纤（GIOF）</h1>
+        
+        <div class="Card-Analysis">
+            <h2>GIOF中光线的传播</h2>
+            <p>GIOF中，光线沿曲线传播，光线轨迹取决于光纤折射率分布，由光线方程描述.</p>
+            <p>柱坐标系中，光线方程的分量形式为：</p>
+            <p>\(r\)分量：</p>
+            $$\frac{\mathrm{d}}{\mathrm{d}S}\left(n\frac{\mathrm{d}r}{\mathrm{d}S}\right) - nr\left(\frac{\mathrm{d}\phi}{\mathrm{d}S}\right)^2 = \frac{\mathrm{d}n}{\mathrm{d}r}$$
+            <p>\(\phi\)分量：</p>
+            $$m\frac{\mathrm{d}r}{\mathrm{d}S}\frac{\mathrm{d}\phi}{\mathrm{d}S} + \frac{\mathrm{d}}{\mathrm{d}S}\left(nr\frac{\mathrm{d}\phi}{\mathrm{d}r}\right) = 0$$
+            <p>\(z\)分量：</p>
+            $$\frac{\mathrm{d}}{\mathrm{d}S}\left(n\frac{\mathrm{d}x}{\mathrm{d}S}\right) = 0$$
+            <ul>
+                <li>\(r = \sqrt{x^2 + y^2}\)：光纤轨迹曲线上任一点至纤轴的距离</li>
+            </ul>
+            <p>上式推导中利用了单位矢量\(\hat{\boldsymbol{r}}\)与\(\hat{\boldsymbol{\phi}}\)的关系式：</p>
+            $$\mathrm{d}\hat{\boldsymbol{r}}/\mathrm{d}\phi = \hat{\boldsymbol{\phi}}$$
+            $$\mathrm{d}\hat{\boldsymbol{\phi}}/\mathrm{d}\phi = -\hat{\boldsymbol{r}}$$
+        </div>
+
+
+
+
+        
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>
