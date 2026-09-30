@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>三波混频</h1>
+
+        <div class="Card-Definition">
+            <b>三波混频现象</b>
+            <p>两个频率不同的单色光同时入射到非线性介质中，产生和频与差频的效应.</p>
+        </div>
+        
+        <div class="Card-AI">
+            <p>在非线性介质中，同时入射两束强光电场，由于介质存在二阶非线性极化，介质内部会产生一个随时间振荡的新的极化源.</p>
+            <p>介质中的极化，本质上是正负电荷发生相对位移，当极化随时间振荡时，意味着电荷在加速运动.</p>
+            <p>加速运动的电荷会辐射出电磁波.</p>
+        </div>
+
+        <p>由<a class="goto" href="./Chapter1.html#SecondOrderP">二阶非线性极化强度的一般表示式</a>，可以得到三波混频中任何一对光波所感应的非线性极化强度复振幅：</p>
+        $$\boldsymbol{P}^{(2)}(\omega_1) = 2\epsilon_0\chi^{(2)}(\omega_3, -\omega_2):\boldsymbol{E}(\omega_3, z)\boldsymbol{E}^*(\omega_2, z)$$
+        $$\boldsymbol{P}^{(2)}(\omega_2) = 2\epsilon_0\chi^{(2)}(\omega_3, -\omega_1):\boldsymbol{E}(\omega_3, z)\boldsymbol{E}^*(\omega_1, z)$$
+        $$\boldsymbol{P}^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1, \omega_2):\boldsymbol{E}(\omega_1, z)\boldsymbol{E}(\omega_2, z)$$
+        <div class="Prove">
+            <p>考虑到\(\omega_3 = \omega_1 + \omega_2\)，因此仅计算：</p>
+            $$\begin{cases}
+            \omega_m, \omega_n = \omega_1, \omega_2\\
+            \omega_m, \omega_n = \omega_2, \omega_1\\
+            \end{cases}$$
+            <p>两项.</p>
+            $$\begin{align}
+            P^{(2)}(t) &= \epsilon_0\sum_{m,n}\chi^{(2)}(\omega_m,\omega_n)E(\omega_m)E(\omega_n)e^{-i(\omega_m + \omega_n)t}\\
+                       &= \epsilon_0\chi^{(2)}(\omega_1,\omega_2)E(\omega_1)E(\omega_2)e^{-i\omega_3t} + \epsilon_0\chi^{(2)}(\omega_2,\omega_1)E(\omega_2)E(\omega_1)e^{-i\omega_3t}
+            \end{align}$$
+            <p>考虑到二阶极化率的<a class="goto" href="./Chapter1.html#Properties1">本征对易对称性</a>，有：</p>
+            $$\chi^{(2)}(\omega_1, \omega_2) = \chi^{(2)}(\omega_2, \omega_1)$$
+            $$\therefore P^{(2)}(t) = 2\epsilon_0\chi^{(2)}(\omega_1,\omega_2)E(\omega_1)E(\omega_2)e^{-i\omega_3t}$$
+            <p>省略时间相位因子，得到非线性极化强度复振幅为：</p>
+            $$P^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1,\omega_2)E(\omega_1)E(\omega_2)$$
+            <p>考虑张量形式，才会引入<a class="goto" href="../../Math/TensorAnalysis/Dyad.html#DoubleDotProduct">并联式双点积</a>，得到：</p>
+            $$\boldsymbol{P}^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1, \omega_2):\boldsymbol{E}(\omega_1, z)\boldsymbol{E}(\omega_2, z)$$
+        </div>
+
+        <div class="Card-AI">
+            <p>光波的角频率由时间相位因子的\(\omega\)决定，当只关注频率为\(\omega_n\)的光波时，就只用计算能构成\(\omega_n\)的频率的排列组合即可.</p>
+        </div>
+
+        <div class="Card-AI">
+            <p>在推导特定频率（如ω₁）的耦合方程时，只考虑能产生该频率极化的频率组合项。对于ω₁ = ω₃ - ω₂的过程，仅此项满足频率匹配条件并对P⁽²⁾(ω₁)有贡献，其他项不参与该相互作用，故忽略.</p>
+        </div>
+
+        <p>非线性介质中，三波（\(\omega_1, \omega_2, \omega_3 = \omega_1 + \omega_2\)）混频的基本耦合波方程组：</p>
+        $$\frac{\mathrm{d}E(\omega_1, z)}{\mathrm{d}z} = \frac{i\omega_1^2}{k_1c^2}\chi_{eff}^{(2)}E(\omega_3, z)E^*(\omega_2, z)e^{-i\Delta kz}$$
+        $$\frac{\mathrm{d}E(\omega_2, z)}{\mathrm{d}z} = \frac{i\omega_2^2}{k_2c^2}\chi_{eff}^{(2)}E(\omega_3, z)E^*(\omega_1, z)e^{-i\Delta kz}$$
+        $$\frac{\mathrm{d}E(\omega_3, z)}{\mathrm{d}z} = \frac{i\omega_3^2}{k_3c^2}\chi_{eff}^{(2)}E(\omega_1, z)E^*(\omega_2, z)e^{i\Delta kz}$$
+        <ul>
+            <li>\(\chi_{eff}^{(2)}\in \mathbb{R}\)：有效非线性极化率，标量.</li>
+        </ul>
+
+        <div class="Card-AI">
+            <b>仿真</b>
+            $$y = u + iv$$
+            $$\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}u}{\mathrm{d}x} + i\frac{\mathrm{d}v}{\mathrm{d}x}$$
+            $$\frac{\mathrm{d} \text{Re}(y)}{\mathrm{d}x} = \frac{\mathrm{d}u}{\mathrm{d}x} = \text{Re}(\frac{\mathrm{d}y}{\mathrm{d}x})$$
+            $$\frac{\mathrm{d} \Im(y)}{\mathrm{d}x} = \frac{\mathrm{d}v}{\mathrm{d}x} = \Im(\frac{\mathrm{d}y}{\mathrm{d}x})$$
+
+            <p>求解该方程组，代入的数值是\(E_n(\omega_n, 0)\)，求解的是\(E_n(\omega_n, z)\)</p>
+        </div>
+
+        <div class="Card-AI">
+            <p>这三个方程描述的是同一个非线性过程的不同投影.</p>
+            <p>方程左边指复振幅随z的变化.</p>
+            <p>方程右边如果都是复振幅，那就是正比于；如果存在复振幅的复共轭，类似于反比的味道，比如说w_1 = w_3 - w_2，复共轭体现的就是那个“-”.</p>
+        </div>
+
+        <div class="Card-Question">
+            <p>1、什么是SVEA（慢变近似包络）？</p>
+            <p>2、什么是归一化包络？</p>
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

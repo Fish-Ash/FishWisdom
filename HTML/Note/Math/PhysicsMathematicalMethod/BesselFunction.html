@@ -38,12 +38,35 @@
         <h1>Bessel方程</h1>
 
         <div class="Card-Analysis">
+            <h2>Bessel方程的引入</h2>
+
+            <p><a href="../Mathematic/GradientDivergenceCurl.html#Laplacian" class="goto">Laplace方程在柱坐标系中的表示</a>为：</p>
+            $$\frac{\partial^2 u}{\partial r^2} + \frac{1}{r}\frac{\partial u}{\partial r} + \frac{1}{r^2}\frac{\partial^2 u}{\partial\phi^2} + \frac{\partial^2 u}{\partial z^2} = 0$$
+            <p>以分离变数形式的</p>
+            $$u(r, \phi, z) = R(r)\Phi(\phi)Z(z)$$
+            <p>代入上式，得：</p>
+            $$\Phi Z\frac{\partial^2 R}{\partial r^2} + \frac{\Phi Z}{r}\frac{\partial R}{\partial r} + \frac{RZ}{r^2}\frac{\partial^2\Phi}{\partial\phi^2} + R\Phi\frac{\partial^2Z}{\partial z^2} = 0$$
+
+            <div class="Card-Formula">
+                <b>\(m\)阶Bessel方程</b>
+                $$x^2\frac{\mathrm{d}^2R}{\mathrm{d}x^2} + x\frac{\mathrm{d}R}{\mathrm{d}x} + (x^2-m^2)R = 0,\quad x=\sqrt{\mu}\rho$$
+            </div>
+
+            <div class="Card-Formula">
+                <b>虚宗量Bessel方程</b>
+                $$x^2\frac{\mathrm{d}^2R}{\mathrm{d}x^2} + x\frac{\mathrm{d}R}{\mathrm{d}x} - (x^2+m^2)R = 0,\quad x=\nu\rho$$
+                <p>[注]虚宗量Bessel方程，就是Bessel方程的宗量由\(x\)变为\(ix\)的结果.</p>
+            </div>
+            
+        </div>
+
+        <div class="Card-Analysis">
             <h2>正则奇点邻域上的Bessel方程级数解</h2>
             <h3>\(\nu\)阶Bessel方程</h3>
             <p>在\(x_0 = 0\)的邻域上求解\(\nu\)阶Bessel方程：</p>
             $$x^2\frac{\mathrm{d}^2y}{\mathrm{d}x^2} + x\frac{\mathrm{d}y}{\mathrm{d}x} + (x^2 - \nu^2)y = 0$$
             <ul>
-                <li>\(\nu\)：阶数，不为整数或半整数</li>
+                <li>\(\nu\)：阶数，不为整数或半奇数</li>
             </ul>
 
             $$y'' + \frac{1}{x}y' + \left(1 - \frac{\nu^2}{x^2}\right)y = 0$$
@@ -62,6 +85,24 @@
             <p>在\(x_0 = 0\)的邻域上求解\(l+1/2\)阶Bessel方程：</p>
             $$x^2y'' + xy' + \left[x^2 - (l + 1/2)^2\right]y = 0,\quad l=0,1,2,\cdots$$
             <p>\(x_0 = 0\)为方程的正则奇点.</p>
+
+            <div class="Card-Formula">
+                <b>\(l + 1/2\)阶Bessel方程的通解</b>
+                $$y(x) = C_1J_{l + 1/2}(x) + C_2J_{-(l+1/2)}(x)$$
+            </div>
+
+
+            <h3>整数\(m\)阶Bessel方程</h3>
+            <p>在\(x_0=0\)的邻域上求解整数\(m\)阶Bessel方程：</p>
+            $$x^2y'' + xy' + (x^2-m^2)y = 0,\quad m\in\mathbb{N}$$
+
+            <div class="Card-Formula">
+                <b>整数\(m\)阶Bessel方程的通解</b>
+                $$C_1J_m(x) + C_2N_m(x)$$
+                <ul>
+                    <li>\(N_m(x)\)：整数\(m\)阶诺伊曼函数</li>
+                </ul>
+            </div>
             
         </div>
 
