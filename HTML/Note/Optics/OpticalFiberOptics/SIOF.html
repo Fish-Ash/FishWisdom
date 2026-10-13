@@ -68,37 +68,214 @@
                 <p>\(e^{il\phi}\)为角向部分.</p>
             </div>
 
+            
+
             $$\frac{\partial^2 F(r)}{\partial r^2} + \frac{1}{r}\cdot \frac{\partial F(r)}{\partial r} + \left(\chi^2- \frac{l^2}{r^2}\right)F(r) = 0$$
             <p>上式为\(l\)阶<a href="../../Math/PhysicsMathematicalMethod/BesselFunction.html" class="goto">贝塞尔方程</a>，其解为圆柱函数.</p>
 
             <h3>本征解的选择</h3>
             <p>纤芯中选取贝塞尔函数\(J_l\)，包层中选取变态汉克尔函数\(K_l\)作为上式的解是合适的，符合导模场分布特点要求.</p>
 
+            <div class="Card-AI">
+                <p>Bessel函数说明场解呈振荡形式.</p>
+                <p>变态汉克尔函数说明场解呈衰减形式.</p>
+            </div>
+
             $$\left[\begin{matrix}E_z\\H_z\end{matrix}\right] = \begin{cases}
             \left[\begin{matrix}A\\B\end{matrix}\right]J_l\left(\frac{U_r}{a}\right)e^{i\omega\phi},\quad 0\leq r\leq a\\
             \left[\begin{matrix}C\\D\end{matrix}\right]K_l\left(\frac{W_r}{a}\right)e^{i\omega\phi},\quad r\gt a
             \end{cases}$$
 
+            
+            <ul>
+                <li>\(U,~W\)：场的归一化横向传播常数</li>
+                <li>\(A, B, C, D\)：待定常数，由边界条件确定</li>
+            </ul>
+            <div class="Card-AI">
+                <p>U反映的是振荡的周期性.</p>
+                <p>W反映的是场的衰减速度，W越大，场衰减越快.</p>
+                <p>\(W\to 0\)：场不衰减、辐射模、截止</p>
+                <p>\(W\to \infty\)：远离截止.</p>
+                <p>这个式子中，\(A, B, C, D, \beta\)都不知道.</p>
+                <p>边界条件是指，纤芯和纤壁，切向分量要相等，\(z\)和\(\phi\)的分量要相等.</p>
+            </div>
+
+            <p>利用<a href="BasicEquation.html#ztRelation" class="goto">模式场的横纵关系</a>，可得：</p>
+            $$E_r = $$
+            $$E_\phi = $$
+            $$H_r = $$
+            $$H_\phi = $$
+            <ul>
+                <li>\(J_l',~K_l'\)：\(J_l\)与\(K_l\)对于各自变量的导数</li>
+            </ul>
+
+
             <h3>本征值方程</h3>
-            $$l^2\beta^2\left(\frac{1}{U^2} + \frac{1}{W^2}\right)^2 = \left[\frac{J_l'(U)}{UJ_l(U)} + \frac{K_l'(W)}{WK_l(W)}\right]\left[\frac{k_1^2J_l'(U)}{UJ_l(U)} + \frac{k_2^2K_l'(W)}{WK_l(W)}\right]$$
+            <p>由\(E_z\)与\(H_z\)在\(r=a\)处连续的条件导出：</p>
+            $$\frac{A}{C} = \frac{B}{D} = \frac{K_l(W)}{J_l(U)}$$
+
+            <p>由\(E_\phi\)与\(H_\phi\)在\(r=a\)处连续的条件导出：</p>
+            $$i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)A - \omega\mu\left[\frac{1}{U}\frac{J_l'(U)}{J_l(U)} + \frac{1}{W}\frac{K_l'(U)}{K_l(W)}\right]B = 0$$
+            $$\omega\left[\frac{\epsilon_l}{U}\frac{J_l'(U)}{J_l(U)} + \frac{\epsilon_2K_l'(W)}{WK_l(W)}\right]A + i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)B = 0$$
+            <p>上两式为\(A\)与\(B\)的齐次方程组，想要得到\(A\)与\(B\)不全为\(0\)的解，须使方程组特征行列式为\(0\)，即：</p>
+            $$\left\lvert\begin{matrix}i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)&-\omega\mu\left[\frac{1}{U}\frac{J_l'(U)}{J_1(U)} + \frac{1}{W}\frac{K_l'(W)}{K_l(W)}\right]\\\omega\left[\frac{\epsilon_1}{U}\frac{J_l'(U)}{J_l(U)} + \frac{\epsilon_2}{W}\frac{K_l'(W)}{K_l(W)}\right]&i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)\end{matrix}\right\rvert = 0$$
+
+
+            $$\therefore l^2\beta^2\left(\frac{1}{U^2} + \frac{1}{W^2}\right)^2 = \left[\frac{J_l'(U)}{UJ_l(U)} + \frac{K_l'(W)}{WK_l(W)}\right]\left[\frac{k_1^2J_l'(U)}{UJ_l(U)} + \frac{k_2^2K_l'(W)}{WK_l(W)}\right]$$
             <ul>
                 <li>\(k_1 = n_1k_0\)</li>
                 <li>\(k_2 = n_2k_0\)</li>
+                <li>\(U,~W\)：<a href="BasicEquation.html#UW" class="goto">归一化传播常数</a></li>
             </ul>
             <p>上式即<b>本征值方程</b>，又称<b>特征方程</b>.</p>
             <p>实际上它是关于\(\beta\)的一个超越方程.</p>
+            <p>当\(n_1, n_2, a,\lambda_0\)给定时，对于不同\(l\)值，可求得相应的\(\beta\)值.</p>
+            <p>由于Bessel函数及其导数具有周期振荡性质，所以本征值方程可以有多个不同的解\(\beta_m,~(m=1,2,\cdots)\)，每个\(\beta_m\)对应于一个导模.</p>
+
+
+            <div class="Card-AI">
+                <p>上式也称色散方程.</p>
+                <p>\(\beta\)可能有多个值.</p>
+            </div>
+
+            <p>[令]</p>
+            $$\bar{J}_l(U) = \frac{J_l'(U)}{UJ_l(U)},\quad \bar{K}_l(W) = \frac{K_l'(W)}{WK_l(W)}$$
+            <p>本征值方程可以写作：</p>
+            <div class="Formula">
+                $$[\bar{J}_1(U) + \bar{K}_1(W)]\left[\frac{n_1^2}{n_2^2}\bar{J}_1(U) + \bar{K}_1(W)\right] = l^2\left(\frac{n_1^2}{n_2^2}\frac{1}{U^2} + \frac{1}{W^2}\right)\left(\frac{1}{U^2} + \frac{1}{W^2}\right)$$
+                <div class="Derivation">
+                    $$\because l^2\beta^2\left(\frac{1}{U^2} + \frac{1}{W^2}\right)^2 = \left[\frac{J_l'(U)}{UJ_l(U)} + \frac{K_l'(W)}{WK_l(W)}\right]\left[\frac{k_1^2J_l'(U)}{UJ_l(U)} + \frac{k_2^2K_l'(W)}{WK_l(W)}\right]$$
+                    $$\bar{J}_l(U) = \frac{J_l'(U)}{UJ_l(U)},\quad \bar{K}_l(W) = \frac{K_l'(W)}{WK_l(W)}$$
+                    $$\therefore \left[\bar{J}_1(U) + \bar{K}_1(W)\right]\left[k_1^2\bar{J}_1(U) + k_2^2\bar{K}_1(W)\right] = l^2\beta^2\left(\frac{1}{U^2} + \frac{1}{W^2}\right)^2$$
+                    $$\because U^2 = (k_1^2-\beta^2)a^2,\quad W^2 = (\beta^2-k_2^2)a^2$$
+                    $$\therefore \left[\bar{J}_1(U) + \bar{K}_1(W)\right]\left[\frac{k_1^2}{k_2^2}\bar{J}_1(U) + \bar{K}_1(W)\right] = l^2\frac{\beta^2}{k_2^2}\left[\frac{1}{(k_1^2-\beta^2)a^2} + \frac{1}{(\beta^2-k_2^2)a^2}\right]\left(\frac{1}{U^2} + \frac{1}{W^2}\right)$$
+                    $$\because k_1 = n_1k_0,\quad k_2 = n_2k_0$$
+                    $$\begin{align}\therefore
+                    \left[\bar{J}_1(U) + \bar{K}_1(W)\right]\left[\frac{n_1^2}{n_2^2}\bar{J}_1(U) + \bar{K}_1(W)\right] &= l^2\frac{\beta^2}{k_2^2}\frac{(\beta^2 - k_2^2) + (k_1^2-\beta^2)}{(k_1^2-\beta^2)(\beta^2-k_2^2)a^2}\left(\frac{1}{U^2} + \frac{1}{W^2}\right)\\
+                                                                                                                        &= l^2\frac{\beta^2}{k_2^2}\frac{k_1^2 - k_2^2}{(k_1^2-\beta^2)(\beta^2-k_2^2)a^2}\left(\frac{1}{U^2} + \frac{1}{W^2}\right)\\
+                                                                                                                        &= l^2\frac{k_1^2\beta^2 - k_2^2\beta^2 + k_1^2k_2^2 - k_1^2k_2^2}{k_2^2(k_1^2-\beta^2)(\beta^2-k_2^2)a^2}\left(\frac{1}{U^2} + \frac{1}{W^2}\right)\\
+                                                                                                                        &= l^2\frac{k_1^2(\beta^2 - k_2^2) + k_2^2(k_1^2 - \beta^2)}{k_2^2(k_1^2-\beta^2)(\beta^2-k_2^2)a^2}\left(\frac{1}{U^2} + \frac{1}{W^2}\right)\\
+                                                                                                                        &= l^2\left[\frac{k_1^2}{k_2^2(k_1^2-\beta^2)a^2} + \frac{1}{(\beta^2-k_2^2)a^2}\right]\left(\frac{1}{U^2} + \frac{1}{W^2}\right)\\
+                                                                                                                        &= l^2\left(\frac{n_1^2}{n_2^2}\frac{1}{U^2} + \frac{1}{W^2}\right)\left(\frac{1}{U^2} + \frac{1}{W^2}\right)
+                    \end{align}$$
+                </div>
+            </div>
+
 
             <h3>光线中的模式及其分类</h3>
             <p>光纤中的模式可以是TE模或TM模，也可以是EH模或HE模.</p>
+            <p>光纤中传输的模式场的横向分量为偏振波，其中：</p>
+            <ul>
+                <li>TE模与TM模：偏振方向相互正交的线偏振波</li>
+                <li>HE模与EH模：椭圆偏振波</li>
+            </ul>
+            <p>可以证明，HE模偏振旋转方向与波行进方向一致（符合右手定则）；EH模偏振旋转方向与波行进方向相反.</p>
+            <p>从场强关系来看：HE模磁场占优势；EH模电场占优势.</p>
+            <p>从相位关系来看：EH模的\(H_z\)分量超前于\(E_z\)分量\(\pi/2\)；HE模的\(H_z\)分量滞后于\(E_z\)分量\(\pi/2\).</p>
+            <p>因此，光纤中模式的分类取决于\(l\)值以及\(E_z\)与\(H_z\)的相位与幅值关系.</p>
 
             <p>定义一个与\(H_z\)和\(E_z\)比值有关的参数\(q\)：</p>
             $$q = \frac{\omega\mu_0}{i\beta}\frac{H_z}{E_z} = \frac{\omega\mu_0}{i\beta}\frac{B}{A}$$
 
+
+            <div class="Formula">
+                $$q = \frac{l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)}{\bar{J}_1(U) + \bar{K}_1(W)} = \frac{\frac{n_1^2}{n_2^2}\bar{J}_1(U) + \bar{K}_1(W)}{l\left(\frac{n_1^2}{n_2^2}\frac{1}{U^2} + \frac{1}{W^2}\right)}$$
+                <div class="Derivation">
+                    <div class="Card-AI">
+                        <p>以下证明过程均基于非磁性介质（\(\mu_r = 1\Rightarrow\mu=\mu_0\)）的假设.</p>
+                    </div>
+        
+                    $$\because q = \frac{\omega\mu_0}{i\beta}\frac{B}{A}$$
+                    $$i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)A - \omega\mu\left[\bar{J}_l(U) + \bar{K}_l(W)\right]B = 0$$
+                    $$\Rightarrow \frac{B}{A} = \frac{i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)}{\omega\mu\left[\bar{J}_l(U) + \bar{K}_l(W)\right]}$$
+                    $$\therefore q = \frac{l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)}{\bar{J}_1(U) + \bar{K}_1(W)}$$
+                    $$\omega\left[\epsilon_1\bar{J}_1(U) + \epsilon_2\bar{K}_1(W)\right]A + i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)B = 0$$
+                    $$\Rightarrow \frac{B}{A} = -\frac{\omega\left[\epsilon_1\bar{J}_1(U) + \epsilon_2\bar{K}_1(W)\right]}{i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)}$$
+                    $$\begin{align}\therefore
+                    q &= \frac{\omega\mu_0}{i\beta}\frac{B}{A}\\
+                      &= -\frac{\omega^2\left[\mu_0\epsilon_1\bar{J}_1(U) + \mu_0\epsilon_2\bar{K}_1(W)\right]}{(i\beta)^2l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)}\\
+                      &= \frac{\epsilon_{1r}\bar{J}_1(U) + \epsilon_{2r}\bar{K}_1(W)}{l\frac{\beta^2}{\omega^2\epsilon_0\mu_0}\frac{(\beta^2-k_2^2) + (k_1^2-\beta^2)}{(k_1^2-\beta^2)(\beta^2-k_2^2)a^2}}\\
+                      &= \frac{n_1^2\bar{J}_1(U) + n_2^2\bar{K}_1(W)}{l\frac{1}{\omega^2c}\frac{\beta^2k_1^2 - \beta^2k_2^2 - k_1^2k_2^2 + k_1^2k_2^2}{(k_1^2-\beta^2)(\beta^2-k_2^2)a^2}}\\
+                      &= \frac{\frac{n_1^2}{n_2^2}\bar{J}_1(U) + \bar{K}_1(W)}{l\frac{1}{k_0^2}\frac{k_1^2(\beta^2 - k_2^2) + k_2^2(k_1^2 - \beta^2)}{n_2^2(k_1^2-\beta^2)(\beta^2-k_2^2)a^2}}\\
+                      &= \frac{\frac{n_1^2}{n_2^2}\bar{J}_1(U) + \bar{K}_1(W)}{l\frac{n_1^2(\beta^2 - k_2^2) + n_2^2(k_1^2 - \beta^2)}{n_2^2(k_1^2-\beta^2)(\beta^2-k_2^2)a^2}}\\
+                      &= \frac{\frac{n_1^2}{n_2^2}\bar{J}_1(U) + \bar{K}_1(W)}{l\left[\frac{n_1^2}{n_2^2(k_1^2-\beta^2)a^2} + \frac{1}{(\beta^2-k_2^2)a^2}\right]}\\
+                      &= \frac{\frac{n_1^2}{n_2^2}\bar{J}_1(U) + \bar{K}_1(W)}{l\left[\frac{n_1^2}{n_2^2(k_1^2-\beta^2)a^2} + \frac{1}{(\beta^2-k_2^2)a^2}\right]}\\
+                      &= \frac{\frac{n_1^2}{n_2^2}\bar{J}_1(U) + \bar{K}_1(W)}{l\left(\frac{n_1^2}{n_2^2}\frac{1}{U^2} + \frac{1}{W^2}\right)}
+                    \end{align}$$
+                </div>
+            </div>
+
+            <table>
+                <tr>
+                    <td>TE模</td>
+                    <td>
+                        <div class="Formula">
+                            $$E_z = 0\Rightarrow A=0,~B\neq 0\Rightarrow l=0,~\bar{J}_l(U) + \bar{K}_l(W) = 0$$
+                            <div class="Derivation">
+                                $$\because A = 0,~B\neq 0$$
+                                $$i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)A - \omega\mu\left[\bar{J}_l(U) + \bar{K}_l(W)\right]B = 0$$
+                                $$\Rightarrow \omega\mu[\bar{J}_l(U) + \bar{K}_l(W)]B = 0$$
+                                $$\therefore \bar{J}_l(U) + \bar{K}_l(W) = 0$$
+                                $$\omega\left[\epsilon_1\bar{J}_1(U) + \epsilon_2\bar{K}_1(W)\right]A + i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)B = 0$$
+                                $$\Rightarrow i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)B = 0$$
+                                $$\therefore l=0$$
+                            </div>
+                        </div>
+                    </td>
+                    <td>$$q = \infty$$</td>
+                </tr>
+                <tr>
+                    <td>TM模</td>
+                    <td>
+                        <div class="Formula">
+                            $$H_z = 0\Rightarrow A\neq 0,~B=0\Rightarrow l=0,~\epsilon_1\bar{J}_1(U) + \epsilon_2\bar{K}_1(W) = 0$$
+                            <div class="Derivation">
+                                $$\because A\neq 0,~B = 0$$
+                                $$i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)A - \omega\mu\left[\bar{J}_l(U) + \bar{K}_l(W)\right]B = 0$$
+                                $$\Rightarrow i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)A = 0$$
+                                $$\therefore l=0$$
+                                $$\omega\left[\epsilon_1\bar{J}_1(U) + \epsilon_2\bar{K}_1(W)\right]A + i\beta l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)B = 0$$
+                                $$\Rightarrow \omega\left[\epsilon_1\bar{J}_1(U) + \epsilon_2\bar{K}_1(W)\right]A = 0$$
+                                $$\therefore \epsilon_1\bar{J}_1(U) + \epsilon_2\bar{K}_1(W) = 0$$
+                            </div>
+                        </div>
+                    </td>
+                    <td>$$q = 0$$</td>
+                </tr>
+                <tr>
+                    <td>EH模</td>
+                    <td>$$H_z\propto iE_z$$</td>
+                    <td>$$q = 1$$</td>
+                </tr>
+                <tr>
+                    <td>HE模</td>
+                    <td>$$E_z\propto iH_z$$</td>
+                    <td>$$q = -1$$</td>
+                </tr>
+            </table>
+
+            <p>这相当于：</p>
+            $$\bar{J}_l(U) + \bar{K}_l(W) = l\left(\frac{1}{U^2} + \frac{1}{W^2}\right)$$
+            $$\frac{n_1^2}{n_2^2}\bar{J}_1(U) + \bar{K}_1(W) = -l\left(\frac{n_1^2}{n_2^2}\frac{1}{U^2} + \frac{1}{W^2}\right)$$
+            <p>第一式适用于EH模或TE模；第二式适用于HE模或TM模.</p>
+
+
             <h3>模式本征值</h3>
-            
+            <p>模式本征值\(\beta\)可由\(U\)或\(W\)求得，一般情况下由本征值方程求本征值很复杂，只能利用计算机进行数值计算.</p>
+            <p>但有两种情形很容易确定本征值，即导模初愈临近截止与远离截止状态.</p>
+
+
+            <p>\(l=0, q=0\)，\(\text{TM}_{0m}\)模.</p>
+            <p>\(l=0, q=\infty\)，\(\text{TE}_{0m}\)模.</p>
+            <p>\(l=1, q=-1\)，\(\text{HE}_{lm}\)模.</p>
+            <p>\(l\gt 1, q=-1, \text{HE}_{lm}\)模.</p>
+            <p>\(l\gt 0, q=1, \text{EH}_{lm}\)模.</p>
         </div>
 
-
+        <div class="Card-Analysis">
+            <h2>弱导光纤与线偏振模</h2>
+            
+        </div>
 
 
         

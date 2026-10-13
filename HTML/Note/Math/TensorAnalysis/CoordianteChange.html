@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>张量分析</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>坐标变换</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+            <p>描述同一空间的物理问题，可以根据需要选择不同的坐标系.</p>
+            <p>同一物理量在不同坐标系中往往以不同的分量加以定量描述.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>基矢量的转换关系</h2>
+            <p>新老坐标系各自有协变基矢量与逆变基矢量，它们各自分别满足对偶条件：</p>
+            $$\boldsymbol{g}^j\cdot\boldsymbol{g}_i = \delta_i^j,\quad i,j = 1,2,3$$
+
+            <p>将新坐标系的基矢量与老坐标系的基矢量分解，有：</p>
+            $$\boldsymbol{g}_{i'} = \beta_{i'}^j\boldsymbol{g}_j,\quad i'=1,2,3$$
+            $$\boldsymbol{g}^{i'} = \beta_j^{i'}\boldsymbol{g}^j,\quad i'=1,2,3$$
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

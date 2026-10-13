@@ -108,15 +108,38 @@
             $$\therefore \left[\begin{matrix}\tilde{\boldsymbol{E}}_t\\\tilde{\boldsymbol{E}}_z\\\tilde{\boldsymbol{H}}_t\\\tilde{\boldsymbol{H}}_z\end{matrix}\right] = \left[\begin{matrix}\boldsymbol{e}_t\\\boldsymbol{e}_z\\\boldsymbol{h}_t\\\boldsymbol{h}_z\end{matrix}\right]e^{i\beta z}$$
         </div>
 
-        <div class="Card-Analysis">
+        <div class="Card-Analysis" id="ModeClassification">
             <h2>模式的分类</h2>
-            <p>根据模式场在空间的方向特征，或者说包含纵向分量的情况，通常将模式分为三类：</p>
-            <ul>
-                <li>TEM模（\(\boldsymbol{e}_z = \boldsymbol{h}_z = 0\)）：模式只有横向分量，无纵向分量.</li>
-                <li>TE模（\(\boldsymbol{e}_z = 0,~\boldsymbol{h}_z\neq 0\)）和TM模（\(\boldsymbol{e}_z = 0,~\boldsymbol{h}_z\neq 0\)）：模式仅有一个纵向分量.</li>
-                <li>HE模和EH模：模式的两个纵向分量均不为零，即\(\boldsymbol{h}_z\neq 0,~\boldsymbol{e}_z\neq 0\).</li>
-            </ul>
-            <div class="Card-AI">
+            <p>根据模式场在空间的方向特征，或者说包含纵向分量的情况，通常将模式分为：</p>
+
+            <table>
+                <tr>
+                    <td>横电磁模</td>
+                    <td>TEM模</td>
+                    <td>$$E_z = H_z = 0$$</td>
+                    <td>模式只有横向分量，无纵向分量</td>
+                </tr>
+                <tr>
+                    <td>横电模</td>
+                    <td>TE模</td>
+                    <td>$$E_z=0,\quad H_z\neq 0$$</td>
+                    <td>模式仅有磁场纵向分量</td>
+                </tr>
+                <tr>
+                    <td>横磁模</td>
+                    <td>TM模</td>
+                    <td>$$E_z\neq 0,\quad H_z=0$$</td>
+                    <td>模式仅有电场纵向分量</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">混杂模</td>
+                    <td>HE模</td>
+                    <td rowspan="2">$$E_z\neq 0,\quad H_z\neq 0$$</td>
+                    <td rowspan="2">模式的两个纵向分量均不为0</td>
+                </tr>
+                <tr><td>EH模</td></tr>
+            </table>
+            <br><div class="Card-AI">
                 <p>HE模和EH模不是一类，取决于电场与磁场哪个占优势.</p>
             </div>
         </div>

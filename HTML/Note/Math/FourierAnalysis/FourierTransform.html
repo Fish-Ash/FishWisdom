@@ -191,9 +191,112 @@
             $$x_0, y_0\in \mathbb{R}$$
             $$\therefore \mathcal{F}\{f(x-x_0, y-y_0)\} = e^{-i2\pi(\xi x_0 + \eta y_0)}F(\xi, \eta)$$
             
+            <div class="Card-AI">
+                <b>共轭对称性</b>
+
+            </div>
         </div>
 
         <div class="Card-Analysis">
+            <h2>虚、实、奇、偶函数Fourier变换的性质</h2>
+            <p>利用欧拉公式，可以将函数\(f(t)\)的Fourier变换写为：</p>
+            $$\begin{align}
+            f(\omega) &= \int_{-\infty}^{+\infty}f(t)e^{-i\omega t}\mathrm{d}t\\
+                      &= \int_{-\infty}^{+\infty}f(t)\cos(\omega t)\mathrm{d}t - i\int_{-\infty}^{+\infty}f(t)\sin(\omega t)\mathrm{d}t\\
+            \end{align}$$
+            <p>[令]</p>
+            $$f(t) = f_r(t) + if_i(t)$$
+            <ul>
+                <li>\(f_r(t)\)：复函数\(f(t)\)的实部</li>
+                <li>\(f_i(t)\)：复函数\(f(t)\)的虚部</li>
+            </ul>
+            <p>\(f(t)\)的Fourier变换可以进一步写为：</p>
+            $$\begin{align}
+            f(\omega) &= \int_{-\infty}^{+\infty}f_r(t)\cos(\omega t) + f_i(t)\cos(\omega t)\mathrm{d}t + i\int_{-\infty}^{+\infty}f_i(t)\cos(\omega t) - f_r(t)\sin(\omega t)\mathrm{d}t\\
+                      &= R(\omega) + iI(\omega)
+            \end{align}$$
+            <ul>
+                <li>\(R(\omega)\)：\(f(\omega)\)的实部</li>
+                <li>\(I(\omega)\)：\(f(\omega)\)的虚部</li>
+            </ul>
+
+            <details>
+                <summary><h3>\(f(t)\)为实函数</h3></summary>
+                $$f_i(t) = 0,\quad f_r(t) = f(t)$$
+                $$\therefore R(\omega) = \int_{-\infty}^{+\infty}f_r(t)\cos(\omega t)\mathrm{d}t,\quad I(\omega) = -\int_{-\infty}^{+\infty}f_r(t)\sin(\omega t)\mathrm{d}t$$
+                $$\therefore R(-\omega) = R(\omega),\quad I(-\omega) = -I(\omega)$$
+                <p>\(f(\omega)\)实部为偶函数，虚部为奇函数，称之为<b>厄密型函数</b>.</p>
+                <p>对应地，若实部为奇函数，虚部为偶函数，称这种函数为<b>反厄密型函数</b>.</p>
+                <p>易证：</p>
+                <div class="Formula">
+                    $$f(-\omega) = f^*(\omega)$$
+                    <div class="Derivation">
+                        <p>若\(f(t)\)为实函数，且\(f(\omega) = \mathcal{F}(f(t))\)，则：</p>
+                        $$f(-\omega) = f^*(\omega)$$
+                        $$f(\omega) = \int_{-\infty}^{+\infty}f(t)e^{-i\omega t}\mathrm{d}t$$
+                        $$f(-\omega) = \int_{-\infty}^{+\infty}f(t)e^{i\omega t}\mathrm{d}t$$
+                        $$f^*(\omega) = \int_{-\infty}^{+\infty}f^*(t)e^{i\omega t}\mathrm{d}t$$
+                        <p>由于\(f(t)\)为实函数，因此：</p>
+                        $$f^*(t) = f(t)$$
+                        $$\therefore f^*(\omega) = \int_{-\infty}^{+\infty}f(t)e^{i\omega t}\mathrm{d}t = f(-\omega)$$
+                    </div>
+                </div>
+            </details>
+
+            <details>
+                <summary><h3>\(f(t)\)为实值偶函数</h3></summary>
+                <p>对于\(I(\omega)\)，被积函数\(-f_r(t)\sin(\omega t)\)为奇函数，即\(I(\omega) = 0\).</p>
+                $$R(\omega) = \int_{-\infty}^{+\infty}f_r(t)\cos(\omega t)\mathrm{d}t = R(-\omega)$$
+                $$f(\omega) = R(\omega) = f(-\omega)$$
+                <p>\(f(\omega)\)为实值偶函数.</p>
+            </details>
+
+            <details>
+                <summary><h3>\(f(t)\)为实值奇函数</h3></summary>
+                <p>对于\(R(\omega)\)，被积函数\(f_r(t)\cos(\omega t)\)为奇函数，即\(R(\omega) = 0\).</p>
+                $$I(\omega) = -\int_{-\infty}^{+\infty}f_r(t)\sin(\omega t)\mathrm{d}t = -I(-\omega)$$
+                $$f(\omega) = iI(\omega) = -f(-\omega)$$
+                <p>\(f(\omega)\)为虚值奇函数.</p>
+            </details>
+
+            <p>可以看到，Fourier变换不改变函数的奇偶性，这个性质称为<b>Fourier变换的对称性</b>.</p>
+            <table>
+                <tr>
+                    <td>时域\(f(t)\)</td>
+                    <td>频域\(f(\omega)\)</td>
+                    <td>时域\(f(t)\)</td>
+                    <td>频域\(f(\omega)\)</td>
+                </tr>
+                <tr>
+                    <td>偶函数</td>
+                    <td>偶函数</td>
+                    <td>奇函数</td>
+                    <td>奇函数</td>
+                </tr>
+                <tr>
+                    <td>实函数</td>
+                    <td>厄密型函数</td>
+                    <td>虚函数</td>
+                    <td>反厄密型函数</td>
+                </tr>
+                <tr>
+                    <td>实值偶函数</td>
+                    <td>实值偶函数</td>
+                    <td>实值奇函数</td>
+                    <td>虚值奇函数</td>
+                </tr>
+                <tr>
+                    <td>虚值偶函数</td>
+                    <td>虚值偶函数</td>
+                    <td>虚值奇函数</td>
+                    <td>实值奇函数</td>
+                </tr>
+            </table>
+
+            
+        </div>
+
+        <!-- <div class="Card-Analysis">
             <h2>Fourier变换的基本定理</h2>
 
             <h3>卷积定理</h3>
@@ -223,7 +326,7 @@
         </div>
 
        
-        
+         -->
         <div id="PageEnd"></div>
 
         <script src="../../../../JavaScript/MenuButton.js"></script>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>算法</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>Bayesian优化</h1>
+
+        <p>应用场景：调整一个机器学习模型的超参数</p>
+        <p>难点：每次评估一组超参数的性能，都需要训练模型，并在验证集上测试，这个过程可能非常耗时；传统的网格搜索或随机搜索效率低，因为它们没有用之前的评估结果知道下一步搜索.</p>
+
+        <div class="Card-AI">
+            <p>什么是网格搜索与随机搜索？</p>
+            <p>Bayesian优化如何使用之前的评估结果的？</p>
+        </div>
+
+        <p>Bayesian优化：通过构建目标函数的概率模型，并利用采集函数决定下一个要评估的点，从而在尽可能少的迭代次数内找到全局最优解.</p>
+        
+        <p>核心思想：</p>
+        <b>代理模型（Surrogate Model）</b>
+        <p>使用一个易于计算的概率模型（如Gauss过程）来近似目标函数.</p>
+        <b>采集函数（Acquisition Function）</b>
+        <p>根据代理模型，选择下一个最有希望改进目标函数的点.</p>
+        <p>采集函数平衡了探索（exploration）与利用（exploitation）.</p>
+        <div class="Card-AI">
+            <p>如何构建这两个函数？</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>Gaussian过程</h2>
+            <p>Gaussian过程是一个随机过程，其有限个随机变量的联合分布都服从多元Gaussian分布.</p>
+            <p>即：对于任一组输入点，Gaussian过程都会给出一个关于这些点对应函数值的联合Gauss分布.</p>
+
+
+            <h3>Gaussian过程的数学定义</h3>
+            <p>一个Gaussian过程由均值函数\(m(x)\)与协方差函数\(k(x,x')\)唯一确定，记作：</p>
+            $$f(x)\sim GP(m(x), k(x,x'))$$
+            <ul>
+                <li>\(m(x)\)：输入\(x\)处的均值（\(f(x)\)处的均值），常设为0</li>
+                <li>\(k(x,x')\)：输入\(x\)与输出\(x'\)间的协方差，描述函数在不同点间的相关性；也称为<b>核函数</b></li>
+                <li>\(x\)：待优化的参数，如果有多个，为向量</li>
+            </ul>
+
+            <h3>常用核函数</h3>
+            <b>RBF(Radial Basic Function)核（Gaussian核）</b>
+            $$k(x,x') = \sigma^2\times e^{-||x-x'||^2/2l^2}$$
+            <ul>
+                <li>\(\sigma^2\)：信号方差</li>
+                <li>\(l\)：长度尺度，控制函数的光滑程度，较小的\(l\)意味着函数变化更快</li>
+            </ul>
+
+            <b>Matérn核</b>
+            $$k(x,x') = \sigma^2\times \frac{2^{1-\nu}}{\Gamma(\nu)}\left(\frac{\sqrt{2\nu}||x-x'||}{l}\right)^\nu K_\nu\left(\frac{\sqrt{2\nu}||x-x'||}{l}\right)$$
+            <ul>
+                <li>\(\nu\gt0\)：控制函数的光滑程度，\(\nu=5/2\)与\(\nu=3/2\)是常用的特殊情况</li>
+                <li>\(\Gamma(\nu)\)：Gamma函数</li>
+                <li>\(K_\nu\)：第二类修正贝塞尔函数</li>
+            </ul>
+            <p>Matérn核是更一般的核函数，RBF核是Matérn核在\(\nu\to\infty\)时的极限情况.</p>
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -43,6 +43,25 @@
             </ul>
         </div>
 
+        <div class="Card-Analysis">
+            <h2>非线性光学概述</h2>
+            <p>光在介质中的传播过程就是光与介质相互作用的过程，对于这个动态过程，可以按照介质对光的响应和辐射过程进行描述.</p>
+            <p>如果采用极化理论，可以认为光在介质中传播时，将感应极化，所产生的极化强度作为激励源又将产生光辐射，这个光辐射就是介质中传播的光波.</p>
+            <p>若介质对光的响应呈线性关系，所产生的光学现象就属于线性光学范畴，光在介质中的传播规律遵从独立传播原理与线性叠加原理.</p>
+            <p>若介质对光的响应呈非线性关系，不同频率的光波间会产生耦合，独立传播原理与线性叠加原理不再成立.</p>
+
+            <table>
+                <tr>
+                    <td>线性光学</td>
+                    <td>非线性光学</td>
+                </tr>
+                <tr>
+                    <td class="tbtext">一束光在介质中传播，可以通过干涉、衍射、折射来改变其传播方向与空间分布，但光的频率不变，与介质无能量交换.</td>
+
+                </tr>
+            </table>
+        </div>
+
         <h2>第一节 极化率的色散特性</h2>
         
         <div class="Card-Analysis">
@@ -229,34 +248,6 @@
             
         </div>
     
-        <div class="Card-Analysis">
-            <h2>第二节 非线性光学极化率的经典描述</h2>
-            <p>振子的非线性响应可以用于描述非线性光学现象.</p>
-            <b>频率为\(\omega\)的光电场：</b>
-            $$E = E(\omega)e^{-i\omega t} + E^*(\omega)e^{i\omega t}$$
-
-            <b>包含多个频率分量光电场</b>
-            <p>设光电场包含多个频率分量，用复数表示时，可以写成以下形式：</p>
-            $$E = \sum_nE(\omega_n)e^{-i\omega_n t}$$
-            <ul>
-                <li>\(E(\omega_n)\)：频率为\(\omega_n\)的光场的复振幅.</li>
-            </ul>
-            <p>考虑到光场的真实性，有：</p>
-            $$E(-\omega_n) = E^*(\omega_n)$$
-            <div id="SecondOrderP">
-                $$P^{(2)}(t) = \epsilon_0\sum_{m,n}\chi^{(2)}(\omega_m,\omega_n)E(\omega_m)E(\omega_n)e^{-i(\omega_m + \omega_n)t}$$
-            </div>
-            <p>设光电场包含\(x\)个频率，则：</p>
-            $$\omega_m, \omega_n \in \{\pm\omega_1, \pm\omega_2, \cdots, \pm\omega_x\}$$
-            <p>即\(\boldsymbol{P}^{(2)}\)的展开式中存在\(x^2\)项.</p>
-
-            <div class="Card-AI">
-                <p>\(-\omega\)是为了描述实际电场引入的分量.</p>
-            </div>
-        </div>
-
-
-
 
         <div class="Card-Analysis">
             <h2>色散介质中的极化率</h2>

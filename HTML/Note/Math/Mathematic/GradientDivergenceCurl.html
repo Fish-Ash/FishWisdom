@@ -43,8 +43,19 @@
             <b>直角坐标系中</b>
             $$\nabla = \frac{\partial}{\partial x}\hat{\boldsymbol{x}} + \frac{\partial y}{\partial y}\hat{\boldsymbol{y}} + \frac{\partial}{\partial z}\hat{\boldsymbol{z}}$$
 
-            <b>柱坐标系中</b>
-            $$\nabla = \frac{\partial}{\partial r}\hat{\boldsymbol{r}} + \frac{1}{r}\cdot\frac{\partial}{\partial\phi}\hat{\boldsymbol{\phi}} + \frac{\partial}{\partial z}\hat{\boldsymbol{z}}$$
+            <b><a href="CoordinateSystem.html#CylindricalCoordinate" class="goto">柱坐标系</a>中</b>
+            <div class="Formula">
+                $$\nabla = \frac{\partial}{\partial r}\hat{\boldsymbol{r}} + \frac{1}{r}\cdot\frac{\partial}{\partial\phi}\hat{\boldsymbol{\phi}} + \frac{\partial}{\partial z}\hat{\boldsymbol{z}}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \nabla &= \frac{\partial}{\partial x}\hat{\boldsymbol{x}} + \frac{\partial y}{\partial y}\hat{\boldsymbol{y}} + \frac{\partial}{\partial z}\hat{\boldsymbol{z}}\\
+                           &= \left(\cos\phi\frac{\partial}{\partial r} - \frac{\sin\phi}{r}\frac{\partial}{\partial\phi}\right)\hat{\boldsymbol{x}} + \left(\sin\phi\frac{\partial}{\partial r} + \frac{\cos\phi}{r}\frac{\partial}{\partial\phi}\right)\hat{\boldsymbol{y}} + \frac{\partial}{\partial z}\hat{\boldsymbol{z}}\\
+                           &= \left(\cos\phi\hat{\boldsymbol{x}} + \sin\hat{\boldsymbol{y}}\right)\frac{\partial}{\partial r} + \frac{1}{r}(-\sin\phi\hat{\boldsymbol{x} + \cos\phi\hat{\boldsymbol{y}}})\frac{\partial}{\partial\phi} + \frac{\partial}{\partial z}\hat{\boldsymbol{z}}\\
+                           &= \frac{\partial}{\partial r}\hat{\boldsymbol{r}} + \frac{1}{r}\cdot\frac{\partial}{\partial\phi}\hat{\boldsymbol{\phi}} + \frac{\partial}{\partial z}\hat{\boldsymbol{z}}
+                    \end{align}$$
+                </div>
+            </div>
+
 
             <ul>
                 <li>\(\hat{\boldsymbol{r}}\)：沿径向的单位矢量</li>
@@ -154,7 +165,11 @@
 
                 <b>Laplace算子（柱坐标系中）</b>
                 $$\nabla^2 = \frac{\partial^2}{\partial r^2} + \frac{1}{r}\frac{\partial}{\partial r} + \frac{1}{r^2}\frac{\partial^2}{\partial\phi^2} + \frac{\partial^2}{\partial z^2}$$
-                
+            </div>
+
+            <div class="Card-Formula" id="tLaplacian">
+                <b>横向Laplace算子\(\nabla^2_t\)</b>
+                $$\nabla^2_t = \nabla^2 - \frac{\partial^2}{\partial z^2}$$
             </div>
 
             <h3>梯度的旋度\(\nabla\times(\nabla F)\)</h3>

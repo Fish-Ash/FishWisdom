@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>参量放大与参量振荡</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+            <p>光参量放大在原理上同微波参量放大极为相似.</p>
+            <p>光参量放大实质上是一个差频产生的三波混频过程.</p>
+
+            <p>将一个强的高频光（泵浦光）与一个弱的低频光（信号光）同时射入非线性晶体，就可以产生差频光（空闲光、闲置光），而弱的信号光会被放大.</p>
+            <p>在光学参量振荡器中建立起来的两种频率的光波，任何一个光波都额可以称为“信号光”或“空闲光”，区别哪个是信号光，哪个是空闲光是没有意义的，名词的区别仅在于表明它们是两种不同的频率（或波长）.</p>
+
+            <p>光学参量振荡器的谐振腔可以同时对信号频率和空闲频率共振，也可以对其中一个频率共振，前者称为<b>双共振光学参量振荡器（DRO）</b>，后者称为<b>单共振光学参量振荡器（SRO）</b>.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>参量放大</h2>
+            <p>根据上述光学参量放大原理可知，描述参量放大特性的基本方程为耦合波方程.</p>
+            <p>一般情况下，该方程中的任一光电场振幅\(E(\omega_1,z)\)、\(E(\omega_2,z)\)与\(E(\omega_3,z)\)都不能认为是不变的，即使泵浦光\(E(\omega_3, z)\)原则上也可以减少为0，而同时信号光\(E(\omega_1)\)与空闲光\(E(\omega_2)\)得到不断增大.</p>
+            <p>但是，如果在所讨论的范围内，虽然信号光与空闲光已发生了显著的变化，但泵浦光还未显著地减小，则此时仍可将泵浦光\(E(\omega_3)\)看作常数.</p>
+
+            <p>根据光子通量表达式：</p>
+            $$N_\omega = \frac{S_\omega}{\hbar\omega} = 2\sqrt{\frac{\epsilon_0}{\mu_0}}\frac{n|E(\omega)|^2}{\hbar\omega}$$
+            <p>利用关系：</p>
+            $$E(\omega) = \frac{1}{2}\sqrt{\frac{\omega}{n}}A_\omega$$
+            <p>引入\(A_\omega\).</p>
+            <p>若求出\(A_\omega\)，给出\(|A_\omega|^2\)，就可以直接得到光子通量（只相差一个常数）.</p>
+
+            <p>[令]</p>
+            $$\sqrt{\frac{\omega_1\omega_2}{n_1n_2}}\sqrt{\mu_0\epsilon_0}\chi_{\text{eff}}^{(2)}E_3 = \Gamma_0$$
+            $$\therefore \frac{\mathrm{d}A_1}{\mathrm{d}z} = i\Gamma_0A_2^*e^{-i\Delta kz}$$
+            $$\therefore \frac{\mathrm{d}A_2}{\mathrm{d}z} = i\Gamma_0A_1^*e^{-i\Delta kz}$$
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

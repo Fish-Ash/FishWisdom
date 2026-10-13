@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>标量衍射理论</h1>
+        
+        <div class="Card-Analysis">
+            <h2>相干光场在自由空间传播的平移不变性</h2>
+
+            <div class="Card-AI">
+                <p>分析基尔霍夫衍射系统</p>
+                <p>输入+空间域的脉冲响应函数->系统->输出</p>
+                <p>\(U_0(P)\)是衍射系统给的</p>
+                <p>\(\Sigma\)面是孔径</p>
+                <p>平移不变性指不同位置的响应形状一样</p>
+            </div>
+            <p>当点光源\(P_0\)足够远，且入射光在孔径平面上各点的入射角都不大时，有：</p>
+            $$\cos(\boldsymbol{n}, \boldsymbol{r}_0)\approx -1$$
+            <p>若观察平面与孔径平面的距离\(z\)远大于孔径，且在观察平面上仅考虑一个对孔径上各点张角不大的范围，即在傍轴近似下，有：</p>
+            $$\cos(\boldsymbol{n}, \boldsymbol{r})\approx 1$$
+            $$\therefore K(\theta) = \frac{\cos(\boldsymbol{n}, \boldsymbol{r}) - \cos(\boldsymbol{n}, \boldsymbol{r}_0)}{2} \approx 1$$
+            <p>脉冲响应可初步化简为：</p>
+            $$h(P, Q) = \frac{1}{i\lambda}\frac{e^{ikr}}{r}K(\theta) \approx \frac{1}{i\lambda}\frac{e^{ikr}}{r}$$
+            <p>观察点Q到孔径平面上任一点P的距离\(r\)为：</p>
+            $$r = \sqrt{z^2 + (x-x_0)^2 + (y-y_0)^2}$$
+            <p>此条件下脉冲响应分母位置的\(r\)可以近似用\(z\)代替：</p>
+            $$h(P, Q) \approx \frac{1}{i\lambda}\frac{e^{ikr}}{z}$$
+            <p>[注]指数部分的\(r\)不可用\(z\)代替，由于\(k = 2\pi/\lambda\)非常大，\(r\)的不大误差就会导致相位差远大于\(2\pi\)的结果.</p>
+            <p>也可写为：</p>
+            $$h(x_0,y_0;x,y) = h(x-x_0, y-y_0) = \frac{1}{i\lambda z}e^{ik\sqrt{z^2 + (x-x_0)^2 + (y-y_0)^2}}$$
+            <p>显然，脉冲响应具有空不变的形式.</p>
+            <p>也就是说，无论孔径平面上子波源的位置入射，所产生的球面子波的形式都是一样的.</p>
+            <p>叠加积分可以写为：</p>
+            $$U(x,y) = \iint_{-\infty}^{+\infty}U_0(x_0, y_0)h(x-x_0, y-y_0)\mathrm{d}x_0\mathrm{d}y_0$$
+            <p>上式表明，孔径平面上的透射光场\(U_0(x_0,y_0)\)与观察平面上的光场\(U(x,y)\)之间存在一个卷积积分所描述的关系.</p>
+            <p>因此我们忽略倾斜因子的变化后，就可以将光波在衍射孔径后的传播过程看作光波通过一个线性不变系统，系统在空间域的特性唯一地由其空不变的脉冲响应决定.</p>
+            <p>这一结论是Fourier变换与光学相互结合的纽带之一.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>相干光场在自由空间传播的脉冲响应的近似表示式</h2>
+            <h3>菲涅尔近似（傍轴近似）</h3>
+            <p>由泰勒展开，可将\(r\)近似为：</p>
+            $$\begin{align}
+            r &= \sqrt{z^2 + (x-x_0)^2 + (y-y_0)^2}\\
+              &= z\left[1 + \left(\frac{x-x_0}{z}\right)^2 + \left(\frac{y-y_0}{z}\right)^2\right]^{1/2}\\
+              &\approx z\left[1 + \frac{1}{2}\left(\frac{x-x_0}{z}\right)^2 + \frac{1}{2}\left(\frac{y-y_0}{z}\right)^2\right]
+            \end{align}$$
+            $$\therefore h(x-x_0, y-y_0) = \frac{e^{ikz}}{i\lambda z}e^{\frac{ik}{2z}[(x-x_0)^2 + (y-y_0)^2]}$$
+            $$\therefore U(x,y) = \frac{e^{ikz}}{2\lambda z}\iint_{-\infty}^{+\infty}U_0(x_0, y_0)e^{\frac{ik}{2z}[(x-x_0)^2 + (y-y_0)^2]}\mathrm{d}x_0\mathrm{d}y_0$$
+
+            <div class="Card-AI">
+                <p>菲涅尔近似非常常用</p>
+                $$U(x,y) = \frac{1}{i\lambda z}e^{ikz}U_0(x,y)*e^{\frac{ik}{2z}(x^2 + y^2)}$$
+            </div>
+
+            <h3>夫琅禾费衍射（远场近似）</h3>
+            <p>在菲涅尔衍射的基础上，进一步限定\(\Sigma\)的线度远小于传播距离\(z\)，则\(\frac{x_0^2+y_0^2}{2z}\)小到可以忽略不计.</p>
+            <p>而观察范围的线度与\(z\)相比尽管很小，但还未小到可以略去\(\frac{x^2 + y^2}{2z}\)程度，则\(r\)可以进一步近似为：</p>
+            $$r = z + \frac{x^2+y^2}{2z} - \frac{xx_0 + yy_0}{z}$$
+            $$h(x_0,y_0;x,y) = \frac{e^{ikz}}{i\lambda z}e^{\frac{ik}{2z}(x^2+y^2)}e^{-\frac{ik}{z}(xx_0 + yy_0)}$$
+            <p>此时脉冲响应分别与\((x_0, y_0)\)与\(x,y\)有关，这表明夫琅禾费近似下，光波的传播过程不再具有平移不变性.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>衍射的角谱理论</h2>
+            $$U_0(x_0, y_0) = \iint_{-\infty}^{+\infty}A_0\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)e^{i2\pi\left(\frac{\cos\alpha}{\lambda}x_0 + \frac{\cos\beta}{\lambda}y_0\right)}\mathrm{d}x_0\mathrm{d}y_0$$
+            $$U(x, y) = \iint_{-\infty}^{+\infty}A\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)e^{i2\pi\left(\frac{\cos\alpha}{\lambda}x + \frac{\cos\beta}{\lambda}y\right)}\mathrm{d}x\mathrm{d}y$$
+            <div class="Card-AI">
+                <p>二维线性空不变系统，对于单色平面波，在空间传播一段距离后只是改变了相位，即乘了一个复常数.</p>
+                <p>上式其实就是二维Fourier变换</p>
+                <p>\(U(x,y)\)满足亥姆霍兹方程：</p>
+                $$(\nabla^2 + k^2)U(x,y) = 0$$
+            </div>
+            $$\frac{\mathrm{d}^2}{\mathrm{d}z^2}A\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right) + k^2(1-\cos^2\alpha - \cos^2\beta)A\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right) = 0$$
+            <p>解此微分方程，得到方程的一个基本解为：</p>
+            $$A\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right) = c\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right)e^{ikz\sqrt{1-\cos^2\alpha - \cos^2\beta}}$$
+            $$c\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right) = A_0\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right)$$
+
+            $$\therefore A\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right) = A_0\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right)e^{ikz\sqrt{1-\cos^2\alpha - \cos^2\beta}}$$
+
+            <h3>case1：\(\cos^2\alpha + \cos^2\beta \lt 1\)</h3>
+            <p>这种情况下，上式真正对应于空间某一确定方向传播的平面波，这些平面波分量在空间传播一定距离\(z\)仅是引入了一定的相位移动，而振幅不发生变化.</p>
+            <p>这与平面的性质一致，平面在空间传播既不会改变方向，也不会改变振幅.</p>
+            
+            <h3>case2：\(\cos^2\alpha + \cos^2\beta = 1\)</h3>
+            $$\cos\gamma = 0$$
+            <p>即该波动分量的传播方向垂直于\(z\)轴，其在\(z\)轴方向净能量流为0.</p>
+
+            <h3>case3：\(\cos^2\alpha + \cos^2\beta\gt 1\)</h3>
+            $$\therefore \sqrt{1-\cos^2\alpha-\cos^2\beta} = \sqrt{-(\cos^2\alpha + \cos^2\beta - 1)} = i\sqrt{\cos^2\alpha + \cos^2\beta - 1}$$
+            <p>[令]</p>
+            $$u = k\sqrt{\cos^2\alpha + \cos^2\beta - 1}\gt 0,\quad u\in\mathbb{R}$$
+            $$\therefore A\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right) = A_0\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right)e^{-uz}$$
+            <p>故对于一切\(\cos^2\alpha + \cos^2\beta \gt 1\)的波动分量，将随\(z\)的增大而按指数\(e^{-uz}\)快速衰减，在几个波长的距离内几乎衰减为0.</p>
+            <p>对应于这些传播方向波动分量称为倏逝波，在通常情况下忽略不计.</p>
+            <div class="Card-AI">
+                <p>case3是特殊情况</p>
+                <p>\(u\propto k = \frac{2\pi}{\lambda}\)，\(\lambda\)非常小故\(k\)非常大，故衰减得很快.</p>
+            </div>
+
+            <p>[令]</p>
+            $$H(f_x, f_y) = e^{ikz\sqrt{1-(\lambda f_x)^2 - (\lambda f_y)^2}}$$
+            <p>上式称为<b>传递函数</b>.</p>
+
+            $$\therefore A(f_x, f_y) = A_0(f_x, f_y)H(f_x, f_y)$$
+            <p>\(A(f_x, f_y)\)与\(A_0(f_x, f_y)\)分别看作系统的输入与输出频谱.</p>
+            <p>由上式给出的输入与输出频谱关系再次说明系统是线性不变系统，系统在频域的效应由传递函数表征.</p>
+            <p>由于子所讨论的问题中，传播距离\(z\)总是极大于几个波长，所以可以忽略倏逝波，于是传递函数可以写作：</p>
+            $$H(f_x, f_y) = \begin{cases}
+            e^{ikz\sqrt{1-(\lambda f_x)^2-(\lambda f_y)^2}},\quad f_x^2 + f_y^2 \lt \frac{1}{\lambda^2}\\
+            0,\quad \text{others}
+            \end{cases}$$
+
+
+        </div>
+        
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

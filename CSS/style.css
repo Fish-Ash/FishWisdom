@@ -99,7 +99,7 @@ td p{
     margin-bottom: 0%;
 }
 
-thead{
+th{
     background:#e9faff;
 }
 
@@ -590,6 +590,10 @@ details summary h3 {
 
 
 /* 分栏 */
+.Split {
+    border: none;
+}
+
 .Split2 {
   display: flex;
 }

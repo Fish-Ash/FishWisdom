@@ -56,6 +56,7 @@
                 <li>\(\boldsymbol{r}(t)\)：电子在光电场作用下离开平衡位置的位移.</li>
             </ul>
 
+            <p>振子的非线性响应可以用于描述非线性光学现象.</p>
             <p>一维振子的线性与非线性响应可以根据牛顿定律确定.</p>
         </div>
 
@@ -87,8 +88,21 @@
             </div>
 
             <p>由于运动方程为一个线性微分方程，因此其解\(r(t)\)只与光电场\(E(t)\)成线性关系，故对任一频率分量都可得到：</p>
+            <div class="Formula">
+                $$-\omega^2 r(\omega) - 2ih\omega r(\omega) + \omega_0^2r(\omega) = -\frac{e}{m}E(\omega)$$
+                <div class="Derivation">
+                    $$\because \frac{\mathrm{d}^2 r}{\mathrm{d}t^2} + 2h\frac{\mathrm{d}r}{\mathrm{d}t} + \omega_0^2 r = -\frac{e}{m}E$$
+                    $$\frac{\mathrm{d}r(t)}{\mathrm{d}t} = \int_{-\infty}^{+\infty}(-i\omega)r(\omega)e^{-i\omega t}\mathrm{d}\omega$$
+                    $$\frac{\mathrm{d}^2r(t)}{\mathrm{d}t^2} = \int_{-\infty}^{+\infty}(-\omega^2)r(\omega)e^{-i\omega t}\mathrm{d}\omega$$
+                    $$\therefore\int_{-\infty}^{+\infty} (-\omega^2)r(\omega)e^{-i\omega t} + (2h)(-i\omega)r(\omega)e^{-i\omega t} + \omega_0^2r(\omega)e^{-i\omega t}\mathrm{d}\omega = \int_{-\infty}^{+\infty}-\frac{e}{m}E(\omega)e^{-i\omega t}\mathrm{d}\omega$$
+                    $$\therefore -\omega^2 r(\omega) - 2ih\omega r(\omega) + \omega_0^2r(\omega) = -\frac{e}{m}E(\omega)$$
+                </div>
+            </div>
 
-            $$-\omega^2 r(\omega) - 2ih\omega r(\omega) + \omega_0^2r(\omega) = -\frac{e}{m}E(\omega)$$
+            <div class="Card-AI">
+                <p>最后一步的证明过程是由Fourier变换的性质得到的.</p>
+            </div>
+
             $$\therefore r(\omega) = -\frac{e}{m}E(\omega)\frac{1}{\omega_0^2 - \omega^2 - 2ih\omega}$$
 
             <p>[设]</p>
@@ -150,6 +164,7 @@
             </div>
 
             <h3>单个频率光场的情况</h3>
+
             <p>[设]频率为\(\omega\)的光电场表示式为：</p>
             $$E = E(\omega)e^{-i\omega t} + E^*(\omega)e^{i\omega t}$$
             <p>由于<a href="#formula2">振子的运动方程</a>是非线性的，直接求解非常困难，考虑到振子恢复力中的非简谐项较小，可以根据微扰理论求解.</p>
@@ -175,12 +190,62 @@
             <p>同理，将\(r_1,r_2\)代入第三个式子，可以求得\(r_3\).</p>
 
             <p>解得：</p>
-            $$r_1(t) = -\frac{e}{m}E(\omega)F(\omega)e^{-i\omega t} + c.c.$$
-            $$\begin{align}
-            r_2(t) = &\frac{e^2}{m^2}AE^2(\omega)F(2\omega)F(\omega)F(\omega)e^{-i2\omega t}\\
-                     & + \frac{e^2}{m^2}AE(\omega)E^*(\omega)F(0)F(\omega)F(-\omega)\\
-                     & + c.c.
-            \end{align}$$
+            <div class="Formula">
+                $$r_1(t) = -\frac{e}{m}E(\omega)F(\omega)e^{-i\omega t} + c.c.$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    r_1(t) &= \int_{-\infty}^{+\infty}r_1(\omega)e^{-i\omega t}\mathrm{d}\omega\\
+                           &= \int_{0}^{+\infty}r_1(\omega)e^{-i\omega t}\mathrm{d}\omega + \int_{-\infty}^{0}r_1(\omega)e^{-i\omega t}\mathrm{d}\omega
+                    \end{align}$$
+                    <p>对于右式第二项，令\(\omega' = -\omega\)，则：</p>
+                    $$\begin{align}
+                    r_1(t) &= \int_{0}^{+\infty}r_1(\omega)e^{-i\omega t}\mathrm{d}\omega + \int_{+\infty}^{0}r_1(\omega')e^{-i\omega' t}\mathrm{d}\omega'\\
+                           &= \int_{0}^{+\infty}r_1(\omega)e^{-i\omega t}\mathrm{d}\omega + \int_{0}^{+\infty}r_1(-\omega)e^{i\omega t}\mathrm{d}\omega\\
+                           &= \int_{0}^{+\infty}r_1(\omega)e^{-i\omega t}\mathrm{d}\omega + \int_{0}^{+\infty}r_1^*(\omega)e^{i\omega t}\mathrm{d}\omega\\
+                           &= \int_{0}^{+\infty}r_1(\omega)e^{-i\omega t}\mathrm{d}\omega + c.c.
+                    \end{align}$$
+                    <p>对于单个频率，有：</p>
+                    $$r_1(t) = r_1(\omega)e^{-i\omega t} + c.c.$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\begin{align}
+                r_2(t) = &\frac{e^2}{m^2}AE^2(\omega)F(2\omega)F(\omega)F(\omega)e^{-i2\omega t}\\
+                & + \frac{e^2}{m^2}AE(\omega)E^*(\omega)F(0)F(\omega)F(-\omega)\\
+                & + c.c.
+                \end{align}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    r_1^2(t) &= \left[-\frac{e}{m}E(\omega)F(\omega)e^{-i\omega t} + c.c.\right]^2\\
+                             &= \frac{e^2}{m^2}E^2(\omega)F^2(\omega)e^{-i2\omega t} + \frac{e^2}{m^2}{E^*}^2(\omega){F^*}^2(\omega)e^{i2\omega t} + \frac{2e^2}{m^2}E(\omega)E^*(\omega)F(\omega)F^*(\omega)
+                    \end{align}$$
+                    <p>[设]</p>
+                    $$r_2(t) = C_1e^{-i2\omega t} + C_2e^{i2\omega t} + C_3$$
+                    <p>对于\(2\omega\)项：</p>
+                    $$-4\omega^2 C_1e^{-i2\omega t} + 2h\cdot -2i\omega C_1e^{-i2\omega t} + \omega_0^2 C_1e^{-i2\omega t} = \frac{e^2}{m^2}AE^2(\omega)F^2(\omega)e^{-i2\omega t}$$
+                    $$\therefore C_1 = \frac{e^2}{m^2}AE^2(\omega)F^2(\omega)F(2\omega)$$
+        
+                    <p>对于\(-2\omega\)项：</p>
+                    $$-4\omega^2 C_2e^{i2\omega t} + 2h\cdot 2i\omega C_2e^{i2\omega t} + \omega_0^2 C_2e^{i2\omega t} = \frac{e^2}{m^2}A{E^*}^2(\omega){F^*}^2(\omega)e^{i2\omega t}$$
+                    $$\therefore C_2 = \frac{e^2}{m^2}A{E^*}^2(\omega){F^*}^2(\omega)F^*(2\omega) = C_1^*$$
+        
+                    <p>对于\(0\omega\)项：</p>
+                    $$\omega_0^2C_3 = \frac{2e^2}{m^2}AE(\omega)E^*(\omega)F(\omega)F^*(\omega)$$
+                    $$\therefore C_3 = \frac{2e^2}{m^2}AE(\omega)E^*(\omega)F(\omega)F(-\omega)F(0)$$
+        
+                    $$\begin{align}\therefore
+                    r_2(t) =& \frac{e^2}{m^2}AE^2(\omega)F^2(\omega)F(2\omega)e^{-i2\omega t}\\
+                           &+ \frac{e^2}{m^2}A{E^*}^2(\omega){F^*}^2(\omega)F^*(2\omega)e^{i2\omega t}\\
+                           &+ \frac{2e^2}{m^2}AE(\omega)E^*(\omega)F(\omega)F(-\omega)F(0)\\
+                           =& \frac{e^2}{m^2}AE^2(\omega)F^2(\omega)F(2\omega)e^{-i2\omega t}\\
+                           &+ \frac{e^2}{m^2}AE(\omega)E^*(\omega)F(\omega)F(-\omega)F(0)\\
+                           &+ c.c.
+                    \end{align}$$
+                </div>
+            </div>
+
+
             $$\begin{align}
             r_3(t) = &-\frac{e^3}{m^3}E^3(\omega)[2A^2F(2\omega) + B]F(3\omega)F^3(\omega)e^{-i3\omega t}\\
                      &-\frac{e^3}{m^3}E^2(\omega)E^*(\omega)[2A^2F(2\omega) + \frac{4A^2}{\omega_0^2} + 3B]F^3(\omega)F(-\omega)e^{-i\omega t}\\
@@ -189,6 +254,7 @@
 
             <div class="Card-AI">
                 <p>\(r(\omega)\)没有c.c.，但是\(r(t)\)有.</p>
+                <p>最后一步的证明过程见Fourier变换的共轭对称性，由于也是AI的说法，所以这里没附链接.</p>
             </div>
 
             <p>将极化强度写成级数形式：</p>
@@ -239,6 +305,57 @@
                                                            &\times F(\omega_1 + \omega_2 + \omega_3)F(\omega_1)F(\omega_2)F(\omega_3)
                 \end{align}$$
             </div>
+
+
+            <h3>包含多个频率分量光电场</h3>
+            <p>设光电场包含多个频率分量，用复数表示时，可以写成以下形式：</p>
+            $$E = \sum_nE(\omega_n)e^{-i\omega_n t}$$
+            <ul>
+                <li>\(E(\omega_n)\)：频率为\(\omega_n\)的光场的复振幅.</li>
+            </ul>
+            <p>考虑到光场的真实性，有：</p>
+            $$E(-\omega_n) = E^*(\omega_n)$$
+            <div id="SecondOrderP">
+                $$P^{(2)}(t) = \epsilon_0\sum_{m,n}\chi^{(2)}(\omega_m,\omega_n)E(\omega_m)E(\omega_n)e^{-i(\omega_m + \omega_n)t}$$
+            </div>
+            <p>设光电场包含\(x\)个频率，则：</p>
+            $$\omega_m, \omega_n \in \{\pm\omega_1, \pm\omega_2, \cdots, \pm\omega_x\}$$
+            <p>即\(\boldsymbol{P}^{(2)}\)的展开式中存在\(x^2\)项.</p>
+
+            <div class="Card-AI">
+                <p>\(-\omega\)是为了描述实际电场引入的分量.</p>
+            </div>
+
+            $$r_1(t) = -\frac{e}{m}E(\omega_1)F(\omega_1)e^{-i\omega_1 t} - \frac{e}{m}E(\omega_2)F(\omega_2)e^{-i\omega_2 t} + c.c.$$
+            $$r_1^2(t) = \sum_{m,n}\frac{e^2}{m^2}E(\omega_m)E(\omega_n)F(\omega_m)F(\omega_n)e^{-i(\omega_m + \omega_n)}$$
+            <!-- $$\begin{align}
+            r_1^2(t) =& \frac{e^2}{m^2}E^2(\omega_1)F^2(\omega_1)e^{-i2\omega_1 t} + \frac{e^2}{m^2}E^2(\omega_2)F^2(\omega_2)e^{-i2\omega_2 t}\\
+                      &+ \frac{e^2}{m^2}{E^*}^2(\omega_1){F^*}^2(\omega_1)e^{i2\omega_1 t} + \frac{e^2}{m^2}{E^*}^2(\omega_2){F^*}^2(\omega_2)e^{i2\omega_2 t}\\
+                      &+ \frac{e^2}{m^2}E(\omega_1)E(\omega_2)F(\omega_1)F(\omega_2)e^{-i(\omega_1 + \omega_2)t}\\
+                      &+ \frac{e^2}{m^2}E(\omega_1)E^*(\omega_1)F(\omega_1)F^*(\omega_1)\\
+                      &+ \frac{e^2}{m^2}\\
+                      &+ \frac{e^2}{m^2}\\
+                      &+ \frac{e^2}{m^2}\\
+                      &+ \frac{e^2}{m^2}\\
+                      &+ \frac{e^2}{m^2}\\
+                      &+ \frac{e^2}{m^2}\\
+                      &+ \frac{e^2}{m^2}\\
+            \end{align}$$ -->
+            <p>[设]</p>
+            $$r_2(t) = \sum_{m,n}C_{mn}e^{-i(\omega_m + \omega_n)t}$$
+            $$\begin{align}
+            &-(\omega_m + \omega_n)^2C_{mn}e^{-i(\omega_m + \omega_n)t} + 2h\cdot -i(\omega_m + \omega_n)C_{mn}e^{-i(\omega_m + \omega_n)t} + \omega_0^2C_{mn}e^{-i(\omega_m + \omega_n)t}\\
+            = &\frac{e^2}{m^2}AE(\omega_m)E(\omega_n)F(\omega_m)F(\omega_n)e^{-i(\omega_m + \omega_n)}
+            \end{align}$$
+            $$\therefore C_{mn} = \frac{e^2}{m^2}AE(\omega_m)E(\omega_n)F(\omega_m)F(\omega_n)F(\omega_m + \omega_n)$$
+            $$\begin{align}
+            \therefore P^{(2)}(t) &= -ner_2(t)\\
+                                  &= \sum_{m,n}-\frac{ne^3}{m^2}AE(\omega_m)E(\omega_n)F(\omega_m)F(\omega_n)F(\omega_m + \omega_n)e^{-i(\omega_1 + \omega_2)t}\\
+                                  &= \epsilon_0\sum_{m,n}\chi^{(2)}(\omega_m, \omega_n)E(\omega_m)E(\omega_n)e^{-i(\omega_1 + \omega_2)t}
+            \end{align}$$
+            $$\therefore \chi^{(2)}(\omega_m, \omega_n) = -\frac{ne^3}{\epsilon_0m^2}AF(\omega_m)F(\omega_n)F(\omega_m + \omega_n)$$
+
+
         </div>
 
 

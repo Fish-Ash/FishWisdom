@@ -35,7 +35,7 @@
             <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
         </div>
 
-        <!-- <h1>衍射</h1>
+        <h1>衍射</h1>
         
         <div class="Card-Analysis">
             <h2>光的衍射</h2>
@@ -75,7 +75,7 @@
             <p>使用单色光源时，是一组明暗相间的同心环带.</p>
             <p>使用白色光源时，是一组色彩相间的彩色环带.</p>
             <p>此后再使圆孔变小，光斑及圆环不仅不跟着变小，反而会增大.</p>
-        </div> -->
+        </div>
 
         <div class="Card-Analysis">
             <h2>惠更斯-菲涅尔原理</h2>
@@ -149,6 +149,72 @@
             </ul>
             <p>单色点光源照明下，平面孔径后方光场中任一点\(Q\)的复振幅为：</p>
             $$U(Q) = \frac{1}{i\lambda}\iint_\Sigma\frac{a_0e^{ik_0r_0}}{r_0}\left[\frac{\cos(\boldsymbol{n}, \boldsymbol{r}) - \cos(\boldsymbol{n}, \boldsymbol{r}_0)}{2}\right]\frac{e^{ikr}}{r}\mathrm{d}S$$
+            <div class="Card-AI">
+                <b>Green定理</b>
+                <p>\(\forall\)复函数\(U\)与\(G\)在曲面\(\Sigma\)及其内部都有连续的一、二阶导数，则：</p>
+                $$\int_V G\nabla^2 U - U\nabla^2 G\mathrm{d}v = \int_\Sigma G\frac{\partial U}{\partial n} - U\frac{\partial G}{\partial n}\mathrm{d}s$$
+                <p>\(U\)是考察的光场，目标是得到\(U(Q)\)，\(G\)是虚构的函数.</p>
+                <p>若\(G,~U\)都满足Helmholtz方程，即：</p>
+                $$\nabla^2 U + k^2 U = 0,\quad \nabla^2 G + k^2 G = 0$$
+                $$\therefore\int_V G\nabla^2 U - U\nabla^2 G\mathrm{d}v = \int_V G(-k^2U) - U(-k^2G)\mathrm{d}v = 0$$
+                $$\therefore\int_\Sigma G\frac{\partial U}{\partial n} - U\frac{\partial G}{\partial n}\mathrm{d}s$$
+                <img src="Img/Lesson1.png" width="200">
+                <p>若\(G\)具有球面波形式：</p>
+                $$G = \frac{e^{ikr}}{r}$$
+                <ul>
+                    <li>\(r\)：考察点Q与\(V\)内任一点P的距离</li>
+                </ul>
+                <p>其必定满足Helmholtz方程.</p>
+                <p>上式说明\(G\)是以Q为点光源发出的球面波.</p>
+                <p>在上式的约束下，无法考察\(r=0\)的点.</p>
+                <p>[设]一以Q点为球心的球面\(\Sigma_{\epsilon}'\)，半径为\(r = \epsilon\to\infty\)</p>
+                <p>这种近似下可以不考虑球内的部分.</p>
+                $$\int_{\Sigma' + \Sigma_{\epsilon}'}G\frac{\partial U}{\partial n} - U\frac{\partial G}{\partial n}\mathrm{d}s = 0$$
+                $$\therefore \int_{\Sigma_{\epsilon}'}G\frac{\partial U}{\partial n} - U\frac{\partial G}{\partial n}\mathrm{d}s = -\int_{\Sigma'}G\frac{\partial U}{\partial n} - U\frac{\partial G}{\partial n}\mathrm{d}s$$
+                <p>问题变成求解这个式子.</p>
+
+                <p>\(\Sigma_{\epsilon}'\)面上：</p>
+                $$G = \frac{e^{ik\epsilon}}{\epsilon}$$
+                <img src="Img/Lesson2.png" width="100">
+                $$\begin{align}
+                \boldsymbol{n} &= -\frac{\boldsymbol{r}}{|\boldsymbol{r}|}\\
+                               &= -\frac{\boldsymbol{r}}{\varepsilon}
+                \end{align}$$
+                <img src="Img/Lesson3.png" width="100">
+                $$\mathrm{d}s^2 = \varepsilon^2\mathrm{d}\Omega$$
+                $$\begin{align}\therefore
+                \frac{\partial G}{\partial n} &= -\left.\frac{\partial G}{\partial r}\right\rvert_{r=\epsilon}\\
+                                              &= -\left.\frac{ike^{ikr} - e^{ikr}}{r^2}\right\rvert_{r=\varepsilon}\\
+                                              &= e^{ik\varepsilon}\frac{1-ik\varepsilon}{\varepsilon^2}
+                \end{align}$$
+                <p>由于\(U\)在Q点是连续的.</p>
+                $$\therefore \left.U\right\rvert_{\epsilon\to 0} = U(Q)$$
+                $$\begin{align}\therefore
+                \lim_{\epsilon\to 0}\int_{\Sigma_{\epsilon}'}G\frac{\partial U}{\partial n} - U\frac{\partial G}{\partial n}\mathrm{d}s &= \lim_{\varepsilon\to 0}\int_{\Sigma_{\varepsilon}'}\frac{e^{ik\varepsilon}}{\epsilon}\frac{\partial U}{\partial n} - Ue^{ik\varepsilon}\frac{1-ik\varepsilon}{\varepsilon^2}\mathrm{d}s\\
+                                                                                                                                        &= \lim_{\varepsilon\to 0}\int_{\Sigma_{\varepsilon}'}\left[\frac{e^{ik\varepsilon}}{\epsilon}\frac{\partial U}{\partial n} - Ue^{ik\varepsilon}\frac{1-ik\varepsilon}{\varepsilon^2}\right]\epsilon^2\mathrm{d}\Omega\\
+                                                                                                                                        &= \lim_{\varepsilon\to 0}\int_{\Sigma_{\varepsilon}'}\varepsilon e^{ik\varepsilon}\frac{\partial U}{\partial n} - Ue^{ik\varepsilon} + ik\varepsilon Ue^{ik\varepsilon}\mathrm{d}\Omega\\
+                                                                                                                                        &= \int_{\Sigma_{\varepsilon}'}-U(Q)\mathrm{d}\Omega\\
+                                                                                                                                        &= -U(Q)\int_{\Sigma_{\varepsilon}'}1\mathrm{d}\Omega\\
+                                                                                                                                        &= -4\pi U(Q)
+                \end{align}$$
+
+                $$\begin{align}\therefore
+                \int_{\Sigma'}G\frac{\partial U}{\partial n} - U\frac{\partial G}{\partial n}\mathrm{d}s &= -\int_{\Sigma_{\varepsilon}'}G\frac{\partial U}{\partial n} - U\frac{\partial G}{\partial n}\mathrm{d}s\\
+                                                                                                         &= 4\pi U(Q)
+                \end{align}$$
+                $$\therefore U(Q) = \frac{1}{4\pi}\int_{\Sigma'}\frac{e^{ikr}}{r}\frac{\partial U}{\partial n} - U\frac{\partial}{\partial n}\left(\frac{e^{ikr}}{r}\right)\mathrm{d}s$$
+                <p>曲面内任一点Q的场值，可以用曲面上已知的\(\frac{\partial U}{\partial n}\)和\(U\)表示.</p>
+
+
+                <p>索末菲辐射条件：</p>
+                $$U(Q) = \frac{1}{4\pi}\left(\iint_\Sigma\mathrm{d}s + \iint_{S_1}\mathrm{d}s + \iint_{S_2}\mathrm{d}s\right)$$
+
+                <p>（1）证明\(\iint_{S_2}\mathrm{d}s = 0\)</p>
+
+                <p>（2）证明\(\iint_{S_1}\mathrm{d}s = 0\)</p>
+
+
+            </div>
             <p>上式称为基尔霍夫衍射公式.</p>
             <p>孔径平面上的复振幅分布是球面波产生的，因此可用下式表示：</p>
             $$U_0(P) = \frac{a_0}{r_0}e^{ikr_0}$$

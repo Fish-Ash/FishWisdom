@@ -92,11 +92,27 @@
             <h3>波导条件</h3>
             <p>假定芯层的锯齿形光线沿\(z\)方向传播，但局部光线的指向却有上倾和下倾两种可能，即波矢量\(\boldsymbol{k}\)不是唯一确定的.</p>
             <p>\(x\)方向的分量\(\boldsymbol{k}_{1x} = \pm n_1K_0\cos\alpha\)，具有双值不确定性.</p>
-            <div class="Card-Definition" id="PropagationConstant">
-                <b>传播常数</b>
+            <div class="Card-Definition" id="zPropagationConstant">
+                <b>（纵向）传播常数\(\beta\)</b>
                 <p>\(z\)方向分量\(k_{1z} = n_1k_0\sin\alpha\)是确定的，且在光线传播过程中始终保持不变，将其以\(\beta\)表示，称为<b>传播常数</b>.</p>
                 $$\beta = n_1k_0\sin\alpha = n_1k_0\cos\theta$$
+                <ul>
+                    <li>\(\theta\)：波矢\(\boldsymbol{k}\)与\(z\)轴夹角</li>
+                </ul>
             </div>
+
+            <div class="Card-Definition" id="tPropagationConstant">
+                <b>横向传播常数\(\chi\)</b>
+                <div class="Formula">
+                    $$\chi^2 = n^2k_0^2 - \beta^2 = \omega^2\epsilon\mu - \beta^2$$
+                    <div class="Derivation">
+                        $$k_0 = \frac{2\pi}{\lambda_0} = \frac{2\pi}{c\lambda_0}\cdot c = \frac{\omega}{\epsilon_0\mu_0}$$
+                        $$n = \frac{c}{v} = \frac{\sqrt{\epsilon\mu}}{\sqrt{\epsilon_0\mu_0}}$$
+                        $$\therefore n^2k_0^2 = \omega^2\epsilon\mu$$
+                    </div>
+                </div>
+            </div>
+
             <div class="Card-AI">
                 <p>这里指的“两种可能”是指不同时刻有可能向上反射也可能向下反射，不是指同一时刻.</p>
             </div>

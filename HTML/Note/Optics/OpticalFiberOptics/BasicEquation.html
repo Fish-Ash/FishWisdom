@@ -37,6 +37,12 @@
         
         <h1>光纤光学的基本方程</h1>
 
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#UW">归一化横向传播常数</a></li>
+            </ul>
+        </div>
+
         <div class="Card-Analysis">
             <h2>光线理论</h2>
 
@@ -223,6 +229,7 @@
             $$\chi_2 = \sqrt{n_2^2k_0^2 - \beta^2},\quad\beta\gt n_2k_0$$
             <p>\(\chi_2\)为纯虚数.</p>
 
+            <b id="UW">归一化横向传播常数</b>
             <p>方便起见，定义三个实的归一化参数：</p>
             $$U = a\chi_1 = \sqrt{n_1^2k_0^2 - \beta^2}\cdot a$$
             $$W = -ia\chi_2 = \sqrt{\beta^2 - n_2^2k_2^2}\cdot a$$
@@ -230,17 +237,142 @@
 
             <p>\(b\in[0,1]\)是场的归一化传播常数.</p>
             <p>\(U\)与\(W\)是场的归一化横向传播常数.</p>
-            <p>\(U\)值反映了导模在芯区中的驻波场的横向振荡频率.</p>
-            <p>\(W\)值反映了导模在包层中的消逝场的衰减速度，\(W\)越大衰减越快.</p>
+            <p>\(W\in\left[0,\infty\right)\)值反映了导模在包层中的消逝场的衰减速度，\(W\)越大衰减越快.</p>
+            <p>\(W\to 0\)时，场在包层中不衰减，导模转化为辐射模，对应于导模截止.</p>
+            <p>\(W\to \infty\)时，场在包层中不存在，导模场的约束最强，对应于导模远离截止.</p>
             <p>\(U\)与\(W\)满足：</p>
             $$V^2 = U^2 + W^2$$
-
-
+            <p>\(U\)值反映了导模在芯区中的驻波场的横向振荡频率.</p>
+            <p>\(u\)的取值范围由导模的截止条件与远离截止条件确定：</p>
+            <ul>
+                <li>导模截止时：\(W\to 0,~U\to V_t\)</li>
+                <li>导模远离截止时：\(W\approx V\to \infty,~U\to 0\)</li>
+            </ul>
+            <p>\(U\)也被称为导模的本征值.</p>
         </div>
 
+        <div class="Card-Analysis">
+            <h2>波导场方程与模式的概念</h2>
+
+            <p>Helmholtz方程有一个重要的特征：算符\(\nabla^2\)作用在函数\(\Psi\)上的结果，等于该函数\(\Psi\)与一常数\(-k^2\)的乘积.</p>
+            <p>这类方程数学上称为本征方程，常数\(k\)称为本征值.</p>
+            <p>因此，波动理论的实质，是对于给定的边界条件求本征方程的解——本征解及其对应的本征值，数学上称为本征值问题.</p>
+
+            <p>光纤波导中，电磁波在纵向（轴向）以“行波”形式存在，在横向以“纵波”形式存在.</p>
+            <p>其特征为：场分布沿轴向的变化只体现在相位上，场的幅度（或强度）不随轴向传播距离而变化（假设光纤中无模式耦合，也不存在增益与损耗）.</p>
+            <p>若规定光纤轴向为\(z\)方向，则场分布与 \(z\)坐标的关系具有\(e^{-i\beta z}\)的形式（\(\beta\)为\(z\)向传播常数）.</p>
+            <p>因此可以进一步对Helmholtz方程进行空间坐标横纵分离：</p>
+            $$\Psi(x,y,z) = \psi(x,y)e^{-i\beta z}$$
+            <p>考虑<a href="../../Math/Mathematic/GradientDivergenceCurl.html#tLaplacian" class="goto">横向Laplace算子\(\nabla^2_t\)</a>，将上式代入<a href="../Electromagnetism/HelmholtzEquation.html" class="goto">Helmholtz方程</a>，得：</p>
+            $$\nabla^2_t\psi(x,y) + \chi^2\psi(x,y) = 0$$
+            <ul>
+                <li>\(\chi\)：<a href="../WaveGuide/UniformWaveGuide.html#tPropagationConstant" class="goto">横向传播常数</a></li>
+                <li>\(\beta\)：<a href="../WaveGuide/UniformWaveGuide.html#zPropagationConstant" class="goto">纵向传播常数</a></li>
+            </ul>
+            <p>上式即为光纤波导中光传播时遵从的波导场方程，式中的\(\psi(x,y)\)表示\(\boldsymbol{E}\)与\(\boldsymbol{H}\)的横向场分布，即：</p>
+            $$\nabla^2_t\left[\begin{matrix}\boldsymbol{E}(x,y)\\\boldsymbol{H}(x,y)\end{matrix}\right] + \chi^2\left[\begin{matrix}\boldsymbol{E}(x,y)\\\boldsymbol{H}(x,y)\end{matrix}\right] = 0$$
+            <p>上式即为波动理论的最基本方程.</p>
+            <p>显然，这也是一个本征方程，其本征值为\(\chi\)或\(\beta\).</p>
+            <p>当给定波导的边界条件时，求解波导场方程可得本征解及其相应的本征值.</p>
+            <p>通常将本征解定义为“模式”，它相应于某一本征值并满足全部边界条件.</p>
+            <p>每一模式对应于沿光纤轴向传播的一种电磁波.</p>
+            <p>[注]模式时波导结构固有的电磁共振属性的表征，给定的光纤波导中能够存在的模式及其性质是已经确定的，外界激励源只能激励起光纤中允许存在的模式，而不会改变模式的固有属性.</p>
 
 
+            <h3 id="ztRelation">模式场的横纵关系</h3>
 
+            <p>模式的场矢量\(\boldsymbol{E}(x,y)\)与\(\boldsymbol{H}(x,y)\)具有六个场分量，分别是\(E_x, E_y, E_z\)与\(H_x, H_y, H_z\)（或\(E_r, E_\phi, E_z\)与\(H_r, H_\phi, H_z\)）.</p>
+            <p>只有六个场分量全部求出，方可认为模式的场分布唯一确定，但实际上这并不必要，因为场的横向分量可由纵向分量\(E_z\)与\(H_z\)表示：</p>
+
+            <p>由<a href="../PhysicalOptics/MonochromaticWave.html#MonochromaticComponent" class="goto">柱坐标系下的单色场分量形式</a>，得：</p>
+
+            <div class="Card-AI">
+                <p>[注]下式中的符号差异来源于\(e^{-i\omega t}\)与\(e^{i\omega t}\)的选择.</p>
+            </div>
+
+            <table>
+                <tr>
+                    <td>
+                        <div class="Formula">
+                            $$\chi^2E_x = -i\left(\omega\mu\frac{\partial H_z}{\partial y} + \beta\frac{\beta E_z}{\partial x}\right)$$
+                        </div>
+                        <div class="Formula">
+                            $$\chi^2E_y = -i\left(-\omega\mu\frac{\partial H_z}{\partial x} + \beta\frac{\partial E_z}{\partial y}\right)$$
+                        </div>
+                        <div class="Formula">
+                            $$\chi^2H_x = -i\left(-\omega\epsilon\frac{\partial E_z}{\partial y} + \beta\frac{\partial H_z}{\partial x}\right)$$
+                        </div>
+                        <div class="Formula">
+                            $$\chi^2H_y = -i\left(\omega\epsilon\frac{\partial E_z}{\partial x} + \beta\frac{\partial H_z}{\partial y}\right)$$
+                        </div>
+                    </td>
+                    <td>
+                        <div class="Formula">
+                            $$\chi^2E_r = -i\left(\frac{\omega\mu}{r}\frac{\partial H_z}{\partial\phi} + \beta\frac{\partial E_z}{\partial r}\right)$$
+                            <div class="Derivation">
+                                $$\because\begin{cases}
+                                \frac{\partial}{\partial z}E_r - \frac{\partial}{\partial r}E_z = i\omega\mu H_\phi\\
+                                \frac{1}{r}\frac{\partial}{\partial\phi}H_z - \frac{\partial}{\partial z}H_\phi = -i\omega\epsilon E_r\\
+                                \end{cases},\quad \frac{\partial}{\partial z} = -i\beta$$
+                                $$-i\omega\epsilon E_r = \frac{1}{r}\frac{\partial}{\partial\phi}H_z + i\beta H_\phi$$
+                                $$i\omega\mu H_\phi = -i\beta E_r - \frac{\partial}{\partial r}E_z$$
+                                $$\therefore(-i\omega\epsilon)(i\omega\mu)E_r = \frac{i\omega\mu}{r}\frac{\partial}{\partial\phi}H_z + i\beta\left(-i\beta E_r - \frac{\partial}{\partial r}E_z\right)$$
+                                $$\therefore\omega^2\epsilon\mu E_r = \frac{i\omega\mu}{r}\frac{\partial}{\partial\phi}H_z + \beta^2E_r - i\beta\frac{\partial}{\partial r}E_z$$
+                                $$\therefore\chi^2E_r = i\left(\frac{\omega\mu}{r}\frac{\partial}{\partial\phi}H_z - \beta\frac{\partial}{\partial r}E_z\right)$$
+                            </div>
+                        </div>
+            
+                        <div class="Formula">
+                            $$\chi^2E_\phi = -i\left(-\omega\mu\frac{\partial H_z}{\partial r} + \frac{\beta}{r}\frac{\partial E_z}{\partial\phi}\right)$$
+                        </div>
+            
+                        <div class="Formula">
+                            $$\chi^2H_r = -i\left(-\frac{\omega\epsilon}{r}\frac{\partial E_z}{\partial\phi} + \beta\frac{\partial H_z}{\partial r}\right)$$
+                        </div>
+            
+                        <div class="Formula">
+                            $$\chi^2H_\phi = -i\left(\omega\epsilon\frac{\partial E_z}{\partial r} + \frac{\beta}{r}\frac{\partial H_z}{\partial\phi}\right)$$
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+            <!-- $$\frac{1}{r}\frac{\partial}{\partial\phi}E_z - \frac{\partial}{\partial z}E_\phi = i\omega\mu H_r$$
+            $$\frac{\partial}{\partial r}E_\phi - \frac{1}{r}\frac{\partial}{\partial\phi}E_r = i\omega\mu H_z$$
+            $$\frac{\partial}{\partial z}H_r - \frac{\partial}{\partial r}H_z = -i\omega\epsilon E_\phi$$
+            $$\frac{\partial}{\partial r}H_\phi - \frac{1}{r}\frac{\partial}{\partial\phi}H_r = -i\omega\epsilon E_z$$                             -->
+
+            <p>因此，只要求解出场的纵向分量\(E_z\)与\(H_z\)，就可以通过上述关系式求出场的横向分量.</p>
+            <p>光纤中\(E_z\)与\(H_z\)满足独立的波导场方程：</p>
+            $$\nabla^2_t\left[\begin{matrix}E_z\\H_z\end{matrix}\right] + \chi^2\left[\begin{matrix}E_z\\H_z\end{matrix}\right] = 0$$
+            <p>而场的横向分量却没有如此简单的分量方程，因此一般都是先求解\(E_z\)与\(H_z\)，再由纵横关系式解出横向场分量.</p>
+
+            <p>如果已知场的横向分量，场的纵向分量也可由下述关系给出：</p>
+
+            <table>
+                <tr>
+                    <td>
+                        $$E_z = -i\frac{1}{\omega\epsilon}\left(\frac{\partial H_y}{\partial x} - \frac{\partial H_x}{\partial y}\right)$$
+                        $$\begin{align}
+                        H_z &= -i\beta\left(\frac{\partial H_x}{\partial x} + \frac{\partial H_y}{\partial y}\right)\\
+                            &= i\frac{1}{\omega\mu}\left(\frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y}\right)
+                        \end{align}$$
+                    </td>
+                    <td>
+                        $$E_z = -i\frac{1}{\omega\epsilon}\left[\frac{1}{r}\frac{\partial}{r}(rH_\phi) - \frac{1}{r}\frac{\partial H_r}{\partial\phi}\right]$$
+                        $$\begin{align}
+                        H_z &= -i\frac{1}{\beta}\left[\frac{1}{r}\frac{\partial}{\partial r}(rH_r) + \frac{1}{r}\frac{\partial H_\phi}{\partial \phi}\right]\\
+                            &= i\frac{1}{\omega\epsilon}\left[\frac{1}{r}\frac{\partial}{r}(rE_\phi) - \frac{1}{r}\frac{\partial E_r}{\partial\phi}\right]
+                        \end{align}$$
+                    </td>
+                </tr>
+            </table>
+            
+
+            <p>由场的纵横关系式可知，对于无损耗光纤（\(n\in\mathbb{R}\)），场的纵向分量与横向分量的相位相差\(\pi/2\)，即两者最大值在时间上相差\(1/4\)周期，在空间上相差\(1/4\)波长.</p>
+            <p>根据场的纵向分量\(E_z\)与\(H_z\)的存在与否，可将<a href="../WaveGuide/RegularWaveGuide.html#ModeClassification" class="goto">模式分类</a>.</p>
+            <p>光纤中存在的模式多数为HE模（EH模），有时也出现TE模（TH模）.</p>
+        </div>
         
         <div id="PageEnd"></div>
 

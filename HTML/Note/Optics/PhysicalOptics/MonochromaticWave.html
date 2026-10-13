@@ -55,14 +55,14 @@
             <p>[设]对于各向同性的线性<a href="../Electromagnetism/Maxwell.html#condition2" class="goto">非磁性</a>光学介质（通常为非导体），\(\rho = 0, \boldsymbol{j} = 0, \boldsymbol{D} = \epsilon\boldsymbol{E}, \boldsymbol{B} = \mu\boldsymbol{H}\).</p>
             <p>因此，单色波下Maxwell方程组可简化为不含时间因子的形式，即：</p>
             <div class="Formula">
-                $$\nabla\times\boldsymbol{E} = i\omega\mu_0\boldsymbol{H}$$
+                $$\nabla\times\boldsymbol{E} = i\omega\mu\boldsymbol{H}$$
                 <div class="Derivation">
                     $$\begin{align}
                     \nabla\times\boldsymbol{E} &= -\frac{\partial\boldsymbol{B}}{\partial t}\\
-                                               &= -\mu_0\frac{\partial\boldsymbol{H}}{\partial t}\\
+                                               &= -\mu\frac{\partial\boldsymbol{H}}{\partial t}\\
                     \end{align}$$
                     <a href="#formula2" class="goto">$$\because \frac{\partial}{\partial t}\boldsymbol{H} = -i\omega\boldsymbol{H}$$</a>
-                    $$\therefore \nabla\times\boldsymbol{E} = i\omega\mu_0\boldsymbol{H}$$
+                    $$\therefore \nabla\times\boldsymbol{E} = i\omega\mu\boldsymbol{H}$$
                 </div>
             </div>
             <div class="Formula">
@@ -79,6 +79,48 @@
             $$\nabla\cdot\boldsymbol{D} = 0$$
             $$\nabla\cdot\boldsymbol{B} = 0$$
             <p>这组方程只有前两式是独立的，后两式可以由前两式取散度运算导出.</p>
+
+            <h3 id="MonochromaticComponent">单色光波的分量形式</h3>
+            <p>利用单色电磁波的基本方程，直角坐标系下，可以写出如下单色光波的分量形式：</p>
+
+            <table>
+                <tr>
+                    <th></th>
+                    <th>$$\nabla\times\boldsymbol{E} = i\omega\mu\boldsymbol{H}$$</th>
+                    <th>$$\nabla\times\boldsymbol{H} = -i\omega\epsilon\boldsymbol{E}$$</th>
+                </tr>
+                <tr>
+                    <td width="4px">直角坐标系下</td>
+                    <td>
+                        $$\frac{\partial}{\partial y}E_z - \frac{\partial}{\partial z}E_y = i\omega\mu H_x$$
+                        $$\frac{\partial}{\partial z}E_x - \frac{\partial}{\partial x}E_z = i\omega\mu H_y$$
+                        $$\frac{\partial}{\partial x}E_y - \frac{\partial}{\partial y}E_x = i\omega\mu H_z$$
+                    </td>
+                    <td>
+                        $$\frac{\partial}{\partial y}H_z - \frac{\partial}{\partial z}H_y = -i\omega\epsilon E_x$$
+                        $$\frac{\partial}{\partial z}H_x - \frac{\partial}{\partial x}H_z = -i\omega\epsilon E_y$$
+                        $$\frac{\partial}{\partial x}H_y - \frac{\partial}{\partial y}H_x = -i\omega\epsilon E_z$$
+                    </td>
+                </tr>
+                <tr>
+                    <td>柱坐标系下</td>
+                    <td>
+                        <div class="Formula">
+                            $$\frac{1}{r}\frac{\partial}{\partial\phi}E_z - \frac{\partial}{\partial z}E_\phi = i\omega\mu H_r$$
+                            $$\frac{\partial}{\partial z}E_r - \frac{\partial}{\partial r}E_z = i\omega\mu H_\phi$$
+                            $$\frac{\partial}{\partial r}E_\phi - \frac{1}{r}\frac{\partial}{\partial\phi}E_r = i\omega\mu H_z$$
+                            <div class="Derivation">
+                                $$\nabla\times\boldsymbol{E} = \left\lvert\begin{matrix}\hat{\boldsymbol{r}}&\hat{\boldsymbol{\phi}}&\hat{\boldsymbol{z}}\\\frac{\partial}{\partial r}&\frac{1}{r}\frac{\partial}{\partial \phi}&\frac{\partial}{\partial z}\\E_r&E_\phi&E_z\end{matrix}\right\rvert$$
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        $$\frac{1}{r}\frac{\partial}{\partial\phi}H_z - \frac{\partial}{\partial z}H_\phi = -i\omega\epsilon E_r$$
+                        $$\frac{\partial}{\partial z}H_r - \frac{\partial}{\partial r}H_z = -i\omega\epsilon E_\phi$$
+                        $$\frac{\partial}{\partial r}H_\phi - \frac{1}{r}\frac{\partial}{\partial\phi}H_r = -i\omega\epsilon E_z$$                            
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <div class="Card-Analysis">

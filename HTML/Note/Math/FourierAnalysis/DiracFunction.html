@@ -37,6 +37,12 @@
         
         <h1>Dirac函数</h1>
 
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#comb">梳状函数</a></li>
+            </ul>
+        </div>
+
         <div class="Card-Analysis">
             <h2>一维Dirac函数</h2>
             $$\delta(x) = \begin{cases}0,\quad x\neq0\\\infty,\quad x=0\end{cases}$$
@@ -133,11 +139,15 @@
 
         </div>
 
-        <div class="Card-Analysis">
+        <div class="Card-Analysis" id="comb">
             <h2>梳状函数</h2>
             <h3>一维梳状函数</h3>
-            $$\text{comb}(x) = \sum_{n=-\infty}^{+\infty}\delta(x-n)$$
+            $$\text{comb}(x) = \sum_{n=-\infty}^{+\infty}\delta(x-n),\quad n\in\mathbb{Z}$$
             <p>[注]梳状函数也是广义函数，其性质可由\(\delta\)函数的性质推出.</p>
+
+            $$\text{comb}\left(ax\right) = \sum_{n=-\infty}^{+\infty}\delta\left(ax-n\right),\quad n\in\mathbb{Z}$$
+            $$\because \delta(ax) = \frac{1}{|a|}\delta(x)$$
+            $$\therefore \text{comb}\left(ax\right) = \frac{1}{|a|}\sum_{n=-\infty}^{+\infty}\delta(x-\frac{n}{a})$$
 
             <img src="Img/comb.jpg" width="300" alt="梳状函数">
             <p>这是间隔为\(1\)的\(\delta\)函数的无穷序列.</p>

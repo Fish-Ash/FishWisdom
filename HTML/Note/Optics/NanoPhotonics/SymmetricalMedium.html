@@ -192,79 +192,77 @@
                 </div>
             </div>
 
-            <div class="Card-Example" id="Example2">
-                <b>最简单的离散平移对称结构</b>
-                <p>最简单的例子是某结构在一个方向上重复.</p>
-                <img src="Img/SymmetricalMedium.jpg" width="400">
-                <p>这样一个系统沿\(x\)方向是连续平移对称的，但在\(y\)方向不是.</p>
+            <h3>最简单的离散平移对称结构</h3>
+            <p>最简单的例子是某结构在一个方向上重复.</p>
+            <img src="Img/SymmetricalMedium.jpg" width="400">
+            <p>这样一个系统沿\(x\)方向是连续平移对称的，但在\(y\)方向不是.</p>
 
-                <b>一些参数的定义</b>
-                <p>图中立方体所标注的重复单元为<b>元胞</b>，该示例中的元胞为一个在\(y\)方向上宽度为\(a\)的\(xz\)厚板.</p>
-                <p>基本步长称为<b>晶格常数</b>\(a\).</p>
-                <p>该方向上的单位矢量称为<b>晶格基矢</b>\(\boldsymbol{a} = a\hat{\boldsymbol{y}}\).</p>
+            <b>一些参数的定义</b>
+            <p>图中立方体所标注的重复单元为<b>元胞</b>，该示例中的元胞为一个在\(y\)方向上宽度为\(a\)的\(xz\)厚板.</p>
+            <p>基本步长称为<b>晶格常数</b>\(a\).</p>
+            <p>该方向上的单位矢量称为<b>晶格基矢</b>\(\boldsymbol{a} = a\hat{\boldsymbol{y}}\).</p>
 
-                <b>该种结构的性质</b>
-                <p>由离散平移对称性，有：</p>
-                $$\epsilon(\boldsymbol{r}) = \epsilon(\boldsymbol{r} + l\boldsymbol{a}),\quad l\in\mathbb{Z}$$
-                <div class="Card-AI">
-                    <p>这里的“单位矢量”模不是1而是a.</p>
-                </div>
-
-                <p>\(x\)方向上，由于连续平移对称，算符\(\widehat\Theta\)必须与任何平移算符对易.</p>
-                <p>\(y\)方向上，算符\(\widehat\Theta\)必须与晶格矢量\(\boldsymbol{R} = la\hat{\boldsymbol{y}}\)的平移算符对易.</p>
-                <p>也就是说，\(\widehat\Theta\)的空间模式必须同时满足这两种平移算符的本征函数.</p>
-
-                <div class="Card-AI">
-                    <p>任何一个物理上存在的本征模式\(\boldsymbol{H}\)，都是\(\widehat{\Theta}\)的本征函数.</p>
-                    <p>离散平移对称结构中，\(\boldsymbol{H}\)需要满足三个本征方程.</p>
-                </div>
-
-                <p>这些本征函数是平面波：</p>
-                $$\begin{align}
-                &\widehat{T}_{\mathrm{d}\hat{\boldsymbol{x}}}e^{ik_xx} = e^{ik_x(x-d)} = e^{-ik_xd}e^{ik_xx}\\
-                &\widehat{T}_{\boldsymbol{R}}e^{ik_yy} = e^{ik_y(y-la)} = e^{-ik_yla}e^{ik_yy}
-                \end{align}$$
-
-                <div class="Card-AI">
-                    <p>为什么这些本征函数是平面波：</p>
-                    <p></p>
-                </div>
-
-                <p>现在可以根据\(k_x\)与\(k_y\)来归类这些空间模式了.</p>
-                <p>并非所有\(k_y\)都有不一样的本征值，任何波矢为\(k_y = m\left(\frac{2\pi}{a}\right),~m\in\mathbb{Z}\)的模式都是简并的，它们拥有同样的平移算符本征值\(e^{-ik_yla}\).</p>
-                <p>也就是说，将\(k_y\)加上\(b = 2\pi/a\)的整数倍，本征态将保持不变.</p>
-                <div class="Card-Definition">
-                    <b>倒格子基矢量</b>
-                    $$\boldsymbol{b} = b\hat{\boldsymbol{y}}$$
-                </div>
-
-                <div class="Card-AI">
-                    <p>倒格子基矢量不是倒格矢.</p>
-                </div>
-
-
-                <p>既然简并态（空间模式\(\boldsymbol{H}\)）的线性组合仍为本征函数在该本征值（频率\(\omega\)）下的一个解，那么可以对原始模式进行线性组合，使它们变为以下形式：</p>
-                $$\begin{align}
-                \boldsymbol{H}_{k_x, k_y}(\boldsymbol{r}) &= e^{ik_xx}\sum_mCk_{y,m}(z)e^{i(k_y + mb)y}\\
-                                                          &= e^{ik_xx}\cdot e^{ik_yy}\cdot\sum_{m}Ck_{y,m}(z)e^{imby}\\
-                                                          &= e^{ik_xx}\cdot e^{ik_yy}\cdot\boldsymbol{u}_{k_y}(y,z)
-                \end{align}$$
-                <ul>
-                    <li>\(C\)：由显式解决定的展开系数</li>
-                    <li>\(\boldsymbol{u}_{k_y}(y,z)\)：\(y\)方向上的周期函数</li>
-                </ul>
-
-                <h3>Bloch理论</h3>
-                <p>\(y\)方向上离散的周期性使得一个依赖于\(y\)的空间模式\(\boldsymbol{H}\)可以表达为一个平面波乘上一个关于\(y\)的周期函数.</p>
-                <p>可以将这个空间模式想象成一个平面波，就好像它处于自由空间一样.</p>
-                <p>但由于周期的晶格，这个平面波受到周期函数的调制：</p>
-                $$\boldsymbol{H}(\cdots, y, \cdots) \propto e^{ik_yy}\cdot\boldsymbol{u}_{k_y}(y,z)$$
-                <p>通过上式可以确定\(\boldsymbol{u}_{k_y}(yla, z) = \boldsymbol{u}_{k_y}(y,z)\).</p>
-                <div class="Card-AI">
-                    <p>这里应该是\(\boldsymbol{u}_{k_y}(y + la, z) = \boldsymbol{u}_{k_y}(y,z)\)</p>
-                </div>
-                <p>固体物理中，上式代表的模式称为<b>Bloch态</b>；数学上称之为<b>Floquet模</b>.</p>
+            <b>该种结构的性质</b>
+            <p>由离散平移对称性，有：</p>
+            $$\epsilon(\boldsymbol{r}) = \epsilon(\boldsymbol{r} + l\boldsymbol{a}),\quad l\in\mathbb{Z}$$
+            <div class="Card-AI">
+                <p>这里的“单位矢量”模不是1而是a.</p>
             </div>
+
+            <p>\(x\)方向上，由于连续平移对称，算符\(\widehat\Theta\)必须与任何平移算符对易.</p>
+            <p>\(y\)方向上，算符\(\widehat\Theta\)必须与晶格矢量\(\boldsymbol{R} = la\hat{\boldsymbol{y}}\)的平移算符对易.</p>
+            <p>也就是说，\(\widehat\Theta\)的空间模式必须同时满足这两种平移算符的本征函数.</p>
+
+            <div class="Card-AI">
+                <p>任何一个物理上存在的本征模式\(\boldsymbol{H}\)，都是\(\widehat{\Theta}\)的本征函数.</p>
+                <p>离散平移对称结构中，\(\boldsymbol{H}\)需要满足三个本征方程.</p>
+            </div>
+
+            <p>这些本征函数是平面波：</p>
+            $$\begin{align}
+            &\widehat{T}_{\mathrm{d}\hat{\boldsymbol{x}}}e^{ik_xx} = e^{ik_x(x-d)} = e^{-ik_xd}e^{ik_xx}\\
+            &\widehat{T}_{\boldsymbol{R}}e^{ik_yy} = e^{ik_y(y-la)} = e^{-ik_yla}e^{ik_yy}
+            \end{align}$$
+
+            <div class="Card-AI">
+                <p>为什么这些本征函数是平面波：</p>
+                <p></p>
+            </div>
+
+            <p>现在可以根据\(k_x\)与\(k_y\)来归类这些空间模式了.</p>
+            <p>并非所有\(k_y\)都有不一样的本征值，任何波矢为\(k_y = m\left(\frac{2\pi}{a}\right),~m\in\mathbb{Z}\)的模式都是简并的，它们拥有同样的平移算符本征值\(e^{-ik_yla}\).</p>
+            <p>也就是说，将\(k_y\)加上\(b = 2\pi/a\)的整数倍，本征态将保持不变.</p>
+            <div class="Card-Definition">
+                <b>倒格子基矢量</b>
+                $$\boldsymbol{b} = b\hat{\boldsymbol{y}}$$
+            </div>
+
+            <div class="Card-AI">
+                <p>倒格子基矢量不是倒格矢.</p>
+            </div>
+
+
+            <p>既然简并态（空间模式\(\boldsymbol{H}\)）的线性组合仍为本征函数在该本征值（频率\(\omega\)）下的一个解，那么可以对原始模式进行线性组合，使它们变为以下形式：</p>
+            $$\begin{align}
+            \boldsymbol{H}_{k_x, k_y}(\boldsymbol{r}) &= e^{ik_xx}\sum_mCk_{y,m}(z)e^{i(k_y + mb)y}\\
+                                                        &= e^{ik_xx}\cdot e^{ik_yy}\cdot\sum_{m}Ck_{y,m}(z)e^{imby}\\
+                                                        &= e^{ik_xx}\cdot e^{ik_yy}\cdot\boldsymbol{u}_{k_y}(y,z)
+            \end{align}$$
+            <ul>
+                <li>\(C\)：由显式解决定的展开系数</li>
+                <li>\(\boldsymbol{u}_{k_y}(y,z)\)：\(y\)方向上的周期函数</li>
+            </ul>
+
+            <h3>Bloch理论</h3>
+            <p>\(y\)方向上离散的周期性使得一个依赖于\(y\)的空间模式\(\boldsymbol{H}\)可以表达为一个平面波乘上一个关于\(y\)的周期函数.</p>
+            <p>可以将这个空间模式想象成一个平面波，就好像它处于自由空间一样.</p>
+            <p>但由于周期的晶格，这个平面波受到周期函数的调制：</p>
+            $$\boldsymbol{H}(\cdots, y, \cdots) \propto e^{ik_yy}\cdot\boldsymbol{u}_{k_y}(y,z)$$
+            <p>通过上式可以确定\(\boldsymbol{u}_{k_y}(yla, z) = \boldsymbol{u}_{k_y}(y,z)\).</p>
+            <div class="Card-AI">
+                <p>这里应该是\(\boldsymbol{u}_{k_y}(y + la, z) = \boldsymbol{u}_{k_y}(y,z)\)</p>
+            </div>
+            <p>固体物理中，上式代表的模式称为<b>Bloch态</b>；数学上称之为<b>Floquet模</b>.</p>
 
         </div>
 
@@ -277,6 +275,10 @@
             $$\omega(k_y) = \omega(k_y + mb)$$
             <p>事实上，只需要考虑\(-\pi/a\lt k_y\leq \pi/a\)范围内的\(k_y\)就可以得到所有的解.</p>
             <p>这个描述\(k_y\)的简化区域称为<b>第一布里渊区</b>.</p>
+
+            <div class="Card-AI">
+                <p>倒易晶格与布里渊区的概念，见《光子晶体》附录B.</p>
+            </div>
         </div>
 
         <div class="Card-Analysis">

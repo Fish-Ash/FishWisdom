@@ -5,7 +5,7 @@
     <head>
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Fourier光学</title>
+        <title>非线性光学</title>
 
         <!-- 基本CSS库（基础、菜单） -->
         <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
@@ -34,6 +34,7 @@
             <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
             <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
         </div>
+
 
         <h1>复振幅分布的空间频谱（角谱）</h1>
 
@@ -105,7 +106,7 @@
 
         <div class="Card-Analysis">
             <h2>角谱</h2>
-            <p>利用<a href="../../Math/FourierAnalysis/FourierTransform.html">Fourier变换</a>对位于单色光场中的\(xy\)平面上的复振幅分布\(U(x,y)\)进行Fourier分析，得：</p>
+            <p>利用<a href="../../Math/FourierAnalysis/FourierTransform.html" class="goto">Fourier变换</a>对位于单色光场中的\(xy\)平面上的复振幅分布\(U(x,y)\)进行Fourier分析，得：</p>
             $$U(x,y) = \iint_{-\infty}^{+\infty}A(f_x, f_y)e^{i2\pi(f_x x + f_y y)}\mathrm{d}f_x\mathrm{d}f_y$$
             $$A(f_x, f_y) = \iint_{-\infty}^{+\infty}U(x,y)e^{-i2\pi(f_xx + f_yy)}\mathrm{d}x\mathrm{d}y$$
             <p>这里将平面上复振幅分布\(U(x,y)\)看作频率不同的复指数分量的线性组合，各频率分量的权重因子为\(A(f_x, f_y)\).</p>
@@ -121,22 +122,66 @@
 
         <div class="Card-Analysis">
             <h2>衍射的角谱理论</h2>
+            <b>前置知识</b>
+            <ul>
+                <li><a>空间频率</a></li>
+                <li><a>二维Fourier变换</a></li>
+            </ul>
             <h3>角谱的传播</h3>
             <p>孔径平面与观察平面上的光场都可以分别看作为许多不同方向传播的单色平面波分量的线性组合.</p>
             <p>每一平面波分量的相对振幅与相位取决于相应的角谱\(A_0\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)\)与\(A\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)\)，即：</p>
-            $$U(x_0, y_0) = \iint_{-\infty}^{+\infty}A_0\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)e^{i2\pi\left(\frac{\cos\alpha}{\lambda}x_0 + \frac{\cos\beta}{\lambda}y_0\right)}\times\mathrm{d}\left(\frac{\cos\alpha}{\lambda}\right)\mathrm{d}\left(\frac{\cos\beta}{\lambda}\right)$$
-            $$U(x, y) = \iint_{-\infty}^{+\infty}A\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)e^{i2\pi\left(\frac{\cos\alpha}{\lambda}x + \frac{\cos\beta}{\lambda}y\right)}\times\mathrm{d}\left(\frac{\cos\alpha}{\lambda}\right)\mathrm{d}\left(\frac{\cos\beta}{\lambda}\right)$$
-
-            <p>若我们能找到\(A_0\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)\)与\(A\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)\)间的关系，就知道了每一平面波分量在传播过程中振幅与相位发生的变化，从而确定整个光场由孔径平面传播至观察平面所发生的变化.</p>
-
-            $$A\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right) = A_0\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)e^{ikz\sqrt{1-\cos^2\alpha-\cos^\beta}}$$
-
-            <div class="Card-Question">
-                <p>1、为什么是叉乘</p>
-                <p>2、最后式子由来</p>
+            $$U_0(x_0, y_0) = \iint_{-\infty}^{+\infty}A_0\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)e^{i2\pi\left(\frac{\cos\alpha}{\lambda}x_0 + \frac{\cos\beta}{\lambda}y_0\right)}\mathrm{d}x_0\mathrm{d}y_0$$
+            $$U(x, y) = \iint_{-\infty}^{+\infty}A\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)e^{i2\pi\left(\frac{\cos\alpha}{\lambda}x + \frac{\cos\beta}{\lambda}y\right)}\mathrm{d}x\mathrm{d}y$$
+            <div class="Card-AI">
+                <p>二维线性空不变系统，对于单色平面波，在空间传播一段距离后只是改变了相位，即乘了一个复常数.</p>
+                <p>上式其实就是二维Fourier变换</p>
+                <p>\(U(x,y)\)满足亥姆霍兹方程：</p>
+                $$(\nabla^2 + k^2)U(x,y) = 0$$
             </div>
-        </div>
+            <p>若我们能找到\(A_0\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)\)与\(A\left(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}\right)\)间的关系，就知道了每一平面波分量在传播过程中振幅与相位发生的变化，从而确定整个光场由孔径平面传播至观察平面所发生的变化.</p>
+            $$\frac{\mathrm{d}^2}{\mathrm{d}z^2}A\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right) + k^2(1-\cos^2\alpha - \cos^2\beta)A\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right) = 0$$
+            <p>解此微分方程，得到方程的一个基本解为：</p>
+            $$A\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right) = c\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right)e^{ikz\sqrt{1-\cos^2\alpha - \cos^2\beta}}$$
+            $$c\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right) = A_0\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right)$$
 
+            $$\therefore A\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right) = A_0\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right)e^{ikz\sqrt{1-\cos^2\alpha - \cos^2\beta}}$$
+
+            <h3>case1：\(\cos^2\alpha + \cos^2\beta \lt 1\)</h3>
+            <p>这种情况下，上式真正对应于空间某一确定方向传播的平面波，这些平面波分量在空间传播一定距离\(z\)仅是引入了一定的相位移动，而振幅不发生变化.</p>
+            <p>这与平面的性质一致，平面在空间传播既不会改变方向，也不会改变振幅.</p>
+            
+            <h3>case2：\(\cos^2\alpha + \cos^2\beta = 1\)</h3>
+            $$\cos\gamma = 0$$
+            <p>即该波动分量的传播方向垂直于\(z\)轴，其在\(z\)轴方向净能量流为0.</p>
+
+            <h3>case3：\(\cos^2\alpha + \cos^2\beta\gt 1\)</h3>
+            $$\therefore \sqrt{1-\cos^2\alpha-\cos^2\beta} = \sqrt{-(\cos^2\alpha + \cos^2\beta - 1)} = i\sqrt{\cos^2\alpha + \cos^2\beta - 1}$$
+            <p>[令]</p>
+            $$u = k\sqrt{\cos^2\alpha + \cos^2\beta - 1}\gt 0,\quad u\in\mathbb{R}$$
+            $$\therefore A\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right) = A_0\left(\frac{\cos\alpha}{\lambda},\frac{\cos\beta}{\lambda}\right)e^{-uz}$$
+            <p>故对于一切\(\cos^2\alpha + \cos^2\beta \gt 1\)的波动分量，将随\(z\)的增大而按指数\(e^{-uz}\)快速衰减，在几个波长的距离内几乎衰减为0.</p>
+            <p>对应于这些传播方向波动分量称为倏逝波，在通常情况下忽略不计.</p>
+            <div class="Card-AI">
+                <p>case3是特殊情况</p>
+                <p>\(u\propto k = \frac{2\pi}{\lambda}\)，\(\lambda\)非常小故\(k\)非常大，故衰减得很快.</p>
+            </div>
+
+            <p>[令]</p>
+            $$H(f_x, f_y) = e^{ikz\sqrt{1-(\lambda f_x)^2 - (\lambda f_y)^2}}$$
+            <p>上式称为<b>传递函数</b>.</p>
+
+            $$\therefore A(f_x, f_y) = A_0(f_x, f_y)H(f_x, f_y)$$
+            <p>\(A(f_x, f_y)\)与\(A_0(f_x, f_y)\)分别看作系统的输入与输出频谱.</p>
+            <p>由上式给出的输入与输出频谱关系再次说明系统是线性不变系统，系统在频域的效应由传递函数表征.</p>
+            <p>由于子所讨论的问题中，传播距离\(z\)总是极大于几个波长，所以可以忽略倏逝波，于是传递函数可以写作：</p>
+            $$H(f_x, f_y) = \begin{cases}
+            e^{ikz\sqrt{1-(\lambda f_x)^2-(\lambda f_y)^2}},\quad f_x^2 + f_y^2 \lt \frac{1}{\lambda^2}\\
+            0,\quad \text{others}
+            \end{cases}$$
+
+
+        </div>
+        
 
         <div id="PageEnd"></div>
 
