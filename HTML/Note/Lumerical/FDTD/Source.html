@@ -35,26 +35,38 @@
             <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
         </div>
 
-        <h1>添加FDTD</h1>
+        <h1>光源</h1>
 
+        <h2>添加平面光源</h2>
         <pre><code class="Code">
-            addfdtd;
+            addplane;
         </code></pre>
 
-        <p>[注]FDTD不能设置"name".</p>
+        <h2>设置入射方向</h2>
+        <pre><code class="Code">
+            set("injection axis", "x/y/z")
+        </code></pre>
 
-        <h2>边界条件</h2>
-        <ul>
-            <li>PML</li>
-            <li>Periodic</li>
-            <li>Bloch</li>
-        </ul>
+        <h2>设置入射角度</h2>
+        <pre><code class="Code">
+            set("angle theta", angle_degree);
+            set("angle phi", angle_degree);
+        </code></pre>
 
+        <h2>设置偏振方向</h2>
+        <pre><code class="Code">
+            set("polarization angle", polarization_angle);
+        </code></pre>
         <div class="Card-AI">
-            <p>半无限结构：z方向PML</p>
-            <p>正入射：xy Periodic</p>
-            <p>斜入射：xy Bloch</p>
+            <p>为什么90度的时候就是s偏振？</p>
         </div>
+
+        <h2>设置波长范围</h2>
+        <pre><code class="Code">
+            set("wavelength start", wavelength_start);
+            set("wavelength stop", wavelength_stop);
+        </code></pre>
+
 
         <div id="PageEnd"></div>
 

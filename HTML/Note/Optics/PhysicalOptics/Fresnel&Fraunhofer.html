@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>Fresnel衍射与Fraunhofer衍射</h1>
+
+        <div class="Card-Analysis">
+            <h2>Fresnel衍射</h2>
+
+            <h3>Fresnel衍射成立的充分条件的导出</h3>
+            $$\begin{align}
+            r &= \sqrt{(x-x_0)^2 + (y-y_0)^2 + z^2}\\
+              &= z\left[1 + \left(\frac{x-x_0}{z}\right)^2 + \left(\frac{y-y_0}{z}\right)^2\right]^{1/2}
+            \end{align}$$
+            <p><a href="../../Math/Mathematic/TaylorFormula.html" class="goto">Taylor展开</a>，得：</p>
+            $$r = z\left\{1 + \frac{(x-x_0)^2 + (y-y_0)^2}{2z^2} - \frac{[(x-x_0^2) + (y-y_0)]^2}{8z^4} + \cdots\right\}$$
+            <p>上式第三项引起的相位差为：</p>
+            $$\begin{align}
+            \Delta\varphi &= kr\\
+                          &= \frac{2\pi}{\lambda}\frac{[(x-x_0)^2 + (y-y_0)^2]}{8z^3}
+            \end{align}$$
+            <p>为使Fresnel近似成立，必须使\([(x-x_0)^2-(y-y_0)^2]^2\)取最大值时，\(\Delta\varphi\ll 2\pi\)，即：</p>
+            $$\frac{2\pi}{\lambda}\frac{[(x-x_0)^2 + (y-y_0)^2]}{8z^3}\ll 2\pi$$
+            $$z^3\gg \frac{1}{8\lambda}[(x-x_0)^2 + (y-y_0)^2]^2_{\max}$$
+
+            <p>也可以从<a href="ScalarDiffractionTheory_AngularSpectrum.html" class="goto">衍射的角谱理论</a>出发，对描述光波传播的传递函数\(H\)作出近似，导出Fresnel衍射公式：</p>
+            <p>观察面上光扰动的角谱与孔平面上光扰动的角谱的关系为：</p>
+            $$A(f_x, f_y) = A_0(f_x, f_y)H(f_x, f_y)$$
+            <p>\(H\)为描述传播现象频率效应的传递函数，其值为：</p>
+            $$H(f_x, f_y) = e^{ikz\sqrt{1-\cos^2\alpha-\cos^2\beta}}$$
+            <p>\(\cos^2\alpha + \beta^2\lt 1\)时，对相位因子中的根式作<a href="../../Math/Mathematic/TaylorFormula.html" class="goto">Taylor展开</a>，得：</p>
+            $$[1 - (\cos^2\alpha + \cos^2\beta)]^{1/2} = 1 - \frac{1}{2}(\cos^2\alpha + \cos^2\beta) - \frac{1}{8}(\cos^2\alpha + \cos^2\beta)^2 + \cdots$$
+            <p>若展开式中第三项所贡献的相位远小于\(2\pi\)，则从上式中第三想起均可忽略不计，即：</p>
+            $$\frac{2\pi}{\lambda}z\frac{1}{8}(\cos^2\alpha + \cos^2\beta)^2\ll 2\pi$$
+            <p>平面波传播方向与孔径平面和观察平面坐标间的关系为：</p>
+            $$\cos\alpha\approx \frac{x-x_0}{z},\quad \cos\beta\approx\frac{y-y_0}{z}$$
+            $$\therefore \frac{z}{8\lambda}\left[\frac{(x-x_0)^2 + (y-y_0)^2}{z^2}\right]^2\ll 1$$
+            $$z^3\gg \frac{1}{8}[(x-x_0)^2 + (y-y_0)^2]^2_{\max}$$
+            <p>与之前的讨论一致.</p>
+            
+
+            <h3>衍射角谱理论下的进一步分析</h3>
+            <p>Fresnel衍射区内：</p>
+            $$\sqrt{1 - \cos^2\alpha - \cos^2\beta} \approx 1 - \frac{1}{2}(\cos^2\alpha + \cos^2\beta)$$
+            $$\therefore H(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}) = e^{ikz[1-\frac{1}{2}(\cos^2\alpha+\cos^2\beta)]}$$
+            $$\because f_x = \frac{\cos\alpha}{\lambda},\quad f_y = \frac{\cos\beta}{\lambda}$$
+            $$\begin{align}\therefore
+            H(f_x, f_y) &= e^{ikz}e^{-i\frac{2\pi}{\lambda}\frac{1}{2}\lambda^2(f_x^2+f_y^2)}\\
+                        &= e^{ikz}e^{-i\pi\lambda z(f_x^2+f_y^2)}
+            \end{align}$$
+            $$\mathcal{F}^{-1}\{A(f_x, f_y)\} = \mathcal{F}^{-1}\{A_0(f_x, f_y)\}*\mathcal{F}^{-1}{H(f_x, f_y)}$$
+            <p>即：</p>
+            $$U(x,y) = \iint_{-\infty}^{+\infty}U_0(x_0,y_0)h(x-x_0, y-y_0)\mathrm{d}x_0\mathrm{d}y_0$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>Talbot效应</h2>
+            <p>有一维周期物体，其复振幅透过率为：</p>
+            $$g_0(x_0) = \sum_{n=-\infty}^{+\infty}c_ne^{ie\pi\frac{n}{d}x_0},\quad n=0,\pm1,\pm2,\cdots$$
+            <p>对上式作Fourier变换，得物空间的空间频率为：</p>
+            $$G_0(f_x) = \sum_{n=-\infty}^{+\infty}c_n\delta\left(f_x-\frac{n}{d}\right)$$
+            <p>由Fresnel衍射传递函数表示式，得：</p>
+            $$H(f_x) = e^{ikz}e^{-i\pi\lambda zf_x^2}$$
+            <p>观察平面上得到场分布的频谱为：</p>
+            $$\begin{align}
+            G(f_x) &= G_0(f_x)H(f_x)\\
+                   &= \sum_{n=-\infty}^{+\infty}c_n\delta\left(f_x-\frac{n}{d}\right)e^{ikz}e^{-i\pi\lambda zf_x^2}\\
+                   &= \sum_{n=-\infty}^{+\infty}c_n\delta\left(f_x-\frac{n}{d}\right)e^{ikz}e^{-i\pi\lambda z\left(\frac{n}{d}\right)^2}
+            \end{align}$$
+            <p>当\(z\)满足条件：</p>
+            $$z = \frac{2md^2}{\lambda},\quad m=1,2,3,\cdots$$
+            <p>则：</p>
+            $$e^{-i\pi\lambda z\left(\frac{n}{d}\right)^2} =1$$
+            $$\therefore G(f_x) = \sum_{n=-\infty}^{+\infty}c_n\delta\left(f_x-\frac{n}{d}\right)e^{ikz}$$
+            <p>对上式进行Fourier逆变换，得到观察平面上场分布为：</p>
+            $$g(x_0) = g_0(x_0)e^{ikz}$$
+            <p>其强度分布于物体相同，即：</p>
+            $$I(x_0) = |g(x_0)|^2 = |g_0(x_0)|^2$$
+        </div>
+
+        
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

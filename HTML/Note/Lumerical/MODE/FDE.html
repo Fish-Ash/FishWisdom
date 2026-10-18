@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>FDTD</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>FDE</h1>
+
+        <h2>Mode List</h2>
+        <p>在Mode Analysis中进行设置后，Calculate mode后，会生成一个Mode List.</p>
+        <table>
+            <tr>
+                <td>mode #</td>
+                <td>模式编号</td>
+            </tr>
+            <tr>
+                <td>effective index</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>wavelength（μm）</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>loss（dB/cm）</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>TE Polarization fraction (Ex)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>waveguide TE/TM fraction (%)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>effective area (μm^2)</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <b>mode #</b>
+        <p>这一项在Mode Analysis中的number of trial modes中进行设置，数量为结果显示的mode数.</p>
+
+        <div class="Card-Analysis">
+            <h2>Modal analysis</h2>
+            <b>frequency (THz)</b>
+            <p>似乎会根据波长变化而变化，无需单独设置.</p>
+            $$f = c/\lambda$$
+
+            <b>number of trial modes</b>
+            <p>求解的模式数.</p>
+
+            <h3>search</h3>
+            <p>决定了搜索策略，即最终显示哪些模式，有如下选择：</p>
+            <b>near n</b>
+            <p>按照给定的有效折射率，越接近优先级越高.</p>
+            <p>若勾选了“use max index”，则无法修改折射率了.</p>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+    
+</html>

@@ -5,7 +5,7 @@
     <head>
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>FDTD</title>
+        <title>非线性光学</title>
 
         <!-- 基本CSS库（基础、菜单） -->
         <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
@@ -34,26 +34,32 @@
             <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
             <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
         </div>
+        
+        <h1>非线性光学材料</h1>
 
-        <h1>光源</h1>
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#SHG">二次谐波产生（SHG）</a></li>
+                <li><a href="#PocklerEffect">线性电光效应</a></li>
+            </ul>
+        </div>
 
-        <h2>添加平面光源</h2>
-        <pre><code class="Code">
-            addplane;
-        </code></pre>
+        <div class="Card-Analysis">
+            <h2>非线性光学材料选取原则</h2>
 
-        <h2>设置入射角度</h2>
-
-        <h2>设置偏振方向</h2>
-
-        <h2>设置波长范围</h2>
-
-
+            <ul>
+                <li>具有较大的非线性极化率：有时即使材料的非线性极化率不是很大，也可以通过增强入射光功率等方式获得所要求的非线性光学效应.</li>
+                <li>具有合适的透明程度及足够的光学均匀性：在非线性光学工作频段内，材料对光的有害吸收及散射损耗应尽量小.</li>
+                <li>容易实现相位匹配.</li>
+                <li>损伤阈值高：能够承受较大的激光功率或能量.</li>
+                <li>具有合适的响应时间：能够对宽度不同的脉冲激光或连续激光做出足够的响应.</li>
+            </ul>
+        </div>
+            
         <div id="PageEnd"></div>
 
         <script src="../../../../JavaScript/MenuButton.js"></script>
         <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
-    
 </html>

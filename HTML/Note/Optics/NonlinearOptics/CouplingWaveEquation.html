@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>非线性光学耦合波方程</h1>
+
+        <div class="Card-Analysis">
+            <h2>引入</h2>
+
+            <p>根据光的电磁理论，光波在非磁、均匀电介质中的<a href="../Electromagnetism/WaveEquation.html" class="goto">波动方程</a>为：</p>
+            $$\nabla^2\boldsymbol{E} = \mu_0\sigma\frac{\partial\boldsymbol{E}}{\partial t} + \mu_0\epsilon_0\frac{\partial^2\boldsymbol{E}}{\partial t^2} + \mu_0\frac{\partial^2\boldsymbol{P}}{\partial t^2}$$
+            <ul>
+                <li>\(\sigma\)：电导率</li>
+                <li>\(\boldsymbol{P}\)：极化强度，包含线性极化强度\(\boldsymbol{P}_{\text{L}}\)与非线性极化强度\(\boldsymbol{P}_{\text{NL}}\)</li>
+            </ul>
+            <p>将电场强度\(\boldsymbol{E}\)与极化强度\(\boldsymbol{P}\)用它们的Fourier分量表示：</p>
+            $$\boldsymbol{E}(\boldsymbol{r}, t) = \sum_n\boldsymbol{E}(\omega_n, \boldsymbol{r})e^{-i\omega_n t}$$
+            $$\boldsymbol{P}(\boldsymbol{r}, t) = \sum_n\boldsymbol{P}(\omega_n, \boldsymbol{r})e^{-i\omega_n t}$$
+            <p>则对应每个频率分量而言，其波动方程为：</p>
+            $$\nabla^2\boldsymbol{E}(\omega_n, \boldsymbol{r}) = -i\mu_0\sigma\omega_n\boldsymbol{E}(\omega_n, \boldsymbol{r}) - \mu_0\epsilon_0\omega_n^2\boldsymbol{E}(\omega_n, \boldsymbol{r}) - \mu_0\omega_n^2\boldsymbol{P}(\omega_n, \boldsymbol{r})$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>线性介质中单色平面波的波动方程</h2>
+            <p>若只考虑介质的线性响应，极化强度复振幅\(\boldsymbol{P}(\omega_n, \boldsymbol{r})\)只包含线性极化强度复振幅\(\boldsymbol{P}_{\text{L}}(\omega_n, \boldsymbol{r})\)，即：</p>
+            $$\boldsymbol{P}(\omega_n, \boldsymbol{r}) = \boldsymbol{P}_{\text{L}}(\omega_n, \boldsymbol{r}) = \varepsilon_0\chi^{(1)}(\omega_n)\cdot\boldsymbol{E}(\omega_n,\boldsymbol{r})$$
+            <p>将其代入波动方程，可以得到单色波在线性介质中的波动方程：</p>
+            $$\begin{align}
+            \nabla^2\boldsymbol{E}(\omega_n, \boldsymbol{r}) &= -i\mu_0\sigma\omega_n\boldsymbol{E}(\omega_n, \boldsymbol{r}) - \mu_0\epsilon_0\omega_n^2\boldsymbol{E}(\omega_n, \boldsymbol{r}) - \epsilon_0\chi^{(1)}(\omega_n)\cdot\boldsymbol{E}(\omega_n, \boldsymbol{r})\\
+                                                             &= -i\mu_0\sigma\omega_n\boldsymbol{E}(\omega_n, \boldsymbol{r}) - \mu_0\omega_n^2\boldsymbol{\varepsilon}(\omega_n)\cdot\boldsymbol{E}(\omega_n, \boldsymbol{r})
+            \end{align}$$
+            <ul>
+                <li>\(\boldsymbol{\varepsilon}(\omega_n) = \epsilon_0[1 + \chi^{(1)}(\omega_n)]\)：介电常数张量</li>
+            </ul>
+            <p>上式的解为一个平面波，具体形式可以表示为：</p>
+            $$\boldsymbol{E}(\omega_n, \boldsymbol{r}) = E(\omega_n)\boldsymbol{a}(\omega_n)e^{i\boldsymbol{k}_n\cdot\boldsymbol{r}}$$
+            <ul>
+                <li>\(E(\omega_n)\)：光电场的复振幅</li>
+                <li>\(\boldsymbol{a}(\omega_n)\)：光电场振动方向的单位矢量</li>
+                <li>\(\boldsymbol{k}_n\)：波矢</li>
+            </ul>
+            <p>介质有损耗的情况下，\(\sigma\neq 0\)，\(k_n\)为复数；介质无损耗的情况下，\(k_n\in\mathbb{R}\).</p>
+            <p>简单起见，假定平面波沿\(z\)轴传播，则：</p>
+            $$\boldsymbol{k}_n = \pm k_n\hat{\boldsymbol{z}}$$
+            <ul>
+                <li>\(\hat{\boldsymbol{z}}\)：\(z\)轴正方向的单位矢量</li>
+            </ul>
+            <p>正负号分别表示沿\(z\)方向传播的前向波与反向波.</p>
+            <p>对于前向波而言，若考虑到光电场复振幅随\(z\)变化，则平面波解可以写为：</p>
+            $$\boldsymbol{E}(\omega_n, \boldsymbol{r}) = E(\omega_n, z)\boldsymbol{a}(\omega_n)e^{ik_nz}$$
+            <p>此时指数因子中的波数\(k_n\)为实数，而复振幅\(E(\omega_n, z)\)为\(z\)的函数.</p>
+            <p>将上式代入波函数，得：</p>
+            <div class="Formula">
+                $$\begin{align}
+                &\boldsymbol{a}(\omega_n)e^{ik_nz}\frac{\mathrm{d}^2E(\omega_n, z)}{\mathrm{d}z^2} + 2ik_n\boldsymbol{a}(\omega_n)e^{ik_nz}\frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z} - k_n^2E(\omega_n, z)\boldsymbol{a}(\omega_n)e^{ik_nz}\\
+                = &-i\mu_0\sigma\omega_nE(\omega_n, z)\boldsymbol{a}(\omega_n)e^{ik_nz} - \mu_0\omega_n^2\boldsymbol{\varepsilon}(\omega_n)\cdot \boldsymbol{a}(\omega_n)E(\omega_n, z)e^{ik_nz}
+                \end{align}$$
+                <div class="Derivation">
+                    $$\frac{\mathrm{d}^2}{\mathrm{d}z^2}[E(\omega_n, z)\boldsymbol{a}(\omega_n)e^{ik_nz}] = -i\mu_0\sigma\omega_nE(\omega_n, z)\boldsymbol{a}(\omega_n)e^{ik_nz} - \mu_0\omega_n^2\boldsymbol{\varepsilon}(\omega_n)\cdot \boldsymbol{a}(\omega_n)E(\omega_n, z)e^{ik_nz}$$
+                </div>
+            </div>
+            <p>[设]光电场复振幅\(E(\omega_n, z)\)变化很慢，满足所谓的慢变化近似条件：</p>
+            $$\left\lvert\frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z}k_n\right\rvert\gg \frac{\mathrm{d}^2E(\omega_n, z)}{\mathrm{d}z^2}$$
+            <p>则：</p>
+            $$\begin{align}
+            &2ik_n\boldsymbol{a}(\omega_n)\frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z} - k_n^2E(\omega_n, z)\boldsymbol{a}(\omega_n)\\
+            = &-i\mu_0\sigma\omega_nE(\omega_n, z)\boldsymbol{a}(\omega_n) - \mu_0\omega_n^2\boldsymbol{\varepsilon}(\omega_n)\cdot \boldsymbol{a}(\omega_n)E(\omega_n, z)
+            \end{align}$$
+            <p>若介质是无耗的，\(\sigma=0\)，相应的光电场复振幅\(E(\omega_n)\)不随\(z\)变化，即：</p>
+            $$\frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z} = 0$$
+            <p>则上式可以进一步简化为：</p>
+            $$-k_n^2\boldsymbol{a}(\omega_n) + \mu_0\omega_n^2\boldsymbol{\varepsilon}(\omega_n)\cdot\boldsymbol{a}(\omega_n) = 0$$
+            <p>利用矢量恒等式：</p>
+            $$\boldsymbol{a}\times(\boldsymbol{b}\times\boldsymbol{c}) = (\boldsymbol{a}\cdot\boldsymbol{c})\boldsymbol{b} - (\boldsymbol{a}\cdot\boldsymbol{b})\boldsymbol{c}$$
+            $$\hat{\boldsymbol{z}}\times[\hat{\boldsymbol{z}}\times \boldsymbol{a}(\omega_n)] = [\hat{\boldsymbol{z}}\cdot\boldsymbol{a}(\omega_n)]\hat{\boldsymbol{z}} - (\boldsymbol{z}\cdot \boldsymbol{z})\boldsymbol{a}(\omega_n)$$
+            $$\because \hat{\boldsymbol{z}}\cdot\boldsymbol{a}(\omega_n) = 0,\quad \hat{\boldsymbol{z}}\cdot \hat{\boldsymbol{z}} = |\hat{\boldsymbol{z}}|^2 = 1$$
+            $$\therefore -\boldsymbol{a}(\omega_n) = \hat{\boldsymbol{z}}\times[\hat{\boldsymbol{z}}\times \boldsymbol{a}(\omega_n)]$$
+            <p>上式可近似改写为：</p>
+            $$k_n^2\hat{\boldsymbol{z}}\times[\hat{\boldsymbol{z}}\times\boldsymbol{a}(\omega_n)] + \mu_0\omega_n^2\boldsymbol{\varepsilon}(\omega_n)\cdot\boldsymbol{a}(\omega_n) = 0$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>稳态情况下的非线性耦合波方程</h2>
+            <p>考虑介质对光电场的响应包含有非线性效应的情况，此时极化强度的复振幅\(\boldsymbol{P}(\omega_n, \boldsymbol{r})\)为：</p>
+            $$\boldsymbol{P}(\omega_n, \boldsymbol{r}) = \boldsymbol{P}_{\text{L}}(\omega_n, \boldsymbol{r}) + \boldsymbol{P}_{\text{NL}}(\omega_n, \boldsymbol{r})$$
+            <ul>
+                <li>\(\boldsymbol{P}_{\text{NL}}(\omega_n, \boldsymbol{r})\)：非线性极化强度频率为\(\omega_n\)的Fourier分量</li>
+            </ul>
+            <p>此时，在介质无耗的情况下，波动方程变为：</p>
+            $$\nabla^2\boldsymbol{E}(\omega_n, z) + \mu_0\omega_n^2\boldsymbol{\varepsilon}(\omega_n)\cdot\boldsymbol{E}(\omega_n, z) = -\mu_0\omega_n^2\boldsymbol{P}_{\text{NL}}(\omega_n, z)$$
+            <ul>
+                <li>\(\boldsymbol{P}_{\text{NL}} = \boldsymbol{P}^{(2)}(\omega_n, z) + \boldsymbol{P}^{(3)}(\omega_n, z) + \cdots\)</li>
+            </ul>
+            <p>与线性介质响应相比，上式多了一项非线性激励项；由于这一激励项相对线性响应的贡献很小，因此在解此方程时，常将非线性激励项作为一项微扰处理.</p>
+            <p>[设]光波沿\(z\)方向传播，则上式解的形式可表示为：</p>
+            $$\boldsymbol{E}(\omega_n, z) = E(\omega_n, z)[\boldsymbol{a}(\omega_n) + \boldsymbol{b}(\omega_n, z)]e^{ik_nz}$$
+            <p>即在介质无耗的情况下，由于非线性效应的存在，光电场的振动矢量与复振幅都是\(z\)的函数.</p>
+            <p>但因非线性激励项是作为线性响应的一种微扰，所以可认为光电场复振幅是\(z\)的慢变化函数，且振动矢量的改变量既小、变化又慢（所谓变化慢，是指在辐射波长范围内，量的改变很小）.</p>
+            <p>将上式代入波动方程，并在等式左边略去所有包含\(\frac{\mathrm{d}^2E(\omega_n, z)}{\mathrm{d}z^2}\)、\(\frac{\mathrm{d}\boldsymbol{b}(\omega_n, z)}{\mathrm{d}z}\)、\(\frac{\mathrm{d}^2\boldsymbol{b}(\omega_n, z)}{\mathrm{d}z}\)的项，并在等势右边的非线性极化强度\(\boldsymbol{P}(\omega_n, z)\)中略去\(\boldsymbol{b}(\omega_n, z)\)，并用\(\boldsymbol{P}_{\text{NL}}'\)表示，则：</p>
+            <p>[令]</p>
+            $$a = E(\omega_n, z),\quad b = \boldsymbol{b}(\omega_n, z),\quad c = e^{ik_nz},\quad t=\boldsymbol{a}(\omega_n)$$
+            <p>可省略项有：</p>
+            $$a'',\quad (t+b)'$$
+            $$\begin{align}
+            \therefore \nabla^2\boldsymbol{E}(\omega_n, z) &= [a(t+b)c]''\\
+                                                           &= [a'(t+b)c + a(t+b)c']'\\
+                                                           &= a'(t+b)c' + a'(t+b)c' + a'(t+b)c''\\
+                                                           &= (2a'c' + ac'')(t+b)
+            \end{align}$$
+
+            $$\begin{align}
+            \therefore \nabla^2\boldsymbol{E}(\omega_n, z) &= \left[2\frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z}(ik_ne^{ik_nz}) + E(\omega_n, z)(ik_n)^2e^{ik_nz}\right][\boldsymbol{a}(\omega_n) + \boldsymbol{b}(\omega_n, z)]\\
+                                                           &= \left[2ik_n\frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z} - k_n^2E(\omega_n, z)\right][\boldsymbol{a}(\omega_n) + \boldsymbol{b}(\omega_n, z)]e^{ik_nz}\\
+            \end{align}$$
+            <p>代入波动方程，得：</p>
+            $$\begin{align}
+            &\left[2ik_n\frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z} - k_n^2E(\omega_n, z)\right][\boldsymbol{a}(\omega_n) + \boldsymbol{b}(\omega_n, z)]e^{ik_nz} + \mu_0\omega_n^2\boldsymbol{\varepsilon}(\omega_n)\cdot[\boldsymbol{a}(\omega_n) + \boldsymbol{b}(\omega_n, z)]E(\omega_n, z)e^{ik_nz}\\
+            =&-\mu_0\omega_n^2\boldsymbol{P}_{\text{NL}}'(\omega_n,z)
+            \end{align}$$
+            <p>将左式两项公共项\(e^{ik_nz}\)移到右式，得：</p>
+            $$\begin{align}
+            &\left[2ik_n\frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z} - k_n^2E(\omega_n, z)\right][\boldsymbol{a}(\omega_n) + \boldsymbol{b}(\omega_n, z)] + \mu_0\omega_n^2\boldsymbol{\varepsilon}(\omega_n)\cdot[\boldsymbol{a}(\omega_n) + \boldsymbol{b}(\omega_n, z)]E(\omega_n, z)\\
+            =&-\mu_0\omega_n^2\boldsymbol{P}_{\text{NL}}'(\omega_n,z)e^{-ik_nz}
+            \end{align}$$
+            $$\because -k_n^2\boldsymbol{a}(\omega_n) + \mu_0\omega_n^2\boldsymbol{\varepsilon}(\omega_n)\cdot\boldsymbol{a}(\omega_n) = 0$$
+            <p>上两式分别左乘\(\boldsymbol{a}(\omega_n)\)与\([\boldsymbol{a}(\omega_n) + \boldsymbol{b}(\omega_n, z)]E(\omega_n, z)\).</p>
+            <p>由于介电常数张量\(\boldsymbol{\varepsilon}(\omega_n)\)为对称张量，有：</p>
+            $$[\boldsymbol{a}(\omega_n) + \boldsymbol{b}(\omega_n, z)]\cdot \boldsymbol{\varepsilon}(\omega_n)\cdot \boldsymbol{a}(\omega_n)= \boldsymbol{a}(\omega_n)\cdot \boldsymbol{\varepsilon}(\omega_n)\cdot [\boldsymbol{a}(\omega_n) + \boldsymbol{b}(\omega_n, z)]$$
+            <p>上两式相减得：</p>
+            $$2ik_n\frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z}\boldsymbol{a}(\omega_n)\cdot[\boldsymbol{a}(\omega_n) + \boldsymbol{b}(\omega_n,z)] = -\mu_0\omega_n^2\boldsymbol{a}(\omega_n)\cdot\boldsymbol{P}_{\text{NL}}'(\omega_n,z)e^{-ik_nz}$$
+            <p>由于\(\boldsymbol{b}(\omega_n, z)\)是作为一个小量来处理的，因此可以省略，又：</p>
+            $$\boldsymbol{a}\cdot\boldsymbol{a} = |\boldsymbol{a}|^2 = 1$$
+            <p>整理得：</p>
+            $$\frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z} = \frac{i\mu_0\omega_n^2}{2k_n}\boldsymbol{a}(\omega_n)\cdot\boldsymbol{P}_{\text{NL}}'(\omega_n, z)e^{-ik_nz}$$
+
+
+            <div class="Card-Formula">
+                <b>单色平面光波在稳态条件下的非线性耦合波方程</b>
+                $$\frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z} = \frac{i\mu_0\omega_n^2}{2k_n}\boldsymbol{a}(\omega_n)\cdot\boldsymbol{P}_{\text{NL}}'(\omega_n, z)e^{-ik_nz}$$
+                <p>这是讨论光波混频过程的基本方程.</p>
+                <p>类似的，反向单色平面光波在稳态条件下的非线性耦合波方程为：</p>
+                $$\frac{\mathrm{d}E_B(\omega_n, z)}{\mathrm{d}z} = -\frac{i\mu_0\omega_n^2}{2k_n}\boldsymbol{a}(\omega_n)\cdot\boldsymbol{P}_{\text{NL}}'(\omega_n, z)e^{-ik_nz}$$
+            </div>
+        </div>
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -201,24 +201,36 @@
 
             <h3>折射率椭球</h3>
             <p>主轴坐标系中，晶体的电场储能密度为：</p>
-            $$\omega_e = \frac{1}{2}\boldsymbol{E}\cdot\boldsymbol{D} = \frac{1}{2\epsilon_0}\left(\frac{D_1^2}{\epsilon_1} + \frac{D_2^2}{\epsilon_2} + \frac{D_3^2}{\epsilon_3}\right)$$
-            $$\therefore \frac{D_1^2}{\epsilon_1} + \frac{D_2^2}{\epsilon_2} + \frac{D_3^2}{\epsilon_3} = 2\epsilon_0\omega_e$$
+            $$\omega_e = \frac{1}{2}\boldsymbol{E}\cdot\boldsymbol{D} = \frac{1}{2\varepsilon_0}\left(\frac{D_x^2}{\varepsilon_{xx}} + \frac{D_y^2}{\varepsilon_{yy}} + \frac{D_{zz}^2}{\varepsilon_{zz}}\right)$$
+            $$\therefore \frac{D_x^2}{\varepsilon_{xx}} + \frac{D_y^2}{\varepsilon_{yy}} + \frac{D_{zz}^2}{\varepsilon_{zz}} = 2\epsilon_0\omega_e$$
+            <p>给定电能密度\(\omega_e\)的情况下，该方程表示为\(\boldsymbol{D}(D_x, D_y, D_z)\)空间的椭球面.</p>
 
-            <p>令</p>
-            $$x_1 = \frac{D_1}{\sqrt{2\epsilon_0\omega_e}},~x_2 = \frac{D_2}{\sqrt{2\epsilon_0\omega_e}},~x_3 = \frac{D_3}{\sqrt{2\epsilon_0\omega_e}}$$
+
+            <p>[令]</p>
+            $$x = \frac{D_x}{\sqrt{2\varepsilon_0\omega_e}},~y = \frac{D_y}{\sqrt{2\varepsilon_0\omega_e}},~z = \frac{D_z}{\sqrt{2\varepsilon_0\omega_e}}$$
             <p>则有</p>
-            $$\frac{x_1^2}{\epsilon_1} + \frac{x_2^2}{\epsilon_2} + \frac{x_3^2}{\epsilon^3} = 1$$
+            $$\frac{x^2}{\varepsilon_{xx}} + \frac{y^2}{\varepsilon_{yy}} + \frac{z^2}{\varepsilon_{zz}} = 1$$
             <p>或</p>
-            $$\frac{x_1^2}{n_1^2} + \frac{x_2^2}{n_2^2} + \frac{x_3^2}{n_3^2} = 1$$
+            $$\frac{x^2}{n_x^2} + \frac{y^2}{n_y^2} + \frac{z^2}{n_z^2} = 1$$
+
+            <p>该方程描述了一个在归一化\(\boldsymbol{D}\)空间的椭球，该椭球的三个主轴方向就是介电主轴方向，这个方程就是在主轴坐标系中的折射率椭球方程.</p>
+
+
 
             <div class="Card-AI">
                 <p>也就是说，椭球的三个轴的半轴长分别是\(n_1\)、\(n_2\)与\(n_3\).</p>
             </div>
 
             <b>单轴晶体折射率椭球方程为：</b>
+            <p>对于单轴晶体：</p>
+            $$\varepsilon_{xx} = \varepsilon_{yy} \neq \varepsilon_{zz}$$
+            $$n_x = n_y = n_o,\quad n_z = n_e\neq n_o$$
             $$\frac{x_1^2}{n_o^2} + \frac{x_2^2}{n_o^2} + \frac{x_3^2}{n_e^2} = 1$$
+            <p>这是一个旋转椭球面，旋转轴为\(z\)轴.</p>
+            <p>若\(n_e\gt n_o\)，称为正单轴晶体.</p>
+            <p>若\(n_e\lt n_o\)，称为负单轴晶体.</p>
         </div>
-
+<!-- 
         <div class="Card-Analysis" id="WavePlate">
             <h2>波片</h2>
             <div class="Card-Definition">
@@ -370,7 +382,7 @@
             <p>当一束单色平面光从空气垂直入射到方解石单轴警惕上时，晶体中将产生两束折射光，分别为o光和e光，根据折射定律，两折射光的折射角\(\theta_{to} = \theta_{te} = 0\)，即晶体中二折射光的波矢方向相同、均垂直入射界面.</p>
             <p>但是，由于单轴晶体中o光波矢方向与光线方向相同，e光波矢方向与光线方向离散，所以在晶体内可观测到两条离散方向传播的光线，分别为o光和e光的能流方向.</p>
 
-        </div>
+        </div> -->
 
         <div id="PageEnd"></div>
 

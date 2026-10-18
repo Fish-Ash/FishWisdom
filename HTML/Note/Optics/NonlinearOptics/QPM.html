@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>准相位匹配</h1>
+
+        <div class="Card-Analysis">
+            <h2>准相位匹配的优点</h2>
+            <ul>
+                <li>准相位匹配是通过周期极化结构来获得有效能量转换的，与材料的内在特性无关，晶体可以没有或有很小的双折射效应，对透光区内任一波长的光波都不存在匹配的限制，理论上可以利用晶体的整个透光范围.</li>
+                <li>准相位匹配中，相互作用三个光波的偏振方向可以任意选择，它们沿同一晶轴方向传播，不存在走离效应，降低了对入射角的要求，可以使用较长的晶体，获得较大的转换效率.</li>
+                <li>准相位匹配不要求正交偏振的光束，可充分利用非线性介质的最大非线性光学系数，使得非线性效率显著提高.</li>
+                <li>准相位匹配通过选择适当的极化周期，能够在任意工作点实现非临界相位匹配，对基波光束发散角与晶体调整角的要求降低，且有较高的效率.</li>
+                <li>准相位匹配中，只需设计出各种不同周期的畴反转，通过调谐极化周期、泵浦波长和晶体温度，就可以简单地实现输出波长调谐.</li>
+            </ul>
+
+            <b>准相位匹配与双折射相位匹配的对比</b>
+            <p>与双折射角度相位匹配相比，准相位匹配是利用非线性介质光学性质的周期性分布补偿相位失配的，这种准相位匹配方式对于非线性介质中的耦合光波，没有波矢和偏振方向的限制，只需要选择介质合适的周期性结构.</p>
+            
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

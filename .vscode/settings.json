@@ -1,5 +1,5 @@
 {
-    "livePreview.defaultPreviewPath": "/HTML/Note/Optics/OpticalFiberOptics/SIOF.html",
+    "livePreview.defaultPreviewPath": "/HTML/Note/Optics/NonlinearOptics/Catalog.html",
     "python-envs.defaultEnvManager": "ms-python.python:system",
     "python-envs.defaultPackageManager": "ms-python.python:pip",
     "python-envs.pythonProjects": []

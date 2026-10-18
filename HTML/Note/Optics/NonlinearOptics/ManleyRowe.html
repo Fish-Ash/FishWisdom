@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>Manley-Rowe关系</h1>
+
+        <div class="Card-Analysis">
+            <h2>Manley-Rowe关系</h2>
+            <p>进行三波混频的光波所携带的总能量通量在介质内处处相等，光场与介质间无能量交换.</p>
+            $$S_{\omega_1} + S_{\omega_2} + S_{\omega_3} = C$$
+            <div class="Prove">
+                $$\begin{align}
+                &\frac{k_1}{\omega_1}E^*_1\frac{\mathrm{d}E_1}{\mathrm{d}z} + \frac{k_2}{\omega_2}E^*_2\frac{\mathrm{d}E_2}{\mathrm{d}z} + \frac{k_3}{\omega_3}E_3\frac{\mathrm{d}E^*_3}{\mathrm{d}z}\\
+                =& \frac{i}{c^2}\chi_{eff}^{(2)}(\omega_1E_1^*E_2^*E_3e^{-i\Delta kz} + \omega_2 E_1^*E_2^*E_3e^{-i\Delta kz} - \omega_3E_1^*E_2^*E_3e^{-i\Delta kz})\\
+                =& 0
+                \end{align}$$
+                <p>对上式取复共轭并相加，因为：</p>
+                $$x^*\frac{\mathrm{d}x}{\mathrm{d}t} + x\frac{\mathrm{d}x^*}{\mathrm{d}t} = \frac{\mathrm{d}}{\mathrm{d}t}(x\cdot x^*) = \frac{\mathrm{d}|x|^2}{\mathrm{d}t}$$
+                <p>故有：</p>
+                $$\frac{k_1}{\omega_1}\frac{\mathrm{d}|E_1|^2}{\mathrm{d}z} + \frac{k_2}{\omega_2}\frac{\mathrm{d}|E_2|^2}{\mathrm{d}z} + \frac{k_3}{\omega_3}\frac{\mathrm{d}|E_3|^2}{\mathrm{d}z} = 0$$
+                <p>积分得：</p>
+                $$\frac{k_1}{\omega_1}|E_1|^2 + \frac{k_2}{\omega_2}|E_2|^2 + \frac{k_3}{\omega_3}|E_3|^2 = C$$
+                <p>由<a class="goto" href="../PhysicalOptics/ReflectionAndTransmission.html#PoyntingVector">能流密度</a>表达式：</p>
+                $$S = \frac{1}{2}\epsilon|2E|^2v = \frac{2}{\mu_0}\frac{k}{\omega}|E|^2$$
+                <p>故：</p>
+                $$S_{\omega_1} + S_{\omega_2} + S_{\omega_3} = C$$
+            </div>
+    
+            <div class="Card-Definition">
+                <b>曼利-罗关系</b>
+                $$\frac{S_{\omega_1}}{\omega_1} - \frac{S_{\omega_2}}{\omega_2} = C_1$$
+                $$\frac{S_{\omega_1}}{\omega_1} + \frac{S_{\omega_3}}{\omega_3} = C_2$$
+                $$\frac{S_{\omega_2}}{\omega_3} + \frac{S_{\omega_3}}{\omega_3} = C_3$$
+            </div>
+
+            <div class="Card-AI">
+                <h2>另一种形式的Manley-Rowe关系</h2>
+                <p>光强：</p>
+                $$I_i = 2nc\epsilon_0E_iE_i^*$$
+                $$\therefore \frac{\mathrm{d}I_i}{\mathrm{d}z} = 2nc\epsilon_0\left(E_i^*\frac{\mathrm{d}E_i}{\mathrm{d}z} + c.c.\right)$$
+                由三波混频耦合波方程：
+                $$\frac{\mathrm{d}E_1}{\mathrm{d}z} = \frac{i\omega_1^2}{k_1c^2}\chi_{\text{eff}}^{(2)}E_3E_2^*e^{-i\Delta kz}$$
+                $$\frac{\mathrm{d}E_2}{\mathrm{d}z} = \frac{i\omega_2^2}{k_3c^2}\chi_{\text{eff}}^{(2)}E_3E_1^*e^{-i\Delta kz}$$
+                $$\frac{\mathrm{d}E_3}{\mathrm{d}z} = \frac{i\omega_1^2}{k_1c^2}\chi_{\text{eff}}^{(2)}E_1E_2e^{i\Delta kz}$$
+                $$\begin{align}\therefore
+                \frac{\mathrm{d}I_1}{\mathrm{d}z} &= 2n_1c\varepsilon_0\left[E_1^*\frac{i\omega_1^2}{k_1c^2}\chi_{\text{eff}}^{(2)}E_3E_2^*e^{-i\Delta kz} + c.c.\right]\\
+                                                  &= \frac{2n_1c\varepsilon_0\omega_1^2\chi_{\text{eff}}^{(2)}}{k_1c^2}(iE_1^*E_2^*E_3e^{-i\Delta kz} + c.c.)
+                \end{align}$$
+                $$\because d_{\text{eff}} = \frac{1}{2}\chi_{\text{eff}}^{(2)}$$
+                $$k_1 = \frac{2\pi}{\lambda_1} = \frac{\omega_1 T_1}{\lambda_0/n_1} = \frac{n_1\omega_1}{c}$$
+                $$\therefore \frac{\mathrm{d}I_1}{\mathrm{d}z} = 4\varepsilon_0\omega_1d_{\text{eff}}(iE_1^*E_2^*E_3e^{-i\Delta kz} + c.c.)$$
+                <p>同理：</p>
+                $$\frac{\mathrm{d}I_2}{\mathrm{d}z} = 4\varepsilon_0\omega_2d_{\text{eff}}(iE_1^*E_2^*E_3e^{-i\Delta kz} + c.c.)$$
+                $$\begin{align}
+                \frac{\mathrm{d}I_3}{\mathrm{d}z} &= 4\varepsilon_0\omega_3d_{\text{eff}}(iE_1E_2E_3^*e^{i\Delta kz} + c.c.)\\
+                                                  &= -4\varepsilon_0\omega_3d_{\text{eff}}(iE_1^*E_2^*E_3e^{-i\Delta kz} + c.c.)
+                \end{align}$$
+
+                $$\therefore \frac{\mathrm{d}I_1}{\mathrm{d}z} + \frac{\mathrm{d}I_2}{\mathrm{d}z} + \frac{\mathrm{d}I_3}{\mathrm{d}z} = 4\varepsilon_0(\omega_1 + \omega_2 - \omega_3)d_{\text{eff}}(iE_1^*E_2^*E_3e^{-i\Delta kz} + c.c.)$$
+                $$\because I = I_1 + I_2 + I_3,\quad \omega_1 + \omega_2 = \omega_3$$
+                $$\therefore \frac{\mathrm{d}I}{\mathrm{d}z} = 0$$
+                
+
+
+            </div>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

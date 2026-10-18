@@ -125,6 +125,89 @@
             <p>该式表明，线性系统的性质完全由它的脉冲响应\(h(x_2, y_2;\alpha,\beta)\)所表征.</p>
             <p>对于一个脉冲响应已知的线性系统，任何输入函数对应的输出函数均可由叠加积分求得.</p>
         </div>
+
+        <div class="Card-Analysis">
+            <h2>线性平移不变系统</h2>
+            <p>[设]</p>
+            <p>一个系统与输入函数\(f(x_1, y_1)\)对应的输出函数为\(g(x_2, y_2)\).</p>
+            <p>当系统输入函数发生一个平移，即\(f(x_1, y_1)\to f(x_1-x_0, y_1-y_0)\)时，若系统相应的输出函数也只是平移，即\(g(x_2, y_2)\to g(x_2-Mx_0, y_2-My_0)\)，则称该系统具有平移不变性.</p>
+            <p>这里是针对空间平移说的，因此也称为空间平移不变性.</p>
+            <p>式中\(M\)为光学系统的垂轴放大率.</p>
+
+            <div class="Card-Definition">
+                <b>线性空间平移不变系统</b>
+                <p>既具有线性又具有空间平移不变性的系统.</p>
+                <p>简称线性平移不变系统或线性不变系统.</p>
+            </div>
+
+            <p>线性不变系统中的叠加积分写为：</p>
+            $$g(x_2, y_2) = \iint_{-\infty}^{+\infty}f(\alpha, \beta)h(x_2-M\alpha, y_2-M\beta)\mathrm{d}\alpha\mathrm{d}\beta$$
+
+            <p>若物平面与像平面的空间坐标取合适的标度，不难做到\(M=1\)，则：</p>
+            $$\begin{align}
+            g(x_2, y_2) &= \iint_{-\infty}^{+\infty}f(\alpha, \beta)h(x_2-\alpha, y_2-\beta)\mathrm{d}\alpha\mathrm{d}\beta\\
+                        &= f(x_2, y_2)*g(x_2, y_2)
+            \end{align}$$
+
+            <p>为了在数学上为这种系统建立统一模型，对具有平移不变性的系统，还要求其输入函数与输出函数具有相同的宗量，即：</p>
+            $$x=x_1,\quad y=y_1$$
+            <p>从而对它们无需区分，统一用\((x,y)\)表示，对这种系统来说：</p>
+            $$L\{f(x,y)\} = g(x,y)$$
+            $$L\{f(x-x_0, y-y_0)\} = g(x-x_0, y-y_0)$$
+            $$\begin{align}\therefore
+            g(x,y) &= \iint_{-\infty}^{+\infty}f(\alpha)h(x-\alpha, y-\beta)\mathrm{d}\alpha\mathrm{d}\beta\\
+                   &= f(x,y)*h(x,y)
+            \end{align}$$
+
+            <h3>线性平移不变系统的传递函数</h3>
+            <p>在应用问题中，一个系统的输入是空间函数\(f(x,y)\).</p>
+            <p>若\(f(x,y)\)的Fourier变换存在，且为：</p>
+            $$F(\xi, \eta) = \iint_{-\infty}^{+\infty}f(x,y)\exp[-i2\pi(\xi x + \eta y)]\mathrm{d}x\mathrm{d}y$$
+            <ul>
+                <li>\(\xi,\eta\)：具有长度倒数的量纲，即具有空间频率的意义，即单位长度内变化的周数</li>
+            </ul>
+            <p>上式的Fourier变换将空间函数\(f(x,y)\)转换为空间频谱函数\(F(\xi,\eta)\)，或者说空域与频域通过Fourier变换联系起来.</p>
+            <p>确定了\(\xi,\eta\)的频率意义后，再考察上式的Fourier逆变换：</p>
+            $$f(x,y) = \iint_{-\infty}^{+\infty}F(\xi,\eta)\exp[i2\pi(\xi x + \eta y)]\mathrm{d}\xi\mathrm{d}\eta$$
+            <p>上式表明：空间信号\(f(x,y)\)可以分解为具有不同空间频率\(\xi, \eta\)的基元函数\(e^{i2\pi(\xi x + \eta y)}\)的线性组合，\(F(\xi,\eta)\mathrm{d}\xi\mathrm{d}\eta\)就是这一线性组合中对应的基元函数的权重因子.</p>
+            <p>这就是除\(\delta\)函数外的第二种基元函数.</p>
+            <p>这里以\(e^{i2\pi(\xi x + \eta y)}\)为基元函数，意味着将一个空间信号分解成具有不同空间频率的周期函数的线性组合，各周期信号的权重为\(F(\xi,\eta)\mathrm{d}\xi\mathrm{d}\eta\).</p>
+            <p>显然，\(F(\xi,\eta)\)描述了空间信号\(f(x,y)\)中不同频率的基元函数的组成情况.</p>
+            <p>这里将频谱函数\(F(\xi,\eta)\)称为<b>频谱密度</b>（<b>谱密度</b>）.</p>
+
+            <p>对\(f(x,y),g(x,y),h(x,y)\)作Fourier变换，求出相应的频谱函数\(F(\xi,\eta),G(\xi,\eta),H(\xi,\eta)\)，利用<a href="../../Math/FourierAnalysis/FourierTransform.html" class="goto">Fourier变换的卷积定理</a>，有：</p>
+            <div class="Formula">
+                $$G(\xi,\eta) = H(\xi,\eta)F(\xi,\eta)$$
+                <div class="Derivation">
+                    $$\because g(x,y) = f(x,y)*h(x,y)$$
+                    $$\therefore \mathcal{F}\{g(x,y)\} = \mathcal{F}\{f(x,y)*h(x,y)\}$$
+                    $$\therefore G(\xi,\eta) = F(\xi,\eta)H(\xi,\eta)$$
+                </div>
+            </div>
+            <p>上式与\(g(x,y) = f(x,y)*h(x,y)\)式一样，描述了系统对输入函数的变换作用，一个在频域，一个在空域.</p>
+            <p>当然，频域中的这种描述，仅对线性空不变系统成立.</p>
+            <p>由此可见，对于线性平移不变系统，可采用两种方法研究：</p>
+            <ul>
+                <li>在空域通过输入函数与脉冲响应函数的卷积直接求得输出函数.</li>
+                <li>在空间频率域求输入函数与脉冲响应函数两者各自频谱密度的乘积，再对该乘积取Fourier逆变换求得输出函数.</li>
+            </ul>
+            <p>从表面看，后一种方式包括正反两个变换与一个乘积运算，似乎比前一周方式更加复杂；然而通过利用Fourier变换性质与Fourier变换对偶表，或利用快速Fourier变换，常可以使Fourier变换、求积、Fourier逆变换这一运算过程远比卷积运算方便.</p>
+            <p>因此，从频域考察线性平移不变系统，不仅具有重要的理论意义，而且具有很高的实用价值.</p>
+
+
+            <b>传递函数</b>
+            <p>对系统作频谱分析，就是考察系统对输入函数中不同频率基元函数\(e^{i2\pi(\xi x + \eta y)}\)的作用.</p>
+            <p>这种作用应该表现为输出函数与输入函数中同一频率基元成分的权重的相对变化.</p>
+            <p>因此，用输出函数与输入函数两者频谱密度的比例\(G(\xi,\eta)/F(\xi,\eta)\)来表征系统的频率响应特性是合理的.</p>
+            <p>由上述分析可知，该比值恰为系统的原点脉冲响应的频谱密度\(H(\xi,\eta)\)，即：</p>
+            $$H(\xi,\eta) = \frac{G(\xi,\eta)}{F(\xi,\eta)}$$
+            <p>也就是说，原点脉冲响应的频谱密度可以表征系统对输入函数中不同频率的基元成分的传递能力.</p>
+            <p>因此,\(H(\xi,\eta)\)称为线性平移不变系统的传递函数.</p>
+
+            <p>线性平移不变系统的原点脉冲响应</p>
+
+            
+        </div>
         
 
         <div id="PageEnd"></div>
