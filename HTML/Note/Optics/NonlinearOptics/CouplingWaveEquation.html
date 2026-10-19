@@ -100,6 +100,9 @@
             = &-i\mu_0\sigma\omega_nE(\omega_n, z)\boldsymbol{a}(\omega_n) - \mu_0\omega_n^2\boldsymbol{\varepsilon}(\omega_n)\cdot \boldsymbol{a}(\omega_n)E(\omega_n, z)
             \end{align}$$
             <p>若介质是无耗的，\(\sigma=0\)，相应的光电场复振幅\(E(\omega_n)\)不随\(z\)变化，即：</p>
+            <div class="Card-AI">
+                <p>这里的\(dE/dz = 0\)似乎与\(\sigma=0\)没有直接关系，而是单独做出的假设；这种假设的物理意义尚不清楚.</p>
+            </div>
             $$\frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z} = 0$$
             <p>则上式可以进一步简化为：</p>
             $$-k_n^2\boldsymbol{a}(\omega_n) + \mu_0\omega_n^2\boldsymbol{\varepsilon}(\omega_n)\cdot\boldsymbol{a}(\omega_n) = 0$$
@@ -112,7 +115,7 @@
             $$k_n^2\hat{\boldsymbol{z}}\times[\hat{\boldsymbol{z}}\times\boldsymbol{a}(\omega_n)] + \mu_0\omega_n^2\boldsymbol{\varepsilon}(\omega_n)\cdot\boldsymbol{a}(\omega_n) = 0$$
         </div>
 
-        <!-- <div class="Card-Analysis"> -->
+        <div class="Card-Analysis">
             <h2>稳态情况下的非线性耦合波方程</h2>
             <p>考虑介质对光电场的响应包含有非线性效应的情况，此时极化强度的复振幅\(\boldsymbol{P}(\omega_n, \boldsymbol{r})\)为：</p>
             $$\boldsymbol{P}(\omega_n, \boldsymbol{r}) = \boldsymbol{P}_{\text{L}}(\omega_n, \boldsymbol{r}) + \boldsymbol{P}_{\text{NL}}(\omega_n, \boldsymbol{r})$$
@@ -173,6 +176,10 @@
                 <p>这是讨论光波混频过程的基本方程.</p>
                 <p>类似的，反向单色平面光波在稳态条件下的非线性耦合波方程为：</p>
                 $$\frac{\mathrm{d}E_B(\omega_n, z)}{\mathrm{d}z} = -\frac{i\mu_0\omega_n^2}{2k_n}\boldsymbol{a}(\omega_n)\cdot\boldsymbol{P}_{\text{NL}}'(\omega_n, z)e^{-ik_nz}$$
+            </div>
+
+            <div class="Card-AI">
+                <p>书上写成叉乘形式，是考虑到了\(\boldsymbol{a}\)不垂直于\(\hat{\boldsymbol{z}}\)的一般情况.</p>
             </div>
         </div>
 
