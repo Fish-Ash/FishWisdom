@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fourier光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>光学成像系统的传递函数</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+            <b>评价成像质量的方法</b>
+            <ul>
+                <li>星点法</li>
+                <li>分辨率法</li>
+            </ul>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>相干照明衍射受限系统的点扩散函数</h2>
+            <p>任何平面物场分布都可以看作为无数小面元的组合，而每个小面元都可看作一个加权的\(\delta\)函数.</p>
+            <div class="Card-AI">
+                <p>数学建模过程中，“物”与“光源”是类似的.</p>
+                <p>用\(delta\)函数表征的是点光源.</p>
+            </div>
+            <p>对于一个透镜或一个成像系统，若能够清楚知道物平面上任一小面元的光振动通过成像系统后，在像平面上所造成的光振动分布情况，通过线性叠加，原则上便能求得任何物面光场分布通过系统后所形成的像面光场分布，进而求得像面强度分布.</p>
+            <p>这就是相干照明下的成像过程，关键是求出任意小面元的光振动所对应的像场分布.</p>
+
+            <h3>透镜的点扩散函数</h3>
+
+            <b>前置知识</b>
+            <ul>
+                <li><a href="../PhysicalOptics/Fresnel&Fraunhofer.html">Fresnel衍射</a></li>
+            </ul>
+
+            <p>研究在相干照明下，一个消像差的正薄透镜对透明物成实像的情况.</p>
+            <img src="Img/Lens_h.jpg" width="300" alt="推导透镜点扩散函数简图">
+            <p>如图所示：物体放在透镜前距离为\(d_o\)的输入平面\(x_oy_o\)上，在透镜后距离\(d_i\)的共轭面\(x_iy_i\)上观察成像情况.</p>
+            <p>[设]紧靠物体后的复振幅分布为：\(U_o(x_o', y_o')\).</p>
+            <p>[设]\((x_o', y_o')\)点处发出的单位脉冲为\(\delta(x_o-x_o', y_o-y_o')\).</p>
+            <p>沿光波传播方向，逐面计算三个特定平面上的场分布：</p>
+            <ul>
+                <li>紧靠透镜前的平面上的场分布\(\mathrm{d}U_1\)</li>
+                <li>紧靠透镜后的平面上的场分布\(\mathrm{d}U_1'\)</li>
+                <li>观察平面上的场分布\(h\)</li>
+            </ul>
+            <p>这样就可最终导出一个点源的输入输出关系.</p>
+
+
+
+            <p>利用Fresnel公式，有：</p>
+            $$\begin{align}
+            \mathrm{d}U_1(x_o',y_o';x,y) &= \frac{\exp(ikd_0)}{i\lambda d_0}\iint_{-\infty}^{+\infty}\delta(x_o-x_o', y_o-y_o')\exp\left[ik\frac{(x-x_o)^2 + (y-y_o)^2}{2d_o}\right]\mathrm{d}x_o\mathrm{d}y_o\\
+                                         &= \frac{\exp(ikd_0)}{i\lambda d_0}\exp\left[ik\frac{(x-x_o')^2 + (y-y_o')^2}{2d_o}\right]
+            \end{align}$$
+
+            <p>由于\((x_o', y_o')\)是任意的，为书写方便，略去常数相位因子后，上式可写为：</p>
+            $$\mathrm{d}U_1(x_o, y_o; x, y) = \frac{1}{i\lambda d_0}\exp\left[ik\frac{(x-x_o)^2 + (y-y_o)^2}{2d_o}\right]$$
+            
+            <p>此波通过孔径函数\(P(x,y)\)，焦距为\(f\)的透镜后，复振幅\(\mathrm{d}U_1'(x_o, y_o;x, y)\)为：</p>
+            $$\mathrm{d}U_1'(x_o, y_o;x,y) = P(x,y)\exp\left(-ik\frac{x^2 + y^2}{2f}\right)\mathrm{d}U_1(x_o, y_o; x, y)$$
+            
+            $$h(x_o, y_o; x_i, y_i) = \frac{1}{\lambda^2d_od_i}\exp\left[ik\frac{x_o^2 + y_o^2}{2d_o}\right]\exp\left[ik\frac{x_i^2 + y_i^2}{2d_i}\right]\times\iint_{-\infty}^{+\infty}P(x,y)\exp\left\{-ik\left[\left(\frac{x_i}{d_i} + \frac{x_o}{d_o}\right)x + \left(\frac{y_i}{d_i} + \frac{y_o}{d_o}\right)y\right]\right\}\mathrm{d}x\mathrm{d}y$$
+
+            <h4>对点扩散函数的简化</h4>
+
+            <p>作以下近似：</p>
+            $$\exp\left[{i\frac{k}{2d_o}(x_o^2 + y_o^2)}\right]\approx \exp\left[{i\frac{k}{2d_o}\left(\frac{x_i^2 + y_i^2}{M^2}\right)}\right]$$
+            <ul>
+                <li>\(M = -d_i/d_o\)：成像透镜的横向放大率</li>
+            </ul>
+            <p>通过近似后的相位因子不再依赖于\((x_o, y_o)\)，因此不会影响\(x_iy_i\)面上的强度分布，于是可以略去，则：</p>
+            <div class="Formula">
+                $$h(x_i - \tilde{x}_o, y_i-\tilde{y}_o) = \frac{1}{\lambda^2d_od_i}\iint_{-\infty}^{+\infty}P(x,y)\exp\left\{-i\frac{2\pi}{\lambda d_i}\left[\left(x_i - \tilde{x}_o\right)x + \left(y_i - \tilde{y}_o\right)y\right]\right\}\mathrm{d}x\mathrm{d}y$$
+                <div class="Derivation">
+                    $$h(x_o, y_o; x_i, y_i) = \frac{1}{\lambda^2d_od_i}\iint_{-\infty}^{+\infty}P(x,y)\exp\left\{-ik\left[\left(\frac{x_i}{d_i} + \frac{x_o}{d_o}\right)x + \left(\frac{y_i}{d_i} + \frac{y_o}{d_o}\right)y\right]\right\}\mathrm{d}x\mathrm{d}y$$
+                    $$\because M = -d_i/d_o$$
+                    $$\begin{align}\therefore
+                    h(x_o, y_o; x_i, y_i) &= \frac{1}{\lambda^2d_od_i}\iint_{-\infty}^{+\infty}P(x,y)\exp\left\{-i\frac{2\pi}{\lambda}\frac{1}{d_i}\left[\left(x_i + \frac{x_od_i}{d_o}\right)x + \left(y_i + \frac{y_od_i}{d_o}\right)y\right]\right\}\mathrm{d}x\mathrm{d}y\\
+                                          &= \frac{1}{\lambda^2d_od_i}\iint_{-\infty}^{+\infty}P(x,y)\exp\left\{-i\frac{2\pi}{\lambda d_i}\left[\left(x_i - Mx_o\right)x + \left(y_i - My_o\right)y\right]\right\}\mathrm{d}x\mathrm{d}y
+                    \end{align}$$
+                    <p>[令]</p>
+                    $$\tilde{x}_o = Mx_o,\quad \tilde{y}_o = My_o$$
+                    $$\begin{align}\therefore
+                    h(x_o, y_o; x_i, y_i) &= \frac{1}{\lambda^2d_od_i}\iint_{-\infty}^{+\infty}P(x,y)\exp\left\{-i\frac{2\pi}{\lambda d_i}\left[\left(x_i - \tilde{x}_o\right)x + \left(y_i - \tilde{y}_o\right)y\right]\right\}\mathrm{d}x\mathrm{d}y\\
+                                          &= h(x_i - \tilde{x}_o, y_i-\tilde{y}_o)
+                    \end{align}$$
+                </div>
+            </div>
+
+            <p>该式表明：在近轴成像条件下，上式所表征的透镜成像系统是空不变的.</p>
+
+            <h3>衍射受限系统的点扩散函数</h3>
+            <div class="Card-Definition">
+                <b>衍射受限系统</b>
+                <p>不考虑几何像差，仅考虑衍射限制的系统.</p>
+                <p>一般的衍射受限系统可由若干共轴球面透镜组成，这些透镜既可以是正透镜，也可以是负透镜，且透镜也不一定是薄的.</p>
+            </div>
+
+
+            <p>任意成像系统都可以分成三部分：</p>
+            <ul>
+                <li>第一部分：从物平面到入瞳平面</li>
+                <li>第二部分：从入瞳平面到出瞳平面</li>
+                <li>第三部分：从出瞳平面到像平面</li>
+            </ul>
+
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

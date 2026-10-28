@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fourier光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>透镜的Fourier变换性质</h1>
+        
+
+        <div class="Card-Analysis">
+            <h2>导入</h2>
+            <p>要在衍射屏后面的自由空间观察Fraunhofer衍射，其条件是相当苛刻的.</p>
+            <p>要想在近距离观察Fraunhofer衍射，是借助会聚透镜实现的.</p>
+            <p>在单色平面波垂直照射衍射屏的情况下，Fraunhofer衍射就是屏函数的Fourier变换.</p>
+            <p>对透射物品进行Fourier变换运算的物理手段是实现其Fraunhofer衍射，也就是说，<b>透镜可以用来实现物体的Fourier变换</b>.</p>
+            <p>透镜是光学系统最基本的元件，正是由于透镜在一定条件下能实现Fourier变换，才使得Fourier分析方法在光学中得到如此广泛的应用.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>透镜的相位变换作用</h2>
+
+            <h3>模型建立</h3>
+            <p>研究一个无像差的正薄透镜对点光源的成像过程.</p>
+            <figure>
+                <img src="Img/Lens.jpg" width="300">
+                <figcaption>透镜的相位变换作用</figcaption>
+            </figure>
+            <p>如图所示：</p>
+            <ul>
+                <li>取\(z\)轴为光轴</li>
+                <li>轴上单色点光源S到透镜顶点O<sub>1</sub>的距离为\(p\)</li>
+                <li>不计透镜的有限孔径造成的衍射，透镜将物点S成完善像于S'</li>
+                <li>S'点到透镜顶点\(\text{O}_2\)的距离为\(q\)</li>
+                <li>过透镜两顶点\(\text{O}_1\)与\(\text{O}_2\)，分别垂直于光轴作两参考平面\(\text{P}_1\)与\(\text{P}_2\)</li>
+            </ul>
+
+            <p>由于考虑的是薄透镜，光线通过透镜时入射与出射的高度相同.</p>
+            <p>从几何光学观点看，图中所示的成像过程为点物成点像.</p>
+            <p>从波面变换观点看，透镜将一个发散球面波变成一个会聚球面波.</p>
+
+
+            <h3>分析过程</h3>
+            <p>为了研究透镜对入射波面的变换作用，引入透镜的复振幅透过率\(t(x,y)\).</p>
+            <div class="Card-Formula">
+                <b>透镜的复振幅透过率\(t(x,y)\)</b>
+                $$t(x,y) = \frac{U_1'(x,y)}{U_1(x,y)}$$
+                <ul>
+                    <li>\(U_1(x,y)\)：\(P_1\)平面上的光场分布</li>
+                    <li>\(U_1'(x,y)\)：\(P_2\)平面上的光场分布</li>
+                </ul>
+            </div>
+
+            <p>傍轴近似下，位于\(S\)点的单色点光源发出的发散球面波在\(P_1\)平面上造成的场分布为：</p>
+            $$U_1(x,y) = Ae^{ikp}e^{i\frac{k}{2p}(x^2 + y^2)}$$
+            <p>式中，\(A\in\mathbb{C}\)，表明在傍轴近似下，平面\(P_1\)的振幅分布是均匀的，发生变化的只是相位.</p>
+            <p>此球面波经透镜变换后向\(S'\)点会聚，忽略透镜的吸收，其在\(P_2\)平面上造成的复振幅分布为：</p>
+            $$U_1'(x,y) = Ae^{-ikq}e^{-i\frac{k}{2q}(x^2 + y^2)}$$
+
+            <div class="Card-AI">
+                <p>补充：会聚/发散球面波</p>
+            </div>
+
+            <p>忽略不影响\(P_1\)与\(P_2\)平面上相对相位分布的常数项因子（\(e^{ikp}\)与\(e^{-ikq}\)），可得透镜的复振幅透过率或相位变换因子为：</p>
+            $$t(x,y) = e^{-i\frac{k}{2}(x^2 + y^2)\left(\frac{1}{q} + \frac{1}{p}\right)}$$
+            <p>由透镜成像的Gauss公式：</p>
+            $$\frac{1}{q} + \frac{1}{p} = \frac{1}{f}$$
+            <ul>
+                <li>\(f\)：透镜的像方焦距</li>
+            </ul>
+            <p>透镜的相位变换因子可简单表示为：</p>
+            $$t(x,y) = e^{-i\frac{k}{2f}(x^2 + y^2)}$$
+
+            <p>上式表明，通过透镜的相位变换作用，将一个发散球面波变换成了汇聚球面波.</p>
+            <p>当一个单位振幅的平面波垂直于\(\text{P}_1\)面入射时，其在\(\text{P}_1\)面上造成的复振幅分布\(U_1(x,y) = 1\)，在\(\text{P}_2\)面上造成的复振幅分布为：</p>
+            $$U_1'(x,y) = U_1(x,y)t(x,y) = e^{-i\frac{k}{2f}(x^2 + y^2)}$$
+            <p>傍轴近似下，这是球面波表达式.</p>
+            <ul>
+                <li>对于正透镜：\(f\gt 0\)，上式为一个向透镜后面\(f\)处的焦点\(\text{F}'\)会聚的球面波</li>
+                <li>对于负透镜：\(f\lt 0\)，上式为一个由透镜前方\(-f\)处的虚焦点\(\text{F}'\)发出的发散球面波</li>
+            </ul>
+
+            <p>若考虑透镜孔径的有限大小，用\(P(x,y)\)表示孔径函数（光曈函数）.</p>
+            <div class="Card-Formula">
+                <b>孔径函数（光曈函数）</b>
+                $$P(x,y) = \begin{cases}1,\quad 透镜孔径内\\0,\quad \text{others}\end{cases}$$
+            </div>
+
+            <p>透镜的相位变换因子可写为：</p>
+            $$t(x,y) = P(x,y)e^{-i\frac{k}{2f}(x^2 + y^2)}$$
+
+            <p>透镜对光波的相位变换作用，是由透镜本身的性质决定的，与入射光波复振幅\(U_1(x,y)\)的形式无关.</p>
+            <p>只要傍轴条件满足，薄透镜就会以上式的形式对\(U_1(x,y)\)进行相位变换.</p>
+            
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>透镜的Fourier变换特性</h2>
+            <p>正透镜除了具有成像性质外，还能作Fourier变换.</p>
+
+            <p>下面分别就透明片（物）放在透镜之前与之后两种情况进行讨论.</p>
+
+            <h3>物在透镜之前</h3>
+            <figure>
+                <img src="Img/Lens_before.jpg" width="300">
+                <figcaption>物在透镜之前的变换</figcaption>
+            </figure>
+            <p>如图所示：</p>            
+            <ul>
+                <li>要变换的透明片置于透镜前方\(d_0\)处，其复振幅透过率为\(t(x_0, y_0)\)，这个位置称为输入面</li>
+                <li>由于是薄透镜，此处\(\text{P}_1\)面与\(\text{P}_2\)面重合</li>
+                <li>位于光轴上的单色点光源\(\text{S}\)与透镜的距离为\(p\)</li>
+                <li>点光源的共轭像面\((x,y)\)与透镜的距离为\(q\)，其为输出面</li>
+            </ul>
+            <p>按信息光学中的习惯，与一般应用光学中的符号规则不同，此处\(p,q,d_0\gt 0\).</p>
+            <p>[设]薄透孔径很大，抽象为无穷大.</p>
+            <p>傍轴近似下，单色点光源发出的球面波在物的前表面造成的场分布为：</p>
+            $$A_0\exp\left[ik\frac{x_0^2 + y_0^2}{2(p-d_0)}\right]$$
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

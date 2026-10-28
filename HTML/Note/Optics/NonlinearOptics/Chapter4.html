@@ -193,6 +193,63 @@
         <p>1、产生频率为\(2\omega_1\)的二次谐波的极化波.</p>
         <p>2、能量从极化波转移到频率为\(2\nu_1\)的电磁波.</p>
 
+        <div class="Card-Analysis">
+            <h2>参量转换</h2>
+
+            <h3>参量转换的分类</h3>
+            <ul>
+                <li><b>参量上转换</b>：对应于和频过程，由频率较低的信号辐射转换为频率较高的辐射</li>
+                <li><b>参量下转换</b>：对应于差频过程，由频率较高的信号辐射转换为频率较低的辐射</li>
+            </ul>
+
+            <h3>参量转换的理论分析</h3>
+            <p>实际过程中，参与频率转换作用的强光波（泵浦光）通常比弱光波（信号光）强得多，因此在频率转换过程中，泵浦光所损失或得到的功率与其总功率相比很小，可忽略其强度的变化，认为是常数，即：</p>
+            $$\frac{\mathrm{d}E_1}{\mathrm{d}z}\approx 0$$
+            <p>这种近似不仅适用于小的\(z\)值，对所有的\(z\)值都适用.</p>
+            <p>[设]泵浦光频率为\(\omega_1\).</p>
+            <p>在这种近似下，仅需求解<a href="ThreeWave.html" class="goto">三波混频耦合波方程</a>中的\(\frac{\mathrm{d}E_2}{\mathrm{d}z}\)式与\(\frac{\mathrm{d}E_3}{\mathrm{d}z}\)式.</p>
+            $$\frac{\mathrm{d}E_2}{\mathrm{d}z} = \frac{i\omega_2^2}{k_2c^2}\chi_{\text{eff}}^{(2)}E_3E_1^*e^{-i\Delta kz}$$
+            $$\frac{\mathrm{d}E_3}{\mathrm{d}z} = \frac{i\omega_3^2}{k_3c^2}\chi_{\text{eff}}^{(2)}E_1E_2e^{i\Delta kz}$$
+
+            <p>可以得到\(E_2\)满足的二阶微分方程</p>
+
+            <div class="Formula">
+                $$\frac{\mathrm{d}^2E_2}{\mathrm{d}z^2} + i\Delta k\frac{\mathrm{d}E_2}{\mathrm{d}z} + \frac{1}{l_M^2}E_2 = 0$$
+                <div class="Derivation">
+                    $$\frac{\mathrm{d}^2E_2}{\mathrm{d}z^2} = \frac{i\omega_2^2}{k_2c^2}\chi_{\text{eff}}^{(2)}E_1^*\left(\frac{\mathrm{d}E_3}{\mathrm{d}z} - i\Delta kE_3\right)e^{-i\Delta k z}$$
+                    $$E_3 = \frac{k_2c^2}{i\omega_2^2\chi_{\text{eff}^{(2)}}E_1^*}\frac{\mathrm{d}E_2}{\mathrm{d}z}e^{i\Delta kz}$$
+                    $$\begin{align}
+                    \frac{\mathrm{d}^2E_2}{\mathrm{d}z^2} &= \frac{i\omega_2^2}{k_2c^2}\chi_{\text{eff}}^{(2)}E_1^*\left(\frac{\mathrm{d}E_3}{\mathrm{d}z} - i\Delta kE_3\right)e^{-i\Delta k z}\\
+                                                          &= \frac{i\omega_2^2}{k_2c^2}\chi_{\text{eff}}^{(2)}E_1^*\left(\frac{i\omega_3^2}{k_3c^2}\chi_{\text{eff}}^{(2)}E_1E_2 - i\Delta k\cdot\frac{k_2c^2}{i\omega_2^2\chi_{\text{eff}^{(2)}}E_1^*}\cdot \frac{\mathrm{d}E_2}{\mathrm{d}z}\right)\\
+                                                          &= -i\Delta k\frac{\mathrm{d}E_2}{\mathrm{d}z} - \frac{1}{c^4}\frac{\omega_2^2\omega_3^2}{k_2k_3}\left(\chi_{\text{eff}}^{(2)}\right)^2E_1^*E_1E_2
+                    \end{align}$$
+                </div>
+            </div>
+
+
+            <div class="Card-Definition">
+                <b>特征长度\(l_M\)</b>
+                $$l_M = \left[\frac{1}{2c^2}\left(\frac{\omega_2^2\omega_3^2}{k_2k_3}\right)^{1/2}\left\lvert\chi_{\text{eff}}^{(2)}\right\rvert E_0(\omega_1, 0)\right]^{-1}$$
+            </div>
+
+            <h3>对于参量下转换过程</h3>
+            <p>起始条件为：</p>
+            $$E(\omega_2, z)\rvert_{z=0} = E(\omega_2, 0) = 0$$
+            <p>由三波混频耦合波方程：</p>
+            $$\left.\frac{\mathrm{d}E(\omega_2, z)}{\mathrm{d}z}\right\rvert_{z=0} = \frac{i\omega_2^2}{k_2c^2}E(\omega_3, 0)E^*(\omega_1, 0)$$
+            <p>在这种条件下求解微分方程，结果为：</p>
+            $$E(\omega_2, z) = \frac{i\omega_2^2}{k_2c^2}\chi_{\text{eff}}^{(2)}E(\omega_3, 0)E^*(\omega_1, 0)\frac{1}{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}}\sin^2\left\{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}z\right\}$$
+            $$N_{\omega_2}(z) = \frac{N_{\omega_3}(0)}{l_M^2}\frac{1}{\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2}\sin^2\left\{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}z\right\}$$
+
+
+            <h3>对于参量上转换过程</h3>
+            <div class="Card-AI">
+                <p>1、去探究一下\(l_M\)的定义式</p>
+                <p>2、理解一下Manley-Rowe关系的物理意义</p>
+            </div>
+
+        </div>
+
         <div id="PageEnd"></div>
 
         <script src="../../../../JavaScript/MenuButton.js"></script>

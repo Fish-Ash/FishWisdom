@@ -230,7 +230,7 @@
             <p>若\(n_e\gt n_o\)，称为正单轴晶体.</p>
             <p>若\(n_e\lt n_o\)，称为负单轴晶体.</p>
         </div>
-<!-- 
+
         <div class="Card-Analysis" id="WavePlate">
             <h2>波片</h2>
             <div class="Card-Definition">
@@ -382,7 +382,133 @@
             <p>当一束单色平面光从空气垂直入射到方解石单轴警惕上时，晶体中将产生两束折射光，分别为o光和e光，根据折射定律，两折射光的折射角\(\theta_{to} = \theta_{te} = 0\)，即晶体中二折射光的波矢方向相同、均垂直入射界面.</p>
             <p>但是，由于单轴晶体中o光波矢方向与光线方向相同，e光波矢方向与光线方向离散，所以在晶体内可观测到两条离散方向传播的光线，分别为o光和e光的能流方向.</p>
 
-        </div> -->
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>晶体光学的基本方程</h2>
+
+            <div class="Card-Formula">
+                <b>描述晶体光学性质的基本方程</b>
+                <div class="Formula">
+                    $$\boldsymbol{D} = \epsilon_0n^2[\boldsymbol{E} - \boldsymbol{k}_0(\boldsymbol{k}_0\cdot\boldsymbol{E})]$$
+                    <div class="Derivation">
+                        <p>[设]入射光为单色平面波.</p>
+                        $$\therefore \boldsymbol{u} = \boldsymbol{u}_0e^{-i(\omega t - \boldsymbol{k}\cdot\boldsymbol{r})}$$
+                        $$\therefore \nabla\times\boldsymbol{u} = i\boldsymbol{k}\times\boldsymbol{u},\quad \frac{\partial\boldsymbol{u}}{\partial t} = -i\omega\boldsymbol{u}$$
+                        $$\because \nabla\times\boldsymbol{H} = \frac{\partial\boldsymbol{D}}{\partial t}$$
+                        $$\therefore i\boldsymbol{k}\times\boldsymbol{H} = -i\omega\boldsymbol{D}$$
+                        $$\therefore \boldsymbol{D} = -\frac{1}{\omega}(\boldsymbol{k}\times\boldsymbol{H})$$
+                        $$\because \nabla\times\boldsymbol{E} = -\frac{\partial\boldsymbol{B}}{\partial t}$$
+                        $$\therefore i\boldsymbol{k}\times\boldsymbol{E} = -i\omega\mu_0\boldsymbol{H}$$
+                        $$\therefore \boldsymbol{H} = \frac{1}{\omega\mu_0}(\boldsymbol{k}\times\boldsymbol{E})$$
+                        $$\therefore \boldsymbol{D} = -\frac{1}{\omega^2\mu_0}\boldsymbol{k}\times(\boldsymbol{k}\times\boldsymbol{E})$$
+                        $$\because \boldsymbol{k} = \frac{2\pi}{\lambda}\boldsymbol{k}_0 = \frac{\omega T}{\lambda_0/n}\boldsymbol{k}_0 = \frac{\omega n}{c}\boldsymbol{k}_0$$
+                        $$\boldsymbol{a}\times(\boldsymbol{b}\times\boldsymbol{c}) = (\boldsymbol{a}\cdot\boldsymbol{c})\boldsymbol{b} - (\boldsymbol{a}\cdot\boldsymbol{b})\boldsymbol{c}$$
+                        $$\begin{align}\therefore
+                        \boldsymbol{D} &= -\frac{1}{\omega^2\mu_0}\cdot\frac{\omega^2n^2}{c^2}[(\boldsymbol{k}_0\cdot\boldsymbol{E})\boldsymbol{k}_0 - (\boldsymbol{k}_0\cdot\boldsymbol{k}_0)\boldsymbol{E}]\\
+                                       &= \epsilon_0n^2[\boldsymbol{E} - \boldsymbol{k}_0(\boldsymbol{k}_0\cdot\boldsymbol{E})]
+                        
+                        \end{align}$$
+                    </div>
+                </div>
+                <p>其分量形式为：</p>
+                $$D_r = \epsilon_0n^2[E_r - k_{0r}(\boldsymbol{k}_0\cdot\boldsymbol{E})],\quad r = x,y,z$$
+            </div>
+
+            <div class="Card-Formula">
+                <b>波法线Fresnel方程</b>
+                <div class="Formula">
+                    $$\frac{k_x^2}{\frac{1}{n^2} - \frac{1}{\varepsilon_{xx}}} + \frac{k_y^2}{\frac{1}{n^2} - \frac{1}{\varepsilon_{yy}}} + \frac{k_z^2}{\frac{1}{n^2} - \frac{1}{\varepsilon_{zz}}} = 0$$
+                    <div class="Derivation">
+                        $$\because D_r = \epsilon_0n^2[E_r - k_{0r}(\boldsymbol{k}_0\cdot\boldsymbol{E})] = \epsilon_0\epsilon_{rr}E_r,\quad r = x,y,z$$
+                        $$\therefore E_r = \frac{n^2k_{0r}(\boldsymbol{k}_0\cdot\boldsymbol{E})}{n^2-\varepsilon_{rr}}$$
+                        $$\because \boldsymbol{k}_0\cdot\boldsymbol{E} = \sum k_{0r}E_r = (\boldsymbol{k}_0\cdot\boldsymbol{E})\sum\frac{n^2k_{0r}^2}{n^2-\varepsilon_{rr}}$$
+                        $$\therefore \frac{n^2k_{0x}^2}{n^2-\varepsilon_{xx}} + \frac{n^2k_{0y}^2}{n^2-\varepsilon_{yy}} + \frac{n^2k_{0z}^2}{n^2-\varepsilon_{zz}} = 1$$
+                        $$\because k_{0x}^2 + k_{0y}^2 + k_{0z}^2 = |\boldsymbol{k}_0|^2 = 1$$
+                        $$\therefore \frac{n^2k_{0x}^2}{n^2-\varepsilon_{xx}} - k_{0x}^2 + \frac{n^2k_{0y}^2}{n^2-\varepsilon_{yy}} - k_{0y}^2 + \frac{n^2k_{0z}^2}{n^2-\varepsilon_{zz}} - k_{0z}^2 = 0$$
+                        $$\therefore \frac{k_{0x}^2\varepsilon_{xx}}{n^2-\varepsilon_{xx}} + \frac{k_{0y}^2\varepsilon_{yy}}{n^2-\varepsilon_{yy}} + \frac{k_{0z}^2\varepsilon_{zz}}{n^2-\varepsilon_{zz}} = 1$$
+                        $$\therefore \frac{-k_x^2/n^2}{\frac{1}{n^2} - \frac{1}{\varepsilon_{xx}}} + \frac{-k_y^2/n^2}{\frac{1}{n^2} - \frac{1}{\varepsilon_{yy}}} + \frac{-k_z^2/n^2}{\frac{1}{n^2} - \frac{1}{\varepsilon_{zz}}} = 0$$
+                        $$\therefore \frac{k_x^2}{\frac{1}{n^2} - \frac{1}{\varepsilon_{xx}}} + \frac{k_y^2}{\frac{1}{n^2} - \frac{1}{\varepsilon_{yy}}} + \frac{k_z^2}{\frac{1}{n^2} - \frac{1}{\varepsilon_{zz}}} = 0$$
+                    </div>
+                </div>
+
+
+                <p>该式描述了在晶体中传播的光波波法线方向\(\boldsymbol{k}\)与相应的折射率和晶体的主介电常数间的关系.</p>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光在晶体中的传播规律</h2>
+
+            <p>将波法线Fresnel方程展开，可以得到一个关于\(n^2\)的二次方程，即：</p>
+            <div class="Formula">
+                $$n^4(\varepsilon_{xx}k_x^2 + \varepsilon_{yy}k_y^2 + \varepsilon_{zz}k_z^2) - n^2[\varepsilon_{xx}\varepsilon_{yy}(k_x^2 + k_y^2) + \varepsilon_{yy}\varepsilon_{zz}(k_y^2 + k_z^2) + \varepsilon_{xx}\varepsilon_{zz}(k_x^2 + k_z^2)] + \varepsilon_{xx}\varepsilon_{yy}\varepsilon_{zz} = 0$$
+                <div class="Derivation">
+                    $$\because\frac{k_x^2}{\frac{1}{n^2} - \frac{1}{\varepsilon_{xx}}} + \frac{k_y^2}{\frac{1}{n^2} - \frac{1}{\varepsilon_{yy}}} + \frac{k_z^2}{\frac{1}{n^2} - \frac{1}{\varepsilon_{zz}}} = 0$$
+                    $$\therefore \frac{n^2k_{x}^2\varepsilon_{xx}}{\varepsilon_{xx} - n^2} + \frac{n^2k_y^2\varepsilon_{yy}}{\varepsilon_{yy} - n^2} + \frac{n^2k_{z}^2\varepsilon_{zz}}{\varepsilon_{zz} - n^2} = 0$$
+                    $$\therefore k_x^2\varepsilon_{xx}(\varepsilon_{yy} - n^2)(\varepsilon_{zz} - n^2) + k_y^2\varepsilon_{yy}(\varepsilon_{xx} - n^2)(\varepsilon_{zz} - n^2) + k_z^2\varepsilon_{zz}(\varepsilon_{xx} - n^2)(\varepsilon_{yy} - n^2) = 0$$
+                    $$\therefore n^4(k_x^2\varepsilon_{xx} + k_y^2\varepsilon_{yy} + k_z^2\varepsilon_{zz}) - n^2[k_x^2\varepsilon_{xx}(\varepsilon_{yy} + \varepsilon_{xx}) + k_y^2\varepsilon_{yy}(\varepsilon_{xx} + \varepsilon_{zz}) + k_z^2\varepsilon_{zz}(\varepsilon_{xx} + \varepsilon_{yy})] + (k_x^2 + k_y^2 + k_z^2)\varepsilon_{xx}\varepsilon_{yy}\varepsilon_{zz} = 0$$
+                    $$\because k_x^2 + k_y^2 + k_z^2 = |\boldsymbol{k}|^2 = 1$$
+                    $$\therefore n^4(\varepsilon_{xx}k_x^2 + \varepsilon_{yy}k_y^2 + \varepsilon_{zz}k_z^2) - n^2[\varepsilon_{xx}\varepsilon_{yy}(k_x^2 + k_y^2) + \varepsilon_{yy}\varepsilon_{zz}(k_y^2 + k_z^2) + \varepsilon_{xx}\varepsilon_{zz}(k_x^2 + k_z^2)] + \varepsilon_{xx}\varepsilon_{yy}\varepsilon_{zz} = 0$$
+                </div>
+            </div>
+            <h3>单轴晶体</h3>
+            <p>对于单轴晶体，有：</p>
+            $$\varepsilon_{xx} = \varepsilon_{yy} = \varepsilon_{\perp} = n_o^2,\quad \varepsilon_{zz} = \varepsilon_{\parallel} = n_e^2$$
+            <p>主轴\(x,y\)的方向是任意的.</p>
+            <p>若选择主轴方向使得光波传播方向\(\boldsymbol{k}\)在\(yz\)平面内.</p>
+            <p>[令]\(z\)轴与\(\boldsymbol{k}\)方向间的夹角为\(\theta\).</p>
+            <p>则：</p>
+            $$k_x = 0$$
+            $$k_y = \sin\theta$$
+            $$k_z = \cos\theta$$
+            <p>代入关于\(n^2\)的二次方程，得：</p>
+            <div class="Formula">
+                $$(n^2 - \varepsilon_{\perp})[n^2(\varepsilon_{\parallel}\cos^2\theta + \varepsilon_{\perp}\sin^2\theta) - \varepsilon_{\parallel}\varepsilon_{\perp}] = 0$$
+                <div class="Derivation">
+                    $$\because n^4(\varepsilon_{xx}k_x^2 + \varepsilon_{yy}k_y^2 + \varepsilon_{zz}k_z^2) - n^2[\varepsilon_{xx}\varepsilon_{yy}(k_x^2 + k_y^2) + \varepsilon_{yy}\varepsilon_{zz}(k_y^2 + k_z^2) + \varepsilon_{xx}\varepsilon_{zz}(k_x^2 + k_z^2)] + \varepsilon_{xx}\varepsilon_{yy}\varepsilon_{zz} = 0$$
+                    $$\therefore n^4(\varepsilon_{\perp}\sin^2\theta + \varepsilon_{\parallel}\cos^2\theta) - n^2(\varepsilon_{\perp}^2\sin^2\theta + \varepsilon_{\perp}\varepsilon_{\parallel} + \varepsilon_{\perp}\varepsilon_{\parallel}\cos^2\theta) + \varepsilon_{\perp}^2\varepsilon_{\parallel} = 0$$
+                    <p>将方程按\(\sin^2\theta\)与\(\cos^2\theta\)分组，得：</p>
+                    $$[\varepsilon_{\perp}n^4 - (\varepsilon_{\perp}^2 + \varepsilon_{\perp}\varepsilon_{\parallel})n^2 + \varepsilon_{\perp}^2\varepsilon_{\parallel}]\sin^2\theta + (\varepsilon_{\parallel}n^4 - 2\varepsilon_{\perp}\varepsilon_{\parallel}n^2 + \varepsilon_{\perp}^2\varepsilon_{\parallel})\cos^2\theta = 0$$
+                    <p>对于\(\sin^2\theta\)项系数，有：</p>
+                    $$\begin{align}
+                    n^2 &= \frac{(\varepsilon_{\perp}^2 + \varepsilon_{\perp}\varepsilon_{\parallel})\pm \sqrt{(\varepsilon_{\perp}^2 + \varepsilon_{\perp}\varepsilon_{\parallel})^2 - 4\varepsilon_{\perp}^3\varepsilon_{\parallel}}}{2\varepsilon_{\perp}}\\
+                        &= \frac{(\varepsilon_{\perp}^2 + \varepsilon_{\perp}\varepsilon_{\parallel})\pm (\varepsilon_{\perp}^2 - \varepsilon_{\perp}\varepsilon_{\parallel})}{2\varepsilon_{\perp}}
+                    \end{align}$$
+                    $$\therefore n^2 = \varepsilon_{\perp}\quad \text{or}\quad n^2 = \varepsilon_{\parallel}$$
+                    <p>对于\(\cos^2\theta\)项系数，有：</p>
+                    $$\begin{align}
+                    n^2 &= \frac{2\varepsilon_{\perp}\varepsilon_{\parallel} \pm \sqrt{4\varepsilon_{\perp}^2\varepsilon_{\parallel}^2 - 4\varepsilon_{\perp}^2\varepsilon_{\parallel}^2}}{2\varepsilon_{\parallel}}\\
+                        &= \varepsilon_{\perp}
+                    \end{align}$$
+                    $$\therefore \varepsilon_{\perp}(n^2 - \varepsilon_{\perp})(n^2-\varepsilon_{\parallel})\sin^2\theta + \varepsilon_{\parallel}(n^2 - \varepsilon_{\perp})^2\cos^2\theta = 0$$
+                    $$\therefore (n^2 - \varepsilon_{\perp})[\varepsilon_{\perp}(n^2-\varepsilon_{\parallel})\sin^2\theta + \varepsilon_{\parallel}(n^2 - \varepsilon_{\perp})\cos^2\theta] = 0$$
+                    $$\therefore (n^2 - \varepsilon_{\perp})[n^2(\varepsilon_{\perp}\sin^2\theta + \varepsilon_{\parallel}\cos^2\theta) - \varepsilon_{\perp}\varepsilon_{\parallel}] = 0$$
+                </div>
+            </div>
+
+            $$\because \boldsymbol{D} = \epsilon_0n^2[\boldsymbol{E} - \boldsymbol{k}(\boldsymbol{k}\cdot\boldsymbol{E})]$$
+            $$\boldsymbol{k}\cdot\boldsymbol{E} = E_y\sin\theta + E_z\cos\theta$$
+            $$\begin{align}\therefore
+            \boldsymbol{D} &= \epsilon_0n^2\left[\begin{matrix}
+            E_x\\
+            E_y - (E_y\sin^2\theta + E_z\sin\theta\cos\theta)\\
+            E_z - (E_y\sin\theta\cos\theta + E_z\cos^2\theta)
+            \end{matrix}\right]\\
+                           &= \epsilon_0n^2\left[\begin{matrix}
+            E_x\\
+            E_y\cos^2\theta - E_z\sin\theta\cos\theta\\
+            E_z\sin^2\theta - E_y\sin\theta\cos\theta
+            \end{matrix}\right]
+            \end{align}$$
+            $$\because \boldsymbol{D} = \epsilon_0\boldsymbol{\varepsilon}_r\boldsymbol{E} = \epsilon_0\left[\begin{matrix}\varepsilon_oE_x\\\varepsilon_oE_y\\\varepsilon_eE_z\end{matrix}\right]$$
+            $$\therefore\begin{cases}
+            \varepsilon_0n_o^2E_x = \varepsilon_0n_e^2(\theta)E_x\\
+            \varepsilon_0n_o^2E_y = \varepsilon_0n_e^2(\theta)(E_y\cos^2\theta - E_z\sin\theta\cos\theta)\\
+            \varepsilon_0n_e^2E_z = \varepsilon_0n_e^2(\theta)(E_z\sin^2\theta - E_y\sin\theta\cos\theta)\\
+            \end{cases}$$
+
+        </div>
 
         <div id="PageEnd"></div>
 

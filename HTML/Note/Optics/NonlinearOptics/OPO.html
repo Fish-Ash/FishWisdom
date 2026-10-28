@@ -42,6 +42,8 @@
             <p>光参量放大在原理上同微波参量放大极为相似.</p>
             <p>光参量放大实质上是一个差频产生的三波混频过程.</p>
 
+            <p>根据Manley-Rowe关系，在差频过程中，每湮灭一个最高频率的光子，同时要产生两个低频光子，在此过程中，这两个低频光波获得增益.</p>
+
             <p>将一个强的高频光（泵浦光）与一个弱的低频光（信号光）同时射入非线性晶体，就可以产生差频光（空闲光、闲置光），而弱的信号光会被放大.</p>
             <p>在光学参量振荡器中建立起来的两种频率的光波，任何一个光波都额可以称为“信号光”或“空闲光”，区别哪个是信号光，哪个是空闲光是没有意义的，名词的区别仅在于表明它们是两种不同的频率（或波长）.</p>
 
@@ -65,6 +67,36 @@
             $$\sqrt{\frac{\omega_1\omega_2}{n_1n_2}}\sqrt{\mu_0\epsilon_0}\chi_{\text{eff}}^{(2)}E_3 = \Gamma_0$$
             $$\therefore \frac{\mathrm{d}A_1}{\mathrm{d}z} = i\Gamma_0A_2^*e^{-i\Delta kz}$$
             $$\therefore \frac{\mathrm{d}A_2}{\mathrm{d}z} = i\Gamma_0A_1^*e^{-i\Delta kz}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>参量振荡</h2>
+            <h3>参量振荡器的结构</h3>
+
+            <h3>参量振荡器的振荡条件</h3>
+
+            <h3>参量振荡器的阈值条件</h3>
+            <b>双共振参量振荡器的阈值条件</b>
+            <div class="Card-Definition">
+                <b>双共振参量振荡器</b>
+                <p>对频率为\(\omega_1\)的信号光与频率为\(\omega_2\)的空闲光都有高品质因素值的振荡器.</p>
+            </div>
+
+            <p>双共振情况下的参量振荡条件为：</p>
+            $$[R_1\cosh(\Gamma_0l) - 1][R_2\cosh(\Gamma_0l) - 1] = R_1R_2\sinh^2(\Gamma_0l)$$
+            <div class="Formula">
+                $$(R_1 + R_2)\cosh(\Gamma_0l) - R_1R_2 = 1$$
+                <div class="Derivation">
+                    $$\therefore R_1R_2\cosh^2(\Gamma_0l) - R_1\cosh(\Gamma_0l) - R_2\cosh(\Gamma_0l) + 1 = R_1R_2\cosh^2(\Gamma_0l)$$
+                    $$\because \cosh^2 x - \sinh^2 x = 1$$
+                    $$\therefore(R_1 + R_2)\cosh(\Gamma_0l) - R_1R_2 = 1$$
+                </div>
+            </div>
+            <p>若腔镜的反射率\(R_1, R_2\approx 1\)，且\(\cosh(\Gamma_0l)\approx 1 + \frac{1}{2}\Gamma_0^2l^2\)，由上式可得：</p>
+            $$(\Gamma_0)_{th}l = \sqrt{(1-R_1)(1-R_2)}$$
+            <p>利用泵浦强度表示式：</p>
+            $$S_{\omega_3} = 2\sqrt{\frac{\varepsilon_0}{\mu_0}}n_3|E(\omega_3)|^2$$
+
         </div>
 
         <div id="PageEnd"></div>

@@ -159,6 +159,30 @@
             $$\boldsymbol{k}' = -\boldsymbol{k}$$
         </div>
 
+        <div class="Card-Analysis">
+            <h2>单色平面波</h2>
+            $$\boldsymbol{E} = \boldsymbol{A}e^{-i(\omega t - \boldsymbol{k}\cdot\boldsymbol{r})}$$
+
+            <h3>一些结论</h3>
+            <div class="Formula">
+                $$\nabla\times\boldsymbol{E} = i\boldsymbol{k}\times\boldsymbol{E}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \nabla\times\boldsymbol{E} &= \left\lvert\begin{matrix}\hat{\boldsymbol{x}}&\hat{\boldsymbol{y}}&\hat{\boldsymbol{z}}\\\frac{\partial}{\partial x}&\frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\E_x&E_y&E_z\end{matrix}\right\rvert\\
+                                               &= \left(\frac{\partial E_z}{\partial y} - \frac{\partial E_y}{\partial z}\right)\hat{\boldsymbol{x}} + \left(\frac{\partial E_x}{\partial z} - \frac{\partial E_z}{\partial x}\right)\hat{\boldsymbol{y}} + \left(\frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y}\right)\hat{\boldsymbol{z}}
+                    \end{align}$$
+                    $$\because\boldsymbol{E} = \boldsymbol{A}e^{-i[\omega t - (k_xx + k_yy + k_zz)]}$$
+                    $$\therefore\frac{\partial\boldsymbol{E}}{\partial r} = ik_r\boldsymbol{A}e^{-i[\omega t - (k_xx + k_yy + k_zz)]} = ik_r\boldsymbol{E},\quad r=x,y,z$$
+                    $$\begin{align}\therefore
+                    \nabla\times\boldsymbol{E} &= i(k_yE_z - k_zE_y)\hat{\boldsymbol{x}} + i(k_zE_x - k_xE_z)\hat{\boldsymbol{y}} + i(k_yE_x - k_xE_y)\hat{\boldsymbol{z}}\\
+                                               &= i\left\lvert\begin{matrix}\hat{\boldsymbol{x}}&\hat{\boldsymbol{y}}&\hat{\boldsymbol{z}}\\k_x&k_y&k_z\\E_x&E_y&E_z\end{matrix}\right\rvert\\
+                                               &= i\boldsymbol{k}\times\boldsymbol{E}
+                    \end{align}$$
+                </div>
+            </div>
+
+        </div>
+
 
         <div id="PageEnd"></div>
 

@@ -5,7 +5,7 @@
     <head>
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>信息光学</title>
+        <title>Fourier光学</title>
 
         <!-- 基本CSS库（基础、菜单） -->
         <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
@@ -128,10 +128,9 @@
 
         <div class="Card-Analysis">
             <h2>线性平移不变系统</h2>
-            <p>[设]</p>
-            <p>一个系统与输入函数\(f(x_1, y_1)\)对应的输出函数为\(g(x_2, y_2)\).</p>
-            <p>当系统输入函数发生一个平移，即\(f(x_1, y_1)\to f(x_1-x_0, y_1-y_0)\)时，若系统相应的输出函数也只是平移，即\(g(x_2, y_2)\to g(x_2-Mx_0, y_2-My_0)\)，则称该系统具有平移不变性.</p>
-            <p>这里是针对空间平移说的，因此也称为空间平移不变性.</p>
+            <p>[设]一个系统与输入函数\(f(x_1, y_1)\)对应的输出函数为\(g(x_2, y_2)\).</p>
+            <p>当系统输入函数发生一个平移，即\(f(x_1, y_1)\to f(x_1-x_0, y_1-y_0)\)时，若系统相应的输出函数也只是平移，即\(g(x_2, y_2)\to g(x_2-Mx_0, y_2-My_0)\)，则称该系统具有<b>平移不变性</b>.</p>
+            <p>这里是针对空间平移说的，因此也称为<b>空间平移不变性</b>.</p>
             <p>式中\(M\)为光学系统的垂轴放大率.</p>
 
             <div class="Card-Definition">
@@ -146,7 +145,7 @@
             <p>若物平面与像平面的空间坐标取合适的标度，不难做到\(M=1\)，则：</p>
             $$\begin{align}
             g(x_2, y_2) &= \iint_{-\infty}^{+\infty}f(\alpha, \beta)h(x_2-\alpha, y_2-\beta)\mathrm{d}\alpha\mathrm{d}\beta\\
-                        &= f(x_2, y_2)*g(x_2, y_2)
+                        &= f(x_2, y_2)*h(x_2, y_2)
             \end{align}$$
 
             <p>为了在数学上为这种系统建立统一模型，对具有平移不变性的系统，还要求其输入函数与输出函数具有相同的宗量，即：</p>
@@ -204,7 +203,7 @@
             <p>也就是说，原点脉冲响应的频谱密度可以表征系统对输入函数中不同频率的基元成分的传递能力.</p>
             <p>因此,\(H(\xi,\eta)\)称为线性平移不变系统的传递函数.</p>
 
-            <p>线性平移不变系统的原点脉冲响应</p>
+            <p>线性平移不变系统的原点脉冲响应的频谱密度\(H(\xi,\eta)\)之所以能表征</p>
 
             
         </div>

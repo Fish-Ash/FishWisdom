@@ -72,7 +72,11 @@
             <p>与之前的讨论一致.</p>
             
 
-            <h3>衍射角谱理论下的进一步分析</h3>
+            <h3><a href="ScalarDiffractionTheory_AngularSpectrum.html" class="goto">衍射角谱理论</a>下的进一步分析</h3>
+            <b>前置知识</b>
+            <ul>
+                <li><a href="../../Math/FourierAnalysis/FourierTransform.html">Fourier变换</a></li>
+            </ul>
             <p>Fresnel衍射区内：</p>
             $$\sqrt{1 - \cos^2\alpha - \cos^2\beta} \approx 1 - \frac{1}{2}(\cos^2\alpha + \cos^2\beta)$$
             $$\therefore H(\frac{\cos\alpha}{\lambda}, \frac{\cos\beta}{\lambda}) = e^{ikz[1-\frac{1}{2}(\cos^2\alpha+\cos^2\beta)]}$$
@@ -81,9 +85,46 @@
             H(f_x, f_y) &= e^{ikz}e^{-i\frac{2\pi}{\lambda}\frac{1}{2}\lambda^2(f_x^2+f_y^2)}\\
                         &= e^{ikz}e^{-i\pi\lambda z(f_x^2+f_y^2)}
             \end{align}$$
-            $$\mathcal{F}^{-1}\{A(f_x, f_y)\} = \mathcal{F}^{-1}\{A_0(f_x, f_y)\}*\mathcal{F}^{-1}{H(f_x, f_y)}$$
+            $$\mathcal{F}^{-1}\{A(f_x, f_y)\} = \mathcal{F}^{-1}\{A_0(f_x, f_y)\}*\mathcal{F}^{-1}\{H(f_x, f_y)\}$$
             <p>即：</p>
             $$U(x,y) = \iint_{-\infty}^{+\infty}U_0(x_0,y_0)h(x-x_0, y-y_0)\mathrm{d}x_0\mathrm{d}y_0$$
+
+            <p>其中：</p>
+            <div class="Formula">
+                $$h(x-x_0, y-y_0) = \frac{1}{ik\lambda}e^{ikz}e^{-i\frac{k}{2z}[(x-x_0)^2 + (y-y_0)^2]}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    h(x,y) &= \mathcal{F}^{-1}\{H(f_x, f_y)\}\\
+                           &= \iint_{-\infty}^{+\infty}e^{ikz}e^{-i\pi\lambda z(f_x^2 + f_y^2)}e^{i2\pi(f_xx + f_yy)}\mathrm{d}f_x\mathrm{d}f_y\\
+                           &= e^{ikz}\int_{-\infty}^{+\infty}e^{-i\pi\lambda zf_x^2 + i2\pi xf_x}\mathrm{d}f_x\int_{-\infty}^{+\infty}e^{-i\pi\lambda zf_y^2 + i2\pi yf_y}\mathrm{d}f_y
+                    \end{align}$$
+                    <div class="Card-AI">
+                        <b>高斯积分公式</b>
+                        $$\int_{-\infty}^{+\infty}e^{-ax + b}\mathrm{d}x = \sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}}$$
+                    </div>
+                    $$\therefore \int_{-\infty}^{+\infty}e^{-i\pi\lambda zf_x^2 + i2\pi xf_x}\mathrm{d}f_x = \sqrt{\frac{\pi}{i\pi\lambda z}}e^{\frac{(i2\pi x)^2}{4i\pi\lambda z}} = \sqrt{\frac{1}{i\lambda z}}e^{\frac{\pi x^2}{i\lambda z}}$$
+                    $$\therefore h(x,y) = e^{ikz}\cdot \frac{1}{i\lambda z}\cdot e^{-i\frac{k}{2z}(x^2 + y^2)}$$
+                </div>
+            </div>
+            
+            <div class="Formula">
+                $$U(x,y) = \frac{1}{ik\lambda}e^{ikz}U_0(x_0,y_0)*e^{-i\frac{k}{2z}(x^2 + y^2)}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    U(x,y) &= \iint_{-\infty}^{+\infty}U_0(x_0,y_0)h(x-x_0, y-y_0)\mathrm{d}x_0\mathrm{d}y_0\\
+                           &= \iint_{-\infty}^{+\infty}U_0(x_0,y_0) \frac{1}{ik\lambda}e^{ikz}e^{-i\frac{k}{2z}[(x-x_0)^2 + (y-y_0)^2]}\mathrm{d}x_0\mathrm{d}y_0\\
+                           &= \frac{1}{ik\lambda}e^{ikz}\iint_{-\infty}^{+\infty}U_0(x_0,y_0)e^{-i\frac{k}{2z}[(x-x_0)^2 + (y-y_0)^2]}\mathrm{d}x_0\mathrm{d}y_0\\
+                           &= \frac{1}{ik\lambda}e^{ikz}U_0(x_0,y_0)*e^{-i\frac{k}{2z}[(x-x_0)^2 + (y-y_0)^2]}
+                    \end{align}$$
+                </div>
+            </div>
+
+            $$\begin{align}\because
+            e^{i\frac{k}{2z}[(x-x_0)^2 + (y-y_0)^2]} &= e^{i\frac{k}{2z}[x^2 - 2x_0x + x_0^2 + y^2 - 2y_0y + y_0^2]}\\
+                                                     &= e^{i\frac{k}{2z}(x^2 + y^2)}e^{i\frac{k}{2z}(x_0^2 + y_0^2)}e^{-i\frac{k}{z}(x_0x + y_0y)}
+            \end{align}$$
+            $$\therefore U(x,y) = \frac{1}{ik\lambda}e^{ikz}e^{i\frac{k}{2z}(x^2 + y^2)}\iint_{-\infty}^{+\infty}U_0(x_0,y_0)e^{i\frac{k}{2z}(x_0^2 + y_0^2)}e^{-i\frac{k}{z}(x_0x + y_0y)}\mathrm{d}x_0\mathrm{d}y_0$$
+
         </div>
 
         <div class="Card-Analysis">
@@ -109,6 +150,19 @@
             $$g(x_0) = g_0(x_0)e^{ikz}$$
             <p>其强度分布于物体相同，即：</p>
             $$I(x_0) = |g(x_0)|^2 = |g_0(x_0)|^2$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>Fraunhofer衍射</h2>
+            <p>当观察平面离开孔径平面的距离\(z\)进一步增大，使其不仅满足Fresnel衍射条件，还要求可以略去Fourier变换形式的Fresnel衍射公式中的\(e^{i\frac{k}{2z}(x_0^2 + y_0^2)}\)项，即满足：</p>
+            $$\Delta\varphi = \frac{2\pi}{\lambda}\frac{(x_0^2 + y_0^2)_{\max}}{2z}\ll 2\pi$$
+            $$z\gg \frac{1}{2\lambda}(x_0^2 + y_0^2)_{\max}$$
+            <p>满足上式所规定的\(z\)值范围的衍射称为<b>Fraunhofer衍射</b>；此\(z\)值限定的区域称为Fraunhofer衍射区.</p>
+            <p>显然Fraunhofer衍射是在Fresnel衍射的基础上进一步近似所得的结果，其衍射公式为：</p>
+            $$\begin{align}
+            U(x,y) &= \frac{1}{ik\lambda}e^{ikz}e^{i\frac{k}{2z}(x^2 + y^2)}\iint_{-\infty}^{+\infty}U_0(x_0,y_0)e^{-i\frac{k}{z}(x_0x + y_0y)}\mathrm{d}x_0\mathrm{d}y_0\\
+                   &= \frac{1}{ik\lambda}e^{ikz}e^{i\frac{k}{2z}(x^2 + y^2)}\mathcal{F}\{U_0(x_0, y_0)\}
+            \end{align}$$
         </div>
 
         
