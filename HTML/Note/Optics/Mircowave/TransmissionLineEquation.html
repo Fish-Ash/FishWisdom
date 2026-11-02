@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>微波技术</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>传输线方程</h1>
+
+        <div class="Card-Analysis">
+            <h2>一般传输线方程</h2>
+
+            <div class="Card-Formula">
+                <b>一般传输线方程</b>
+                $$\frac{\partial v(z,t)}{\partial z} = -R_1i(z, t) - L_1\frac{\partial i(z, t)}{\partial t}$$
+                $$\frac{\partial i(z,t)}{\partial z} = -G_1v(z, t) - C_1\frac{\partial v(z, t)}{\partial t}$$
+            </div>
+
+            <p>一般传输线方程又称<b>电报方程（telegraph equation）</b>，是一对偏微分方程.</p>
+            <p>其解析解的严格求解不可能，一般只能作数值计算；作各种假定后，可求其解析解.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>时谐均匀传输线方程</h2>
+
+            <h3>时谐传输线方程</h3>
+            <p>对于常用的<a href="Microwave.html#uniform transmission line" class="goto">均匀传输线</a>稳态情况，一般传输线方程可以简化.</p>
+            <p>此时电压\(v\)与电流\(i\)可用角频率\(\omega\)的复数交流形式表示为：</p>
+            $$v(z,t) = \mathrm{Re}\{V(z)e^{i\omega t}\}$$
+            $$i(z,t) = \mathrm{Re}\{I(z)e^{i\omega t}\}$$
+            <div class="Card-AI">
+                <p>为什么？</p>
+            </div>
+
+            <p>代入一般传输线方程后，得时谐传输线方程：</p>
+            $$\frac{\mathrm{d}V(z)}{\mathrm{d}z} = -(R_1 + i\omega L_1)I(z) = -Z_1I(z)$$
+            <ul>
+                <li>\(Z_1 = R_1 + i\omega L_1\)：传输线单位长度的串联阻抗</li>
+            </ul>
+            $$\frac{\mathrm{d}I(z)}{\mathrm{d}z} = -(G_1 + i\omega C_1)V(z) = -Y_1V(z)$$
+            <ul>
+                <li>\(Y_1 = G_1 + i\omega C_1\)：传输线单位长度的并联导纳</li>
+            </ul>
+
+            <div class="Card-AI">
+                <p>这里代入的似乎是整个复数，而非实数部分，至于原因，尚未弄清.</p>
+            </div>
+
+            <h3>电压、电流的通解</h3>
+            <p>时谐传输线方程可以进一步写作：</p>
+            <div class="Formula">
+                $$\frac{\mathrm{d}^2 V(z)}{\mathrm{d}z^2} = Z_1Y_1V(z)$$
+                <div class="Derivation">
+                    $$\because \frac{\mathrm{d}V(z)}{\mathrm{d}z} = -Z_1I(z)$$
+                    $$\therefore \frac{\mathrm{d}^2 V(z)}{\mathrm{d}z^2} = -Z_1\frac{\mathrm{d}I(z)}{\mathrm{d}z}$$
+                    $$\because \frac{\mathrm{d}I(z)}{\mathrm{d}z} = -Y_1V(z)$$
+                    $$\therefore \frac{\mathrm{d}^2 V(z)}{\mathrm{d}z^2} = Z_1Y_1V(z)$$
+                </div>
+            </div>
+            <div class="Formula">
+                $$\frac{\mathrm{d}^2 I(z)}{\mathrm{d}z^2} = Z_1Y_1I(z)$$
+                <div class="Derivation">
+                    $$\because \frac{\mathrm{d}I(z)}{\mathrm{d}z} = -Y_1V(z)$$
+                    $$\therefore \frac{\mathrm{d}^2 I(z)}{\mathrm{d}z^2} = -Y_1\frac{\mathrm{d}V(z)}{\mathrm{d}z}$$
+                    $$\because \frac{\mathrm{d}V(z)}{\mathrm{d}z} = -Z_1I(z)$$
+                    $$\therefore \frac{\mathrm{d}^2 I(z)}{\mathrm{d}z^2} = Z_1Y_1I(z)$$
+                </div>
+            </div>
+
+            <p>定义电压传播常数：</p>
+            <div class="Card-Definition">
+                <b>电压传播常数\(\gamma\)</b>
+                $$\gamma = \sqrt{Z_1Y_1} = \sqrt{(R_1 + i\omega L_1)(G_1 + i\omega C_1)}$$
+            </div>
+
+            <p>则：</p>
+            $$\frac{\mathrm{d}^2 V(z)}{\mathrm{d}z^2} - \gamma^2V(z) = 0$$
+            $$\frac{\mathrm{d}^2 I(z)}{\mathrm{d}z^2} - \gamma^2I(z) = 0$$
+            <p>电压解为：</p>
+            $$V(z) = A_1e^{-\gamma z} + A_2e^{\gamma z}$$
+            $$\because \frac{\mathrm{d}V(z)}{\mathrm{d}z} = -Z_1I(z)$$
+            <p>故电流解为：</p>
+            <div class="Formula">
+                $$I(z) = \frac{1}{Z_0}(A_1e^{-\gamma z} - A_2e^{\gamma z})$$
+                <ul>
+                    <li>\(Z_0 = \sqrt{\frac{G_1 + i\omega C_1}{R_1 + i\omega L_1}}\)</li>
+                </ul>
+                <div class="Derivation">
+                    $$\because \frac{\mathrm{d}V(z)}{\mathrm{d}z} = -Z_1I(z)$$
+                    $$\therefore I(z) = -\frac{1}{Z_1}(-\gamma A_1e^{-\gamma z} + \gamma A_2e^{\gamma z})$$
+                    $$\because \gamma = \sqrt{(R_1 + i\omega L_1)(G_1 + i\omega C_1)}$$
+                    $$Z_1 = R_1 + i\omega L_1$$
+                    $$\therefore I(z) = \sqrt{\frac{G_1 + i\omega C_1}{R_1 + i\omega L_1}}(A_1e^{-\gamma z} - A_2e^{\gamma z})$$
+                    <p>[令]</p>
+                    $$Z_0 = \sqrt{\frac{G_1 + i\omega C_1}{R_1 + i\omega L_1}}$$
+                    $$\therefore I(z) = \frac{1}{Z_0}(A_1e^{-\gamma z} - A_2e^{\gamma z})$$
+                </div>
+            </div>
+
+            <h3 id="flag1">终端条件解</h3>
+            <p>已知终端的电压\(V_L\)与电流\(I_L\)，代入电压、电流的通解，得：</p>
+            $$V(l) = V_L = A_1e^{-\gamma l} + A_2e^{\gamma l}$$
+            $$I(l) = I_L = \frac{1}{Z_0}(Ae^{-\gamma l} - A_2e^{\gamma l})$$
+
+
+            $$V(d) = \frac{V_L + I_LZ_0}{2}e^{\gamma d} + \frac{V_L- I_LZ_0}{2}e^{-\gamma d}$$
+            <ul>
+                <li>\(V^-(d) = \frac{V_L - I_LZ_0}{2}e^{-\gamma d}\)：反射波电压</li>
+                <li>\(V^+(d) = \frac{V_L + I_LZ_0}{2}e^{\gamma d}\)：入射波电压</li>
+            </ul>
+            $$I(d) = \frac{V_L + I_LZ_0}{2Z_0}e^{\gamma d} - \frac{V_L - I_LZ_0}{2Z_0}e^{-\gamma d}$$
+            <ul>
+                <li>\(I^-(d) = \frac{V_L - I_LZ_0}{2Z_0}e^{-\gamma d}\)：反射波电流</li>
+                <li>\(I^+(d) =  - \frac{V_L + I_LZ_0}{2Z_0}e^{\gamma d}\)：入射波电流</li>
+            </ul>
+
+            <b>双曲函数表示</b>
+            <div class="Formula">
+                $$V(d) = V_L\cosh(\gamma d) + I_LZ_0\sinh(\gamma d)$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    V(d) &= \frac{V_L + I_LZ_0}{2}e^{\gamma d} + \frac{V_L- I_LZ_0}{2}e^{-\gamma d}\\
+                         &= V_L\frac{e^{\gamma d} + e^{-\gamma d}}{2} + I_LZ_0\frac{e^{\gamma d} - e^{-\gamma d}}{2}\\
+                         &= V_L\cosh(\gamma d) + I_LZ_0\sinh(\gamma d)
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$I(d) = \frac{V_L}{Z_0}\sinh(\gamma d) + I_L\cosh(\gamma d)$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    I(d) &= \frac{V_L + I_LZ_0}{2Z_0}e^{\gamma d} - \frac{V_L - I_LZ_0}{2Z_0}e^{-\gamma d}\\
+                         &= \frac{V_L}{Z_0}\frac{e^{\gamma d} - e^{-\gamma d}}{2} + I_L\frac{e^{\gamma d} + e^{-\gamma d}}{2}\\
+                         &= \frac{V_L}{Z_0}\sinh(\gamma d) + I_L\cosh(\gamma d)
+                    \end{align}$$
+                </div>
+            </div>
+
+            <b>矩阵形式</b>
+            $$\left[\begin{matrix}V(d)\\I(d)\end{matrix}\right] = \left[\begin{matrix}\cosh(\gamma d) & Z_0\sinh(\gamma d)\\\frac{\sinh(\gamma d)}{Z_0} & \cosh(\gamma d)\end{matrix}\right]\left[\begin{matrix}V_L\\I_L\end{matrix}\right]$$
+
+            <h3>始端条件解</h3>
+            <p>已知始端的电压\(V_0\)与电流\(I_0\)，解为：</p>
+            $$V(z) = \frac{V_0 + I_0Z_0}{2}e^{-\gamma z} + \frac{V_0 - I_0Z_0}{2}e^{\gamma z}$$
+            $$I(z) = \frac{V_0 - I_0Z_0}{2Z_0}e^{-\gamma z} - \frac{V_0 - I_0Z_0}{2Z_0}e^{\gamma z}$$
+
+            <h3>信号源与负载条件解</h3>
+            <p>已知信号源电动势\(E_G\)，内阻抗\(Z_G\)与负载阻抗\(Z_L\)，由信源端条件与负载端条件导出的代数方程确定\(A_1\)与\(A_2\)，代入电压、电流通解得：</p>
+            $$V(d) = \frac{E_GZ_0}{Z_G + Z_0}\frac{e^{\gamma d} + e^{-\gamma d}}{1 - \Gamma_L\Gamma_Ge^{-2\gamma d}}(e^{\gamma d} + \Gamma_Le^{-\gamma d})$$
+            $$I(d) = \frac{E_G}{Z_G + Z_0}\frac{e^{-\gamma d}}{1 - \Gamma_L\Gamma_Ge^{-2\gamma d}}(e^{\gamma d} - \Gamma_Le^{-\gamma d})$$
+            <ul>
+                <li>\(\Gamma_L = \frac{Z_L - Z_0}{Z_L + Z_0}\)</li>
+                <li>\(\Gamma_G = \frac{Z_G - Z_0}{Z_G + Z_0}\)</li>
+            </ul>
+
+            <p>上述三种解形均说明，一般情况下，传输线上的电压与电流是由从信号源向负载传播的入射波和从负载向信号源传播的反射波的叠加，呈行驻波混合分布.</p>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

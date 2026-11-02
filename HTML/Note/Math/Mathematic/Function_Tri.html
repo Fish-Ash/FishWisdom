@@ -3,21 +3,37 @@
 <html lang = "zh-cn">
 
     <head>
-        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>高等数学</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
     <body>
-        <div class="header">不惑</div>
-
-        
+        <div class="header" id="PageHead">不惑</div>
         <ul class="navibar">
-            <li><a href="../../Home.html">主页</a></li>
-            <li><a href="../../Navigation.html">导航</a></li>
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
 
         <h1>三角函数专题</h1>
 
@@ -241,9 +257,102 @@
                     $$
                 </td>
             </tr>
-        </table>
+        </table><br>
 
-        <script src="/JavaScript/Capacity.js"></script>
+
+        <div class="Card-Analysis">
+            <h2>双曲函数与反双曲函数</h2>
+
+            <div class="Card-Formula">
+                <b>双曲正弦\(\sinh\)</b>
+                $$\sinh = \frac{e^{x} - e^{-x}}{2}$$
+            </div>
+
+            <div class="Card-Formula">
+                <b>双曲余弦\(\cosh\)</b>
+                $$\cosh = \frac{e^{x} + e^{-x}}{2}$$
+            </div>
+
+            <div class="Card-Formula">
+                <b>双曲正切\(\tanh\)</b>
+                $$\tanh = \frac{\sinh}{\cosh} = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}}$$
+            </div>
+
+            <div class="Formula">
+                $$\sinh(x\pm y) = \sinh x\cosh y\pm\cosh x\sin y$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \sinh x\cosh y\pm\cosh x\sin y &= \frac{e^{x} - e^{-x}}{2}\frac{e^{y} + e^{-y}}{2}\pm \frac{e^{x} + e^{-x}}{2}\frac{e^{y} - e^{-y}}{2}\\
+                                                   &= \frac{(e^{x+y} + e^{x-y} - e^{-x+y} - e^{-x-y})\pm (e^{x+y} - e^{x-y} + e^{-x+y} - e^{-x-y})}{4}\\
+                                                   &= \frac{e^{x\pm y} + e^{-(x\pm y)}}{2}\\
+                                                   &= \sinh(x\pm y)
+                    \end{align}$$
+                </div>
+            </div>
+            <div class="Formula">
+                $$\cosh(x\pm y) = \cosh x\cosh y\pm\sinh x\sin y$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \cosh x\cosh y\pm\sinh x\sin y &= \frac{e^{x} + e^{-x}}{2}\frac{e^{y} + e^{-y}}{2} \pm \frac{e^{x} - e^{-x}}{2}\frac{e^{y} - e^{-y}}{2}\\
+                                                   &= \frac{(e^{x+y} + e^{x-y} + e^{-x+y} + e^{-x-y})\pm (e^{x+y} - e^{x-y} - e^{-x+y} + e^{-x-y})}{4}\\
+                                                   &= \frac{e^{x\pm y} + e^{-(x\pm y)}}{2}\\
+                                                   &= \cosh(x\pm y)
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\cosh^2x - \sinh^2x = 1$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \cosh^2x - \sinh^2x &= \cosh x\cosh x - \sin x\sin x\\
+                                        &= \cosh(x-x)\\
+                                        &= \cosh(0)\\
+                                        &= \frac{e^0 + e^0}{2}\\
+                                        &= 1
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\sinh 2x = 2\sinh x\cosh x$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \sinh 2x &= \sinh(x + x)\\
+                             &= \sinh x\cosh x + \cosh x\sinh x\\
+                             &= 2\sinh x\cosh x
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\cosh 2x = \cosh^2 x + \sinh^2 x$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \cosh 2x &= \cosh x\cosh x + \sinh x\sinh x\\
+                             &= \cosh^2 x + \sinh^2 x
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\tanh ix = i\tan x$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \tanh(ix) &= \frac{\sinh(ix)}{\cosh(ix)}\\
+                              &= \frac{e^{ix} - e^{-ix}}{e^{ix} + e^{-x}}\\
+                              &= \frac{2i\sin x}{2\cos x}\\
+                              &= i\tan x
+                    \end{align}$$
+                </div>
+            </div>
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 
 </html>

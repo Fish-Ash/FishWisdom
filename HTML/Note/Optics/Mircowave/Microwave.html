@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>微波技术</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>微波理论</h1>
+
+        <div class="Card-Analysis">
+            <h2>导行波及其一般传输特性</h2>
+            
+            <p>微波电路是一种由各种导行系统构成的导行电磁波电路，其设计的理论基础之一是导行波基本理论.</p>
+
+            <h3>导行波基本理论</h3>
+            <ul>
+                <li><b>导行波理论的横向问题</b>：导行波的模式及其在导行系统横截面内的场结构分析，与导行系统的具体截面形状尺寸有关</li>
+                <li><b>导行波理论的纵向问题</b>：导行波沿导行系统轴向的传输特性分析，对于规则导行系统，纵向问题具有一些通性</li>
+            </ul>
+
+            <p>本节在讲解导行波基本概念的基础上，论述导行波的一般传输特性.</p>
+
+            <h3>导行波概念</h3>
+
+            <div class="Card-Definition">
+                <b>导行系统（guided system）</b>
+                <p>用以约束或引导电磁波能量定向传输的结构.</p>
+            </div>
+
+            <b>导行系统的主要功能</b>
+            <ul>
+                <li>无辐射损耗地引导电磁波沿其轴向行进，而将能量从一处传输至另一处，称之为<b>馈线</b>.</li>
+                <li>设计构成各种微波电路元件，如滤波器、阻抗变换器、定向耦合器等.</li>
+            </ul>
+
+            <p>导行系统的种类可按其上的导行波分为三类：</p>
+            <ul>
+                <li>TEM或准TEM传输线</li>
+                <li>封闭金属波导</li>
+                <li>表面波波导（开波导）</li>
+            </ul>
+
+            <figure>
+                <img src="Img/guided system.jpg" width="500">
+            </figure>
+
+            <div class="Card-Definition">
+                <b>导行波（guided wave）</b>
+                <p>能量的全部或大部分受导行系统的导体或介质的边界约束，在有限横截面内沿确定方向（一般为轴向）传输的电磁波.</p>
+                <p>简单说就是沿导行系统定向传输的电磁波，简称为<b>导波</b>.</p>
+            </div>
+
+            <p>各种传输线使电能波能量约束或限制在导体之间空间沿其轴向传播，其导行波是横电磁波（TEM）或准TEM波.</p>
+            <p>封闭金属波导使电磁波能量完全限制在金属管内沿轴向传播，其导行波使横电波（TE）或横磁波（TM）.</p>
+            <p>开波导使电磁波能量约束在波导结构的周围（波导内和波导表面附近）沿轴向传播，其导行波是表面波.</p>
+
+
+            <div class="Card-Definition">
+                <b>导模（guided mode）</b>
+                <p>导行波的模式，是能够沿导行系统独立存在的场型.</p>
+                <p>又称<b>传输模</b>、<b>正规模</b>.</p>
+            </div>
+
+            <b>导模的特点</b>
+            <ul>
+                <li>在导行系统横截面上的电磁场呈驻波分布，且是完全确定的；这一分布与频率无关，并于横截面在导行系统上的位置无关.</li>
+                <li>导模是离散的，具有离散谱；当工作频率一定时，每个导模具有唯一的传播常数.</li>
+                <li>导模之间相互正交、彼此独立，互不耦合.</li>
+                <li>具有截止特性，截止条件与截止波长因导行系统和模式而异.</li>
+            </ul>
+
+            <div class="Card-Definition">
+                <b>规则导行系统（regular guided system）</b>
+                <p>无限长的笔直导行系统，其截面形状与尺寸、媒质分布情况、结构材料及边界条件沿轴向均不变化.</p>
+            </div>
+
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>传输线理论</h2>
+            <p>传输线理论又称一维分布参数电路理论，是微波电路设计和计算的理论基础.</p>
+            <p>传输线理论在电路理论与场的理论之间起着桥梁作用，在微波网络分析中也相当重要.</p>
+
+            <p>本章从路的观点，研究传输线在微波运用下的传输特性，讨论用史密斯圆图进行阻抗计算与阻抗匹配的方法.</p>
+            <p>本章分析得到的一个结论为：传输线段具有阻抗变换作用，微波电路的阻抗将因附加一小段传输线而显著改变.</p>
+            <p>本章所得到的一些基本概念与公式，不仅适用于TEM传输线，而且可以引用于天线与波导传输中.</p>
+
+            <h3>传输线方程</h3>
+            <p>传输线方程是传输线理论的基本方程，是描述传输线上电压、电流变化规律及其相互关系的微分方程.</p>
+
+            <h4>传输线的电路模型</h4>
+
+            <div class="Card-Definition">
+                <b>传输线（transmission line）</b>
+                <p>以TEM导模的方式传送电磁波能量或信号的导行系统.</p>
+                <p>其横向尺寸远小于其上工作波长.</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>横向尺寸就是指截面积.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>长线（long line）</b>
+                <p>几何长度\(l\)与工作波长\(\lambda\)可相比拟的传输线，需用分布参数电路描述.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>短线（short line）</b>
+                <p>几何长度\(l\)与工作波长\(\lambda\)相比可以忽略不计的线，采用集总参数电路表示.</p>
+            </div>
+
+            <p>电路理论与传输线之间的关键不同处在于电尺寸.</p>
+            <p>电路分析假设一个网络的实际尺寸远小于工作波长，而传输线的长度则可与工作波长相比拟或为数个波长.</p>
+            <p>因此，一段传输线是一个分布参数网络，电压与电流在其上的振幅和相位都可能变化.</p>
+            <p>集总参数电路与分布参数电路的分界线可认为是：\(l/\lambda\geq 0.05\).</p>
+
+            <div class="Card-AI">
+                <p>分布参数电路与集总参数电路的区别就在于\(l\)与\(\lambda\)的相对尺度.</p>
+            </div>
+
+            <p>以微波工作的传输线，其长度可与工作波长相比拟或更长.</p>
+            <p>根据电磁场理论知道，此时传输线的导体上存在有：</p>
+            <ul>
+                <li>损耗电阻\(R_1\)</li>
+                <li>电感\(L_1\)</li>
+            </ul>
+            <p>导体间存在：</p>
+            <ul>
+                <li>电容\(C_1\)</li>
+                <li>漏电导\(G_1\)</li>
+            </ul>
+            <p>这些参数虽然看不见，但当频率高时便会呈现出其对能量或信号传输的影响.</p>
+            <p>它们是沿线分布着的，其影响分布在传输线的没一点，故称之为<b>分布参数（distributed parameter）</b>.</p>
+            <p>\(R_1,~L_1,~C_1,~G_1\)分别称为传输线单位长度的分布电阻、分布电感、分布电容与分布电导.</p>
+
+            <div class="Card-Definition" id="uniform transmission line">
+                <b>均匀传输线</b>
+                <p>\(R_1,~L_1,~C_1,~G_1\)沿线均匀分布，即与距离无关的传输线.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>非均匀传输线</b>
+                <p>\(R_1,~L_1,~C_1,~G_1\)沿线非均匀分布，即与距离有关的传输线.</p>
+            </div>
+
+            <h3>传输线的特性参数</h3>
+
+            <div class="Card-Definition">
+                <b>特性阻抗\(Z_0\)（characteristic impedance）</b>
+                <p>传输线上行波电压与电流之比.</p>
+                <p>特性阻抗的一般表示式为：</p>
+                $$Z_0 = \sqrt{\frac{R_1 + i\omega L_1}{G_1 + i\omega C_1}}$$
+                <p>可见特性阻抗通常为复数，且与工作频率有关.</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>这个一般表示式的来历.</p>
+            </div>
+
+            <p>如下两种特殊情况，特性阻抗与频率无关，仅由传输线本身的分布参数决定，且为纯电阻：</p>
+            <b>无耗线</b>
+            <p>此时\(R_1 = G_1 = 0\)，则：</p>
+            $$Z_0 = \sqrt{\frac{L_1}{C_1}}$$
+
+            <b>微波低耗线</b>
+            <p>此时\(R_1\ll \omega L_1,~ G_1\ll \omega C_1\)，则：</p>
+            $$\begin{align}
+            Z_0 &= \sqrt{\frac{R_1 + i\omega L_1}{G_1 + i\omega C_1}}\\
+                &= \sqrt{\frac{i\omega L_1}{i\omega C_1}}\sqrt{\frac{R_1/(i\omega L_1) + 1}{G_1/(i\omega C_1) + 1}}\\
+                &= \sqrt{\frac{L_1}{C_1}}\left(1 + \frac{R_1}{i\omega L_1}\right)^{1/2}\left(1 + \frac{G_1}{i\omega C_1}\right)^{-1/2}\\
+                &\approx \sqrt{\frac{L_1}{C_1}}\left(1 + \frac{1}{2}\frac{R_1}{i\omega L_1}\right)\left(1 - \frac{1}{2}\frac{G_1}{i\omega C_1}\right)\\
+                &= \sqrt{\frac{L_1}{C_1}}\left(1 + \frac{1}{2}\frac{R_1}{i\omega L_1} - \frac{1}{2}\frac{G_1}{i\omega C_1} - \frac{1}{4}\frac{R_1}{i\omega L_1}\frac{G_1}{i\omega C_1}\right)\\
+                &\approx \sqrt{\frac{L_1}{C_1}}\\
+            \end{align}$$
+
+            <p>双导线特性阻抗为：</p>
+            $$Z_0 = 120\ln\left[\frac{D}{d} + \sqrt{\left(\frac{D}{d}\right)^2 - 1}\right]\approx 120\ln\frac{2D}{d}$$
+            <p>同轴线特性阻抗为：</p>
+            $$Z_0 = \frac{60}{\varepsilon_r}\ln\frac{b}{a}$$
+            <p>平行板传输线特性阻抗为：</p>
+            $$Z_0 = \frac{d}{W}\eta$$
+
+            <div class="Card-Definition">
+                <b>特性导纳\(Y_0\)（characteristic admittance）</b>
+                <p>特性阻抗的倒数.</p>
+                $$Y_0 = \frac{1}{Z_0}$$
+            </div>
+
+
+            <div class="Card-Definition">
+                <b>传播常数\(\gamma\)（propagation constant）</b>
+                <p>描述导行波沿导行系统传播过程中的衰减与相位变化的参数，通常为复数.</p>
+                $$\gamma = \sqrt{(R_1 + i\omega L_1)(G_1 + i\omega C_1)} = \alpha + i\beta$$
+                <ul>
+                    <li>\(\alpha\)：衰减常数（attenuation constant），单位为：\(\text{Np/m}\)或\(\text{dB/m}\)（\(1~\text{Np} = 8.686~\text{dB}\)）</li>
+                    <li>\(\beta\)：相位常数（phase constant），单位为：\(\text{rad/m}\)</li>
+                </ul>
+            </div>
+            <p>\(\gamma\)一般是频率的复杂函数，对于无耗和微波低耗的情况，其表达式十分简单：</p>
+            <b>无耗线</b>
+            $$\because R_1 = G_1 = 0$$
+            $$\therefore \gamma = i\omega\sqrt{L_1C_1}$$
+            $$\therefore \alpha = 0,\quad \beta = \omega\sqrt{L_1C_1}$$
+
+            <b>微波低耗线</b>
+            $$\because R_1\ll \omega L_1,\quad G_1 = \omega C_1$$
+            $$\begin{align}\therefore
+            \gamma &= \sqrt{(R_1 + i\omega L_1)(G_1 + i\omega C_1)}\\
+                   &= i\omega\sqrt{L_1C_1}\left(1 + \frac{R_1}{i\omega L_1}\right)^{1/2}\left(1 + \frac{G_1}{i\omega C_1}\right)^{1/2}\\
+                   &\approx i\omega\sqrt{L_1C_1}\left(1 + \frac{1}{2}\frac{R_1}{i\omega L_1}\right)\left(1 + \frac{1}{2}\frac{G_1}{i\omega C_1}\right)\\
+                   &= i\omega\sqrt{L_1C_1}\left(1 + \frac{1}{2}\frac{R_1}{i\omega L_1}+ \frac{1}{2}\frac{G_1}{i\omega C_1} + \frac{1}{4}\frac{R_1}{i\omega L_1}\frac{G_1}{i\omega C_1}\right)\\
+                   &\approx i\omega\sqrt{L_1C_1}\left[1 + \frac{1}{2}\frac{1}{i\omega}\left(\frac{R_1}{L_1}+\frac{G_1}{C_1}\right)\right]\\
+                   &= \frac{1}{2}\left(R_1\sqrt{\frac{C_1}{L_1}} + G_1\sqrt{\frac{L_1}{C_1}}\right) + i\omega\sqrt{L_1C_1}\\
+                   &= \frac{R_1}{2Z_0} + \frac{G_1Z_0}{2} + i\omega\sqrt{L_1C_1}
+            \end{align}$$
+            $$\therefore \alpha = \frac{R_1}{2Z_0} + \frac{G_1Z_0}{2} = \alpha_c + \alpha_d,\quad \beta = \omega\sqrt{L_1C_1}$$
+            <ul>
+                <li>\(\alpha_c = \frac{R_1}{2Z_0}\)：由单位长度分布电阻决定的导体衰减常数</li>
+                <li>\(\alpha_d = \frac{G_1Z_0}{2}\)：由单位长度漏电导决定的介质衰减常数</li>
+            </ul>
+
+            <p>此外，传输线上导行波的波长与相速度都与传播常数\(\beta\)有关.</p>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>分布参数阻抗</h2>
+
+            <b>前置知识</b>
+            <ul>
+                <li><a href="../../Math/Mathematic/Function_Tri.html">双曲函数</a></li>
+            </ul>
+            <div class="Card-Definition">
+                <b>分布参数阻抗（distributed impedance）</b>
+                <p>由传输线上电压与电流决定的传输线阻抗.</p>
+            </div>
+
+            <p>微波阻抗是分布参数阻抗，低频阻抗是集总参数阻抗.</p>
+
+            <div class="Card-Definition">
+                <b>传输线上任一点的阻抗\(Z_{in}(d)\)</b>
+                <p>该点的电压与电流之比.</p>
+                <div class="Formula">
+                    $$Z_{in}(d) = Z_0\frac{Z_L + Z_0\tanh\gamma d}{Z_0 + Z_L\tanh\gamma d}$$
+                    <div class="Derivation">
+                        $$\begin{align}
+                        Z_{in}(d) &= \frac{V(d)}{I(d)}\\
+                                  &= \frac{V_L\cosh\gamma d + I_LZ_0\sinh\gamma d}{\frac{V_L}{Z_0}\sinh\gamma d + I_L\cosh\gamma d}\\
+                                  &= Z_0\frac{V_L + I_LZ_0\tanh\gamma d}{V_L\tanh\gamma d + I_LZ_0}\\
+                                  &= Z_0\frac{Z_L + Z_0\tanh\gamma d}{Z_0 + Z_L\tanh\gamma d}
+                        \end{align}$$
+                    </div>
+                </div>
+            </div>
+
+            <p>对于无耗线，\(\alpha = 0,~\gamma = i\beta\).</p>
+            $$\therefore \tanh(\gamma d) = \tanh(i\beta d) = i\tan(\beta d)$$
+            <div id="formula1">
+                $$\therefore Z_{in}(d) = Z_0\frac{Z_L + iZ_0\tan\beta d}{Z_0 + iZ_L\tan\beta d}$$
+            </div>
+            <p>这表明，传输线上任一点\(d\)的阻抗与该点的位置\(d\)和负载阻抗\(Z_L\)有关，\(d\)点的阻抗可看作由\(d\)处向负载看去的<b>输入阻抗（input impedance）</b>（或称<b>视在阻抗</b>）.</p>
+            <p>由上式可见：</p>
+            <ul>
+                <li>传输线阻抗随位置\(d\)变化，分布于沿线各点，且与负载有关，是一种分布参数阻抗.</li>
+                <li>传输线段具有阻抗变换作用，\(Z_L\)通过线段\(d\)变为\(Z_{in}(d)\)，或相反.</li>
+                <li>无耗线的阻抗呈周期性变化，具有\(\lambda/4\)变换性与\(\lambda/2\)重复性，即：若\(d = n\lambda/2\)，则\(Z_{in} = Z_L\)；若\(d = \lambda/4 + n\lambda/2\)，则\(Z_{in} = Z_0^2/Z_L\).</li>
+            </ul>
+
+            <h3>反射参量</h3>
+            <p>由于微波频率下，电压与电流缺乏明确的物理意义，不能直接测量，因此传输线阻抗也不能直接测量，解决的办法是引入可以直接测量的反射参量与驻波参量.</p>
+
+            <div class="Card-Definition">
+                <b>反射系数\(\Gamma\)（reflection coefficient）</b>
+                <p>传输线上某点的反射系数定义为：该点的反射波电压（或电流）与该点的入射波电压（或电流）之比.</p>
+                $$\Gamma_V(d) = \frac{V^-(d)}{V^+(d)}$$
+                <ul>
+                    <li>\(V^-(d)\)：反射波电压</li>
+                    <li>\(V^+(d)\)：入射波电压</li>
+                </ul>
+
+                $$\Gamma_I(d) = \frac{I^-(d)}{I^+(d)}$$
+                <ul>
+                    <li>\(I^-(d)\)：反射波电流</li>
+                    <li>\(I^+(d)\)：入射波电流</li>
+                </ul>
+
+            </div>
+
+            <p>由<a href="#flag1">终端条件解</a>：</p>
+            <div class="Formula">
+                $$\Gamma_I(d) = -\Gamma_V(d)$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \Gamma_I(d) &= \frac{I^-(d)}{I^+(d)}\\
+                                &= -\frac{V_L - I_LZ_0}{V_L + I_LZ_0}e^{-2\gamma d}
+                    \end{align}$$
+                    $$\begin{align}
+                    \Gamma_V(d) &= \frac{V^-(d)}{V^+(d)}\\
+                                &= \frac{V_L - I_LZ_0}{V_L + I_LZ_0}e^{-2\gamma d}
+                    \end{align}$$
+                    $$\therefore \Gamma_I(d) = -\Gamma_V(d)$$
+                </div>
+            </div>
+
+
+            <p>通常采用便于测量的电压反射系数，用\(\Gamma(d)\)表示之，由<a href="#flag1">终端条件解</a>，得到：</p>
+            $$\begin{align}
+            \Gamma(d) &= \frac{V_L - I_LZ_0}{V_L + I_LZ_0}e^{-2\gamma d}\\
+                      &= \frac{Z_L - Z_0}{Z_L + Z_0}e^{-2\gamma d}\\
+                      &= \Gamma_Le^{-2\gamma d}\\
+                      &= |\Gamma_L|e^{i\phi_L}e^{-2\gamma d}\\
+                      &= |\Gamma_L|e^{-2\alpha d}e^{i(\phi_L - 2\beta d)}
+            \end{align}$$
+
+            <ul>
+                <li>\(\Gamma_L = \frac{Z_L - Z_0}{Z_L + Z_0} = |\Gamma_L|e^{\gamma\phi_L}\)：终端反射系数</li>
+            </ul>
+
+            <p>上式说明：\(\Gamma(d)\)的大小与相位均在单位圆内的向内螺旋轨道上变化.</p>
+
+            <p>对于无耗线，\(\alpha = 0\)，则：</p>
+            $$\Gamma(d) = |\Gamma_L|e^{i(\phi_L - 2\beta d)}$$
+            <p>其大小保持不变，仅其相位以\(-2\beta d\)的角度沿等圆周向信号源端顺时针方向变化.</p>
+
+            <img src="Img/Gamma_d.jpg" width="400">
+
+            <h4>阻抗与反射系数的关系</h4>
+            <p>引入反射系数后，传输线上\(d\)处的电压与电流可表示为：</p>
+            $$V(d) = V^+(d) + V^-(d) = V^+(d)[1 + \Gamma(d)]$$
+            $$I(d) = I^+(d) + I^-(d) = I^+(d)[1 - \Gamma(d)]$$
+
+            $$\therefore Z_{\text{in}}(d) = \frac{V^+(d)[1 + \Gamma(d)]}{I^+(d)[1 - \Gamma(d)]} = Z_0\frac{1 + \Gamma(d)}{1 - \Gamma(d)}$$
+            $$\Gamma(d) = \frac{Z_{\text{in}(d)} - Z_0}{Z_{\text{in}}(d) + Z_0}$$
+
+            <p>上式表明：传输线的特性阻抗\(Z_0\)一定时，传输线上任一点\(d\)处的阻抗\(Z_{in}(d)\)与该点的反射系数\(\Gamma(d)\)一一对应；\(Z_{\text{in}}(d)\)可以通过测量\(\Gamma(d)\)来确定.</p>
+            <p>为了通用起见，引入归一化阻抗：</p>
+            <div class="Card-Definition">
+                <b>\(Z_0\)的归一化阻抗\(z_{\text{in}}(d)\)</b>
+                $$z_{\text{in}(d)} = \frac{Z_{\text{in}}(d)}{Z_0} = \frac{1 + \Gamma(d)}{1 - \Gamma(d)}$$
+                <p>\(z_{\text{in}}\)与\(\Gamma(d)\)一一对应.</p>
+            </div>
+
+            <p>为了描述传输线上的功率传输关系，引入传输系数.</p>
+            <div class="Card-Definition">
+                <b>传输系数\(T\)</b>
+                <p>通过传输线上某处的传输电压或电流与该处的入射电压或电流之比.</p>
+                $$T = \frac{V^t}{V^+} = \frac{I^t}{I^+}$$
+            </div>
+
+            <p>考虑如图所示特性阻抗为\(Z_1\)的传输线，用特性阻抗为\(Z_\eta\)的线馈电.</p>
+            <figure>
+                <img src="Img/img2.2_2.jpg" width="200">
+                <figcaption>两不同特性阻抗传输线接头处波的反射与传输</figcaption>
+            </figure>
+
+
+            <h3>驻波参量</h3>
+            <p>上述反射系数为复数，且不便测量；为了间接测量微波阻抗，还可引入驻波参量.</p>
+
+            <h4>电压驻波比VSWR</h4>
+            <p>传输线上各点的电压与电流一般由入射波与反射波叠加，结果在线上形成驻波，沿各点的电压与电流的振幅不同，以\(\lambda/2\)周期变化.</p>
+            <p>称电压（或电流）振幅具有最大值的点为电压（或电流）驻波的波腹点.</p>
+            <p>称电压（或电流）振幅具有最小值的店为电压（或电流）驻波的波谷点.</p>
+            <p>振幅为0的点称为驻波的波节点.</p>
+
+            <div class="Card-Definition">
+                <b>电压驻波比VSWR（voltage standingwave ratio）</b>
+                <p>传输线上相邻波腹点与波谷点的电压振幅之比.</p>
+                <p>简称驻波比SWR，或称电压驻波系数\(\rho\)（voltage standingwave coefficient）.</p>
+                $$\text{VSWR} = \frac{|V|_{\max}}{|V|_{\min}}$$
+            </div>
+
+            <div class="Card-Definition">
+                <b>行波系数\(K\)（traveling wave coefficient）</b>
+                $$K = \frac{1}{VSWR} = \frac{|V|_{\min}}{|V|_{\max}}$$
+            </div>
+            $$V(d) = V^+(d) + V^-(d) = V^+(d)[1 + \Gamma(d)] = V^+(d)[1 + |\Gamma_L|e^{i(\phi_L - 2\beta d)}]$$
+            <div class="Formula">
+                $$|V(d)| = |V^+(d)|[1 + |\Gamma_L|^2 + 2|\Gamma_L|\cos(\phi_L - 2\beta d)]^{1/2}$$
+                <div class="Derivation">
+                    <a href="../../Math/ComplexVariableFunction/ComplexOperation.html">$$\because |z_1z_2| = |z_1||z_2|$$</a>
+                    $$\begin{align}\therefore
+                    |V(d)| &= |V^+(d)||1 + |\Gamma_L|\cos(\phi_L - 2\beta d) + i|\Gamma_L|\sin(\phi_L - 2\beta d)|\\
+                           &= |V^+(d)|\sqrt{1 + 2|\Gamma_L|\cos(\phi_L - 2\beta d) + |\Gamma_L|^2\cos^2(\phi_L - 2\beta d) + |\Gamma_L|^2\sin^2(\phi_L - 2\beta d)}\\
+                           &= |V^+(d)|\sqrt{1 + 2|\Gamma_L|\cos(\phi_L - 2\beta d) + |\Gamma_L|^2}
+                    \end{align}$$
+                </div>
+            </div>
+
+            $$\therefore |V(d)|_{\max} = |V^+(d)|[1 + |\Gamma_L|]$$
+            $$\therefore |V(d)|_{\min} = |V^+(d)|[1 - |\Gamma_L|]$$
+
+
+            $$I(d) = I^+(d) + I^-(d) = I^+(d)[1 - \Gamma(d)] = I^+(d)[1 - |\Gamma_L|e^{i(\phi_L - 2\beta d)}]$$
+            $$|I(d)| = |I^+(d)|[1 + |\Gamma_L|^2 - 2|\Gamma_L|\cos(\phi_L - 2\beta d)]^{1/2}$$
+            $$\therefore |I(d)|_{\max} = |I^+(d)|[1 + |\Gamma_L|]$$
+            $$\therefore |I(d)|_{\min} = |I^+(d)|[1 - |\Gamma_L|]$$
+
+            $$\therefore Z_0 = \frac{|V(d)|_{\max}}{|I(d)|_{\max}} = \frac{|V(d)|_{\min}}{|I(d)|_{\min}}$$
+            $$\text{VSWR} = \frac{1 + |\Gamma_L|}{1 - |\Gamma_L|}\Leftrightarrow |\Gamma_L| = \frac{\text{VSWR} - 1}{\text{VSWR} + 1}$$
+            <ul>
+                <li>\(|\Gamma_L| = 0\)时：\(\text{VSWR} = 1\)</li>
+                <li>\(|\Gamma_L| = 1\)时，\(\text{VSWR} = \infty\)</li>
+            </ul>
+            <p>电压驻波比与反射系数一样，可用来描述传输线的工作状态.</p>
+            
+            <h4>阻抗与驻波参量的关系</h4>
+                
+            <p>对于无耗线：</p>
+            <a href="#formula1">$$\because Z_{\text{in}}(d) = Z_0\frac{Z_L + iZ_0\tan\beta d}{Z_0 + iZ_L\tan\beta d}$$</a>
+            <div class="Formula">
+                $$\therefore Z_L = Z_0\frac{Z_{\text{in}}(d) - iZ_0\tan\beta d}{Z_0 - iZ_{\text{in}}(d)\tan\beta d}$$
+                <div class="Derivation">
+                    $$Z_0Z_{\text{in}}(d) + iZ_LZ_{\text{in}}(d)\tan\beta d = Z_0Z_L + iZ_0^2\tan\beta d$$
+                    $$Z_L[Z_0 - iZ_{\text{in}}(d)\tan\beta d] = Z_0[Z_{\text{in}}(d) - iZ_0\tan\beta d]$$
+                    $$\therefore Z_L = Z_0\frac{Z_{\text{in}}(d) - iZ_0\tan\beta d}{Z_0 - iZ_{\text{in}}(d)\tan\beta d}$$
+                </div>
+            </div>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>无耗线工作状态分析</h2>
+            <p>传输线终端接不同负载阻抗时，有三种不同的工作状态：</p>
+            <ul>
+                <li>行波状态</li>
+                <li>驻波状态</li>
+                <li>行驻波状态</li>
+            </ul>
+
+            <p>分析这三种状态时，忽略线上的损耗，作为无耗线分析.</p>
+            <p>本节分析得到的无耗线不同工作状态的特性对微波电路的分析与设计极为有用.</p>
+
+            <div class="Card-AI">
+                <p>书上这些推导都是基于公式：</p>
+                $$\Gamma_L = \frac{Z_L - Z_0}{Z_L + Z_0}$$
+                <p>展开的，个人理解三种情况分别对应于\(\Gamma_L = 0, \Gamma_L = 1, 0\lt\Gamma_L\lt 1\)</p>
+                <p>但是为什么对应于行波和驻波？不理解</p>
+            </div>
+
+            <h3>行波状态：无反射情况</h3>
+            <h4>条件</h4>
+            <p>终端无反射，线上载行波的实际条件是：\(Z_L = Z_0\).</p>
+            <div class="Card-AI">
+                $$\Gamma_L = \frac{Z_L - Z_0}{Z_L + Z_0}= 0$$
+                $$\therefore Z_L = Z_0$$
+            </div>
+            <p>此时：</p>
+            <ul>
+                <li>\(\Gamma_L = 0\)</li>
+                <li>\(\text{VSWR} = 1\)</li>
+                <li>\(K = 1\)</li>
+            </ul>
+
+            <h4>特性分析</h4>
+
+            <p>行波状态的特点是：</p>
+            <ul>
+                <li>沿线电压与电流的振幅不变</li>
+                <li>电压与电流沿线各点同相，电压或电流的相位随\(z\)增加连续滞后</li>
+                <li>沿线各点的阻抗均等于传输线的特性阻抗</li>
+            </ul>
+
+            <h3>驻波条件：全反射情况</h3>
+            <h4>条件</h4>
+            <p>终端全反射，线上形成驻波的条件为终端短路（\(Z_L = 0\)）、开路（\(Z_L = \infty\)）和接纯电抗负载\(Z_L = \pm iX_L\).</p>
+            <div class="Card-AI">
+                $$|\Gamma_L| = \left|\frac{Z_L - Z_0}{Z_L + Z_0}\right| = 1$$
+                <b>case1</b>
+                $$\frac{Z_L - Z_0}{Z_L + Z_0} = 1$$
+                $$\therefore Z_L = \infty$$
+                <b>case2</b>
+                $$\frac{Z_L - Z_0}{Z_L + Z_0} = -1$$
+                $$\therefore Z_L = 0$$
+                <b>case3</b>
+                $$\frac{Z_L - Z_0}{Z_L + Z_0} = \pm i$$
+                $$Z_L - Z_0 = \pm i(Z_L + Z_0)$$
+                $$Z_L(1 \mp i) = Z_0(1 \pm i)$$
+                $$Z_L = Z_0\frac{1 \pm i}{1 \mp i}$$
+
+                $$\therefore Z_L = \pm iZ_0$$
+                <p>无耗线中，\(Z_0\in\mathbb{R}\).</p>
+                $$\therefore Z_L = \pm iX_L$$
+                <p>\(X_L\)为\(Z_L\)的虚部，说明\(Z_L\)为纯虚数.</p>
+            </div>
+
+            <p>上述条件下，线上的驻波特点是一样的，只是驻波在线上的分布情况不同，下面分别加以讨论.</p>
+
+            <b>1、终端短路线</b>
+            <ul>
+                <li>\(Z_L = 0\)</li>
+                <li>\(\Gamma_L = -1\)</li>
+                <li>\(\text{VSWR} = \infty\)</li>
+            </ul>
+
+            <p>线上电压和电流为：</p>
+            $$V(d) = i2V_L^+\sin(\beta d)$$
+            $$I(d) = \frac{2V_L^+}{Z_0}\cos(\beta d) = 2I_L^+\cos(\beta d)$$
+            <p>可见：负载处电压为\(V_L = 0\)，而电流有最大值\(I_L = 2V_L^+/Z_0\).</p>
+            <p>即终端为电压波节点，电流波腹点.</p>
+            <p>沿线的输入阻抗为：</p>
+            $$Z_{\text{in}}^\infty(d) = iZ_0\tan(\beta d)$$
+            <p>可见任意长度\(d\)的终端段线路的输入阻抗都是纯电抗，可取\((-i\infty, +i\infty)\)间的所有值.</p>
+
+            <b>2、终端开路线</b>
+            <ul>
+                <li>\(Z_L = \infty\)</li>
+                <li>\(\Gamma_L = 1\)</li>
+                <li>\(\text{VSWR} = \infty\)</li>
+            </ul>
+
+            <p>线上电压与电流为：</p>
+            $$V(d) = 2V_L^+\cos(\beta d)$$
+            $$I(d) = i\frac{2V_L^+}{Z_0}\sin(\beta d) = i2I_L^+\sin(\beta d)$$
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

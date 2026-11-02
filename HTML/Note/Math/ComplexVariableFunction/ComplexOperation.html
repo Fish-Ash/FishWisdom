@@ -6,18 +6,34 @@
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>复变函数</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
         <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
 
 
     <body>
         <div class="header" id="PageHead">不惑</div>
-        <a class="BackToTop" href="#PageHead">Top</a>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
 
         <h1>复数运算</h1>
 
@@ -37,11 +53,33 @@
             $$\frac{z_1}{z_2} = \frac{r_1e^{i\theta_1}}{r_2e^{i\theta_2}} = \frac{r_1}{r_2}e^{i(\theta_1-\theta_2)}$$
             <p>从几何的角度上看，两个复数相除的结果为：模相除，辐角相减.</p>
         </div>
+
+        <div class="Card-Analysis">
+            <h2>其他公式</h2>
+            
+            <div class="Card-Formula">
+                <div class="Formula">
+                    $$|z_1z_2| = |z_1||z_2|$$
+                    <div class="Derivation">
+                        $$\begin{align}
+                        |z_1z_2| &= |(x_1 + iy_1)(x_2 + iy_2)|\\
+                                 &= |x_1x_2 + i(x_1y_2 + x_2y_1) - y_1y_2|\\
+                                 &= \sqrt{(x_1x_2 - y_1y_2)^2 + (x_1y_2 + x_2y_1)^2}\\
+                                 &= \sqrt{x_1^2x_2^2 - 2x_1x_2y_1y_2 + y_1^2y_2^2 + x_1^2y_2^2 + 2x_1x_2y_1y_2 + x_2^2y_1^2}\\
+                                 &= \sqrt{x_1^2x_2^2 + x_1^2y_2^2 + x_2^2y_1^2 + y_1^2y_2^2}\\
+                                 &= \sqrt{x_1^2(x_2^2 + y_2^2) + y_1^2(x_2^2 + y_2^2)}\\
+                                 &= \sqrt{(x_1^2 + y_1^2)(x_2^2 + y_2^2)}\\
+                                 &= |z_1||z_2|
+                        \end{align}$$
+                    </div>
+                </div>
+            </div>
+        </div>
       
 
-
         <div id="PageEnd"></div>
-        <a class="GoToBottom" href="#PageEnd">Bottom</a>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
         <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
 

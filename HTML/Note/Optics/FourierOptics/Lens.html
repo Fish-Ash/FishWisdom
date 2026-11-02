@@ -116,8 +116,10 @@
                 $$P(x,y) = \begin{cases}1,\quad 透镜孔径内\\0,\quad \text{others}\end{cases}$$
             </div>
 
-            <p>透镜的相位变换因子可写为：</p>
-            $$t(x,y) = P(x,y)e^{-i\frac{k}{2f}(x^2 + y^2)}$$
+            <div class="Card-Formula">
+                <b>透镜的相位变换因子</b>
+                $$t(x,y) = P(x,y)e^{-i\frac{k}{2f}(x^2 + y^2)}$$
+            </div>
 
             <p>透镜对光波的相位变换作用，是由透镜本身的性质决定的，与入射光波复振幅\(U_1(x,y)\)的形式无关.</p>
             <p>只要傍轴条件满足，薄透镜就会以上式的形式对\(U_1(x,y)\)进行相位变换.</p>
@@ -141,12 +143,32 @@
                 <li>由于是薄透镜，此处\(\text{P}_1\)面与\(\text{P}_2\)面重合</li>
                 <li>位于光轴上的单色点光源\(\text{S}\)与透镜的距离为\(p\)</li>
                 <li>点光源的共轭像面\((x,y)\)与透镜的距离为\(q\)，其为输出面</li>
+                <li>\(\Sigma_0\)为物函数所在的范围</li>
             </ul>
             <p>按信息光学中的习惯，与一般应用光学中的符号规则不同，此处\(p,q,d_0\gt 0\).</p>
             <p>[设]薄透孔径很大，抽象为无穷大.</p>
             <p>傍轴近似下，单色点光源发出的球面波在物的前表面造成的场分布为：</p>
             $$A_0\exp\left[ik\frac{x_0^2 + y_0^2}{2(p-d_0)}\right]$$
+            <p>透过物体，从输入面上出射的光场为：</p>
+            $$A_0t(x_0, y_0)\exp\left[ik\frac{x_0^2 + y_0^2}{2(p-d_0)}\right]$$
+            
+            <p>从输入平面出射的光场到达透镜平面，按<a href="../PhysicalOptics/Fresnel&Fraunhofer.html#FresnelFormula">Fresnel衍射公式</a>，其复振幅分布为：</p>
+            $$\begin{align}
+            U_1(x',y') &= \frac{e^{ikz}}{i\lambda z}\iint_{-\infty}^{+\infty}U_0(x_0, y_0)e^{ik\frac{(x'-x_0)^2 + (y'-y_0)^2}{2z}}\mathrm{d}x_0\mathrm{d}y_0\\
+                       &= \frac{e^{ikd_0}}{i\lambda d_0}\iint_{\Sigma_0}A_0t_0(x_0, y_0)e^{ik\frac{x_0^2 + y_0^2}{2(p-d_0)}}e^{ik\frac{(x'-x_0)^2 + (y'-y_0)^2}{2z}}\mathrm{d}x_0\mathrm{d}y_0
+            \end{align}$$
+            <p>忽略常数相位因子\(e^{ikd_0}\)，有：</p>
+            $$U_1(x', y') = \frac{A_0}{i\lambda d_0}\iint_{\Sigma_0}t_0(x_0, y_0)e^{ik\frac{x_0^2 + y_0^2}{2(p-d_0)}}e^{ik\frac{(x'-x_0)^2 + (y'-y_0)^2}{2z}}\mathrm{d}x_0\mathrm{d}y_0$$
 
+            <h4>透镜前表面\(\to\)透镜后表面</h4>
+            <p>透过透镜后的场分布为：</p>
+            $$U_1'(x',y') = U_1(x',y')P(x', y')e^{e^{-i\frac{k}{2f}(x'^2 + y'^2)}}$$
+
+            <h3>物在透镜后方</h3>
+            <p>入射到透镜前表面的场为：</p>
+            $$A_0\exp\left(ik\frac{x'^2 + y'^2}{2p}\right)$$
+            <p>从透镜出射的场为：</p>
+            $$A_0\exp\left(ik\frac{x'^2 + y'^2}{2p}\right)\exp\left(-ik\frac{x'^2 + y'^2}{2f}\right)$$
         </div>
 
         <div id="PageEnd"></div>
