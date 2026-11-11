@@ -39,32 +39,74 @@
 
         <div class="Card-Analysis">
             <h2>Manley-Rowe关系</h2>
-            <p>进行三波混频的光波所携带的总能量通量在介质内处处相等，光场与介质间无能量交换.</p>
-            $$S_{\omega_1} + S_{\omega_2} + S_{\omega_3} = C$$
-            <div class="Prove">
-                $$\begin{align}
-                &\frac{k_1}{\omega_1}E^*_1\frac{\mathrm{d}E_1}{\mathrm{d}z} + \frac{k_2}{\omega_2}E^*_2\frac{\mathrm{d}E_2}{\mathrm{d}z} + \frac{k_3}{\omega_3}E_3\frac{\mathrm{d}E^*_3}{\mathrm{d}z}\\
-                =& \frac{i}{c^2}\chi_{eff}^{(2)}(\omega_1E_1^*E_2^*E_3e^{-i\Delta kz} + \omega_2 E_1^*E_2^*E_3e^{-i\Delta kz} - \omega_3E_1^*E_2^*E_3e^{-i\Delta kz})\\
-                =& 0
-                \end{align}$$
-                <p>对上式取复共轭并相加，因为：</p>
-                $$x^*\frac{\mathrm{d}x}{\mathrm{d}t} + x\frac{\mathrm{d}x^*}{\mathrm{d}t} = \frac{\mathrm{d}}{\mathrm{d}t}(x\cdot x^*) = \frac{\mathrm{d}|x|^2}{\mathrm{d}t}$$
-                <p>故有：</p>
-                $$\frac{k_1}{\omega_1}\frac{\mathrm{d}|E_1|^2}{\mathrm{d}z} + \frac{k_2}{\omega_2}\frac{\mathrm{d}|E_2|^2}{\mathrm{d}z} + \frac{k_3}{\omega_3}\frac{\mathrm{d}|E_3|^2}{\mathrm{d}z} = 0$$
-                <p>积分得：</p>
-                $$\frac{k_1}{\omega_1}|E_1|^2 + \frac{k_2}{\omega_2}|E_2|^2 + \frac{k_3}{\omega_3}|E_3|^2 = C$$
-                <p>由<a class="goto" href="../PhysicalOptics/ReflectionAndTransmission.html#PoyntingVector">能流密度</a>表达式：</p>
-                $$S = \frac{1}{2}\epsilon|2E|^2v = \frac{2}{\mu_0}\frac{k}{\omega}|E|^2$$
-                <p>故：</p>
-                $$S_{\omega_1} + S_{\omega_2} + S_{\omega_3} = C$$
+
+            <div class="Card-Formula">
+                <b>能量守恒关系式</b>
+
+                <div class="Formula">
+                    $$S_{\omega_1} + S_{\omega_2} + S_{\omega_3} = C$$
+                    <div class="Derivation">
+                        <p><a href="ThreeWave.html" class="goto">三波混频耦合波方程组</a>\(\omega_1,~\omega_2,~\omega_3\)式分别左乘\(\frac{k_1}{\omega_1}E_1^*,~\frac{k_2}{\omega_2}E_2^*,~\frac{k_3}{\omega_3}E_3\)后相加，得：</p>
+                        $$\begin{align}
+                        &\frac{k_1}{\omega_1}E^*_1\frac{\mathrm{d}E_1}{\mathrm{d}z} + \frac{k_2}{\omega_2}E^*_2\frac{\mathrm{d}E_2}{\mathrm{d}z} + \frac{k_3}{\omega_3}E_3\frac{\mathrm{d}E^*_3}{\mathrm{d}z}\\
+                        =& \frac{i}{c^2}\chi_{eff}^{(2)}(\omega_1E_1^*E_2^*E_3e^{-i\Delta kz} + \omega_2 E_1^*E_2^*E_3e^{-i\Delta kz} - \omega_3E_1^*E_2^*E_3e^{-i\Delta kz})\\
+                        =& \frac{i}{c^2}\chi_{eff}^{(2)}(\omega_1 + \omega_2 - \omega_3)E_1^*E_2^*E_3e^{-i\Delta kz}\\
+                        =& 0
+                        \end{align}$$
+                        <p>对上式取复共轭并相加，因为：</p>
+                        $$x^*\frac{\mathrm{d}x}{\mathrm{d}t} + x\frac{\mathrm{d}x^*}{\mathrm{d}t} = \frac{\mathrm{d}}{\mathrm{d}t}(x\cdot x^*) = \frac{\mathrm{d}|x|^2}{\mathrm{d}t}$$
+                        $$\therefore \frac{k_1}{\omega_1}\frac{\mathrm{d}|E_1|^2}{\mathrm{d}z} + \frac{k_2}{\omega_2}\frac{\mathrm{d}|E_2|^2}{\mathrm{d}z} + \frac{k_3}{\omega_3}\frac{\mathrm{d}|E_3|^2}{\mathrm{d}z} = 0$$
+                        <p>积分得：</p>
+                        $$\frac{k_1}{\omega_1}|E_1|^2 + \frac{k_2}{\omega_2}|E_2|^2 + \frac{k_3}{\omega_3}|E_3|^2 = C$$
+                        <p>由<a class="goto" href="../PhysicalOptics/ReflectionAndTransmission.html#PoyntingVector">能流密度</a>表达式：</p>
+                        $$S = \frac{1}{2}\epsilon|2E|^2v = \frac{2}{\mu_0}\frac{k}{\omega}|E|^2$$
+                        $$\therefore S_{\omega_1} + S_{\omega_2} + S_{\omega_3} = C$$
+                    </div>
+                </div>
+            </div>
+
+            <p>该式表明：进行三波混频的光波所携带的总能量通量在介质内处处相等，光场与介质间无能量交换.</p>
+
+            <p>实际上，这正是我们上面假定这三束耦合光波的频率远离共振区、极化率张量具有完全对易对称性的必然结果.</p>
+            <p>因此，我们在此再一次看到极化率张量为实数是与介质无损耗相联系着的.</p>
+
+            <div class="Card-Question">
+                <p>什么叫频率远离共振区？</p>
             </div>
     
-            <div class="Card-Definition">
-                <b>曼利-罗关系</b>
-                $$\frac{S_{\omega_1}}{\omega_1} - \frac{S_{\omega_2}}{\omega_2} = C_1$$
+            <div class="Card-Formula">
+                <b>Manley-Rowe关系</b>
+                <div class="Formula">
+                    $$\frac{S_{\omega_1}}{\omega_1} - \frac{S_{\omega_2}}{\omega_2} = C_1$$
+                    <div class="Derivation">
+                        <p><a href="ThreeWave.html" class="goto">三波混频耦合波方程组</a>\(\omega_1,~\omega_2\)式分别左乘\(\frac{k_1}{\omega_1^2},~\frac{k_2}{\omega_2^2}\)后相除，得：</p>
+                        $$\left(\frac{k_1}{\omega_1^2}\frac{\mathrm{d}E_1}{\mathrm{d}z}\right)/\left(\frac{k_2}{\omega_2^2}\frac{\mathrm{d}E_2}{\mathrm{d}z}\right) = E_2^*/E_1^*$$
+                        $$\therefore \frac{k_1}{\omega_1^2}E_1^*\frac{\mathrm{d}E_1}{\mathrm{d}z} - \frac{k_2}{\omega_2^2}E_2^*\frac{\mathrm{d}E_2}{\mathrm{d}z} = 0$$
+                        <p>取上式复共轭，并与之相加，积分后得：</p>
+                        $$\frac{k_1}{\omega_1^2}|E_1|^2 - \frac{k_2}{\omega_2^2}|E_2|^2 = C_1$$
+                        <p>利用能量密度\(S_\omega\)表示式，上式变为：</p>
+                        $$\frac{S_{\omega_1}}{\omega_1} - \frac{S_{\omega_2}}{\omega_2} = C_1$$
+                    </div>
+                </div>
+
                 $$\frac{S_{\omega_1}}{\omega_1} + \frac{S_{\omega_3}}{\omega_3} = C_2$$
                 $$\frac{S_{\omega_2}}{\omega_3} + \frac{S_{\omega_3}}{\omega_3} = C_3$$
             </div>
+
+            <p>利用上述任意两式，都可以确定第三个式子.</p>
+            <p>同时，上述三个关系式一起便可以得到能量守恒关系式.</p>
+
+            <h3>Manley-Rowe关系的光子通量表示</h3>
+            <p>由于\(S_\omega/\hbar\omega\)表示光场中频率为\(\omega\)的光子平均通量，所以Manley-Rowe关系式又可表示为：</p>
+            $$N_{\omega_1} - N_{\omega_2} = C_1$$
+            $$N_{\omega_1} + N_{\omega_3} = C_2$$
+            $$N_{\omega_2} + N_{\omega_3} = C_3$$
+            <p>同时，能量守恒关系式可以表示为：</p>
+            $$\omega_1N_{\omega_1} + \omega_2N_{\omega_2} + \omega_3N_{\omega_3} = C$$
+
+            <p>由这些关系可以说明：因为光场与介质间无任何能量交换，因此频率为\(\omega_1\)和\(\omega_2\)的光子只能同时产生或同时消失，而与此同时就有一个频率为\(\omega_3\)的光子消失或产生.</p>
+            
+            
 
             <div class="Card-AI">
                 <h2>另一种形式的Manley-Rowe关系</h2>

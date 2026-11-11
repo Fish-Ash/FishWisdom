@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>惯性聚变物理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>球形内爆惯性约束</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+            <p>惯性约束聚变（ICF）是将几毫克的燃料压缩到1000倍液体密度，并在由于惯性使燃料保持在一起的这段时间内燃烧它.</p>
+            <p>它所需的密度可通过外部驱动器的高功率辐照对球壳的内爆来实现.</p>
+            <p>这种机制叫<b>直接驱动ICF</b>.</p>
+
+            <div class="Card-AI">
+                <p>内爆不是爆炸，是指靶丸向内压缩的过程.</p>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>球形内爆模拟</h2>
+
+            <figure>
+                <img src="Img/spherical_implosion.jpg" width="300">
+                <figcaption>球形内爆ICF原理</figcaption>
+                <figcaption>(a)辐照; (b)烧蚀驱动的内爆; (c)中心点火; (d)燃烧与爆炸</figcaption>
+            </figure>
+
+            <p>如图所示简要给出了直接驱动内爆的几个阶段：</p>
+            <p>辐照导致表面烧蚀[图(a)]，并驱动燃料内爆[图(b)]；</p>
+            <p>当内爆材料在中心转滞（stagnate）时，其动能被转化为内能；</p>
+            <p>此时[图(c)]燃料为一个高度压缩的球壳，中心时点燃燃料的热斑，燃烧波从热斑开始并点燃所有燃料，燃料爆炸[图(d)].</p>
+
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>靶和激光脉冲</h2>
+
+            <p>靶丸用紫外激光照射.</p>
+            <p>用大量交叉重叠的激光束来提供均匀照射.</p>
+            <p>建立在大\(f\)数光学基础上的照射机制，对反应堆室上的小尺度激光束入射孔是有利的.</p>
+            <p>另一方面，它也有两个缺点：</p>
+            <ul>
+                <li>靶丸内爆时，部分束能量会脱离靶.</li>
+                <li>由于激光光线不垂直与靶丸表面，它们在等离子体冕区会折射，这引起额外的能量损失.</li>
+            </ul>
+
+            <div class="Card-Question">
+                <p>什么叫大f数光学？什么叫等离子体冕区？</p>
+            </div>
+
+            
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

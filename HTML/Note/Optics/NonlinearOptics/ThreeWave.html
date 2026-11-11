@@ -40,6 +40,8 @@
         <div class="Card-Analysis">
             <h2>三波混频</h2>
 
+            <p>本节讨论由二阶非线性极化引起的三波混频现象.</p>
+
             <div class="Card-Definition">
                 <b>三波混频现象</b>
                 <p>两个频率不同的单色光同时入射到非线性介质中，产生和频与差频的效应.</p>
@@ -49,7 +51,31 @@
                 <p>介质中的极化，本质上是正负电荷发生相对位移，当极化随时间振荡时，意味着电荷在加速运动.</p>
                 <p>加速运动的电荷会辐射出电磁波.</p>
             </div>
+
+            <div class="Card-Definition">
+                <b>和频产生过程</b>
+                <p>当入射光为\(\omega_1\)和\(\omega_2\)时，由于二阶非线性作用，将产生频率为\(\omega_3 = \omega_1 + \omega_2\)的非线性极化强度，进而由这个非线性极化强度产生频率为\(\omega_3\)的光场.</p>
+            </div>
+            <p>[注]倍频过程是和频产生过程\(\omega_2 = \omega_1\)的特殊情形.</p>
+
+            <div class="Card-Definition">
+                <b>差频产生过程</b>
+                <p>当入射光为\(\omega_1\)和\(\omega_3\)时，由于二阶非线性作用，将产生频率为\(\omega_2 = \omega_3 - \omega_1\)的非线性极化强度，进而由这个非线性极化强度产生频率为\(\omega_1\)的光场.</p>
+            </div>
+
     
+            <hr>
+
+            <p>要想在非线性介质的众多非线性光学过程中保证和频或差频产生，必须使这些过程满足相位匹配条件：</p>
+            $$\boldsymbol{k}_1 + \boldsymbol{k}_2 - \boldsymbol{k}_3 = 0$$
+            <p>相位匹配条件可以十分普遍地用来将我们需要的过程从所有可能产生的过程中分离出来.</p>
+            <p>若满足\(\boldsymbol{k}_1 + \boldsymbol{k}_2 - \boldsymbol{k}_3 = 0\)的相位匹配条件，我们就可以只考虑\(\omega_1\)、\(\omega_2\)与\(\omega_3 = \omega_1 + \omega_2\)这三个频率的光波耦合，而完全不考虑这三个频率的光波与所有其他频率光波的任何耦合.</p>
+            <p>这三个频率光波在非线性介质中的耦合，使得其中任何一对光波一起感应一个极化强度，这个极化强度的振荡频率就是相应的第三束光波的频率.</p>
+        </div>
+        
+        <div class="Card-Analysis">
+            <h2>三波混频耦合波方程组</h2>
+
             <p>由<a class="goto" href="./Chapter1.html#SecondOrderP">二阶非线性极化强度的一般表示式</a>，可以得到三波混频中任何一对光波所感应的非线性极化强度复振幅：</p>
             $$\boldsymbol{P}^{(2)}(\omega_1) = 2\epsilon_0\chi^{(2)}(\omega_3, -\omega_2):\boldsymbol{E}(\omega_3, z)\boldsymbol{E}^*(\omega_2, z)$$
             $$\boldsymbol{P}^{(2)}(\omega_2) = 2\epsilon_0\chi^{(2)}(\omega_3, -\omega_1):\boldsymbol{E}(\omega_3, z)\boldsymbol{E}^*(\omega_1, z)$$
@@ -81,11 +107,6 @@
             <div class="Card-AI">
                 <p>在推导特定频率（如ω₁）的耦合方程时，只考虑能产生该频率极化的频率组合项。对于ω₁ = ω₃ - ω₂的过程，仅此项满足频率匹配条件并对P⁽²⁾(ω₁)有贡献，其他项不参与该相互作用，故忽略.</p>
             </div>
-        </div>
-        
-        <div class="Card-Analysis">
-            <h2>三波混频耦合波方程</h2>
-
             <p>非线性介质中，三波（\(\omega_1, \omega_2, \omega_3 = \omega_1 + \omega_2\)）混频的基本耦合波方程组：</p>
             $$\frac{\mathrm{d}E(\omega_1, z)}{\mathrm{d}z} = \frac{i\omega_1^2}{k_1c^2}\chi_{eff}^{(2)}E(\omega_3, z)E^*(\omega_2, z)e^{-i\Delta kz}$$
             $$\frac{\mathrm{d}E(\omega_2, z)}{\mathrm{d}z} = \frac{i\omega_2^2}{k_2c^2}\chi_{eff}^{(2)}E(\omega_3, z)E^*(\omega_1, z)e^{-i\Delta kz}$$

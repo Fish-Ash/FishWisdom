@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>受激Raman散射</h1>
+
+        <div class="PageCatalog">
+            <ul>
+
+            </ul>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>受激Raman散射的基本特性</h2>
+
+            <div class="Card-Definition">
+                <b>非弹性散射</b>
+                <p>在光散射中，一束频率为\(\omega_p\)的光波通过液态、气态或固态介质时，若其散射光谱中存在相对入射光有一定频移的成分\(\omega_s\)，称为非弹性散射.</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>弹性散射：光子频率不发生变化的散射.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>斯托克斯散射</b>
+                <p>\(\omega_s\lt \omega_p\)的非弹性散射.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>反斯托克斯散射</b>
+                <p>\(\omega_s\gt \omega_p\)的非弹性散射.</p>
+            </div>
+
+            
+            <p>非弹性散射的频移量\(\omega_\nu = \omega_p - \omega_s\)往往与介质分子的某些特定转动-振动（或纯转动）能级频率，或晶体介质中晶格振动声子的频率相对应.</p>
+            <div class="Card-AI">
+                <p>转动-振动能级：分子同时具有转动能量和振动能量时，所形成的量子化能级</p>
+            </div>
+            <p>前者称为Raman散射，后者称为布里渊散射.</p>
+
+            
+            <p>通常，Brillouin散射的频移量很小，一般的光谱仪很难探测到，而Raman散射的频移量较大，比较容易探测.</p>
+            
+            <p>Raman散射中的斯托克斯散射与反斯托克斯散射的能级图如图所示.</p>
+            <figure>
+                <img src="Img/Raman.jpg" width="400">
+                <figcaption>Raman散射能级跃迁示意图</figcaption>
+                <figcaption>(a)斯托克斯散射；(b)反斯托克斯散射</figcaption>
+            </figure>
+
+            <b>斯托克斯散射</b>
+            <p>分子原来位于基态\(\nu = 0\)上，一个频率为\(\omega_p\)的入射光子被分子吸收，同时发射一个频率为\(\omega_s = \omega_p - \omega_\nu\)的斯托克斯光子，而分子被激发到\(\nu = 1\)的振动能级上.</p>
+            
+            <b>反斯托克斯散射</b>
+            <p>分子原来位于\(\nu = 1\)的激发态上，一个频率为\(\omega_p\)的入射光子被分子吸收，同时发射一个频率为\(\omega_s = \omega_p + \omega_\nu\)的反斯托克斯光子，而分子回到\(\nu = 0\)的基态能级上.</p>
+
+            <hr>
+
+            <p>Raman散射与Brillouin散射的散射效率很低，散射光都是非相干光.</p>
+            <p>随着高强度激光束的产生，出现了受激Raman散射（SRS）与受激Brillouin散射（SBR）等受激散射现象，这些受激散射都显示出很强的与激光辐射类似的受激特性.</p>
+
+
+
+            <b>受激散射的基本特性</b>
+            <ul>
+                <li>受激散射光的高强度性</li>
+                <li>受激散射光的高方向性</li>
+                <li>受激散射光谱的高单色性</li>
+                <li>受激散射的高阶散射特性</li>
+                <li>受激散射的相位共轭特性</li>
+                <li>明显的阈值性</li>
+            </ul>
+
+            <b>受激Raman散射的机理</b>
+            <p>在受激Raman散射中，相干的入射光子主要不是被热振动（光学支）声子所散射，而是被受激（光学支）声子散射.</p>
+            <p>受激声子的产生过程为：最初一个入射光子与一个热振动声子碰撞，产生一个斯托克斯光子，并增添一个受激声子；当入射光子再与这个增添的受激声子碰撞时，在再产生一个斯托克斯光子的同时，又增添一个受激光子……如此继续下去，便形成一个产生受激声子的雪崩过程，如图所示.</p>
+
+            <figure>
+                <img src="Img/StimulatedPhonon.jpg" width="300">
+                <figcaption>受激声子产生的雪崩过程示意</figcaption>
+            </figure>
+
+            <p>产生声子过程的关键是要有足够多的入射光子.</p>
+            <p>由于受激声子所形成的声波是相干的，入射激光是相干的，所以产生的斯托克斯光也是相干的.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>受激Raman散射过程的电磁场处理</h2>
+
+            <p>对于普通的Raman散射过程，须采用量子理论进行讨论；</p>
+            <p>但对受激Raman散射而言，由于总是满足入射激光光子数\(n_p\)与受激Raman散射光光子数\(n_s\)远大于1，因此可以利用经典电磁场理论进行描述.</p>
+
+
+        </div>
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

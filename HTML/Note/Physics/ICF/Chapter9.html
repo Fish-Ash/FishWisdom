@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>惯性聚变物理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>黑腔靶</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+            <p>本章主要研究<b>辐射流体物理</b>，它对间接驱动ICF具有特别的意义.</p>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>基本概念</h2>
+            <p>黑腔靶是ICF靶中特殊的一类，在黑腔中，热辐射驱动靶丸烧蚀.</p>
+            <figure>
+                <img src="Img/hohlraum.jpg" width="300">
+                <figcaption>典型黑腔结构</figcaption>
+            </figure>
+            <p>如图所示为典型的黑腔结构，其对于水平轴是柱对称的.</p>
+            <p>从位于轴上的两个小孔射入的激光束照射黑腔的内表面，从而加热黑腔；然后从激光相互作用点和壁上其他加热的地方产生的X射线驱动靶丸.</p>
+            <p>在这种机制中，激光束不直接驱动靶丸，因此称为<b>间接驱动ICF</b>.</p>
+
+
+            <p>腔壁由金或其他高Z材料组成，因此产生的等离子体有很大的光厚，能把大多数吸收的激光能量转换成X射线辐射出来.</p>
+            <p>利用黑腔是为了确保靶丸驱动具有足够的对称性.</p>
+            <p>按定义，黑体辐射是均匀且各向同性的，因此对驱动球形内爆式很理想的.</p>
+            <p>转换成热X射线是突破激光相干性的最根本方法，具有相干相位的单色光容易形成干涉图像，这可能引起不稳定性增大，这是我们不希望的.</p>
+            <p>并且，腔内辐射运输的速度为光速，比流体运动速度快得多，因此，靶丸的烧蚀演化可以和壁上非球形的流体扰动很好地分开.</p>
+
+            <div class="Card-Question">
+                <p>什么叫高Z？什么叫光厚？哪里来的等离子体？为什么可以转换成X射线？</p>
+                <p>干涉图像导致不稳定，是因为不均匀吗？</p>
+                <p>哪里来的流体扰动？</p>
+            </div>
+            
+
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

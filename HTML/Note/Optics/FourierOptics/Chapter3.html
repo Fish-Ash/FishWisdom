@@ -39,24 +39,107 @@
 
         <div class="Card-Analysis">
             <h2>引言</h2>
+
+            <p>光学成像系统是信息传递系统.</p>
+            <p>从物面到像面，输出图像的质量完全取决于光学系统的传递特性.</p>
+            <p>几何光学是在空域研究光学系统的成像规律.</p>
+
             <h3>评价成像质量的方法</h3>
             <ul>
                 <li><b>星点法</b>：检验点光源经过光学系统所产生的像斑，由于像差、玻璃材料不均匀性及加工和装配缺陷等，使像斑不规则，很难对其做出定量计算与测量，检验着的主观判断将带入检验结果中.</li>
                 <li><b>分辨率法</b>：虽能定量评价系统分辨景物细节的能力，但并不能对可分辨范围内的像质好坏给予全面评价.</li>
             </ul>
+
+            <div class="Card-AI">
+                <p>星点法和分辨率法都是归属于空域的评价方法.</p>
+            </div>
+
+            <p>与空域分析相平行，还可以在频域中分析光学系统的成像质量.</p>
+            <p>光学系统是线性系统，且在一定条件下还是线性空不变系统，因而可以利用线性系统理论来研究它的性能.</p>
+            <p>将输入信息分解成各种空间频率分量，然后考察这些空间频率分量在通过系统的传递过程中，丢失、衰减、相位移动等变化，也就是研究系统的空间频率传递特性，即传递函数.</p>
+
+            <p>这显然是一种全面评价光学系统成像质量的方法.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>一般成像系统</h2>
+
+            <h3 id="ImagingSystem">成像系统的普适模型</h3>
+            <p>任何平面物场分布都可以看作为无数小面元的组合，而每个小面元都可看作一个加权的\(\delta\)函数.</p>
+            <p>系统对光束大小的限制是由系统的孔径光阑决定的，即在考虑了衍射受限系统时，实际上主要是考察孔径光阑的衍射作用.</p>
+            <div class="Card-Definition">
+                <b>入射光曈（入瞳）</b>
+                <p>孔径光阑在物空间所成的像.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>出射光曈（出瞳）</b>
+                <p>孔径光阑在像空间所成的像.</p>
+            </div>
+
+            <p>当轴上物点的位置确定后，孔径光阑、入瞳、出瞳由系统元件参数及相对位置决定.</p>
+            <p>对整个光学系统而言，入瞳与出瞳保持物像共轭关系.</p>
+            <p>由入瞳限制的物方光束必定能全部通过系统，成为被出瞳限制的像方光束.</p>
+
+            <p>下面为这样的系统建立一个普适模型：</p>
+
+            <figure>
+                <img src="Img/ImagingSystem.jpg" width="300">
+                <figcaption>成像系统的普通模型</figcaption>
+            </figure>
+
+            <p>如图所示，任意成像系统都可以分成三部分：</p>
+            <ul>
+                <li>第一部分：从物平面到入瞳平面（光波传播可按Fresnel衍射处理）</li>
+                <li>第二部分：从入瞳平面到出瞳平面</li>
+                <li>第三部分：从出瞳平面到像平面（光波的传播可按Fresnel衍射处理）</li>
+            </ul>
+
+            <p>对于第二部分的透镜系统，在等晕条件下，可将其作为一个黑箱处理，黑箱两个边端分别是入瞳与出瞳.</p>
+            <p>只要能确定这个黑箱两个边端的性质，整个透镜组的性质便可确定下来，而不必深究其内部结构.</p>
+            <p>假定在入瞳与出瞳之间的光的传播可用几何光学来描述，所谓边端性质是指成像光波在入瞳与出瞳平面上的性质.</p>
+
+            <p>为了确定系统的脉冲响应，需要知道这个黑箱对点光源发出的球面波的变换作用，即当入瞳平面上输入发散球面波时，出瞳平面透射的波场特性.</p>
+            <p>对于实际光组，这一边端性质千差万别，但总可以分为两类：</p>
+            <ul>
+                <li>衍射受限系统</li>
+                <li>有像差系统</li>
+            </ul>
+
+            <b>衍射受限系统的边端条件</b>
+            <p>当像差很小或系统的孔径与视场都不大时，实际光学系统就可近似看作衍射受限系统.</p>
+            <p>此时的边端性质就比较简单，物面上任一点光源发出的发散球面波投射到入瞳上，被光组变换为出瞳上的会聚球面波.</p>
+            <div class="Card-Definition">
+                <b>衍射受限系统</b>
+                <p>不考虑几何像差，仅考虑系统的衍射限制.</p>
+                <p>若忽略衍射效应，点物通过系统后将形成一个理想的点像.</p>
+                <p>一般的衍射受限系统可由若干共轴球面透镜组成，这些透镜既可以是正透镜，也可以是负透镜，且透镜也不一定是薄的.</p>
+            </div>
+
+            
+            <b>有像差系统的边端条件</b>
+            <p>有像差系统的边端条件为：点光源发出的发散球面波投射到入瞳上，出瞳处的透射波场明显偏离理想球面波，偏离程度由波像差决定.</p>
+            
+            <b>补充知识</b>
+            <p>阿贝认为衍射效应是由于有限大小的入瞳引起的.</p>
+            <p>1896年瑞利提出衍射效应来自有限大小的出瞳.</p>
+            <p>由于一个光曈不过是另一个光曈的几何像，这两种看法是等效的，衍射效应可以归结为：入瞳或出瞳对成像光波的限制.</p>
+            <p>这里采用瑞利的说法.</p>
+
+
+            <h3>点扩散函数</h3>
+            <div class="Card-Definition">
+                <b><b>点扩散函数</b>（<b>脉冲响应</b>）\(h(x_o, y_o; x_i, y_i)\)</b>
+                <p>物面面元的光振动为单位脉冲（即\(\delta\)函数）时的像场分布函数.</p>
+                <p>常用\(h(x_o, y_o; x_i, y_i)\)表示，表示物平面上\((x_o, y_o)\)点的单位脉冲通过成像系统后在像平面\((x_i, y_i)\)点产生的光场分布.</p>
+                <p>一般来说，\(h(x_o, y_o; x_i, y_i)\)既是\(x_o, y_o\)的函数，也是\(x_i, y_i\)的函数.</p>
+            </div>
         </div>
 
         <div class="Card-Analysis">
             <h2>相干照明衍射受限系统的点扩散函数</h2>
-            <p>任何平面物场分布都可以看作为无数小面元的组合，而每个小面元都可看作一个加权的\(\delta\)函数.</p>
-            <div class="Card-AI">
-                <p>数学建模过程中，“物”与“光源”是类似的.</p>
-                <p>用\(delta\)函数表征的是点光源.</p>
-            </div>
             <p>对于一个透镜或一个成像系统，若能够清楚知道物平面上任一小面元的光振动通过成像系统后，在像平面上所造成的光振动分布情况，通过线性叠加，原则上便能求得任何物面光场分布通过系统后所形成的像面光场分布，进而求得像面强度分布.</p>
             <p>这就是相干照明下的成像过程，关键是求出任意小面元的光振动所对应的像场分布.</p>
-            <p>当该面元的光振动为单位脉冲，即\(\delta\)函数时，这个像场分布函数称为点扩散函数或脉冲响应，常用\(h(x_o, y_o; x_i, y_i)\)表示，表示物平面上\((x_o, y_o)\)点的单位脉冲通过成像系统后在像平面\((x_i, y_i)\)点产生的光场分布.</p>
-            <p>一般来说，\(h(x_o, y_o; x_i, y_i)\)既是\(x_o, y_o\)的函数，也是\(x_i, y_i\)的函数.</p>
 
 
             <h3>透镜的点扩散函数</h3>
@@ -77,6 +160,9 @@
 
             <h4>物平面\(\to\)透镜前表面</h4>
             <p>利用<a href="../PhysicalOptics/Fresnel&Fraunhofer.html#FresnelFormula" class="goto">Fresnel衍射公式</a>，有：</p>
+            <div class="Card-AI">
+                <p>这里是假设系统满足Fresnel条件，而非一定.</p>
+            </div>
             $$\begin{align}
             \mathrm{d}U_1(x_o',y_o';x,y) &= \frac{\exp(ikd_o)}{i\lambda d_o}\iint_{-\infty}^{+\infty}\delta(x_o-x_o', y_o-y_o')\exp\left[ik\frac{(x-x_o)^2 + (y-y_o)^2}{2d_o}\right]\mathrm{d}x_o\mathrm{d}y_o\\
                                          &= \frac{\exp(ikd_o)}{i\lambda d_o}\exp\left[ik\frac{(x-x_o')^2 + (y-y_o')^2}{2d_o}\right]
@@ -89,11 +175,15 @@
             <div class="Card-AI">
                 <p>\(x_oy_o\)平面与\(x_o'y_o'\)平面在物理上其实是同一个平面，但是为了在数学上区分开，采取两个不同的符号.</p>
                 <p>这里求的是点扩散函数，即系统对单位脉冲的响应，因此不加\(U_0\).</p>
+                $$U_0(x_o, y_o) = \delta(x_o-x_o', y_o-y_o')$$
             </div>
 
             <h4>透镜前表面\(\to\)透镜后表面</h4>
             <p>此波通过孔径函数\(P(x,y)\)，焦距为\(f\)的透镜后，复振幅\(\mathrm{d}U_1'(x_o, y_o;x, y)\)为：</p>
             $$\mathrm{d}U_1'(x_o, y_o;x,y) = P(x,y)\exp\left(-ik\frac{x^2 + y^2}{2f}\right)\mathrm{d}U_1(x_o, y_o; x, y)$$
+            <ul>
+                <li>\(P(x,y)\exp\left(-ik\frac{x^2 + y^2}{2f}\right)\)：<a href="Lens.html#lens" class="goto">透镜的相位变换因子</a></li>
+            </ul>
 
             <h4>透镜后表面\(\to\)观察面</h4>
             <p>由于透镜后表面到观察面，光场的传播满足Fresnel衍射，于是物平面上的单位脉冲在观察面上引起的复振幅分布（即点扩散函数）可写为：</p>
@@ -127,7 +217,14 @@
             <p>\(\exp\left[ik\frac{x_o^2 + y_o^2}{2d_o}\right]\)在求物面上各点对像面光场的贡献时，需要参与积分，不可略去.</p>
 
             <p>当透镜的孔径较大时，物面上每一物点产生的脉冲响应为一很小的像斑，那么对应于像面上\((x_i, y_i)\)点光场产生有意义贡献的，必定为物面上与几何成像对应的、以物点为中心的微小区域.</p>
-            <p>在此区域内，近似认为\(x_o,~y_o\)不变，其值与\(x_i,~y_i\)点的共轭物坐标\(x_o = x_i/M,~y_o = y_i/M\)相同，即作以下近似：</p>
+
+            <div class="Card-AI">
+                <p>“很小的像斑”可以近似为一个点；</p>
+                <p>衍射理论告诉我们，孔径越大，衍射越不明显，光斑越集中.</p>
+                <p>这句话其实是在说，像面上的一个亮点可以与物面上的一个点“一一对应”，即共轭；因为其他位置的光场贡献可以忽略（离得“太远”）.</p>
+            </div>
+
+            <p>在此区域内，近似认为\(x_o,~y_o\)不变，其值与\(x_i,~y_i\)点的共轭物坐标\(x_o \approx x_i/M,~y_o \approx y_i/M\)相同，即作以下近似：</p>
             $$\exp\left[{i\frac{k}{2d_o}(x_o^2 + y_o^2)}\right]\approx \exp\left[{i\frac{k}{2d_o}\left(\frac{x_i^2 + y_i^2}{M^2}\right)}\right]$$
             <ul>
                 <li>\(M = -d_i/d_o\)：成像透镜的横向放大率</li>
@@ -155,37 +252,60 @@
                 </div>
             </div>
 
-            <p>该式表明：在近轴成像条件下，上式所表征的透镜成像系统是空不变的.</p>
-
-            <h3>衍射受限系统的点扩散函数</h3>
-            <div class="Card-Definition">
-                <b>衍射受限系统</b>
-                <p>不考虑几何像差，仅考虑系统的衍射限制.</p>
-                <p>若忽略衍射效应，点物通过系统后将形成一个理想的点像.</p>
-                <p>一般的衍射受限系统可由若干共轴球面透镜组成，这些透镜既可以是正透镜，也可以是负透镜，且透镜也不一定是薄的.</p>
+            <div class="Card-AI">
+                <p>注意：</p>
+                $$x_i \approx x_oM,\quad \tilde{x}_o = x_oM$$
+                <p>\(x_i\)表示的是实际像，而\(\tilde{x}_o\)表示的是理想像.</p>
             </div>
+
+            <p>该式表明：在近轴成像条件下，上式所表征的透镜成像系统是<a href="LinearSystem.html" class="goto">空不变</a>的.</p>
 
             <div class="Card-AI">
-                <p>这里的“系统”主要指系统中的孔径光阑（带来的性质）.</p>
+                $$\because \tilde{x}_o = x_oM$$
+                <p>当物点平移\((\Delta x, \Delta y)\)时，点扩散函数移动\((M\Delta x, M\Delta y)\)，即具有空不变性.</p>
             </div>
 
-            <figure>
-                <img src="Img/ImagingSystem.jpg" width="300">
-                <figcaption>成像系统的普通模型</figcaption>
-            </figure>
+            <p>而且，透镜的脉冲响应就等于透镜孔径的Fraunhofer衍射图样，其中心位于理想像点\((\tilde{x}_o, \tilde{y}_o)\)处.</p>
 
-            <p>如图所示，任意成像系统都可以分成三部分：</p>
-            <ul>
-                <li>第一部分：从物平面到入瞳平面</li>
-                <li>第二部分：从入瞳平面到出瞳平面</li>
-                <li>第三部分：从出瞳平面到像平面</li>
-            </ul>
+            <div class="Card-Question">
+                <p>怎么跟夫琅禾费衍射扯上关系的？</p>
+            </div>
 
-            <p>光波在一、三两部分空间的传播可按Fresnel衍射处理.</p>
-            <p>对于第二部分的透镜系统，在等晕条件下，可将其作为一个黑箱处理，黑箱两个边端分别是入瞳与出瞳.</p>
-            <p>只要能确定这个黑箱两个边端的性质，整个透镜组的性质便可确定下来，而不必深究其内部结构.</p>
-            <p>假定在入瞳与出瞳之间的光的传播可用几何光学来描述，所谓边端性质是指成像光波在入瞳与出瞳平面上的性质.</p>
+            <p>透镜孔径的衍射作用明显与否，由孔径线度相对于波长\(\lambda\)和像距\(d_i\)的比例决定的，为此对孔径平面上的坐标\(x,y\)做如下变换：</p>
 
+            <p>[令]</p>
+            $$\tilde{x} = \frac{x}{\lambda d_i},\quad \tilde{y} = \frac{y}{\lambda d_i}$$
+            <div class="Formula">
+                $$\therefore h(x_i - \tilde{x}_o, y_i-\tilde{y}_o) = |M|\iint_{-\infty}^{+\infty}P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})\exp\left[-i2\pi\left((x_i - \tilde{x}_o)\tilde{x} + (y_i - \tilde{y}_o)\tilde{y}\right)\right]\mathrm{d}\tilde{x}\mathrm{d}\tilde{y}$$
+                <ul>
+                    <li>\(|M| = \frac{d_i}{d_o}\)</li>
+                </ul>
+                <div class="Derivation">
+                    $$\begin{align}
+                    h(x_i - \tilde{x}_o, y_i-\tilde{y}_o) &= \frac{1}{\lambda^2d_od_i}\iint_{-\infty}^{+\infty}P(x,y)\exp\left\{-i\frac{2\pi}{\lambda d_i}\left[\left(x_i - \tilde{x}_o\right)x + \left(y_i - \tilde{y}_o\right)y\right]\right\}\mathrm{d}x\mathrm{d}y\\
+                                                          &= \frac{1}{\lambda^2d_od_i}\iint_{-\infty}^{+\infty}P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})\exp\left[-i2\pi\left((x_i - \tilde{x}_o)\tilde{x} + (y_i - \tilde{y}_o)\tilde{y}\right)\right]\mathrm{d}(\lambda d_i\tilde{x})\mathrm{d}(\lambda d_i\tilde{y})\\
+                                                          &= \frac{d_i}{d_o}\iint_{-\infty}^{+\infty}P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})\exp\left[-i2\pi\left((x_i - \tilde{x}_o)\tilde{x} + (y_i - \tilde{y}_o)\tilde{y}\right)\right]\mathrm{d}\tilde{x}\mathrm{d}\tilde{y}
+                    \end{align}$$
+                    $$\because M = -\frac{d_i}{d_o}$$
+                    $$\therefore h(x_i - \tilde{x}_o, y_i-\tilde{y}_o) = |M|\iint_{-\infty}^{+\infty}P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})\exp\left[-i2\pi\left((x_i - \tilde{x}_o)\tilde{x} + (y_i - \tilde{y}_o)\tilde{y}\right)\right]\mathrm{d}\tilde{x}\mathrm{d}\tilde{y}$$
+                </div>
+            </div>
+            <p>这就是透镜的点扩散函数表达式.</p>
+
+            <p>当孔径大小比\(\lambda_i d\)大得多时，在\(\tilde{x},~\tilde{y}\)坐标中，在无限大的区域内\(P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})\equiv 1\).</p>
+            $$\begin{align}\therefore
+            h(x_i - \tilde{x}_o, y_i-\tilde{y}_o) &= |M|\iint_{-\infty}^{+\infty}P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})\exp\left[-i2\pi\left((x_i - \tilde{x}_o)\tilde{x} + (y_i - \tilde{y}_o)\tilde{y}\right)\right]\mathrm{d}\tilde{x}\mathrm{d}\tilde{y}\\
+                                                  &= |M|\delta(x_i - \tilde{x}_o, y_i-\tilde{y}_o)
+            \end{align}$$
+            <p>此时物点成像为一个像点，即为理想成像.</p>
+
+
+            <h3>衍射受限系统的点扩散函数</h3>
+
+            <p>考虑<a href="ImagingSystem" class="goto">成像系统的普适模型</a>：</p>
+
+            <p>由物点出发的球面波，在像方得到的将是一个被出射光曈限制的球面波，整个球面波是以理想像点为中心的.</p>
+            <p>由于出瞳的限制作用，在像平面上将产生以理想像点为中心的出瞳孔径的<a href="../PhysicalOptics/Fresnel&Fraunhofer.html">Fraunhofer衍射</a>图样，于是可以写出物面上以\(x_o, y_o\)点的单位脉冲，通过衍射受限系统后，在与物面共轭的像面上的复振幅分布，即点扩散函数为：</p>
 
             $$h(x_o, y_o; x_i, y_i) = K\iint_{-\infty}^{+\infty}P(x,y)\exp\left\{-i\frac{2\pi}{\lambda d_i}[(x_i-Mx_o)x + (y_i-My_o)y]\right\}\mathrm{d}x\mathrm{d}y$$
             <ul>
@@ -198,64 +318,26 @@
                 <p>\(K\)的数值取决于具体的光学系统</p>
             </div>
 
+            <p>同样对物平面上的坐标\(x_o, y_o\)与光曈平面上的坐标\(x,y\)做坐标变换.</p>
+            <p>[令]</p>
+            $$\tilde{x}_o = Mx_o,\quad \tilde{y}_o = My_o$$
+            $$\tilde{x} = \frac{x}{\lambda d_i},\quad \tilde{y} = \frac{y}{\lambda d_i}$$
+
+            <div class="Card-Formula" id="DiffractionLimited_h">
+                <b>衍射受限系统的点扩散函数</b>
+                $$h(x_i - \tilde{x}_o, y_i - \tilde{y}_o) = K\lambda^2d_i^2\iint_{-\infty}^{+\infty}P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})e^{-i2\pi[(x_i - \tilde{x}_o)\tilde{x} + (y_i - \tilde{y}_o)\tilde{y}]}\mathrm{d}\tilde{x}\mathrm{d}\tilde{y}$$
+            </div>
+
+
             <b>几何光学理想成像情况</b>
-            $$h(x_i - \tilde{x}_o, y_i - \tilde{y}_o) = K\lambda^2d_i^2\delta(x_i - \tilde{x}_o, y_i - \tilde{y}_o)$$
+            <p>若光曈相对\(\lambda d_i\)足够大，在\(\tilde{x}, \tilde{y}\)坐标中，在无限大区域内\(P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})\equiv 1\)，则：</p>
+            <div class="Card-Formula" id="IdealImaging_h">
+                <b>理想成像的脉冲响应</b>
+                $$h(x_i - \tilde{x}_o, y_i - \tilde{y}_o) = K\lambda^2d_i^2\delta(x_i - \tilde{x}_o, y_i - \tilde{y}_o)$$
+            </div>
             <p>上式表明：当可以忽略光曈的衍射时，\(x_o, y_o\)点的脉冲通过衍射受限系统后在像面上得到的仍为点脉冲，其位置为\(x_i = \tilde{x}_o = Mx_o,~ y_i = \tilde{y}_o = My_o\).</p>
         </div>
 
-        <div class="Card-Analysis">
-            <h2>相干照明下衍射受限系统的成像规律</h2>
-            <div class="Card-AI">
-                <p>这里研究的是空域</p>
-            </div>
-
-            $$U_o(x_o, y_o) = \iint_{-\infty}^{+\infty}U_o(\alpha, \beta)\delta(x_o-\alpha, y_o-\beta)\mathrm{d}\alpha\mathrm{d}\beta$$
-            <div class="Formula">
-                $$U_i(x_i, y_i) = \frac{1}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)h(x_i-\tilde{x}_o, y_i-\tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o$$
-                <div class="Derivation">
-                    $$\begin{align}
-                    U_i(x_i, y_i) &= \mathcal{L}\{U_o(x_o, y_o)\}\\
-                                  &= \mathcal{L}\left\{\iint_{-\infty}^{+\infty}U_o(\alpha, \beta)\delta(x_o-\alpha, y_o-\beta)\mathrm{d}\alpha\mathrm{d}\beta\right\}\\
-                                  &= \iint_{-\infty}^{+\infty}U_o(\alpha, \beta)\mathcal{L}\left\{\delta(x_o-\alpha, y_o-\beta)\right\}\mathrm{d}\alpha\mathrm{d}\beta\\
-                                  &= \iint_{-\infty}^{+\infty}U_o(\alpha, \beta)h(x_i-M\alpha, y_i-M\beta)\mathrm{d}\alpha\mathrm{d}\beta\\
-                    \end{align}$$
-                    <p>[令]\(\tilde{x}_o = Mx_o,\quad \tilde{y}_o = My_o\).</p>
-                    <p>将积分式中的\(\alpha,~\beta\)分别代换为\(x_o,~y_o\)，有：</p>
-                    $$\begin{align}
-                    U_i(x_i, y_i) &= \iint_{-\infty}^{+\infty}U_o(\alpha, \beta)h(x_i-M\alpha, y_i-M\beta)\mathrm{d}\alpha\mathrm{d}\beta\\
-                                  &= \iint_{-\infty}^{+\infty}U_o(x_o, y_o)h(x_i-Mx_o, y_i-My_o)\mathrm{d}x_o\mathrm{d}y_o\\
-                                  &= \frac{1}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)h(x_i-\tilde{x}_o, y_i-\tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o
-                    \end{align}$$            
-                </div>
-            </div>
-            <ul>
-                <li>\(\tilde{x}_o = Mx_o\)</li>
-                <li>\(\tilde{y}_o = My_o\)</li>
-            </ul>
-
-            <p>考虑几何光学理想成像情况：</p>
-            $$h(x_i - \tilde{x}_o, y_i - \tilde{y}_o) = K\lambda^2d_i^2\delta(x_i - \tilde{x}_o, y_i - \tilde{y}_o)$$
-            $$\begin{align}
-            U_g(x_i, y_i) &= \frac{1}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)h(x_i-\tilde{x}_o, y_i-\tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o\\
-                          &= \frac{1}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)K\lambda^2d_i^2\delta(x_i - \tilde{x}_o, y_i - \tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o\\
-                          &= \frac{K\lambda^2d_i^2}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)\delta(x_i - \tilde{x}_o, y_i - \tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o\\
-                          &= \frac{K\lambda^2d_i^2}{M^2}U_o\left(\frac{x_i}{M}, \frac{y_i}{M}\right)
-            \end{align}$$
-            <p>称\(U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)\)为\(U_o(x_o, y_o)\)的理想像.</p>
-            <p>[令]</p>
-            $$\tilde{h}(x_i - \tilde{x}_o, y_i - \tilde{y}_o) = \frac{1}{K\lambda^2d_i^2}h(x_i - \tilde{x}_o, y_i - \tilde{y}_o)$$
-            $$\begin{align}\therefore
-            U_i(x_i, y_i) &= \frac{1}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)h(x_i-\tilde{x}_o, y_i-\tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o\\
-                          &= \frac{K\lambda^2d_i^2}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)\tilde{h}(x_i-\tilde{x}_o, y_i-\tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o\\
-                          &= \iint_{-\infty}^{+\infty}U_o\left(\tilde{x}_o, \tilde{y}_o\right)\tilde{h}(x_i-\tilde{x}_o, y_i-\tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o\\
-                          &= U_g(x_i, y_i)*\tilde{h}(x_i, y_i)
-            \end{align}$$
-            <p>上式的物理意义为：物\(U_o(x_o, y_o)\)通过衍射受限系统后的像\(U_i(x_i, y_i)\)为\(U_o(x_o, y_o)\)的理想像\(U_g(x_i, y_i)\)和点扩散函数\(\tilde{h}(x_i, y_i)\)的卷积.</p>
-            <p>这表明：不仅对于薄的单透镜系统，而且对于更普遍的情形，衍射受限成像系统仍可看作线性空不变系统.</p>
-            <p>由\(U_i(x_i, y_i)\)可得像的强度分布为：</p>
-            $$I_i(x_i, y_i) = \left\lvert U_i(x_i, y_i)\right\rvert^2$$
-
-        </div>
 
 
         <div class="Card-Analysis">
@@ -334,6 +416,180 @@
                 \end{align}$$
             </div>
 
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>相干线扩散函数与边缘扩散函数</h2>
+
+            <h3>测量传递函数的方法</h3>
+            <b>方法1</b>
+            <p>计算或测量出系统的点扩散函数，然后对其作Fourier变换以确定传递函数.</p>
+            <b>评价</b>
+            <p>在一些情况中，得不到点扩散函数的精确表达式，这种方法不好使用.</p>
+
+            <b>方法2</b>
+            <p>将大量频率不同的本征函数逐个输入系统，并确定每个本征函数收到的衰减及其相移，从而得到传递函数.</p>
+            <b>评价</b>
+            <p>这种方法较方法1更为直接，但测量数目较大，有时实现起来相当困难.</p>
+
+            <b>方法3</b>
+            <p>由线扩散函数确定传递函数.</p>
+
+
+            <h3>线扩散函数与边缘扩散函数的概念</h3>
+            <p>对于相干照明成像系统：点物在像面上的响应（即点扩散函数）为一种复振幅分布，所有点物响应的叠加即得像面上的复振幅分布，这个分布的绝对值的平方记为像面强度的分布.</p>
+            <p>对于非相干照明成像系统：点物在像面上的响应（即强度点扩散函数）为一种强度分布，所有这些强度点扩散函数的叠加得到像面强度分布.</p>
+
+            <p>无论是复振幅点扩散函数还是强度点扩散函数，就叠加成线扩散函数的方式都是一样的.</p>
+            <p>直观起见，下面以点物的强度响应为例讨论点扩散函数与线扩散函数的关系；但公式中的各函数表达式既可以理解为强度，也可以理解为复振幅.</p>
+
+            <p>一个点物在像面上造成的强度分布即为点扩散函数\(h(x_i, y_i)\)，\(x_i, y_i\)是像面上的位置坐标.</p>
+            <p>校正好中心的镜头，其轴上物点的像是圆对称的.</p>
+            <p>如图(a)所示就是这样的像点，图上画出的是点扩散函数的轮廓形状，强度变化没有表示出来，但强度分布对像斑中心\(O\)呈圆对称.</p>
+            <p>因此过中心的一条狭缝，无论方向如何，例如图(a)虚线所示，从缝中看到的强度分布，以离\(O\)点远近表示，分布状况都是一样的.</p>
+
+            <p>通常以沿\(x_i\)轴的狭缝的强度分布曲线\(h(x_i)\)作为点扩散函数，如图(b)所示.</p>
+            <p>一个亮狭缝通过光学系统成像后，光强分布依然是往两侧散开的，散开的情况取决于光学系统的点扩散函数.</p>
+            <p>因为一根亮直线或一个亮狭缝，可以看成是由许多亮点的集合组成的，这许多沿直线排列的点源的像点的叠加，就构成亮直线的光强度分布.</p>
+            <p>若我们将直线像的长度方向取为\(y_i\)方向，那么沿\(x_i\)方向的光强分布\(L(x_i)\)就叫线扩散函数.</p>
+            <div class="Card-AI">
+                <p>线扩散函数其实就是“像面上”沿亮直线宽度方向的强度分布.</p>
+                <p>要区分物面上的“狭缝宽度”与像面上的“像”.</p>
+            </div>
+            <p>图(b)同样可以代表亮直线的成像情况，这就是实际成像的强度分布，也就是线扩散函数.</p>
+
+            <figure>
+                <img src="Img/h.jpg" width="400">
+                <figcaption>点扩散函数的分布</figcaption>
+            </figure>
+
+            <p>应当注意，这里只是说它们的表示方式相同，而点扩散函数的曲线形状与线扩散函数的曲线形状是不一样的.</p>
+            <p>线扩散函数由点扩散函数叠加而成，这就是两者之间的关系.</p>
+            <p>下面用数学式子将这个关系表达出来：</p>
+            <p>[设]系统输入一线脉冲，例如平行于\(y_o\)轴的线光源\(U_o(x_o, y_o) = \delta(x_o)\).</p>
+            <div class="Card-AI">
+                <p>\(\delta(x_o)\)其实甚至是直接与\(y_o\)轴重合的.</p>
+            </div>
+
+            <b>前置知识</b>
+            <ul>
+                <li><a href="../../Math/FourierAnalysis/Convolution.html">卷积</a></li>
+            </ul>
+            <p>线性空不变系统的线扩散函数为：</p>
+            $$\begin{align}
+            L(x_i) &= \delta(x_o)*h(x_i, y_i)\\
+                   &= \iint_{-\infty}^{+\infty}\delta(\alpha)h(x_i - \alpha, \beta)\mathrm{d}\alpha\mathrm{d}\beta\\
+                   &= \int_{-\infty}^{+\infty}h(x_i, \beta)\mathrm{d}\beta
+            \end{align}$$
+            <div class="Card-AI">
+                <p>这咋来的？</p>
+            </div>
+
+            <p>上式表明：线扩散函数仅依赖于\(x_i\)，它等于点扩散函数沿\(y_i\)方向的线积分.</p>
+            <p>物为一狭缝，它在像面上造成的分布就是线扩散函数.</p>
+            <p>现用一与狭缝方向平行的刀片放置在像面上，开始时刀片完全挡住狭缝像；刀片逐渐移动，也就逐渐放入狭缝像的光.</p>
+
+            <figure>
+                <img src="Img/L.jpg" width="300">
+                <figcaption>由线扩散函数产生边缘扩散函数</figcaption>
+            </figure>
+
+            
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>有像差系统的传递函数</h2>
+            <p>对于衍射受限系统，在相干照明下传递函数\(H\)只有\(0\)和\(1\)两个值，各种空间成分或者无畸变地通过系统，或者被完全挡掉.</p>
+            <p>在非相干照明下的光学传递函数\(H\)是非负实函数，即系统只改变各频率成分的对比，不产生相移.</p>
+            <p>以上结果是无像差的理想情况下得出的.</p>
+
+            <p>任何一个实际系统总是有像差的.</p>
+            <b>像差来源</b>
+            <ul>
+                <li>构成系统的元件</li>
+                <li>成像平面的位置误差</li>
+                <li>理想球面透镜所固有的如球面像差等</li>
+            </ul>
+
+            <p>所有这些像差都会对传递函数产生影响，在相干或非相干照明下，往往都是复函数.</p>
+            <p>系统将对各频率成分的相位产生影响.</p>
+
+            <p>在讨论衍射受限系统时，我们通过点扩散函数\(\tilde{h}(x_i, y_i)\)与光曈函数的Fourier变换，最终用光曈函数来描述传递函数.</p>
+            <p>对于有像差的系统，仍采用这种方法，只是对光曈函数的概念加以推广，然后用广义光曈函数来描述这种有像差系统的传递函数.</p>
+            <div class="Card-AI">
+                <p>为什么要推广？</p>
+                <p>怎么推广？</p>
+            </div>
+
+
+            <p>衍射受限系统中，单位脉冲\(\delta(\tilde{x}_o, \tilde{y}_o)\)通过系统后透射到光曈上的，是以理想像点为中心的球面波.</p>
+            <p>对于有像差的系统，不论产生像差的原因如何，其效果都是使光曈上的初设波前偏离理想球面，如图所示.</p>
+            <figure>
+                <img src="Img/Abb.jpg" width="200">
+                <figcaption>像差对出瞳平面波前的影响</figcaption>
+            </figure>
+            <p>由于系统有像差，使与O点等相位的各点形成波面\(\Sigma_1\)；若系统无像差，理想波面应该使\(\Sigma_0\).</p>
+            <p>\(\Sigma_1\)和\(\Sigma_0\)每一点的光程差用函数\(W(x,y)\)表示，其具体形式由系统像差决定，由其引起的相位变化为\(kW(x,y)\).</p>
+            <p>若定义：</p>
+            <div class="Card-Definition">
+                <b>广义光曈函数\(\mathcal{P}(x,y)\)</b>
+                $$\mathcal{P}(x,y) = P(x,y)e^{ikW(x,y)}$$
+                <ul>
+                    <li>\(P(x,y)\)：系统没有像差时的光曈扩散函数</li>
+                </ul>
+            </div>
+            <p>则\(\tilde{h}(x_i, y_i)\)可以看作：复振幅透过率为\(\mathcal{P}(x, y)\)的光曈被半径为\(d_i\)的球面波照明后得到的分布.</p>
+            <p>这样一来，\(\tilde{h}(x_i, y_i)\)就是广义光曈函数的Fourier变换.</p>
+
+            $$\begin{align}
+            \tilde{h}(x_i, y_i) &= \mathcal{F}\{\mathcal{P}(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})\}\\
+                                &= \mathcal{F}\{P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})e^{ikW(\lambda d_i\xi, \lambda d_i\eta)}\}\\
+            \end{align}$$
+
+            $$\begin{align}
+            H(\xi, \eta) &= \mathcal{P}(\lambda d_i\xi, \lambda d_i\eta)\\
+                         &= P(\lambda d_i\xi, \lambda d_i\eta)e^{ikW(\lambda d_i\xi, \lambda d_i\eta)}
+            \end{align}$$
+
+
+
+            <p>利用施瓦兹不等式，不难证明：</p>
+            $$|\mathcal{H}(\xi, \eta)|_{有像差} \leq |\mathcal{H}(\xi, \eta)|_{无像差}$$
+            <p>因此像差会进一步降低成像质量.</p>
+
+            <div class="Card-AI">
+                <b>施瓦兹不等式</b>
+                $$\left\lvert\iint_{-\infty}^{+\infty}\varphi^*(\alpha, \beta)\Phi(\alpha, \beta)\mathrm{d}\alpha\mathrm{d}\beta\right\rvert^2 \leq \iint_{-\infty}^{+\infty}|\varphi^*(\alpha, \beta)|^2\mathrm{d}\alpha\mathrm{d}\beta\cdot\iint_{-\infty}^{+\infty}|\Phi(\alpha, \beta)|^2\mathrm{d}\alpha\mathrm{d}\beta$$
+            </div>
+
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>相干与非相干成像系统的比较</h2>
+            <p>下面对相干与非相干成像做一些比较，通过这些比较虽然不能得出哪一种成像更好的全面性结论，但对两者之间的联系和某些基本差异的理解会更深入一些，并能根据一些具体情况判断选用哪种照明会更好.</p>
+
+            <h3>截止频率</h3>
+            <p>OTF的截止频率是CTF截止频率的两倍.</p>
+            <p>但这并不意味着非相干照明一定比相干照明好.</p>
+            <p>这是因为不同系统的截止频率是对不同物理量传递而言的.</p>
+            <p>对于非相干系统，它是指能够传递的强度呈余弦变化的最高频率.</p>
+            <p>对于相干系统，是指能够传递复振幅呈周期变化的最高频率.</p>
+            
+            <p>显然，从数值上对二者做简单比较是不合适的.</p>
+            <p>但对于二者的最后可观察量都是强度，因此直接对像强度进行比较是恰当的.</p>
+            <p>下面将会看到，即使比较的物理量一致，要判断绝对的好坏也是困难的.</p>
+
+            <h3>像强度的频谱</h3>
+
+            <h3>两点分辨</h3>
+            <p>分辨率是评判系统成像质量的一个重要指标.</p>
+            <p>非相干成像系统使用的是<b>瑞利分辨判据</b>，用其来表示理想光学系统的分辨率.</p>
+
+            <p>对于衍射受限的圆形光曈情况，点光源在像面上产生的衍射斑的强度分布称为<b>艾里斑</b>.</p>
+            <p>根据瑞利判据，对两个强度相等的非相干点源，若一个点源产生的艾里斑中心恰与第二个点源产生的艾里斑的第一个零点重合，则认为这两个点源刚好能够分辨.</p>
+
+            <p>瑞利分辨判据仅适用于非相干成像系统，对于相干成像系统是否能分辨两个点源，需要看它们的相位关系.</p>
         </div>
 
         <div id="PageEnd"></div>

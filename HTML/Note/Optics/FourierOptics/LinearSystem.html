@@ -102,11 +102,8 @@
 
             <p>下面以点基元函数为例说明线性系统的分解与综合的过程.</p>
 
-            <p>任何输入函数\(f(x_1, y_1)\)可以很方便地分解成\(\delta\)函数的线性组合.</p>
-            <p>应用\(\delta\)函数的卷积性质，\(f(x_1, y_1)\)可以用\(delta\)函数表示为：</p>
+            <p>任何输入函数\(f(x_1, y_1)\)可以很方便地<a href="../../Math/FourierAnalysis/DiracFunction.html#function by delta" class="goto">分解成\(\delta\)函数的线性组合</a>：</p>
             $$f(x_1, y_1) = \iint_{-\infty}^{+\infty} f(\alpha, \beta)\delta(x_1 - \alpha, y_1 - \beta)\mathrm{d}\alpha\mathrm{d}\beta$$
-            <p>这个积分式可以看作是一种特殊的线性叠加：</p>
-            <p>当\(\alpha, \beta\)在整个物平面上取值时，上式是无穷多个不同位置的\(\delta\)函数\(\delta(x_1-\alpha, y_1-\beta)\)以\(f(\alpha,\beta)\mathrm{d}\alpha\mathrm{d}\beta\)为系数（权重）的线性叠加.</p>
 
             $$\begin{align}\therefore
             g(x_2, y_2) &= L\{f(x_1, y_1)\}\\

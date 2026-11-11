@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>张量分析</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>张量的基本概念</h1>
+        
+        <div class="Card-Analysis">
+            <h2>矢量的分量表示法与实体表示法</h2>
+
+            <p>矢量是张量的特例，本节重新阐述一下矢量的定义.</p>
+
+            <b>矢量\(\boldsymbol{v}\)作为实体的定义</b>
+            <p>在三维空间的每一点处，\(\boldsymbol{v}\)可以按该点处的基矢量（协变基或逆变基）分解为三个分量（协变分量\(v^i\)或逆变分量\(v_i\)）.</p>
+            <p>在同一坐标系下，协变分量与逆变分量互不独立，以该坐标系的度量张量分量升降指标.</p>
+            <p>若选择其他坐标系，同一矢量将具有不同的分量，但新老坐标系的矢量分量可以通过坐标转换关系式互导.</p>
+            <p>所以一旦给定一个矢量在某一坐标系中的任何一组分量，这个矢量就完全确定了.</p>
+            <p>由此可见，矢量和它的任一组（3个）分量是完全等价的.</p>
+
+            <p>下面用分量的观点定义矢量：</p>
+            <p>若在三维空间中任意点处的物理量可以用三个有序数\(v_i\)（或另三个有序数\(v^i\)）的集合表示，且当坐标转换，它们在新坐标系中按以下转换关系转换为另一组三个有序数的集合：</p>
+            <b>协变转换关系</b>
+            $$v_{i'} = \beta_{i'}^j v_j = \frac{\partial x^j}{\partial x^{i'}}v_j$$
+            <b>逆变转换关系</b>
+            $$v^{i'} = \beta_j^{i'} v^j = \frac{\partial x^{i'}}{\partial x^j}v^j$$
+
+            <p>则上述\(v_i~(i = 1,2,3)\)或\(v^i~(i = 1,2,3)\)分别称为矢量的协变分量或逆变分量，该物理量称为矢量，并用黑体字记作\(\boldsymbol{v}\).</p>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>张量的定义与两种表示法</h2>
+
+            <p>与矢量类似，定义由若干当坐标系改变时满足<a href="CoordianteChange.html" class="goto">坐标转换关系</a>的有序数组成的集合为张量.</p>
+            <p>例如，一个由\(9\)个有序数组成的集合\(T(i,j),~i,j = 1,2,3\)，在坐标变换时，按照以下坐标转换关系变换：</p>
+            $$T(i', j') = \beta_k^{i'}\beta_l^{j'}T(k,l)\quad i',j' = 1,2,3$$
+            <p>则这组有序数的集合称为张量.</p>
+            
+            <div class="Card-AI">
+                <p>T(i,j)或T(i',j')本质上就是一个数.</p>
+                <p>上面给的这个例子就是一个矩阵.</p>
+            </div>
+
+            <p>上例中当坐标转换时，新坐标中\(T(i', j')\)是由老坐标中的\(T(k,l)\)乘两次逆变转换系数得到的，故称\(T(i,j)\)为二阶张量的逆变分量，记作\(T^{ij}\).</p>
+            <p>上式中自由指标的个数与所乘坐标系转换系数的次数一致，称为<b>张量的阶数</b>.</p>
+            <p>例如，\(T^{ijk}\)是三阶张量，\(T^{ij}\)是二阶张量，矢量是一阶张量，标量是零阶张量.</p>
+
+            <p>\(n\)维空间中，\(m\)阶张量应是\(n^m\)个数的集合.</p>
+            <hr>
+
+            <p>今后以指标的上、下分别表示张量分量的逆变或协变性质，若坐标转换时张量分量所乘的都是逆变（或协变）转换系数，则称为张量的逆变（或协变）分量，用上标（或下标）加以标识，记作\(T^{ij}\)（或\(T_{ij}\)）.</p>
+            <p>若改变坐标时，张量分量所乘的既有逆变、又有协变转换系数，则按照对应转换系数的逆变、协变性质，分别标识分量指标的上或下，称为张量的混变（或混合）分量.</p>
+
+            <p>如：\(T^i_{\cdot j}\)表示前指标按逆变、后指标按协变方式转换.</p>
+            <p>此处为确切表示指标的前后顺序，在上下指标的空位处用小圆点标识，并应特别注意，指标顺序不能任意调换，即一般来说\(T^{\cdot j}_i\neq T^{j}_{\cdot i}\).</p>
+
+            <div class="Card-AI">
+                <p>以二阶张量为例，其基张量由两个基矢量的并矢组成：</p>
+                $$\boldsymbol{g}_i\boldsymbol{g}_j$$
+                <p>这两个基矢量选取协变基或逆变基，是相互独立的.</p>
+                <p>协变（或逆变）指标处的小圆点作用是占位，其数量与逆变（或协变）指标数目一致.</p>
+                <p>例如：</p>
+                $$T^{i\cdot k}_{\cdot j}$$
+            </div>
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

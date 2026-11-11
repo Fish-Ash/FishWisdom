@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fourier光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+
+        <h1>部分相干理论</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+            <p>在讨论光的干涉、衍射及成像过程中，我们常假定光波是完全相干或完全非想干的，根本忽略了它们的中间状态即部分相干状态的存在.</p>
+            <p>事实上，严格的相干光与非相干光都只是一种理想情况，实际的光波总是部分相干的，在某些情况下近似当作相干光或非相干光使用.</p>
+
+            <p>理想的相干光源是单色点光源.</p>
+            <p>对于一个严格的单色光场，其振幅不随时间变化，而相位随时间线性变化，光振动在时间上是无限延伸的，也就是说其光谱是单一频率的谱线.</p>
+            <p>而实际光源，即使是最锐的光谱线，也具有一定的谱线宽度.</p>
+            <p>这是由于在原子发射辐射时，每个原子在能级上有一定的寿命，各原子间的碰撞以及原子运动的多普勒效应等多种原因造成的.</p>
+            <div class="Card-AI">
+                <p>这一段似乎可以整合到激光笔记中.</p>
+            </div>
+
+            <p>至于光源的大小，再小的光源也不可能是一个理想的点.</p>
+            <p>实际光源总是由大量的基元辐射体（原子与分子）组成的，具有一定的广延性.</p>
+
+            <p>这样一来，讨论光场的相干性问题时，必然与光源的时间特性（光谱分布）与空间特性（光源的空间扩展）相联系.</p>
+            <p>因此，存在两类相干性问题，即<a href="../Laser/LaserProperties.html" class="goto">时间相干性</a>与<a href="../Laser/LaserProperties.html" class="goto">空间相干性</a>，它们可以一并包含在互相干函数的概念中.</p>
+
+
+            <p>对于一般情况，需要研究光场中不同时刻、不同地点的相关性，即<b>时空相干性</b>.</p>
+            <p>对这种时空相干性的度量，时从不同时刻、不同空间引入的光相干涉形成干涉条纹的能力为依据的.</p>
+            <p>若两光场完全相关，则形成的干涉条纹最清晰，称为相干；若两光场完全不相关，则不能形成干涉条纹，称为不相干.</p>
+            <p>一般情况下，这两者都不会出现，而处于条纹具有一定可见度（对比度）的部分相干态.</p>
+            <p>本章将讨论部分相干光的描述方法与传播规律，并用一些例子来说明其结果.</p>
+
+            <p>由于自然界中存在的光场是由大量基元辐射体产生的，对每一辐射体来说，光辐射产生的时间、持续的时间间隔及随时间变化的方式，都是随机的.</p>
+            <p>光场中任一点的光振动的振幅与相位都随时间作随机变化，具有一定的统计特征，要用统计理论来处理.</p>
+            <p>因此，在部分相干理论中要引进概率统计中的相关函数，来描述部分相干系统.</p>
+            <p>为此，我们先介绍一些有关知识，在进入部分相干理论的讨论.</p>
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>多色光场的解析信号表示</h2>
+            <p>在单色光波的讨论中我们知道，对于线性系统分析，将一个实函数表示为一个复函数常常是便利的.</p>
+
+            <div class="Card-AI">
+                <p>实函数表示为复函数，其实就是把三角函数形式改写为指数形式.</p>
+            </div>
+
+            <p>对于单色光场，由已知的实函数构造一个相应的复函数比较容易；但对于多色光场就不那么简单了.</p>
+            <p>本节将介绍多色光场的复表示，即解析信号表示法.</p>
+
+
+            <h3>单色信号的复表示</h3>
+            <p>一个单色信号\(u^r(t)\)可以表示为：</p>
+            $$u^r(t) = A\cos(2\pi\nu_0 t - \phi)$$
+            <ul>
+                <li>\(A\)：常数振幅</li>
+                <li>\(\nu_0\)：频率</li>
+                <li>\(\phi\)：初相位</li>
+            </ul>
+
+            <p>这个信号的复表示为：</p>
+            $$u(t) = Ae^{i(2\pi\nu_0 t - \phi)}$$
+            <p>其实部恰等于原来的实信号\(u^r(t)\).</p>
+
+            <p>这个复信号的复振幅定义为：</p>
+            $$\boldsymbol{A} = Ae^{i\phi}$$
+            <p>它表示单色信号的振幅与相位.</p>
+        </div>
+
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

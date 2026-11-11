@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>惯性聚变物理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>核聚变反应</h1>
+
+        <div class="Card-Analysis">
+            <h2>发热核反应：裂变与聚变</h2>
+            <p>根据Einstein的质能关系，若核反应的最终产物的总质量小于反应前的质量，这个核反应是放热的，放出的能量正比于质量差：</p>
+            $$Q = \left(\sum_i m_i - \sum_f m_f\right)c^2$$
+            <ul>
+                <li>\(m\)：质量</li>
+                <li>\(_i\)：初始物质</li>
+                <li>\(_f\)：最终产物</li>
+                <li>\(c\)：光速</li>
+            </ul>
+
+            <p>可以根据各个核子的质量与束缚能来确认发热核反应.</p>
+            <p>一个原子序数为\(Z\)和质量数为\(A\)的原子核的质量\(m\)，与\(Z\)个质子与\(A-Z\)个中子的总质量是不同的，其差值为：</p>
+            $$\Delta m = Zm_p + (A - Z)m_n - m$$
+            <ul>
+                <li>\(m_p\)：质子质量</li>
+                <li>\(m_n\)：中子质量</li>
+            </ul>
+
+            <div class="Card-AI">
+                <p>原子序数：通常用Z表示，其定义为原子核内质子的数目，它决定了元素的种类与核电荷数，等于核外电子数。</p>
+                <p>质量数A：等于质子数Z+中子数N，若一种元素（Z相同）而中子数不同，则互为同位素，如碳-12与碳-14.</p>
+                <p>束缚能：将一个由多个部分组成的系统，彻底拆散成单个部分所需的最小能量.</p>
+            </div>
+
+            <p>对于一个稳定的原子核，\(\Delta m\gt 0\)，因此若想将这个原子核分成一堆中子与质子，必须提供与束缚能相同的能量，即：</p>
+            $$B = \Delta mc^2$$
+
+            <p>因此核反应的\(Q\)值可以写成反应核最终和初始束缚能之差：</p>
+            $$Q = \sum_f B_f - \sum_i B_i$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>聚变反应物理</h2>
+            <p>对于大多数核反应，两个原子核\(X_1\)与\(X_2\)融合形成一个较重的核\(X_3\)与一个较轻的核\(X_4\)，可以采用以下两种等价的标准描述：</p>
+            $$X_1 + X_2 \to X_3 + X_4$$
+            $$X_1(x_2, x_4)X_3$$
+
+            <p>由于能量与动量守恒，两个聚变反应产物所分别获得的反应能反比于它们的质量.</p>
+            <p>在实验室坐标系中，反应核的速度分别为\(\boldsymbol{v}_1\)与\(\boldsymbol{v}_2\)，它们的相对速度为\(\boldsymbol{v} = \boldsymbol{v}_1 - \boldsymbol{v}_2\).</p>
+            <div id="flag1">
+                <p>在质量中心坐标系中，中心质量能为：</p>
+                $$\varepsilon = \frac{1}{2}m_rv^2$$
+                <ul>
+                    <li>\(v = |\boldsymbol{v}|\)</li>
+                    <li>\(m_r = \frac{m_1m_2}{m_1 + m_2}\)：约化质量</li>
+                </ul>
+            </div>
+
+            <div class="Card-AI">
+                <p>实验室坐标系：以实验室为参考系建立的坐标系.</p>
+                <p>质量中心坐标系：以系统质心为原点，并随质心一起运动的惯性坐标系.</p>
+                <p>中心质量能：在质量中心坐标系中，两个粒子相对于彼此运动的总动能.</p>
+            </div>
+
+            <h3>截面</h3>
+            <p>分析聚变反应最重要的一个量是截面，它用来度量一对粒子发生反应的概率.</p>
+            <p>为了更好地理解它，我们考虑一束粒子1组成的速度为\(v_1\)的均匀粒子束，与粒子2组成的静止靶相互作用.</p>
+            <p>截面\(\sigma_{12}(v_1)\)定义为：单位时间内在单位投射粒子流作用下每个靶原子核的反应数.</p>
+
+            <div class="Card-Definition">
+                <b>单位投射粒子流</b>
+                <p>单位时间单位面积内有一个粒子.</p>
+            </div>
+
+            <p>实际上，上述定义更普遍地适用于相对速度\(v\)，因此\(\sigma_{12}(v) = \sigma_{21}(v)\).</p>
+
+            <p>截面也可以用<a href="#flag1" class="goto">中心质量能</a>表示，所以\(\sigma_{12}(\varepsilon) = \sigma_{21}(\varepsilon)\).</p>
+            <p>多数情况下，截面是用实验室坐标系中能量为\(\varepsilon_1\)的粒子束打一个静止靶来测量的.</p>
+            <p>这个束-靶截面\(\sigma_{12}^{bt}(\varepsilon_1)\)与质量中心截面\(\sigma_{12}(\varepsilon)\)的关系为：</p>
+            $$\sigma_{12}(\varepsilon) = \sigma_{12}^{bt}(\varepsilon_1)$$
+            <ul>
+                <li>\(\varepsilon_1 = \varepsilon\cdot (m_1 + m_2)/m_2\)</li>
+            </ul>
+
+            <p>后面我们使用质量中心截面，并省略标记1和2.</p>
+
+
+
+            <h3>反应率</h3>
+
+            <div class="Card-Definition">
+                <b>反应率（reactivity）</b>
+                <p>单位靶核密度、单位时间的反应概率.</p>
+            </div>
+
+            <p>在这里简单的例子中，它就是\(\sigma v\).</p>
+            <p>通常，靶原子核是运动的，每对相互作用的原子核的相对速度各不相同.</p>
+            <p>此时我们计算平均反应率：</p>
+            $$\langle \sigma v \rangle = \int_0^\infty \sigma(v) v f(v) dv$$
+            <ul>
+                <li>\(f(v)\)：归一化的相对速度，\(\int_0^\infty f(v) dv = 1\)</li>
+            </ul>
+            <p>[注]当入射粒子与靶粒子相同时，每个反应被计算了两次.</p>
+
+
+            <h3>反应速率</h3>
+
+            <p>受控聚变燃料和星体介质通常是几种元素的混合物，标记为1和2的粒子密度分别为\(n_1\)与\(n_2\).</p>
+
+            <div class="Card-Definition">
+                <b>体积反应速率（reaction rate）</b>
+                <p>单位时间单位体积内的反应数.</p>
+
+                $$R_{12} = \frac{n_1n_2}{1 + \delta_{12}}\langle\sigma v\rangle = \frac{f_1f_2}{1 + \delta_{12}}n^2\langle\sigma v\rangle$$
+
+            </div>
+
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

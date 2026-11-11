@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fourier光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>超越经典衍射极限的分辨率问题</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+            <div class="Card-Definition">
+                <b>阿贝极限</b>
+                <p>可见光能聚焦的最小直径为光波波长的三分之一.</p>
+            </div>
+
+            <p>长期以来，“阿贝极限”一致被认为是光学显微镜理论上的分辨率极限.</p>
+            <p>通常情况下，所有成像系统的分辨能力都受到衍射极限的约束.</p>
+            <p>一般来讲，实际成像系统的分辨率不能超越其衍射极限.</p>
+            <p>人们在设计或制造成像系统时，常常将理论计算的衍射极限作为提高分辨率的目标.</p>
+            <p>然而，科学工作者在长期的科学探索中发现，对某些特定物体成像时，能够超越经典衍射极限的分辨率，从而使超越经典衍射极限的分辨率问题备受关注.</p>
+            <p>超越经典衍射极限的分辨率常称为<b>超分辨率</b>或<b>带宽外推</b>.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>超分辨率存在的理论依据</h2>
+
+            <p>成像分辨率之所以可能超越经典极限，首先有着很基本的数学原因.</p>
+            <p>它们的理论基础是源于两条基本的数学定理：</p>
+            <p><b>定理1</b>：一个空间有界函数的二维Fourier变换，是\(\xi, \eta\)平面上的解析函数.</p>
+            <p><b>定理2</b>：\((\xi, \eta)\)空间频谱平面上一个任意的解析函数，若在此平面上的一个任意小但有限的区域内精确知道这个函数的值，那么整个函数可以通过解析延拓手段唯一确定.</p>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>常用超分辨率方法简介</h2>
+            <p>超分辨率方法很多，这里介绍两种.</p>
+
+            <h3>基于抽样定理的外推方法</h3>
+
+            <h3>基于迭代的外推方法</h3>
+
+            <p>值得一提的是，现有的超分辨率法，需要丰富而精确的先验知识，且对噪声都很敏感，噪声较大或先验知识不精确都有可能无法获得超分辨率图像.</p>
+            <p>正是鉴于这一点，人们还是普遍同意瑞利分辨率极限是用常规的成像系统能达到的一个实用的分辨率极限.</p>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

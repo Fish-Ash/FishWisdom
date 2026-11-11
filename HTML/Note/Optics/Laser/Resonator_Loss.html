@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        <h1>光学谐振腔的损耗</h1>
+        
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+            <p>光学谐振腔具有光学正反馈作用，但同时也存在各种损耗.</p>
+            <p>损耗的大小是评价谐振腔的重要指标，在激光振荡过程中，光腔损耗的大小决定了激光振荡的阈值、达到稳定振荡状态腔内的光强、及激光的输出能量等.</p>
+            <p>本节分析无源开腔的损耗，并由此讨论表征无源腔质量的品质因数Q值.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光腔的损耗</h2>
+            <h3>损耗的种类</h3>
+            <p>无源开腔的损耗大致包括如下几个方面：</p>
+
+            <b>几何损耗</b>
+            <p>根据几何光线观点，激光在腔内的往返传播过程可以用近轴光线来描述.</p>
+            <p>光线在腔内往返传播时，一些不平行于光轴的光线在某些几何结构的腔内经过有限次往返传播后，有可能从腔的侧面偏折出去.</p>
+            <p>即使平行于光轴的光线也存在偏折出腔外的可能.</p>
+            <p>这种损耗称为腔的几何损耗.</p>
+            <p>几何损耗的大小首先取决于腔的类型与几何尺寸.</p>
+            <p>e.g. 稳定腔内近轴光线的几何损耗为0，而非稳腔则有较高的几何损耗.</p>
+            <p>其次不同横模阶次的几何损耗也不同，一般在同一光腔内，高阶横模的几何损耗比缔结横模大.</p>
+
+            <b>衍射损耗</b>
+            <p>根据波动光学观点：由于反射镜几何尺寸有限，光波在腔内往返传播时，必然因腔镜边缘的衍射效应而产生损耗.</p>
+
+            <div class="Card-Question">
+                <p>为什么有限尺寸就会有衍射？</p>
+            </div>
+
+            <p>若在腔内插入其他光学元件，还应考虑其边缘或孔径的衍射引起的损耗.</p>
+            <p>这类损耗称为衍射损耗.</p>
+            <p>衍射损耗的大小与腔的几何参数、Fresnel数与横模阶次有关.</p>
+
+            <b>输出腔镜的透射损耗（输出损耗）</b>
+            <p>通常稳定腔至少有一个反射镜是部分透射的，以获得必要的激光输出，这部分有用损耗称为光腔的透射损耗，它与输出镜的透射率有关.</p>
+            <p>这种损耗又称为输出损耗.</p>
+
+            <b>非激活吸收损耗、散射损耗</b>
+            <p>激光通过腔内光学元件以及到达反射镜表面时，会发生吸收、散射而引起损耗.</p>
+            <p>此外，激活介质材料会对光造成非激活吸收损耗，介质的不均匀性与缺陷会造成散射损耗.</p>
+
+            <table>
+                <tr>
+                    <td rowspan="5" width="128px">根据损耗是否与<br>激光横模模式有关</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">选择<br>损耗</td>
+                    <td>几何偏折损耗</td>
+                </tr>
+                <tr>
+                    <td>衍射损耗</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" width="48px">非选择<br>损耗</td>
+                    <td>腔镜反射不完全引起的损耗</td>
+                </tr>
+                <tr>
+                    <td>
+                        材料中的非激活吸收、散射；<br>
+                        腔内插入物（布儒斯特窗、调Q元件、调制器等）引起的损耗；<br>
+                        其他损耗
+                    </td>
+                </tr>
+            </table><br>
+    
+            <div class="Card-Definition">
+                <b>选择损耗</b>
+                <p>随腔内自再现模式的横模特性变化的损耗.</p>
+            </div>
+    
+            <div class="Card-Definition">
+                <b>非选择性损耗</b>
+                <p>与光波模式无关，即对各个模式基本相同的损耗.</p>
+            </div>
+
+            <h3>平均单程损耗因子</h3>
+
+            <p>不论损耗由哪种原因引起，都可以用<b>平均单程损耗因子</b>定量描述.</p>
+
+            <div class="Card-Definition">
+                <b>平均单程损耗因子\(\delta\)</b>
+                <p>设初始光强为\(I_0\)，在腔内往返一周后，光强衰减为：</p>
+                $$I = I_0e^{-2\delta}$$
+                <p>则平均单程损耗因子为：</p>
+                $$\delta = \frac{1}{2}\ln\frac{I_0}{I}$$
+    
+                <p>若损耗是由多种因素引起的，每一种损耗可用相应的损耗因子\(\delta_i\)描述：</p>
+                $$I = I_0e^{-2\delta_1}\cdot e^{-2\delta_2}\cdot e^{-2\delta_3}\cdots = I_0e^{-2\delta}$$
+                <p>则总损耗因子：</p>
+                $$\delta = \sum\delta_i$$
+                <p>即由各种原因引起的总损耗因子，为腔内各个损耗因子的总和.</p>
+            </div>
+            
+
+        </div>
+
+        
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

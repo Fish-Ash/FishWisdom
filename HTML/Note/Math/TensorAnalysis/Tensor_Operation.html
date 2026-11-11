@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>张量分析</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>张量的代数运算</h1>
+        
+        <div class="Card-Analysis">
+            <h2>张量的相等</h2>
+
+            <p>若两个张量\(\boldsymbol{T},~\boldsymbol{S}\)在同一坐标系中的逆变（或协变，或某一混变）分量一一相等，即：</p>
+            $$T^{ij\cdots} = S^{ij\cdots}\quad i,j,\cdots = 1,2,3$$
+            <p>则此两个张量的其他一切分量均一一相等：</p>
+            $$T_{ij\cdots} = S_{ij\cdots}\quad i,j,\cdots = 1,2,3$$
+            $$T^i_{\cdot j\cdots} = S^i_{\cdot j\cdots}\quad i,j,\cdots = 1,2,3$$
+
+            <p>且在任意坐标系中的一切分量均一一相等：</p>
+            $$T^{k'l'\cdots} = S^{k'l'\cdots}\quad k',l',\cdots = 1',2',3'$$
+            <p>与上述式子等价的写法是：</p>
+            $$\boldsymbol{T} = \boldsymbol{S}$$
+            <p>即张量\(\boldsymbol{T}\)与\(\boldsymbol{S}\)相等.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>张量的相加</h2>
+            <p>若将两个同阶张量\(\boldsymbol{T}\)与\(\boldsymbol{S}\)在某一坐标系中的逆变（或协变，或任一混变）分量一一相加，则得到一组数，它们是新的同阶张量\(\boldsymbol{U}\)的逆变（或协变，或任一混变）分量：</p>
+            $$T^{ij\cdots} + S^{ij\cdots} = U^{ij\cdots}\quad i,j = 1,2,3$$
+            <p>且对于任意坐标系中的任意其他分量，此和式均成立.</p>
+            <p>与上式等价的写法是：</p>
+            $$\boldsymbol{T} + \boldsymbol{S} = \boldsymbol{U}$$
+            <p>即张量\(\boldsymbol{T}\)与张量\(\boldsymbol{S}\)之和.</p>
+
+            <p>若将上式中的张量\(\boldsymbol{S}\)<a href="#scalar_product" class="goto">乘</a>\(k=-1\)，则为<b>张量相减</b>：</p>
+            $$\boldsymbol{T} - \boldsymbol{S} = \boldsymbol{T} + (-1)\boldsymbol{S}$$
+        </div>
+
+        <div class="Card-Analysis" id="scalar_product">
+            <h2>标量与张量相乘</h2>
+            <p>若将张量在某一坐标系中的逆变（或协变，或任一混变）分量乘标量\(k\)（\(k\)可因点而异，但不随坐标变化而变化），则得到一组数，也是张量的逆变（或协变，或任一混变）分量，即：</p>
+            $$kT^{ij\cdots} = U^{ij\cdots}\quad i,j = 1,2,3$$
+            <p>且对于任意坐标系中任意其他分量此等式均成立.</p>
+
+            <div class="Card-AI">
+                <p>什么叫k可因点而变？</p>
+            </div>
+
+            <p>上式的等价写法是：</p>
+            $$k\boldsymbol{T} = \boldsymbol{U}$$
+            <p>即张量\(\boldsymbol{U}\)等于张量\(\boldsymbol{T}\)乘\(k\).</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>张量与张量并乘</h2>
+            <p>[设]\(T^{ij},~S_k^{\cdot l}\)分别是张量\(\boldsymbol{T},~\boldsymbol{S}\)的分量.</p>
+            <p>[注]可以是任意形式的分量即逆变、协变或混变分量；\(\boldsymbol{T},~\boldsymbol{S}\)可以是任意阶张量，这里以二阶张量为例.</p>
+
+            <p>则\(T^{ij}\)与\(S_k^{\cdot l}\)各分量的两两乘积是新张量\(\boldsymbol{U}\)的一组分量.</p>
+            $$T^{ij}S_k^{\cdot l} = U^{ij\cdot l}_{\cdot\cdot k}\quad i,j,k,l = 1,2,3$$
+
+            <p>这种运算称为张量与张量的并乘，用实体形式表示为：</p>
+            $$\boldsymbol{T}\boldsymbol{S} = \boldsymbol{U}$$
+            <p>[注]也可以用并乘（张量乘）符号表示并乘：\(\boldsymbol{T}\otimes\boldsymbol{S} = \boldsymbol{U}\)</p>
+
+            <p>与并矢量相同，张量并乘时顺序不能任意调换，即：</p>
+            $$\boldsymbol{T}\boldsymbol{S} \neq \boldsymbol{S}\boldsymbol{T}$$
+        </div>
+        
+        <div class="Card-Analysis">
+            <h2>张量的缩并</h2>
+            <p>张量缩并时，将其基张量中的任意两个基矢量（一般选一个协变基和一个逆变基）进行点积.</p>
+            <p>e.g. 若将四阶张量\(\boldsymbol{T} = T^{ij}_{\cdot\cdot kl}\boldsymbol{g}_i\boldsymbol{g}_j\boldsymbol{g}^k\boldsymbol{g}^l\)中的第2、第4基矢量进行点积，得：</p>
+            $$\boldsymbol{S} = \overset{\cdot}{\overline{T}} = T^{ij}_{\cdot\cdot kl}\boldsymbol{g}_i\overset{\cdot}{\overline{\boldsymbol{g}_j\boldsymbol{g}^k\boldsymbol{g}^l}} = T^{ij}_{\cdot\cdot kl}\delta_j^l\boldsymbol{g}_i\boldsymbol{g}^k = T^{ij}_{\cdot\cdot kj}\boldsymbol{g}_i\boldsymbol{g}^k$$
+
+            <p>[令]</p>
+            <div class="Formula">
+                $$S^i_{\cdot k} = T^{ij}_{\cdot\cdot kj}$$
+                <div class="Derivation">
+                    <p>将\(T^{ij}_{\cdot\cdot kj}\)按<a href="EinsteinSummationConvention.html" class="goto">Einstein求和约定展开</a>：</p>
+                    $$\begin{align}
+                    T^{ij}_{\cdot\cdot kj} &= \sum_{j=1}^3 T^{ij}_{\cdot\cdot kj}\\
+                                           &= T^{i1}_{\cdot\cdot k1} + T^{i2}_{\cdot\cdot k2} + T^{i3}_{\cdot\cdot k3}
+                    \end{align}$$
+                    <p>该式与\(j\)无关，因此可以直接记为：\(S^i_{\cdot k}\).</p>
+                </div>
+            </div>
+
+            $$\therefore \boldsymbol{S} = S^i_{\cdot k}\boldsymbol{g}_i\boldsymbol{g}^k$$
+
+            <p>张量每缩并一次就消除两个基矢量，因而降低两阶.</p>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>张量的点积</h2>
+
+            <div class="Card-Definition">
+                <b>点积（内积）</b>
+                <p>两个张量\(\boldsymbol{T}\)与\(\boldsymbol{S}\)先并乘后缩并的运算.</p>
+            </div>
+
+            <p>与缩并一样，对于点积运算，应说明将张量\(\boldsymbol{T}\)中的哪一个基矢量与张量\(\boldsymbol{S}\)中的哪一个基矢量相点积.</p>
+
+            <p>方便起见，一般取一个逆变基矢量与一个协变基矢量相点积.</p>
+
+            <p>可以证明：两个张量点积后得到一个新的张量\(\boldsymbol{U}\)，若\(\boldsymbol{T}\)是\(m\)阶张量、\(S\)为\(n\)阶张量，则\(\boldsymbol{U}\)的阶数为\(m + n - 2\).</p>
+
+            <p>e.g. 四阶张量\(\boldsymbol{T}\)与三阶张量\(\boldsymbol{S}\)的点积.</p>
+            $$\boldsymbol{T} = T^{ij}_{\cdot\cdot kl}\boldsymbol{g}_i\boldsymbol{g}_j\boldsymbol{g}^k\boldsymbol{g}^l$$
+            $$\boldsymbol{S} = S^{rs}_{\cdot\cdot t}\boldsymbol{g}_r\boldsymbol{g}_s\boldsymbol{g}^t$$
+            <p>并乘得一个七阶张量：</p>
+            $$\boldsymbol{T}\boldsymbol{S} = T^{ij}_{\cdot\cdot kl}S^{rs}_{\cdot\cdot t}\boldsymbol{g}_i\boldsymbol{g}_j\boldsymbol{g}^k\boldsymbol{g}^l\boldsymbol{g}_r\boldsymbol{g}_s\boldsymbol{g}^t$$
+
+            <p>缩并一次得到五阶张量：</p>
+            $$\begin{align}
+            \overset{\cdot}{\overline{\boldsymbol{T}\boldsymbol{S}}} &= T^{ij}_{\cdot\cdot kl}S^{rs}_{\cdot\cdot t}\boldsymbol{g}_i\boldsymbol{g}_j\overset{\cdot}{\overline{\boldsymbol{g}^k\boldsymbol{g}^l\boldsymbol{g}_r\boldsymbol{g}_s}}\boldsymbol{g}^t\\
+                                                                     &= T^{ij}_{\cdot\cdot kl}S^{rs}_{\cdot\cdot t}\delta_s^k\boldsymbol{g}_i\boldsymbol{g}_j\boldsymbol{g}^l\boldsymbol{g}_r\boldsymbol{g}^t\\
+                                                                     &= T^{ij}_{\cdot\cdot kl}S^{rk}_{\cdot\cdot t}\boldsymbol{g}_i\boldsymbol{g}_j\boldsymbol{g}^l\boldsymbol{g}_r\boldsymbol{g}^t\\
+                                                                     &= U^{ij\cdot r}_{\cdot\cdot l\cdot t}\boldsymbol{g}_i\boldsymbol{g}_j\boldsymbol{g}^l\boldsymbol{g}_r\boldsymbol{g}^t
+            \end{align}$$
+
+            <p>或表示为：</p>
+            $$\overset{\cdot}{\overline{\boldsymbol{T}\boldsymbol{S}}} = \boldsymbol{U}$$
+
+            <p>若将前张量的最后一个基矢量与后张量的第一个基矢量相点积，这时可以将点积号写在两张量之间：</p>
+            $$\boldsymbol{T}\cdot\boldsymbol{S}$$
+
+            <h3>双点积</h3>
+            <p>若两个张量\(\boldsymbol{T}\)和\(\boldsymbol{S}\)并乘之后再进行两次缩并，则称为双点积.</p>
+            <p>张量双点积有两种形式：</p>
+            <b>并联式</b>
+            $$\boldsymbol{W} = \boldsymbol{T}:\boldsymbol{S}$$
+
+            <b>串联式</b>
+            $$\boldsymbol{Z} = \boldsymbol{T}\cdot\cdot\boldsymbol{S}$$
+
+            <p>以上两种双点积的结果\(\boldsymbol{W}\)与\(\boldsymbol{Z}\)并不是同一种张量.</p>
+            
+
+        </div>
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

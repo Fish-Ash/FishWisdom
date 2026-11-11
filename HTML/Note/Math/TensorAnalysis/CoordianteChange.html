@@ -43,14 +43,90 @@
             <p>同一物理量在不同坐标系中往往以不同的分量加以定量描述.</p>
         </div>
 
-        <div class="Card-Analysis">
+        <div class="Card-Analysis" id="flag1">
             <h2>基矢量的转换关系</h2>
-            <p>新老坐标系各自有协变基矢量与逆变基矢量，它们各自分别满足对偶条件：</p>
-            $$\boldsymbol{g}^j\cdot\boldsymbol{g}_i = \delta_i^j,\quad i,j = 1,2,3$$
 
-            <p>将新坐标系的基矢量与老坐标系的基矢量分解，有：</p>
+            <div class="Card-AI">
+                <p>本节给出了新老坐标系下，协变、逆变基矢量的转换式.</p>
+            </div>
+
+            <p>新老坐标系各自有协变基矢量与逆变基矢量，它们各自分别满足<a href="CoordinateSystem.html#duality_condition" class="goto">对偶条件</a>.</p>
+
+            <h3>新坐标系的基矢量对老坐标系的基矢量分解</h3>
+            
             $$\boldsymbol{g}_{i'} = \beta_{i'}^j\boldsymbol{g}_j,\quad i'=1,2,3$$
             $$\boldsymbol{g}^{i'} = \beta_j^{i'}\boldsymbol{g}^j,\quad i'=1,2,3$$
+
+            <ul>
+                <li>\(\beta_{i'}^j\)：协变转换系数</li>
+                <li>\(\beta_j^{i'}\)：逆变转换系数</li>
+            </ul>
+
+            <p>协变转换系数与逆变转换系数各有\(9\)个，可各自排列成\(3\times 3\)矩阵.</p>
+            <p>协变转换系数与逆变转换系数并不独立，因为它们之间必须满足对偶关系：</p>
+            $$\delta_{i'}^{j'} = \boldsymbol{g}_{i'}\cdot\boldsymbol{g}^{j'} = \beta_{i'}^k\boldsymbol{g}_k\cdot\beta_l^{j'}\boldsymbol{g}^l = \beta_{i'}^k\beta_l^{j'}\delta_k^l = \beta_{i'}^k\beta_k^{j'}\quad i',j' = 1,2,3$$
+
+            <p>上式表示协变转换系数与逆变转换系数组成的矩阵互逆，即：</p>
+            $$\begin{bmatrix}\beta_{1'}^1&\beta_{1'}^2&\beta_{1'}^3\\\beta_{2'}^1&\beta_{2'}^2&\beta_{2'}^3\\\beta_{3'}^1&\beta_{3'}^2&\beta_{3'}^3\end{bmatrix} \begin{bmatrix} \beta_1^{1'}&\beta_1^{2'}&\beta_1^{3'} \\ \beta_2^{1'}&\beta_2^{2'}&\beta_2^{3'} \\ \beta_3^{1'}&\beta_3^{2'}&\beta_3^{3'} \end{bmatrix} = \begin{bmatrix} 1&0&0\\0&1&0\\0&0&1 \end{bmatrix}$$
+
+            <h3>老坐标协变基矢量对新坐标协变基矢量分解</h3>
+            $$\boldsymbol{g}_j = a_j^{i'}\boldsymbol{g}_{i'},\quad j=1,2,3$$
+            <p>转换系数\(a_j^{i'}\)同样有\(9\)个.</p>
+            $$\boldsymbol{g}_j\cdot\boldsymbol{g}^{i'} = a_j^{k'}\boldsymbol{g}_{k'}\cdot\boldsymbol{g}^{i'} = a_j^{k'}\delta_{k'}^{i'} = a_j^{i'},\quad j,i'=1,2,3$$
+            $$\boldsymbol{g}_j\cdot\boldsymbol{g}^{i'} = \boldsymbol{g}_j\cdot\beta_k^{i'}\boldsymbol{g}^k = \beta_k^{i'}\delta_j^k = \beta_j^{i'},\quad j,i'=1,2,3$$
+            $$\therefore a_j^{i'} = \beta_j^{i'}$$
+            $$\therefore \boldsymbol{g}_j = \beta_j^{i'}\boldsymbol{g}_{i'}\quad j = 1,2,3$$
+            $$\beta_{j}^{i'} = \boldsymbol{g}^{i'}\cdot\boldsymbol{g}_j\quad i',j = 1,2,3$$
+            <p>同理：</p>
+            $$\boldsymbol{g}^j = \beta_{i'}^j\boldsymbol{g}^{i'}\quad j=1,2,3$$
+            $$\beta_{i'}^j = \boldsymbol{g}^j\cdot\boldsymbol{g}_{i'}\quad i',j = 1,2,3$$
+
+            <p>上式表示协变转换系数与逆变转换系数的另一种矩阵关系：</p>
+            $$\begin{bmatrix} \beta_1^{1'}&\beta_1^{2'}&\beta_1^{3'} \\ \beta_2^{1'}&\beta_2^{2'}&\beta_2^{3'} \\ \beta_3^{1'}&\beta_3^{2'}&\beta_3^{3'} \end{bmatrix}\begin{bmatrix}\beta_{1'}^1&\beta_{1'}^2&\beta_{1'}^3\\\beta_{2'}^1&\beta_{2'}^2&\beta_{2'}^3\\\beta_{3'}^1&\beta_{3'}^2&\beta_{3'}^3\end{bmatrix} = \begin{bmatrix} 1&0&0\\0&1&0\\0&0&1 \end{bmatrix}$$
+
+            <div class="Card-Formula">
+                <b>老坐标系基矢量\(\to\)新坐标系基矢量</b>
+                $$\boldsymbol{g}_{i'} = \beta_{i'}^j\boldsymbol{g}_j,\quad \boldsymbol{g}^{i'} = \beta_j^{i'}\boldsymbol{g}^j\quad i' = 1,2,3$$
+            </div>
+
+            <div class="Card-Formula">
+                <b>新坐标系基矢量\(to\)老坐标系基矢量</b>
+                $$\boldsymbol{g}_j = \beta_j^{i'}\boldsymbol{g}_{i'},\quad \boldsymbol{g}^j = \beta_{i'}^j\boldsymbol{g}^{i'},\quad j = 1,2,3$$
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>协变与逆变转换系数</h2>
+            <div class="Card-Formula">
+                <b>协变转换系数</b>
+                $$\beta_{i'}^j = \frac{\partial x^j}{\partial x^{i'}}\quad i',j = 1,2,3$$
+            </div>
+
+            <div class="Card-Formula">
+                <b>逆变转换系数</b>
+                $$\beta_j^{i'} = \frac{\partial x^{i'}}{\partial x^j}\quad i',j = 1,2,3$$
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>矢量分量的坐标转换关系</h2>
+            <p>矢量\(\boldsymbol{v}\)可以在不同的坐标系中对不同的基矢量分解.</p>
+            <p>在新、老坐标系中，对逆变基分解，得到同一矢量不同协变分量；对协变基分解，得到同一矢量的不同逆变分量.</p>
+            <p>这些分量虽不相同，但分矢量的矢量和不应随坐标不同而变化，即：</p>
+            $$\boldsymbol{v} = v_{i'}\boldsymbol{g}^{i'} = v_j\boldsymbol{g}^j\quad\text{or}\quad \boldsymbol{v} = v^{i'}\boldsymbol{g}_{i'} = v^j\boldsymbol{g}_j$$
+
+            <div class="Card-AI">
+                <p>四个式子都是相等的.</p>
+            </div>
+
+            <p>不同坐标系中矢量分量之间满足的关系可由<a href="#flag1" class="goto">基矢量的转换关系</a>确定：</p>
+            $$\because \boldsymbol{g}^{j} = \beta_{i'}^{j}\boldsymbol{g}^{i'}$$
+            $$\therefore v_{i'}\boldsymbol{g}^{i'} = v_j\boldsymbol{g}^j = v_j\beta_{i'}^j\boldsymbol{g}^{i'}$$
+
+            <p>同理：</p>
+            $$v^{i'} = \beta_{j}^{i'}v^j\quad i'=1,2,3$$
+
+
         </div>
 
         <div id="PageEnd"></div>

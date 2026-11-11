@@ -40,12 +40,12 @@
         <div class="Card-Definition">
             <b>卷积</b>
             <p>给定定义在\((-\infty, +\infty)\)上的函数\(f(t)\)与\(g(t)\)，两个函数的卷积定义为：</p>
-            $$f(t)*g(t) = \int_{-\infty}^{+\infty}f(\tau)g(t-\tau)\mathrm{d}\tau$$
+            $$h(t) = f(t)*g(t) = \int_{-\infty}^{+\infty}f(\tau)g(t-\tau)\mathrm{d}\tau$$
             <p>其中，\(*\)表示卷积运算.</p>
             <img src="Img/Cov.png" height="150">
             <b>二维卷积</b>
             <p>两个复值函数\(f(x,y)\)与\(g(x,y)\)的卷积定义为：</p>
-            $$f(x,y)*g(x,y) = \iint f(\xi,\eta)h(x-\xi,y-\eta)\mathrm{d}\xi\mathrm{d}\eta$$
+            $$h(x,y) = f(x,y)*g(x,y) = \iint_{-\infty}^{+\infty} f(\xi,\eta)g(x-\xi,y-\eta)\mathrm{d}\xi\mathrm{d}\eta$$
         </div>
 
         <div class="Card-Property">
@@ -83,6 +83,17 @@
                 </tr>
                 
             </table>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>\(f(x,y)\)与<a href="DiracFunction.html" class="goto">\(\delta\)函数</a>的卷积</h2>
+            $$\begin{align}
+            f(x,y)*\delta(x, y) &= \iint_{-\infty}^{+\infty}f(\alpha, \beta)\delta(x-\alpha, y - \beta)\mathrm{d}\alpha\mathrm{d}\beta\\
+                                &= \iint_{-\infty}^{+\infty}\delta(\alpha - x, \beta - y)f(\alpha, \beta)\mathrm{d}\alpha\mathrm{d}\beta\\
+                                &= f(x, y) 
+            \end{align}$$
+
+            $$f(x,y)*\delta(x-x_0, y-y_0) = f(x-x_0, y-y_0)$$
         </div>
 
 

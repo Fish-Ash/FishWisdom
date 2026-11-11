@@ -134,59 +134,7 @@
             <p>一个高强度单色激光通过非线性介质，由于二阶非线性差频过程产生一个直流极化场\(\boldsymbol{P}_0\)，并在介质中建立一个直流电场的现象.</p>
         </div>
 
-        <h3>曼利-罗关系</h3>
-        <p>进行三波混频的光波所携带的总能量通量在介质内处处相等，光场与介质间无能量交换.</p>
-        $$S_{\omega_1} + S_{\omega_2} + S_{\omega_3} = C$$
-        <div class="Prove">
-            $$\begin{align}
-            &\frac{k_1}{\omega_1}E^*_1\frac{\mathrm{d}E_1}{\mathrm{d}z} + \frac{k_2}{\omega_2}E^*_2\frac{\mathrm{d}E_2}{\mathrm{d}z} + \frac{k_3}{\omega_3}E_3\frac{\mathrm{d}E^*_3}{\mathrm{d}z}\\
-            =& \frac{i}{c^2}\chi_{eff}^{(2)}(\omega_1E_1^*E_2^*E_3e^{-i\Delta kz} + \omega_2 E_1^*E_2^*E_3e^{-i\Delta kz} - \omega_3E_1^*E_2^*E_3e^{-i\Delta kz})\\
-            =& 0
-            \end{align}$$
-            <p>对上式取复共轭并相加，因为：</p>
-            $$x^*\frac{\mathrm{d}x}{\mathrm{d}t} + x\frac{\mathrm{d}x^*}{\mathrm{d}t} = \frac{\mathrm{d}}{\mathrm{d}t}(x\cdot x^*) = \frac{\mathrm{d}|x|^2}{\mathrm{d}t}$$
-            <p>故有：</p>
-            $$\frac{k_1}{\omega_1}\frac{\mathrm{d}|E_1|^2}{\mathrm{d}z} + \frac{k_2}{\omega_2}\frac{\mathrm{d}|E_2|^2}{\mathrm{d}z} + \frac{k_3}{\omega_3}\frac{\mathrm{d}|E_3|^2}{\mathrm{d}z} = 0$$
-            <p>积分得：</p>
-            $$\frac{k_1}{\omega_1}|E_1|^2 + \frac{k_2}{\omega_2}|E_2|^2 + \frac{k_3}{\omega_3}|E_3|^2 = C$$
-            <p>由<a class="goto" href="../PhysicalOptics/ReflectionAndTransmission.html#PoyntingVector">能流密度</a>表达式：</p>
-            $$S = \frac{1}{2}\epsilon|2E|^2v = \frac{2}{\mu_0}\frac{k}{\omega}|E|^2$$
-            <p>故：</p>
-            $$S_{\omega_1} + S_{\omega_2} + S_{\omega_3} = C$$
-        </div>
 
-        <div class="Card-Definition">
-            <b>曼利-罗关系</b>
-            $$\frac{S_{\omega_1}}{\omega_1} - \frac{S_{\omega_2}}{\omega_2} = C_1$$
-            $$\frac{S_{\omega_1}}{\omega_1} + \frac{S_{\omega_3}}{\omega_3} = C_2$$
-            $$\frac{S_{\omega_2}}{\omega_3} + \frac{S_{\omega_3}}{\omega_3} = C_3$$
-        </div>
-
-        <h3>和频产生</h3>
-        <p>假设非线性介质中，开始时并无频率为\(\omega_3\)的光波分量，该分量是由入射频率为\(\omega_1\)和\(\omega_2\)的光波混合产生的.</p>
-        <p>因此，称\(\omega_1\)和\(\omega_2\)光波为泵浦光，称\(\omega_3\)为信号光.</p>
-        <p>为确定所产生的频率为\(\omega_3\)的信号光波电场的变化规律，需要在给定入射光电场\(E(\omega_1, 0)\)和\(E(\omega_2, 0)\)的条件下，求解基本耦合波方程组.</p>
-        <p>有两种可供选择的求解方法：<b>小信号近似理论</b>与<b>大信号理论</b>.</p>
-
-        <b>小信号近似理论</b>
-        <p>认为在光混频过程中，频率\(\omega_1\)和\(\omega_2\)的泵浦光波强度改变很小，故可认为其强度在光波耦合过程中是不变的，此时将基本耦合波方程组中的\(E(\omega_1, z)\)与\(E(\omega_2, z)\)视为常数，只需求解\(E(\omega_3, z)\)式.</p>
-
-        <p>在满足相位匹配的条件下，即\(\Delta k=0\)时，方程</p>
-        $$\frac{\mathrm{d}E(\omega_3, z)}{\mathrm{d}z} = \frac{i\omega_3^2}{k_3c^2}\chi_{eff}^{(2)}E(\omega_1, z)E^*(\omega_2, z)e^{i\Delta kz}$$
-        <p>的解为：</p>
-        $$E(\omega_3, z) = \frac{i\omega_3^2}{k_3c^2}\chi_{eff}^{(2)}E(\omega_1,0)E(\omega_2,0)z$$
-
-        <div class="Card-Question">
-            <p>什么是相位匹配，什么是相位匹配条件，为什么要相位匹配？</p>
-        </div>
-
-        <b>大信号理论</b>
-        <p>认为在光混频过程中，需考虑泵浦抽空效应，\(\omega_1\)、\(\omega_2\)和\(\omega_3\)的光波强度都在变化，需要同时求解基本耦合波方程组中的三个方程.</p>
-
-        <div class="Card-AI">
-            <b>泵浦抽空效应</b>
-            <p>在三波混频（或二阶非线性）过程中，泵浦光因强度向信号光与闲置光转换能量而显著减弱的现象.</p>
-        </div>
 
         <h2>谐波的产生</h2>
         <p>一个频率为\(\omega_1\)的入射波产生谐波的过程：</p>
@@ -196,6 +144,10 @@
         <div class="Card-Analysis">
             <h2>参量转换</h2>
 
+            <div class="Card-AI">
+                <p>参量转换其实就是一种特殊的和频产生或差频产生.</p>
+            </div>
+
             <h3>参量转换的分类</h3>
             <ul>
                 <li><b>参量上转换</b>：对应于和频过程，由频率较低的信号辐射转换为频率较高的辐射</li>
@@ -203,10 +155,10 @@
             </ul>
 
             <h3>参量转换的理论分析</h3>
+            <p>[设]泵浦光频率为\(\omega_1\).</p>
             <p>实际过程中，参与频率转换作用的强光波（泵浦光）通常比弱光波（信号光）强得多，因此在频率转换过程中，泵浦光所损失或得到的功率与其总功率相比很小，可忽略其强度的变化，认为是常数，即：</p>
             $$\frac{\mathrm{d}E_1}{\mathrm{d}z}\approx 0$$
             <p>这种近似不仅适用于小的\(z\)值，对所有的\(z\)值都适用.</p>
-            <p>[设]泵浦光频率为\(\omega_1\).</p>
             <p>在这种近似下，仅需求解<a href="ThreeWave.html" class="goto">三波混频耦合波方程</a>中的\(\frac{\mathrm{d}E_2}{\mathrm{d}z}\)式与\(\frac{\mathrm{d}E_3}{\mathrm{d}z}\)式.</p>
             $$\frac{\mathrm{d}E_2}{\mathrm{d}z} = \frac{i\omega_2^2}{k_2c^2}\chi_{\text{eff}}^{(2)}E_3E_1^*e^{-i\Delta kz}$$
             $$\frac{\mathrm{d}E_3}{\mathrm{d}z} = \frac{i\omega_3^2}{k_3c^2}\chi_{\text{eff}}^{(2)}E_1E_2e^{i\Delta kz}$$
@@ -231,22 +183,62 @@
                 <b>特征长度\(l_M\)</b>
                 $$l_M = \left[\frac{1}{2c^2}\left(\frac{\omega_2^2\omega_3^2}{k_2k_3}\right)^{1/2}\left\lvert\chi_{\text{eff}}^{(2)}\right\rvert E_0(\omega_1, 0)\right]^{-1}$$
             </div>
-
-            <h3>对于参量下转换过程</h3>
+            <div class="Card-AI">
+                <p>1、去探究一下\(l_M\)的定义式</p>
+            </div>
+            <h4>对于参量下转换过程</h4>
             <p>起始条件为：</p>
             $$E(\omega_2, z)\rvert_{z=0} = E(\omega_2, 0) = 0$$
             <p>由三波混频耦合波方程：</p>
             $$\left.\frac{\mathrm{d}E(\omega_2, z)}{\mathrm{d}z}\right\rvert_{z=0} = \frac{i\omega_2^2}{k_2c^2}E(\omega_3, 0)E^*(\omega_1, 0)$$
             <p>在这种条件下求解微分方程，结果为：</p>
-            $$E(\omega_2, z) = \frac{i\omega_2^2}{k_2c^2}\chi_{\text{eff}}^{(2)}E(\omega_3, 0)E^*(\omega_1, 0)\frac{1}{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}}\sin^2\left\{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}z\right\}$$
-            $$N_{\omega_2}(z) = \frac{N_{\omega_3}(0)}{l_M^2}\frac{1}{\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2}\sin^2\left\{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}z\right\}$$
+            $$E(\omega_2, z) = \frac{i\omega_2^2}{k_2c^2}\chi_{\text{eff}}^{(2)}E(\omega_3, 0)E^*(\omega_1, 0)\frac{e^{-i\frac{\Delta kz}{2}}}{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}}\sin\left\{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}z\right\}$$
+            $$N_2(z) = \frac{N_3(0)}{l_M^2}\frac{1}{\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2}\sin^2\left\{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}z\right\}$$
 
-
-            <h3>对于参量上转换过程</h3>
             <div class="Card-AI">
-                <p>1、去探究一下\(l_M\)的定义式</p>
-                <p>2、理解一下Manley-Rowe关系的物理意义</p>
+                <p>微分方程的求解过程</p>
             </div>
+
+            <p>由<a href="ManleyRowe.html" class="goto">Manley-Rowe关系</a>，得：</p>
+            <div class="Formula">
+                $$N_2 + N_3 = N_3(0)$$
+                <div class="Derivation">
+                    $$N_2 + N_3 = N_2(0) + N_3(0) = C$$
+                    $$\because E_2(z) = 0$$
+                    $$\therefore N_2(0) = 0$$
+                    $$\therefore N_2 + N_3 = N_3(0)$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\therefore N_3(z) = N_3(0)\frac{1 + \left(\frac{\Delta k L_M}{2}\right)^2 - \sin^2\left\{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}z\right\}}{1 + \left(\frac{\Delta k L_M}{2}\right)^2}$$
+                <div class="Derivation">
+                    $$\begin{align}\because
+                    N_2(z) &= \frac{N_3(0)}{l_M^2}\frac{1}{\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2}\sin^2\left\{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}z\right\}\\
+                            &= N_3(0)\frac{\sin^2\left\{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}z\right\}}{1 + \left(\frac{\Delta k L_M}{2}\right)^2}
+                    \end{align}$$
+        
+                    $$\begin{align}\therefore
+                    N_3(z) &= N_3(0) - N_2\\
+                            &= N_3(0)\frac{1 + \left(\frac{\Delta k L_M}{2}\right)^2 - \sin^2\left\{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}z\right\}}{1 + \left(\frac{\Delta k L_M}{2}\right)^2}
+                    \end{align}$$
+                </div>
+            </div>
+
+            <p>\(N_2(z)\)与\(N_3(z)\)两式，就是参量下转换过程中，\(\omega_2\)与\(\omega_3\)光波光子通量随距离\(z\)变化的关系式.</p>
+            
+
+            <h4>对于参量上转换过程</h4>
+            <p>对于参量上转换过程，光子通量随距离\(z\)变化的关系式可以直接从参量下转换的\(N_2(z)\)与\(N_3(z)\)两式中得出，知识需要交换式中的频率\(\omega_2\)与\(\omega_3\).</p>
+            $$N_3(z) = \frac{N_2(0)}{l_M^2}\frac{1}{\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2}\sin^2\left\{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}z\right\}$$
+            $$N_2(z) = N_2(0)\frac{1 + \left(\frac{\Delta k L_M}{2}\right)^2 - \sin^2\left\{\left[\frac{1}{l_M^2} + \left(\frac{\Delta k}{2}\right)^2\right]^{1/2}z\right\}}{1 + \left(\frac{\Delta k L_M}{2}\right)^2}$$
+
+            <h3>参量上转换</h3>
+            <p>研究参量上转换的实际意义在于：可以利用这种频率上转换过程，实现红外信号及红外图像的探测.</p>
+            <p>将红外波段很弱的信号或很弱的图像上转换到可见光范围，虽然上转换效率很低，但因在可见光区域有较灵敏的探测器和拾像器件，所以可以通过提高可见光区域的探测能力补偿上转换效率的不足.</p>
+            <p>应当明确指出的是：图像上转换之所以可能，是相位匹配条件满足及上转换强度与信号强度之间成线性关系这两者共同作用的结果.</p>
+            <p>只有这样，在参量上转换过程中，图像才不失真.</p>
+
 
         </div>
 

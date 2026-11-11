@@ -97,6 +97,12 @@
         
         <div class="Card-Analysis">
             <h2>\(\delta\)函数</h2>
+
+            <b>相关链接</b>
+            <ul>
+                <li><a href="FourierTransform.html">\(\delta\)函数的Fourier变换</a></li>
+            </ul>
+
             <h3>\(\delta\)函数的定义</h3>
             <b>类似普通函数形式的定义：</b>
             $$\begin{cases}
@@ -125,6 +131,13 @@
             <b>筛选性质</b>
             <p>[设]\(f(x,y)\)在\(x_0, y_0\)处连续：</p>
             $$\iint_{-\infty}^{+\infty}\delta(x-x_0,y-y_0)f(x,y)\mathrm{d}x\mathrm{d}y = f(x_0,y_0)$$
+
+            
+            <p id="function by delta"><b>推论</b>：任意函数\(f(x, y)\)可以分解为\(\delta\)函数的线性组合.</p>
+            $$f(x, y) = \iint_{-\infty}^{+\infty} f(\alpha, \beta)\delta(x - \alpha, y - \beta)\mathrm{d}\alpha\mathrm{d}\beta$$
+            <p>这个积分式可以看作是一种特殊的线性叠加：</p>
+            <p>当\(\alpha, \beta\)在整个物平面上取值时，上式是无穷多个不同位置的\(\delta\)函数\(\delta(x-\alpha, y-\beta)\)以\(f(\alpha,\beta)\mathrm{d}\alpha\mathrm{d}\beta\)为系数（权重）的线性叠加.</p>
+
 
             <b>坐标缩放性质（比例变化性质）</b>
             <p>[设]\(a,b\in\mathbb{R}\)：</p>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fourier光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>相干照明下衍射受限系统的成像规律</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+            <p>现在的任务是：确定某一给定的物分布通过衍射受限系统后，在像平面上的像分布，包括复振幅分布与光强分布.</p>
+            <p>一个确定的物分布总可以方便地分解成无数\(\delta\)函数的线性组合，而每个\(\delta\)函数可由<a href="Chapter3.html#DiffractionLimited_h" class="goto">衍射受限系统的点扩散函数</a>求出其响应.</p>
+            <p>然而，在像平面上将这些无数个脉冲响应合成的结果，是和物面照明情况有关的：</p>
+            <ul>
+                <li>若物面上某两个脉冲是相干的：则这两个脉冲在像平面上的响应是相干叠加.</li>
+                <li>若物面上两个脉冲是非相干的：则这两个脉冲在像平面上的响应是非相干叠加，即强度叠加.</li>
+            </ul>
+
+            <p>所以衍射受限系统的成像特性，对于相干照明与非相干照明是不同的.</p>
+            <p>本节先讨论相干照明的情况.</p>
+            <div class="Card-AI">
+                <p>这里研究的是空域</p>
+            </div>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>分析过程</h2>
+
+            <b>前置知识</b>
+            <ul>
+                <li><a href="LinearSystem.html">线性系统</a></li>
+            </ul>
+
+            <p>[设]物的复振幅分布为\(U_o(x_o, y_o)\).</p>
+            <p>将物分布<a href="../../Math/FourierAnalysis/DiracFunction.html#function by delta" class="goto">分解成\(\delta\)函数的线性组合</a>：</p>
+            $$U_o(x_o, y_o) = \iint_{-\infty}^{+\infty}U_o(\alpha, \beta)\delta(x_o-\alpha, y_o-\beta)\mathrm{d}\alpha\mathrm{d}\beta$$
+            <p>相干照明下，物面上各点是完全相干的.</p>
+            <p>物面上每一个脉冲通过系统后都形成一个复振幅分布，所有这些分布的相干叠加，便是物通过系统后得到的像振幅分布\(U_i(x_i, y_i)\)：</p>
+
+            <div class="Formula">
+                $$U_i(x_i, y_i) = \frac{1}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)h(x_i-\tilde{x}_o, y_i-\tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    U_i(x_i, y_i) &= \mathcal{L}\{U_o(x_o, y_o)\}\\
+                                  &= \mathcal{L}\left\{\iint_{-\infty}^{+\infty}U_o(\alpha, \beta)\delta(x_o-\alpha, y_o-\beta)\mathrm{d}\alpha\mathrm{d}\beta\right\}\\
+                                  &= \iint_{-\infty}^{+\infty}U_o(\alpha, \beta)\mathcal{L}\left\{\delta(x_o-\alpha, y_o-\beta)\right\}\mathrm{d}\alpha\mathrm{d}\beta\\
+                                  &= \iint_{-\infty}^{+\infty}U_o(\alpha, \beta)h(x_i-M\alpha, y_i-M\beta)\mathrm{d}\alpha\mathrm{d}\beta\\
+                    \end{align}$$
+                    <p>[令]\(\tilde{x}_o = Mx_o,\quad \tilde{y}_o = My_o\).</p>
+                    <p>将积分式中的\(\alpha,~\beta\)分别代换为\(x_o,~y_o\)，有：</p>
+                    $$\begin{align}
+                    U_i(x_i, y_i) &= \iint_{-\infty}^{+\infty}U_o(\alpha, \beta)h(x_i-M\alpha, y_i-M\beta)\mathrm{d}\alpha\mathrm{d}\beta\\
+                                  &= \iint_{-\infty}^{+\infty}U_o(x_o, y_o)h(x_i-Mx_o, y_i-My_o)\mathrm{d}x_o\mathrm{d}y_o\\
+                                  &= \frac{1}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)h(x_i-\tilde{x}_o, y_i-\tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o
+                    \end{align}$$            
+                </div>
+            </div>
+            <ul>
+                <li>\(\tilde{x}_o = Mx_o\)</li>
+                <li>\(\tilde{y}_o = My_o\)</li>
+                <li>\(h(x_i-\tilde{x}_o, y_i-\tilde{y}_o)\)：由<a href="Chapter3.html#DiffractionLimited_h" class="goto">衍射受限系统的点扩散函数</a>得出</li>
+            </ul>
+
+            <p>为了说明上式的物理意义，先讨论\(U_0\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)\)在\(\tilde{x}_o, \tilde{y}_o\)坐标中的意义.</p>
+
+
+            <h3>\(U_0\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)\)在\(\tilde{x}_o, \tilde{y}_o\)坐标中的意义</h3>
+
+            <p>将<a href="Chapter3.html#IdealImaging_h" class="goto">理想成像的脉冲响应</a>代入上式，所得的像应该是理想成像的像分布\(U_g(x_i, y_i)\)：</p>
+
+            <div class="Formula">
+                $$U_g(x_i, y_i) = \frac{K\lambda^2d_i^2}{M^2}U_o\left(\frac{x_i}{M}, \frac{y_i}{M}\right)$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    U_g(x_i, y_i) &= \frac{1}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)h(x_i-\tilde{x}_o, y_i-\tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o\\
+                                  &= \frac{1}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)K\lambda^2d_i^2\delta(x_i - \tilde{x}_o, y_i - \tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o\\
+                                  &= \frac{K\lambda^2d_i^2}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)\delta(x_i - \tilde{x}_o, y_i - \tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o\\
+                                  &= \frac{K\lambda^2d_i^2}{M^2}U_o\left(\frac{x_i}{M}, \frac{y_i}{M}\right)
+                    \end{align}$$
+                </div>
+            </div>
+            <p>理想像\(U_g\)的分布形式与物\(U_o\)的分布形式是一样的，只是在\(x_i, y_i\)方向放大了\(M\)倍.</p>
+            <p>\(U_o(x_o, y_o)\)与\(U_0\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)\)的图形是一样的，只是由于\(\tilde{x}_o = Mx_o,~\tilde{y}_o = My_o\)，所以该图在\(\tilde{x}_o, \tilde{y}_o\)坐标系中的读数比在\(x_o, y_o\)坐标中放大\(M\)倍.</p>
+            <p>所以\(U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)\)在\(\tilde{x}_o,~tilde{y}_o\)中与\(U_g(x_i, y_i)\)是一样的.</p>
+            <p>称\(U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)\)为\(U_o(x_o, y_o)\)的理想像.</p>
+            <p>[令]</p>
+            <div id="hbar">
+                $$\tilde{h}(x_i - \tilde{x}_o, y_i - \tilde{y}_o) = \frac{1}{K\lambda^2d_i^2}h(x_i - \tilde{x}_o, y_i - \tilde{y}_o)$$
+            </div>
+            $$\begin{align}\therefore
+            U_i(x_i, y_i) &= \frac{1}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)h(x_i-\tilde{x}_o, y_i-\tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o\\
+                          &= \frac{K\lambda^2d_i^2}{M^2}\iint_{-\infty}^{+\infty}U_o\left(\frac{\tilde{x}_o}{M}, \frac{\tilde{y}_o}{M}\right)\tilde{h}(x_i-\tilde{x}_o, y_i-\tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o\\
+                          &= \iint_{-\infty}^{+\infty}U_o\left(\tilde{x}_o, \tilde{y}_o\right)\tilde{h}(x_i-\tilde{x}_o, y_i-\tilde{y}_o)\mathrm{d}\tilde{x}_o\mathrm{d}\tilde{y}_o\\
+                          &= U_g(x_i, y_i)*\tilde{h}(x_i, y_i)
+            \end{align}$$
+            <p>上式的物理意义为：物\(U_o(x_o, y_o)\)通过衍射受限系统后的像\(U_i(x_i, y_i)\)为\(U_o(x_o, y_o)\)的理想像\(U_g(x_i, y_i)\)和点扩散函数\(\tilde{h}(x_i, y_i)\)的卷积.</p>
+            <p>这表明：不仅对于薄的单透镜系统，而且对于更普遍的情形，衍射受限成像系统仍可看作线性空不变系统.</p>
+            <p>由\(U_i(x_i, y_i)\)可得像的强度分布为：</p>
+            $$I_i(x_i, y_i) = \left\lvert U_i(x_i, y_i)\right\rvert^2$$
+
+            <p>将<a href="Chapter3.html#DiffractionLimited_h" class="goto">衍射受限系统的点扩散函数</a>代入<a href="#hbar" class="goto">\(\tilde{h}\)定义式</a>中，得：</p>
+            <div class="Card-Formula">
+                <b>衍射受限成像系统的点扩散函数与光曈函数的关系</b>
+
+                $$\begin{align}
+                \tilde{h}(x_i - \tilde{x}_o, y_i - \tilde{y}_o) &= \iint_{-\infty}^{+\infty}P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})e^{-i2\pi[(x_i - \tilde{x}_o)\tilde{x} + (y_i - \tilde{y}_o)\tilde{y}]}\mathrm{d}\tilde{x}\mathrm{d}\tilde{y}\\
+                &= \mathcal{F}\{P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})\}
+                \end{align}$$
+            </div>
+
+            <p>由于是空不变的，可以用\(\tilde{x}_o = \tilde{y}_o = 0\)的脉冲响应表示成像系统的特性，即：</p>
+            <div class="Card-Question">
+                <p>为什么？</p>
+            </div>
+            $$\begin{align}
+            \tilde{h}(x_i, y_i) &= \iint_{-\infty}^{+\infty}P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})e^{-i2\pi(x_i\tilde{x} + y_i\tilde{y})}\mathrm{d}\tilde{x}\mathrm{d}\tilde{y}\\
+                                &= \mathcal{F}\{P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})\}
+            \end{align}$$
+            <div class="Card-Question">
+                <p>为什么这里也是Fourier变换？</p>
+            </div>
+
+            <p>由此可见：在相干照明下，对于衍射受限成像系统，表征成像系统特征的点扩散函数\(\tilde{h}\)，仅决定于系统的光曈函数\(P\).</p>
+            <p>可见光曈函数对衍射受限成像系统的重要.</p>
+
+            <div class="Card-Question">
+                <p>哪里是衍射受限成像系统？从哪里开始又是相干照明？</p>
+            </div>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -35,18 +35,38 @@
             <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
         </div>
         
-        <h1>坐标系</h1>
+        <h1>斜角坐标系的基矢量与矢量分量</h1>
         
         <div class="Card-Analysis">
 
-            <h2>平面斜角直线坐标系</h2>
-            <p>平面内直线坐标系\(x^1,x^2\)，坐标线互不相交，夹角为\(\phi \lt \pi\).</p>
-            <p>若沿\(x^1\)与\(x^2\)坐标线的参考矢量\(\boldsymbol{g}_1\)与\(\boldsymbol{g}_2\)（可以不是单位矢量），则任意矢量\(\boldsymbol{P}\)可以用它对\(\boldsymbol{g}_1\)与\(g_2\)分解的分矢量\(P^1\boldsymbol{g}_1\)与\(P^2\boldsymbol{g}_2\)之和表示：</p>
+            <h2>平面内的斜角直线坐标系</h2>
+            <p>平面内直线坐标系\(x^1,x^2\)，坐标线互不相交，夹角为\(\varphi \lt \pi\).</p>
+            <figure>
+                <img src="Img/Coordinate1.jpg" width="400">
+                <figcaption>平面内的斜角直角坐标系</figcaption>
+            </figure>
+            <p>若选沿\(x^1\)与\(x^2\)坐标线的参考矢量\(\boldsymbol{g}_1\)与\(\boldsymbol{g}_2\)（可以不是单位矢量），则任意矢量\(\boldsymbol{P}\)可以用它对\(\boldsymbol{g}_1\)与\(g_2\)分解的分矢量\(P^1\boldsymbol{g}_1\)与\(P^2\boldsymbol{g}_2\)之和表示：</p>
             $$\boldsymbol{P} = P^1\boldsymbol{g}_1 + P^2\boldsymbol{g}_2 = \sum_{a=1}^2P^\alpha\boldsymbol{g}_\alpha = P^\alpha\boldsymbol{g}_\alpha$$
             <ul>
                 <li>\(P^1,P^2\)：矢量\(\boldsymbol{P}\)的分量</li>
             </ul>
-            
+            <p>上式中最后的表达式采用了<a href="EinsteinSummationConvention.html" class="goto">Einstein求和约定</a>，略去了求和符号.</p>
+            <hr>
+
+
+            <p>选定参考矢量\(\boldsymbol{g}_1,~\boldsymbol{g}_2\)后，用初等代数的方法可以确定任意矢量的分量\(P^1,~P^2\).</p>
+            <p>引入沿\(x^1,~x^2\)的单位矢量\(\boldsymbol{i}_1,~\boldsymbol{i}_2\)，则：</p>
+            $$\boldsymbol{i}_1\cdot\boldsymbol{i}_1 = \boldsymbol{i}_2\cdot\boldsymbol{i}_2 = 1$$
+            $$\boldsymbol{i}_1\cdot\boldsymbol{i}_2 = \boldsymbol{i}_2\cdot\boldsymbol{i}_1 = \cos\varphi \neq 0$$
+            $$\boldsymbol{g}_1 = |\boldsymbol{g}_1|\boldsymbol{i}_1,\quad \boldsymbol{g}_2 = |\boldsymbol{g}_2|\boldsymbol{i}_2$$
+            <p>与笛卡尔坐标系不同，因\(\boldsymbol{g}_1,~\boldsymbol{g}_2\)不是单位矢量且不正交，故矢量\(\boldsymbol{P}\)在\(\boldsymbol{g}_\alpha(\alpha = 1,2)\)上的投影不等于其分量：</p>
+            <div id="formula1">
+                $$\boldsymbol{P}\cdot\boldsymbol{i}_1 = P^1|\boldsymbol{g}_1| + P^2|\boldsymbol{g}_2|\cos\varphi$$
+                $$\boldsymbol{P}\cdot\boldsymbol{i}_2 = P^1|\boldsymbol{g}_1|\cos\varphi + P^2|\boldsymbol{g}_2|$$
+            </div>
+                <p>由\(\boldsymbol{P}\cdot\boldsymbol{i}_1\)与\(\boldsymbol{P}\cdot\boldsymbol{i}_2\)表述\(P^1\)与\(P^2\)的表达式，需通过解上述联立代数方程得到，显然是不方便的.</p>
+
+            <hr>
             <p>引入一对与\(\boldsymbol{g}_\alpha(\alpha = 1,2)\)对偶的参考矢量\(\boldsymbol{g}^\alpha(\alpha=1,2)\)，满足：</p>
             $$\boldsymbol{g}^1\cdot\boldsymbol{g}_2 = \boldsymbol{g}^2\cdot\boldsymbol{g}_1 = 0$$
             $$\boldsymbol{g}^1\cdot\boldsymbol{g}_1 = \boldsymbol{g}^2\cdot\boldsymbol{g}_2 = 1$$
@@ -82,10 +102,47 @@
             <div class="Card-Question">
                 <p>这后面做的一系列分解我不知道有什么意义？将一种未知形式改写成了另一种未知形式吗？</p>
             </div>
-        </div>
 
+            <p>以后对于每个坐标系都将引入这两组互为对偶的基矢量，并用下标与上标区分协变与逆变指标.</p>
+            <p>利用它们及对偶关系式，可以方便地求矢量的分量，不再需要求解<a href="#formula1">方程组</a>.</p>
+            
+            <p>如对\(\boldsymbol{P} = P^1\boldsymbol{g}_1 + P^2\boldsymbol{g}_2\)，矢量对协变基矢量\(\boldsymbol{g}_\alpha\)分解的分量\(P^\alpha\)（称为<b>矢量\(\boldsymbol{P}\)的逆变分量</b>）为：</p>
+            <div class="Formula">
+                $$P^1 = \boldsymbol{P}\cdot\boldsymbol{g}^1,\quad P^2 = \boldsymbol{P}\cdot\boldsymbol{g}^2$$
+                <div class="Derivation">
+                    $$\because \boldsymbol{P} = P^1\boldsymbol{g}_1 + P^2\boldsymbol{g}_2$$
+                    $$\begin{align}
+                    \therefore \boldsymbol{P}\cdot \boldsymbol{g}_1 &= (P^1\boldsymbol{g}_1 + P^2\boldsymbol{g}_2)\cdot\boldsymbol{g}_1\\
+                                                                    &= P^1(\boldsymbol{g}_1\cdot\boldsymbol{g}_1) + P^2(\boldsymbol{g}_2\cdot\boldsymbol{g}_1)\\
+                                                                    &= P^1
+                    \end{align}$$
+                </div>
+            </div>
+
+            <p>或统一写成：</p>
+            $$P^\alpha = \boldsymbol{P}\cdot\boldsymbol{g}^\alpha,\quad \alpha = 1,2$$
+
+            <hr>
+            <p>矢量\(\boldsymbol{P}\)还可以对逆变基矢量\(\boldsymbol{g}^\beta\)分解：</p>
+            $$\boldsymbol{P} = P_1\boldsymbol{g}^1 + P_2\boldsymbol{g}^2 = P_\beta\boldsymbol{g}^\beta$$
+            <p>\(P_\beta\)称为<b>矢量\(\boldsymbol{P}\)的协变分量</b>.</p>
+
+            <p>利用对偶关系可以方便地求得矢量的协变分量：</p>
+            <div class="Formula">
+                $$\boldsymbol{P}\cdot\boldsymbol{g}_\alpha = P_\alpha,\quad \alpha = 1,2$$
+                <div class="Derivation">
+                    $$\because \boldsymbol{P} = P_1\boldsymbol{g}^1 + P_2\boldsymbol{g}^2 = P_\beta\boldsymbol{g}^\beta$$
+                    $$\begin{align}\therefore
+                    \boldsymbol{P}\cdot\boldsymbol{g}_\alpha &= P_\beta\boldsymbol{g}^\beta\cdot \boldsymbol{g}_\alpha\\
+                                                             &= P_\alpha
+                    \end{align}$$
+                </div>
+            </div>
+
+        </div>
+        
         <div class="Card-Analysis">
-            <h2>空间斜角直角坐标系</h2>
+            <h2>三维空间中的斜角直角坐标系</h2>
             
             <b>前置知识</b>
             <ul>
@@ -116,13 +173,85 @@
 
             <h3>逆变基矢量</h3>
             <p>定义一组3个与协变基矢量\(\boldsymbol{g}_i\)互为对偶的逆变基矢量\(\boldsymbol{g}^j\)，满足对偶条件：</p>
-            <div class="Card-Formula">
+            <div class="Card-Formula" id="duality_condition">
                 <b>对偶条件</b>
                 $$\boldsymbol{g}^j\cdot\boldsymbol{g}_i = \delta_i^j,\quad i,j = 1,2,3$$
                 <ul>
                     <li>\(\delta_i^j(i,j=1,2,3)\)：三维Kronecker \(\delta\)</li>
                 </ul>
             </div>
+
+            <h3>由协变基矢量求逆变基矢量</h3>
+            <p>逆变基矢量根据对偶条件由协变基矢量唯一确定.</p>
+            <p>具体计算方式有两种：</p>
+            
+            <b>方法1</b>
+            $$\because \boldsymbol{g}^1\perp\boldsymbol{g}_2, \boldsymbol{g}_3$$
+            $$\therefore \boldsymbol{g}^1\parallel \boldsymbol{g}_2\times\boldsymbol{g}_3$$
+            <p>[令]</p>
+            $$\boldsymbol{g}^1 = a\boldsymbol{g}_2\times\boldsymbol{g}_3$$
+
+            $$\because \boldsymbol{g}^1\cdot\boldsymbol{g}_1 = 1$$
+            $$\therefore a(\boldsymbol{g}_2\times\boldsymbol{g}_3)\cdot\boldsymbol{g}_1 = 1$$
+            $$\because (\boldsymbol{g}_2\times\boldsymbol{g}_3)\cdot\boldsymbol{g}_1 = \sqrt{g}$$
+            $$\therefore a = \frac{1}{\sqrt{g}}$$
+            <p>故：</p>
+
+            $$\boldsymbol{g}^1 = \frac{1}{\sqrt{g}}(\boldsymbol{g}_2\times\boldsymbol{g}_3)$$
+            $$\boldsymbol{g}^2 = \frac{1}{\sqrt{g}}(\boldsymbol{g}_3\times\boldsymbol{g}_1)$$
+            $$\boldsymbol{g}^3 = \frac{1}{\sqrt{g}}(\boldsymbol{g}_1\times\boldsymbol{g}_2)$$
+
+            <b>方法2</b>
+            <p>将逆变基矢量\(\boldsymbol{g}^1~(i=1,2,3)\)作为矢量对协变基\(\boldsymbol{g}_j\)分解：</p>
+            $$\boldsymbol{g}^i = g^{ij}\boldsymbol{g}_j\quad i=1,2,3$$
+            <p>上式中的系数\(g^{ij}\)构成\(3\times 3\)矩阵。</p>
+            $$\boldsymbol{g}^i\cdot\boldsymbol{g}^j = g^{ik}\boldsymbol{g}_k\cdot\boldsymbol{g}^j = g^{ik}\delta_k^j = g^{ij}\quad i,j = 1,2,3$$
+            $$\because \boldsymbol{g}^i\cdot\boldsymbol{g}^j = \boldsymbol{g}^j\cdot \boldsymbol{g}^1$$
+            $$\therefore g^{ij} = g^{ji}$$
+
+            <p>同样地，协变基矢量\(\boldsymbol{g}_i\)也可以对逆变基矢量\(\boldsymbol{g}^j\)分解：</p>
+            $$\boldsymbol{g}_i = g_{ij}\boldsymbol{g}^j\quad i=1,2,3$$
+            <p>且有：</p>
+            $$\boldsymbol{g}_i\cdot\boldsymbol{g}_j = g_{ij}\quad i,j = 1,2,3$$
+            $$g_{ij} = g_{ji}$$
+
+            <p>所以，\(g^{ij}\)与\(g_{ji}\)各自构成\(3\times 3\)的对称矩阵.</p>
+            <p>[设]\([t_{ij}] = [g^{ij}][g_{ij}]\).</p>
+            $$t_{ij} = g^{ij}\cdot g_{ij} = \boldsymbol{g}^{i}\cdot\boldsymbol{g}^j\cdot\boldsymbol{g}_i\cdot\boldsymbol{g}_j = \delta_i^j\quad i,j=1,2,3$$
+            <p>所以\([g^{ij}]\)与\([g_{ij}]\)为互逆矩阵，只有六个独立分量：</p>
+            $$[g^{ij}] = [g_{ij}]^{-1}$$
+            <p>[注]本书以\([]\)表示矩阵，矩阵元素的前指标表示行号，后指标表示列号.</p>
+
+            <div class="Card-AI">
+                <p>6个独立分量是指除了主对角线上3个外的6个.</p>
+            </div>
+
+            <p>称\(g_{ij}\)为<b>度量张量的协变分量</b>；</p>
+            <p>称\(g^{ij}\)为<b>度量张量的逆变分量</b>.</p>
+
+            <h3>指标升降关系</h3>
+            <p>与二维问题相同，矢量\(\boldsymbol{P}\)既可以对协变基、又可以对逆变基分解：</p>
+            $$\boldsymbol{P} = P^i\boldsymbol{g}_i = P_j\boldsymbol{g}^j$$
+            <div class="Formula">
+                $$P^i = \boldsymbol{P}\cdot\boldsymbol{g}^i = P^kg^{ki},\quad i=1,2,3$$
+                <div class="Derivation">
+                    $$\because \boldsymbol{P} = P^i\boldsymbol{g}_i$$
+                    $$\therefore \boldsymbol{P}\cdot \boldsymbol{g}^i = P^i$$
+                    $$\therefore P^i = \boldsymbol{P}\cdot\boldsymbol{g}^i = P^k\boldsymbol{g}^k\cdot\boldsymbol{g}^i = P^kg^{ki}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$P_j = \boldsymbol{P}_j\cdot\boldsymbol{g}_j = P_kg_{kj},\quad j = 1,2,3$$
+                <div class="Derivation">
+                    $$\because \boldsymbol{P} = P_j\boldsymbol{g}_j$$
+                    $$\therefore \boldsymbol{P}\cdot\boldsymbol{g}_j = P_j$$
+                    $$\therefore P_j = \boldsymbol{P}_j\cdot\boldsymbol{g}_j = P_k\boldsymbol{g}_k\cdot\boldsymbol{g}_j = P_kg_{kj}$$
+                </div>
+            </div>
+            <p>上两式称为<b>矢量分量的指标升降关系式</b>.</p>
+            
+
 
         </div>
 

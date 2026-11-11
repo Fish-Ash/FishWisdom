@@ -35,58 +35,145 @@
             <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
         </div>
         
-        <h1>并矢</h1>
+        <h1>并矢与并矢式</h1>
 
         <div class="PageCatalog">
             <ul>
             </ul>
         </div>
 
-        <div class="Card-Definition">
-            <b>并矢</b>
-            <p>任意两个矢量\(\boldsymbol{a}\)和\(\boldsymbol{b}\)并写在一起，称为并矢，也称为两个矢量的<b>张量积</b>.</p>
-            <p>记为\(\boldsymbol{a}\boldsymbol{b} = \boldsymbol{a}\otimes\boldsymbol{b}\).</p>
-            <p>[注]对于一维或二维张量，实则是求矩阵乘法.</p>
-        </div>
+        <div class="Card-Analysis">
+            <h2>并矢</h2>
+            <div class="Card-Definition">
+                <b>并矢</b>
+                <p>任意两个矢量\(\boldsymbol{a}\)和\(\boldsymbol{b}\)并写在一起，称为并矢，也称为两个矢量的<b>张量积</b>.</p>
+                <p>记为\(\boldsymbol{a}\boldsymbol{b} = \boldsymbol{a}\otimes\boldsymbol{b}\).</p>
+                <p>其中\(\otimes\)称为<b>并乘</b>或<b>张量乘</b>.</p>
+    
+                <p>[注]对于一维或二维张量，实则是求矩阵乘法.</p>
+            </div>
 
-        <div class="Card-AI">
-            $$(X\otimes Y)_{ij} = X_iY_j$$
-            <p>e.g.</p>
-            $$\boldsymbol{a} = \begin{bmatrix}
+            <p>矢量\(\boldsymbol{a},~\boldsymbol{b}\)可以用它们的分量表示，各自构成一个\(3\times 1\)的矩阵.</p>
+            <p>例如，在笛卡尔坐标系中：</p>
+
+            $$[\boldsymbol{a}] = \begin{bmatrix}
                 a_1\\
                 a_2\\
                 a_3
             \end{bmatrix},\quad
-            \boldsymbol{b} = \begin{bmatrix}
+            [\boldsymbol{b}] = \begin{bmatrix}
                 b_1\\
                 b_2\\
                 b_3
             \end{bmatrix}$$
-            $$\boldsymbol{a}\otimes\boldsymbol{b} = \begin{bmatrix}
+            <p>并矢可以用下列\(3\times 3\)矩阵来表示其分量：</p>
+            $$[\boldsymbol{a}\boldsymbol{b}] = \begin{bmatrix}
                 a_1b_1 & a_1b_2 & a_1b_3 \\
                 a_2b_1 & a_2b_2 & a_2b_3 \\
                 a_3b_1 & a_3b_2 & a_3b_3
             \end{bmatrix}$$
+            <div class="Card-AI">
+                $$(X\otimes Y)_{ij} = X_iY_j$$
+            </div>
+
+            <div class="Card-Definition">
+                <b>多并矢</b>
+                <p>多于两个矢量的并矢.</p>
+                <p>如：\(\boldsymbol{a}\boldsymbol{b}\boldsymbol{c}\)、\(\boldsymbol{a}\boldsymbol{b}\boldsymbol{c}\boldsymbol{d}\)等，分别称为三阶并矢与四阶并矢.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>并矢式</b>
+                <p>几个并矢的线性组合.</p>
+                <p>如：\(T^{11}\boldsymbol{a}_1\boldsymbol{b}_1 + T^{12}\boldsymbol{a}_1\boldsymbol{b}_2 + T^{22}\boldsymbol{a}_2\boldsymbol{b}_2\)等.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <p>多并矢式</p>
+                <p>同阶多并矢的线性组合.</p>
+            </div>
+
+            <p>并矢服从除交换律外的初等代数运算规律：</p>
+            <table>
+                <tr>
+                    <td>结合律</td>
+                    <td>
+                        $$m(\boldsymbol{a}\boldsymbol{b}) = (m\boldsymbol{a})\boldsymbol{b} = \boldsymbol{a}(m\boldsymbol{b}) = m\boldsymbol{a}\boldsymbol{b}$$
+                        $$(\boldsymbol{a}\boldsymbol{b})\boldsymbol{c} = \boldsymbol{a}(\boldsymbol{b}\boldsymbol{c}) = \boldsymbol{a}\boldsymbol{b}\boldsymbol{c}$$
+                        $$(m\boldsymbol{a})(n\boldsymbol{b}) = (mn)(\boldsymbol{a}\boldsymbol{b})$$
+                    </td>
+                </tr>
+                <tr>
+                    <td>分配律</td>
+                    <td>
+                        $$\boldsymbol{a}(\boldsymbol{b} + \boldsymbol{c}) = \boldsymbol{a}\boldsymbol{b} + \boldsymbol{a}\boldsymbol{c}$$
+                        $$(\boldsymbol{a} + \boldsymbol{b})\boldsymbol{c} = \boldsymbol{a}\boldsymbol{c} + \boldsymbol{b}\boldsymbol{c}$$
+                        $$m(\boldsymbol{a}\boldsymbol{b} + \boldsymbol{c}\boldsymbol{d}) = m\boldsymbol{a}\boldsymbol{b} + m\boldsymbol{c}\boldsymbol{d}$$
+                        $$(\boldsymbol{a} + \boldsymbol{b})(\boldsymbol{c} + \boldsymbol{d}) = \boldsymbol{a}\boldsymbol{c} + \boldsymbol{a}\boldsymbol{d} + \boldsymbol{b}\boldsymbol{c} + \boldsymbol{b}\boldsymbol{d}$$
+                    </td>
+                </tr>
+            </table>
+
+            <p>交换律不再适用，即并矢中各矢量的排列顺序不能随意调换：</p>
+            $$\boldsymbol{a}\boldsymbol{b} \neq \boldsymbol{b}\boldsymbol{a}$$
+            
+            <div class="Card-Definition">
+                <b>并矢的转置</b>
+                <p>并矢\(\boldsymbol{a}\boldsymbol{b}\)与并矢\(\boldsymbol{b}\boldsymbol{a}\)互为转置.</p>
+                $$(\boldsymbol{a}\boldsymbol{b})^T = \boldsymbol{b}\boldsymbol{a},\quad (\boldsymbol{b}\boldsymbol{a})^T = \boldsymbol{a}\boldsymbol{b}$$
+            </div>
+        </div>
+        
+
+        <div class="Card-Analysis">
+            <h2>缩并</h2>
+            <div class="Card-Definition">
+                <b>缩并</b>
+                <p>在并矢中，取某两个矢量进行点积，称为缩并.</p>
+                <p>每缩并一个，并矢的阶数降低两阶.</p>
+                <p>二阶并矢缩并后称为一个数，数可视为零阶并矢.</p>
+            </div>
+
+            <p>四阶并矢\(\boldsymbol{a}\boldsymbol{b}\boldsymbol{c}\boldsymbol{d}\)的缩并可以有：</p>
+            $$\boldsymbol{a}\cdot\boldsymbol{b}\boldsymbol{c}\boldsymbol{d} = (\boldsymbol{a}\cdot\boldsymbol{b})\boldsymbol{c}\boldsymbol{d}$$
+            $$\boldsymbol{a}\boldsymbol{b}\cdot\boldsymbol{c}\boldsymbol{d} = (\boldsymbol{b}\cdot\boldsymbol{c})\boldsymbol{a}\boldsymbol{d}$$
+            $$\boldsymbol{a}\boldsymbol{b}\boldsymbol{c}\cdot\boldsymbol{d} = (\boldsymbol{c}\cdot\boldsymbol{d})\boldsymbol{a}\boldsymbol{b}$$
+            $$\underbrace{\boldsymbol{a}\boldsymbol{b}\boldsymbol{c}\boldsymbol{d}}_{\boldsymbol{a}\cdot\boldsymbol{d}} = (\boldsymbol{a}\cdot\boldsymbol{d})\boldsymbol{b}\boldsymbol{c}$$
+            <p>等多种形式.</p>
+            <p>以上各式右端括号内的点积为一个数，所以它们降阶为二阶并矢.</p>
+
+
         </div>
 
-        <div class="Card-Definition">
-            <b>多并矢（\(n\)阶并矢）</b>
-            <p>多于两个矢量的并矢.</p>
+        <div class="Card-Analysis">
+            <h2>并矢的点积与双点积</h2>
+
+            <p>两个并矢的点积是指将它们相邻的两个矢量进行缩并.</p>
+            <p>e.g.</p>
+            $$(\boldsymbol{a}\boldsymbol{b})\cdot(\boldsymbol{c}\boldsymbol{d}) = (\boldsymbol{b}\cdot\boldsymbol{c})\boldsymbol{a}\boldsymbol{d}$$
+            $$(\boldsymbol{c}\boldsymbol{d})\cdot(\boldsymbol{a}\boldsymbol{b}) = (\boldsymbol{d}\cdot\boldsymbol{a})\boldsymbol{c}\boldsymbol{b}$$
+
+            <div class="Card-Definition" id="DoubleDotProduct">
+                <b>并矢的双点积</b>
+                <p>将两个并矢最邻近的四个矢量两两缩并.</p>
+
+                <b>双点积——并联式</b>
+                $$\boldsymbol{a}\boldsymbol{b}:\boldsymbol{c}\boldsymbol{d} = (\boldsymbol{a}\cdot\boldsymbol{c})(\boldsymbol{b}\cdot\boldsymbol{d})$$
+                <p>按照\((前\cdot前)(后\cdot后)\)的形式进行两两缩并.</p>
+    
+                <b>双点积——串联式</b>
+                $$\boldsymbol{a}\boldsymbol{b}\cdot\cdot\boldsymbol{c}\boldsymbol{d} = (\boldsymbol{b}\cdot\boldsymbol{c})(\boldsymbol{a}\cdot\boldsymbol{d})$$
+                <p>按照\((内\cdot内)(外\cdot外)\)的形式进行两两缩并.</p>
+            </div>
+            <p>两个二阶并矢的双点积为一个数.</p>
+
+            <div class="Card-AI">
+                <p>并矢的运算优先级高于双点积.</p>
+            </div>
         </div>
 
-        <div class="Card-Definition" id="DoubleDotProduct">
-            <b>双点积——并联式</b>
-            $$\boldsymbol{a}\boldsymbol{b}:\boldsymbol{c}\boldsymbol{d} = (\boldsymbol{a}\cdot\boldsymbol{c})(\boldsymbol{b}\cdot\boldsymbol{d})$$
-            <p>按照\((前\cdot前)(后\cdot后)\)的形式进行两两缩并.</p>
 
-            <b>双点积——串联式</b>
-            $$\boldsymbol{a}\boldsymbol{b}\cdot\cdot\boldsymbol{c}\boldsymbol{d} = (\boldsymbol{b}\cdot\boldsymbol{c})(\boldsymbol{a}\cdot\boldsymbol{d})$$
-            <p>按照\((内\cdot内)(外\cdot外)\)的形式进行两两缩并.</p>
-        </div>
 
-        <div class="Card-AI">
-            <p>并矢的运算优先级高于双点积.</p>
-        </div>
 
         <div id="PageEnd"></div>
 

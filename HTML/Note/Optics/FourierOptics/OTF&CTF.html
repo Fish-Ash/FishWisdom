@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fourier光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>衍射受限非相干成像系统的传递函数</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+            <p>在非相干照明下，物面上各点的振幅与相位随时间变化的方式是彼此独立、统计无关的.</p>
+            <div class="Card-Question">
+                <p>相干照明就有关系吗？数学表达式是怎样的？相干照明与非相干照明区别的本质原因是什么？</p>
+            </div>
+
+            <p>这样一来，虽然物面上没一点透过系统后仍可以得到一个对应的复振幅分布，但由于物面的照明是非相干的，故不能通过对这些复振幅分布的相干叠加得到像的复振幅分布，而应该由这些复振幅分布分别求出对应的强度分布，再将这些强度分布叠加（非相干叠加），得到像面强度分布.</p>
+            <div class="Card-Question">
+                <p>为什么非相干不行？相干就可以？</p>
+            </div>
+
+            <p>非相干成像系统是强度的线性系统，若成像是空不变的，则非相干成像系统是强度的线性空不变系统.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>非相干成像系统的光学传递函数（OTF）</h2>
+
+            <div class="Card-Definition">
+                <b>强度脉冲响应\(h_I\)（非相干脉冲响应、强度点扩散函数）</b>
+                <p>点物产生的像斑的强度分布，为复振幅点扩散函数绝对值的平方.</p>
+                $$h_I(x_i, y_i) = |\tilde{h}(x_i, y_i)|^2$$
+            </div>
+
+            <p>非相干线性空不变成像系统，物像关系满足下述卷积积分：</p>
+            $$\begin{align}
+            I_i(x_i, y_i) &= k\iint_{-\infty}^{+\infty}I_g(\tilde{x}_o, \tilde{y}_o)h_I(x_i - y_i, \tilde{x}_o - \tilde{y}_o)d\tilde{x}_od\tilde{y}_o\\
+                          &= kI_g(x_i, y_i)*h_I(x_i, y_i)
+            \end{align}$$
+            <ul>
+                <li>\(I_i\)：像强度分布</li>
+                <li>\(k\)：常数，由于其不影响\(I_i\)的分布形式，因此不用给出具体的表达式</li>
+                <li>\(I_g\)：几何光学理想像的强度分布</li>
+                <li>\(h_I\)：强度脉冲响应</li>
+            </ul>
+
+            <p>上式表明：在非相干照明下，线性空不变成像系统的像强度分布为理想像的强度分布与强度点扩散函数的卷积；系统的成像特性由\(h_I(x_i, y_i)\)描述，而\(h_I(x_i, y_i)\)又由\(\tilde{h}(x_i, y_i)\)决定.</p>
+
+
+            <p>对于非相干照明下的强度线性空不变系统，在频域中描写物像关系更为方便.</p>
+            <div class="Card-AI">
+                <p>空域下的卷积形式经过Fourier变换后，变为频域中的更为简便的乘积形式.</p>
+            </div>
+
+            <p>将上式两边进行Fourier变换，并略去无关紧要的常数项后，得：</p>
+            $$\boldsymbol{G}_i(\xi, \eta) = \boldsymbol{G}_g(\xi, \eta)\boldsymbol{H}_I(\xi, \eta)$$
+            <ul>
+                <li>\(\boldsymbol{G}_i(\xi, \eta) = \mathcal{F}\{I_i(x_i, y_i)\}\)</li>
+                <li>\(\boldsymbol{G}_g(\xi, \eta) = \mathcal{F}\{I_g(x_i, y_i)\}\)</li>
+                <li>\(\boldsymbol{H}_I(\xi, \eta) = \mathcal{F}\{h_I(x_i, y_i)\}\)</li>
+            </ul>
+
+            <p>由于\(I_i(x,y),~I_g(x,y),~h_I(x,y)\)都是强度分布，都是非负实函数，因此必有一个常数分量即零频分量，且其幅值大于任何非零分量的幅值，即：</p>
+            $$\boldsymbol{G}_i(0,0)\geq |\boldsymbol{G}_i(\xi, \eta)|,\quad \boldsymbol{G}_g(0,0)\geq |\boldsymbol{G}_g(\xi, \eta)|,\quad \boldsymbol{H}_I(0,0)\geq |\boldsymbol{H}_I(\xi, \eta)|$$
+            <p>决定像的清晰与否，主要不是包括零频分量在内的总光强有多大，而在于携带信息的那部分光强相对于零频分量的比值有多大，所以更有意义的是\(\boldsymbol{G}_i(\xi, \eta),~\boldsymbol{G}_g(\xi, \eta),~\boldsymbol{H}_I(\xi, \eta)\)相对于各自分量的比值.</p>
+            <p>这就是用零频分量对它们归一化，得到归一化频谱，用\(G_i(\xi, \eta),~G_g(\xi, \eta),~H_I(\xi, \eta)\)表示：</p>
+            $$G_i(\xi, \eta) = \frac{\boldsymbol{G}_i(\xi, \eta)}{\boldsymbol{G}_i(0,0)} = \frac{\iint_{-\infty}^{+\infty}I_i(x_i, y_i)e^{-2\pi i(\xi x_i + \eta y_i)}dx_idy_i}{\iint_{-\infty}^{+\infty}I_i(x_i, y_i)dx_idy_i}$$
+            $$G_g(\xi, \eta) = \frac{\boldsymbol{G}_g(\xi, \eta)}{\boldsymbol{G}_g(0,0)} = \frac{\iint_{-\infty}^{+\infty}I_g(x_i, y_i)e^{-2\pi i(\xi x_i + \eta y_i)}dx_idy_i}{\iint_{-\infty}^{+\infty}I_g(x_i, y_i)dx_idy_i}$$
+            $$H_I(\xi, \eta) = \frac{\boldsymbol{H}_I(\xi, \eta)}{\boldsymbol{H}_I(0,0)} = \frac{\iint_{-\infty}^{+\infty}h_I(x_i, y_i)e^{-2\pi i(\xi x_i + \eta y_i)}dx_idy_i}{\iint_{-\infty}^{+\infty}h_I(x_i, y_i)dx_idy_i}$$
+
+
+            <p>由于\(\boldsymbol{G}_i(\xi, \eta) = \boldsymbol{G}_g(\xi, \eta)\boldsymbol{H}_I(\xi, \eta)\)，因此有：</p>
+            $$G_i(\xi, \eta) = G_g(\xi, \eta)H_I(\xi, \eta)$$
+            <p>\(H_I(\xi, \eta)\)称为非相干成像系统的光学传递函数（OTF），它描述非相干成像系统在频域的效应.</p>
+            <p>由于\(G_i,~G_g,~H_I\)一般都为复函数，都可以用其模与辐角表示，因此有：</p>
+            $$G_i(\xi, \eta) = |G_i(\xi, \eta)|e^{i \varphi_i(\xi, \eta)}$$
+            $$G_g(\xi, \eta) = |G_g(\xi, \eta)|e^{i \varphi_g(\xi, \eta)}$$
+            $$H_I(\xi, \eta) = M(\xi, \eta)e^{i \varphi(\xi, \eta)}$$
+
+            <div class="Card-AI">
+                <p>本质上是求解\(H_I\)</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>调制传递函数（MTF）\(M(\xi, \eta)\)</b>
+                <p>描述系统对各频率分量对比度的传递特性.</p>
+                <div class="Formula">
+                    $$M(\xi, \eta) = \frac{|\boldsymbol{H}_I(\xi, \eta)|}{\boldsymbol{H}_I(0,0)} =  = \frac{|G_i(\xi, \eta)|}{|G_g(\xi, \eta)|}$$
+                    <div class="Derivation">
+                        $$\because H_I(\xi, \eta) = \frac{\boldsymbol{H}_I(\xi, \eta)}{\boldsymbol{H}_I(0,0)}$$
+                        $$\therefore M(\xi, \eta) = \frac{|\boldsymbol{H}_I(\xi, \eta)|}{\boldsymbol{H}_I(0,0)}$$
+                        $$\because G_i(\xi, \eta) = G_g(\xi, \eta)H_I(\xi, \eta)$$
+                        $$\therefore M(\xi, \eta) = \frac{|G_i(\xi, \eta)|}{|G_g(\xi, \eta)|}$$
+                    </div>
+                </div>
+                <div class="Card-AI">
+                    <p>表征的是振幅.</p>
+                </div>
+            </div>
+
+            <div class="Card-Definition" id="PTF">
+                <b>相位传递函数（PTF）\(\varphi(\xi, \eta)\)</b>
+                <p>描述系统对各频率分量施加的相移.</p>
+                <div class="Formula">
+                    $$\varphi(\xi, \eta) = \varphi_i(\xi, \eta) - \varphi_g(\xi, \eta)$$
+                    <div class="Derivation">
+                        $$\because G_i(\xi, \eta) = G_g(\xi, \eta)H_I(\xi, \eta)$$
+                        $$\therefore e^{i \varphi_i(\xi, \eta)} = e^{i \varphi_g(\xi, \eta)}e^{i \varphi(\xi, \eta)}$$
+                        $$\therefore e^{i\varphi(\xi, \eta)} = \frac{e^{i \varphi_i(\xi, \eta)}}{e^{i \varphi_g(\xi, \eta)}} = e^{i[\varphi_i(\xi, \eta) - \varphi_g(\xi, \eta)]}$$
+                        $$\therefore \varphi(\xi, \eta) = \varphi_i(\xi, \eta) - \varphi_g(\xi, \eta)$$
+                    </div>
+                </div>
+            </div>
+
+            <p>由于\(I_i,~I_g,~h_I\)都是非负实函数，它们的归一化频谱\(G_i,~G_g,~H_I\)都是<a href="../../Math/FourierAnalysis/FourierTransform.html" class="goto">厄密函数</a>.</p>
+            <p>余弦函数是这种系统的本征函数，就强度余弦分量在通过系统后仍为同频率的余弦输出，其对比度和相位的变化决定于系统传递函数的模与辐角.</p>
+            <p>换句话说，若将输入物看作强度透过率呈余弦变化的不同频率的光栅的线性组合，在成像过程中，OTF唯一的影响是改变这些基元的对比度和相对相位.</p>
+
+            <p>[设]一个余弦输入的光强为：</p>
+            $$I_g(\tilde{x}_o, \tilde{y}_o) = a + b\cos[2\pi(\xi_o\tilde{x}_o + \eta_o\tilde{y}_o) + \varphi_g(\xi_o, \eta_o)]$$
+            <p>则其频谱\(\boldsymbol{G}_g(\xi, \eta)\)为：</p>
+            <div class="Formula">
+                $$\begin{align}
+                \boldsymbol{G}_g(\xi, \eta) &= \mathcal{F}\{I_g(\tilde{x}_o, \tilde{y}_o)\}\\
+                &= a\delta(\xi, \eta) + \frac{b}{2}\left[e^{i\varphi_g(\xi_o, \eta_o)}\delta(\xi - \xi_0, \eta - \eta_0) + e^{-i\varphi_g(\xi_o, \eta_o)}\delta(\xi + \xi_0, \eta + \eta_0)\right]
+                \end{align}$$
+                <div class="Derivation">
+                    $$\because \cos x = \frac{e^{ix} + e^{-ix}}{2}$$
+                    $$\therefore I_g(\tilde{x}_o, \tilde{y}_o) = a + \frac{b}{2}\left[e^{i2\pi(\xi_o\tilde{x}_o + \eta_o\tilde{y}_o)}e^{\varphi_g(\xi_o, \eta_o)} + e^{-i2\pi(\xi_o\tilde{x}_o + \eta_o\tilde{y}_o)}e^{-\varphi_g(\xi_o, \eta_o)}\right]$$
+                    $$\because \mathcal{F}\{1\} = \delta(\xi, \eta),\quad \mathcal{F}\{e^{\pm i2\pi(\xi_0\xi + \eta_0\eta)}\} = \delta(\xi\mp \xi_0, \eta\mp \eta_0)$$
+                    $$\begin{align}\therefore
+                    \boldsymbol{G}_g(\xi, \eta) &= \mathcal{F}\{I_g(\tilde{x}_o, \tilde{y}_o)\}\\
+                                                &= a\delta(\xi, \eta) + \frac{b}{2}\left[e^{i\varphi_g(\xi_o, \eta_o)}\delta(\xi - \xi_0, \eta - \eta_0) + e^{-i\varphi_g   (\xi_o, \eta_o)}\delta(\xi + \xi_0, \eta + \eta_0)\right]
+                    \end{align}$$
+                </div>
+            </div>
+            $$\because I_i(x_i, y_i) = I_g(x_i, y_i)*h_I(x_i, y_i)$$
+            $$\therefore \mathcal{F}\{I_i(x_i, y_i)\} = \mathcal{F}\{I_g(x_i, y_i)\}\mathcal{F}\{h_I(x_i, y_i)\}$$
+            <p>根据\(H(\xi, \eta)\)的定义：</p>
+            $$\mathcal{F}\{h_I(x_i, y_i)\} = H_I(\xi, \eta) = H_I(0,0)H(\xi, \eta)$$
+            <div class="Card-Question">
+                <p>这哪来的？</p>
+            </div>
+            $$\begin{align}\therefore
+            \mathcal{F}\{I_i(x_i, y_i)\} &= \mathcal{F}\{I_g(x_i, y_i)\}\mathcal{F}\{h_I(x_i, y_i)\}\\
+                                         &= \left\{a\delta(\xi, \eta) + \frac{b}{2}\left[e^{i\varphi_g(\xi_o, \eta_o)}\delta(\xi - \xi_0, \eta - \eta_0) + e^{-i\varphi_g(\xi_o, \eta_o)}\delta(\xi + \xi_0, \eta + \eta_0)\right]\right\}H_I(0,0)H(\xi, \eta)
+            \end{align}$$
+
+            <p>对于确定的系统，\(H_I(0,0)\)是唯一确定的常数，对像强度的相对分布没有影响，所以在下面取其逆变换得到\(I_i\)时可省略不写.</p>
+            $$\begin{align}
+            I_i(x_i, y_i) =& a\iint_{-\infty}^{+\infty}\delta(\xi, \eta)H(\xi, \eta)e^{i2\pi(\xi x_i + \eta y_i)}\mathrm{d}\xi\mathrm{d}\eta\\
+                           & +\frac{b}{2}\iint_{-\infty}^{+\infty}e^{i\varphi_g(\xi_0, \eta_0)}\delta(\xi - \xi_0, \eta - \eta_0)H(\xi, \eta)e^{i2\pi(\xi x_i + \eta y_i)}\mathrm{d}\xi\mathrm{d}\eta\\
+                           & +\frac{b}{2}\iint_{-\infty}^{+\infty}e^{-i\varphi_g(\xi_0, \eta_0)}\delta(\xi + \xi_0, \eta + \eta_0)H(\xi, \eta)e^{i2\pi(\xi x_i + \eta y_i)}\mathrm{d}\xi\mathrm{d}\eta\\
+                          =& aH(0,0) + \frac{b}{2}\left[e^{i\varphi_g(\xi_0, \eta_0)}H(\xi_0, \eta_0)e^{i2\pi(\xi_0 x_i + \eta_0 y_i)} + e^{-i\varphi_g(\xi_0, \eta_0)}H(-\xi_0, -\eta_0)e^{i2\pi(-\xi_0 x_i - \eta_0 y_i)}\right]\\
+            \end{align}$$
+
+            <p>由于：</p>
+            $$H(0, 0) = 1$$
+            $$H(\xi_0, \eta_0) = M(\xi_0, \eta_0)e^{i\varphi(\xi_0, \eta_0)}$$
+            $$H(-\xi_0, -\eta_0) = M(-\xi_0, -\eta_0)e^{-i\varphi(-\xi_0, -\eta_0)} = M(\xi_0, \eta_0)e^{-i\varphi(\xi_0, \eta_0)}$$
+            <p>[注]最后一步利用了\(H(\xi, \eta)\)的厄密性.</p>
+
+            <p>将这些结果代入上式，得到像强度分布为：</p>
+            $$\begin{align}
+            I_i(x_i, y_i) &= a + \frac{b}{2}M(\xi_0, \eta_0)\left[e^{i\varphi_g(\xi_0, \eta_0)}e^{i\varphi(\xi_0, \eta_0)}e^{i2\pi(\xi_0 x_i + \eta_0 y_i)} + e^{-i\varphi_g(\xi_0, \eta_0)}e^{-i\varphi(\xi_0, \eta_0)}e^{i2\pi(-\xi_0 x_i - \eta_0 y_i)}\right]\\
+                          &= a + bM(\xi_0, \eta_0)\cos[2\pi(\xi_0 x_i + \eta_0 y_i) + \varphi_g(\xi_0, \eta_0) + \varphi(\xi_0, \eta_0)]
+            \end{align}$$
+            <p>由于\((\xi_0, \eta_0)\)是任意的，故上式可以写成一般形式：</p>
+            $$I_i(x_i, y_i) = a + bM(\xi, \eta)\cos[2\pi(\xi x_i + \eta y_i) + \varphi_g(\xi, \eta) + \varphi(\xi, \eta)]$$
+
+            <p>由此可见：余弦条纹通过线性空不变成像系统后，像仍为同频率的余弦函数，只是振幅减小了、相位变化了.</p>
+            <p>振幅的减小与相位的变化都取决于系统的光学传递函数在该频率处的取值.</p>
+
+            <hr>
+
+            <p>对于呈余弦变化的强度分布，很自然地要讨论其<b>对比度</b>（<b>调制度</b>），其定义为：</p>
+            $$V = \frac{I_\max - I_\min}{I_\max + I_\min}$$
+            <ul>
+                <li>\(I_\max\)：光强分布的极大值</li>
+                <li>\(I_\min\)：光强分布的极小值</li>
+            </ul>
+
+
+            <b>物（或理想像）的调制度</b>
+            <div class="Formula">
+                $$V_g = \frac{b}{a}$$
+                <div class="Derivation">
+                    $$\because I_g(\tilde{x}_o, \tilde{y}_o) = a + b\cos[2\pi(\xi_o\tilde{x}_o + \eta_o\tilde{y}_o) + \varphi_g(\xi_o, \eta_o)]$$
+                    $$\therefore I_{g\max} = a + b, \quad I_{g\min} = a - b$$
+                    $$\therefore V_g = \frac{I_{g\max} - I_{g\min}}{I_{g\max} + I_{g\min}} = \frac{(a + b) - (a - b)}{(a + b) + (a - b)} = \frac{2b}{2a} = \frac{b}{a}$$
+                </div>
+            </div>
+            <b>像的调制度</b>
+            <div class="Formula">
+                $$V_i = \frac{bM(\xi, \eta)}{a}$$
+                <div class="Derivation">
+                    $$\because I_i(x_i, y_i) = a + bM(\xi, \eta)\cos[2\pi(\xi x_i + \eta y_i) + \varphi_g(\xi, \eta) + \varphi(\xi, \eta)]$$
+                    $$\therefore I_{i\max} = a + bM(\xi, \eta), \quad I_{i\min} = a - bM(\xi, \eta)$$
+                    $$\therefore V_i = \frac{I_{i\max} - I_{i\min}}{I_{i\max} + I_{i\min}} = \frac{[a + bM(\xi, \eta)] - [a - bM(\xi, \eta)]}{[a + bM(\xi, \eta)] + [a - bM(\xi, \eta)]} = \frac{2bM(\xi, \eta)}{2a} = \frac{bM(\xi, \eta)}{a}$$
+                </div>
+            </div>
+            
+            <p>合并以上两式得：</p>
+            $$V_i = M(\xi, \eta)V_g$$
+
+            <p>\(H(\xi, \eta)\)的辐角\(\varphi(\xi, \eta)\)为余弦像与余弦物（或理想像）的相位差：</p>
+            <a href="#PTF" class="goto">$$\varphi(\xi, \eta) = \varphi_i(\xi, \eta) - \varphi_g(\xi, \eta)$$</a>
+            <p>即像的对比度\(V_i\)等于物的对比度\(V_g\)与相应频率MTF的乘积，PTF给出了相应的相移，空间余弦分布的相位差\(\varphi(\xi, eta)\)体现了余弦像分布\(I_i(x_i, y_i)\)相对于其物分布\(I_o(\tilde{x}_o, \tilde{y}_o)\)移动了多少.</p>
+            <p>当\(\varphi(\xi, \eta) = 2\pi\)时，表示错开一个条纹；当\(\phi(\xi, \eta) = \theta\)弧度时，表示错开了\(\theta/2\pi\)个条纹.</p>
+
+
+            <p>由此可见：光学传递函数的模\(M(\xi, \eta)\)表示物分布中频率为\(\xi, \eta\)的频率基元通过系统后振幅的衰减（\(M(\xi, \eta)\leq 1\)），或者说模\(M(\xi, \eta)\)表示频率为\(\xi, \eta\)的余弦物通过系统后调制度的降低，这就是称\(M(\xi, \eta)\)为调制传递函数的原因.</p>
+            <p>而\(H(\xi, \eta)\)的辐角\(\varphi(\xi, \eta)\)则表示频率为\(\xi, \eta\)的余弦像分布相对于物（理想像）的横向位移量，所以也称\(\varphi(\xi, \eta)\)为相位传递函数.</p>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>OTF与CTF的关系</h2>
+            <p>光学传递函数\(H(\xi, \eta)\)与相干传递函数\(\boldsymbol{H}(\xi, \eta)\)分别描述同一系统采用非相干照明与相干照明的传递函数，它们都取决于系统本身的物理性质，应当有联系.</p>
+            $$H(\xi, \eta) = \frac{\iint_{-\infty}^{+\infty}\boldsymbol{H}^*(\alpha, \beta)\boldsymbol{H}(\xi + \alpha, \eta + \beta)\mathrm{d}\alpha\mathrm{d}\beta}{\iint_{-\infty}^{+\infty}|\boldsymbol{H}(\alpha, \beta)|^2\mathrm{d}\alpha\mathrm{d}\beta}$$
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>衍射受限的OTF</h2>
+            <p>对于相干照明的衍射受限系统，已知\(\boldsymbol{H}(\xi, \eta) = P(\lambda d_i\xi, \lambda d_i\eta)\)，将其代入OTF与CTF的关系式，得：</p>
+            $$H(\xi, \eta) = \frac{\iint_{-\infty}^{+\infty}P^*(\lambda d_i\alpha, \lambda d_i\beta)P[\lambda d_i(\xi + \alpha)]}{}$$
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

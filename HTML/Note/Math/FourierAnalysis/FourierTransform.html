@@ -145,12 +145,6 @@
             <p>都存在.</p>
             <p>且当\(n\to\infty\)时，函数序列\(\boldsymbol{F}(\xi)\)也具有确定的极限，则称该极限为函数在极限意义下的Fourier变换.</p>
 
-            <h3>\(\delta\)函数的Fourier变换</h3>
-            <p>\(\delta\)函数是一个广义函数，狭义Fourier变换的概念不再适用.</p>
-            <p>然而，根据\(\delta\)函数的定义式，可以直接求得其Fourier变换.</p>
-            $$\boldsymbol{F}\{\delta(x)\} = \int_{-\infty}^{+\infty}\delta(x)e^{-i2\pi\xi x}\mathrm{d}x = 1$$
-            <p>即\(\delta\)函数的Fourier变换为常数1.</p>
-
 
         </div>
 
@@ -296,7 +290,7 @@
             
         </div>
 
-        <!-- <div class="Card-Analysis">
+        <div class="Card-Analysis">
             <h2>Fourier变换的基本定理</h2>
 
             <h3>卷积定理</h3>
@@ -325,8 +319,49 @@
             <p>因此，自相关定理表明，一个函数的自相关函数与其能谱密度构成Fourier变换对.</p>
         </div>
 
+        <div class="Card-Analysis">
+            <h2>一些常用的Fourier变换对</h2>
+
+            <b>前置知识</b>
+            <ul>
+                <li><a href="DiracFunction.html">Dirac函数</a></li>
+            </ul>
+
+            <h3>\(\mathcal{F}\{\delta(x)\}\)</h3>
+            <p>\(\delta\)函数是一个广义函数，狭义Fourier变换的概念不再适用.</p>
+            <p>然而，根据\(\delta\)函数的定义式，可以直接求得其Fourier变换.</p>
+            $$\boldsymbol{F}\{\delta(x)\} = \int_{-\infty}^{+\infty}\delta(x)e^{-i2\pi\xi x}\mathrm{d}x = 1$$
+            <p>即\(\delta\)函数的Fourier变换为常数1.</p>
+
+            <h3>\(\mathcal{F}^{-1}\{1\}\)与\(\mathcal{F}\{1\}\)</h3>
+            <p>由\(\mathcal{F}\{\delta(x)\} = 1\)，考察\(\mathcal{F}^{-1}\{1\}\)是否为\(\delta(x)\).</p>
+            <p>可以考察\(\mathcal{F}^{-1}\{1\}\)在积分中的作用是否与\(\delta(x)\)相同.</p>
+            <p>[设]\(\mathcal{F}\{f(x)\} = F(\xi)\).</p>
+            $$\begin{align}
+            \int_{-\infty}^{+\infty}\mathcal{F}^{-1}\{1\}f(x)\mathrm{d}x &= \int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty}1\cdot e^{i2\pi\xi x}\mathrm{d}\xi\right]f(x)\mathrm{d}x\\
+                                                                         &= \int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty}f(x)e^{i2\pi\xi x}\mathrm{d}x\right]\mathrm{d}\xi\\
+                                                                         &= \int_{-\infty}^{+\infty}F(-\xi)\mathrm{d}\xi\\
+                                                                         &= \int_{-\infty}^{+\infty}F(\xi)\mathrm{d}\xi\\
+                                                                         &= f(0)
+            \end{align}$$
+            $$\therefore \mathcal{F}^{-1}\{1\} = \delta(x)$$
+            <p>类似有：</p>
+            $$\mathcal{F}\{1\} = \delta(x)$$
+
+            <div class="Card-AI">
+                <p>这里用到了富比尼定理.</p>
+            </div>
+
+
+            <h3>其他Fourier变换</h3>
+            $$\begin{align}
+            \mathcal{F}^{-1}\{\delta(\xi - \xi_0, \eta - \eta_0)\} &= \iint_{-\infty}^{+\infty}\delta(\xi - \xi_0, \eta - \eta_0)e^{i2\pi(\xi x + \eta y)}dx dy\\
+                                                                   &= e^{i2\pi(\xi_0\xi + \eta_0\eta)}
+            \end{align}$$
+
+        </div>
        
-         -->
+        
         <div id="PageEnd"></div>
 
         <script src="../../../../JavaScript/MenuButton.js"></script>
