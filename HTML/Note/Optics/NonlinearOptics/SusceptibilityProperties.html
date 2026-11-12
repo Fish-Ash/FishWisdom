@@ -48,19 +48,35 @@
 
         <p>考虑频率为\(\omega_1\)、\(\omega_2\)与\(\omega_3 = \omega_1 + \omega_2\)三个光波在无损二阶非线性介质中的相互作用.</p>
 
-        <div class="Card-Definition">
-            <b>极化率张量的真实性条件</b>
-            $$[\chi^{(r)}(\omega_1 , \omega_2, \cdots, \omega_r)]^* = \chi^{(r)}(-\omega_1^*, -\omega_2^*, \cdots, -\omega_r^*)$$
+        <div class="Card-Analysis">
+            <h2>极化率张量的真实性条件</h2>
+
+            $$\chi^{(1)}(\omega) = \int_{-\infty}^{+\infty}R^{(1)}(\tau)e^{i\omega\tau}\mathrm{d}\tau$$
+
             <div class="Card-AI">
-                <p>\(^*\)是取复共轭的意思.</p>
-                $$-\omega^* = -(\omega^*)$$
+                <p>这个式子是哪来的？</p>
             </div>
-            <p>当频率为实数时：</p>
-            $$[\chi^{(r)}(\omega_1 , \omega_2, \cdots, \omega_r)]^* = \chi^{(r)}(-\omega_1, -\omega_2, \cdots, -\omega_r)$$
-            <div class="Card-AI">
-                <p>一般来说频率都是实数.</p>
+
+            <p>由于介质极化响应函数为实数、频率为复数：</p>
+            $$\therefore [\chi^{(1)}(\omega)]^* = \int_{-\infty}^{+\infty}[R^{(1)}(\tau)]^*e^{-i\omega^*\tau}\mathrm{d}\tau = \chi^{(1)}(-\omega^*)$$
+
+            <div class="Card-Definition">
+                <b>极化率张量的真实性条件</b>
+                $$[\chi^{(r)}(\omega_1 , \omega_2, \cdots, \omega_r)]^* = \chi^{(r)}(-\omega_1^*, -\omega_2^*, \cdots, -\omega_r^*)$$
+                <p>频率为实数时：</p>
+                <div class="Formula">
+                    $$[\chi^{(r)}(\omega_1 , \omega_2, \cdots, \omega_r)]^* = \chi^{(r)}(-\omega_1, -\omega_2, \cdots, -\omega_r)$$
+                    <div class="Derivation">
+                        $$\omega\in \mathbb{R}\Rightarrow \omega^* = \omega$$
+                    </div>
+                </div>
             </div>
+
+            <p>上面的关系保证了各阶极化强度\(\boldsymbol{P}^{(r)}\)为实数的特性，故称为极化率张量的真实性条件.</p>
+
+            
         </div>
+
         
         <div class="Card-Analysis" id="Properties1">
             <h2>本征对易对称性</h2>

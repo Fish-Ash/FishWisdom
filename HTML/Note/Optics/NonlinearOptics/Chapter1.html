@@ -181,37 +181,51 @@
             <p>学到目前为止没明白为什么这节是“介质的色散特性”，“色散”到底是什么？</p>
         </div>
 
-
-        <div class="Card-Definition">
-            <b>线性极化率</b>
-            <div class="Formula">
-                $$\begin{align}
-                \chi^{(1)}(\omega) &= \int_{-\infty}^{+\infty}\boldsymbol{R}^{(1)}(\tau)e^{i\omega\tau}\mathrm{d}\tau\\
-                                   &= \chi'(\omega) + i\chi''(\omega)
-                \end{align}$$
-                <div class="Derivation">
-                    $$\because \boldsymbol{P}(t) = \epsilon_0\boldsymbol{R}(t)*\boldsymbol{E}(t)$$
-                    $$\begin{align}
-                    \therefore \boldsymbol{P}(\omega) &= \mathcal{F}[\boldsymbol{P}(t)]\\
-                                                      &= \epsilon_0\mathcal{F}[\boldsymbol{R}(t)]\boldsymbol{E}(\omega)\\
-                                                      &= \epsilon_0\chi^{(1)}(\omega)\boldsymbol{E}(\omega)
-                    \end{align}$$
-                    $$\therefore \chi^{(1)}(\omega) = \mathcal{F}[\boldsymbol{R}(t)]$$
-                    <p>线性极化率实部与虚部间的关系称为色散关系，由Kramers-Kroning关系给出.</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="Card-Definition">
-            <b>Kramers-Kroning关系</b>
-            <p>给出了\(\chi^{(1)}(\omega)\)实部与虚部之间的关系.</p>
-            $$\chi'(\omega) = \frac{1}{\pi}\text{P.V.}\int_{-\infty}^{+\infty}\frac{\chi''(\Omega)}{\Omega-\omega}\mathrm{d}\Omega$$
-            $$\chi''(\omega) = -\frac{1}{\pi}\text{P.V.}\int_{-\infty}^{+\infty}\frac{\chi'(\Omega)}{\Omega-\omega}\mathrm{d}\Omega$$
+        <div class="Card-Analysis">
+            <h2>介质极化率的频率色散</h2>
+            
+            <h3>线性极化率张量</h3>
+            <b>前置知识</b>
             <ul>
-                <li>\(\text{P.V.}\)：柯西主值积分</li>
+                <li><a href="../../Math/FourierAnalysis/FourierTransform.html">Fourier变换</a></li>
             </ul>
+            $$\because \boldsymbol{P}(t) = \int_{-\infty}^{+\infty}\varepsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau$$
+            $$\boldsymbol{P}(t) = \int_{-\infty}^{+\infty}\boldsymbol{P}(\omega)e^{-i\omega t}\mathrm{d}\omega$$
+            $$\boldsymbol{E}(t) = \int_{-\infty}^{+\infty}\boldsymbol{E}(\omega)e^{-i\omega t}\mathrm{d}\omega$$
+
+            <div class="Card-Definition">
+                <b>线性极化率</b>
+                <div class="Formula">
+                    $$\begin{align}
+                    \chi^{(1)}(\omega) &= \int_{-\infty}^{+\infty}\boldsymbol{R}^{(1)}(\tau)e^{i\omega\tau}\mathrm{d}\tau\\
+                                       &= \chi'(\omega) + i\chi''(\omega)
+                    \end{align}$$
+                    <div class="Derivation">
+                        $$\because \boldsymbol{P}(t) = \epsilon_0\boldsymbol{R}(t)*\boldsymbol{E}(t)$$
+                        $$\begin{align}
+                        \therefore \boldsymbol{P}(\omega) &= \mathcal{F}[\boldsymbol{P}(t)]\\
+                                                          &= \epsilon_0\mathcal{F}[\boldsymbol{R}(t)]\boldsymbol{E}(\omega)\\
+                                                          &= \epsilon_0\chi^{(1)}(\omega)\boldsymbol{E}(\omega)
+                        \end{align}$$
+                        $$\therefore \chi^{(1)}(\omega) = \mathcal{F}[\boldsymbol{R}(t)]$$
+                        <p>线性极化率实部与虚部间的关系称为色散关系，由Kramers-Kroning关系给出.</p>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="Card-Definition">
+                <b>Kramers-Kroning关系</b>
+                <p>给出了\(\chi^{(1)}(\omega)\)实部与虚部之间的关系.</p>
+                $$\chi'(\omega) = \frac{1}{\pi}\text{P.V.}\int_{-\infty}^{+\infty}\frac{\chi''(\Omega)}{\Omega-\omega}\mathrm{d}\Omega$$
+                $$\chi''(\omega) = -\frac{1}{\pi}\text{P.V.}\int_{-\infty}^{+\infty}\frac{\chi'(\Omega)}{\Omega-\omega}\mathrm{d}\Omega$$
+                <ul>
+                    <li>\(\text{P.V.}\)：柯西主值积分</li>
+                </ul>
+            </div>
         </div>
+
+
 
         <div class="Card-Analysis">
             <h2>极化率的单位</h2>
@@ -282,18 +296,14 @@
 
         <div class="Card-Analysis">
             <h2>极化强度表示式</h2>
+            <b>前置知识</b>
+            <ul>
+                <li><a href="../../Math/TensorAnalysis/Tensor_Operation.html">张量的点积</a></li>
+            </ul>
             $$\boldsymbol{P}^{(1)} = \sum_n\epsilon_0\boldsymbol{\chi}^{(1)}(\omega_n)\cdot \boldsymbol{E}(\omega_n)e^{-i\omega_nt}$$
-            $$\boldsymbol{P}^{(2)} = \sum_{m,n}\epsilon_0\boldsymbol{\chi}^{(2)}(\omega_m, \omega_n)\cdot \boldsymbol{E}(\omega_m)\boldsymbol{E}(\omega_n)e^{-i(\omega_m + \omega_n)t}$$
-            $$\boldsymbol{P}^{(3)} = \sum_{m,n,l}\epsilon_0\boldsymbol{\chi}^{(3)}(\omega_m, \omega_n, \omega_l)\cdot \boldsymbol{E}(\omega_m)\boldsymbol{E}(\omega_n)\boldsymbol{E}(\omega_l)e^{-i(\omega_m + \omega_n + \omega_l)t}$$
-            <div class="Card-AI">
-                <p>\(\boldsymbol{P}^{(r)}\)均为一阶张量，也就是矢量.</p>
-                <p>\(\cdot, :, \vdots\)为缩并符号，分别表示为：</p>
-                <p>一重缩并：</p>
-                $$P_i = \chi\cdot E = \sum_{j} \chi_{ij} E_i$$
-                <p>二重缩并：</p>
-                $$P_i = \chi : EE = \sum_{j,k} \chi_{ijk} E_jE_k$$
-                <p>三重缩并：</p>
-                $$P_i = \chi \vdots EEE = \sum_{j,k,l} \chi_{ijkl} E_jE_kE_l$$
+            $$\boldsymbol{P}^{(2)} = \sum_{m,n}\epsilon_0\boldsymbol{\chi}^{(2)}(\omega_m, \omega_n):\boldsymbol{E}(\omega_m)\boldsymbol{E}(\omega_n)e^{-i(\omega_m + \omega_n)t}$$
+            <div id="P3">
+                $$\boldsymbol{P}^{(3)} = \sum_{m,n,l}\epsilon_0\boldsymbol{\chi}^{(3)}(\omega_m, \omega_n, \omega_l)\vdots \boldsymbol{E}(\omega_m)\boldsymbol{E}(\omega_n)\boldsymbol{E}(\omega_l)e^{-i(\omega_m + \omega_n + \omega_l)t}$$
             </div>
             <p>[注]式中的\(m,n,l\)包含所有的正值与负值.</p>
 

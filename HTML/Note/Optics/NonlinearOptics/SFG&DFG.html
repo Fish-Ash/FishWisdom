@@ -51,12 +51,59 @@
             <p>在满足相位匹配的条件下，即\(\Delta k=0\)时，方程</p>
             $$\frac{\mathrm{d}E(\omega_3, z)}{\mathrm{d}z} = \frac{i\omega_3^2}{k_3c^2}\chi_{eff}^{(2)}E(\omega_1, z)E^*(\omega_2, z)e^{i\Delta kz}$$
             <p>的解为：</p>
-            $$E(\omega_3, z) = \frac{i\omega_3^2}{k_3c^2}\chi_{eff}^{(2)}E(\omega_1,0)E(\omega_2,0)z$$
+            <div id="E_3">
+                $$E(\omega_3, z) = \frac{i\omega_3^2}{k_3c^2}\chi_{eff}^{(2)}E(\omega_1,0)E(\omega_2,0)z$$
+            </div>
             <p>这就是在小信号近似和满足相位匹配条件下得到的和频光电场\(E(\omega_3, z)\)的变化规律.</p>
 
             <p>[设]频率为\(\omega_l(l = 1,2,3)\)的光电场表示式为：</p>
-            $$\boldsymbol{E} = \boldsymbol{a}(\omega_1)\left[\frac{1}{2}E_0(\omega_l, z)e^{-i(\omega_l t - k_l z + \phi_{\omega_l})}\right]$$
+            $$\boldsymbol{E} = \boldsymbol{a}(\omega_1)\left[\frac{1}{2}E_0(\omega_l, z)e^{-i(\omega_l t - k_l z + \phi_{\omega_l})}\right] + \text{c.c.}$$
             
+            <p>与下式相比较：</p>
+            $$\boldsymbol{E} = \boldsymbol{E}(\omega_l, z)e^{-i\omega_l t} + c.c.$$
+
+            <p>有：</p>
+            $$\boldsymbol{E}(\omega_l, z) = \frac{1}{2}E_0(\omega_l, z)e^{i(k_l z- \phi_{\omega_l})}\boldsymbol{a}(\omega_l)$$
+
+            <p>再与下式相比：</p>
+            $$\boldsymbol{E}(\omega_n, z) = E(\omega_n, z)\boldsymbol{a}(\omega_n)e^{ik_nz}$$
+            <p>有：</p>
+            $$E(\omega_l, z) = \frac{1}{2}E_0(\omega_l, z)e^{-i\varphi_l}$$
+
+            <ul>
+                <li>\(E_0(\omega_l, z)\)：频率为\(\omega_l\)的光电场的实数振幅</li>
+                <li>\(\varphi_l\)：频率为\(\omega_l\)的光电场的相位常数</li>
+            </ul>
+
+            <p>代入<a href="#E_3" class="goto">小信号近似下耦合波方程\(\omega_3\)式的解</a>，得：</p>
+            <div class="Formula">
+                $$E_0(\omega_3, z) = \frac{\omega_3^2}{2k_3c^2}\left\lvert\chi^{(2)}_{\text{eff}}\right\rvert E_0(\omega_1, 0)E_0(\omega_2, 0)e^{i\left(\varphi_3 - \varphi_1 - \varphi_2 \pm \frac{\pi}{2}\right)}z$$
+                <div class="Derivation">
+                    $$\because E(\omega_l, z) = \frac{1}{2}E_0(\omega_l, z)e^{-i\varphi_l}$$
+                    $$\therefore E(\omega_1, z) = \frac{1}{2}E_0(\omega_1, z)e^{-i\varphi_1}$$
+                    $$E(\omega_2, z) = \frac{1}{2}E_0(\omega_2, z)e^{-i\varphi_2}$$
+                    $$E(\omega_3, z) = \frac{1}{2}E_0(\omega_3, z)e^{-i\varphi_3}$$
+                    $$\because E(\omega_3, z) = \frac{i\omega_3^2}{k_3c^2}\chi_{eff}^{(2)}E(\omega_1,0)E(\omega_2,0)z$$
+                    $$\therefore \frac{1}{2}E_0(\omega_3, z)e^{-i\varphi_3} = \frac{i\omega_3^2}{4k_3c^2}\chi_{eff}^{(2)}E(\omega_1,0)E(\omega_2,0)e^{-i(\omega_1 + \omega_2)}z$$
+                    $$\therefore E_0(\omega_3, z) = \frac{i\omega_3^2}{2k_3c^2}\chi_{eff}^{(2)}E(\omega_1,0)E(\omega_2,0)e^{i(\omega_3 - \omega_1 - \omega_2)}z$$
+        
+                    $$\because i\chi^{(2)}_{\text{eff}} = \pm i\left\lvert\chi^{(2)}_{\text{eff}}\right\rvert$$
+                    <div class="Card-AI">
+                        <p>这里假设介质是无耗的，即\(\chi\)为实数.</p>
+                    </div>
+                    $$\pm i = \cos(\pi/2) \pm i\sin(\pi/2) = e^{\pm \frac{\pi}{2}}$$
+                    $$\therefore i\chi^{(2)}_{\text{eff}} = e^{\pm\frac{\pi}{2}}\left\lvert\chi^{(2)}_{\text{eff}}\right\rvert$$
+                    $$\therefore E_0(\omega_3, z) = \frac{\omega_3^2}{2k_3c^2}\left\lvert\chi^{(2)}_{\text{eff}}\right\rvert E_0(\omega_1, 0)E_0(\omega_2, 0)e^{i\left(\varphi_3 - \varphi_1 - \varphi_2 \pm \frac{\pi}{2}\right)}z$$
+                </div>
+            </div>
+
+            <p>其中，\(\pi/2\)前的正负号与\(\chi^{(2)}_{\text{eff}}\)的正负号相同.</p>
+
+            <p>由于上式中除指数项外，其他参量都是实数，因此要求指数项的虚部必须为0，即：</p>
+            $$\varphi_3 - \varphi_1 - \varphi_2 \pm \frac{\pi}{2} = 0$$
+            $$E_0(\omega_3, z) = \frac{\omega_3^2}{2k_3c^2}\left\lvert\chi^{(2)}_{\text{eff}}\right\rvert E_0(\omega_1, 0)E_0(\omega_2, 0)z$$
+            <p>该式说明，频率为\(\omega_3\)的和频光电场随\(z\)线性增加，且其相位常数\(\varphi_3\)与\(\varphi_1,~\varphi_2\)之间的关系是确定的.</p>
+            <p>当然，实际上和频\(\omega_3\)的光电场并不能随\(z\)的增大无限增加，因为当频率为\(\omega_1\)和\(\omega_2\)的两束光波中较弱的一束光所携带的功率被抽空，\(\omega_3\)的功率逐渐增大时，会出现饱和现象.</p>
 
 
 
@@ -239,6 +286,11 @@
             <p>差频产生讨论频率为\(\omega_3\)与\(\omega_1\)的光电场产生频率为\(\omega_2 = \omega_3 - \omega_1\)的差频光电场的规律，求解的基本方程仍是三波混频耦合波方程.</p>
 
             <h3>小信号近似理论</h3>
+            <p>在\(z\)很小的情况下，可以将\(E(\omega_3, z)\)与\(E(\omega_1, z)\)看作常数，在完全相位匹配条件下直接积分三波混频耦合波方程组\(\omega_2\)式，得：</p>
+            $$E_0(\omega_2, z) = \frac{1}{2}\frac{\omega_2^2}{k_2c^2}\left\lvert\chi^{(2)}_\text{eff}\right\rvert E_0(\omega_3, 0)E_0(\omega_1, 0)z$$
+            <p>及</p>
+            $$\varphi_1 + \varphi_2 - \varphi_3 \pm \frac{\pi}{2} = 0$$
+            
 
             <h3>大信号理论处理</h3>
         </div>

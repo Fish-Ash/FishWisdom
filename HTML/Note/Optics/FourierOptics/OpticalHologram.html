@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fourier光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>光学全息</h1>
+
+        <div class="Card-Analysis">
+            <h2>光学全息概述</h2>
+
+            <p>全息术不仅可以用于光波波段，还能用于电子波、X射线、声波与微波波段.</p>
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>波前记录与再现</h2>
+
+            <p>用干涉方法得到的，像平面上光波的全部信息（振幅与相位），存在于物像之间光波经过的任一平面上.</p>
+
+            <div class="Card-Question">
+                <p>什么叫干涉方法？</p>
+                <p>任一波面上携带的信息是相同的？这怎么可能？</p>
+            </div>
+
+            <p>若在这些平面上能记录携带物体全部信息的波前，并在一定条件下再现（重现）物光波的波前，那么从效果上看，相当于在记录时被“冻结”在记录介质上的波前从全息图上“释放”出来，然后继续向前传播，以产生一个可观察的三维像.</p>
+            <p>若不考虑记录过程和再现过程在时间上的间隔与空间上存在的差异，再现光波与原始光波毫无区别.</p>
+            <p>因此，由光波传递信息而构成物体的过程被分解成两步：</p>
+            <ul>
+                <li>波前记录</li>
+                <li>波前再现</li>
+            </ul>
+            <p>波前记录与波前再现是全息术的核心.</p>
+
+            <p>在全息术中通常使用的波是光波，一般将它称为<b>光全息术</b>.</p>
+            <p>根据使用波的不同，又有微波全息术、声波全息术等.</p>
+
+            <h3>波前记录</h3>
+            <h4>用干涉方法记录物光光波前</h4>
+            <p>物光光波前信息包括光波的振幅与相位.</p>
+            <p>现有的所有记录介质仅对光强产生响应，因此必须设法将相位信息转换成强度的变化才能记录下来.</p>
+            <p>干涉法是将空间相位调制转换为空间强度调制的标准方法.</p>
+
+            <div class="Card-AI">
+                <p>干涉就是将相位转换为强度图样.</p>
+            </div>
+
+
+            <p>[设]传播到记录介质上的物光波前为：</p>
+            $$\mathcal{O}(x,y) = O(x,y)e^{-i\phi(x,y)}$$
+
+            <p>[设]传播到记录介质上的参考光波波前为：</p>
+            $$\mathcal{R}(x,y) = R(x,y)e^{-i\psi(x,y)}$$
+
+            <p>则被记录的总光强为：</p>
+            $$\begin{align}
+            I(x,y) &= |\mathcal{R}(x,y) + \mathcal{O}(x,y)|^2\\
+                   &= |\mathcal{R}(x,y)|^2 + |\mathcal{O}(x,y)|^2 + \mathcal{R}(x,y)\mathcal{O}^*(x,y) + \mathcal{R}^*(x,y)\mathcal{O}(x,y)
+            \end{align}$$
+
+            <div class="Card-AI">
+                <p>波前函数表征的是复振幅.</p>
+            </div>
+
+
+
+        </div>
+        
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

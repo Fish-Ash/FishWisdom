@@ -50,11 +50,63 @@
             <h3>双光子吸收现象</h3>
 
             <p>当用红宝石激光照射掺铕氟化钙晶体时，可以探测到相应于两倍红宝石激光频率跃迁的荧光.</p>
+
+            <div class="Card-AI">
+                <p>材料的激光跃迁频率，对应于该材料能够产生的激光频率.</p>
+                <p>激光照射晶体后，激光频率不发生改变，同时产生\(2\omega\)的荧光.</p>
+
+            </div>
+
+
             <p>由于该晶体不存在与单个红宝石激光光子相应的任何激发态，所以不能用连续吸收两个红宝石激光光子来解释这种现象.</p>
+
+            <div class="Card-AI">
+                <p>晶体中不存在与单个光子对应的能级，但是存在与两个光子对应的能级.</p>
+            </div>
+
             <p>又由于掺铕氟化钙晶体属于立方晶体，因此不可能发生二次谐波产生过程.</p>
 
             <p>因此，上述现象的唯一解释是：同时吸收两个光子产生的效应.</p>
             
+
+            <p>更一般的情况是：当具有频率为\(\omega_1\)和\(\omega_2\)的两束光通过非线性介质时，若\(\omega_1 + \omega_2\)接近介质的某一跃迁频率，就会发现两束光都会衰减.</p>
+            <p>这是因为介质同时从每一束光中各吸收一个光子，即同时吸收两个光子，引起了两束光的衰减，这种现象称为双光子吸收.</p>
+
+            <h3>双光子吸收的耦合波方程</h3>
+            <p>我们感兴趣的是\(\omega_1 + \omega_2\)接近介质某个跃迁频率\(\omega_0\)的情况.</p>
+            <p>因为现在只有两个频率分量\(\omega_1\)与\(\omega_2\)，介质中没有二阶非线性响应，或者不满足和频、差频与二次谐波的相位匹配条件，或者不满足产生三次谐波的相位匹配条件，所以只需考虑频率\(\omega_1\)与\(\omega_2\)这两个辐射场之间的耦合即可.</p>
+
+            <p>[设]介质中频率为\(\omega_1\)与\(\omega_2\)的光电场表示式为：</p>
+            $$\boldsymbol{E}(\omega_1) = E(\omega_1, z)\boldsymbol{a}(\omega_1)e^{ik_1z}$$
+            $$\boldsymbol{E}(\omega_2) = E(\omega_2, z)\boldsymbol{a}(\omega_2)e^{ik_2z}$$
+
+            <p>相应的<a href="Chapter1.html#P3" class="goto">三阶非线性极化强度</a>的复振幅为：</p>
+            $$\boldsymbol{P}^{(3)}(\omega_1) = 6\varepsilon_0\chi^{(3)}(\omega_2, -\omega_2, \omega_1)\vdots\boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_1)|E(\omega_2, z)|^2E(\omega_1, z)e^{ik_1z}$$
+            $$\boldsymbol{P}^{(3)}(\omega_2) = 6\varepsilon_0\chi^{(3)}(\omega_1, -\omega_1, \omega_2)\vdots\boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_1)|E(\omega_1, z)|^2E(\omega_2, z)e^{ik_2z}$$
+
+            <p>由<a href="CouplingWaveEquation.html#CouplingWaveEquation" class="goto">单色平面光波在稳态条件下的非线性耦合波方程</a>，\(E(\omega_1, z)\)与\(E(\omega_2, z)\)满足的耦合波方程为：</p>
+
+            <div class="Formula">
+                $$\frac{\mathrm{d}E(\omega_1, z)}{\mathrm{d}z} = \frac{3i\omega_1^2}{2k_1c^2}\chi^{(3)}(\omega_2, -\omega_2, \omega_1)\vdots\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_1)|E(\omega_2, z)|^2E(\omega_1, z)$$
+                <div class="Derivation">
+                    $$\because \frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z} = \frac{i\mu_0\omega_n^2}{2k_n}\boldsymbol{a}(\omega_n)\cdot\boldsymbol{P}_{\text{NL}}'(\omega_n, z)e^{-ik_nz}$$
+                    $$\begin{align}\therefore
+                    \frac{\mathrm{d}E(\omega_1, z)}{\mathrm{d}z} &= 6\varepsilon_0\cdot\frac{i\mu_0\omega_1^2}{2k_1}\chi^{(3)}(\omega_2, -\omega_2, \omega_1)\vdots\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_1)|E(\omega_2, z)|^2E(\omega_1, z)\\
+                                                                 &= \frac{3i\omega_1^2}{2k_1c^2}\chi^{(3)}(\omega_2, -\omega_2, \omega_1)\vdots\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_1)|E(\omega_2, z)|^2E(\omega_1, z)
+                    \end{align}$$
+                </div>                
+            </div>
+
+            <div class="Formula">
+                $$\frac{\mathrm{d}E(\omega_2, z)}{\mathrm{d}z} = \frac{3i\omega_2^2}{2k_2c^2}\chi^{(3)}(\omega_1, -\omega_1, \omega_2)\vdots\boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_2)|E(\omega_1, z)|^2E(\omega_2, z)$$
+                <div class="Derivation">
+                    $$\because \frac{\mathrm{d}E(\omega_n, z)}{\mathrm{d}z} = \frac{i\mu_0\omega_n^2}{2k_n}\boldsymbol{a}(\omega_n)\cdot\boldsymbol{P}_{\text{NL}}'(\omega_n, z)e^{-ik_nz}$$
+                    $$\begin{align}\therefore
+                    \frac{\mathrm{d}E(\omega_2, z)}{\mathrm{d}z} &= 6\varepsilon_0\cdot\frac{i\mu_0\omega_2^2}{2k_2}\chi^{(3)}(\omega_1, -\omega_1, \omega_2)\vdots\boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_2)|E(\omega_1, z)|^2E(\omega_2, z)\\
+                                                                 &= \frac{3i\omega_2^2}{2k_2c^2}\chi^{(3)}(\omega_1, -\omega_1, \omega_2)\vdots\boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_2)|E(\omega_1, z)|^2E(\omega_2, z)
+                    \end{align}$$
+                </div>                
+            </div>
         </div>
 
 
