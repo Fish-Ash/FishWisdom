@@ -111,7 +111,7 @@
         </div>
 
         
-        <div class="Card-Definition">
+        <div class="Card-Definition" id="ComplexAmplitude">
             <b>复振幅</b>
             <p>复振幅反映了光场振动的振幅和相位随空间的变化.</p>
             $$\boldsymbol{E} = \boldsymbol{E}_0 e^{-i(\omega t - \boldsymbol{k}\cdot\boldsymbol{r} + \phi_0)} = \boldsymbol{E}_0 e^{i(\boldsymbol{k}\cdot\boldsymbol{r} - \phi_0)}e^{-i\omega t}$$
@@ -123,9 +123,24 @@
             <b>实际光电场：</b>
             $$\boldsymbol{E} = \boldsymbol{E}_0\cos(\omega t - \boldsymbol{k}\cdot \boldsymbol{r} + \phi_0)$$
             <p>为便于计算，常取复数形式：</p>
-            $$\boldsymbol{E}' = \boldsymbol{E}_0' e^{-i(\omega t - \boldsymbol{k}\cdot \boldsymbol{r} + \phi_0)} = \boldsymbol{E}_0' e^{-i\phi}$$
+
+            <div class="Formula">
+                $$\boldsymbol{E} = \frac{1}{2}\boldsymbol{E}_0e^{-i(\omega t - \boldsymbol{k}\cdot \boldsymbol{r} + \phi_0)} + \text{c.c.}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \boldsymbol{E} &= \boldsymbol{E}_0\cos(\omega t - \boldsymbol{k}\cdot \boldsymbol{r} + \phi_0)\\
+                                   &= \boldsymbol{E}_0\frac{e^{-i(\omega t - \boldsymbol{k}\cdot \boldsymbol{r} + \phi_0) + e^{i(\omega t - \boldsymbol{k}\cdot \boldsymbol{r} + \phi_0)}}}{2}\\
+                                   &= \frac{1}{2}\boldsymbol{E}_0e^{-i(\omega t - \boldsymbol{k}\cdot \boldsymbol{r} + \phi_0)} + \text{c.c.}
+                    \end{align}$$
+                </div>
+            </div>
+
+            <p>上式可省略复共轭项，近似简写为：</p>
+            $$\boldsymbol{E} = \frac{1}{2}\boldsymbol{E}_0e^{-i(\omega t - \boldsymbol{k}\cdot \boldsymbol{r} + \phi_0)}$$
+            <p>[注]常数\(\frac{1}{2}\)也可合并进振幅\(\boldsymbol{E}_0\)中.</p>            
+
             <p>复振幅为</p>
-            $$\tilde{\boldsymbol{E}} =\boldsymbol{E}_0' e^{i(\boldsymbol{k}\cdot \boldsymbol{r} - \phi_0)}$$
+            $$\widetilde{\boldsymbol{E}} = \frac{1}{2}\boldsymbol{E}_0 e^{i(\boldsymbol{k}\cdot \boldsymbol{r} - \phi_0)}$$
 
             <table>
                 <tr>

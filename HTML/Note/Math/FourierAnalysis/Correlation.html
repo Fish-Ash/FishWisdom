@@ -39,9 +39,64 @@
         <div class="Card-Analysis">
             <h2>互相关</h2>
             <div class="Card-Definition">
-                <p>两个复函数\(f(x,y)\)与\(g(x,y)\)的互相关为：</p>
-                $$f(x,y)\bigstar g(x,y) = \iint_{-\infty}^{+\infty}f(\xi,\eta)g^*(\xi-x,\eta-y)\mathrm{d}\xi\mathrm{d}\eta$$
+                <b>互相关</b>
+                <p>两个函数\(f(x,y)\)与\(g(x,y)\)的互相关定义为含参变量的无穷积分：</p>
+                $$\begin{align}
+                f(x,y)\bigstar g(x,y) &= \iint_{-\infty}^{+\infty}f^*(\alpha - x,\beta - y)g(\alpha,\beta)\mathrm{d}\alpha\mathrm{d}\beta\\
+                                      &= \iint_{-\infty}^{+\infty}f^*(\alpha, \beta)g(x + \alpha, y + \beta)\mathrm{d}\alpha\mathrm{d}\beta\\
+                                      &= R_{fg}(x,y)
+                \end{align}$$
+                <p>上式中的参变量\(x,~y\)，积分变量\(\alpha,~\beta\)均为实数，而函数\(f\)与\(g\)可实可复.</p>
             </div>
+
+            <p>多数应用问题中，这个无穷积分都是存在的；对于它不存在的一种特殊情形，后面将另作定义.</p>
+
+            <h3>互相关的卷积表达式</h3>
+
+            <h3>互相关的性质</h3>
+            <h4>性质1</h4>
+            <div class="Formula">
+                $$R_{gf}(x,y) = R_{gf}^*(-x,-y) \neq R_{fg}(x,y)$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    R_{gf}(x,y) &= \iint_{-\infty}^{+\infty}g^*(\alpha - x, \beta - y)f(\alpha,\beta)\mathrm{d}\alpha\mathrm{d}\beta\\
+                                &= \left[\iint_{-\infty}^{+\infty}f^*(\alpha, \beta)g(-x + \alpha, - y + \beta)\mathrm{d}\alpha\mathrm{d}\beta\right]^*\\
+                                &= R_{gf}^*(-x, -y)
+                    \end{align}$$
+                </div>
+            </div>
+            <p>即互相关不具有交换性.</p>
+            <p>当\(f,~g\)均为实函数时，则有：</p>
+            <div class="Formula">
+                $$R_{gf}(x,y) = R_{fg}(-x, -y)$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    R_{gf}(x,y) &= \iint_{-\infty}^{+\infty}f^*(\alpha, \beta)g(-x + \alpha, - y + \beta)\mathrm{d}\alpha\mathrm{d}\beta\\
+                                &= R_{fg}(-x, -y)
+                    \end{align}$$
+                </div>
+            </div>
+
+            <h4>性质2</h4>
+            <div class="Formula">
+                $$|R_{fg}(x,y)|^2\leq R_{ff}(0,0)R_{gg}(0,0)$$
+                <div class="Derivation">
+                    <p>由施瓦兹不等式：</p>
+                    $$\left\lvert\iint_{-\infty}^{+\infty}\varphi^*(\alpha, \beta)\psi(\alpha, \beta)\mathrm{d}\alpha\mathrm{d}\beta\right\rvert^2\leq \iint_{-\infty}^{+\infty}\left\lvert\varphi(\alpha, \beta)\right\rvert^2\mathrm{d}\alpha\mathrm{d}\beta\iint_{-\infty}^{+\infty}\left\lvert\psi(\alpha, \beta)\right\rvert^2\mathrm{d}\alpha\mathrm{d}\beta$$
+        
+                    <p>其中\(\varphi\)与\(\psi\)一般为复函数.</p>
+                    <p>当且仅当\(\varphi = k\psi，~k\in\mathbb{C}\)时等号成立.</p>
+        
+                    $$\begin{align}
+                    |R_{fg}(x,y)|^2 &= \left\lvert\iint_{-\infty}^{+\infty}f^*(\alpha - x, \beta - y)g(\alpha, \beta)\mathrm{d}\alpha\mathrm{d}\beta\right\rvert^2\\
+                                    &\leq \iint_{-\infty}^{+\infty}|f(\alpha - x, \beta - y)|^2\mathrm{d}\alpha\mathrm{d}\beta\iint_{-\infty}^{+\infty}|g(\alpha,\beta)|^2\mathrm{d}\alpha\mathrm{d}\beta\\
+                    \end{align}$$
+        
+                    $$\because R_{ff}(0,0) = \iint_{-\infty}^{+\infty}f^*(\alpha, \beta)f(\alpha, \beta)\mathrm{d}\alpha\mathrm{d}\beta  = \iint_{-\infty}^{+\infty}|f(\alpha, \beta)|^2\mathrm{d}\alpha\mathrm{d}\beta$$
+                    $$\therefore |R_{fg}(x,y)|^2\leq R_{ff}(0,0)R_{gg}(0,0)$$
+                </div>
+            </div>
+
         </div>
 
         <div class="Card-Analysis">

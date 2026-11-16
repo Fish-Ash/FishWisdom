@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>激光原理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>对称共焦腔的自再现模</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+
+            <p>一般稳定球面腔的模式理论是以对称共焦腔的解析理论为基础，因此对称共焦腔的解析解在开腔模式理论中占有重要地位.</p>
+
+            <p>Boyd和Gordon首先证明：方形镜共焦腔自再现模积分方程具有严格的解析函数解，它们是一组特殊定义的长椭球函数，且当腔的Fresnel数足够大时，可近似表示为厄密多项式与高斯函数乘积的形式.</p>
+            <p>而圆形球面镜共焦腔本征函数的解为超椭球函数，当腔的Fresnel数足够大时，可近似表示为拉盖尔多项式与高斯函数乘积的形式.</p>
+
+            <p>本节将分别介绍方形镜共焦腔与圆形镜共焦腔的自再现模积分方程的解析解，然后在此基础上讨论它们的自再现模即自再现模所激发的行波场的特征.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>方形镜对称共焦腔</h2>
+
+            <p>方形镜对称共焦腔的两个凹球面反射镜的孔径是方形的.</p>
+            <p>首先将<a href="SelfReproducingMode.html#integral equation" class="goto">开腔自再现模积分方程</a>的积分核对于方形镜对称共焦腔进行简化，并推导方程的解析解，然后在此基础上讨论它们的自再现模与行波场的特征.</p>
+
+            <h3>方形镜对称共焦腔的自再现模积分方程及其解析解</h3>
+
+            <p>[设]谐振腔如图所示，由线度为\(2a\times 2a\)的两个曲率半径相同的正方形球面反射镜所构成的共焦腔.</p>
+
+            <figure>
+                <img src="Img/QuadrateMirror.png" width="300">
+                <figcaption>方形球面镜对称共焦腔</figcaption>
+            </figure>
+
+            <p>因镜面孔径为正方形，故镜面坐标采用直角坐标系.</p>
+            <p>镜面的线度\(a\)、曲率半径\(R\)与镜面间距离\(L\)及波长\(\lambda\)满足以下关系：</p>
+            $$L\gg a\gg \lambda,\quad \frac{a^2}{L\lambda}\ll \left(\frac{L}{a}\right)^2$$
+
+            <p>如图所示，两镜面上任意两点间的连线长度为：</p>
+            $$r(x,y,x',y') = \overline{\text{P}_1\text{P}_2} = \overline{\text{P}_1'\text{P}_2'} - \overline{\text{P}_1'\text{P}_1} - \overline{\text{P}_2'\text{P}_2}$$
+            <div class="Formula">
+                $$\overline{\text{P}_1'\text{P}_2'}\approx L + \frac{(x-x')^2}{2L} + \frac{(y-y')^2}{2L}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \overline{\text{P}_1'\text{P}_2'} &\approx \sqrt{L^2 + (x-x')^2 + (y-y')^2}\\
+                                                      &= L\left[1 + \left(\frac{x-x'}{L}\right)^2 + \left(\frac{y-y'}{L}\right)^2\right]^{1/2}\\
+                                                      &\approx L\left[1 + \frac{(x-x')^2}{2L^2} + \frac{(y-y')^2}{2L^2}\right]\\
+                                                      &= L + \frac{(x-x')^2}{2L} + \frac{(y-y')^2}{2L}
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\overline{\text{P}_1'\text{P}_1} \approx \Delta_1 = $$
+            </div>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

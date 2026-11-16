@@ -76,28 +76,32 @@
         <div class="Card-Analysis">
             <h2>三波混频耦合波方程组</h2>
 
-            <p>由<a class="goto" href="./Chapter1.html#SecondOrderP">二阶非线性极化强度的一般表示式</a>，可以得到三波混频中任何一对光波所感应的非线性极化强度复振幅：</p>
+            <p>由<a class="goto" href="./Chapter1.html#SecondOrderP">二阶非线性极化强度的一般表示式</a>，可以得到三波混频中任何一对光波所感应的非线性极化强度<a href="../PhysicalOptics/MathmaticalForm.html#ComplexAmplitude" class="goto">复振幅</a>：</p>
+            
             $$\boldsymbol{P}^{(2)}(\omega_1) = 2\epsilon_0\chi^{(2)}(\omega_3, -\omega_2):\boldsymbol{E}(\omega_3, z)\boldsymbol{E}^*(\omega_2, z)$$
             $$\boldsymbol{P}^{(2)}(\omega_2) = 2\epsilon_0\chi^{(2)}(\omega_3, -\omega_1):\boldsymbol{E}(\omega_3, z)\boldsymbol{E}^*(\omega_1, z)$$
-            $$\boldsymbol{P}^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1, \omega_2):\boldsymbol{E}(\omega_1, z)\boldsymbol{E}(\omega_2, z)$$
-            <div class="Prove">
-                <p>考虑到\(\omega_3 = \omega_1 + \omega_2\)，因此仅计算：</p>
-                $$\begin{cases}
-                \omega_m, \omega_n = \omega_1, \omega_2\\
-                \omega_m, \omega_n = \omega_2, \omega_1\\
-                \end{cases}$$
-                <p>两项.</p>
-                $$\begin{align}
-                P^{(2)}(t) &= \epsilon_0\sum_{m,n}\chi^{(2)}(\omega_m,\omega_n)E(\omega_m)E(\omega_n)e^{-i(\omega_m + \omega_n)t}\\
-                           &= \epsilon_0\chi^{(2)}(\omega_1,\omega_2)E(\omega_1)E(\omega_2)e^{-i\omega_3t} + \epsilon_0\chi^{(2)}(\omega_2,\omega_1)E(\omega_2)E(\omega_1)e^{-i\omega_3t}
-                \end{align}$$
-                <p>考虑到二阶极化率的<a class="goto" href="./Chapter1.html#Properties1">本征对易对称性</a>，有：</p>
-                $$\chi^{(2)}(\omega_1, \omega_2) = \chi^{(2)}(\omega_2, \omega_1)$$
-                $$\therefore P^{(2)}(t) = 2\epsilon_0\chi^{(2)}(\omega_1,\omega_2)E(\omega_1)E(\omega_2)e^{-i\omega_3t}$$
-                <p>省略时间相位因子，得到非线性极化强度复振幅为：</p>
-                $$P^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1,\omega_2)E(\omega_1)E(\omega_2)$$
-                <p>考虑张量形式，才会引入<a class="goto" href="../../Math/TensorAnalysis/Dyad.html#DoubleDotProduct">并联式双点积</a>，得到：</p>
+
+            <div class="Formula">
                 $$\boldsymbol{P}^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1, \omega_2):\boldsymbol{E}(\omega_1, z)\boldsymbol{E}(\omega_2, z)$$
+                <div class="Derivation">
+                    <p>考虑到\(\omega_3 = \omega_1 + \omega_2\)，因此仅计算：</p>
+                    $$\begin{cases}
+                    \omega_m, \omega_n = \omega_1, \omega_2\\
+                    \omega_m, \omega_n = \omega_2, \omega_1\\
+                    \end{cases}$$
+                    <p>两项.</p>
+                    $$\begin{align}
+                    P^{(2)}(t) &= \epsilon_0\sum_{m,n}\chi^{(2)}(\omega_m,\omega_n)E(\omega_m)E(\omega_n)e^{-i(\omega_m + \omega_n)t}\\
+                                &= \epsilon_0\chi^{(2)}(\omega_1,\omega_2)E(\omega_1)E(\omega_2)e^{-i\omega_3t} + \epsilon_0\chi^{(2)}(\omega_2,\omega_1)E(\omega_2)E(\omega_1)e^{-i\omega_3t}
+                    \end{align}$$
+                    <p>考虑到二阶极化率的<a class="goto" href="./Chapter1.html#Properties1">本征对易对称性</a>，有：</p>
+                    $$\chi^{(2)}(\omega_1, \omega_2) = \chi^{(2)}(\omega_2, \omega_1)$$
+                    $$\therefore P^{(2)}(t) = 2\epsilon_0\chi^{(2)}(\omega_1,\omega_2)E(\omega_1)E(\omega_2)e^{-i\omega_3t}$$
+                    <p>省略时间相位因子，得到非线性极化强度复振幅为：</p>
+                    $$P^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1,\omega_2)E(\omega_1)E(\omega_2)$$
+                    <p>考虑张量形式，才会引入<a class="goto" href="../../Math/TensorAnalysis/Dyad.html#DoubleDotProduct">并联式双点积</a>，得到：</p>
+                    $$\boldsymbol{P}^{(2)}(\omega_3) = 2\epsilon_0\chi^{(2)}(\omega_1, \omega_2):\boldsymbol{E}(\omega_1, z)\boldsymbol{E}(\omega_2, z)$$
+                </div>
             </div>
     
             <div class="Card-AI">
@@ -107,6 +111,44 @@
             <div class="Card-AI">
                 <p>在推导特定频率（如ω₁）的耦合方程时，只考虑能产生该频率极化的频率组合项。对于ω₁ = ω₃ - ω₂的过程，仅此项满足频率匹配条件并对P⁽²⁾(ω₁)有贡献，其他项不参与该相互作用，故忽略.</p>
             </div>
+
+            <p>根据<a href="CouplingWaveEquation.html#CouplingWaveEquation" class="goto">单色平面光波在稳态条件下的非线性耦合波方程</a>，\(\omega_1,~\omega_2,~\omega_3\)的光电场标量复振幅\(E(\omega_1, z),~E(\omega_2, z),~E(\omega_3, z)\)满足的微分方程为：</p>
+            $$\frac{\mathrm{d}E(\omega_1, z)}{\mathrm{d}z} = \frac{i\mu_0\omega_1^2}{2k_1}\boldsymbol{a}(\omega_1)\cdot\boldsymbol{P}_{\text{NL}}'(\omega_1, z)e^{-ik_1z}$$
+            $$\frac{\mathrm{d}E(\omega_2, z)}{\mathrm{d}z} = \frac{i\mu_0\omega_2^2}{2k_2}\boldsymbol{a}(\omega_2)\cdot\boldsymbol{P}_{\text{NL}}'(\omega_2, z)e^{-ik_2z}$$
+            $$\frac{\mathrm{d}E(\omega_3, z)}{\mathrm{d}z} = \frac{i\mu_0\omega_3^2}{2k_3}\boldsymbol{a}(\omega_3)\cdot\boldsymbol{P}_{\text{NL}}'(\omega_3, z)e^{-ik_3z}$$
+
+            <p>式中：</p>
+            $$\boldsymbol{P}_{\text{NL}}'(\omega_1, z) = 2\varepsilon_0\chi^{(2)}(\omega_3, -\omega_2):\boldsymbol{a}(\omega_3)\boldsymbol{a}(\omega_2)E(\omega_3, z)E^*(\omega_2, z)e^{i(k_3-k_2)z}$$
+            $$\boldsymbol{P}_{\text{NL}}'(\omega_2, z) = 2\varepsilon_0\chi^{(2)}(\omega_3, -\omega_1):\boldsymbol{a}(\omega_3)\boldsymbol{a}(\omega_1)E(\omega_3, z)E^*(\omega_1, z)e^{i(k_3-k_1)z}$$
+            $$\boldsymbol{P}_{\text{NL}}'(\omega_3, z) = 2\varepsilon_0\chi^{(2)}(\omega_1, \omega_2):\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_2)E(\omega_1, z)E(\omega_2, z)e^{i(k_1+k_2)z}$$
+
+            <p>[令]\(\Delta k = k_1 + k_2 - k_3\)，有：</p>
+
+            $$\frac{\mathrm{d}E(\omega_1, z)}{\mathrm{d}z} = \frac{i\omega_1^2}{k_1c^2}[\chi^{(2)}(\omega_3, -\omega_2)\vdots\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_3)\boldsymbol{a}(\omega_2)]E(\omega_3, z)E^*(\omega_2, z)e^{-i\Delta kz}$$
+            $$\frac{\mathrm{d}E(\omega_2, z)}{\mathrm{d}z} = \frac{i\omega_2^2}{k_2c^2}[\chi^{(2)}(\omega_3, -\omega_1)\vdots\boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_3)\boldsymbol{a}(\omega_1)]E(\omega_3, z)E^*(\omega_1, z)e^{-i\Delta kz}$$
+            $$\frac{\mathrm{d}E(\omega_3, z)}{\mathrm{d}z} = \frac{i\omega_3^2}{k_3c^2}[\chi^{(2)}(\omega_1, \omega_2)\vdots\boldsymbol{a}(\omega_3)\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_2)]E(\omega_1, z)E(\omega_2, z)e^{i\Delta kz}$$
+
+            <p>上面三式方括号中标量乘的定义为：</p>
+            $$\chi^{(2)}\vdots\boldsymbol{a}\boldsymbol{b}\boldsymbol{c} = \sum_{\alpha,\beta,\gamma = x,y,z}\chi_{\alpha\beta\gamma}^{(2)}a_\alpha b_\beta c_\gamma$$
+            <p>若介质对频率为\(\omega_1,~\omega_2,~\omega_3\)的光波都是无耗的，即\(\omega_1,~\omega_2,~\omega_3\)<a href="NonlinearSusceptibility.html#chi_omega" class="goto">远离共振区</a>，则上面方程中的\(\chi^{(2)}(\omega_3, -\omega_2),~\chi^{(2)}(\omega_3, -\omega_1),~\chi^{(2)}(\omega_1, \omega_2)\)都是实数.</p>
+
+            <p>考虑<a href="SusceptibilityProperties.html" class="goto">完全对易对称性</a>，不难证明上式中的方括号都相等.</p>
+            <p>引入一个实数\(\chi^{(2)}_{\text{eff}}\)表示它们：</p>
+
+            <div class="Card-Definition" id="effective nonlinear susceptibility">
+                <b>有效非线性极化率\(\chi^{(2)}_\text{eff}\)</b>
+                $$\begin{align}
+                \chi^{(2)}_{\text{eff}} &= \chi^{(2)}(\omega_1, \omega_2)\vdots \boldsymbol{a}(\omega_3)\boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_2)\\
+                &= \chi^{(2)}(\omega_3, -\omega_2)\vdots \boldsymbol{a}(\omega_1)\boldsymbol{a}(\omega_3)\boldsymbol{a}(\omega_2)\\
+                &= \chi^{(2)}(\omega_3, -\omega_1)\vdots \boldsymbol{a}(\omega_2)\boldsymbol{a}(\omega_3)\boldsymbol{a}(\omega_1)\\
+                \end{align}$$
+            </div>
+
+            <div class="Card-AI">
+                <p>补充：张量点积的互换性？</p>
+            </div>
+
+
             <p>非线性介质中，三波（\(\omega_1, \omega_2, \omega_3 = \omega_1 + \omega_2\)）混频的基本耦合波方程组：</p>
             $$\frac{\mathrm{d}E(\omega_1, z)}{\mathrm{d}z} = \frac{i\omega_1^2}{k_1c^2}\chi_{eff}^{(2)}E(\omega_3, z)E^*(\omega_2, z)e^{-i\Delta kz}$$
             $$\frac{\mathrm{d}E(\omega_2, z)}{\mathrm{d}z} = \frac{i\omega_2^2}{k_2c^2}\chi_{eff}^{(2)}E(\omega_3, z)E^*(\omega_1, z)e^{-i\Delta kz}$$

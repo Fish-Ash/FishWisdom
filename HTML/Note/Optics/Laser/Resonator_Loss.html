@@ -114,7 +114,7 @@
 
             <p>不论损耗由哪种原因引起，都可以用<b>平均单程损耗因子</b>定量描述.</p>
 
-            <div class="Card-Definition">
+            <div class="Card-Definition" id="delta">
                 <b>平均单程损耗因子\(\delta\)</b>
                 <p>设初始光强为\(I_0\)，在腔内往返一周后，光强衰减为：</p>
                 $$I = I_0e^{-2\delta}$$
@@ -127,9 +127,180 @@
                 $$\delta = \sum\delta_i$$
                 <p>即由各种原因引起的总损耗因子，为腔内各个损耗因子的总和.</p>
             </div>
-            
-
         </div>
+
+        <div class="Card-Analysis">
+            <h2>光腔损耗的示例</h2>
+            <p>下面举例分析几种不同类型的损耗，推导出相应的单程损耗因子.</p>
+
+            <h3>腔镜倾斜引起的几何损耗</h3>
+            <p>实际平行平面腔很难调整到完全平行，当两镜面构成小夹角\(\beta\)时，光在两镜面间往返有限次后，必然会逸出腔外.</p>
+            <p>如图所示，设开始时光线与一个镜面\(\text{M}_1\)垂直，当其在两镜面间多次反射后，入射光与反射光之间的夹角\(\theta_i\)依次为：\(2\beta,~4\beta,~6\beta\cdots\).</p>
+            <p>光线每往返一次，在镜面上移动的距离为\(L\theta_i\)，其中\(L\)为腔长.</p>
+            <p>[设]镜面横向尺寸为\(D\).</p>
+            <p>[设]光线在腔内往返\(m\)次后逸出腔外，则：</p>
+            $$L[2\beta + 6\beta + \cdots + 2(2m - 1)\beta]\approx D$$
+            
+            <div class="Formula">
+                $$m \approx \sqrt{\frac{D}{2\beta L}}$$
+                <div class="Derivation">
+                    $$2\beta L[1 + 3 + 5 + \cdots + (2m-1)] \approx D$$
+                    $$\therefore 2\beta L m^2 = D$$
+                    $$\therefore m \approx \sqrt{\frac{D}{2\beta L}}$$
+                </div>
+            </div>
+
+            <figure>
+                <img src="Img/MirrorIncline.jpeg" width="200">
+                <figcaption>腔镜倾斜时的损耗</figcaption>
+            </figure>
+
+            <p>由于光在腔内往返\(m\)次后逸出腔外，故往返一次的损耗为\(1/m\)，因此可求得平均单程损耗因子为：</p>
+            $$\delta_\beta = \frac{1}{2m} = \sqrt{\frac{\beta L}{2D}}$$
+
+
+            <h3>衍射损耗</h3>
+            <p>衍射损耗随腔的类型、几何参数及激光振荡模式的不同而不同，是一个很复杂的问题，可通过求解腔的衍射积分方程得出.</p>
+            <p>这里只以均匀平面波在平面孔径上的Fraunhofer衍射为例，对腔的单程衍射损耗因子进行粗略的估算.</p>
+
+            <p>均匀平面波在腔长为\(L\)，横向尺寸（反射镜直径）为\(2a\)的平面开腔中往返传播，可等效为如图所示的孔阑传输线中的单向传播.</p>
+            <figure>
+                <img src="Img/Fraunhofer_loss.png" width="400">
+                <figcaption>平面波的Fraunhofer衍射损耗</figcaption>
+            </figure>
+
+            <p>当光波入射在第一个圆孔上，穿过孔径时将发生衍射；由于衍射的作用，一部分光将偏离原来的传播方向，射到第二个圆孔之外，从而造成光能的损失.</p>
+            <p>根据Fraunhofer衍射公式，衍射光斑的第一极小值出现在：</p>
+            $$\theta\approx 1.22\frac{\lambda}{2a} = 0.61\frac{\lambda}{a}$$
+            <p>方向.</p>
+            <p>若忽略第一暗环以外的光，并假设在中央亮斑内光腔均匀分布，则射到第二个圆孔以外损耗掉的光能与到达第二个圆孔的总光能之比，应该等于被中央亮斑照亮的孔外面积与中央亮斑总面积之比，即单程衍射损耗为：</p>
+            $$\delta_d' = \frac{\pi(\theta L + a)^2 - \pi a^2}{\pi(\theta L + a)^2} \approx \frac{2\theta L}{a} = \frac{2L}{a}\cdot\frac{0.61\lambda}{a} = \frac{1.22}{a^2/\lambda L}\approx \frac{1}{a^2/\lambda L}$$
+            <p>当衍射损耗\(\delta_d'\)较小时，\(\delta_d'\)与平均单程损耗因子\(\delta_d\)相等，即：</p>
+            $$\delta_d \approx \delta_d' \approx \frac{1}{a^2/\lambda L} = \frac{1}{N}$$
+            <ul>
+                <li>\(N = \frac{a^2}{\lambda L}\)：腔的Fresnel数</li>
+            </ul>
+
+            <p>在描述光学谐振腔的工作特性时，经常用到Fresnel数这个概念，它表明衍射光在腔内的最大往返次数，也表示从一面镜子中心看到另一面镜子上可划分的Fresnel半波带数（对平面波阵面而言）.</p>
+            <p>以上简化分析表明：衍射损耗随腔的Fresnel数的减小而增大，这一点对各开腔都具有普遍意义.</p>
+            <p>至于\(\delta_d\)与\(N\)的定量依赖关系，需要借助严格的衍射理论分析.</p>
+
+            <h3>透射损耗</h3>
+            <p>[设]两个反射镜的反射率分别为\(r_1\)与\(r_2\).</p>
+            <p>则初始光腔为\(I_0\)的光在腔内往返一周，经两个镜面反射后，光强变为：</p>
+            $$I_1 = I_0r_1r_2$$
+            <p>根据<a href="#delta" class="goto">单程损耗因子的定义式</a>，设由镜面反射不完全引起的平均单程损耗因子为\(\delta\)，则：</p>
+            <div class="Formula">
+                $$\delta_r = -\frac{1}{2}\ln(r_1r_2)$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \delta &= \frac{1}{2}\ln\frac{I_0}{I_1}\\
+                           &= \frac{1}{2}\ln\frac{1}{r_1r_2}\\
+                           &= -\frac{1}{2}\ln(r_1r_2)
+                    \end{align}$$
+                </div>
+            </div>
+
+            <p>\(r_1\approx 1,~r_2\approx 1\)时，有：</p>
+            <div class="Formula">
+                $$\delta_r \approx \frac{1}{2}[(1-r_1) + (1-r_2)]$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \delta_r &= -\frac{1}{2}\ln [1+(r_1-1)] - \frac{1}{2}[1+(r_2-1)]\\
+                             &\approx -\frac{1}{2}[(r_1-1) + (r_2-1)]\\
+                             &= \frac{1}{2}[(1-r_1) + (1-r_2)]
+                    \end{align}$$
+                </div>
+            </div>
+
+            <p>实际使用中，两个反射镜中的一个为全反镜（\(r_1 = 1\)），另一个为透过率\(T\ll 1\)（\(r_2 = r \approx 1\)）的输出镜.</p>
+            <p>此时，单程透射损耗因子为：</p>
+            <div class="Formula">
+                $$\delta_r \approx \frac{T}{2}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \delta_r &= -\frac{1}{2}\ln(r_1r_2)\\
+                             &= -\frac{1}{2}\ln r\\
+                             &\approx \frac{1}{2}(1-r)\\
+                             &= \frac{T}{2}
+                    \end{align}$$
+                </div>
+            </div>
+
+            <h3>吸收损耗</h3>
+            <p>[设]由于腔内介质对光的吸收作用，当光通过一段长度为\(\mathrm{d}z\)的介质后，光强由初始光强\(I\)衰减为\(I'\)，衰减量为：</p>
+            $$\mathrm{d}I = I - I'$$
+            <p>一般用吸收系数\(\alpha\)来定量描述介质对光的吸收作用：</p>
+            <div class="Card-Definition">
+                <b>吸收系数\(\alpha\)</b>
+                <p>通过单位长度介质后光强衰减的百分数.</p>
+                $$\alpha = -\frac{\mathrm{d}I}{I\mathrm{d}z}$$
+            </div>
+            <p>从而可得到介质中不同位置的光强为：</p>
+            $$I(z) = I_0e^{-\alpha z}$$
+
+            <p>若腔内介质的吸收系数时均匀的，则光在腔内往返一次后光强衰减为：</p>
+            $$I_1 = I_0e^{-2\alpha l}$$
+            <p>由此可得，由介质吸收引起的单程损耗因子为：</p>
+            $$\delta_{\text{absorb}} = \alpha l$$
+            <ul>
+                <li>\(l\)：介质长度</li>
+            </ul>
+
+            <hr>
+
+            <p>谐振腔的损耗特性除了用平均单程损耗因子定量表述外，还经常用腔内光子的平均寿命及谐振腔的品质因数等参量描述.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光子在腔内的平均寿命</h2>
+            <p>由<a href="#delta" class="goto">单程损耗因子的定义式</a>，初始光强为\(I_0\)的光束在腔内往返\(m\)次后光强变为：</p>
+            $$I_m = I_0(e^{-2\delta})^m = I_0e^{-2\delta m}$$
+            <p>若取\(t = 0\)时刻的光强为\(I_0\)，则到\(t\)时刻，光在腔内往返的次数为：</p>
+            $$m = \frac{t}{2L'/c}$$
+            <p>故\(t\)时刻光强为：</p>
+            $$I_m = I_0e^{-\frac{t}{\tau_R}}$$
+            <div class="Card-Definition">
+                <b>腔的时间参数\(\tau_R\)</b>
+                $$\tau_R = \frac{L'}{\delta c}$$
+                <p>\(\delta\)越大，\(\tau_R\)越小；即腔的损耗越大，腔内光强衰减得越快.</p>
+                $$\left.I_m\right\rvert_{t = \tau_R} = \frac{I_0}{e}$$
+                <p>上式表明了时间常数\(\tau\)的物理意义：光强从初始值\(I_0\)衰减到\(I_0\)的\(1/e\)所用的时间.</p>
+                <p>腔的时间参数是描述光腔性质的一个重要参数.</p>
+            </div>
+
+            <p>\(\tau_R\)也可理解为“光子在腔内的平均寿命”，下面对此加以证明：</p>
+            <p>设\(t\)时刻腔内光子数密度为\(n(t)\)，其与光强\(I(t)\)的关系为：</p>
+            $$I(t) = nh\nu v$$
+            <ul>
+                <li>\(\nu\)光波频率</li>
+                <li>\(v\)：光在腔内的传播速度</li>
+            </ul>
+
+            $$\because I(t) = I_0e^{-\frac{t}{\tau_R}}$$
+            $$\therefore n = n_0e^{-\frac{t}{\tau_R}}$$
+            <ul>
+                <li>\(n_0\)：\(t=0\)时刻腔内光子数密度</li>
+            </ul>
+
+            <p>上式表明：由于损耗的存在，腔内光子数密度将随时间按指数规律衰减，到\(t = \tau_R\)时刻，衰减为\(n_0\)的\(1/e\).</p>
+            <p>在\(t\sim t+\mathrm{d}t\)时间内减少的光子数密度为：</p>
+            $$-\mathrm{d}n = \frac{n_0}{\tau_R}e^{-\frac{t}{\tau_R}}\mathrm{d}t$$
+            <p>这\(-\mathrm{d}n\)个光子在\(0\sim t\)时间内存在于腔内，再经过无限小的时间间隔\(\mathrm{d}t\)后，就不存在了.</p>
+            <p>因此，其寿命为\(t\).</p>
+            <p>由此可计算出所有在\(t = 0\)时刻就存在于腔内的光子的平均寿命为：</p>
+            $$\bar{t} = \frac{1}{n_0}\int_0^{+\infty}t(-\mathrm{d}n) = \frac{1}{n_0}\int_0^{+\infty}t\frac{n_0}{\tau_R}e^{-\frac{t}{\tau_R}}\mathrm{d}t = \tau_R$$
+            <p>因此，腔内的时间常数\(\tau_R\)即为腔内光子的平均寿命.</p>
+            <p>腔的损耗越小，\(\tau_R\)越大，腔内光子的平均寿命越大.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>无源腔的品质因数——Q值</h2>
+            <p>光学谐振腔中，也可以用品质因数\(Q\)值来描述它的损耗特性.</p>
+            <p>谐振腔\(Q\)值的普遍定义为：</p>
+            
+        </div>
+
 
         
         <div id="PageEnd"></div>

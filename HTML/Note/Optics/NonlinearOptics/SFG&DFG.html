@@ -57,18 +57,17 @@
             <p>这就是在小信号近似和满足相位匹配条件下得到的和频光电场\(E(\omega_3, z)\)的变化规律.</p>
 
             <p>[设]频率为\(\omega_l(l = 1,2,3)\)的光电场表示式为：</p>
-            $$\boldsymbol{E} = \boldsymbol{a}(\omega_1)\left[\frac{1}{2}E_0(\omega_l, z)e^{-i(\omega_l t - k_l z + \phi_{\omega_l})}\right] + \text{c.c.}$$
+            $$\boldsymbol{E} = \frac{1}{2}E_0(\omega_l, z)\boldsymbol{a}(\omega_1)e^{-i(\omega_l t - k_l z + \phi_{\omega_l})} + \text{c.c.}$$
             
-            <p>与下式相比较：</p>
-            $$\boldsymbol{E} = \boldsymbol{E}(\omega_l, z)e^{-i\omega_l t} + c.c.$$
+            <p>复振幅为：</p>
 
-            <p>有：</p>
-            $$\boldsymbol{E}(\omega_l, z) = \frac{1}{2}E_0(\omega_l, z)e^{i(k_l z- \phi_{\omega_l})}\boldsymbol{a}(\omega_l)$$
+            $$\boldsymbol{E}(\omega_l, z) = \frac{1}{2}E_0(\omega_l, z)\boldsymbol{a}(\omega_l)e^{i(k_l z- \phi_{\omega_l})}$$
 
             <p>再与下式相比：</p>
             $$\boldsymbol{E}(\omega_n, z) = E(\omega_n, z)\boldsymbol{a}(\omega_n)e^{ik_nz}$$
             <p>有：</p>
             $$E(\omega_l, z) = \frac{1}{2}E_0(\omega_l, z)e^{-i\varphi_l}$$
+
 
             <ul>
                 <li>\(E_0(\omega_l, z)\)：频率为\(\omega_l\)的光电场的实数振幅</li>
@@ -114,6 +113,20 @@
                 <b>泵浦抽空效应</b>
                 <p>在三波混频（或二阶非线性）过程中，泵浦光因强度向信号光与闲置光转换能量而显著减弱的现象.</p>
             </div>
+
+            <p>在\(\omega_1\)与\(\omega_2\)入射光电场振幅为\(E_0(\omega_1, 0)\)与\(E(\omega_2, 0)\)的情况下，<a href="ThreeWave.html" class="goto">三波混频耦合波方程组</a>的一般解为：</p>
+            $$E_0(\omega_3, z) = \left(\frac{k_2\omega_3^2}{k_3\omega_2^2}\right)^{1/2}E_0(\omega_2, 0)\mathrm{sn}(u,k)$$
+            <ul>
+                <li>\(u = \frac{1}{2c^2}\left(\frac{\omega_2^2\omega_3^2}{k_2k_3}\right)^{1/2}|\chi^{(2)}_{\text{eff}}|E_0(\omega_1, 0)z\)</li>
+                <li>\(k = \left(\frac{\omega_1^2k_2}{\omega_2^2k_1}\right)^{1/2}\frac{E_0(\omega_2, 0)}{E_0(\omega_1, 0)}\)</li>
+                <li>\(\mathrm{sn}(u, k)\)：以\(u\)和\(k\)为参数的<a href="../../Math/Mathematic/JacobiEllipticFunctions.html" class="goto">Jacobi椭圆函数</a></li>
+            </ul>
+            <p>这里，频率为\(\omega_2\)的光电场分量已表示为入射光频率为\(\omega_1\)与\(\omega_2\)两个分量中强度较弱的一个.</p>
+            <p>由上式可以看出：\(E_0(\omega_3, z)\)的最大值由较弱的一个光电场分量\(\omega_2\)决定.</p>
+            <p>此外，\(u\)很小时，\(\mathrm{sn}(u, k)\approx u\)，所以当\(z\)很小时，上式变为：</p>
+            $$E_0(\omega_3, z) = \frac{\omega_3^2}{2c^2k_3}|\chi^{(2)}_{\text{eff}}|E_0(\omega, 0)E_0(\omega_2, 0)z$$
+            <p>这表明：\(z\)很小的情况下，大信号理论下的一般解式就变成小信号近似理论中的结果式.</p>
+
             
         </div>
 
@@ -290,6 +303,9 @@
             $$E_0(\omega_2, z) = \frac{1}{2}\frac{\omega_2^2}{k_2c^2}\left\lvert\chi^{(2)}_\text{eff}\right\rvert E_0(\omega_3, 0)E_0(\omega_1, 0)z$$
             <p>及</p>
             $$\varphi_1 + \varphi_2 - \varphi_3 \pm \frac{\pi}{2} = 0$$
+            <p>上式中，\(\pi/2\)前面的正负号与\(\chi^{(2)}_{\text{eff}}\)的符号相同.</p>
+            <p>上式表明：差频光波的振幅随\(z\)线性增加.</p>
+
             
 
             <h3>大信号理论处理</h3>

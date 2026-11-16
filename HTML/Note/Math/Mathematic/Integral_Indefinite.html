@@ -3,21 +3,37 @@
 <html lang = "zh-cn">
 
     <head>
-        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>高等数学</title>
-        <link rel="stylesheet" href="../../../../CSS/style.css">
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
     </head>
-    
-    
+
+
     <body>
-        <div class="header">不惑</div>
-        
-        
+        <div class="header" id="PageHead">不惑</div>
         <ul class="navibar">
             <li><a href="../../../Home.html">主页</a></li>
             <li><a href="../../../Navigation.html">导航</a></li>
         </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
         
         <h1>不定积分</h1>
         <h2>一、不定积分概念与性质</h2>
@@ -46,6 +62,20 @@
             &\int \frac{1}{\sqrt{a^2 - x^2}}\mathrm{d}x = \arcsin\frac{x}{a} + C\\\\
             &\int \frac{1}{a^2 + x^2}\mathrm{d}x = \frac{1}{a}\arctan\frac{x}{a} + C\\\\
             \end{align}$$
+
+            $$\begin{align}
+            \int\frac{1}{a^2 - x^2}\mathrm{d}x &= \int\frac{1}{(a-x)(a+x)}\mathrm{d}x\\
+                                               &= \frac{1}{2a}\int\frac{1}{a-x} + \frac{1}{a+x}\mathrm{d}x\\
+                                               &= \frac{1}{2a}\ln\left\lvert\frac{a + x}{a - x}\right\rvert + C
+            \end{align}$$
+            <a href="Function_Tri.html" class="goto">$$\because \text{artanh}(x) = \frac{1}{2}\ln\frac{1 + x}{1 - x}\quad x\in(-1,1)$$</a>
+            <p>故当\(\frac{x}{a}\in(-1,1)\)时，有：</p>
+            $$\begin{align}
+            \int\frac{1}{a^2 - x^2}\mathrm{d}x &= \frac{1}{2a}\ln\left\lvert\frac{a + x}{a - x}\right\rvert + C\\
+                                               &= \frac{1}{a}\frac{1}{2}\ln\left(\frac{1 + x/a}{1 - x/a}\right) + C\\
+                                               &= \frac{1}{a}\text{artanh}\left(\frac{x}{a}\right) + C
+            \end{align}$$
+
             <div class="Formula">
                 $$\begin{align}
                 \int \csc x\mathrm{d}x &= \frac{1}{2}\ln|\tan\frac{x}{2}| + C\\
@@ -269,12 +299,10 @@
         </div>
     
         
-        <ul class="navibar">
-            <li class="catalog"><a href="Catalog.html">目录</a></li>
-            <li class="next"><a href="Integral_Definite.html">下一页</a></li>
-        </ul>
+        <div id="PageEnd"></div>
 
-
+        <script src="../../../../JavaScript/MenuButton.js"></script>
         <script src="../../../../JavaScript/Capacity.js"></script>
     </body>
-    </html>
+
+</html>

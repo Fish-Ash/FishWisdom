@@ -122,6 +122,7 @@
             $$\boldsymbol{P}^{(1)}(\omega) = \epsilon_0 \chi^{(1)}(\omega)\cdot\boldsymbol{E}(\omega)$$
             <p>并考虑一维情况，可得：</p>
             <div class="Card-Formula" id="chi1">
+                <b>线性极化率</b>
                 $$\begin{align}
                 \chi^{(1)}(\omega) &= \frac{ne^2}{\epsilon_0E(\omega)}\\
                 &= \frac{ne^2}{\epsilon_0m}F(\omega)\\
@@ -130,12 +131,26 @@
                 \end{align}$$
             </div>
 
+            <h3 id="chi_omega">线性极化率的实部与虚部同频率的关系</h3>
+
             <p>可见，线性极化率\(\chi^{(1)}(\omega)\)的实部和虚部都是\(\omega\)的函数.</p>
             <p>根据光的传输理论，线性极化率的实部描述光在介质中传输时相位延迟的频率色散特性；虚部描述介质对光传输的吸收（或放大特性）.</p>
             <p>实部\(\chi'(\omega)\)与虚部\(\chi''(\omega)\)随频率变化的曲线如图所示：</p>
-            <img src="Img/Susceptibility.jpg" width="200" alt="线性极化率的实部和虚部与频率的关系曲线">
+            
+            <figure>
+                <img src="Img/Susceptibility.jpg" width="300">
+                <figcaption>线性极化率的实部和虚部与频率的关系曲线</figcaption>
+            </figure>
             <p>\(\chi''(\omega)\)曲线在中心（共振）频率\(\omega_0\)处有一个峰值，具有Lorentz线型，其半功率点全宽度为\(2h\)，且\(h\)也是\(\chi'(\omega)\)曲线峰值处的频率与中心频率\(\omega_0\)之差.</p>
             <p>若频率\(\omega\)远离共振频率\(\omega_0\)，即\(\omega-\omega_0\)大于几个线宽，则\(\chi''(\omega)\)可以忽略不计，则频率为\(\omega\)的光将在介质中无吸收地传输.</p>
+
+            <div class="Card-AI">
+                <p>远离共振区=无吸收=极化率为实数</p>
+            </div>
+
+            <div class="Card-Question">
+                <p>Lorentz线型</p>
+            </div>
 
         </div>
 

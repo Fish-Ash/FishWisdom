@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>第六章 瞬态相干光学效应</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+
+            <p>前面几章讨论的光与原子相互作用的非线性光学过程都属于稳态现象，都认为相互作用时间较弛豫时间\((T_1, T_2)\)长得多，因此，原子介质的响应用极化率\(\chi\)描述.</p>
+            
+            
+            <p>在强超短脉冲光与介质发生共振相互作用，且其相互作用时间比弛豫时间还要短的情况下，光与原子系统的相互作用属于<b>瞬态相干作用</b>，将有光学章动、光学自由感应衰变、光子回波与光学自感应透明等新的光学现象出现.</p>
+            
+            <p>这种情况下，原子的极化不再是瞬时光电场的显函数，必须考虑因果性原理，可以采用形象化的矢量方法描述.</p>
+            <p>这一章将讨论几种瞬态相干光学效应，在讨论这些现象之前，首先引入描述光与物质相互作用的矢量描述方法.</p>
+
+            
+            <div class="Card-AI">
+                <p>稳态现象：系统经过暂态变化后，其宏观物理状态不再随时间变化的现象.</p>
+                <p>弛豫作用：系统受到外界扰动、偏离平衡状态后，在内部相互作用或与环境的能量交换下，逐渐恢复到平衡状态的过程</p>
+                <p>因果关系：光与原子的相互作用时间远大于弛豫时间，意味着原子有足够的时间建立稳态响应，因此可以使用稳态极化率 \(\chi\) 描述介质对光场的响应</p>
+                <p>因果性原理：就是前面学的那个</p>
+                <p>瞬态相干光学作用下的原子介质响应，也可以用非线性极化率chi描述（那因果关系是？）</p>
+
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>瞬态相干光学作用概述</h2>
+            <p>瞬态相干光学作用是指：短激光脉冲与共振介质的相干相互作用过程.</p>
+            <p>瞬态相干光学研究的就是这种瞬态相干光学作用过程的瞬时变化规律.</p>
+
+            <p>通常认为，入射光脉冲的长或短，是与介质的共振跃迁弛豫时间相比较而言的.</p>
+            <p>描述共振介质弛豫特性的参量有三个：</p>
+            <ul>
+                <li>\(T_1\)：介质内产生共振跃迁作用的工作粒子的纵向弛豫时间，主要决定于处在某能级上的粒子通过自发辐射跃迁到低能级的速率，一般可认为\(T_1\)等于该能级跃迁的自发辐射寿命.</li>
+                <li>\(T_2\)：工作粒子的横向弛豫时间，主要表征粒子的碰撞弛豫过程，仅表示相位的损失，不包括能量的交换，一般可认为它由介质均匀加宽的宽度\(\Delta\nu_H\)决定，\(T_2\approx 1/\Delta\nu_H\)，故又称为<b>均匀消相时间</b>.</li>
+                <li>\(T_2^*\)：可逆的横向弛豫时间，主要由谱线的非均匀加宽宽度\(\Delta\nu_1\)决定，\(T_2^*\approx 1/\Delta\nu_1\)，故又称为<b>非均匀横向弛豫时间</b>或<b>非均匀消相时间</b>.</li>
+            </ul>
+
+            <p>对于一般处于低温条件的非均匀固体共振介质，有：\(T_2^*\lt T_2\lt T_1\)；</p>
+            <p>对于常温下的气体共振介质，有：\(T_2^*\ll T_2\lt T_1\).</p>
+
+            <p>瞬态相干光学作用中，入射光的上升时间（或下降时间）\(\Delta t\)、脉冲持续时间\(\tau_p\)均远小于\(T_1,~T_2\)，即：</p>
+            $$\Delta t,\tau_p\ll T_2, T_1$$
+            <p>在这样短的相互作用时间内，介质粒子通过自发辐射及其他各种均匀加宽机制所导致的随机自发弛豫过程均可忽略，因而，可视所有工作粒子同步地与入射光发生作用.</p>
+            <p>而入射光的脉冲很短，其光谱宽度由脉冲持续时间决定，满足测不准关系，这意味着整个光脉冲的持续时间是光场的相干时间.</p>
+            <p>因此，瞬态相干光学作用是指：完全相干的强光场与忽略随机自发弛豫行为的共振吸收介质间的快速相干作用.</p>
+            
+            <p>瞬态相干光学作用的最主要特点是共振介质对入射光场的响应特性，它不仅与所考察的时刻\(t\)的入射光场有关，而且与时刻\(t\)之前的所有光场都有关.</p>
+            <p>相干光脉冲作用于共振介质，将原子系统预置到可相干叠加的状态中，由于状态的相干（同步）性，其偶极矩的相位将呈现有序的排列，并遵从Maxwell方程产生相干辐射.</p>
+            <p>这种相干辐射将带有光与物质相互作用过程中的所有特征信息，即不仅带有辐射时的光和介质的特性，还“记忆”该时刻前的入射光与介质的特性.</p>
+            <p>从数学上讲，在瞬态相干光学作用下，共振介质在某一时刻对光的响应特性，不仅决定于该时刻的光场瞬时值，</p>
+
+            <div class="Card-AI">
+                <p>共振介质：通常是指具有与入射光频率相匹配或接近的内部能级跃迁，并且能够与该光场发生共振相互作用的介质</p>
+                <p>原则上，所有普通物质介质都存在某些共振频率，但并非所有介质都能在任意入射光频率下发生共振</p>
+                <p>上升/下降时间：指光脉冲的光强从低值上升/下降到高值/低值所经历的时间</p>
+
+                <p>瞬态相干光学作用，通常是短脉冲激光作为输入，与共振介质发生相互作用的过程.</p>
+            </div>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>
