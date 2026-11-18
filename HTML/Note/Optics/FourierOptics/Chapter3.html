@@ -59,6 +59,11 @@
             <p>将输入信息分解成各种空间频率分量，然后考察这些空间频率分量在通过系统的传递过程中，丢失、衰减、相位移动等变化，也就是研究系统的空间频率传递特性，即传递函数.</p>
 
             <p>这显然是一种全面评价光学系统成像质量的方法.</p>
+
+            <hr>
+            <p>传递函数可由光学系统的设计数据计算得出.</p>
+            <p>虽然计算传递函数的步骤比较麻烦，检查传递函数的仪器也比较复杂，但是，大容量高速度电子计算机的出现及高精度光电测试技术的发展，使光学传递函数的计算和测量日趋完善，并逐渐得到实际应用.</p>
+
         </div>
 
         <div class="Card-Analysis">
@@ -302,7 +307,7 @@
 
             <h3>衍射受限系统的点扩散函数</h3>
 
-            <p>考虑<a href="ImagingSystem" class="goto">成像系统的普适模型</a>：</p>
+            <p>考虑<a href="#ImagingSystem" class="goto">成像系统的普适模型</a>：</p>
 
             <p>由物点出发的球面波，在像方得到的将是一个被出射光曈限制的球面波，整个球面波是以理想像点为中心的.</p>
             <p>由于出瞳的限制作用，在像平面上将产生以理想像点为中心的出瞳孔径的<a href="../PhysicalOptics/Fresnel&Fraunhofer.html">Fraunhofer衍射</a>图样，于是可以写出物面上以\(x_o, y_o\)点的单位脉冲，通过衍射受限系统后，在与物面共轭的像面上的复振幅分布，即点扩散函数为：</p>
@@ -314,6 +319,10 @@
                 <li>\(d_i\)：光曈面到像面的距离，已不是通常意义下的像距</li>
             </ul>
 
+            <p>需要说明的是：推导上式时，同样略去了关于\(x_i,y_i\)和\(x_o, y_o\)的二次相位因子，上式与<a href="#formula1">式</a>一样，是有条件的.</p>
+            <p>上式表明：若略去积分号前的系统，脉冲响应就是光曈函数的Fourier变换你换，即衍射首先系统的脉冲响应是光学系统出瞳的Fraunhofer衍射图样，其中心在几何光学的理想像点\(Mx_o, My_o\)处.</p>
+
+
             <div class="Card-AI">
                 <p>\(K\)的数值取决于具体的光学系统</p>
             </div>
@@ -323,9 +332,21 @@
             $$\tilde{x}_o = Mx_o,\quad \tilde{y}_o = My_o$$
             $$\tilde{x} = \frac{x}{\lambda d_i},\quad \tilde{y} = \frac{y}{\lambda d_i}$$
 
+            <div class="Card-Question">
+                <p>为什么要做这样的坐标变换？</p>
+            </div>
+
             <div class="Card-Formula" id="DiffractionLimited_h">
                 <b>衍射受限系统的点扩散函数</b>
-                $$h(x_i - \tilde{x}_o, y_i - \tilde{y}_o) = K\lambda^2d_i^2\iint_{-\infty}^{+\infty}P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})e^{-i2\pi[(x_i - \tilde{x}_o)\tilde{x} + (y_i - \tilde{y}_o)\tilde{y}]}\mathrm{d}\tilde{x}\mathrm{d}\tilde{y}$$
+                <div class="Formula">
+                    $$h(x_i - \tilde{x}_o, y_i - \tilde{y}_o) = K\lambda^2d_i^2\iint_{-\infty}^{+\infty}P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})e^{-i2\pi[(x_i - \tilde{x}_o)\tilde{x} + (y_i - \tilde{y}_o)\tilde{y}]}\mathrm{d}\tilde{x}\mathrm{d}\tilde{y}$$
+                    <div class="Derivation">
+                        $$\begin{align}
+                        h(x_o, y_o; x_i, y_i) &= K\iint_{-\infty}^{+\infty}P(x,y)\exp\left\{-i\frac{2\pi}{\lambda d_i}[(x_i-Mx_o)x + (y_i-My_o)y]\right\}\mathrm{d}x\mathrm{d}y\\
+                                              &= K\iint_{-\infty}^{+\infty}P(\lambda d_i\tilde{x}, \lambda d_i\tilde{y})e^{-i2\pi[(x_i - \tilde{x}_o)\tilde{x} + (y_i - \tilde{y}_o)\tilde{y}]}\mathrm{d}\tilde{x}\mathrm{d}\tilde{y}
+                        \end{align}$$
+                    </div>
+                </div>
             </div>
 
 
@@ -338,6 +359,9 @@
             <p>上式表明：当可以忽略光曈的衍射时，\(x_o, y_o\)点的脉冲通过衍射受限系统后在像面上得到的仍为点脉冲，其位置为\(x_i = \tilde{x}_o = Mx_o,~ y_i = \tilde{y}_o = My_o\).</p>
         </div>
 
+        <div class="Card-Analysis">
+            <h2><a href="DiffractionLimited_Coherent.html">相干照明下衍射受限系统的成像规律</a></h2>
+        </div>
 
 
         <div class="Card-Analysis">

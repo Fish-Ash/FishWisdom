@@ -229,6 +229,61 @@
             <p>这是一个旋转椭球面，旋转轴为\(z\)轴.</p>
             <p>若\(n_e\gt n_o\)，称为正单轴晶体.</p>
             <p>若\(n_e\lt n_o\)，称为负单轴晶体.</p>
+
+            <h3>利用折射率椭球确定各向同性介质、单轴晶体与双轴晶体的光学特性</h3>
+
+            <h4>单轴晶体</h4>
+            <p>如图所示，对于一个正单轴晶体的折射率椭球，波矢\(\boldsymbol{k}\)与\(z\)轴夹角为\(\theta\).</p>
+
+            <figure>
+                <img src="Img/UniaxialEllipsoid.png" width="200">
+                <figcaption>单轴晶体折射率椭球作图法</figcaption>
+            </figure>
+            <p>由于单轴晶体折射率椭球是一个旋转椭球，所以不失普遍性，可以选择坐标使\(\boldsymbol{k}\)在\(yOz\)平面内.</p>
+            <p>由此作出的中心截面\(\Pi(\boldsymbol{k})\)与椭球的交线椭圆，其短半轴长度与\(\boldsymbol{k}\)无关，不管\(\boldsymbol{k}\)方向如何，均为\(n_o\)；长半轴长度则由\(\boldsymbol{k}\)的方向决定，并且可以证明，其折射率\(n_e(\theta)\)满足如下关系：</p>
+            $$\frac{1}{n_e^2(\theta)} = \frac{\cos^2\theta}{n_o^2} + \frac{\sin^2\theta}{n_e^2}$$
+
+            <div class="Card-Question">
+                <p>推导</p>
+            </div>
+
+            <p>相应于这两个折射率的传播模分别为寻常光（\(o\)光）与非常光（\(e\)光）.</p>
+
+            <p>非常光折射率\(n_e(\theta)\)随\(\theta\)变化：</p>
+            <ul>
+                <li>\(\theta = 0\)时，\(n_e(0) = n_o\)，相应的方向（\(z\)轴为光轴方向）；</li>
+                <li>\(\theta = \pi/2\)时，\(n_e(\pi/2) = n_2\).</li>
+            </ul>
+
+            <p>相应于寻常光的电位移矢量\(\boldsymbol{D}_o\)的振动方向，垂直于光轴（\(z\)轴）与波法线方向\(\boldsymbol{k}\)组成的平面；</p>
+            <p>相应于非常光的电位移矢量\(\boldsymbol{D}_e\)的振动方向，在光轴（\(z\)轴）与波法线方向\(\boldsymbol{k}\)组成的平面内.</p>
+
+
+            <h3>折射率曲面</h3>
+            <p>折射率椭球可以用来确定与波法线方向\(\boldsymbol{k}\)相应的两个传播模的折射率，但需要通过一定的作图过程才能实现.</p>
+            <p>为了更直接地确定出与每一个波法线方向\(\boldsymbol{k}\)相应的两个折射率，引入了折射率曲面.</p>
+
+            <p>折射率曲面的矢径\(\boldsymbol{r} = n\boldsymbol{k}\)，其方向平行于给定的波法线方向\(\boldsymbol{k}\)，长度则等于与\(\boldsymbol{k}\)相应的两个传播模的折射率.</p>
+            <p>因此，折射率曲面必定是一个双壳层曲面.</p>
+
+            <div class="Card-Question">
+                <p>什么叫“双壳层”曲面？</p>
+            </div>
+
+
+            <p>其直角坐标方程为：</p>
+            $$(n_x^2x^2 + n_y^2y^2 + n_z^2z^2)(x^2 + y^2 + z^2) - [n_x^2x^2(n_y^2 + n_z^2) + n_y^2y^2(n_z^2 + n_x^2) + n_z^2z^2(n_x^2 + n_y^2)] + n_x^2n_y^2n_z^2 = 0$$
+            <p>这是一个四次曲面方程.</p>
+
+            <div class="Card-Question">
+                <p>什么叫“四次曲面”？</p>
+            </div>
+
+            <h4>单轴晶体</h4>
+
+
+
+
         </div>
 
         <div class="Card-Analysis" id="WavePlate">

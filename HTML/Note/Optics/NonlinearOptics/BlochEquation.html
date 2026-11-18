@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>光与二能级原子系统相互作用的矢量描述</h1>
+        
+        <p>本节主要介绍描述瞬态相干作用的基本理论：Bloch-Maxwell方程.</p>
+        <div class="Card-Analysis">
+            <h2>光学Bloch方程</h2>
+
+            <p>早在激光出现前，瞬态相干作用就已在核磁共振（NMR）中进行了深入的研究.</p>
+            <p>光学共振激发和核磁共振激发的瞬态相干作用有许多相似之处，实际上，光学章动、光子回波等瞬态相干光学现象均可看作核磁共振中自旋章动、自旋回波的光学模拟.</p>
+
+            <h3>核磁共振的基本方程</h3>
+            <p>我们考察磁场作用于原子系统的情况.</p>
+
+            <p>[设]原子的自旋角动量、轨道角动量与总角动量均为0；原子核的自旋量子数\(I = 1/2\)，磁量子数\(m_l = \pm1/2\).</p>
+            <p>它在直流磁场\(\boldsymbol{B}_0\)的作用下，将产生Zeeman分裂，两个子能级间隔为：</p>
+            $$\Delta E = \gamma B_0\hbar$$
+            <ul>
+                <li>\(\gamma\)：磁旋比</li>
+            </ul>
+
+            <div class="Card-Question">
+                <p>角动量？Zeeman分裂？磁旋比？</p>
+            </div>
+
+            <div id="formula1">
+                $$\frac{\mathrm{d}\mu}{\mathrm{d}t} = \gamma(\mu\times\boldsymbol{B}_0) = \omega_L\times\mu$$
+            </div>
+
+            <h3>光学Bloch方程</h3>
+
+            <h4>二能级原子系统的\(\boldsymbol{r}\)矢量方程</h4>
+            <p>密度矩阵方程为：</p>
+            $$\frac{\mathrm{d}}{\mathrm{d}t}(aa^*) = -\frac{i}{\hbar}(a^*bH_{1ab} - ab^*H_{1ba})$$
+            $$\frac{\mathrm{d}}{\mathrm{d}t}(bb^*) = \frac{i}{\hbar}(a^*bH_{1ab} - ab^*H_{1ba})$$
+            $$\frac{\mathrm{d}}{\mathrm{d}t}(ab^*) = -\frac{i}{\hbar}[ab^*(E_a - E_b) - (aa^* - bb^*)H_{1ab}]$$
+            $$\frac{\mathrm{d}}{\mathrm{d}t}(a^*b) = \frac{i}{\hbar}[a^*b(E_a - E_b) - (aa^* - bb^*)H_{1ba}]$$
+
+            <p>定义虚拟矢量\(\boldsymbol{r}\)与\(\boldsymbol{\omega}\)：</p>
+            <table>
+                <tr>
+                    <td>$$\boldsymbol{r} = (r_1, r_2, r_3)$$</td>
+                    <td>$$\boldsymbol{\omega} = (\omega_1, \omega_2, \omega_3)$$</td>
+                </tr>
+                <tr>
+                    <td>
+                        $$r_1 = ab^* + a^*b$$
+                        $$r_2 = i(ab^* - a^*b)$$
+                        $$r_3 = aa^* - bb^*$$
+                    </td>
+                    <td>
+                        $$\omega_1 = \frac{H_{1ab} + H_{1ba}}{\hbar}$$
+                        $$\omega_2 = i\frac{H_{1ab} - H_{1ba}}{\hbar}$$
+                        $$\omega_3 = \frac{E_a - E_b}{\hbar} = \omega_{ab}$$
+                    </td>
+                </tr>
+            </table>
+
+            <p>于是有：</p>
+
+            <div class="Formula">
+                $$\frac{\mathrm{d}r_1}{\mathrm{d}t} = \omega_2r_3 -\omega_3r_2$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \frac{\mathrm{d}r_1}{\mathrm{d}t} &= \frac{\mathrm{d}}{\mathrm{d}t}(ab^*) + \frac{\mathrm{d}}{\mathrm{d}t}(a^*b)\\
+                                                      &= \frac{i}{\hbar}[(a^*b - ab^*)(E_a - E_b) + (aa^* - bb^*)(H_{1ab} - H_{1ba})]\\
+                                                      &= -r_2\cdot\omega_3 + r_3\cdot\omega_2\\
+                                                      &= \omega_2r_3 - \omega_3r_2
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\frac{\mathrm{d}r_2}{\mathrm{d}t} = \omega_3r_1 - \omega_1r_3$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \frac{\mathrm{d}r_2}{\mathrm{d}t} &= i\left[\frac{\mathrm{d}}{\mathrm{d}t}(ab^*) - \frac{\mathrm{d}}{\mathrm{d}t}(a^*b)\right]\\
+                                                      &= \frac{1}{\hbar}[(ab^* + a^*b)(E_a - E_b) - (aa^* - bb^*)(H_{1ab} + H_{1ba})]\\
+                                                      &= r_1\cdot\omega_3 - r_3\cdot\omega_1\\
+                                                      &= \omega_3r_1 - \omega_1r_3
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\frac{\mathrm{d}r_3}{\mathrm{d}t} = \omega_1r_2 - \omega_2r_1$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \frac{\mathrm{d}r_3}{\mathrm{d}t} &= \frac{\mathrm{d}}{\mathrm{d}t}(aa^*) - \frac{\mathrm{d}}{\mathrm{d}t}(bb^*)\\
+                                                      &= -\frac{2i}{\hbar}(a^*bH_{1ab} - ab^*H_{1ba})\\
+                                                      &= -\frac{i}{\hbar}[(a^*b + ab^*)H_{1ab} - (ab^* + a^*b)H_{1ba} + (a^*b - ab^*)H_{1ab} - (ab^* - a^*b)H_{1ba}]\\
+                                                      &= -\frac{i}{\hbar}r_1(H_{1ab} - H_{1ba}) + \frac{1}{\hbar}r_2(H_{1ab} + H_{1ba})\\
+                                                      &= -r_1\cdot\omega_2 + r_2\cdot\omega_1 
+                                                      &= \omega_1r_2 - \omega_2r_1
+                    \end{align}$$
+                </div>
+            </div>
+
+
+            <p>或表示为矢量形式：</p>
+            $$\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}t} = \omega\times\boldsymbol{r}$$
+            <p>形式上，这个方程完全类似于<a href="#formula" class="goto">处于磁场\(\boldsymbol{B}\)中的磁矩\(\mu\)中的运动方程</a>.</p>
+            <p>它表示一个虚构矢量\(\boldsymbol{r}\)在抽象空间\((1,2,3)\)中围绕矢量\(\boldsymbol{\omega}\)作角速度为\(\omega\)的拉莫尔进动.</p>
+            <p>这个空间是由Feynman、Vernon与Hellwarth建立的，故称为<b>FVH表象</b>.</p>
+
+            <div class="Card-AI">
+                <p>拉莫尔进动：一个具有磁矩的物体，在外部磁场中像旋转的陀螺一样，绕磁场方向旋转的现象（核磁共振中）.</p>
+            </div>
+
+            <h4>光学Bloch方程</h4>
+
+            <p>原子系综的密度矩阵是原子系统密度矩阵的平均，即：</p>
+            $$\rho_{系综} = \bar{\rho}_{系统} = \left[\begin{matrix}\rho_{aa}&\rho_{ab}\\\rho_{ba}&\rho_{bb}\end{matrix}\right]$$
+            <div class="Card-AI">
+                <p>原子系综：大量原子构成的系统</p>
+                <p>密度矩阵：量子物理中，用于描述大量原子集体状态的数学工具</p>
+            </div>
+            
+            <p>其密度矩阵方程为：</p>
+            $$\frac{\partial\rho_{aa}}{\partial t} = -\frac{i}{\hbar}(\rho_{ba} - \rho_{ab})H_1(t) - \gamma_a\rho_{aa}$$
+            $$\frac{\partial\rho_{bb}}{\partial t} = \frac{i}{\hbar}(\rho_{ba} - \rho_{ab})H_1(t) - \gamma_a\rho_{bb}$$
+            $$\frac{\partial\rho_{ba}}{\partial t} = -\frac{u}{\hbar}(\rho_{aa} - \rho_{bb})H_1(t) + i\omega_0\rho_{ab} - \gamma\rho_{ba}$$
+            $$\frac{\partial\rho_{ab}}{\partial t} = \frac{i}{\hbar}(\rho_{aa} - \rho_{bb})H_1(t) - i\omega_0\rho_{ab} - \gamma\rho_{ab}$$
+
+            <p>这里，我们已通过选择原子系统本征函数的相对相位，使得：\(H_{1ab} = H_{1ab}^* = H_{1ba} = H_1(t) \in \mathbb{R}\).</p>
+            <p>式中唯象引入的\(\gamma_a,~\gamma_b,~\gamma\)皆为相应的弛豫速率.</p>
+
+            <p>对于二能级原子系综，两个能级分别用1、2表示，在偏振光：</p>
+            $$E_x(z,t) = E_0\cos(\Omega t - kz)$$
+            <p>作用下，相互作用哈密顿矩阵元为：</p>
+            $$H_1(t) = -\mu_{12}E(t) = -\mu_{12}E_0\cos(\Omega t - kz)$$
+            <p>相应的密度矩阵方程为：</p>
+            $$\frac{\partial\rho_{22}}{\partial t} = iR(\rho_{12} - \rho_{21})\cos(\Omega t - kz) - \frac{\rho_{22} - \rho_{22}^0}{T_1}$$
+            $$\frac{\partial\rho_{11}}{\partial t} = iR(\rho_{21} - \rho_{12})\cos(\Omega t - kz) - \frac{\rho_{11} - \rho_{11}^0}{T_1}$$
+            $$\frac{\partial\rho_{12}}{\partial t} = iR(\rho_{22} - \rho_{11})\cos(\Omega t - kz) - \left(i\omega_{12} + \frac{1}{T_2}\right)\rho_{12}$$
+            $$\frac{\partial\rho_{21}}{\partial t} = iR(\rho_{11} - \rho_{22})\cos(\Omega t - kz) - \left(i\omega_{21} + \frac{1}{T_2}\right)\rho_{21}$$
+
+            <ul>
+                <li>\(R = \mu_{12}E_0/\hbar\)：Rabi翻转频率</li>
+                <li>\(T_1,~T_2\)：分别表示相应于\(\gamma_a\approx\gamma_b\)、\(\gamma\)过程的弛豫时间：纵向弛豫时间与横向弛豫时间</li>
+                <li>\(\rho_{11}^0,~\rho_{22}^0\)：分别表示无外场时，原子处于能级1、2的概率</li>
+            </ul>
+
+            <p>进一步，采用如下代换：</p>
+            $$\rho_{12} = \bar{\rho}_{12}e^{i(\Omega t - kz)}$$
+            $$\rho_{21} = \bar{\rho}_{21}e^{-i(\Omega t - kz)}$$
+            <p>且忽略\(e^{2i(\Omega t - kz)}\)这样的非共振高频像，就可以将密度矩阵非对角元的高频振荡因子消除，这就是<b>旋转波近似</b>的数学原理.</p>
+            <div class="Formula">
+                $$\frac{\partial\rho_{22}}{\partial t} = \frac{iR(\bar{\rho}_{12} - \bar{\rho}_{21})}{2} - \frac{\rho_{22} - \rho_{22}^0}{T_1}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \frac{\partial\rho_{22}}{\partial t} &= iR(\rho_{12} - \rho_{21})\cos(\Omega t - kz) - \frac{\rho_{22} - \rho_{22}^0}{T_1}\\
+                                                         &= \frac{iR}{2}[\bar{\rho}_{12}e^{i(\Omega t - kz)} - \rho_{21}e^{-i(\Omega t - kz)}][e^{i(\Omega t - kz)} + e^{-i(\Omega t - kz)}] - \frac{\rho_{22} - \rho_{22}^0}{T_1}\\
+                                                         &= \frac{iR(\bar{\rho}_{12} - \bar{\rho}_{21})}{2} - \frac{\rho_{22} - \rho_{22}^0}{T_1}
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\frac{\partial\rho_{11}}{\partial t} = \frac{iR(\bar{\rho}_{21} - \bar{\rho}_{12})}{2} - \frac{\rho_{11} - \rho_{11}^0}{T_1}$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    \frac{\partial\rho_{11}}{\partial t} &= iR(\rho_{21} - \rho_{12})\cos(\Omega t - kz) - \frac{\rho_{11} - \rho_{11}^0}{T_1}\\
+                                                         &= \frac{iR}{2}[\bar{\rho}_{21}e^{-i(\Omega t - kz)} - \bar{\rho}_{12}e^{i(\Omega t - kz)}][e^{-i(\Omega t - kz)} + e^{i(\Omega t - kz)}] - \frac{\rho_{11} - \rho_{11}^0}{T_1}\\
+                                                         &= \frac{iR(\bar{\rho}_{21} - \bar{\rho}_{12})}{2} - \frac{\rho_{11} - \rho_{11}^0}{T_1}
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\frac{\partial\bar{\rho}_{12}}{\partial t} = \frac{iR(\rho_{22} - \rho_{11})}{2} + \left(i\Delta - \frac{1}{T_2}\right)\bar{\rho}_{12}$$
+                <div class="Derivation">
+                    $$\because \frac{\partial\rho_{12}}{\partial t} = iR(\rho_{22} - \rho_{11})\cos(\Omega t - kz) - \left(i\omega_{12} + \frac{1}{T_2}\right)\rho_{12}$$
+                    $$\therefore \frac{\partial}{\partial t}[\bar{\rho}_{12}e^{i(\Omega t - kz)}] = \frac{iR(\rho_{22} - \rho_{11})}{2}[e^{-i(\Omega t - kz)} + e^{i(\Omega t - kz)}] - \left(i\omega_{12} + \frac{1}{T_2}\right)\bar{\rho}_{12}e^{i(\Omega t - kz)}$$
+                    $$\because \frac{\partial e^{i(\Omega t - kz)}}{\partial t} = i(\Omega - k\frac{\partial z}{\partial t})e^{i(\Omega t - kz)} = i(\Omega - kv_z)e^{i(\Omega t - kz)}$$
+                    $$\therefore \left[\frac{\partial\bar{\rho}_{12}}{\partial t} + i(\Omega - kv_z)\bar{\rho}_{12}\right]e^{i(\Omega t - kz)} = \frac{iR(\rho_{22} - \rho_{11})}{2}[e^{-i(\Omega t - kz)} + e^{i(\Omega t - kz)}] - \left(i\omega_{12} + \frac{1}{T_2}\right)\bar{\rho}_{12}e^{i(\Omega t - kz)}$$
+                    $$\therefore \frac{\partial\bar{\rho}_{12}}{\partial t} + i(\Omega - kv_z)\bar{\rho}_{12} = \frac{iR(\rho_{22} - \rho_{11})}{2} - \left(i\omega_{12} + \frac{1}{T_2}\right)\bar{\rho}_{12}$$
+                    $$\because \omega_{12} = -\omega_{21}$$
+                    $$\begin{align}\therefore
+                    \frac{\partial\bar{\rho}_{12}}{\partial t} &= \frac{iR(\rho_{22} - \rho_{11})}{2} + \left[i(\omega_{21} - \Omega + kv_z) - \frac{1}{T_2}\right]\bar{\rho}_{12}\\
+                                                               &= \frac{iR(\rho_{22} - \rho_{11})}{2} + \left(i\Delta - \frac{1}{T_2}\right)\bar{\rho}_{12}
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$\frac{\partial\bar{\rho}_{21}}{\partial t} = \frac{iR(\rho_{11} - \rho_{22})}{2} - \left(i\Delta + \frac{1}{T_2}\right)\bar{\rho}_{21}$$
+                <div class="Derivation">
+                    $$\because \frac{\partial\rho_{21}}{\partial t} = iR(\rho_{11} - \rho_{22})\cos(\Omega t - kz) - \left(i\omega_{21} + \frac{1}{T_2}\right)\rho_{21}$$
+                    $$\therefore \frac{\partial}{\partial t}[\bar{\rho}_{21}e^{-i(\Omega t - kz)}] = \frac{iR(\rho_{11} - \rho_{22})}{2}[e^{-i(\Omega t - kz)} + e^{i(\Omega t - kz)}] - \left(i\omega_{21} + \frac{1}{T_2}\right)\bar{\rho}_{21}e^{-i(\Omega t - kz)}$$
+                    $$\because \frac{\partial e^{-i(\Omega t - kz)}}{\partial t} = -i(\Omega - k\frac{\partial z}{\partial t})e^{-i(\Omega t - kz)} = -i(\Omega - kv_z)e^{-i(\Omega t - kz)}$$
+                    $$\therefore \left[\frac{\partial\bar{\rho}_{21}}{\partial t} - i(\Omega - kv_z)\right]e^{-i(\Omega t - kz)} = \frac{iR(\rho_{11} - \rho_{22})}{2}[e^{-i(\Omega t - kz)} + e^{i(\Omega t - kz)}] - \left(i\omega_{21} + \frac{1}{T_2}\right)\bar{\rho}_{21}e^{-i(\Omega t - kz)}$$
+                    $$\therefore \frac{\partial\bar{\rho}_{21}}{\partial t} - i(\Omega - kv_z) = \frac{iR(\rho_{11} - \rho_{22})}{2} - \left(i\omega_{21} + \frac{1}{T_2}\right)\bar{\rho}_{21}$$
+                    $$\begin{align}\therefore
+                    \frac{\partial\bar{\rho}_{21}}{\partial t} &= \frac{iR(\rho_{11} - \rho_{22})}{2} - \left[i(\omega_{21} - \Omega + kv_z) + \frac{1}{T_2}\right]\bar{\rho}_{21}\\
+                    &= \frac{iR(\rho_{11} - \rho_{22})}{2} - \left(i\Delta + \frac{1}{T_2}\right)\bar{\rho}_{21}
+                    \end{align}$$
+                </div>
+            </div>
+
+            <ul>
+                <li>\(\Delta = \omega_{21} - \Omega + kv_z\)：沿光传播方向运动、速度为\(v_z\)的原子群的共振协调参量（对于气相共振介质）.</li>
+            </ul>
+
+            <p>[令]</p>
+            $$u = \bar{\rho}_{12} + \bar{\rho}_{21}$$
+            $$v = i(\bar{\rho}_{21} - \bar{\rho}_{12})$$
+            $$w = \rho_{22} - \rho_{11}$$
+            <p>则：</p>
+
+            <div class="Card-Formula">
+                <b>二能级原子系综在旋转坐标系中的Bloch方程</b>
+                
+                <div class="Formula">
+                    $$\frac{\partial u}{\partial t} = -\Delta v - \frac{u}{T_2}$$
+                    <div class="Derivation">
+                        $$\begin{align}
+                        \frac{\partial u}{\partial t} &= \frac{\partial\bar{\rho}_{12}}{\partial t} + \frac{\partial\bar{\rho}_{21}}{\partial t}\\
+                                                      &= \left(i\Delta - \frac{1}{T_2}\right)\bar{\rho}_{12} - \left(i\Delta + \frac{1}{T_2}\right)\bar{\rho}_{21}\\
+                                                      &= i\Delta(\bar{\rho}_{12} - \bar{\rho}_{21}) - \frac{1}{T_{2}}(\bar{\rho}_{12} + \bar{\rho}_{21})\\
+                                                      &= -\Delta v - \frac{u}{T_2}
+                        \end{align}$$
+                    </div>
+                </div>
+    
+                <div class="Formula">
+                    $$\frac{\partial v}{\partial t} = Rw + \Delta u - \frac{v}{T_2}$$
+                    <div class="Derivation">
+                        $$\begin{align}
+                        \frac{\partial v}{\partial t} &= i\left(\frac{\partial\bar{\rho}_{21}}{\partial t} - \frac{\partial\bar{\rho}_{12}}{\partial t}\right)\\
+                                                      &= i\left[iR(\rho_{11} - \rho_{22}) + i\Delta(-\bar{\rho}_{21} - \bar{\rho}_{12}) + \frac{1}{T_2}(-\bar{\rho}_{21} + \bar{\rho}_{12})\right]\\
+                                                      &= Rw + \Delta u - \frac{v}{T_2}
+                        \end{align}$$
+                    </div>
+                </div>
+    
+                <div class="Formula">
+                    $$\frac{\partial w}{\partial t} = -Rv - \frac{w - w^0}{T_1}$$
+                    <div class="Derivation">
+                        $$\begin{align}
+                        \frac{\partial w}{\partial t} &= \frac{\partial\rho_{22}}{\partial t} - \frac{\partial\rho_{11}}{\partial t}\\
+                                                      &= iR(\bar{\rho}_{12} - \bar{\rho}_{21}) + \frac{1}{T_1}[-\rho_{22} + \rho_{11} + \rho_{22}^0 - \rho_{11}^0]\\
+                                                      &= -Rv - \frac{w - w^0}{T_1}
+                        \end{align}$$
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>
