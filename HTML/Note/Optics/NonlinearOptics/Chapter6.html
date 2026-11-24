@@ -96,11 +96,217 @@
         </div>
 
         <div class="Card-Analysis">
-            <h2>光与二能级原子系统相互作用的矢量描述</h2>
+            <a href="BlochEquation.html"><h2>光与二能级原子系统相互作用的矢量描述</h2></a>
+        </div>
 
-            <p>本节主要介绍描述瞬态相干作用的基本理论：Bloch-Maxwell方程.</p>
+        <div class="Card-Analysis">
+            <h2>光学章动效应</h2>
+            <p>光学章动效应是核磁共振技术中自旋章动效应的光学模拟.</p>
 
-            
+            <div class="Card-Definition">
+                <b>光学章动</b>
+                <p>当脉冲前沿很陡的光波入射到共振吸收介质中时，介质对光并不是简单的吸收或放大，而是经过一段有限的弛豫振荡后，过渡到稳定状态，如下图所示.</p>
+                <figure>
+                    <img src="Img/OpticalNutationEffect.png" width="200">
+                    <figcaption>透射光随时间变化的示意图</figcaption>
+                </figure>
+            </div>
+
+            <p>由图可见。经过共振吸收介质后的透射光脉冲的前言，呈现为阻尼式的周期振荡，其振荡频率与入射光场有关，起伏振荡的阻尼时间由介质的横向弛豫时间\(T_2\)决定.</p>
+            <p>光学章动的物理机制是：相干光场与共振介质相互作用时，在其能量交换过程中所产生的弛豫振荡.</p>
+            <p>也就是说，原子或分子在强共振光场照射下，重复地受激吸收与受激发射，导致透射光产生增强和减小的周期振荡.</p>
+
+            <p>由于这种相干作用必须在相位相干的弛豫时间\(T_2\)内完成，因此振荡具有有限的阻尼时间.</p>
+            <p>光学章动可由Bloch-Maxwell方程组描述.</p>
+
+            <h3>忽略弛豫项的理论处理</h3>
+            <p>由于光与介质相互作用的时间很短，\(t\ll T_1, T_2\)，故可忽略弛豫.</p>
+            <p>此时，<a href="BlochEquation.html#Bloch" class="goto">Bloch方程</a>变为：</p>
+            $$\frac{\partial u}{\partial t} = -\Delta v$$
+            $$\frac{\partial v}{\partial t} = Rw + \Delta u$$
+            $$\frac{\partial w}{\partial t} = -Rv$$
+
+            <p>[设]初始条件为：</p>
+            $$\left.u(t)\right\rvert_{t = 0} = u(0) = 0$$
+            $$\left.v(t)\right\rvert_{t = 0} = v(0) = 0$$
+            $$\left.w(t)\right\rvert_{t = 0} = w(0)$$
+
+            <p>则可求解得到\(t\gt 0\)时，有：</p>
+            <div class="Formula">
+                $$v(t) = \frac{Rw(0)}{\beta}\sin(\beta t)$$
+                <div class="Derivation">
+                    $$\frac{\partial v}{\partial t} = Rw + \Delta u$$
+                    $$\begin{align}\therefore
+                    \frac{\partial^2 v}{\partial t^2} &= R\frac{\partial w}{\partial t} + \Delta\frac{\partial u}{\partial t}\\
+                                                      &= -R^2v - \Delta^2 v
+                    \end{align}$$
+                    <p>[令]\(\beta = \sqrt{R^2 + \Delta^2}\)</p>
+                    $$\therefore \frac{\partial^2 v}{\partial t^2} + \beta^2v = 0$$
+                    <p>解此<a href="../../Math/Mathematic/DifferentialEquation.html" class="goto">微分方程</a>，得：</p>
+                    $$v(t) = C_1\cos(\beta t) + C_2\sin(\beta t)$$
+                    $$\because v(0) = C_1 = 0$$
+                    $$\therefore v(t) = C_2\sin(\beta t)$$
+                    $$\because v'(0) = Rw(0) = [C_2\beta\cos(\beta t)]_{t=0} = C_2\beta$$
+                    $$\therefore v(t) = \frac{Rw(0)}{\beta}\sin(\beta t)$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$u(t) = \frac{\Delta Rw(0)}{\beta^2}[\cos(\beta t) - 1]$$
+                <div class="Derivation">
+                    $$\because v(t) = \frac{Rw(0)}{\beta}\sin(\beta t)$$
+                    $$\therefore \frac{\partial u}{\partial t} = -\Delta v = -\frac{\Delta Rw(0)}{\beta}\sin(\beta t)$$
+                    $$\begin{align}\therefore
+                    u(t) &= \int_0^t-\frac{\Delta Rw(0)}{\beta}\sin(\beta t')\mathrm{d}t'\\
+                         &= \frac{\Delta Rw(0)}{\beta^2}[\cos(\beta t) - 1]
+                    \end{align}$$
+                </div>
+            </div>
+
+            <div class="Formula">
+                $$w(t) = \frac{R^2w(0)}{\beta^2}[\cos(\beta t) - 1] + \omega(0)$$
+                <div class="Derivation">
+                    $$v(t) = \frac{Rw(0)}{\beta}\sin(\beta t)$$
+                    $$\therefore \frac{\partial w}{\partial t} = -Rv = -\frac{R^2w(0)}{\beta}\sin(\beta t)$$
+                    $$\begin{align}\therefore
+                    w(t) - w(0) &= \int_0^t-\frac{R^2w(0)}{\beta}\sin(\beta t')\mathrm{d}t'\\
+                                &= \frac{R^2w(0)}{\beta^2}[\cos(\beta t) - 1]
+                    \end{align}$$
+                    $$\therefore w(t) = \frac{R^2w(0)}{\beta^2}[\cos(\beta t) - 1] + \omega(0)$$
+                </div>
+            </div>
+
+            <ul>
+                <li>\(\beta = \sqrt{R^2 + \Delta^2}\)</li>
+            </ul>
+
+            <p>任意时刻\(t\)的<a href="BlochEquation.html#BlochVector" class="goto">Bloch矢量</a>的振幅满足：</p>
+            <div class="Formula">
+                $$B(t) = \sqrt{u^2(t) + v^2(t) + w^2(t)} = w(0)$$
+                <div class="Derivation">
+                    $$\begin{align}
+                    [u^2(t) + v^2(t) + w^2(t)]' &= 2(uu' + vv' + ww')\\
+                                                &= 2(-\Delta uv + Rwv + \Delta uv - Rwv)\\
+                                                &= 0
+                    \end{align}$$
+                    $$\therefore B(t) = \left.\sqrt{u^2(t) + v^2(t) + w^2(t)}\right\rvert_{t=0} = w(0)$$
+                </div>
+            </div>
+
+            <p>Bloch矢量\(\boldsymbol{B}(t)\)将以频率\(\beta\)绕等效场\(\boldsymbol{\beta}\)进动.</p>
+
+            <p>严格共振时，\(\Delta = 0,~\boldsymbol{\beta} = -R\boldsymbol{i}\)，可得：</p>
+            $$u(t) = 0$$
+            $$v(t) = \omega(0)\sin(Rt)$$
+            $$w(t) = \omega(0)\cos(Rt)$$
+
+            <p>此时，Bloch矢量\(\boldsymbol{B}\)绕Ⅰ轴以Rabi翻转频率\(R\)旋转.</p>
+
+            <div class="Card-Question">
+                <p>什么是严格共振？</p>
+                <p>什么是I轴？</p>
+                <p>什么是Rabi频率？</p>
+            </div>
+
+            <h3>考虑弛豫效应的光学章动</h3>
+            <p>考虑弛豫现象的<a href="BlochEquation.html#Bloch" class="goto">Bloch方程</a>为：</p>
+            $$\frac{\partial u}{\partial t} = -\Delta v - \frac{u}{T_2}$$
+            $$\frac{\partial v}{\partial t} = Rw + \Delta u - \frac{v}{T_2}$$
+            $$\frac{\partial w}{\partial t} = -Rv - \frac{w - w^0}{T_1}$$
+
+            <p>为了得到解析解，设\(T_1 = T_2 = T\).</p>
+            <p></p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光学自由感应衰减效应</h2>
+
+            <div class="Card-Definition">
+                <b>光学自由感应衰减效应</b>
+                <p>样品原子被一相干光共振激发处于相干态时，突然去掉相干光场，在\(T_2\)时间内辐射衰减的相干光波现象.</p>
+            </div>
+            <p>这种辐射与通常所讲的自发辐射不同，是一种只在前向方向上的相干辐射，实际是相干的自发辐射，其示意图如图所示：</p>
+
+            <figure>
+                <img src="Img/FID.png" width="400">
+                <figcaption>自由感应衰减效应示意图</figcaption>
+                <figcaption>(a)\(t_0\)时刻去掉激光激发；(b)\(t\gt t_0\)使其的自由感应衰减信号</figcaption>
+            </figure>
+
+            <h3>斯塔克开关技术</h3>
+            <p>由上述讨论可见：瞬态光学章动与自由感应衰减效应都涉及光场的突然加上与突然去掉，即突然的开与关.</p>
+            <p>实际上，如此快的过程利用任何机械手段都不能实现，但随着超短脉冲激光技术的发展，这个问题得到了较好的解决.</p>
+    
+            <p>问题是在目前有限的激光器波段的情况下，对于工作物质要求实现所希望的共振作用是极难解决的.</p>
+            <p>1971年，布瑞维尔与舒麦克提出了一种实际上可以实现瞬态相干效应的方法：斯塔克开关技术.</p>
+
+            <hr>
+            <p>如图所示：用频率为\(\Omega\)的连续激光照射气态激发介质时，由于气态分子具有极窄的共振线，所以只有\(\Omega\)严格等于分子的跃迁频率\(\omega_0\)时才会有强的吸收.</p>
+
+            <figure>
+                <img src="Img/Stark_switch.jpg" width="400">
+                <figcaption>斯塔克开关实验装置示意图</figcaption>
+            </figure>
+
+            <div class="Card-AI">
+                <p>共振线：原子或分子对不同频率光的吸收强度随频率变化形成的一条谱线，吸收越强，共振峰越高.</p>
+            </div>
+
+            <p>斯塔克开关技术利用分子具有较大的一级斯塔克效应，即加在分子样品上的直流电场将使之产生较大的频移（如图所示），因此可通过改变加在样品上的直流电场调节介质能级，使其与入射激光共振与非共振.</p>
+
+            <figure>
+                <img src="Img/Stark_effect.jpg" width="250">
+                <figcaption>斯塔克效应示意图</figcaption>
+            </figure>
+
+            <p>在斯塔克开关实验装置中，探测器是用来监测通过介质的入射光与样品介质的辐射光，在直流背景上的交流信号就是瞬态相干信号.</p>
+
+            <div class="Card-AI">
+                <p>其实没有搞懂斯塔克效应是什么东西.</p>
+            </div>
+
+            <p>进一步，若考虑气态分子介质吸收线型的多普勒展宽，则斯塔克效应示意图如图所示：</p>
+            <figure>
+                <img src="Img/Stark_effect2.jpg" width="200">
+                <p>考虑多普勒展宽的斯塔克效应</p>
+            </figure>
+
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>光子回波效应</h2>
+            <p>在讨论光学自由感应衰减效应时，指出了<a href="../Laser/LaserPrinciples/LineBroadening.html" class="goto">非均匀加宽</a>对衰减的贡献.</p>
+            <p>这种非均匀衰减起因于气体分子在衰减时的速度不同，导致相位不同，因此时一种非均匀的消相过程.</p>
+
+            <div class="Card-AI">
+                <p>速度不同->频率不同->相位不同</p>
+                <p>消相过程：相位差随时间不断变化，导致粒子间的相位逐渐失去同步.</p>
+            </div>
+
+            <p>这种非均匀消相是一种可逆的现象，如果在时间上使消相过程反转，就可以瞬时地重新获得储存在样品中的相干电磁能量，这就是回波的概念.</p>
+            <p>光学领域内，若有两个强短激光脉冲相继入射到共振吸收介质中，经过一段时间会观察到第三个定向的光脉冲出射，这个脉冲称为光子回波.</p>
+
+            <div class="Card-AI">
+                <p>消相时，能量储存在被激发的粒子体系中.</p>
+            </div>
+
+            <p>为简单理解消相-同相的过程，考察如图所示的Doppler相位因子随时间的变化规律.</p>
+
+            <figure>
+                <img src="Img/DopplerPhase.png" width="300">
+                <figcaption>Doppler相位因子随时间的变化</figcaption>
+            </figure>
+
+            <p>[设]\(t=0\)时，样品受到激光脉冲的共振相干激发.</p>
+            <p>\(t\gt 0\)时，以速度\(\boldsymbol{v}\)运动的气体分子的相对Doppler相位随时间变化为\(\boldsymbol{k}\cdot \boldsymbol{v}t\)，\(\boldsymbol{k}\)为光辐射的传播矢量.</p>
+            <p>若在\(t = \tau\)时，对样品施加另一个脉冲，使相对Doppler相位变号，从\(\boldsymbol{k}\cdot\boldsymbol{v}\tau\)变为\(-\boldsymbol{k}\cdot\boldsymbol{v}\tau\)，则在\(t = 2\tau\)时，气体分子将重现\(t=0\)时的初相位.</p>
+            <p>若气体分子都以同样方式经历了一个这样的过程，则宏观上该样品就会在\(t = 2\tau\)时相干地辐射一个光脉冲：光子回波.</p>
+
+            <p>下面，首先讨论利用斯塔克开关技术产生的光子回波理论，然后利用Bloch矢量方法进行描述.</p>
+
+            <h3>光子回波效应的理论分析</h3>
+            <p></p>
         </div>
 
         <div id="PageEnd"></div>

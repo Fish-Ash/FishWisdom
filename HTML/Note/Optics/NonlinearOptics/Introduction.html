@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>非线性光学概述</h1>
+
+        <div class="Card-Analysis">
+            <h2>非线性光学概述</h2>
+            <p>光在介质中的传播过程就是光与介质相互作用的过程，对于这个动态过程，可以按照介质对光的响应和辐射过程进行描述.</p>
+            <p>如果采用极化理论，可以认为光在介质中传播时，将感应极化，所产生的极化强度作为激励源又将产生光辐射，这个光辐射就是介质中传播的光波.</p>
+            <p>若介质对光的响应呈线性关系，所产生的光学现象就属于线性光学范畴，光在介质中的传播规律遵从独立传播原理与线性叠加原理.</p>
+            <p>若介质对光的响应呈非线性关系，不同频率的光波间会产生耦合，独立传播原理与线性叠加原理不再成立.</p>
+
+            <b>线性光学与非线性光学的主要区别</b>
+            <table>
+                <tr>
+                    <td>线性光学</td>
+                    <td>非线性光学</td>
+                </tr>
+                <tr>
+                    <td class="tbtext">一束光在介质中传播，可以通过干涉、衍射、折射来改变其传播方向与空间分布，但光的频率不变，与介质无能量交换.</td>
+                    <td class="tbtext">一束频率确定的光，可以通过介质的非线性作用转换为其他频率的光，或产生一系列光谱周期分布的不同频率和光强的光（受激散射等）.</td>
+                </tr>
+                <tr>
+                    <td class="tbtext">多束光在介质中传播，不改变各自的频率，不发生能量相互交换，各光束的相位信息不能相互传递.</td>
+                    <td class="tbtext">多束光在介质中传播，可能产生新的频率，发生能量的相互转移，光束间可以传递相位信息，两束光的相位可以互相共轭（三波、四波混频，光学相位共轭等）.</td>
+                </tr>
+                <tr>
+                    <td class="tbtext">光与介质相互作用，不改变介质的物理参量，介质物理参量是频率的函数，与光场强度变化无关.</td>
+                    <td class="tbtext">光与介质相互作用，介质的物理参量是光场强度的函数和（非线性吸收和色散、光克尔效应、自聚焦等）.</td>
+                </tr>
+                <tr>
+                    <td class="tbtext">光束通过光学系统，其入射光强与透射光强间一般呈线性关系.</td>
+                    <td class="tbtext">光束通过光学系统，入射光强与透射光强之间呈非线性关系（光限制、光学双稳、光开关等）.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

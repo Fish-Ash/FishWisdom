@@ -64,7 +64,33 @@
 
             <h3>光学Bloch方程</h3>
 
-            <h4>二能级原子系统的\(\boldsymbol{r}\)矢量方程</h4>
+            <p>如前所述，由于光学共振激发于磁共振激发的瞬态相干作用很相似，所以可将核磁共振的描述方程推广到瞬态相干光学中，从而引进光学Bloch方程.</p>
+            <p>讨论核磁共振时，处理的是磁矩作用，在光频区关心的则是电偶极矩.</p>
+            <p>这里我们考虑的是一个二能级原子系统，将引入一个\(\boldsymbol{r}\)矢量，它与核磁共振中的磁化强度\(\boldsymbol{M}\)有相似的性质.</p>
+
+            
+            <p>一个二能级原子系统在光场作用下的状态变化由<a href="../QuantumMechanics/WaveFunction.html" class="goto">Schrödinger方程</a>描述：</p>
+
+            $$\hat{H}\psi = i\hbar\frac{\partial\psi}{\partial t}$$
+            <ul>
+                <li>\(\hat{H} = \hat{H}_0 + \hat{H}_1(t)\)</li>
+                <li>\(\hat{H}_0\)：无光场时原子系统的哈密顿算符</li>
+                <li>\(\hat{H}_1(t)\)：原子系统与光场相互作用的哈密顿算符</li>
+            </ul>
+            <p>取电偶极矩近似可写作：</p>
+            $$\hat{H}_1(t) = -\hat{\mu}\cdot\boldsymbol{E}$$
+
+            <ul>
+                <li>\(\hat{\mu}\)：原子的电偶极矩算符</li>
+                <li>\(\boldsymbol{E}\)：作用于原子系统的光电场</li>
+            </ul>
+
+            <p>若\(u_a\)与\(u_b\)为\(\hat{H}_0\)的、与时间无关的本征函数，则任意时刻原子的波函数为：</p>
+            $$\psi(t) = a(t)u_a + b(t)u_b$$
+            
+
+
+            <!-- <h4>二能级原子系统的\(\boldsymbol{r}\)矢量方程</h4>
             <p>密度矩阵方程为：</p>
             $$\frac{\mathrm{d}}{\mathrm{d}t}(aa^*) = -\frac{i}{\hbar}(a^*bH_{1ab} - ab^*H_{1ba})$$
             $$\frac{\mathrm{d}}{\mathrm{d}t}(bb^*) = \frac{i}{\hbar}(a^*bH_{1ab} - ab^*H_{1ba})$$
@@ -243,7 +269,7 @@
             $$w = \rho_{22} - \rho_{11}$$
             <p>则：</p>
 
-            <div class="Card-Formula">
+            <div class="Card-Formula" id="Bloch">
                 <b>二能级原子系综在旋转坐标系中的Bloch方程</b>
                 
                 <div class="Formula">
@@ -280,12 +306,34 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
         </div>
+
+        <div class="Card-Analysis">
+            <h2>Bloch矢量</h2>
+            <p>若略去Bloch方程中的衰减项（\(T_1\to\infty,~T_2\to\infty\)），便可写为：</p>
+            $$\frac{\partial u}{\partial t} = -\Delta v$$
+            $$\frac{\partial v}{\partial t} = Rw + \Delta u$$
+            $$\frac{\partial w}{\partial t} = -Rv$$
+
+            $$\frac{\partial}{\partial t}\left[\begin{matrix}u\\v\\w\end{matrix}\right] = \left\lvert\begin{matrix}\boldsymbol{i}&\boldsymbol{j}&\boldsymbol{k}\\-R&0&\Delta\\u&v&w\end{matrix}\right\rvert$$
+            <div class="Card-Definition" id="BlochVector">
+                <b>Bloch矢量（赝偶极矩矢量）</b>
+                $$\boldsymbol{B} = u\boldsymbol{i} + v\boldsymbol{j} + w\boldsymbol{k}$$
+                <p>它是时间、空间与原子速度的函数.</p>
+            </div>
+
+            <p>[令]</p>
+            $$\boldsymbol{\beta} = -R\boldsymbol{i} + \Delta\boldsymbol{k}$$
+            <p>其表征了入射光场的特性，称为有效场.</p>
+
+            $$\therefore \frac{\mathrm{d}\boldsymbol{B}}{\mathrm{d}t} = \boldsymbol{\beta}\times\boldsymbol{B}$$
+            <p>上式表示Bloch矢量\(\boldsymbol{B}\)绕矢量\(\boldsymbol{\beta}\)作进动，进动频率为\(\beta\).</p>
+            <p>不考虑能级弛豫时间影响时，矢量\(\boldsymbol{B}\)的模量保持不变；考虑能级弛豫时间的影响时，矢量\(\boldsymbol{B}\)的模量将随时间逐渐变小.</p>
+
+            
+
+
+        </div> -->
 
         <div id="PageEnd"></div>
 

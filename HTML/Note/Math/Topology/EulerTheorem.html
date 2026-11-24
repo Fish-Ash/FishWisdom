@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>拓扑学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>引论</h1>
+
+        <div class="Card-Analysis">
+            <h2>Euler定理</h2>
+
+            <p><b>多面体</b>是指按下述意义很好地拼凑在一起的有限多个平面多边形：</p>
+            <p>若两个多边形相交，它们交于一条公共边.</p>
+            <p>多边形的每一条边恰是且仅是另一个多边形的边.</p>
+            <div class="Card-AI">
+                <p>这条保证了多边形的封闭性.</p>
+            </div>
+
+            <p>还要求对于每个顶点，那些含有它的多边形可以排列成\(Q_1,Q_2,\cdots,Q_k\)，使得\(Q_i\)与\(Q_{i+1}\)有一条公共边（\(1\leq i\lt k\)），而\(Q_k\)与\(Q_1\)有一条公共边.</p>
+            <p>换句话说，这些多边形拼成围绕该顶点的一块区域.</p>
+            <p>这个条件排除掉了两个立方体只在一个公共顶点相衔接的情况.</p>
+
+            <div class="Card-AI">
+                <p>这个条件似乎已经包含了上述的条件.</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>“凸多面体”简单来说就是表面没有凹进去的多面体.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>Euler定理</b>
+                <p>设\(P\)为满足下列条件的多面体：</p>
+                <ul>
+                    <li>\(P\)的任意两个顶点可用一串棱相连</li>
+                    <li>\(P\)上任何由直线段（不一定是\(P\)的棱）构成的圈，将\(P\)分割成两片.</li>
+                </ul>
+                <p>则对\(P\)而言：</p>
+                $$v - e + f = 2$$
+                <ul>
+                    <li>\(v\)：多面体的顶点数</li>
+                    <li>\(e\)：多面体的棱数</li>
+                    <li>\(f\)：多面体的面数</li>
+                </ul>
+            </div>
+
+            <h3>证明</h3>
+            <p>\(P\)的一组连通的顶点与棱称为<b>图</b>.</p>
+            <p><b>连通</b>：任意两个顶点可以用图的一串棱连接.</p>
+
+            <div class="Card-Definition">
+                <b>树形与非树形</b>
+                <p>不含任何圈的图叫<b>树形</b>，记作\(T\).</p>
+                <p>对于树形，顶点数减去棱树等于1，记作\(v(T) - e(T) = 1\).</p>
+                <figure>
+                    <img src="Img/Tree.png" width="300">
+                </figure>
+            </div>
+
+
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>拓扑等价</h2>
+            <p>Euler定理有好几种证明，选择上述证明的理由有两点：</p>
+            <ul>
+                <li>这个证明很精致，其他大多数证明是对于\(P\)的面数使用归纳法.</li>
+                <li>它给出了比Euler公式更多的东西：只需稍微再花点时间即可证明，\(P\)是由两个盘形沿着它们的边界粘合而成的.</li>
+            </ul>
+
+            <p><b>树形增厚总得到盘形；有圈的图增厚得到有空洞的空间</b>.</p>
+            <p>换句话说，Euler定理的假设告诉我们，\(P\)在某种意义下看起来就像是变了形的球面.</p>
+
+
+            <p>形变过程可以将多面体任意拉伸、弯曲，<b>但不允许撕裂、不允许不同点粘在一起</b>.</p>
+            <p>这样所得到多面体的点与球面的点之间的对应就是所谓<b>拓扑等价</b>或<b>同胚</b>的一个例子.</p>
+            <p>确切地说，就是一对一的连续<a href="../../Math/FunctionalAnalysis/Set.html" class="goto">满映射</a>，且逆映射也连续.</p>
+
+            <div class="Card-AI">
+                <p>连续映射：一个映射在输入发生微小变化时，输出也只发生微小变化，不会出现突然的跳跃.</p>
+            </div>
+
+            <div class="Card-Example">
+                <b>四个互相同胚的空间的例子</b>
+                <figure>
+                    <img src="Img/example1.jpeg" width="300">
+                </figure>
+
+                <ul>
+                    <li>(a) 有限高度的圆柱面，去掉两端的圆周</li>
+                    <li>(b) 由方程\(x^2 + y^2 - z^2 = 1\)给出的单叶双曲面</li>
+                    <li>(c) 复平面上由\(1\lt|z|\lt3\)确定的开环区域</li>
+                    <li>(d) 除去南极与北极的球面</li>
+                </ul>
+            </div>
+
+            <div class="Card-Definition">
+                <b>多面体的Euler数</b>
+                $$v - e + f$$
+            </div>
+
+            <div class="Card-Theorem">
+                <p>拓扑等价的多面体具有相同的Euler数.</p>
+            </div>
+            <p>这个十分瞩目的结果是现代拓扑学的出发点.</p>
+            <p>其令人惊奇的地方在于：计算多面体的Euler数时，使用了多面体的顶点数、棱数与面数，这些在拓扑等价之下都不是保持不变的东西.</p>
+            <p>于是引起人们寻找空间在同胚下不改变的其他性质.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>曲面</h2>
+            <p>拓扑学所讨论的空间性质，是空间在前面所说的拓扑等价下不改变的性质.</p>
+            <p></p>
+        </div>
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

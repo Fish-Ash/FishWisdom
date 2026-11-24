@@ -38,11 +38,30 @@
 
         <h1>谱线加宽与线型函数</h1>
 
+        <div class="PageCatalog">
+            <ul>
+                <li><a href="#Section1">谱线加宽概述（线型函数、线宽）</a></li>
+            </ul>
+        </div>
+
         <div class="Card-Analysis">
+            <h2>引言</h2>
+            <p>本节首先介绍光谱线的线型函数与线宽，然后讨论引起谱线加宽的几种原因及相应的线型函数，最后对实际激光工作物质的光谱线加宽特性进行简要讨论.</p>
+        </div>
+
+        <div class="Card-Analysis" id="Section1">
             <h2>谱线加宽概述</h2>
             <p>实际上，自发辐射所释放的光谱线并非严格的单色光（即单一频率），而是具有一定的频率宽度.</p>
-            <img src="Img/IdealLinetype.png" alt="理想线型" width="200">
-            <img src="Img/RealLinetype.png" alt="实际线型" width="200">
+            <figure>
+                <img src="Img/RealLinetype.png" width="200">
+                <figcaption>实际线型</figcaption>
+            </figure>
+
+            <figure>
+                <img src="Img/IdealLinetype.png" alt="理想线型" width="200">
+                <figcaption>理想线型</figcaption>
+            </figure>
+            
             <p>由于种种因素的影响，该自发辐射的功率（或光强）分布在以其跃迁波尔频率\(\nu = \frac{E_2-E_1}{h}\)为中心的小频率范围内，\(\nu_0\)称为中心频率.</p>
             <p>可以用单色辐射功率\(P(\nu)\)来描述这一分布规律.</p>
             <div class="Card-Definition">
@@ -64,12 +83,21 @@
                 <p>显然，线型函数是归一化的，即：</p>
                 $$\int_{-\infty}^{+\infty}g(\nu,\nu_0)\mathrm{d}\nu = 1$$
             </div>
+            
+            <p>如图所示，线型函数曲线是以中心频率\(\nu_0\)为中心的对称曲线，\(\nu = \nu_0\)处线型函数值\(g(\nu, \nu_0)\)最大.</p>
+            <p>线型函数可理解为自发辐射跃迁概率按频率\(\nu\)的分布函数，线型函数曲线包含所有可能的自发辐射谱线（频率）的光谱线的轮廓形状.</p>
+            <p>由归一化条件可知，线型函数曲线与横轴所围的面积等于1.</p>
+            <img src="Img/FWHM.png" alt="" width="300">
 
             <div class="Card-Definition">
                 <b>线宽/半幅线宽（FWHM, Full Width at Half Maximum）</b>
                 <p>线型函数半极值点对应的频率宽度.</p>
-                <img src="Img/FWHM.png" alt="" width="300">
+                <p>[设]在\(\nu = \nu_1\)与\(\nu = \nu_2\)处，线型函数的值降至最大值的一半，即：</p>
+                $$g(\nu_1, \nu_0) = g(\nu_2, \nu_0) = \frac{1}{2}g(\nu_0, \nu_0)$$
+                <p>则线宽为：</p>
+                $$\Delta\nu = \nu_2 - \nu_1$$
             </div>
+
 
             <h3>谱线加宽的机理</h3>
             <p>引起谱线加宽的物理原因：</p>
@@ -81,7 +109,7 @@
 
         </div>
 
-        <div class="Card-Analysis">
+        <div class="Card-Analysis" id="NaturalBroading">
             <h2>自然加宽</h2>
             <div class="Card-Definition">
                 <b>自然加宽</b>
@@ -92,6 +120,44 @@
 
             <h3>经典理论解释</h3>
 
+            <p>按照经典的电磁理论，一个原子可以看作是一个由正、负电荷组成的电偶极子，如图所示：</p>
+            <figure>
+                <img src="Img/Dipole.png" width="70">
+                <figcaption>经典的电偶极子模型</figcaption>
+            </figure>
+
+            <p>当原子的正、负电荷中心相对做频率为\(\nu_0\)的简谐运动时，该原子就会发射频率为\(\nu_0\)的光波.</p>
+            <p>但由于电子在发射光波过程中不断损耗能量，它振动的振幅也就不断衰减，辐射的电磁波亦随之减弱.</p>
+            <p>如图所示为电磁场振幅\(E\)随时间\(t\)变化的示意图：</p>
+
+            <figure>
+                <img src="Img/NaturalBroadening.png" width="200" id="fig1">
+                <figcaption>原子自发辐射的电磁场</figcaption>
+            </figure>
+
+            <p>通常这一衰减电磁场可以写成复数形式：</p>
+            $$E(t) = E_0e^{-\gamma/2t}e^{i2\pi\nu_0 t}$$
+            <ul>
+                <li>\(\gamma\)：振幅衰减因子</li>
+            </ul>
+
+            <p>按照Fourier分析，这一衰减的光波不再是单一频率\(\nu_0\)的振动，而是包含多个频率的光波，即谱线加宽了.</p>
+            <p>由于原子在发光中的能量衰减是必然的，因此这种加宽机制称为自然加宽.</p>
+
+            <p>由经典物理模型可证明，自然加宽的线型函数可表示为：</p>
+            $$g_N(\nu, \nu_0) = \frac{\gamma}{\left(\frac{\gamma}{2}\right)^2 + 4\pi^2(\nu - \nu_0)^2} = \frac{1/\tau_s}{\left(\frac{1}{2\tau_s}\right)^2 + 4\pi^2(\nu - \nu_0)^2}$$
+            <ul>
+                <li>\(\tau_s = 1/\gamma\)：原子在激光上能级\(E_2\)的平均寿命</li>
+            </ul>
+            <p>由上式可知：</p>
+            <p>1、\(\nu = \nu_0\)时，\(g_N(\nu_0, \nu_0)\)为极大值\(g_m\)，有：</p>
+            $$g_m = g_N(\nu_0, \nu_0) = 4\tau_s$$
+
+            <p>2、\(\nu_1 = \nu_0 - \frac{1}{4\pi\tau_s},~\nu_2 = \nu_0 + \frac{1}{4\pi\tau_s}\)时，有：</p>
+            $$g_N(\nu_1, \nu_0) = g_N(\nu_2, \nu_0) = \frac{1}{2}g_m = 2\tau_s$$
+            <p>故谱线宽度为：</p>
+            $$\Delta_N = \nu_2 - \nu_1 = \frac{1}{2\pi\tau_s}$$
+
             <div class="Card-Definition">
                 <b>洛伦兹型函数</b>
                 $$g(\nu, \nu_0) = \frac{\frac{\Delta \nu}{2\pi}}{(\nu-\nu_0)^2 + \left(\frac{\Delta\nu}{2}\right)^2}$$
@@ -100,25 +166,73 @@
             <p>自然加宽的线型函数为洛伦兹型函数，即：</p>
             $$g_N(\nu, \nu_0) = \frac{\frac{\Delta \nu_N}{2\pi}}{(\nu-\nu_0)^2 + \left(\frac{\Delta\nu_N}{2}\right)^2}$$
             
-            <div class="Card-Question">
-                <p>为什么等效能级寿命问题就可以采用洛伦兹型函数描述？</p>
-            </div>
+
 
 
             <h3>量子理论解释</h3>
         </div>
 
-        <div class="Card-Analysis">
+        <div class="Card-Analysis" id="CollisionBroading">
             <h2>碰撞加宽</h2>
+
+            <p>引起光谱线加宽的另一个原因是：原子之间、原子与器壁间会发生无规则碰撞.</p>
+            <p>气体激光器中，大量气体原子处于无规则热运动状态，原子与原子之间、原子与气体放电管壁之间会发生频繁的碰撞.</p>
+            <p>除了直接碰撞外，当两个原子之间的距离足够近时，它们之间的相互作用足以改变原本的能量状态，也可以认为是发生碰撞.</p>
+
+            <p>经典振子模型认为碰撞会使原子发光中断或光波相位发生突变，如图所示.</p>
+            <figure>
+                <img src="Img/Collision.jpg" width="350">
+                <figcaption>碰撞加宽的机理</figcaption>
+            </figure>
+
+            <p>其效果均相当于原子在激光上能级\(E_2\)的寿命缩短.</p>
+            <p>与<a href="#fig1" class="goto">图：原子自发辐射的电磁场</a>中的自然衰减波的粒子相比，偏离简谐波的程度更大，因而使谱线进一步加宽.</p>
+            <p>从量子力学观点看，处于激发态的原子，在碰撞过程中，失掉内能通过非辐射跃迁的形式回到基态，使原子在激发态上的平均寿命缩短了，从而导致光谱线在自然加宽的基础上被进一步加宽.</p>
+
             <div class="Card-Definition">
+                <b>碰撞加宽</b>
                 <p>碰撞引起的光谱线加宽.</p>
                 <p>其线型函数与线宽分别用\(g_L(\nu, \nu_0)\)与\(\Delta nu_L\)表示.</p>
             </div>
 
-            <p>碰撞加宽可以采用洛伦兹型函数描述：</p>
+            <p>尽管自然加宽与碰撞加宽产生的机理不同，但都可以归结为等效能级寿命问题.</p>
+
+            <p>因此，碰撞加宽可以采用洛伦兹型函数描述：</p>
             $$g_L(\nu, \nu_0) = \frac{\frac{\Delta \nu_L}{2\pi}}{(\nu-\nu_0)^2 + \left(\frac{\Delta\nu_L}{2}\right)^2}$$
-            
-        </div> 
+            <ul>
+                <li>\(\Delta_L = 1/2\pi\tau_L\)</li>
+                <li>\(\tau_s\)：平均碰撞时间，即任一原子与其他原子发生碰撞的平均时间间隔；用于描述碰撞的频繁程度，即由于碰撞而导致发光粒子处在激光上能级的寿命</li>
+            </ul>
+            <div class="Card-Question">
+                <p>为什么等效能级寿命问题就可以采用洛伦兹型函数描述？</p>
+            </div>
+
+            <p>由于碰撞的发生是随机的，因此只能了解\(\tau_s\)的统计特性.</p>
+        </div>
+
+        <div class="Card-Analysis" id="DopplerBroading">
+            <h2>Doppler加宽</h2>
+
+            <p>光谱线的Doppler加宽是由粒子的热运动引发光频率的改变（即Doppler频移）造成的.</p>
+
+            <h3>光学Doppler效应</h3>
+            <p>如图所示，假定接受器固定在实验室坐标系中，设一发光原子（光源）相对于光接收器静止时，测得的光波中心频率为\(\nu_0\)；当发光原子相对于接收器沿\(z\)方向以\(v_z\)速度运动时，接收器测得的光波频率中心变为\(\nu_0'\)，即：</p>
+            $$\nu_0' = \nu_0\sqrt{\left(1 + \frac{v_c}{c}\right)/\left(1 - \frac{v_c}{c}\right)}$$
+
+            <figure>
+                <img src="Img/Doppler.png" width="300">
+                <figcaption>光学Doppler效应示意图</figcaption>
+            </figure>
+
+            <p>这就是光学Doppler效应.</p>
+
+            <div class="Card-AI">
+                <p>简单来讲就是，相对于同一个静止的观察者而言，静止的光源与运动的光源发出的光的频率不同.</p>
+            </div>
+
+            <p>当原子运动速度远小于光速，即\(v_z/c\ll 1\)时，可取一级近似，即：</p>
+            $$\nu_0' = \nu_0\left(1 + \frac{\nu_z}{c}\right)$$
+        </div>
 
         <div class="Card-Analysis">
             <h2>均匀加宽、非均匀加宽与综合加宽</h2>

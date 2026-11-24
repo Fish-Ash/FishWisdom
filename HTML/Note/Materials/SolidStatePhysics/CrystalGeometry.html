@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>惯性聚变物理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>晶体的几何</h1>
+
+        <div class="Card-Analysis">
+            <h2>晶格及其周期性</h2>
+
+            <h3>一些晶格的实例</h3>
+            <div class="Card-Definition">
+                <b>晶格（晶体格子）</b>
+                <p>晶体中原子的规则排列.</p>
+            </div>
+
+            <div class="Card-AI">
+                <p>晶格实际是一种空间结构</p>
+            </div>
+
+            <b>简单立方晶格</b>
+            <p>图(a)表示，在一个平面内，规则排列原子球的一个最简单的形式.</p>
+            <p>若将这样的原子层叠起来，各层的球完全对应，就形成所谓<b>简单立方晶格</b>.</p>
+
+            <p>[注]没有实际的晶体采取简单立方晶格，但一些更复杂的晶格可以在简单立方晶格的基础上加以分析.</p>
+
+            <p>简单立方晶格的原子球心显然形成一个三维的立方格子结构，往往用图(b)的形式表示这种晶格结构，其表示出这个格子的一个典型单元，整个格子可以看作这样一个单元沿三个方向的重复排列.</p>
+
+            <b>体心立方晶格</b>
+            <p>按照同样的理解，图(c)表示所谓<b>体心立方晶格</b>，有相当多的金属，如Li、Na、K、Rb、Cs、Fe等元素，具有体心立方晶格.</p>
+
+            <figure>
+                <img src="Img/lattice.png" width="400">
+                <figcaption></figcaption>
+            </figure>
+
+            <b>密排面</b>
+            <p>如图所示为原子球在一个平面内最紧密排列的方式，常称为<b>密排列</b>.</p>
+            
+            <figure>
+                <img src="Img/lattice2.png" width="200">
+                <figcaption></figcaption>
+            </figure>
+
+            <p>将密排面叠起来，可以形成原子球最紧密堆叠的晶格.</p>
+            <p>为了堆叠最紧密，在堆积时应当把一层的球心对准另一层的球隙.</p>
+            <p>仔细分析可以发现，这样实际上可以形成两种不同的最紧密晶格排列.</p>
+
+            <p>首先我们注意到，密排原子层的间隙可以分成两套，如上图所示将它们涂成黑色与白色.</p>
+            <p>若称原来的密排层为A，另一排密排层可对准其中任一套间隙，分别称之为B和C.</p>
+            <p>两种密排的晶格可以表示为：</p>
+            $$ABABAB\cdots$$
+            $$ABCABCABC\cdots$$
+
+            <div class="Card-AI">
+                <p>这个演示过程看PPT-Physics中的第一面.</p>
+                <p>第二层都是一样的，重点在于第三层是继续错开还是与第一层重合.</p>
+            </div>
+
+            <p>前者称为<b>六角密排晶格</b>，常用下图所示的六角单元表示这种结构：</p>
+            <figure>
+                <img src="Img/hexagonal.png" width="100">
+                <figcaption>六角密排</figcaption>
+            </figure>
+
+            <p>后者称为<b>立方密排</b>（或<b>面心立方晶格</b>），常用下图(a)表示这种晶格的典型单元：</p>
+            <figcaption>
+                <img src="Img/cubic.png" width="200">
+                <figcaption>立方密排</figcaption>
+            </figcaption>
+
+            <p>其与简单立方相似，但在每个立方面中心有一个原子，图(b)表示面心立方晶格的原子密排面.</p>
+            <p>很多金属具有两种密排结构之一，如：</p>
+            <ul>
+                <li>Be、Mg、Zn、Cd具有六角密排结构</li>
+                <li>Cu、Ag、Au、Al具有面心立方结构</li>
+            </ul>
+            
+
+            <b>金刚石晶格</b>
+            <p>由碳原子形成的<b>金刚石晶格</b>是另一个重要的基本晶格结构.</p>
+            <p>其典型单元常用下图表示：</p>
+            <figure>
+                <img src="Img/diamond.png" width="300">
+                <figcaption>金刚石晶格</figcaption>
+            </figure>
+
+            <p>由面心立方的单元中心到顶角引8条对角线，在其中4条的中点上各加一原子，就得到金刚石的结构.</p>
+            <p>这个结构的一个重要特点是：每个原子有4个最近邻，它们正好在一个正四面体的顶角位置.</p>
+            <p>除金刚石外，重要的半导体硅和锗也具有这种晶格结构.</p>
+
+            <b>NaCl结构</b>
+            <p>以上所介绍的都是同一种原子组成的元素晶体，下面介绍几种化合物晶体的结构.</p>
+
+            <p>最熟知的是岩盐<b>NaCl结构</b>，它好像是一个简单立方晶格，但每一行上相间地排列着正的和负的离子Na<sup>+</sup>和Cl<sup>-</sup>，如图所示：</p>
+            <figure>
+                <img src="Img/NaCl.png" width="200">
+                <figcaption>NaCl的晶体结构</figcaption>
+            </figure>
+
+            <p>碱金属Li、Na、K、Rb和卤族元素F、Cl、Br、I的化合物都具有NaCl结构.</p>
+
+            <h3>原胞、基矢量、布拉维格子</h3>
+            <p>所有晶格的共同特点是具有周期性，它们都可以看作是由一个平行六面体的单元沿三个边的方向重复排列而成.</p>
+            <p>以上各图用一个典型单元来表示各种结构边体现了晶格的这一基本特点.</p>
+
+            <div class="Card-Definition">
+                <b>原胞</b>
+                <p>一个晶格最小的周期单元.</p>
+            </div>
+
+            <p>原胞的三个棱可选为描述晶格的基本矢量，用\(\boldsymbol{a}_1,~\boldsymbol{a}_2,~\boldsymbol{a}_3\)表示.</p>
+            
+            <p>简单立方晶格的立方单元也就是最小的周期单元——原胞，它的基矢沿三个立方边，长度相等.</p>
+
+            <p>体心立方和面心立方的立方单元，都不是最小的周期单元.</p>
+            <p></p>
+
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

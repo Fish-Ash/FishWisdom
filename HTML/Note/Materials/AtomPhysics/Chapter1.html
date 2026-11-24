@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>原子物理</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+
+        <h1>第一章 原子的位形：卢瑟福模型</h1>
+
+        <div class="Card-Analysis">
+            <h2>背景知识</h2>
+
+            <h3>电子的发现</h3>
+            <p>1833年，M. Faraday提出电解定律，由此推得：1 mol任何原子的单价粒子永远带有相同的电荷量.</p>
+            <p>这个电荷量就是Faraday量\(F\)，其值是Faraday在实验中首次确定的.</p>
+
+            <p>1897年，J. J. Thomson真正从实验上确认了电子的存在.</p>
+
+            <figure>
+                <img src="Img/Thomson.jpeg" width="500">
+                <figcaption>1897年Thomson使用的放电管</figcaption>
+            </figure>
+
+            <p>阴极射线从阴极C发出后通过狭缝A、B成一狭窄的射线，再穿过两片平行的金属板D、E之间的空间，最后到达右端带有标尺的荧光屏上.</p>
+            <p>去掉电场，由于磁场方向与射线运动方向垂直，将使射线构成一圆形轨迹，若此圆形轨迹的半径为\(r\)，则射线内的粒子（质量为\(m\)）受到的离心力为\(mv^2/r\)，它一定与磁场力\(Hev\)相平衡.</p>
+            <p>既然\(v\)已算出，\(e/m\)就可以求出.</p>
+
+            <h3>电子的电荷与质量</h3>
+            <p>电子电荷的现代值为：</p>
+            $$e = 1.602 176 620 8(98)\times 10^{-19}C$$
+            <p>精度达千万分之一.</p>
+            <p>括号内的\((98)\)表示最后几位数字的误差\(208\pm 98\)</p>
+
+            <p>从实验测得的\(e/m_e\)及\(e\)的数值，可以定出电子的质量为：</p>
+            $$m_e = 9.10938356(11)\times 10^{-31}\text{kg}$$
+            <p>至于电子质量为什么是这个数值，今天的物理学尚无法解答.</p>
+
+            <p>利用\(e/m_e\)和\(e/m_p\)，可导出质子质量与电子质量之比值：</p>
+            $$m_p/m_e = 1836.15267389(17)$$
+
+            <p>从\(m_p/m_e\)及\(m_e\)的数值，可以导出：</p>
+            $$m_p = 1.672621898(21)\times 10^{-27}\text{kg}$$
+            <p>用千克为单位计算原子的质量，显然是很不适宜的.</p>
+            <p>在原子范畴内，普遍采用原子质量单位\(u\).</p>
+            <div class="Card-Definition">
+                <b>原子质量单位\(u\)</b>
+                <p>国际上规定：<sup>12</sup>C的质量为\(12\text{u}\).</p>
+            </div>
+
+            <p>由此可定出：</p>
+            $$m_p = 1.007276466879(91)\text{u}$$
+            <p>在粗糙的估算中可以当作一个\(u\).</p>
+
+            <h3>阿伏伽德罗常量</h3>
+            <div class="Card-Definition">
+                <b>阿伏伽德罗常量\(N_A\)</b>
+                <p>\(1 \text{mol}\)（摩尔）分子（或原子）的分子（或原子）数目.</p>
+            </div>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>卢瑟福模型的提出</h2>
+
+            <p>1909年，卢瑟福的助手H. Geiger和学生E. Marrsden在用\(\alpha\)粒子轰击原子的实验中，发现\(\alpha\)粒子在轰击原子时约有1/8000的概率被反射回来.</p>
+            <p>1911年，卢瑟福提出<b>核式结构模型</b>.</p>
+
+            
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>

@@ -43,42 +43,24 @@
             </ul>
         </div>
 
-        <div class="Card-Analysis">
-            <h2>非线性光学概述</h2>
-            <p>光在介质中的传播过程就是光与介质相互作用的过程，对于这个动态过程，可以按照介质对光的响应和辐射过程进行描述.</p>
-            <p>如果采用极化理论，可以认为光在介质中传播时，将感应极化，所产生的极化强度作为激励源又将产生光辐射，这个光辐射就是介质中传播的光波.</p>
-            <p>若介质对光的响应呈线性关系，所产生的光学现象就属于线性光学范畴，光在介质中的传播规律遵从独立传播原理与线性叠加原理.</p>
-            <p>若介质对光的响应呈非线性关系，不同频率的光波间会产生耦合，独立传播原理与线性叠加原理不再成立.</p>
-
-            <table>
-                <tr>
-                    <td>线性光学</td>
-                    <td>非线性光学</td>
-                </tr>
-                <tr>
-                    <td class="tbtext">一束光在介质中传播，可以通过干涉、衍射、折射来改变其传播方向与空间分布，但光的频率不变，与介质无能量交换.</td>
-                    <td class="tbtext">一束频率确定的光，可以通过介质的非线性作用转换为其他频率的光，或产生一系列光谱周期分布的不同频率和光强的光（受激散射等）.</td>
-                    
-                </tr>
-            </table>
-        </div>
-
         <h2>第一节 极化率的色散特性</h2>
         
         <div class="Card-Analysis">
             <h2>极化强度</h2>
 
+            <b>前置知识</b>
+            <ul>
+                <li><a href="../Electromagnetism/Conductor.html#Polarization">电介质的极化</a></li>
+            </ul>
+
             <p>光在介质中传播时，由于光电场的作用，将产生极化强度.</p>
-            <div class="Card-AI">
-                <p>这里是介质被光电场极化.</p>
-            </div>
-            <p>一般情况下，<a href="../Electromagnetism/Chapter1.html#Polarization" class="goto">极化强度</a>包含线性极化强度与非线性极化强度.</p>
+            <p>一般情况下，<a href="../Electromagnetism/Conductor.html#PolarizationIntensity" class="goto">极化强度</a>包含线性极化强度与非线性极化强度.</p>
             $$\boldsymbol{P} = \boldsymbol{P}_{L} + \boldsymbol{P}_{NL}$$
     
             <p>光电场强度很弱时：可以忽略\(\boldsymbol{P}_{NL}\)，为线性光学问题，此时：</p>
-            $$\boldsymbol{P} = \boldsymbol{P}_{L} = \boldsymbol{P}^{(1)} = \epsilon_0\chi^{(1)}\boldsymbol{E}$$
+            $$\boldsymbol{P} = \boldsymbol{P}_{L} = \boldsymbol{P}^{(1)} = \varepsilon_0\chi^{(1)}\boldsymbol{E}$$
             <ul>
-                <li>\(\epsilon_0\)：真空介电常数</li>
+                <li>\(\varepsilon_0\)：真空介电常数</li>
                 <li>\(\chi^{(1)}\)：线性极化率</li>
             </ul>
 
@@ -88,9 +70,6 @@
             &\boldsymbol{P}_{L} = \boldsymbol{P}^{(1)}\\
             &\boldsymbol{P}_{NL} = \boldsymbol{P}^{(2)} + \boldsymbol{P}^{(3)} + \cdots + \boldsymbol{P}^{(r)} + \cdots
             \end{align}$$
-            <div class="Card-AI">
-                <p>级数形式即为：\(a_1 + a_2 + \cdots + a_r + \cdots\)或\(a_1 + a_2 + a_3\)的形式</p>
-            </div>
             <ul>
                 <li>\(\boldsymbol{P}^{(r)}\)：\(r\)阶非线性极化强度，与光电场\(\boldsymbol{E}\)的\(r\)次方有关的非线性极化强度.</li>
             </ul>
@@ -98,21 +77,16 @@
             <p>在无损耗（lossless）、无色散（dispersionless）介质中：</p>
             $$\begin{align}
             \boldsymbol{P} &= \boldsymbol{P}^{(1)} + \boldsymbol{P}^{(2)} + \boldsymbol{P}^{(3)} + \cdots + \boldsymbol{P}^{(r)} + \cdots\\
-                       &= \epsilon_0\chi^{(1)}\boldsymbol{E} + \epsilon_0\chi^{(2)}\boldsymbol{E}^2 + \epsilon_0\chi^{(3)}\boldsymbol{E}^3 + \cdots + \epsilon_0\chi^{(r)}\boldsymbol{E}^r + \cdots
+                       &= \varepsilon_0\chi^{(1)}\boldsymbol{E} + \varepsilon_0\chi^{(2)}\boldsymbol{E}^2 + \varepsilon_0\chi^{(3)}\boldsymbol{E}^3 + \cdots + \varepsilon_0\chi^{(r)}\boldsymbol{E}^r + \cdots
             \end{align}$$
+            <ul>
+                <li>\(\chi^{(r)}\)：\(r\)阶极化率张量</li>
+                <li>\(\tilde{P}^{(r)}(t) = \varepsilon_0\chi^{(r)}\tilde{E}^r(t)\)</li>
+            </ul>
 
             <p>[注]\(r=1\)时代表线性.</p>
-            <p>[注]\(\tilde{P}^{(r)}(t) = \epsilon_0\chi^{(r)}\tilde{E}^r(t)\).</p>
             <p>[注]这里只考虑电偶极矩近似，完全忽略电四极矩及多极矩的影响.</p>
             <p>[注]光电场过强时，上述非极化强度的级数形式将不再适用.</p>
-
-
-            
-            <div class="Card-AI">
-                <p>\(\chi\)不一定是常数，但是我们通常将其视作常数张量.</p>
-                <p>\(\chi^{(r)}\)是\(r\)阶极化率张量.</p>
-                $$\boldsymbol{P}^{(r)} \propto \boldsymbol{E}^r$$
-            </div>
     
             <div class="Card-Question">
                 <p>什么叫“电偶极矩近似”，什么叫“电四极矩及多极矩”？</p>
@@ -120,7 +94,7 @@
 
             <p>随时间变化的极化可以作为电磁场新分量的源.</p>
             <p>非线性光学介质中的波动方程为：</p>
-            $$\nabla^2\boldsymbol{E} - \frac{n^2}{c^2}\frac{\partial^2\boldsymbol{E}}{\partial t^2} = \frac{1}{\epsilon_0 c^2}\frac{\partial^2\boldsymbol{P}_{NL}}{\partial t^2}$$
+            $$\nabla^2\boldsymbol{E} - \frac{n^2}{c^2}\frac{\partial^2\boldsymbol{E}}{\partial t^2} = \frac{1}{\varepsilon_0 c^2}\frac{\partial^2\boldsymbol{P}_{NL}}{\partial t^2}$$
             <ul>
                 <li>\(n\)：线性折射率</li>
                 <li>\(c\)：真空中的光速</li>
@@ -135,24 +109,25 @@
 
 
         <div class="Card-Analysis" id="Flag1">
-            <h2>因果性原理</h2>
+            <h2>介质极化的响应函数</h2>
             <h3>线性响应函数</h3>
+            <p>因果性原理是物理学中的普遍规律.</p>
             <p>光在介质中传播时，\(t\)时刻介质所感应的线性极化强度\(\boldsymbol{P}(t)\)不仅与\(t\)时刻的光电场\(\boldsymbol{E}(t)\)有关，还与\(t\)时刻前所有的光电场有关.</p>
             <div class="Formula">
-                $$\boldsymbol{P}(t) = \int_{-\infty}^t \epsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau$$
+                $$\boldsymbol{P}(t) = \int_{-\infty}^t \varepsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau$$
                 <div class="Derivation">
                     <p>设时刻\(t\)前任一时刻\(\tau\)的光电场强度为\(\boldsymbol{E}(\tau)\)，它对\(t\)时刻时的极化强度的贡献为\(\mathrm{d}\boldsymbol{P}(t)\)，且：</p>
-                    $$\mathrm{d}\boldsymbol{P}(t) = \epsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau$$
+                    $$\mathrm{d}\boldsymbol{P}(t) = \varepsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau$$
                     $$\begin{align}\therefore 
                     \boldsymbol{P}(t) &= \int_{-\infty}^t \mathrm{d}\boldsymbol{P}\\
-                                  &= \int_{-\infty}^t \epsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau
+                                  &= \int_{-\infty}^t \varepsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau
                     \end{align}$$
                     $$令\tau' = t - \tau \Rightarrow \tau = t - \tau'$$
                     $$\tau = -\infty时\rightarrow \tau' = +\infty$$
                     $$\tau = t时\rightarrow \tau'=0$$
                     $$\begin{align}\therefore
-                    \boldsymbol{P}(t) &= \int_{+\infty}^0\epsilon_0\boldsymbol{R}(\tau')\boldsymbol{E}(t-\tau')\mathrm{d}(t-\tau')\\
-                                  &= \int_0^{+\infty}\epsilon_0\boldsymbol{R}(\tau)\boldsymbol{E}(t-\tau)\mathrm{d}\boldsymbol{\tau}
+                    \boldsymbol{P}(t) &= \int_{+\infty}^0\varepsilon_0\boldsymbol{R}(\tau')\boldsymbol{E}(t-\tau')\mathrm{d}(t-\tau')\\
+                                  &= \int_0^{+\infty}\varepsilon_0\boldsymbol{R}(\tau)\boldsymbol{E}(t-\tau)\mathrm{d}\boldsymbol{\tau}
                     \end{align}$$
                 </div>
             </div>
@@ -160,38 +135,60 @@
                 <li>\(\boldsymbol{R}(t-\tau)\)：介质的线性响应函数，是一个二阶张量.</li>
             </ul>
 
+            <div class="Card-AI">
+                <p>由于当前及过去时刻的光电场，对此刻极化强度的贡献不是平均的，因此需要引入一个权重因子，能够表征\(\tau\)时刻光电场对当前极化强度的贡献.</p>
+                <p>这里具有一个假设，即介质具有时间平移不变性，所以对于同样\(t-\tau\)前的时刻，应该具有相同的权重响应.</p>
+            </div>
+
             <p>此外，\(t'\gt t\)时的光电场\(\boldsymbol{E}(t')\)对\(\boldsymbol{P}(t)\)是没有贡献的，即：</p>
             $$\boldsymbol{R}(t-\tau) = 0,~\tau\gt t$$
-            $$\therefore \int_{t}^{+\infty}\epsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau = 0$$
-            <p>亦即：</p>
-            $$\boldsymbol{P}(t) = \int_{-\infty}^{+\infty}\epsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau$$
-            $$\boldsymbol{P}(t) = \epsilon_0\boldsymbol{R}*\boldsymbol{E}$$
+            $$\therefore \int_{t}^{+\infty}\varepsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau = 0$$
+            <div id="P1">
+                <div class="Formula">
+                    $$\therefore\boldsymbol{P}(t) = \int_{-\infty}^{+\infty}\varepsilon_0\boldsymbol{R}(\tau)\boldsymbol{E}(t - \tau)\mathrm{d}\tau = \varepsilon_0\boldsymbol{R}*\boldsymbol{E}$$
+                    <div class="Derivation">
+                        $$\boldsymbol{P}(t) = \int_{-\infty}^{+\infty}\varepsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau = \varepsilon_0\boldsymbol{R}*\boldsymbol{E}$$
+                        <p>由<a href="../../Math/FourierAnalysis/Convolution.html" class="goto">卷积</a>的交换性质，有：</p>
+                        $$\boldsymbol{P}(t) = \varepsilon_0\boldsymbol{R}*\boldsymbol{E} = \int_{-\infty}^{+\infty}\varepsilon_0\boldsymbol{R}(\tau)\boldsymbol{E}(t - \tau)\mathrm{d}\tau$$
+                    </div>
+                </div>
+            </div>
 
             <b>响应函数所满足的真实性条件</b>
             <p>由于\(\boldsymbol{E}(t)\)与\(\boldsymbol{P}(t)\)均为实函数，故\(\boldsymbol{R}(\tau)\)也必须是实函数，才能保证上式成立.</p>
 
+            <h3>非线性响应函数</h3>
+            <h4>二阶非线性极化强度</h4>
+            <p>二阶非线性极化强度\(\boldsymbol{P}^{(2)}(t)\)与光电场\(\boldsymbol{E}(t)\)成二次方关系，按因果性原理有：</p>
+            $$\boldsymbol{P}^{(2)}(t) = \varepsilon_0\int_{-\infty}^{+\infty}\mathrm{d}\tau_1\int_{-\infty}^{+\infty}\mathrm{d}\tau_2\boldsymbol{R}^{(2)}(\tau_1,\tau_2):\boldsymbol{E}(t-\tau_1)\boldsymbol{E}(t-\tau_2)$$
+            <ul>
+                <li>\(\boldsymbol{R}^{(2)}(\tau_1, \tau_2)\)：三阶张量，介质的二阶极化响应函数</li>
+            </ul>
             <div class="Card-AI">
-                <p>积分也是线性运算，所以线性响应函数体现了\(\boldsymbol{P}\)与\(\boldsymbol{E}\)之间的线性关系.</p>
+                $$\boldsymbol{P}^{(2)}(t) = \iint_{-\infty}^t\varepsilon_0\boldsymbol{R}(t-\tau_1, t-\tau_2)\boldsymbol{E}(\tau_1)\boldsymbol{E}(\tau_2)\mathrm{d}\tau_1\mathrm{d}\tau_2$$
             </div>
 
-            <h3>非线性响应函数</h3>
-        </div>
-
-        <div class="Card-Question">
-            <p>学到目前为止没明白为什么这节是“介质的色散特性”，“色散”到底是什么？</p>
+            <h4>\(r\)阶非线性极化强度</h4>
+            $$\begin{align}
+            \boldsymbol{P}^{(r)}(t) =&\varepsilon_0\int_{-\infty}^{+\infty}\mathrm{d}\tau_1\int_{-\infty}^{+\infty}\mathrm{d}\tau_2\cdots\int_{-\infty}^{+\infty}\mathrm{d}\tau_r\\
+                                     &\times \boldsymbol{R}^{(2)}(\tau_1,\tau_2,\cdots,\tau_r)|\boldsymbol{E}(t-\tau_1)\boldsymbol{E}(t-\tau_2)\cdots\boldsymbol{E}(t-\tau_r)
+            \end{align}$$
+            <ul>
+                <li>\(\boldsymbol{R}^{(r)}(\tau_1, \tau_2, \cdots, \tau_r)\)：\(r+1\)阶张量，介质的\(r\)阶极化响应函数</li>
+            </ul>
+            <p>\(\boldsymbol{R}^{(r)}(\tau_1, \tau_2, \cdots, \tau_r)\)与\(\boldsymbol{E}(t-\tau_1)\)间的竖线表示\(r\)个点.</p>
         </div>
 
         <div class="Card-Analysis">
             <h2>介质极化率的频率色散</h2>
+
+            <p>上面在时间域内讨论了介质的极化强度与光电场的关系，引入了介质极化的响应函数.</p>
+            <p>若响应函数已知，原则上可以对介质的光学响应特性给出完整的描述.</p>
+            <p>但实际上，由于非线性光学经常是在频率域内讨论介质的极化过程，因此通常采用极化率张量表征介质的响应特性.</p>
+            <p>下面通过<a href="../../Math/FourierAnalysis/FourierTransform.html" class="goto">Fourier变换</a>，在频率域内引入介质极化率张量，并讨论其色散关系.</p>
             
             <h3>线性极化率张量</h3>
             <b>前置知识</b>
-            <ul>
-                <li><a href="../../Math/FourierAnalysis/FourierTransform.html">Fourier变换</a></li>
-            </ul>
-            $$\because \boldsymbol{P}(t) = \int_{-\infty}^{+\infty}\varepsilon_0\boldsymbol{R}(t-\tau)\boldsymbol{E}(\tau)\mathrm{d}\tau$$
-            $$\boldsymbol{P}(t) = \int_{-\infty}^{+\infty}\boldsymbol{P}(\omega)e^{-i\omega t}\mathrm{d}\omega$$
-            $$\boldsymbol{E}(t) = \int_{-\infty}^{+\infty}\boldsymbol{E}(\omega)e^{-i\omega t}\mathrm{d}\omega$$
 
             <div class="Card-Definition">
                 <b>线性极化率</b>
@@ -201,18 +198,18 @@
                                        &= \chi'(\omega) + i\chi''(\omega)
                     \end{align}$$
                     <div class="Derivation">
-                        $$\because \boldsymbol{P}(t) = \epsilon_0\boldsymbol{R}(t)*\boldsymbol{E}(t)$$
+                        <a href="#P1" class="goto">$$\because \boldsymbol{P}(t) = \varepsilon_0\boldsymbol{R}(t)*\boldsymbol{E}(t)$$</a>
                         $$\begin{align}
                         \therefore \boldsymbol{P}(\omega) &= \mathcal{F}[\boldsymbol{P}(t)]\\
-                                                          &= \epsilon_0\mathcal{F}[\boldsymbol{R}(t)]\boldsymbol{E}(\omega)\\
-                                                          &= \epsilon_0\chi^{(1)}(\omega)\boldsymbol{E}(\omega)
+                                                          &= \varepsilon_0\mathcal{F}[\boldsymbol{R}(t)]\boldsymbol{E}(\omega)\\
+                                                          &= \varepsilon_0\chi^{(1)}(\omega)\boldsymbol{E}(\omega)
                         \end{align}$$
-                        $$\therefore \chi^{(1)}(\omega) = \mathcal{F}[\boldsymbol{R}(t)]$$
-                        <p>线性极化率实部与虚部间的关系称为色散关系，由Kramers-Kroning关系给出.</p>
+                        $$\therefore \chi^{(1)}(\omega) = \mathcal{F}[\boldsymbol{R}(t)] = \int_{-\infty}^{+\infty}\boldsymbol{R}^{(1)}(\tau)e^{i\omega\tau}\mathrm{d}\tau$$
                     </div>
                 </div>
-    
             </div>
+
+            <p>线性极化率实部与虚部间的关系称为色散关系，由Kramers-Kroning关系给出.</p>
     
             <div class="Card-Definition">
                 <b>Kramers-Kroning关系</b>
@@ -223,9 +220,29 @@
                     <li>\(\text{P.V.}\)：柯西主值积分</li>
                 </ul>
             </div>
+
+            <p>由\(\chi^{(1)}(\omega)\)的色散关系可知，只要我们知道极化率实部或虚部中的任何一个，便可通过色散关系求出另一个，从而获得介质极化的全部知识.</p>
+
+            <div class="Card-Question">
+                <p>柯西主值积分</p>
+            </div>
+
+            <h3>非线性极化率张量</h3>
+
+            <h4>二阶极化率张量</h4>
+            $$\chi^{(2)}(\omega_1, \omega_2) = \int_{-\infty}^{+\infty}\mathrm{d}\tau_1\int_{-\infty}^{+\infty}\mathrm{d}\tau_2\boldsymbol{R}^{(2)}(\tau_1, \tau_2)e^{i(\omega_1r_1 + \omega_2r_2)}$$
+
+            <h4>\(r\)阶极化率张量</h4>
+            $$\chi^{(r)}(\omega_1, \omega_2, \cdots, \omega_r) = \int_{-\infty}^{+\infty}\mathrm{d}\tau_1\int_{-\infty}^{+\infty}\mathrm{d}\tau_2\cdots\int_{-\infty}^{+\infty}\mathrm{d}\tau_r\boldsymbol{R}^{(r)}(\tau_1,\tau_2,\cdots,\tau_r)e^{i(\omega_1r_1 + \omega_2r_2 + \cdots + \omega_rr_r)}$$
         </div>
 
-
+        <div class="Card-Analysis">
+            <h2>介质极化率的空间色散</h2>
+            <p>上面讨论了介质极化率的频率色散特性，并指出：这种频率色散特性起因于极化强度与光电场的时间变化率有关，是时间域内因果性原理的直接结果.</p>
+            <p>此外，由于介质内给定空间点的极化强度不仅与该点的光电场有关，还与邻近空间点的光电场有关，即与光电场的空间变化率有关，因而导致极化率张量\(\chi\)与光波波矢\(\boldsymbol{k}\)有关，这种\(\chi\)与波矢\(\boldsymbol{k}\)的依赖关系叫做介质极化率的空间色散，其空间色散关系可以通过空间域的Fourier变换得到.</p>
+            <p>若同时考虑介质极化率的频率色散特性与空间色散特性，介质极化率张量可以表示为\(\chi(\omega, \boldsymbol{k})\).</p>
+            <p>光频情况下，由于光频辐射波长比电子轨道半径与晶格间的距离大得多，因而在大多数情况下，\(\chi(\omega, \boldsymbol{k})\)的空间色散可以不考虑.</p>
+        </div>
 
         <div class="Card-Analysis">
             <h2>极化率的单位</h2>
@@ -262,7 +279,41 @@
             $$\frac{\chi^{(r)mic}(SI)}{\chi^{(r)mic}(c. g. s.)} = \frac{4\pi}{10^6(3\times 10^4)^{(r-1)}}$$
             
         </div>
-    
+
+
+        <div class="Card-Analysis">
+            <h2>极化强度表示式</h2>
+            <b>前置知识</b>
+            <ul>
+                <li><a href="../../Math/TensorAnalysis/Tensor_Operation.html">张量的点积</a></li>
+            </ul>
+            <p>若组成光波的各个频率分量是不连续的，则极化强度表示式中的积分应由求和代替：</p>
+            $$\boldsymbol{P}^{(1)} = \sum_n\varepsilon_0\boldsymbol{\chi}^{(1)}(\omega_n)\cdot \boldsymbol{E}(\omega_n)e^{-i\omega_nt}$$
+            $$\boldsymbol{P}^{(2)} = \sum_{m,n}\varepsilon_0\boldsymbol{\chi}^{(2)}(\omega_m, \omega_n):\boldsymbol{E}(\omega_m)\boldsymbol{E}(\omega_n)e^{-i(\omega_m + \omega_n)t}$$
+            <div id="P3">
+                $$\boldsymbol{P}^{(3)} = \sum_{m,n,l}\varepsilon_0\boldsymbol{\chi}^{(3)}(\omega_m, \omega_n, \omega_l)\vdots \boldsymbol{E}(\omega_m)\boldsymbol{E}(\omega_n)\boldsymbol{E}(\omega_l)e^{-i(\omega_m + \omega_n + \omega_l)t}$$
+            </div>
+            $$\vdots$$
+            $$\boldsymbol{P}^{(r)} = \sum_{\alpha_1,\alpha_2,\cdots,\alpha_r}\varepsilon_0\chi^{(r)}(\omega_{\alpha_1}, \omega_{\alpha_2}, \cdots, \omega_{\alpha_r})|\boldsymbol{E}(\omega_{\alpha_1})\boldsymbol{E}(\alpha_2)\cdots\boldsymbol{E}(\omega_r)e^{-i\mathop{\sum}\limits_{m=1}^r\omega_{\alpha_m}t}$$
+            <p>[注]式中的\(m,n,l,\alpha_1,\alpha_2,\cdots,\alpha_r\)包含所有的正值与负值.</p>
+
+
+            <h3 id="Flag2">极化强度矢量的分量表示形式</h3>
+            <p>通常，可以将上面的极化强度矢量关系写成其分量表示形式.</p>
+            <p>例如，二阶极化强度分量的表示式为：</p>
+            $$P^{(2)}_\mu(t) = \varepsilon_0\sum_{m,n\\\alpha,\beta}\chi^{(2)}_{\mu\alpha\beta}(\omega_m, \omega_n)E_\alpha(\omega_m)E_\beta(\omega_n)e^{-i(\omega_m+\omega_n)t}$$
+            <ul>
+                <li>\(\chi^{(2)}_{\mu\alpha\beta}(\omega_m, \omega_n)\)：二阶极化率张量分量</li>
+                <li>\(\mu,\alpha,\beta = x,y,z\)</li>
+            </ul>
+
+            <p>考虑<a href="../../Math/TensorAnalysis/EinsteinSummationConvention.html" class="goto">Einstein求和规则</a>，可以省略式中对\(\alpha,\beta\)的求和号，即：</p>
+            $$P^{(2)}_\mu(t) = \varepsilon_0\sum_{m,n}\chi^{(2)}_{\mu\alpha\beta}(\omega_m, \omega_n)E_\alpha(\omega_m)E_\beta(\omega_n)e^{-i(\omega_m+\omega_n)t}$$
+
+            <p>该式中的任意一项：</p>
+            $$\varepsilon_0\chi^{(2)}_{\mu\alpha\beta}(\omega_m, \omega_n)E_\alpha(\omega_m)E_\beta(\omega_n)e^{-i(\omega_m+\omega_n)t}$$
+            <p>表示：由频率为\(\omega_m\)、振动方向为\(\alpha\)的光电场分量\(E_\alpha(\omega_m, t)\)，与频率为\(\omega_n\)、振动方向为\(\beta\)的光电场分量\(E_\beta(\omega_n, t)\)，通过二阶非线性相互作用产生的、在\(\mu\)方向上振动、频率为\(\omega_m + \omega_n\)的二阶极化强度分量\(P^{(2)}_\mu(\omega_m+\omega_n, t)\).</p>
+        </div>
 
         <div class="Card-Analysis">
             <h2>色散介质中的极化率</h2>
@@ -272,7 +323,7 @@
             <p>其中：</p>
             $$\tilde{\boldsymbol{E}}_n(\boldsymbol{r}, t) = \boldsymbol{E}_n(\boldsymbol{r})e^{-i\omega_n t} + c.c.$$
 
-            $$P_i(\omega_n+\omega_m) = \epsilon_0\sum_{jk}\sum_{(nm)}\chi_{ijk}^{(2)}(\omega_n+\omega_m, \omega_m, \omega_n)E_j(\omega_n)E_k(\omega_m)$$
+            $$P_i(\omega_n+\omega_m) = \varepsilon_0\sum_{jk}\sum_{(nm)}\chi_{ijk}^{(2)}(\omega_n+\omega_m, \omega_m, \omega_n)E_j(\omega_n)E_k(\omega_m)$$
         </div>
 
         <div class="Card-Analysis">
@@ -280,9 +331,9 @@
             <p>约定：</p>
             $$d_{ijk} = \frac{1}{2}\chi_{ijk}^{(2)}$$
             <p>对于固定的几何构型（即传播方向与偏振方向都确定），可以用如下标量关系表示引起和频的非线性极化：</p>
-            $$P(\omega_3) = 2\epsilon_0 d_{eff} E(\omega_1)E(\omega_2)$$
+            $$P(\omega_3) = 2\varepsilon_0 d_{eff} E(\omega_1)E(\omega_2)$$
             <p>类似的，对于二次谐波产生，有：</p>
-            $$P(2\omega) = 2\epsilon_0 d_{eff}E^2(\omega)$$
+            $$P(2\omega) = 2\varepsilon_0 d_{eff}E^2(\omega)$$
             <p>其中：</p>
             $$E(\omega) = |\boldsymbol{E}(\omega)|$$
             $$P(\omega) = |\boldsymbol{P}(\omega)|$$
@@ -293,35 +344,6 @@
             $$\chi_{\mu\alpha_1\alpha_2\cdots\alpha_r}^{(r)}(\omega_1, \omega_2, \cdots, \omega_r) = \chi_{\mu\alpha_1\alpha_2\cdots\alpha_r}^{(r)}$$
             <p>其中，\(\alpha_i\)与\(\omega_i\)一一对应，表示频率为\(\omega_i\)、振动方向为\(\alpha_i\)的光电场分量参与非线性作用；\(\mu\)表示最终产生极化强度的分量方向为\(\mu\).</p>
         </div>
-
-        <div class="Card-Analysis">
-            <h2>极化强度表示式</h2>
-            <b>前置知识</b>
-            <ul>
-                <li><a href="../../Math/TensorAnalysis/Tensor_Operation.html">张量的点积</a></li>
-            </ul>
-            $$\boldsymbol{P}^{(1)} = \sum_n\epsilon_0\boldsymbol{\chi}^{(1)}(\omega_n)\cdot \boldsymbol{E}(\omega_n)e^{-i\omega_nt}$$
-            $$\boldsymbol{P}^{(2)} = \sum_{m,n}\epsilon_0\boldsymbol{\chi}^{(2)}(\omega_m, \omega_n):\boldsymbol{E}(\omega_m)\boldsymbol{E}(\omega_n)e^{-i(\omega_m + \omega_n)t}$$
-            <div id="P3">
-                $$\boldsymbol{P}^{(3)} = \sum_{m,n,l}\epsilon_0\boldsymbol{\chi}^{(3)}(\omega_m, \omega_n, \omega_l)\vdots \boldsymbol{E}(\omega_m)\boldsymbol{E}(\omega_n)\boldsymbol{E}(\omega_l)e^{-i(\omega_m + \omega_n + \omega_l)t}$$
-            </div>
-            <p>[注]式中的\(m,n,l\)包含所有的正值与负值.</p>
-
-
-            <b id="Flag2">极化强度矢量的分量表示形式</b>
-            <p>通常，可以将上面的极化强度矢量关系写成其分量表示形式.</p>
-            <p>例如，二阶极化强度分量的表示式为：</p>
-            $$P^{(2)}_\mu(t) = \epsilon_0\sum_{m,n\\\alpha,\beta}\chi^{(2)}_{\mu\alpha\beta}(\omega_m, \omega_n)E_\alpha(\omega_m)E_\beta(\omega_n)e^{-i(\omega_m+\omega_n)t}$$
-            <ul>
-                <li>\(\chi^{(2)}_{\mu\alpha\beta}(\omega_m, \omega_n)\)：二阶极化率张量分量</li>
-                <li>\(\mu,\alpha,\beta = x,y,z\)</li>
-            </ul>
-            <p>该式中的任意一项：</p>
-            $$\epsilon_0\chi^{(2)}_{\mu\alpha\beta}(\omega_m, \omega_n)E_\alpha(\omega_m)E_\beta(\omega_n)e^{-i(\omega_m+\omega_n)t}$$
-            <p>表示：由频率为\(\omega_m\)、振动方向为\(\alpha\)的光电场分量\(E_\alpha(\omega_m, t)\)，与频率为\(\omega_n\)、振动方向为\(\beta\)的光电场分量\(E_\beta(\omega_n, t)\)，通过二阶非线性相互作用产生的、在\(\mu\)方向上振动、频率为\(\omega_m + \omega_n\)的二阶极化强度分量\(P^{(2)}_\mu(\omega_m+\omega_n, t)\).</p>
-        </div>
-
-
         
 
         <div id="PageEnd"></div>
