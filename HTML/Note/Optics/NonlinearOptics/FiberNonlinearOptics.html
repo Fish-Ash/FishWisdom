@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang = "zh-cn">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>非线性光学</title>
+
+        <!-- 基本CSS库（基础、菜单） -->
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/MenuButton.css">
+        <link rel="stylesheet" type="text/css" href="../../../../CSS/Code.css">
+
+        <!-- Latex -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+        <!-- 代码高亮 -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/base16/atelier-lakeside-light.css">
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+
+    <body>
+        <div class="header" id="PageHead">不惑</div>
+        <ul class="navibar">
+            <li><a href="../../../Home.html">主页</a></li>
+            <li><a href="../../../Navigation.html">导航</a></li>
+        </ul>
+
+        <div>
+            <button class="menu-button"><img src="../../../../SVG/menu.svg" width="50" height="50"></button>
+            <a href="#PageHead"><button class="sub-button up-button"><img src="../../../../SVG/up.svg" width="30"></button></a>
+            <a href="#PageEnd"><button class="sub-button down-button"><img src="../../../../SVG/down.svg" width="30"></button></a>
+        </div>
+        
+        <h1>光纤非线性光学</h1>
+
+        <div class="Card-Analysis">
+            <h2>引言</h2>
+            <p>光纤非线性光学研究的是光波在光纤中传播时发生的非线性光学现象与效应.</p>
+
+            <p>本章在导出光纤中传输波动方程的基础上，重点讨论光纤中的各种非线性光学效应，并介绍一些超短、超强光纤激光产生技术.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光纤的线性特性</h2>
+            <p>光纤的<b>损耗</b>、<b>偏振</b>与<b>色散</b>对于光纤应用来说是十分重要的特性参量，因此，我们在研究光纤的非线性效应之前，首先对光纤的损耗特性、偏振特性与色散特性进行深入的了解.</p>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光纤损耗</h2>
+            <p>光纤的损耗主要由材料的吸收损耗与散射损耗确定，其本征损耗值\(\gamma\)由光纤材料的线性折射率\(n_0(\omega)\)决定：</p>
+            $$\gamma = \frac{\omega_0}{c}\mathrm{Im}\{n_0(\omega)\}$$
+
+            <div class="Card-AI">
+                <p>\(omega_0\)是中心角频率，当研究单频光时，它就等于\(omega\)；当研究多色光时，它对于多色光中的\(omega_i\)，都是同一个确定的值</p>
+            </div>
+
+            <p>工程上，习惯用每公里功率损耗值的分贝数\(\alpha(\text{dB}/\text{km})\)表示，其与\(\gamma\)的关系为：</p>
+            $$\alpha = 8.69\gamma~\text{dB}/km$$
+
+            <p>由于光纤的线性折射率\(n_0(\omega)\)为频率的函数，因而光纤损耗随波长变化.</p>
+            <p>瑞利散射损耗是因为在光纤制造过程中产生的随机涨落导致了折射率起伏，从而使光波向各个方向散射引起的，其随\(\lambda^{-4}\)变化，在短波长处较高，其损耗值可按下式估计：</p>
+            $$\alpha_R = \frac{C}{\lambda^4}~\text{dB/km}$$
+            <ul>
+                <li>\(C\in (0.4, 0.5)~\text{dB}/(\text{km}\cdot\mu\text{ m}^4)\)：常数，随纤芯成分而变</li>
+            </ul>
+        </div>
+
+        <div class="Card-Analysis">
+            <h2>光纤的偏振特性</h2>
+
+            <p>当光纤为理想的圆对称波导时，两个偏振正交的线偏振模是完全<a href="../QuantumMechanics/HermitianOperator.html" class="goto">简并</a>的，具有相同的传输常数.</p>
+                
+            <div class="Card-AI">
+                <p>这两个方向是固定的，不是人为任意选择的.</p>
+            </div>
+            <p>根据这种模式间的正交关系，它们各自独立地向前传播，互相不发生能量的交换与耦合.</p>
+            <p>这种情况下，两个模式的同时存在对光纤的单模传输特性及模式的偏振状态没有影响.</p>
+
+            <p>但实际光纤的形状均略偏理想圆柱形，并存在微弱的各向异性特性，破坏了模式简并，产生两正交偏振模间的耦合，这种特性称为<b>模态双折射</b>.</p>
+
+            <p>模态双折射程度\(B\)定义为：</p>
+            $$B = \left\lvert\frac{\beta_x - \beta_y}{\beta_0}\right\rvert = |n_x - n_y|$$
+            <ul>
+                <li>\(n_x,~n_y\)：两正交偏振模的有效折射率</li>
+            </ul>
+
+            <p>该式表明：对于给定的\(B\)值，两正交模在光纤中传输时其合成模偏振态周期性的变化，其周期为：</p>
+            $$L_B = \frac{2\pi}{\left\lvert\beta_x - \beta_y\right\rvert} = \frac{\lambda}{B}$$
+            <ul>
+                <li>\(L_B\)：拍长</li>
+            </ul>
+
+            <div class="Card-Definition">
+                <b>快轴</b>
+                <p>有效折射率小的方向轴，沿此轴振动光的传输群速快.</p>
+            </div>
+
+            <div class="Card-Definition">
+                <b>慢轴</b>
+                <p>有效折射率大的轴，群速慢.</p>
+            </div>
+
+            <p>经过适当的设计，使光纤中仅允许单一的偏振模传输，这种光纤称为偏振保持光纤（PPF），或保偏光纤.</p>
+        </div>
+
+
+        <div class="Card-Analysis">
+            <h2>光纤色散</h2>
+            <p>光纤的色散是光纤最主要的传输特性之一.</p>
+
+            <div class="Card-Definition">
+                <b>光纤色散</b>
+                <p>构成光信号的各种成分在光纤中具有不同传输速度的现象.</p>
+            </div>
+
+            <p>这种现象将直接导致光信号在光纤传输过程中的畸变.</p>
+
+            <p>数字光纤通信系统中，光纤色散将使光脉冲在传输过程中随传输距离的增加而逐渐展宽.</p>
+            <p>因此，光纤色散对光纤传输系统具有非常不利的影响，限制了系统传输的速率与传输距离的增加.</p>
+
+            <div class="Card-AI">
+                <p>这里我有一个想法，先讲应用，再讲为什么某些特性会影响某些应用的效果.</p>
+            </div>
+
+            <p>多模光纤中，光纤色散主要来自不同模式的传输速度不同所引起的<a href="../WaveGuide/ThinFilmWaveGuide.html" class="goto">模式色散</a>，与模式色散相比，其他因素引起的色散可以忽略不计.</p>
+            <p>单模光纤中，由于只传输基模，避免了模式色散的影响，因此具有远比多模光纤优良的色散特性，适用于大容量、长距离的光信号传输.</p>
+            <p>单模光纤中的色散主要由光信号中不同频率成分的传输速度不同引起，包括材料色散与波导效应两种贡献，</p>
+        </div>
+
+
+
+        <div id="PageEnd"></div>
+
+        <script src="../../../../JavaScript/MenuButton.js"></script>
+        <script src="../../../../JavaScript/Capacity.js"></script>
+    </body>
+
+</html>
